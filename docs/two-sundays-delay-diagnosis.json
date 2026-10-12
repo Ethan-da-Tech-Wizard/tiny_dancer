@@ -13,7 +13,7 @@
       "max_turns": null,
       "max_seconds": null
     },
-    "checkpoint": "[local detail omitted from GitHub snapshot]"
+    "checkpoint": {}
   },
   "elapsed_seconds": 600.13,
   "public_events": [

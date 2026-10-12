@@ -1,6 +1,6 @@
 # Resume here
 
-**Current priority: publish the requested GitHub repository and observe the fresh coding test with all existing apps open.** The owner explicitly requested `Ethan-da-Tech-Wizard/tiny_dancer` and approved the additional identical SSD model cache. Do not close unrelated apps, delete unrelated files, or ask for those authorizations again.
+**GitHub is published and the fresh coding test passed with all existing apps open. Next: the prepared local diagnostic and the known inventory requirement failure.** The owner explicitly requested `Ethan-da-Tech-Wizard/tiny_dancer` and approved the additional identical SSD model cache. Do not close unrelated apps, delete unrelated files, or ask for those authorizations again.
 
 Read [STATE.json](STATE.json) and the end of [SESSION_LOG.md](SESSION_LOG.md) first. Check API, durable jobs and owned inference processes before launching anything. Never run two models or restart during an active task. Use the guarded restart script. Never print credentials, native private reasoning, unaccepted drafts or full process arguments.
 
@@ -12,8 +12,8 @@ The model remains original GPT-OSS-20B MXFP4, context 32768, f16 KV, 8 threads, 
 
 ## Current tasks
 
-- Fresh labels observer: job `5f0a8b9fa2fa4a958aa5cacacb343022`, [report](native-labels-20261012T055302670443Z.json), log `logs/github-patch-path-labels.log`, shell session 26863. Check its actual state. Original supplied tests and independent 152-input audit remain unchanged. No live hints or implementation edits. No aggregate task deadline.
-- GitHub source/evidence publishing checkout: `run/github/tiny_dancer`. [Repeatable export and push instructions](GITHUB.md). The complete raw local reports remain unchanged; GitHub receives public evidence views. Never blindly add runtime folders. Publication controls are separate from native qualification.
+- Fresh labels **PASS: 563.32 seconds, 4 turns, 10 project tests, all 8 independent groups / 152 Unicode inputs**. [Report](native-labels-20261012T055302670443Z.json), log `logs/github-patch-path-labels.log`. Job `5f0a8b9fa2fa4a958aa5cacacb343022` is complete; observer session 26863 exited successfully. Original acceptance and runtime stayed frozen. No live hints or implementation edits; all existing user apps stayed open.
+- Private repository https://github.com/Ethan-da-Tech-Wizard/tiny_dancer is published; initial commit and GitHub Actions checks verified. Source/evidence publishing checkout: `run/github/tiny_dancer`. [Repeatable export and push instructions](GITHUB.md). The complete raw local reports remain unchanged; GitHub receives public evidence views. Never blindly add runtime folders. All 13 publication controls pass. Publication and GitHub CI are separate from native qualification.
 
 ## Actual outcomes and remaining failures
 

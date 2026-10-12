@@ -245,6 +245,7 @@ These are saved outcomes, not newly executed tests. Raw conversations, checkpoin
 | [validation/evaluations/native-placement-focused-before-validation-20261011T171159885909Z.json](validation/evaluations/native-placement-focused-before-validation-20261011T171159885909Z.json) |  | False | 1 |  |
 | [validation/evaluations/native-placement-focused-after-validation-20261011T171159886884Z.json](validation/evaluations/native-placement-focused-after-validation-20261011T171159886884Z.json) |  | True | 23 |  |
 | [validation/evaluations/native-parameters-staged-validation-20261011T202838833576Z.json](validation/evaluations/native-parameters-staged-validation-20261011T202838833576Z.json) | complete | True | 431 | 70.848 |
+| [validation/evaluations/native-labels-20261012T055302670443Z-20261012T060245948526Z.json](validation/evaluations/native-labels-20261012T055302670443Z-20261012T060245948526Z.json) | complete | True |  | 563.32 |
 | [validation/evaluations/native-labels-20261012T052428411538Z-20261012T054534670089Z.json](validation/evaluations/native-labels-20261012T052428411538Z-20261012T054534670089Z.json) | cancelled | False |  | 1263.46 |
 | [validation/evaluations/native-labels-20261012T041238448162Z-20261012T041519878578Z.json](validation/evaluations/native-labels-20261012T041238448162Z-20261012T041519878578Z.json) | complete | True |  | 143.36 |
 | [validation/evaluations/native-labels-20261012T033900484055Z-20261012T034121860180Z.json](validation/evaluations/native-labels-20261012T033900484055Z-20261012T034121860180Z.json) | complete | True |  | 131.48 |
@@ -438,7 +439,7 @@ These are saved outcomes, not newly executed tests. Raw conversations, checkpoin
 | [native-placement-focused-before-validation.json](native-placement-focused-before-validation.json) |  | False | 1 |  |
 | [native-placement-focused-after-validation.json](native-placement-focused-after-validation.json) |  | True | 23 |  |
 | [native-parameters-staged-validation.json](native-parameters-staged-validation.json) | complete | True | 431 | 70.848 |
-| [native-labels-20261012T055302670443Z.json](native-labels-20261012T055302670443Z.json) | running |  |  |  |
+| [native-labels-20261012T055302670443Z.json](native-labels-20261012T055302670443Z.json) | complete | True |  | 563.32 |
 | [native-labels-20261012T052428411538Z.json](native-labels-20261012T052428411538Z.json) | cancelled | False |  | 1263.46 |
 | [native-labels-20261012T041238448162Z.json](native-labels-20261012T041238448162Z.json) | complete | True |  | 143.36 |
 | [native-labels-20261012T033900484055Z.json](native-labels-20261012T033900484055Z.json) | complete | True |  | 131.48 |
@@ -502,6 +503,7 @@ These are saved outcomes, not newly executed tests. Raw conversations, checkpoin
 | [gpu-prefill-investigation.json](gpu-prefill-investigation.json) |  | True |  |  |
 | [goal-review-focused-green.json](goal-review-focused-green.json) | passed | True | 10 |  |
 | [goal-review-counterfactual-red.json](goal-review-counterfactual-red.json) | failed | False | 2 |  |
+| [github-publication-validation.json](github-publication-validation.json) |  | True |  |  |
 | [github-export-validation.json](github-export-validation.json) |  | True | 13 |  |
 | [generation-budget-ui-validation.json](generation-budget-ui-validation.json) | passed | True |  |  |
 | [frozen-351-responsiveness-validation.json](frozen-351-responsiveness-validation.json) | complete | True |  |  |

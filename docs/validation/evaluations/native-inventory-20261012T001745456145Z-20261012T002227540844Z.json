@@ -598,7 +598,7 @@
       "stderr": "[local detail omitted from GitHub snapshot]"
     }
   ],
-  "checkpoint": "[local detail omitted from GitHub snapshot]",
+  "checkpoint": {},
   "job_elapsed_seconds": 262.27,
   "metrics": [
     {

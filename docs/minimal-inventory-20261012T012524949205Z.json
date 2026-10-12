@@ -68,7 +68,7 @@
       "kind": "tool_start",
       "data": {
         "name": "shell",
-        "arguments": "[local detail omitted from GitHub snapshot]",
+        "arguments": {},
         "turn": 1
       },
       "seconds": 41.31
@@ -137,7 +137,7 @@
       "kind": "tool_start",
       "data": {
         "name": "shell",
-        "arguments": "[local detail omitted from GitHub snapshot]",
+        "arguments": {},
         "turn": 2
       },
       "seconds": 43.24
@@ -206,7 +206,7 @@
       "kind": "tool_start",
       "data": {
         "name": "shell",
-        "arguments": "[local detail omitted from GitHub snapshot]",
+        "arguments": {},
         "turn": 3
       },
       "seconds": 49.11
@@ -275,7 +275,7 @@
       "kind": "tool_start",
       "data": {
         "name": "shell",
-        "arguments": "[local detail omitted from GitHub snapshot]",
+        "arguments": {},
         "turn": 4
       },
       "seconds": 51.0
@@ -344,7 +344,7 @@
       "kind": "tool_start",
       "data": {
         "name": "shell",
-        "arguments": "[local detail omitted from GitHub snapshot]",
+        "arguments": {},
         "turn": 5
       },
       "seconds": 52.9
@@ -413,7 +413,7 @@
       "kind": "tool_start",
       "data": {
         "name": "shell",
-        "arguments": "[local detail omitted from GitHub snapshot]",
+        "arguments": {},
         "turn": 6
       },
       "seconds": 58.25
@@ -482,7 +482,7 @@
       "kind": "tool_start",
       "data": {
         "name": "shell",
-        "arguments": "[local detail omitted from GitHub snapshot]",
+        "arguments": {},
         "turn": 7
       },
       "seconds": 61.26
@@ -551,7 +551,7 @@
       "kind": "tool_start",
       "data": {
         "name": "shell",
-        "arguments": "[local detail omitted from GitHub snapshot]",
+        "arguments": {},
         "turn": 8
       },
       "seconds": 63.37
@@ -620,7 +620,7 @@
       "kind": "tool_start",
       "data": {
         "name": "shell",
-        "arguments": "[local detail omitted from GitHub snapshot]",
+        "arguments": {},
         "turn": 9
       },
       "seconds": 162.94
@@ -801,7 +801,7 @@
       "kind": "tool_start",
       "data": {
         "name": "shell",
-        "arguments": "[local detail omitted from GitHub snapshot]",
+        "arguments": {},
         "turn": 12
       },
       "seconds": 180.27
@@ -870,7 +870,7 @@
       "kind": "tool_start",
       "data": {
         "name": "shell",
-        "arguments": "[local detail omitted from GitHub snapshot]",
+        "arguments": {},
         "turn": 13
       },
       "seconds": 241.93
@@ -939,7 +939,7 @@
       "kind": "tool_start",
       "data": {
         "name": "shell",
-        "arguments": "[local detail omitted from GitHub snapshot]",
+        "arguments": {},
         "turn": 14
       },
       "seconds": 256.11
@@ -1641,7 +1641,7 @@
   "project_tests": {
     "exit_code": 0,
     "output": "[local detail omitted from GitHub snapshot]",
-    "summary": "[local detail omitted from GitHub snapshot]"
+    "summary": {}
   },
   "independent_checks": [
     {

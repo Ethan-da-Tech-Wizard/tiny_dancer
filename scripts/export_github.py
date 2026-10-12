@@ -49,6 +49,10 @@ def public_report(value, key=''):
     if normalized in PRIVATE_KEYS:
         # A numerical error/detail count is harmless, but a transcript container
         # must never be traversed even when its child keys look like metadata.
+        if isinstance(value, dict):
+            return {}
+        if isinstance(value, list):
+            return []
         return value if type(value) in (bool, int, float) else OMITTED
     if isinstance(value, dict):
         return {k: public_report(v, k) for k, v in value.items()}

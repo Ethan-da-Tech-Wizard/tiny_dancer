@@ -51,6 +51,7 @@ class GitHubExportTests(unittest.TestCase):
         self.assertFalse(result['passed'])
         self.assertEqual(result['checks'], {'works':False})
         self.assertEqual(result['metrics'], {'tokens':42, 'seconds':1.5})
+        self.assertEqual(result['checkpoint'], {})
         self.assertEqual(result['results'][0]['status'], 'failed')
         self.assertNotIn('PRIVATE', (dest/'docs/trial.json').read_text())
         self.assertEqual(src.read_bytes(), before)

@@ -30,6 +30,10 @@ products, environments, caches and multi-gigabyte weights stay local. Upstreams
 and weights can be obtained from their recorded sources; GitHub is not their
 binary mirror.
 
+The release checker requires complete local evidence. Published summaries cannot
+re-qualify a runtime: omitted checkpoint details remain absent rather than being
+reconstructed or treated as passing evidence.
+
 ## Publish an update
 
 Run from the working installation, after recording the actual test outcomes:

@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-12T06:02:17.646297+00:00",
+  "passed": true,
+  "scope": "GitHub publication only; does not establish native agent qualification.",
+  "repository": "[local detail omitted from GitHub snapshot]",
+  "visibility": "[local detail omitted from GitHub snapshot]",
+  "branch": "[local detail omitted from GitHub snapshot]",
+  "commit": "7cd401d3c38e951948844b2859b4ab2f4273bb62",
+  "tracked_files": 1377,
+  "exact_license_files": 537,
+  "checks": {
+    "staged_manifest_matches": true,
+    "all_python_syntax_valid": true,
+    "no_runtime_folders_tracked": true,
+    "individual_files_below_50_mib": true,
+    "thirteen_export_controls_pass": true,
+    "remote_branch_matches_local_commit": true,
+    "working_checkout_clean": true,
+    "github_ci_passed": true,
+    "github_detects_apache_2_0": true
+  },
+  "ci_url": "[local detail omitted from GitHub snapshot]"
+}

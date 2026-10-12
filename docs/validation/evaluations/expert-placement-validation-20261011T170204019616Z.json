@@ -148,7 +148,7 @@
     }
   ],
   "abort_reason": null,
-  "prompts": "[local detail omitted from GitHub snapshot]",
+  "prompts": [],
   "seconds": 223.591,
   "finished_at": "2026-10-11T17:02:04.019174+00:00",
   "comparison_complete": true,
