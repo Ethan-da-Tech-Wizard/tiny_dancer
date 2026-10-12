@@ -1,0 +1,422 @@
+{
+  "started_at": "2026-10-12T01:38:04.258985+00:00",
+  "status": "submitted",
+  "case": "labels",
+  "cwd": "/mnt/GameDrive/tiny_dancer/workspace/minimal-labels-20261012T013804229285Z",
+  "prompt": "[local detail omitted from GitHub snapshot]",
+  "instructions": "[local detail omitted from GitHub snapshot]",
+  "scope": "Experimental minimal shell-only loop inspired by mini-SWE-agent, using the unchanged local GPT-OSS-20B and existing Harmony/backend adapter. Original frozen goals and acceptance seeds. Multiple harness components differ; this is a baseline comparison, not a one-variable attribution or production qualification. No operator source edits or live hints.",
+  "runtime_sha256_before": "8c7b4485111cffa278e051a76315d844efc903fcaa8145ed12711444eff09a79",
+  "observer_sha256": {
+    "evaluate_minimal_coding.py": "62d9bcbbd0b7a49af441ec96221614533071a47bd1aa748335f850344b91730b",
+    "minimal_coding.py": "dfeee461406e6f29fdd25e5688ddf5dc8b86fec567ac52f4ca95c8b560187824"
+  },
+  "acceptance_sha256": "f61d8bba61cc6ef9afe832c591ba34ad7e65cf42bf74a98ada8da9a782bfaf52",
+  "reasoning_effort": "medium",
+  "protocol": "[local detail omitted from GitHub snapshot]",
+  "grammar_adapter_sha256": "3ef9044ad3a0831a8d795e4024f21192106bfd4a4f7aa59766e0277ba8d8e79c",
+  "additional_independent_criteria": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "operator_interventions": [],
+  "events": [
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 1
+      },
+      "seconds": 0.0
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 16.67,
+        "prompt_tokens": 358,
+        "completion_tokens": 94,
+        "prefill_seconds": 13.578297000000001,
+        "decode_seconds": 3.085515,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 47.95
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 1
+      },
+      "seconds": 47.96
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 1
+      },
+      "seconds": 47.97
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 2
+      },
+      "seconds": 47.97
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 2.2,
+        "prompt_tokens": 529,
+        "completion_tokens": 48,
+        "prefill_seconds": 0.7152430000000001,
+        "decode_seconds": 1.482181,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 50.17
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 2
+      },
+      "seconds": 50.17
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 2
+      },
+      "seconds": 50.18
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 3
+      },
+      "seconds": 50.18
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 45.33,
+        "prompt_tokens": 852,
+        "completion_tokens": 1242,
+        "prefill_seconds": 1.8432639999999998,
+        "decode_seconds": 43.481765,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 95.51
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 3
+      },
+      "seconds": 95.52
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 3
+      },
+      "seconds": 95.53
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 4
+      },
+      "seconds": 95.53
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 21.01,
+        "prompt_tokens": 2167,
+        "completion_tokens": 333,
+        "prefill_seconds": 7.581694000000001,
+        "decode_seconds": 13.403903,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 116.54
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 4
+      },
+      "seconds": 116.54
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 4
+      },
+      "seconds": 116.55
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 5
+      },
+      "seconds": 116.55
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 4.16,
+        "prompt_tokens": 2580,
+        "completion_tokens": 37,
+        "prefill_seconds": 2.7182600000000003,
+        "decode_seconds": 1.426014,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 120.71
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 5
+      },
+      "seconds": 120.71
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]",
+          "python_bytecode": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 5
+      },
+      "seconds": 121.01
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 6
+      },
+      "seconds": 121.01
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 6.92,
+        "prompt_tokens": 2922,
+        "completion_tokens": 118,
+        "prefill_seconds": 2.1417620000000004,
+        "decode_seconds": 4.755738999999999,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 127.93
+    }
+  ],
+  "samples": [
+    {
+      "seconds": 0.1,
+      "engine": "loading model",
+      "available_ram_gib": 9.731,
+      "activity": null
+    },
+    {
+      "seconds": 20.2,
+      "engine": "loading model",
+      "available_ram_gib": 9.463,
+      "activity": [
+        835787,
+        4.96,
+        8046919680,
+        4096
+      ]
+    },
+    {
+      "seconds": 40.3,
+      "engine": "processing prompt",
+      "available_ram_gib": 9.253,
+      "activity": [
+        835787,
+        22.01,
+        16301129728,
+        8192
+      ]
+    },
+    {
+      "seconds": 60.4,
+      "engine": "generating",
+      "available_ram_gib": 9.176,
+      "activity": [
+        835787,
+        90.81,
+        17491554304,
+        16384
+      ]
+    },
+    {
+      "seconds": 80.4,
+      "engine": "generating",
+      "available_ram_gib": 9.192,
+      "activity": [
+        835787,
+        188.85,
+        17546567680,
+        16384
+      ]
+    },
+    {
+      "seconds": 100.5,
+      "engine": "processing prompt",
+      "available_ram_gib": 9.078,
+      "activity": [
+        835787,
+        267.78,
+        17560985600,
+        20480
+      ]
+    },
+    {
+      "seconds": 120.6,
+      "engine": "generating",
+      "available_ram_gib": 9.041,
+      "activity": [
+        835787,
+        342.09000000000003,
+        17581219840,
+        24576
+      ]
+    }
+  ],
+  "turns": 6,
+  "seconds": 128.2,
+  "project_tests": {
+    "exit_code": 0,
+    "output": "[local detail omitted from GitHub snapshot]",
+    "summary": "[local detail omitted from GitHub snapshot]"
+  },
+  "independent_checks": [
+    {
+      "check": "unicode lowercase",
+      "passed": true,
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "unicode whitespace",
+      "passed": true,
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "zero-width text",
+      "passed": true,
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "numbers and punctuation",
+      "passed": true,
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "Already lowercase text retains combining marks",
+      "passed": true,
+      "examples": 2,
+      "failed_examples": 0,
+      "counterexamples": [],
+      "error": null
+    },
+    {
+      "check": "Unicode lowercase expansions follow Python str.lower",
+      "passed": true,
+      "examples": 2,
+      "failed_examples": 0,
+      "counterexamples": [],
+      "error": null
+    },
+    {
+      "check": "Lowercase does not introduce casefolding or accent removal",
+      "passed": true,
+      "examples": 4,
+      "failed_examples": 0,
+      "counterexamples": [],
+      "error": null
+    },
+    {
+      "check": "Whitespace and letter transformations compose across mixed inputs",
+      "passed": true,
+      "examples": 144,
+      "failed_examples": 0,
+      "counterexamples": [],
+      "error": null
+    }
+  ],
+  "checks": {
+    "submitted": true,
+    "runtime_frozen": true,
+    "acceptance_unchanged": true,
+    "nonempty_own_and_supplied_tests": true,
+    "independent_goal_checks": true,
+    "no_interruption": true
+  },
+  "passed": true
+}

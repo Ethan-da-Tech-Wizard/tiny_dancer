@@ -1,0 +1,1220 @@
+{
+  "updated_at": "2026-10-12T01:59:13.927041+00:00",
+  "phase": "Native labels failed broader goal despite narrow test pass; simplifying harness comparison next",
+  "root": "/mnt/GameDrive/tiny_dancer",
+  "requested_model": "[local detail omitted from GitHub snapshot]",
+  "no_ollama": true,
+  "hardware": {
+    "cpu": "[local detail omitted from GitHub snapshot]",
+    "ram_gib": 15.24,
+    "gpu": "[local detail omitted from GitHub snapshot]",
+    "vram_gib": 8,
+    "game_drive_free_gib": 58.32
+  },
+  "completed": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "in_progress": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "next": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "last_update": "[local detail omitted from GitHub snapshot]",
+  "installed": {
+    "colibri": "[local detail omitted from GitHub snapshot]",
+    "gpt_oss_original": "[local detail omitted from GitHub snapshot]",
+    "gpt_oss_serving": "[local detail omitted from GitHub snapshot]",
+    "picchio": "[local detail omitted from GitHub snapshot]",
+    "cuda": "[local detail omitted from GitHub snapshot]",
+    "workspace_url": "[local detail omitted from GitHub snapshot]",
+    "service": "[local detail omitted from GitHub snapshot]",
+    "database": "[local detail omitted from GitHub snapshot]"
+  },
+  "verification": {
+    "cpu_self_test": "[local detail omitted from GitHub snapshot]",
+    "cuda_numeric_test": "[local detail omitted from GitHub snapshot]",
+    "model_tensor_coverage": "[local detail omitted from GitHub snapshot]",
+    "merged_payload_checksum": "[local detail omitted from GitHub snapshot]",
+    "native_agent_baseline": "[local detail omitted from GitHub snapshot]",
+    "native_agent_final_configuration": "[local detail omitted from GitHub snapshot]",
+    "chat_api": "[local detail omitted from GitHub snapshot]",
+    "model_cancellation": "[local detail omitted from GitHub snapshot]",
+    "direct_tests": "[local detail omitted from GitHub snapshot]",
+    "harmony_history": "[local detail omitted from GitHub snapshot]",
+    "sse_reconnection": "[local detail omitted from GitHub snapshot]",
+    "ui_desktop_mobile": "[local detail omitted from GitHub snapshot]",
+    "loopback_binding": "[local detail omitted from GitHub snapshot]",
+    "user_service": "[local detail omitted from GitHub snapshot]",
+    "license_inventory": "[local detail omitted from GitHub snapshot]",
+    "sustained_agent_unit_tests": "[local detail omitted from GitHub snapshot]",
+    "code_oss_direct_tools": "[local detail omitted from GitHub snapshot]",
+    "screen_inspection": "[local detail omitted from GitHub snapshot]",
+    "sustained_ui": "[local detail omitted from GitHub snapshot]",
+    "live_browser_preview": "[local detail omitted from GitHub snapshot]",
+    "desktop_preview_api": "[local detail omitted from GitHub snapshot]",
+    "editor_api": "[local detail omitted from GitHub snapshot]",
+    "live_desktop_preview": "[local detail omitted from GitHub snapshot]",
+    "sustained_native_completion": "[local detail omitted from GitHub snapshot]",
+    "completed_task_ui": "[local detail omitted from GitHub snapshot]",
+    "completion_rework_tests": "[local detail omitted from GitHub snapshot]",
+    "completion_syntax": "[local detail omitted from GitHub snapshot]",
+    "original_sunday_question": "[local detail omitted from GitHub snapshot]",
+    "idle_release": "[local detail omitted from GitHub snapshot]",
+    "completion_ui": "[local detail omitted from GitHub snapshot]",
+    "language_and_continuation_tests": "[local detail omitted from GitHub snapshot]",
+    "language_lookups": "[local detail omitted from GitHub snapshot]",
+    "continuation_ui": "[local detail omitted from GitHub snapshot]",
+    "language_license": "[local detail omitted from GitHub snapshot]",
+    "stability_regressions": "[local detail omitted from GitHub snapshot]",
+    "editor_stability": "[local detail omitted from GitHub snapshot]",
+    "under_load_responsiveness": {
+      "median_seconds": 0.00285,
+      "max_seconds": 0.0071,
+      "minimum_available_ram_gib": 6.396
+    },
+    "native_working_ui": "[local detail omitted from GitHub snapshot]",
+    "small_patches": "[local detail omitted from GitHub snapshot]",
+    "curated_focused_tests": "[local detail omitted from GitHub snapshot]",
+    "curated_regressions": "[local detail omitted from GitHub snapshot]",
+    "curated_native_probe": {
+      "passed": true,
+      "job": "540e146c182b4c1b902d74842d0b6eca",
+      "session": "20d03b2a61444afe9de40d6bd02d6ceb",
+      "actual_job_seconds": 584.59,
+      "scope": "Native capability probe with operator-seeded bug and tests, not an unassisted implementation evaluation. No replacement code or recovery notes supplied during execution.",
+      "completion_path": "[local detail omitted from GitHub snapshot]",
+      "checks": {
+        "actual_patch_applied": true,
+        "exact_cache_used": true,
+        "native_medium_effort": true,
+        "unseen_arithmetic_passed": true
+      },
+      "operator_interventions": [],
+      "report": "docs/native-harness-validation.json"
+    },
+    "curated_native_ui": "[local detail omitted from GitHub snapshot]",
+    "curated_syntax": "[local detail omitted from GitHub snapshot]",
+    "batching_regressions": "[local detail omitted from GitHub snapshot]",
+    "results_ui": {
+      "passed": true,
+      "assertions": 12,
+      "report": "docs/results-ui-validation.json",
+      "scope": "Actual results/authentication/evidence/desktop/mobile checks after collector fix; no model tasks changed."
+    },
+    "gpu_investigation": "[local detail omitted from GitHub snapshot]",
+    "hardening_regressions": "[local detail omitted from GitHub snapshot]",
+    "score_export": {
+      "passed": true,
+      "file": "/mnt/GameDrive/tiny_dancer/workspace/scores_2026-09-27.json",
+      "seconds": 157.18,
+      "games": 14,
+      "checks": {
+        "requested_json_saved": true,
+        "correct_date": true,
+        "every_matchup_matches_separate_fetch": true,
+        "actual_editor_action": true,
+        "completion_checks_passed": true,
+        "editor_window_shows_json": true
+      },
+      "report": "docs/score-export-validation.json"
+    },
+    "score_export_ui": {
+      "passed": true,
+      "assertions": 22,
+      "report": "docs/score-export-ui-validation.json",
+      "desktop_capture": "[local detail omitted from GitHub snapshot]"
+    },
+    "hardened_native_repair": {
+      "passed": true,
+      "job": "903d5c65ab2b4eebbfad6ca5b1d5bb83",
+      "seconds": 498.72,
+      "turns": 4,
+      "checks": {
+        "project_inspection_used": true,
+        "checks_batched": true,
+        "patch_used": true,
+        "unseen_arithmetic_passed": true,
+        "native_verified": true
+      },
+      "resources": {
+        "minimum_available_ram_gib": 5.104,
+        "maximum_observed_model_uss_gib": 3.335,
+        "worker_nice_values": [
+          5
+        ],
+        "scope": "20-second observations, not continuous peak measurements; whole-machine available RAM includes other applications."
+      },
+      "report": "docs/batching-native-validation.json"
+    },
+    "hardening_responsiveness": {
+      "report": "docs/hardening-responsiveness-validation.json",
+      "requests": 30,
+      "maximum_seconds": 0.011566,
+      "scope": "Read-only local API observations during native generation; not proof all desktop freezes are solved."
+    },
+    "budget_interface": "[local detail omitted from GitHub snapshot]",
+    "local_test_runner": "[local detail omitted from GitHub snapshot]",
+    "fresh_csv": {
+      "passed": false,
+      "seconds": 3610.33,
+      "CLI_checks_passed": 10,
+      "CLI_checks_total": 11,
+      "error_checks_passed": 5,
+      "native_verified": false,
+      "scope": "Original goal/input only; own evaluation stopped at one hour. Frozen failed outcome preserved.",
+      "report": "docs/hardening-coding-validation.json"
+    },
+    "maintenance_restart": "[local detail omitted from GitHub snapshot]",
+    "precision_repair": {
+      "status": "cancelled",
+      "passed": false,
+      "seconds": 3606.48,
+      "checks": {
+        "native_verified": false,
+        "acceptance_unchanged": true,
+        "independent_cli_checks": false,
+        "clear_errors": true,
+        "unseen_1600_digit_signed_case": false,
+        "automatic_initial_work_allowance": true
+      },
+      "operator_interventions": [
+        "[local detail omitted from GitHub snapshot]"
+      ],
+      "report": "docs/precision-repair-validation.json",
+      "scope": "Native repair on copies of the failed native implementation, with operator-seeded acceptance tests from its requirements. New local runner/harness; not an unassisted implementation or comparable full-build speed benchmark. No code or hints injected during execution."
+    },
+    "source_previews": "[local detail omitted from GitHub snapshot]",
+    "output_reserve": "[local detail omitted from GitHub snapshot]",
+    "results_evidence": "[local detail omitted from GitHub snapshot]",
+    "final_native_repair": {
+      "passed": true,
+      "seconds": 517.15,
+      "turns": 4,
+      "checks": {
+        "project_inspection_used": true,
+        "checks_batched": true,
+        "patch_used": true,
+        "unseen_arithmetic_passed": true,
+        "native_verified": true
+      },
+      "resources": {
+        "minimum_available_ram_gib": 5.099,
+        "maximum_observed_model_uss_gib": 3.294,
+        "worker_nice_values": [
+          5
+        ],
+        "scope": "20-second observations, not continuous peak measurements; whole-machine available RAM includes other applications."
+      },
+      "generation_budget": {
+        "requested": null,
+        "initial": 2048,
+        "current": 2048
+      },
+      "report": "docs/final-native-repair-validation.json",
+      "scope": "Frozen initial prompt, no operator code/recovery notes during native execution. Seeded bug/tests identical to previous repair probe; final deployed harness, Auto allowance2048. Historical separate runs, no universal speed comparison."
+    },
+    "native_grader_tests": {
+      "tests": 5,
+      "passed": true,
+      "log": "[local detail omitted from GitHub snapshot]"
+    },
+    "rust_license_tests": {
+      "tests": 5,
+      "passed": true,
+      "log": "[local detail omitted from GitHub snapshot]"
+    },
+    "native_release_gate": {
+      "script": "[local detail omitted from GitHub snapshot]",
+      "criteria": "[local detail omitted from GitHub snapshot]",
+      "scripted_tests": 6,
+      "current_status": "[local detail omitted from GitHub snapshot]",
+      "log": "[local detail omitted from GitHub snapshot]"
+    },
+    "regressions": {
+      "passed": true,
+      "tests": 351,
+      "seconds": 25.178,
+      "report": "docs/validation/runs/20261011T164520098286Z.json",
+      "scope": "Full harness/local-tool regression suite; scripted model fixtures do not establish native autonomy."
+    },
+    "runner_batching_production": "[local detail omitted from GitHub snapshot]",
+    "source_free_strategy_diagnostic": {
+      "passed": false,
+      "report": "docs/strategy-diagnostic-20261011T111720Z.json",
+      "seconds": 339.5,
+      "word_count": 185,
+      "runtime_unchanged": true,
+      "observer_tests": 5,
+      "qualification_passed": false
+    },
+    "coding_preflight": {
+      "passed": true,
+      "tests": 285,
+      "report": "docs/validation/runs/20261011T113754486591Z.json",
+      "runtime_sha256": "500800b3d6d64ccd223d4329f1d6ef07aaed1e74bcee6de98337e676f1d4730d",
+      "scope": "Scripted engine with actual file/test execution, not native qualification."
+    },
+    "initial_evidence_preview": {
+      "passed": true,
+      "tests": 289,
+      "report": "docs/validation/runs/20261011T121420167070Z.json",
+      "runtime_sha256": "978e3947077a8fff272c10e7a6111b1b149a82551eca7f8e307ca46c117475c6",
+      "scope": "Scripted regressions and actual localtools; static1079token reduction, not native speed qualification."
+    },
+    "frozen_351_under_load_responsiveness": {
+      "passed": true,
+      "requests": 30,
+      "median_seconds": 0.002931,
+      "maximum_seconds": 0.00555,
+      "minimum_available_ram_gib": 7.817,
+      "report": "docs/frozen-351-responsiveness-validation.json",
+      "scope": "Read-only status requests during native task; does not establish whole-desktop responsiveness or controlled memory savings."
+    },
+    "completion_repair_harness": {
+      "passed": true,
+      "tests": 388,
+      "report": "docs/validation/runs/20261011T184206001379Z.json",
+      "details": "[local detail omitted from GitHub snapshot]",
+      "runtime_sha256": "0b691a6c03e2919ad4491d0acafd1b57c2f39802e45f4c6326f55166fc3471e1",
+      "native_qualified": false
+    },
+    "completion_contract": {
+      "passed": true,
+      "tests": 399,
+      "report": "docs/validation/runs/20261011T190513615087Z.json",
+      "details": "[local detail omitted from GitHub snapshot]",
+      "runtime_sha256": "3a24f50f5d124979334ff151933a3fe9ae747f769704706af8922542dc7232f5",
+      "native_qualified": false
+    },
+    "completion_finish": {
+      "passed": true,
+      "tests": 413,
+      "report": "docs/validation/runs/20261011T193909612721Z.json",
+      "details": "[local detail omitted from GitHub snapshot]",
+      "runtime_sha256": "ebb8f9444624347dce720baa2c91fa76ffba793198d4a2b85ae13fbf27a0e62f",
+      "native_qualified": false
+    }
+  },
+  "status": "hardening_native_qualification_failed",
+  "performance": {
+    "baseline_prefill_batch": 64,
+    "final_prefill_batch": 1024,
+    "prompt_tokens": 700,
+    "baseline_prefill_seconds": 326.88599949,
+    "final_prefill_seconds": 125.562473602,
+    "speedup": 2.603373365565755,
+    "time_reduction_percent": 61.588298734757785,
+    "baseline_total_generation_seconds": 549.76,
+    "final_total_generation_seconds": 310.32,
+    "final_decode_tokens_per_second": [
+      1.1637118388789716,
+      1.5045968606135949,
+      1.1446248060876714
+    ],
+    "note": "[local detail omitted from GitHub snapshot]",
+    "compact_checkpoint_resume": {
+      "prompt_tokens": 1268,
+      "job": "ae6182d2ec1e469f9be468d5422b019b",
+      "metrics": [
+        {
+          "prefill_seconds": 238.682456735,
+          "prefill_tokens": 1268,
+          "prefill_tokens_per_s": 5.312497689798006,
+          "decode_seconds": 77.511931502,
+          "decode_tokens": 107,
+          "decode_tokens_per_s": 1.3804326369707243,
+          "total_seconds": 316.2,
+          "completion_tokens": 107,
+          "prompt_tokens": 1268
+        }
+      ],
+      "note": "[local detail omitted from GitHub snapshot]"
+    },
+    "answer_workflow": {
+      "job": "871ff54e9db54196b7633430852ce62f",
+      "elapsed_seconds": 134.62,
+      "prompt_tokens": 406,
+      "completion_tokens": 45,
+      "native_turns": 1,
+      "games_verified": 14,
+      "date": "2026-10-04",
+      "note": "[local detail omitted from GitHub snapshot]"
+    },
+    "idle_release": {
+      "private_ram_gib_released": 3.918323516845703,
+      "gpu_mib_released": 5506,
+      "timeout_seconds": 300,
+      "method": "[local detail omitted from GitHub snapshot]"
+    },
+    "exact_history_cache": {
+      "per_turn_counterfactual_saved_tokens": 1373,
+      "note": "[local detail omitted from GitHub snapshot]",
+      "native_prefill_seconds": [
+        279.78,
+        28.36,
+        25.51,
+        32.19,
+        27.25,
+        43.69
+      ],
+      "actual_job_seconds": 584.59,
+      "no_full_run_speedup_claim": true
+    },
+    "prompt_trimming": {
+      "before_tokens": 1527,
+      "after_tokens": 919,
+      "reduction_percent": 39.82,
+      "report": "docs/prompt-overhead-current.json",
+      "scope": "Same frozen goal/cwd/medium with actual tokenizer; no runtime multiplier claim"
+    },
+    "hardened_repair": {
+      "before_seconds": 584.59,
+      "after_seconds": 498.72,
+      "first_batching_attempt_seconds": 666.68,
+      "before_turns": 6,
+      "after_turns": 4,
+      "scope": "Same frozen goal/seeded tests/medium effort; separate historical runs, not controlled general speed A/B."
+    },
+    "final_native_repair": {
+      "seconds": 517.15,
+      "turns": 4,
+      "first_prompt_tokens": 919,
+      "first_prefill_seconds": 161.55,
+      "scope": "Same seeded arithmetic task; Auto2048 vs earlier1024, historical separate runs. Not a controlled general throughput or memory-reduction benchmark."
+    }
+  },
+  "limitations": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "resume": "[local detail omitted from GitHub snapshot]",
+  "licensing": {
+    "project": "[local detail omitted from GitHub snapshot]",
+    "colibri": "[local detail omitted from GitHub snapshot]",
+    "gpt_oss": "[local detail omitted from GitHub snapshot]",
+    "picchio": "[local detail omitted from GitHub snapshot]",
+    "license": "LICENSE",
+    "notice": "[local detail omitted from GitHub snapshot]",
+    "index": "[local detail omitted from GitHub snapshot]",
+    "inventory": "[local detail omitted from GitHub snapshot]",
+    "validation": "[local detail omitted from GitHub snapshot]",
+    "refresh": "[local detail omitted from GitHub snapshot]",
+    "check": ".venv/bin/python scripts/collect_licenses.py --check",
+    "texts": 257,
+    "python_distributions": 45,
+    "direct_host_dependencies": 29,
+    "scope": "Pinned Colibri/GPT-OSS/Picchio source licenses and notices, both original and converted model license/policy files, every project venv distribution and shipped bundled notices, plus direct external host tools. The entire OS dependency tree is outside this inventory.",
+    "native_rust_toolchain_archive": {
+      "texts": 241,
+      "python_distributions": 45,
+      "direct_host_dependencies": 28,
+      "existing_tools_only": true,
+      "check_passed": true
+    }
+  },
+  "active_user_job": null,
+  "pending_idle_restart": false,
+  "preferences": {
+    "open_source_tools": true,
+    "local_inference_only": true,
+    "no_hosted_ai_api_dependency": true,
+    "license_archive_for_every_added_dependency": true
+  },
+  "research_next": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "last_workspace_opened_at": "[local detail omitted from GitHub snapshot]",
+  "last_launch_check": {
+    "at": "2026-10-11T02:13:07.909724+00:00",
+    "url": "http://127.0.0.1:3210",
+    "http_status": 200,
+    "active_job": null,
+    "engine": "ready"
+  },
+  "pending_fixes": [],
+  "last_evaluation": {
+    "case": "labels",
+    "job": "9a9b01f072ce4156af9309f4d021d255",
+    "status": "paused",
+    "passed": false,
+    "checks": {
+      "native_verified": false,
+      "acceptance_unchanged": true,
+      "runtime_frozen": true,
+      "all_seeded_behavior_tests": false,
+      "all_independent_behavior_checks": false,
+      "additional_nonempty_passing_project_tests": false
+    },
+    "job_elapsed_seconds": 49.2,
+    "report": "docs/native-labels-20261012T015812683517Z.json"
+  },
+  "resume_instructions": "[local detail omitted from GitHub snapshot]",
+  "isolated_investigations": [
+    {
+      "report": "docs/adaptive-allowance-red.json",
+      "status": "three_red_one_pass_isolated_not_deployed",
+      "scope": "Larger output-retry room and persisted allowance; no active runtime changes."
+    }
+  ],
+  "evaluation_sequence": {
+    "pid": null,
+    "parent_pid": null,
+    "script": "[local detail omitted from GitHub snapshot]",
+    "log": "[local detail omitted from GitHub snapshot]",
+    "order": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "policy": "[local detail omitted from GitHub snapshot]",
+    "gate": "[local detail omitted from GitHub snapshot]",
+    "runtime_sha256": "c96b45453116dbb3662260082a87c6ecfa32e7bb02d5e1a761ddee3916fbf599",
+    "qualification": "[local detail omitted from GitHub snapshot]",
+    "status": "halted_on_failed_money_grade",
+    "previous_pid": 412493
+  },
+  "staged_candidate": {
+    "stage": "[local detail omitted from GitHub snapshot]",
+    "status": "284 isolated tests pass; generic goal review NOTdeployed/native capability unproven. Production273 unchanged.",
+    "report": "docs/validation/runs/goal-review-staged-284-20261011T105521002064Z.json"
+  },
+  "last_native_failure": {
+    "job": "c533a86173f6486893593797c1298970",
+    "status": "cancelled",
+    "seconds": 900.2,
+    "context": 32768,
+    "sampler": "[local detail omitted from GitHub snapshot]",
+    "reason": "[local detail omitted from GitHub snapshot]",
+    "report": "docs/precision-repair-retest-validation.json",
+    "completion_observation": "[local detail omitted from GitHub snapshot]"
+  },
+  "isolated_tool_argument_candidate": {
+    "manifest": "[local detail omitted from GitHub snapshot]",
+    "status": "deployed_production_273_pass_guarded_restart_ready",
+    "runtime_sha256": "5c7ee1267669e717559201b57ff5755c87c9844cd3f7293a5b4b67ab0b551199"
+  },
+  "optional_contract_review_probe": {
+    "script": "[local detail omitted from GitHub snapshot]",
+    "criteria": "[local detail omitted from GitHub snapshot]",
+    "status": "Both high2048 and low2048 probes failed negative: highlimited/noverdict, lowfalsepass; both positives passed. No review gate deployed.",
+    "checks": "[local detail omitted from GitHub snapshot]",
+    "policy": "[local detail omitted from GitHub snapshot]",
+    "previous_report": "docs/contract-review-probe-20261011T100813Z.json",
+    "report": "docs/contract-review-probe-20261011T103848Z.json"
+  },
+  "time_limit": {
+    "user_instruction": "[local detail omitted from GitHub snapshot]",
+    "started_at": "2026-10-11T11:00:34+00:00",
+    "deadline": "[local detail omitted from GitHub snapshot]",
+    "policy": "[local detail omitted from GitHub snapshot]",
+    "finished_at": "2026-10-11T11:08:02.793210+00:00",
+    "status": "Finished within cap; no further task scheduled"
+  },
+  "next_diagnostic": "[local detail omitted from GitHub snapshot]",
+  "pending_output_receipt_candidate": {
+    "stage": "[local detail omitted from GitHub snapshot]",
+    "plan": "[local detail omitted from GitHub snapshot]",
+    "status": "deployed_production_294_pass_guarded_restart_ready",
+    "production_changed": true,
+    "runtime_sha256": "2afa505625eb5012280f62237d1087d5199521d34cc0564c59ebff107a372395",
+    "regressions": "[local detail omitted from GitHub snapshot]"
+  },
+  "weight_fidelity_audit": {
+    "report": "docs/weight-fidelity-audit.json",
+    "scope": "Six samples confirm serving converter changes original MXFP4 values; consistency passed, task effects not established."
+  },
+  "llama_reference_candidate": {
+    "commit": "1cf7767765b872806e1bb74cfb55614f4334f02f",
+    "status": "Enabled local candidate after315productionpass/guardedrestart; originaltrainedMXFP4 format. Nativecodingqualification next.",
+    "plan": "[local detail omitted from GitHub snapshot]",
+    "fidelity": "[local detail omitted from GitHub snapshot]"
+  },
+  "latest_regression_suite": {
+    "tests": 510,
+    "passed": true,
+    "seconds": 41.113,
+    "report": "docs/validation/runs/20261012T010411771609Z.json",
+    "log": "[local detail omitted from GitHub snapshot]"
+  },
+  "native_release_qualified": false,
+  "rust_dependency_guard": {
+    "at": "2026-10-11T13:06:52.056249+00:00",
+    "backup": "[local detail omitted from GitHub snapshot]",
+    "runtime_sha256": "9eb280a97a548c69825d3b15cdd2a6646911dfc65dcaecf259243860f8ba447e",
+    "status": "deployed_production_301_pass_guarded_restart_ready",
+    "files": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "regressions": "[local detail omitted from GitHub snapshot]",
+    "seconds": 25.096,
+    "restart_log": "[local detail omitted from GitHub snapshot]"
+  },
+  "active_reference_diagnostic": null,
+  "llama_backend_deployment": {
+    "at": "2026-10-11T13:20:50.928053+00:00",
+    "backup": "[local detail omitted from GitHub snapshot]",
+    "status": "deployed_production_315_pass_guarded_restart_ready_for_native_tests",
+    "runtime_sha256": "7eb0bb25b2594dd616793e5f6d52fa1891c0b70241c114220dbc7bed75fa28ae",
+    "files": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "context": 8192,
+    "threads": 8,
+    "model": "GPT-OSS-20B; original nativeMXFP4, no added expert quantization",
+    "qualification": "[local detail omitted from GitHub snapshot]",
+    "regressions": "[local detail omitted from GitHub snapshot]",
+    "seconds": 21.468,
+    "restart_log": "[local detail omitted from GitHub snapshot]"
+  },
+  "strategy_reference_outcomes": {
+    "low512": {
+      "passed": false,
+      "seconds": 68.79,
+      "reason": "[local detail omitted from GitHub snapshot]",
+      "report": "docs/native-reference-strategy-validation.json"
+    },
+    "high2048": {
+      "passed": false,
+      "seconds": 122.46,
+      "reason": "[local detail omitted from GitHub snapshot]",
+      "report": "docs/native-reference-strategy-high-validation.json"
+    },
+    "performance_scope": "[local detail omitted from GitHub snapshot]"
+  },
+  "reply_continuation_candidate": {
+    "stage": "[local detail omitted from GitHub snapshot]",
+    "status": "deployed_production_325_pass_guarded_restart_ready",
+    "production_changed": true,
+    "scope": "Auto/untilcomplete work only; preserve actualunfinishedtokens withinexisting8Kctx. Explicitbudgets/Chat capped; no partialdispatch/privateoutput.",
+    "deployment": "[local detail omitted from GitHub snapshot]"
+  },
+  "transport_recovery": {
+    "at": "2026-10-11T14:04:29.300900+00:00",
+    "backup": "[local detail omitted from GitHub snapshot]",
+    "status": "deployed_production_329_pass_guarded_restart_ready",
+    "files": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "runtime_sha256": "8c121f7903dab1dc0c6ccd66e7902788ba748e58534406f0e08e7327760fee6c",
+    "stage_report": "docs/transport-recovery-staged-validation.json",
+    "regressions": "[local detail omitted from GitHub snapshot]",
+    "seconds": 22.18,
+    "restart_log": "[local detail omitted from GitHub snapshot]"
+  },
+  "literal_add_deployment": {
+    "at": "2026-10-11T14:12:01.072804+00:00",
+    "backup": "[local detail omitted from GitHub snapshot]",
+    "status": "deployed_production_333_pass_guarded_restart_ready",
+    "files": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "runtime_sha256": "a9044b804aa13ad21ae929ba26ebd7e0d78ea21862c6050bb8c4a9fb0c771d85",
+    "stage_report": "docs/literal-add-staged-validation.json",
+    "regressions": "[local detail omitted from GitHub snapshot]",
+    "seconds": 22.149,
+    "restart_log": "[local detail omitted from GitHub snapshot]"
+  },
+  "harmony_recovery_deployment": {
+    "at": "2026-10-11T14:27:56.164644+00:00",
+    "backup": "[local detail omitted from GitHub snapshot]",
+    "status": "deployed_production_337_pass_guarded_restart_ready",
+    "files": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "previous_files": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "runtime_sha256": "28bc82dbee26161a2706bef102d5975e6f557365ce61efa9f2cd6a449c532f15",
+    "stage_report": "docs/harmony-recovery-staged-validation.json",
+    "regressions": "[local detail omitted from GitHub snapshot]",
+    "seconds": 22.04,
+    "restart_log": "[local detail omitted from GitHub snapshot]"
+  },
+  "completion_guidance_deployment": {
+    "at": "2026-10-11T14:49:51.016770+00:00",
+    "backup": "[local detail omitted from GitHub snapshot]",
+    "status": "deployed_production_341_pass_guarded_restart_ready",
+    "files": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "previous_files": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "runtime_sha256": "2321176b8bce1052fdd25c8f5aa4f766d2641228be51cefcc30de4a373024e4f",
+    "stage_report": "docs/completion-guidance-staged-validation.json",
+    "regressions": "[local detail omitted from GitHub snapshot]",
+    "seconds": 23.024,
+    "restart_log": "[local detail omitted from GitHub snapshot]"
+  },
+  "requested_test_additions_deployment": {
+    "at": "2026-10-11T15:34:32.101796+00:00",
+    "backup": "[local detail omitted from GitHub snapshot]",
+    "status": "deployed_production_351_pass_guarded_restart_ready",
+    "files": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "previous_files": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "runtime_sha256": "a39f23d4cf70bd8289e6a54198c3de2f93e5d7e370e76a50260ac23aa0862019",
+    "stage_report": "docs/requested-test-additions-staged-validation.json",
+    "regressions": "[local detail omitted from GitHub snapshot]",
+    "seconds": 22.416,
+    "restart_log": "[local detail omitted from GitHub snapshot]"
+  },
+  "latest_runtime_sha256": "8c7b4485111cffa278e051a76315d844efc903fcaa8145ed12711444eff09a79",
+  "latest_regressions": {
+    "tests": 510,
+    "passed": true,
+    "seconds": 41.113,
+    "report": "docs/validation/runs/20261012T010411771609Z.json",
+    "log": "[local detail omitted from GitHub snapshot]"
+  },
+  "native_qualification": {
+    "passed": false,
+    "passed_tasks": 0,
+    "historical_passed_tasks": 2,
+    "required_tasks": 3,
+    "report": "docs/native-release-gate-current.json",
+    "current_runtime": "8c7b4485111cffa278e051a76315d844efc903fcaa8145ed12711444eff09a79",
+    "failed_task": "[local detail omitted from GitHub snapshot]",
+    "historical_scope": "[local detail omitted from GitHub snapshot]",
+    "candidate_sampling": "[local detail omitted from GitHub snapshot]",
+    "candidate_placement_14": "[local detail omitted from GitHub snapshot]"
+  },
+  "active_experiment": null,
+  "observed_shortcomings": {
+    "disk_wait_report": "docs/native355-disk-wait-observation.json",
+    "thermal_report": "docs/native-placement-thermal-observations.json",
+    "thermal_snapshot": "[local detail omitted from GitHub snapshot]",
+    "thread_comparison": "[local detail omitted from GitHub snapshot]"
+  },
+  "active_evaluation": null,
+  "source_window_repair": {
+    "report": "docs/source-window-validation.json",
+    "regressions": 364,
+    "seconds": 23.276,
+    "native_quality_passed": false,
+    "retained": true
+  },
+  "last_thread_benchmark": {
+    "passed": false,
+    "comparison_complete": true,
+    "seconds": 662.533,
+    "report": "docs/validation/evaluations/cpu-thread-validation-20261011T182705446184Z.json",
+    "readable_summary": "[local detail omitted from GitHub snapshot]",
+    "token_parity": true,
+    "start_temperatures_comparable": true,
+    "production_threads": 8,
+    "decision": "[local detail omitted from GitHub snapshot]",
+    "tradeoffs": [
+      {
+        "threads": 4,
+        "median_model_cpu_percent": 315.2,
+        "model_cpu_utilization_reduction_fraction": 0.37066986123589907
+      },
+      {
+        "threads": 6,
+        "median_model_cpu_percent": 416.3,
+        "model_cpu_utilization_reduction_fraction": 0.16881301786962166
+      }
+    ]
+  },
+  "parameter_audit": {
+    "report": "docs/context-parameter-audit-validation.json",
+    "stage": "[local detail omitted from GitHub snapshot]",
+    "status": "context_capacity_passed; context-only coding completion censored; recommended-sampler/continuous-reply candidate staged",
+    "context_candidate": 32768,
+    "production_context": 32768,
+    "next": "[local detail omitted from GitHub snapshot]",
+    "backup": "[local detail omitted from GitHub snapshot]",
+    "runtime_sha256": "03855cfdd0503f300f847c7b04ed5fba0d9a294ef183c3d4d682fd1620a276e9",
+    "native_smoke": "[local detail omitted from GitHub snapshot]",
+    "native_capacity_passed": true,
+    "context": 32768,
+    "sampling_candidate": {
+      "stage": "[local detail omitted from GitHub snapshot]",
+      "status": "Sampler unchanged; actual current native API-default and fresh labels passed; larger qualification pending",
+      "focused_tests": 30,
+      "config_profile": "[local detail omitted from GitHub snapshot]",
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "top_k": 0,
+      "min_p": 0.0,
+      "repeat_penalty": 1.0,
+      "weights_context_effort_expert_placement_unchanged": true,
+      "source": "https://github.com/openai/gpt-oss#recommended-sampling-parameters",
+      "native_qualified": false,
+      "full_regressions": 481,
+      "report": "docs/native-parameters-staged-validation.json",
+      "backup": "[local detail omitted from GitHub snapshot]",
+      "runtime_sha256": "a024d24712e615b0f3a0884624b90c6316986d9ddf31d2e1ddc75dc95b65ccfd",
+      "controls_report": "docs/continuous-native-controls-validation.json",
+      "native_smoke": "[local detail omitted from GitHub snapshot]"
+    }
+  },
+  "user_objective": {
+    "recorded_at": "[local detail omitted from GitHub snapshot]",
+    "scope": [
+      "Reliable continuously productive local agent",
+      "Python/Rust programming and application creation",
+      "Local browser applications and desktop applications without a web server",
+      "Research with long saved reports and dated citations",
+      "Bounded conversation context with durable project memory/handoffs",
+      "Metrics, instructions, current and historical test documentation"
+    ],
+    "hardware": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "policy": "[local detail omitted from GitHub snapshot]"
+  },
+  "capability_ladder": {
+    "policy": "[local detail omitted from GitHub snapshot]",
+    "steps": [
+      {
+        "level": 0,
+        "task": "[local detail omitted from GitHub snapshot]",
+        "status": "Previous a024d2 native default/sampler pass; inference parameters unchanged, new69f742 harness native receipts pending",
+        "report": "docs/agent-default-native-validation.json",
+        "seconds": 70.77
+      },
+      {
+        "level": 1,
+        "task": "[local detail omitted from GitHub snapshot]",
+        "case": "labels",
+        "limit_seconds": null,
+        "status": "Previous a024d2 fresh labels passed82.22s/12tests/4independent; repeat after new69f742 guard before fresh qualification",
+        "observation_policy": "until_terminal",
+        "report": "docs/native-labels-20261011T220744197570Z.json",
+        "job": "ef18e974b8de464eae0518b16d1aa40a",
+        "seconds": 82.22,
+        "project_tests": 12,
+        "independent_checks": 4
+      },
+      {
+        "level": 2,
+        "task": "[local detail omitted from GitHub snapshot]",
+        "case": "inventory",
+        "status": "interrupted for diagnosed immutable-file violation loop, not a clock cutoff; incomplete saved source failed1of5 independent cases and own-test requirement",
+        "report": "docs/native-inventory-20261011T221015281838Z.json",
+        "seconds": 3678.57,
+        "job": "23da82d91fbe4a638f46465295e866e0"
+      },
+      {
+        "level": 3,
+        "task": "[local detail omitted from GitHub snapshot]",
+        "case": "ranges",
+        "status": "blocked on smaller cases passing"
+      },
+      {
+        "level": 4,
+        "task": "[local detail omitted from GitHub snapshot]",
+        "status": "requirements/independent checks to freeze after earlier levels"
+      },
+      {
+        "level": 5,
+        "task": "[local detail omitted from GitHub snapshot]",
+        "status": "verify available GUI runtime, then freeze real window/interaction checks"
+      },
+      {
+        "level": 6,
+        "task": "[local detail omitted from GitHub snapshot]",
+        "status": "freeze citation/source/coverage/output checks"
+      },
+      {
+        "level": 7,
+        "task": "[local detail omitted from GitHub snapshot]",
+        "status": "freeze workflow gates after individual skills pass"
+      }
+    ]
+  },
+  "research_sources": [
+    {
+      "url": "https://aider.chat/docs/repomap.html",
+      "finding": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "url": "https://docs.openhands.dev/sdk/guides/convo-persistence",
+      "finding": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "url": "https://github.com/langchain-ai/deepagents/blob/main/libs/ARCHITECTURE.md",
+      "finding": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "url": "https://mini-swe-agent.com/latest/reference/agents/default/",
+      "finding": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "url": "https://github.com/OpenHands/software-agent-sdk/blob/main/openhands-sdk/openhands/sdk/conversation/stuck_detector.py",
+      "finding": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "url": "https://github.com/OpenHands/software-agent-sdk/issues/762",
+      "finding": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "run_policy": {
+    "user_instruction": "[local detail omitted from GitHub snapshot]",
+    "aggregate_deadline_seconds": null,
+    "observer_option": "[local detail omitted from GitHub snapshot]",
+    "signals": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "guards_retained": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "interpretation": "[local detail omitted from GitHub snapshot]",
+    "candidate_defaults": "[local detail omitted from GitHub snapshot]",
+    "installed_defaults": "[local detail omitted from GitHub snapshot]",
+    "pending_api_default": null
+  },
+  "capability_summary": "[local detail omitted from GitHub snapshot]",
+  "performance_observations": "[local detail omitted from GitHub snapshot]",
+  "handoff": "docs/RESUME_HERE.md",
+  "observed_pending_diagnostics": [
+    {
+      "issue": "[local detail omitted from GitHub snapshot]",
+      "native_job": "[local detail omitted from GitHub snapshot]",
+      "policy": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "issue": "[local detail omitted from GitHub snapshot]",
+      "report": "docs/continuous-native-disk-observations.json",
+      "policy": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "issue": "[local detail omitted from GitHub snapshot]",
+      "native_job": "[local detail omitted from GitHub snapshot]",
+      "policy": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "pending_collection_review_candidate": {
+    "stage": "[local detail omitted from GitHub snapshot]",
+    "status": "DEPLOYED; staged481 and production481 passed",
+    "regressions": 481,
+    "report": "docs/completion-continuity-production-validation.json",
+    "validation": "[local detail omitted from GitHub snapshot]",
+    "scope": "Isolated harness regression tests and read-only replay of existing public native events; no current native coding qualification or measured speed multiplier. Candidate NOT DEPLOYED while inventory remains active.",
+    "changes": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "runtime_sha256": "a024d24712e615b0f3a0884624b90c6316986d9ddf31d2e1ddc75dc95b65ccfd",
+    "backup": "[local detail omitted from GitHub snapshot]"
+  },
+  "continuous_clients": {
+    "started_at": "2026-10-11T21:56:05.929005+00:00",
+    "status": "passed",
+    "passed": true,
+    "scope": "Client/observer defaults installed after 470 staged tests. No running app/model/product/config changes or restart. Existing native task retains its frozen runtime and already-continuous request. Production client/observer harness regressions pass; API/server default update remains staged.",
+    "backup": "[local detail omitted from GitHub snapshot]",
+    "runtime_sha256_before": "90c14ea967a2f3c827b1598e2023bda1f48337ad9e08ff3829195592d93c327d",
+    "runtime_sha256_after": "90c14ea967a2f3c827b1598e2023bda1f48337ad9e08ff3829195592d93c327d",
+    "active_job_before": "[local detail omitted from GitHub snapshot]",
+    "active_job_after": "[local detail omitted from GitHub snapshot]",
+    "changes": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "checks": {
+      "470_staged_regressions_passed": true,
+      "runtime_unchanged": true,
+      "active_job_unchanged": true,
+      "no_restart": true
+    },
+    "production_regressions": {
+      "passed": 460,
+      "seconds": 39.557,
+      "report": "docs/validation/runs/20261011T215605987348Z.json"
+    }
+  },
+  "completion_receipt_diagnosis": {
+    "native_job": "[local detail omitted from GitHub snapshot]",
+    "saved_files_all_checks_pass": true,
+    "native_complete": false,
+    "operator_interventions": 0,
+    "latest_test_sources_still_match": true,
+    "cause": "[local detail omitted from GitHub snapshot]",
+    "stage_witness": "[local detail omitted from GitHub snapshot]",
+    "fix": "[local detail omitted from GitHub snapshot]",
+    "focused_passes": 56,
+    "prefill_seconds": 3205.134,
+    "decode_seconds": 463.794,
+    "timing_limit": "[local detail omitted from GitHub snapshot]"
+  },
+  "pending_preserved_file_guard": {
+    "stage": "[local detail omitted from GitHub snapshot]",
+    "status": "DEPLOYED; production488 passed",
+    "files": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "native_issue": "[local detail omitted from GitHub snapshot]",
+    "scope": "Direct write_file/apply_patch on literal user keep/leave unchanged paths; read/new file/different goal editing remain. Not an OS permission boundary and not universal shell protection.",
+    "red": "[local detail omitted from GitHub snapshot]",
+    "green": "[local detail omitted from GitHub snapshot]",
+    "next": "[local detail omitted from GitHub snapshot]",
+    "report": "docs/preserved-files-production-validation.json",
+    "runtime_sha256": "69f742f02f6ebbc7be60a5a791cd379430ae34c9b6469fef001d429e3df31462",
+    "backup": "[local detail omitted from GitHub snapshot]"
+  },
+  "current_runtime_sha256": "8c7b4485111cffa278e051a76315d844efc903fcaa8145ed12711444eff09a79",
+  "current_regressions": 510,
+  "memory_tuning": {
+    "status": "deployed startup 4.5 GiB; native startup passed; protection 1.5 GiB remains",
+    "startup_before_gib": 6.0,
+    "startup_candidate_gib": 4.5,
+    "running_floor_gib": 1.5,
+    "pressure_seconds": 6,
+    "backup": "[local detail omitted from GitHub snapshot]",
+    "authorization": "[local detail omitted from GitHub snapshot]",
+    "focused_checks": 19,
+    "prior_failure_log": "[local detail omitted from GitHub snapshot]",
+    "focused_log": "[local detail omitted from GitHub snapshot]",
+    "previous_runtime_sha256": "69f742f02f6ebbc7be60a5a791cd379430ae34c9b6469fef001d429e3df31462",
+    "runtime_sha256": "c5468637b99fc42e7437b92eae91ca4099a7a936ac35132e1abdfc839b7a2535",
+    "regressions": 490,
+    "report": "docs/startup-headroom-validation.json",
+    "native_report": "docs/native-resume-inventory-20261011T231028623521Z.json",
+    "available_ram_latest_gib": 5.254,
+    "min_observed_available_ram_gib": 4.94,
+    "native_status": "[local detail omitted from GitHub snapshot]",
+    "minimum_observed_ram_gib": 4.94
+  },
+  "resource_blocker_previous": {
+    "job": "23da82d91fbe4a638f46465295e866e0",
+    "reason": "[local detail omitted from GitHub snapshot]",
+    "available_ram_gib_latest": 5.8,
+    "required_startup_ram_gib": 6,
+    "running_model_process": false,
+    "unrelated_apps_changed": false,
+    "interpretation": "[local detail omitted from GitHub snapshot]"
+  },
+  "pending_failure_cache_fix": {
+    "status": "deployed; 491 production controls pass; native retest pending",
+    "stage": "[local detail omitted from GitHub snapshot]",
+    "reason": "[local detail omitted from GitHub snapshot]",
+    "plan": "[local detail omitted from GitHub snapshot]",
+    "red_log": "[local detail omitted from GitHub snapshot]",
+    "focused_log": "[local detail omitted from GitHub snapshot]",
+    "regressions": 491,
+    "report": "docs/failure-cache-staged-validation.json",
+    "candidate_runtime_sha256": "baf0c8ea6d9e5ce9dbfeaf22b19424c2ccc2c122336663823d1fbe492d782455",
+    "backup": "[local detail omitted from GitHub snapshot]",
+    "production_report": "docs/failure-cache-production-validation.json",
+    "runtime_sha256": "baf0c8ea6d9e5ce9dbfeaf22b19424c2ccc2c122336663823d1fbe492d782455"
+  },
+  "pending_rejected_final_cache_fix": {
+    "status": "deployed; 499 production regressions pass; native ladder pending",
+    "stage": "[local detail omitted from GitHub snapshot]",
+    "reason": "[local detail omitted from GitHub snapshot]",
+    "constraint": "[local detail omitted from GitHub snapshot]",
+    "focused_log": "[local detail omitted from GitHub snapshot]",
+    "red_log": "[local detail omitted from GitHub snapshot]",
+    "initial_full_stage_report": "run/staging/rejected-final-cache/docs/validation/runs/20261012T000541088428Z.json",
+    "combined_log": "[local detail omitted from GitHub snapshot]",
+    "backup": "[local detail omitted from GitHub snapshot]",
+    "report": "docs/rejected-final-cache-production-validation.json"
+  },
+  "inventory_post_pass_audit": {
+    "passed": false,
+    "report": "docs/inventory-additional-goal-audit-validation.json",
+    "defects": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ]
+  },
+  "additional_inventory_criteria": {
+    "declared_before_next_native": "[local detail omitted from GitHub snapshot]",
+    "withheld_checks": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "operator_implementation_or_live_hints": false
+  },
+  "native_current_default_labels": {
+    "report": "docs/native-labels-20261012T003737891526Z.json",
+    "runtime_sha256": "761df7c63e0a7135f723db74138a20cf22ce9c7c8f9b468c7d4769e57c1ba2e1",
+    "passed": true,
+    "seconds": 163.46,
+    "project_tests": 12,
+    "independent_checks": 4,
+    "effort": "[local detail omitted from GitHub snapshot]",
+    "operator_interventions": []
+  },
+  "inventory_current_failure": {
+    "report": "docs/native-inventory-20261012T004058226417Z.json",
+    "seconds": 775.61,
+    "project_tests": 8,
+    "passed_withheld": 6,
+    "failed_withheld": 1,
+    "cause": "[local detail omitted from GitHub snapshot]",
+    "operator_model_edits": false
+  },
+  "pending_walk_api_evidence": {
+    "stage": "[local detail omitted from GitHub snapshot]",
+    "status": "deployed; 23 focused,504 staged,504 production PASS; native behavior retest pending",
+    "scope": "Generic Python API facts only when inspected code calls os.walk without an error callback; no task-specific paths, tests or implementation supplied",
+    "red_log": "[local detail omitted from GitHub snapshot]",
+    "focused_log": "[local detail omitted from GitHub snapshot]",
+    "backup": "[local detail omitted from GitHub snapshot]",
+    "stage_report": "run/staging/walk-api-evidence/docs/validation/runs/20261012T003247554444Z.json",
+    "runtime_sha256": "761df7c63e0a7135f723db74138a20cf22ce9c7c8f9b468c7d4769e57c1ba2e1",
+    "production_report": "docs/validation/runs/20261012T003625498420Z.json",
+    "report": "docs/walk-api-evidence-production-validation.json"
+  },
+  "active_evaluation_notes": null,
+  "pending_api_completion_review": {
+    "stage": "[local detail omitted from GitHub snapshot]",
+    "status": "deployed;31focused/12observerfixture/510staged/510production PASS; native effectiveness pending",
+    "scope": "Refresh bounded generic source API facts at final goal review, keep prefix and full original goal; no fixed task code or algorithm/live hints",
+    "focused_log": "[local detail omitted from GitHub snapshot]",
+    "red_log": "[local detail omitted from GitHub snapshot]",
+    "staging_log": "[local detail omitted from GitHub snapshot]",
+    "stage_setup_failure": "[local detail omitted from GitHub snapshot]",
+    "backup": "[local detail omitted from GitHub snapshot]",
+    "stage_report": "run/staging/api-completion-review/docs/validation/runs/20261012T010222340102Z.json",
+    "runtime_sha256": "8c7b4485111cffa278e051a76315d844efc903fcaa8145ed12711444eff09a79",
+    "production_report": "docs/validation/runs/20261012T010411771609Z.json",
+    "report": "docs/api-completion-review-production-validation.json"
+  },
+  "last_goal_audit": {
+    "passed": false,
+    "report": "docs/labels-additional-goal-audit-validation.json"
+  },
+  "minimal_baseline": {
+    "status": "labels_pass_inventory_fail",
+    "reports": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "next": "[local detail omitted from GitHub snapshot]",
+    "grammar_outcome": {
+      "labels_passed": true,
+      "inventory_passed": false,
+      "inventory_seconds": 495.77,
+      "inventory_project_tests": 7,
+      "inventory_independent_passes": "[local detail omitted from GitHub snapshot]",
+      "format_failures": 0,
+      "report": "docs/minimal-inventory-20261012T014030513755Z.json"
+    }
+  },
+  "staged_test_authority": {
+    "status": "528 controls pass; not deployed",
+    "stage": "[local detail omitted from GitHub snapshot]",
+    "report": "run/staging/test-authority/docs/validation/runs/20261012T013613036907Z.json"
+  },
+  "pending_completion_quality": {
+    "stage": "[local detail omitted from GitHub snapshot]",
+    "status": "Full final staging checks running",
+    "changes": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "production_changed": false
+  }
+}

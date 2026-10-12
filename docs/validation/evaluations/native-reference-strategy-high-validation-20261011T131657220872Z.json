@@ -1,0 +1,65 @@
+{
+  "at": "2026-10-11T13:14:54.758392+00:00",
+  "status": "complete",
+  "deadline_seconds": 600,
+  "scope": "Same prior source-free prompt, Chat/high/2048, local GPT-OSS-20B nativeMXFP4. Shape/timing diagnostic, not code implementation or qualification.",
+  "execution": {
+    "reasoning_effort": "high",
+    "max_tokens": 2048
+  },
+  "baseline": "[local detail omitted from GitHub snapshot]",
+  "metrics": [
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 236,
+        "reused_tokens": 0,
+        "exact_history_cache_tokens": 0,
+        "cache_saved_prefill_tokens": 0,
+        "reasoning_effort": "high"
+      }
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 8.753774,
+        "decode_seconds": 66.696995,
+        "prefill_tokens": 236,
+        "decode_tokens": 2048,
+        "total_seconds": 75.45,
+        "backend": "llama.cpp-native-mxfp4",
+        "prefill_tokens_per_s": 26.959800424365536,
+        "decode_tokens_per_s": 30.706031058820564,
+        "completion_tokens": 2048,
+        "prompt_tokens": 236,
+        "canonical_prompt_tokens": 236,
+        "exact_history_cache_tokens": 0,
+        "cache_saved_prefill_tokens": 0,
+        "reasoning_effort": "high"
+      }
+    }
+  ],
+  "model_changed": false,
+  "backend": "llama.cpp-native-mxfp4",
+  "model_pid": 701205,
+  "load_seconds": 46.17,
+  "prompt": "[local detail omitted from GitHub snapshot]",
+  "reason": "[local detail omitted from GitHub snapshot]",
+  "final": "[local detail omitted from GitHub snapshot]",
+  "words": 0,
+  "checks": {
+    "complete_public_response": false,
+    "within_word_limit": false,
+    "within_deadline": true
+  },
+  "passed": false,
+  "assessment_note": "[local detail omitted from GitHub snapshot]",
+  "elapsed_seconds": 122.46,
+  "archive_metadata": {
+    "source": "native-reference-strategy-high-validation.json",
+    "kind": "native",
+    "title": "Native-MXFP4 reference: source-free diagnostic",
+    "scope": "Same prior source-free prompt, Chat/high/2048, local GPT-OSS-20B nativeMXFP4. Shape/timing diagnostic, not code implementation or qualification.",
+    "source_sha256": "59a7eca1a6dc7138531b5f27461045ff8b6950b5bae9dcc7a0972e750d7604e2"
+  }
+}

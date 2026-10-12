@@ -1,0 +1,55 @@
+{
+  "title": "Moderate source retention repair",
+  "started_at": "2026-10-11T17:30:39.253989+00:00",
+  "passed": true,
+  "scope": "Source/evidence projection only. Unchanged model precision/context/output reserves/shared8K source budget. Native independent coding quality remains unqualified.",
+  "diagnosis": "[local detail omitted from GitHub snapshot]",
+  "changes": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "focused_before": "[local detail omitted from GitHub snapshot]",
+  "focused_after": "[local detail omitted from GitHub snapshot]",
+  "stage": "[local detail omitted from GitHub snapshot]",
+  "implementation_files": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "native_trial_pending": false,
+  "stage_full": {
+    "passed": true,
+    "tests": 363,
+    "seconds": 23.106,
+    "report": "run/staging/source-window/docs/validation/runs/20261011T173038086437Z.json"
+  },
+  "extra_harmony_test": "[local detail omitted from GitHub snapshot]",
+  "backup": "[local detail omitted from GitHub snapshot]",
+  "deployed_files": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "production_full": {
+    "passed": true,
+    "tests": 364,
+    "seconds": 23.276,
+    "report": "docs/validation/runs/20261011T173213362348Z.json"
+  },
+  "syntax_passed": true,
+  "license_inventory": "[local detail omitted from GitHub snapshot]",
+  "runtime_sha256": "2ac0f93c6ffe8e8f3e4970389581111f94303168fe2e5894518464697daebe39",
+  "restart_ready": true,
+  "native_quality_passed": false,
+  "native_quality_report": "docs/validation/evaluations/precision-repair-retest-validation-20261011T174850224920Z.json",
+  "native_quality_summary": "[local detail omitted from GitHub snapshot]",
+  "disposition": "[local detail omitted from GitHub snapshot]"
+}

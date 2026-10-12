@@ -1,0 +1,5 @@
+#!/bin/sh
+# SPDX-License-Identifier: Apache-2.0
+TD_PYTEST_TMP=/mnt/GameDrive/tiny_dancer/run/pytest-tmp
+mkdir -p "$TD_PYTEST_TMP" || exit 1
+TMPDIR="$TD_PYTEST_TMP" exec /mnt/GameDrive/tiny_dancer/.venv/bin/python -m pytest "$@"

@@ -1,0 +1,19 @@
+{
+  "passed": false,
+  "checked_at": "[local detail omitted from GitHub snapshot]",
+  "scope": "Actual upstream CLI against scripted local endpoint, not native inference",
+  "failure": "[local detail omitted from GitHub snapshot]",
+  "logs": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "expected_requests": 2,
+  "observed_requests": 3,
+  "archive_metadata": {
+    "source": "pi-preflight-initial-validation.json",
+    "kind": "integration",
+    "title": "pi-preflight-initial",
+    "scope": "Actual upstream CLI against scripted local endpoint, not native inference",
+    "source_sha256": "90e8881db485a3c05b923ff3b64739f51830e0766ffdf4919cba8f9ca9584d2e"
+  }
+}

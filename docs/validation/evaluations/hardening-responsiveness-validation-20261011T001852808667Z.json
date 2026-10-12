@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-11T00:18:52.808276+00:00",
+  "status": "passed",
+  "passed": true,
+  "scope": "Read-only localhost requests while native CSV generation is active. No task started/resumed/stopped or model hints. Point observation, not proof that every desktop freeze is solved.",
+  "job": "088a09a3b18c42c4ba1d5cb478d5d2f0",
+  "endpoints": [
+    {
+      "path": "/api/status",
+      "requests": 10,
+      "median_seconds": 0.002068,
+      "maximum_seconds": 0.002481
+    },
+    {
+      "path": "/api/jobs/088a09a3b18c42c4ba1d5cb478d5d2f0/progress",
+      "requests": 10,
+      "median_seconds": 0.001736,
+      "maximum_seconds": 0.002407
+    },
+    {
+      "path": "/api/test-results",
+      "requests": 10,
+      "median_seconds": 0.010924,
+      "maximum_seconds": 0.011566
+    }
+  ],
+  "checks": {
+    "same_native_job_remained_active": true,
+    "all_requests_succeeded": true,
+    "each_endpoint_maximum_below_one_second": true
+  },
+  "available_ram_gib": 5.057,
+  "engine": "generating",
+  "archive_metadata": {
+    "source": "hardening-responsiveness-validation.json",
+    "kind": "automated",
+    "title": "Local interface responsiveness during native coding",
+    "scope": "Read-only localhost requests while native CSV generation is active. No task started/resumed/stopped or model hints. Point observation, not proof that every desktop freeze is solved.",
+    "source_sha256": "b360784884869c6a6abb253381e9959dfd3838ff8045149f5b88f5a0b7c1c26f"
+  }
+}

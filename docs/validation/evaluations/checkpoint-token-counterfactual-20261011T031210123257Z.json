@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-11T03:11:39.424078+00:00",
+  "scope": "Counterfactual Harmony tokenizer and scripted session only; no native generation, no live task mutation, not a speed benchmark.",
+  "before_rolled_prompt_tokens": 5381,
+  "before_reused_tokens": 1009,
+  "before_reprocessed_tokens": 4372,
+  "staged_compacted_prompt_tokens": 3796,
+  "reserved_output_tokens": 2048,
+  "context": 8192,
+  "fits": true,
+  "goal_preserved": true,
+  "current_source_retained": true,
+  "passed": true,
+  "status": "passed",
+  "archive_metadata": {
+    "source": "checkpoint-token-counterfactual.json",
+    "kind": "automated",
+    "title": "Staged checkpoint input cost and evidence retention",
+    "scope": "Counterfactual Harmony tokenizer and scripted session only; no native generation, no live task mutation, not a speed benchmark.",
+    "source_sha256": "7f52f9d4e54b809cfb401a2de448a590c25e57e95e10e1ff0b0a692dda2ac9da"
+  }
+}

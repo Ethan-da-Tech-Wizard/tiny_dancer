@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-10T23:25:18.594579+00:00",
+  "errors": [],
+  "checks": {
+    "unauthenticated_results_denied": true,
+    "unknown_evidence_denied": true,
+    "all_evidence_links_work": true,
+    "past_failure_kept": true,
+    "missing_export_kept": true,
+    "latest_suite_passes": true,
+    "results_render_all_rows": true,
+    "results_desktop_no_overflow": true,
+    "results_mobile_no_overflow": true,
+    "saved_text_cannot_execute_markup": true,
+    "sidebar_results_link": true,
+    "no_javascript_errors": true
+  },
+  "results_count": 34,
+  "passed": true,
+  "archive_metadata": {
+    "source": "results-ui-validation.json",
+    "kind": "automated",
+    "title": "Results page and authentication",
+    "scope": "Live browser assertions; no model task actions.",
+    "source_sha256": "094035f381bd21df58cd42f750bb3ba49b2e2c8f817c4eeec52d1342f5340424"
+  }
+}

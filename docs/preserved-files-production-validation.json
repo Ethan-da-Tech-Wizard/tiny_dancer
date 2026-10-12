@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-10-11T22:44:41.127909+00:00",
+  "status": "passed",
+  "scope": "Explicit literal preserved-path constraint for direct file writes/patches. No model/inference/dependency changes, no task-specific implementation supplied. Continuous defaults retained.",
+  "backup": "[local detail omitted from GitHub snapshot]",
+  "runtime_sha256_before": "a024d24712e615b0f3a0884624b90c6316986d9ddf31d2e1ddc75dc95b65ccfd",
+  "runtime_sha256_after": "69f742f02f6ebbc7be60a5a791cd379430ae34c9b6469fef001d429e3df31462",
+  "staged_regressions": 488,
+  "production_regressions": {
+    "passed": 488,
+    "seconds": 39.854,
+    "report": "docs/validation/runs/20261011T224442158694Z.json"
+  },
+  "native_quality": "[local detail omitted from GitHub snapshot]",
+  "passed": true,
+  "checks": {
+    "guarded_idle_restart": true,
+    "production_regressions_passed": true,
+    "defaults_continuous_retained": true
+  }
+}

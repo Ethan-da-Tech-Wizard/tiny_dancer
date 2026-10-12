@@ -1,0 +1,37 @@
+{
+  "title": "Explicit remaining work and readable completion evidence",
+  "status": "complete",
+  "passed": true,
+  "started_at": "2026-10-11T19:06:38.630168+00:00",
+  "finished_at": "2026-10-11T19:06:38.630168+00:00",
+  "scope": "399 regression fixtures and actual local tool executions; no native generation. Native completion qualification remains pending.",
+  "runtime_sha256": "3a24f50f5d124979334ff151933a3fe9ae747f769704706af8922542dc7232f5",
+  "regression_report": "docs/validation/runs/20261011T190513615087Z.json",
+  "native_quality_qualified": false,
+  "native_evaluation_pending": false,
+  "checks": {
+    "passing_checks_name_unmet_requirement": true,
+    "new_tests_required_before_completion": true,
+    "checkpoint_latest_actual_pass_retained": true,
+    "edits_invalidate_passing_receipt": true,
+    "artifact_reference_readable": true,
+    "artifact_escape_rejected": true,
+    "observations_excluded_from_product_hashes": true,
+    "library_notes_parsed_without_execution": true,
+    "full_4096_action_reserve": true,
+    "all_399_regressions": true
+  },
+  "failed_reports": [
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "logs": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "documentation": "[local detail omitted from GitHub snapshot]",
+  "backup": "[local detail omitted from GitHub snapshot]",
+  "native_report": "docs/precision-repair-retest-validation.json",
+  "native_outcome": "[local detail omitted from GitHub snapshot]"
+}

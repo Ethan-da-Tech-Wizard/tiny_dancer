@@ -1,0 +1,79 @@
+{
+  "at": 1791666861.9842358,
+  "checks": [
+    {
+      "language": "[local detail omitted from GitHub snapshot]",
+      "args": {
+        "action": "[local detail omitted from GitHub snapshot]",
+        "package": "[local detail omitted from GitHub snapshot]",
+        "version": "0.28.1"
+      },
+      "ok": true,
+      "seconds": 0.001,
+      "source": "https://pypi.org/pypi/httpx/0.28.1/json",
+      "artifact": "[local detail omitted from GitHub snapshot]",
+      "cached": true,
+      "dependencies_count": 12,
+      "text_chars": 0
+    },
+    {
+      "language": "[local detail omitted from GitHub snapshot]",
+      "args": {
+        "action": "[local detail omitted from GitHub snapshot]",
+        "package": "[local detail omitted from GitHub snapshot]",
+        "version": "1.0.219"
+      },
+      "ok": true,
+      "seconds": 0.0,
+      "source": "https://crates.io/api/v1/crates/serde/1.0.219",
+      "artifact": "[local detail omitted from GitHub snapshot]",
+      "cached": true,
+      "dependencies_count": 3,
+      "text_chars": 0
+    },
+    {
+      "language": "[local detail omitted from GitHub snapshot]",
+      "args": {
+        "action": "[local detail omitted from GitHub snapshot]",
+        "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text"
+      },
+      "ok": true,
+      "seconds": 0.026,
+      "source": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+      "artifact": "[local detail omitted from GitHub snapshot]",
+      "cached": true,
+      "dependencies_count": 0,
+      "text_chars": 335
+    },
+    {
+      "language": "[local detail omitted from GitHub snapshot]",
+      "args": {
+        "action": "[local detail omitted from GitHub snapshot]",
+        "url": "https://doc.rust-lang.org/stable/std/result/enum.Result.html#method.unwrap"
+      },
+      "ok": true,
+      "seconds": 0.02,
+      "source": "https://doc.rust-lang.org/stable/std/result/enum.Result.html#method.unwrap",
+      "artifact": "[local detail omitted from GitHub snapshot]",
+      "cached": true,
+      "dependencies_count": 0,
+      "text_chars": 689
+    },
+    {
+      "language": "[local detail omitted from GitHub snapshot]",
+      "args": {
+        "action": "[local detail omitted from GitHub snapshot]",
+        "path": "/mnt/GameDrive/tiny_dancer"
+      },
+      "ok": true,
+      "seconds": 0.001,
+      "source": "/mnt/GameDrive/tiny_dancer/requirements.lock.txt",
+      "artifact": "[local detail omitted from GitHub snapshot]",
+      "cached": null,
+      "dependencies_count": 0,
+      "text_chars": 0
+    }
+  ],
+  "passed": true,
+  "scope": "Actual lookup HTTP/file handlers, not a native GPT-OSS end-to-end coding run."
+}

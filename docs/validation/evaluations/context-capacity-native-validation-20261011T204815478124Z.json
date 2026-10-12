@@ -1,0 +1,235 @@
+{
+  "started_at": "2026-10-11T20:46:40.257393+00:00",
+  "status": "complete",
+  "passed": true,
+  "scope": "Actual local GPT-OSS final and native token/memory receipts for a prompt longer than8192. This is a long-context retrieval smoke, not a coding qualification, speed claim or general quality proof.",
+  "observation_seconds": 180,
+  "expected": "[local detail omitted from GitHub snapshot]",
+  "samples": [
+    {
+      "elapsed_seconds": 0.1,
+      "available_ram_gib": 6.937652587890625,
+      "free_vram_mib": 7842.0
+    },
+    {
+      "elapsed_seconds": 2.17,
+      "available_ram_gib": 6.683376312255859,
+      "free_vram_mib": 7696.0
+    },
+    {
+      "elapsed_seconds": 4.42,
+      "available_ram_gib": 6.744663238525391,
+      "free_vram_mib": 7696.0
+    },
+    {
+      "elapsed_seconds": 9.76,
+      "available_ram_gib": 6.724189758300781,
+      "free_vram_mib": 7696.0
+    },
+    {
+      "elapsed_seconds": 16.52,
+      "available_ram_gib": 6.728199005126953,
+      "free_vram_mib": 7696.0
+    },
+    {
+      "elapsed_seconds": 22.59,
+      "available_ram_gib": 6.731868743896484,
+      "free_vram_mib": 7696.0
+    },
+    {
+      "elapsed_seconds": 28.84,
+      "available_ram_gib": 6.724617004394531,
+      "free_vram_mib": 7696.0
+    },
+    {
+      "elapsed_seconds": 33.36,
+      "available_ram_gib": 6.730510711669922,
+      "free_vram_mib": 3218.0
+    },
+    {
+      "elapsed_seconds": 38.36,
+      "available_ram_gib": 6.728790283203125,
+      "free_vram_mib": 3218.0
+    },
+    {
+      "elapsed_seconds": 42.33,
+      "available_ram_gib": 6.644950866699219,
+      "free_vram_mib": 2266.0
+    },
+    {
+      "elapsed_seconds": 44.97,
+      "available_ram_gib": 6.6428375244140625,
+      "free_vram_mib": 2266.0
+    },
+    {
+      "elapsed_seconds": 47.06,
+      "available_ram_gib": 6.645030975341797,
+      "free_vram_mib": 2266.0
+    },
+    {
+      "elapsed_seconds": 49.16,
+      "available_ram_gib": 6.625526428222656,
+      "free_vram_mib": 2264.0
+    },
+    {
+      "elapsed_seconds": 51.25,
+      "available_ram_gib": 6.50677490234375,
+      "free_vram_mib": 2244.0
+    },
+    {
+      "elapsed_seconds": 53.33,
+      "available_ram_gib": 6.523490905761719,
+      "free_vram_mib": 2244.0
+    },
+    {
+      "elapsed_seconds": 55.41,
+      "available_ram_gib": 6.49542236328125,
+      "free_vram_mib": 2244.0
+    },
+    {
+      "elapsed_seconds": 57.51,
+      "available_ram_gib": 6.505428314208984,
+      "free_vram_mib": 2244.0
+    },
+    {
+      "elapsed_seconds": 59.61,
+      "available_ram_gib": 6.487308502197266,
+      "free_vram_mib": 2234.0
+    },
+    {
+      "elapsed_seconds": 61.7,
+      "available_ram_gib": 6.497600555419922,
+      "free_vram_mib": 2228.0
+    },
+    {
+      "elapsed_seconds": 63.77,
+      "available_ram_gib": 6.492679595947266,
+      "free_vram_mib": 2228.0
+    },
+    {
+      "elapsed_seconds": 65.84,
+      "available_ram_gib": 6.4876708984375,
+      "free_vram_mib": 2228.0
+    },
+    {
+      "elapsed_seconds": 67.92,
+      "available_ram_gib": 6.472141265869141,
+      "free_vram_mib": 2228.0
+    },
+    {
+      "elapsed_seconds": 69.99,
+      "available_ram_gib": 6.460193634033203,
+      "free_vram_mib": 2228.0
+    },
+    {
+      "elapsed_seconds": 72.07,
+      "available_ram_gib": 6.464653015136719,
+      "free_vram_mib": 2228.0
+    },
+    {
+      "elapsed_seconds": 74.14,
+      "available_ram_gib": 6.482887268066406,
+      "free_vram_mib": 2228.0
+    },
+    {
+      "elapsed_seconds": 76.22,
+      "available_ram_gib": 6.4650421142578125,
+      "free_vram_mib": 2228.0
+    },
+    {
+      "elapsed_seconds": 78.3,
+      "available_ram_gib": 6.463657379150391,
+      "free_vram_mib": 2228.0
+    },
+    {
+      "elapsed_seconds": 80.38,
+      "available_ram_gib": 6.460117340087891,
+      "free_vram_mib": 2228.0
+    },
+    {
+      "elapsed_seconds": 82.46,
+      "available_ram_gib": 6.4643707275390625,
+      "free_vram_mib": 2228.0
+    },
+    {
+      "elapsed_seconds": 84.55,
+      "available_ram_gib": 6.466091156005859,
+      "free_vram_mib": 2228.0
+    },
+    {
+      "elapsed_seconds": 86.63,
+      "available_ram_gib": 6.460964202880859,
+      "free_vram_mib": 2228.0
+    },
+    {
+      "elapsed_seconds": 88.71,
+      "available_ram_gib": 6.465065002441406,
+      "free_vram_mib": 2228.0
+    },
+    {
+      "elapsed_seconds": 90.79,
+      "available_ram_gib": 6.451148986816406,
+      "free_vram_mib": 2228.0
+    },
+    {
+      "elapsed_seconds": 92.9,
+      "available_ram_gib": 6.472625732421875,
+      "free_vram_mib": 2228.0
+    },
+    {
+      "elapsed_seconds": 95.0,
+      "available_ram_gib": 6.462982177734375,
+      "free_vram_mib": 2228.0
+    }
+  ],
+  "operator_interventions": [],
+  "runtime_sha256_before": "90c14ea967a2f3c827b1598e2023bda1f48337ad9e08ff3829195592d93c327d",
+  "context": 32768,
+  "job": "11769256d7464f43991c7047893ef8f7",
+  "session": "ab6812e053df497c8bf7325bcfcc2811",
+  "finals": [
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "metrics": [
+    {
+      "prefill_seconds": 41.225118,
+      "decode_seconds": 2.156391,
+      "prefill_tokens": 9586,
+      "decode_tokens": 24,
+      "total_seconds": 43.39,
+      "backend": "llama.cpp-native-mxfp4",
+      "sampling_temperature": 1.0,
+      "sampling_top_p": 1.0,
+      "sampling_top_k": 0,
+      "sampling_min_p": 0.0,
+      "sampling_repeat_penalty": 1.0,
+      "prefill_tokens_per_s": 232.52813976178308,
+      "decode_tokens_per_s": 11.129706996551182,
+      "completion_tokens": 24,
+      "prompt_tokens": 9586,
+      "canonical_prompt_tokens": 9586,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 0,
+      "reasoning_effort": "low"
+    }
+  ],
+  "runtime_sha256_after": "90c14ea967a2f3c827b1598e2023bda1f48337ad9e08ff3829195592d93c327d",
+  "checks": {
+    "native_final_complete": true,
+    "actual_prompt_over_8192": true,
+    "native_backend": true,
+    "runtime_frozen": true,
+    "desktop_ram_reserve": true,
+    "desktop_vram_reserve": true,
+    "no_operator_intervention": true
+  },
+  "seconds": 95.07,
+  "finished_at": "2026-10-11T20:48:15.422834+00:00",
+  "archive_metadata": {
+    "source": "context-capacity-native-validation.json",
+    "kind": "native",
+    "title": "Native long-context receipt",
+    "scope": "Actual local GPT-OSS final and native token/memory receipts for a prompt longer than8192. This is a long-context retrieval smoke, not a coding qualification, speed claim or general quality proof.",
+    "source_sha256": "f6f71dd2c3206afa346446ace09c2beb67d343f1030047eae88b3fba6decc197"
+  }
+}

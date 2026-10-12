@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-11T10:53:19.405667+00:00",
+  "status": "failed",
+  "passed": false,
+  "tests_run": 2,
+  "failures": 2,
+  "errors": 0,
+  "log": "[local detail omitted from GitHub snapshot]",
+  "scope": "Removing the proposed requirement gate counterfactually causes two protective checks to fail. Not native capability or a TDD baseline."
+}

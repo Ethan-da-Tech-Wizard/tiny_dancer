@@ -1,0 +1,17 @@
+{
+  "started_at": "2026-10-11T10:38:33.314142+00:00",
+  "status": "startup_failed",
+  "scope": "Proposed independent local native review capability probe, not deployed and not a repair hint. Run only after current task is terminal. Reviewer receives original goal and source, no initial acceptance examples or unseen inputs. Before first native probe launch, verdict items clarified as strings and independent grading requires an issue about the observed numeric-capacity defect; these grader topic terms are not sent to the reviewer.",
+  "criteria_sha256": "9b1511e4f886f5ae43aabfe68071e5341cb2aaac61f6a90a9d602c22a1b2bd35",
+  "runtime_sha256_before": "c96b45453116dbb3662260082a87c6ecfa32e7bb02d5e1a761ddee3916fbf599",
+  "operator_interventions": [],
+  "cases": [],
+  "execution": {
+    "reasoning_effort": "low",
+    "max_tokens": 4096,
+    "observation_seconds": 3600
+  },
+  "passed": false,
+  "error": "[local detail omitted from GitHub snapshot]",
+  "log": "[local detail omitted from GitHub snapshot]"
+}

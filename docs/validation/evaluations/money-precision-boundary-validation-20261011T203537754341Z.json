@@ -1,0 +1,42 @@
+{
+  "title": "Declared additional exact-money boundary checks",
+  "status": "complete",
+  "passed": false,
+  "started_at": "2026-10-11T20:13:22.951765+00:00",
+  "scope": "Independent post-terminal CLI checks. No model call, live hint or product edit. Original frozen checks remain unchanged.",
+  "native_job": "[local detail omitted from GitHub snapshot]",
+  "runtime_sha256": "ebb8f9444624347dce720baa2c91fa76ffba793198d4a2b85ae13fbf27a0e62f",
+  "criteria_sha256": "95bac2818ffd553996c687b4796cc0dcd7c21cd96c9298389cec15bcdc58dda8",
+  "width": 12000,
+  "checks": {
+    "declared_before_native": true,
+    "native_complete": false,
+    "runtime_frozen": true,
+    "source_frozen": false,
+    "signed": false,
+    "total": false
+  },
+  "cases": {
+    "signed": {
+      "passed": false,
+      "exit_code": 1,
+      "stdout_chars": 0,
+      "actual_preview": "[local detail omitted from GitHub snapshot]",
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    "total": {
+      "passed": false,
+      "exit_code": 1,
+      "stdout_chars": 0,
+      "actual_preview": "[local detail omitted from GitHub snapshot]",
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    }
+  },
+  "archive_metadata": {
+    "source": "money-precision-boundary-validation.json",
+    "kind": "native",
+    "title": "Previous additional precision boundary",
+    "scope": "Independent post-terminal CLI checks. No model call, live hint or product edit. Original frozen checks remain unchanged.",
+    "source_sha256": "6ecebd2c8eb34851f42d05bc2e94ff82740db87a8d7ba16156dc567fe4732a3f"
+  }
+}

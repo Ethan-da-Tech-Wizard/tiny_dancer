@@ -1,0 +1,58 @@
+{
+  "repo": "openai/gpt-oss-20b",
+  "revision": "6cee5e81ee83917806bbde320786a8fb61efebee",
+  "files": [
+    {
+      "name": "LICENSE",
+      "size": 11357
+    },
+    {
+      "name": "README.md",
+      "size": 7095
+    },
+    {
+      "name": "USAGE_POLICY",
+      "size": 200
+    },
+    {
+      "name": "chat_template.jinja",
+      "size": 16738
+    },
+    {
+      "name": "config.json",
+      "size": 1806
+    },
+    {
+      "name": "generation_config.json",
+      "size": 177
+    },
+    {
+      "name": "model-00000-of-00002.safetensors",
+      "size": 4792272488
+    },
+    {
+      "name": "model-00001-of-00002.safetensors",
+      "size": 4798702184
+    },
+    {
+      "name": "model-00002-of-00002.safetensors",
+      "size": 4170342232
+    },
+    {
+      "name": "model.safetensors.index.json",
+      "size": 36355
+    },
+    {
+      "name": "special_tokens_map.json",
+      "size": 98
+    },
+    {
+      "name": "tokenizer.json",
+      "size": 27868174
+    },
+    {
+      "name": "tokenizer_config.json",
+      "size": 4200
+    }
+  ]
+}

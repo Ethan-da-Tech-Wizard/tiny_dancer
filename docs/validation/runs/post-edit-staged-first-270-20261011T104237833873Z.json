@@ -1,0 +1,1635 @@
+{
+  "title": "Isolated post-edit checks: first 270-test run",
+  "started_at": "2026-10-11T10:42:37.833873+00:00",
+  "status": "failed",
+  "scope": "Full isolated staging suite, concurrent with a separate native review probe. Scripted fixtures and actual computer tools; not production, native task qualification or a controlled speed benchmark.",
+  "results": [
+    {
+      "test": "tests.test_adaptive_work_allowance.AdaptiveWorkAllowanceTests.test_auto_work_retry_can_grow_after_current_initial_limit",
+      "status": "passed",
+      "seconds": 0.0134,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_adaptive_work_allowance.AdaptiveWorkAllowanceTests.test_changed_numeric_choice_resets_the_learned_allowance",
+      "status": "passed",
+      "seconds": 0.0011,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_adaptive_work_allowance.AdaptiveWorkAllowanceTests.test_larger_allowance_is_bounded_and_still_pauses_after_four_truncations",
+      "status": "passed",
+      "seconds": 0.0029,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_adaptive_work_allowance.AdaptiveWorkAllowanceTests.test_resume_restores_larger_learned_work_allowance",
+      "status": "passed",
+      "seconds": 0.001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_adaptive_work_allowance.AdaptiveWorkAllowanceTests.test_small_context_does_not_expand_past_half_capacity",
+      "status": "passed",
+      "seconds": 0.0055,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_adaptive_work_allowance.AdaptiveWorkAllowanceTests.test_smaller_resume_context_rejects_a_too_large_prior_allowance",
+      "status": "passed",
+      "seconds": 0.001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_agent.AgentLoopTests.test_alternating_unchanged_actions_pause_instead_of_spinning",
+      "status": "passed",
+      "seconds": 0.0108,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_agent.AgentLoopTests.test_chat_cannot_execute_computer_tools",
+      "status": "passed",
+      "seconds": 0.0022,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_agent.AgentLoopTests.test_continues_beyond_old_24_step_limit",
+      "status": "passed",
+      "seconds": 0.0618,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_agent.AgentLoopTests.test_failed_check_is_repaired_before_completion",
+      "status": "passed",
+      "seconds": 0.0374,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_agent.AgentLoopTests.test_final_claim_alone_cannot_complete_agent_task",
+      "status": "passed",
+      "seconds": 0.0022,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_agent.AgentLoopTests.test_pending_plan_prevents_false_completion",
+      "status": "passed",
+      "seconds": 0.0111,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_agent.AgentLoopTests.test_repeated_failure_pauses_and_checkpoint_can_resume",
+      "status": "passed",
+      "seconds": 0.0112,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_agent.AgentLoopTests.test_stop_prevents_any_further_actions",
+      "status": "passed",
+      "seconds": 0.0013,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_agent.AgentLoopTests.test_truncated_tool_call_is_never_executed",
+      "status": "passed",
+      "seconds": 0.0066,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_agent.ContextTests.test_agent_checkpoint_keeps_goal_and_saved_plan_when_history_outgrows_context",
+      "status": "passed",
+      "seconds": 0.1287,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_batching.BatchToolTests.test_automatic_manifest_and_readme_scan_skips_symlinks",
+      "status": "passed",
+      "seconds": 0.0232,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_batching.BatchToolTests.test_available_python3_command_does_not_assume_a_python_alias",
+      "status": "passed",
+      "seconds": 0.0222,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_batching.BatchToolTests.test_bounded_scan_keeps_test_runner_evidence_with_many_root_sources",
+      "status": "passed",
+      "seconds": 0.0245,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_batching.BatchToolTests.test_failed_check_stops_later_command_unless_requested",
+      "status": "passed",
+      "seconds": 0.0194,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_batching.BatchToolTests.test_inspection_bundles_common_nested_source_and_unittest_files",
+      "status": "passed",
+      "seconds": 0.0184,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_batching.BatchToolTests.test_inspection_bundles_files_and_actual_runtime_without_importing_project",
+      "status": "passed",
+      "seconds": 0.0247,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_batching.BatchToolTests.test_inspection_has_bounded_preview_full_artifact_and_individual_errors",
+      "status": "passed",
+      "seconds": 0.0266,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_batching.BatchToolTests.test_invalid_batches_do_not_execute",
+      "status": "passed",
+      "seconds": 0.0008,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_batching.BatchToolTests.test_long_shell_output_retains_actual_test_footer",
+      "status": "passed",
+      "seconds": 0.017,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_batching.BatchToolTests.test_missing_runner_reports_available_checks_without_running_replacements",
+      "status": "passed",
+      "seconds": 0.0258,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_batching.BatchToolTests.test_pytest_function_tests_do_not_receive_a_unittest_replacement",
+      "status": "passed",
+      "seconds": 0.0253,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_batching.BatchToolTests.test_real_related_checks_preserve_each_output",
+      "status": "passed",
+      "seconds": 0.0407,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_batching.BatchToolTests.test_timeout_and_cancel_stop_current_check_and_future_commands",
+      "status": "passed",
+      "seconds": 1.0579,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_batching.BatchToolTests.test_zero_test_discovery_reports_nested_runner_without_executing_it",
+      "status": "passed",
+      "seconds": 0.2412,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_batching.BatchedVerificationTests.test_file_changes_after_tests_invalidate_native_final",
+      "status": "failed",
+      "seconds": 0.3703,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_batching.BatchedVerificationTests.test_later_failure_invalidates_passing_suite",
+      "status": "passed",
+      "seconds": 0.2237,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_batching.BatchedVerificationTests.test_native_final_completes_after_actual_tests_without_finish_tool",
+      "status": "passed",
+      "seconds": 0.2107,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_batching.BatchedVerificationTests.test_pending_plan_steps_prevent_completion_after_passing_tests",
+      "status": "passed",
+      "seconds": 0.2171,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_batching.BatchedVerificationTests.test_reading_test_output_never_counts_as_running_tests",
+      "status": "passed",
+      "seconds": 0.0208,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_batching.BatchedVerificationTests.test_source_change_inside_batch_invalidates_passing_suite",
+      "status": "passed",
+      "seconds": 0.2292,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_checkpoint_evidence.CheckpointEvidenceTests.test_checkpoint_keeps_current_source_and_last_failed_tests_after_diagnostics",
+      "status": "passed",
+      "seconds": 0.0032,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_checkpoint_evidence.CheckpointRolloverTests.test_agent_overflow_requests_checkpoint_before_any_prefill",
+      "status": "passed",
+      "seconds": 0.1097,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_checkpoint_selection.CheckpointSelectionTests.test_aliases_do_not_use_both_snapshot_slots",
+      "status": "passed",
+      "seconds": 0.0005,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_checkpoint_selection.CheckpointSelectionTests.test_changed_implementation_survives_later_diagnostic_reads",
+      "status": "passed",
+      "seconds": 0.0016,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_checkpoint_selection.CheckpointSelectionTests.test_external_source_cannot_steal_valid_document_slots",
+      "status": "passed",
+      "seconds": 0.0005,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_checkpoint_selection.CheckpointSelectionTests.test_plain_documents_keep_recent_observations",
+      "status": "passed",
+      "seconds": 0.0007,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_checkpoint_selection.CheckpointSelectionTests.test_test_reads_keep_implementation_and_actual_failing_test",
+      "status": "passed",
+      "seconds": 0.0004,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_coding_acceptance.IndependentCodingAcceptanceTests.test_default_decimal_precision_bug_is_caught_by_unseen_large_amount",
+      "status": "passed",
+      "seconds": 0.3038,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_coding_acceptance.IndependentCodingAcceptanceTests.test_exact_integer_cents_cli_passes_all_acceptance_cases",
+      "status": "passed",
+      "seconds": 0.2805,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_completion.CompletionTests.test_checked_score_data_published_once_without_second_inference",
+      "status": "passed",
+      "seconds": 0.0271,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_completion.CompletionTests.test_draft_alongside_tool_call_is_not_saved_as_final",
+      "status": "passed",
+      "seconds": 0.0016,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_completion.CompletionTests.test_factual_answer_finishes_without_shell_loop",
+      "status": "passed",
+      "seconds": 0.0021,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_completion.CompletionTests.test_inference_deadline_cancels_engine_and_pauses",
+      "status": "passed",
+      "seconds": 0.0235,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_completion.CompletionTests.test_turn_budget_saves_progress_without_restarting_loop",
+      "status": "passed",
+      "seconds": 0.0065,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_completion.CompletionTests.test_unchecked_draft_is_hidden_and_pauses_after_one_repair",
+      "status": "passed",
+      "seconds": 0.0031,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_completion.IdleTests.test_idle_unload_releases_session_but_cannot_interrupt_locked_inference",
+      "status": "passed",
+      "seconds": 0.0003,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_completion.PolicyTests.test_chat_history_excludes_operator_notes_and_tools",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_completion.PolicyTests.test_exact_user_question_resolves_last_completed_sunday",
+      "status": "passed",
+      "seconds": 0.0002,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_completion.PolicyTests.test_incomplete_wrong_date_and_duplicate_games_are_rejected",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_completion.PolicyTests.test_new_task_does_not_inherit_old_operator_instructions",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_completion.PolicyTests.test_player_stats_or_analysis_are_not_replaced_with_score_lookup",
+      "status": "passed",
+      "seconds": 0.0002,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_completion.RetrievalTests.test_gzip_decoded_and_date_compact_and_all_games_returned",
+      "status": "passed",
+      "seconds": 0.0034,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_completion.RetrievalTests.test_http_and_application_errors_do_not_become_evidence",
+      "status": "passed",
+      "seconds": 0.0013,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_completion.RetrievalTests.test_targeted_json_pointer_and_future_date_rejected",
+      "status": "passed",
+      "seconds": 0.0015,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_continuation.ContinuationTests.test_cold_start_pressure_is_resumable",
+      "status": "passed",
+      "seconds": 0.0015,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_continuation.ContinuationTests.test_context_full_keeps_plan_and_does_not_execute_partial_call",
+      "status": "passed",
+      "seconds": 0.0141,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_continuation.ContinuationTests.test_database_boundary_compaction_and_resume_preserve_goal",
+      "status": "passed",
+      "seconds": 0.0098,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_continuation.ContinuationTests.test_impossible_minimal_context_reports_real_blocker",
+      "status": "passed",
+      "seconds": 0.0029,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_continuation.ContinuationTests.test_live_generation_progress_extends_watchdog",
+      "status": "passed",
+      "seconds": 0.2034,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_continuation.ContinuationTests.test_memory_guard_also_covers_chat",
+      "status": "passed",
+      "seconds": 2.0067,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_continuation.ContinuationTests.test_memory_guard_releases_only_model_and_saves_goal",
+      "status": "passed",
+      "seconds": 2.0058,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_continuation.ContinuationTests.test_nonzero_shell_outcomes_count_as_failed_actions",
+      "status": "passed",
+      "seconds": 0.0324,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_continuation.ContinuationTests.test_oversized_transaction_automatically_recovers",
+      "status": "passed",
+      "seconds": 0.0085,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_continuation.ContinuationTests.test_reply_limit_adapts_without_executing_incomplete_actions",
+      "status": "passed",
+      "seconds": 0.0083,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_continuation.ContinuationTests.test_stalled_inference_saves_progress_and_can_be_resumed",
+      "status": "passed",
+      "seconds": 0.0222,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_continuation.ContinuationTests.test_until_done_passes_job_time_and_turn_caps_and_verifies",
+      "status": "passed",
+      "seconds": 0.0087,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_continuation.ContinuationTests.test_until_done_still_stops_when_actions_fail_repeatedly",
+      "status": "passed",
+      "seconds": 0.0149,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_continuation.ContinuationTests.test_worker_timeout_is_reported_without_retrying_poll_loop",
+      "status": "passed",
+      "seconds": 0.0047,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_continuation.ContinuationTests.test_zero_test_success_is_rejected_then_real_tests_complete",
+      "status": "passed",
+      "seconds": 0.2271,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_continuation.DateTests.test_counted_completed_weekdays_accept_typos_without_guessing_scores",
+      "status": "passed",
+      "seconds": 0.0003,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_continuation.MemoryPreflightTests.test_low_available_memory_never_launches_native_child",
+      "status": "passed",
+      "seconds": 0.0004,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_continuation.MemoryPreflightTests.test_preflight_uses_available_rather_than_free_memory",
+      "status": "passed",
+      "seconds": 0.0002,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_generation_budget.GenerationBudgetTests.test_automatic_allowance_applies_to_work_in_every_language",
+      "status": "passed",
+      "seconds": 0.0008,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_generation_budget.GenerationBudgetTests.test_automatic_chat_keeps_a_small_allowance",
+      "status": "passed",
+      "seconds": 0.0013,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_generation_budget.GenerationBudgetTests.test_automatic_questions_keep_a_small_allowance",
+      "status": "passed",
+      "seconds": 0.0019,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_generation_budget.GenerationBudgetTests.test_automatic_work_allowance_is_available_for_the_first_write",
+      "status": "passed",
+      "seconds": 0.0171,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_generation_budget.GenerationBudgetTests.test_changed_resume_choice_resets_the_starting_allowance",
+      "status": "passed",
+      "seconds": 0.0008,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_generation_budget.GenerationBudgetTests.test_explicit_starting_allowance_is_preserved",
+      "status": "passed",
+      "seconds": 0.0009,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_generation_budget.GenerationBudgetTests.test_resume_preserves_a_grown_allowance_when_requested_budget_is_unchanged",
+      "status": "passed",
+      "seconds": 0.001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_generation_budget.GenerationBudgetTests.test_retry_allowance_is_recorded_and_partial_action_never_runs",
+      "status": "passed",
+      "seconds": 0.0052,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.CapabilityHardeningTests.test_answer_can_discover_desktop_without_executing_any_action",
+      "status": "passed",
+      "seconds": 0.0006,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.CapabilityHardeningTests.test_automatic_scan_handles_native_and_web_sources_without_hidden_files",
+      "status": "passed",
+      "seconds": 0.0208,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.CapabilityHardeningTests.test_check_timeout_schema_has_seconds_bounds_and_default",
+      "status": "passed",
+      "seconds": 0.0009,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.CapabilityHardeningTests.test_editing_preexisting_inspected_tests_invalidates_verified_completion",
+      "status": "passed",
+      "seconds": 0.4826,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.CapabilityHardeningTests.test_empty_optional_file_list_uses_automatic_source_and_test_scan",
+      "status": "passed",
+      "seconds": 0.0259,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.CapabilityHardeningTests.test_every_original_tool_remains_available_through_discovery_for_work",
+      "status": "passed",
+      "seconds": 0.0011,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.CapabilityHardeningTests.test_external_non_python_edit_after_tests_blocks_native_completion",
+      "status": "passed",
+      "seconds": 0.4694,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.CapabilityHardeningTests.test_finish_checks_can_format_before_final_real_tests",
+      "status": "passed",
+      "seconds": 0.4487,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.CapabilityHardeningTests.test_finish_checks_cannot_change_program_after_passing_tests",
+      "status": "passed",
+      "seconds": 0.4661,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.CapabilityHardeningTests.test_json_created_by_shell_is_verified_at_the_requested_path",
+      "status": "passed",
+      "seconds": 0.0354,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.CapabilityHardeningTests.test_named_json_output_cannot_be_replaced_by_other_json_file",
+      "status": "passed",
+      "seconds": 0.0016,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.CapabilityHardeningTests.test_named_shell_json_cannot_change_after_completion_checks",
+      "status": "passed",
+      "seconds": 0.0365,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.CapabilityHardeningTests.test_native_final_tracks_named_json_from_shell_without_a_write_event",
+      "status": "passed",
+      "seconds": 0.428,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.CapabilityHardeningTests.test_non_python_script_and_tests_are_both_in_verified_hash_proof",
+      "status": "passed",
+      "seconds": 0.2235,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.CapabilityHardeningTests.test_non_python_work_keeps_small_context_patch_capability",
+      "status": "passed",
+      "seconds": 0.0009,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.CapabilityHardeningTests.test_repeated_same_reads_pause_despite_json_spacing_and_key_order",
+      "status": "passed",
+      "seconds": 0.0036,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.CapabilityHardeningTests.test_retargeting_named_json_symlink_invalidates_native_test_proof",
+      "status": "passed",
+      "seconds": 0.4433,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.CapabilityHardeningTests.test_unnamed_shell_json_can_be_verified_after_actual_file_inspection",
+      "status": "passed",
+      "seconds": 0.0041,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.CapabilityHardeningTests.test_valid_json_scalars_remain_supported_for_explicit_file_outputs",
+      "status": "passed",
+      "seconds": 0.0099,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.NamedOutputRoutingTests.test_explicit_desktop_question_exposes_desktop_tools",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.NamedOutputRoutingTests.test_greeting_does_not_start_a_work_verification_loop",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.NamedOutputRoutingTests.test_json_programming_goal_does_not_require_an_unrequested_json_file",
+      "status": "passed",
+      "seconds": 0.0002,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.NamedOutputRoutingTests.test_output_marker_does_not_bind_an_input_json_as_output",
+      "status": "passed",
+      "seconds": 0.0,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_hardening.NamedOutputRoutingTests.test_question_about_json_has_no_file_obligation",
+      "status": "passed",
+      "seconds": 0.0,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_harmony.NativeHistoryTests.test_text_and_tool_history_survive_json_roundtrip",
+      "status": "passed",
+      "seconds": 0.1153,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_incomplete_generation_diagnostics.IncompleteGenerationDiagnosticsTests.test_analysis_phase_retained_without_private_text",
+      "status": "passed",
+      "seconds": 0.0066,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_incomplete_generation_diagnostics.IncompleteGenerationDiagnosticsTests.test_tool_phase_and_size_retained_without_partial_execution",
+      "status": "passed",
+      "seconds": 0.0059,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_incomplete_generation_diagnostics.IncompleteGenerationDiagnosticsTests.test_unrecognized_channel_is_not_copied_to_diagnostics",
+      "status": "passed",
+      "seconds": 0.0056,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_incomplete_generation_diagnostics.IncompleteGenerationDiagnosticsTests.test_unrecognized_recipient_is_not_copied_to_diagnostics",
+      "status": "passed",
+      "seconds": 0.0055,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_inspection_source_batch.InspectionSourceBatchTests.test_actual_inspection_and_engine_keep_four_modest_sources_complete",
+      "status": "passed",
+      "seconds": 0.0182,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_inspection_source_batch.InspectionSourceBatchTests.test_character_bound_cannot_bypass_native_token_reserve",
+      "status": "passed",
+      "seconds": 0.16,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_inspection_source_batch.InspectionSourceBatchTests.test_complete_small_project_fits_real_harmony_with_full_work_reply",
+      "status": "passed",
+      "seconds": 0.1203,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_inspection_source_batch.InspectionSourceBatchTests.test_exhausted_budget_explains_omission_and_preserves_file_errors",
+      "status": "passed",
+      "seconds": 0.0008,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_inspection_source_batch.InspectionSourceBatchTests.test_large_files_have_shared_bound_and_full_saved_evidence",
+      "status": "passed",
+      "seconds": 0.0519,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_inspection_source_batch.InspectionSourceBatchTests.test_preview_is_idempotent_and_does_not_mutate_original_sources",
+      "status": "passed",
+      "seconds": 0.0007,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_language_tools.AgentDiscoveryTests.test_discovery_does_no_network_and_unselected_lookup_is_rejected",
+      "status": "passed",
+      "seconds": 0.0008,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_language_tools.AgentDiscoveryTests.test_late_discovery_changes_tools_and_survives_resume",
+      "status": "passed",
+      "seconds": 0.0045,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_language_tools.LookupTests.test_default_python_docs_and_exact_rust_crate_docs",
+      "status": "passed",
+      "seconds": 0.002,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_language_tools.LookupTests.test_docs_version_anchor_excludes_navigation_and_scripts",
+      "status": "passed",
+      "seconds": 0.0012,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_language_tools.LookupTests.test_documentation_redirects_cannot_leave_reference_hosts",
+      "status": "passed",
+      "seconds": 0.0009,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_language_tools.LookupTests.test_errors_and_invalid_identifiers_are_not_saved_as_evidence",
+      "status": "passed",
+      "seconds": 0.0014,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_language_tools.LookupTests.test_local_python_manifest_groups_and_literal_includes_no_execution",
+      "status": "passed",
+      "seconds": 0.0012,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_language_tools.LookupTests.test_python_exact_version_dependency_markers_and_cache",
+      "status": "passed",
+      "seconds": 0.0016,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_language_tools.LookupTests.test_response_and_prompt_bounds_preserve_full_evidence",
+      "status": "passed",
+      "seconds": 0.0048,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_language_tools.LookupTests.test_rust_local_manifest_targets_workspace_and_lock_versions",
+      "status": "passed",
+      "seconds": 0.0015,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_language_tools.LookupTests.test_rust_pins_dependency_endpoint_and_preserves_features",
+      "status": "passed",
+      "seconds": 0.0014,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_language_tools.LookupTests.test_sphinx_and_rustdoc_anchors_include_the_method_description",
+      "status": "passed",
+      "seconds": 0.0016,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_language_tools.RoutingTests.test_language_and_project_hints_select_only_relevant_tools",
+      "status": "passed",
+      "seconds": 0.0005,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_language_tools.RoutingTests.test_unrelated_tasks_do_not_load_language_schemas",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_maintenance.MaintenanceTests.test_active_api_task_prevents_any_restart",
+      "status": "passed",
+      "seconds": 0.0126,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_maintenance.MaintenanceTests.test_durable_running_task_prevents_any_restart",
+      "status": "passed",
+      "seconds": 0.0095,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_maintenance.MaintenanceTests.test_failed_readiness_never_records_false_success",
+      "status": "passed",
+      "seconds": 0.017,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_maintenance.MaintenanceTests.test_idle_restart_waits_for_ready_before_recording_success",
+      "status": "passed",
+      "seconds": 0.0048,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_maintenance.MaintenanceTests.test_readiness_retries_startup_errors_without_restart",
+      "status": "passed",
+      "seconds": 0.0052,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_native_release_gate.NativeReleaseGateTests.test_all_distinct_verified_native_reports_required",
+      "status": "passed",
+      "seconds": 0.0011,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_native_release_gate.NativeReleaseGateTests.test_changed_goal_or_tests_reject_release",
+      "status": "passed",
+      "seconds": 0.0005,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_native_release_gate.NativeReleaseGateTests.test_missing_reports_reject_release",
+      "status": "passed",
+      "seconds": 0.0003,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_native_release_gate.NativeReleaseGateTests.test_newer_failure_cannot_be_hidden_by_older_pass",
+      "status": "passed",
+      "seconds": 0.0006,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_native_release_gate.NativeReleaseGateTests.test_regressions_and_arithmetic_smoke_cannot_replace_actual_runs",
+      "status": "passed",
+      "seconds": 0.0004,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_native_release_gate.NativeReleaseGateTests.test_top_level_pass_cannot_hide_failed_checks_or_runtime_hints",
+      "status": "passed",
+      "seconds": 0.0006,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_native_suite_grading.NativeSuiteGradingTests.test_inventory_accepts_complete_fixture",
+      "status": "passed",
+      "seconds": 0.0045,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_native_suite_grading.NativeSuiteGradingTests.test_inventory_rejects_silent_read_failure",
+      "status": "passed",
+      "seconds": 0.0204,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_native_suite_grading.NativeSuiteGradingTests.test_inventory_rejects_wrong_digest_and_missing_deliverable",
+      "status": "passed",
+      "seconds": 0.0106,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_native_suite_grading.NativeSuiteGradingTests.test_ranges_accepts_signed_boundary_fixture_but_rejects_partial_error_output",
+      "status": "passed",
+      "seconds": 0.0039,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_native_suite_grading.NativeSuiteGradingTests.test_ranges_rejects_missing_binary",
+      "status": "passed",
+      "seconds": 0.0004,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_output_reserve.OutputReserveTests.test_larger_learned_action_fits_after_checkpoint_with_current_source",
+      "status": "passed",
+      "seconds": 0.1066,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_output_reserve.OutputReserveTests.test_oversized_latest_transaction_requests_recovery_before_generation",
+      "status": "passed",
+      "seconds": 0.2253,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_output_reserve.OutputReserveTests.test_rolling_history_reserves_full_action_preserving_goal_and_latest_failure",
+      "status": "passed",
+      "seconds": 0.1037,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_patches.PatchTests.test_ambiguous_context_rejected_and_anchor_disambiguates",
+      "status": "passed",
+      "seconds": 0.0007,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_patches.PatchTests.test_escape_symlink_deletion_and_overwrite_are_rejected",
+      "status": "passed",
+      "seconds": 0.0005,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_patches.PatchTests.test_failed_write_rolls_back_previously_changed_file",
+      "status": "passed",
+      "seconds": 0.0007,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_patches.PatchTests.test_later_context_error_prevents_every_file_mutation",
+      "status": "passed",
+      "seconds": 0.0004,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_patches.PatchTests.test_noop_and_empty_update_are_rejected",
+      "status": "passed",
+      "seconds": 0.0003,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_patches.PatchTests.test_patch_schema_available_for_all_work_but_not_questions",
+      "status": "passed",
+      "seconds": 0.0003,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_patches.PatchTests.test_permissions_and_crlf_preserved",
+      "status": "passed",
+      "seconds": 0.0004,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_patches.PatchTests.test_small_edit_add_and_real_program_verification",
+      "status": "passed",
+      "seconds": 0.0117,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_post_edit_checks.PostEditCheckTests.test_availability_empty_and_unsafe_commands_are_not_replayed",
+      "status": "passed",
+      "seconds": 0.3251,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_post_edit_checks.PostEditCheckTests.test_failed_automatic_suite_does_not_accept_completion",
+      "status": "passed",
+      "seconds": 0.4575,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_post_edit_checks.PostEditCheckTests.test_multiple_edits_in_one_native_batch_trigger_one_suite",
+      "status": "passed",
+      "seconds": 0.4539,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_post_edit_checks.PostEditCheckTests.test_real_failed_suite_is_rerun_after_repair_then_native_final",
+      "status": "passed",
+      "seconds": 0.455,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_post_edit_checks.PostEditCheckTests.test_resume_preserves_selected_tests_and_checks_new_edit_only",
+      "status": "passed",
+      "seconds": 0.4563,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_post_edit_checks.PostEditCheckTests.test_same_size_same_timestamp_edit_cannot_pass_using_stale_bytecode",
+      "status": "passed",
+      "seconds": 0.2496,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_post_edit_checks.PostEditCheckTests.test_stop_prevents_automatic_command_execution",
+      "status": "passed",
+      "seconds": 0.2264,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_post_edit_checks.PostEditCheckTests.test_tests_that_modify_source_cannot_verify_that_new_source",
+      "status": "passed",
+      "seconds": 0.4622,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_post_edit_checks.PostEditCheckTests.test_unchanged_reads_do_not_repeat_tests",
+      "status": "passed",
+      "seconds": 0.2466,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_prompt_cache.NativeSerializationCacheTests.test_auto_coding_and_explicit_quick_use_fixed_reasoning_level",
+      "status": "passed",
+      "seconds": 0.3673,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_prompt_cache.NativeSerializationCacheTests.test_disabled_feature_demonstrates_canonical_header_cache_miss",
+      "status": "passed",
+      "seconds": 0.1271,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_prompt_cache.NativeSerializationCacheTests.test_exact_emitted_header_and_body_are_reused_after_tool",
+      "status": "passed",
+      "seconds": 0.1259,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_prompt_cache.NativeSerializationCacheTests.test_partial_generation_and_changed_history_never_splice",
+      "status": "passed",
+      "seconds": 0.2514,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_prompt_cache.PromptCacheTests.test_changed_goal_or_tool_result_cannot_reuse_old_history",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_prompt_cache.PromptCacheTests.test_larger_action_rejects_raw_prefix_that_would_consume_its_output_space",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_prompt_cache.PromptCacheTests.test_raw_history_cannot_exceed_context_reserve",
+      "status": "passed",
+      "seconds": 0.0,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_prompting.PromptTrimTests.test_authorization_and_verification_instructions_remain",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_prompting.PromptTrimTests.test_compact_preview_retains_failure_footer_and_full_original",
+      "status": "passed",
+      "seconds": 0.0,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_prompting.PromptTrimTests.test_every_structured_game_remains_available",
+      "status": "passed",
+      "seconds": 0.0,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_prompting.PromptTrimTests.test_local_code_hides_unneeded_tools_but_detects_explicit_requests",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_prompting.PromptTrimTests.test_same_frozen_repair_prompt_is_smaller_with_actual_tokenizer",
+      "status": "passed",
+      "seconds": 0.1224,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_prompting.ToolDiscoveryTests.test_discovered_groups_persist_across_resume_without_actions",
+      "status": "passed",
+      "seconds": 0.0009,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_prompting.ToolDiscoveryTests.test_late_language_discovery_does_not_change_effort_mid_run",
+      "status": "passed",
+      "seconds": 0.0007,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_pytest_subtests.PytestSubtestTests.test_actual_native_failed_footer_is_recognized",
+      "status": "passed",
+      "seconds": 0.0002,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_pytest_subtests.PytestSubtestTests.test_actual_native_passing_footer_is_recognized",
+      "status": "passed",
+      "seconds": 0.0,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_pytest_subtests.PytestSubtestTests.test_all_skipped_subcases_do_not_establish_nonempty_passing_tests",
+      "status": "passed",
+      "seconds": 0.0,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_pytest_subtests.PytestSubtestTests.test_failed_subcase_cannot_be_hidden_by_a_passing_primary_count",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_pytest_subtests.PytestSubtestTests.test_installed_pytest_failed_subtests_are_rejected",
+      "status": "passed",
+      "seconds": 0.3339,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_pytest_subtests.PytestSubtestTests.test_installed_pytest_passing_subtests_are_recognized",
+      "status": "passed",
+      "seconds": 0.1802,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_pytest_subtests.PytestSubtestTests.test_subcases_are_not_counted_as_extra_top_level_tests",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_request_models.RequestModelTests.test_explicit_resume_auto_clears_the_saved_numeric_budget",
+      "status": "passed",
+      "seconds": 0.0021,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_request_models.RequestModelTests.test_numeric_budget_bounds_are_preserved",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_request_models.RequestModelTests.test_omitted_and_null_budget_select_auto",
+      "status": "passed",
+      "seconds": 0.0,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_request_models.RequestModelTests.test_omitted_resume_options_preserve_saved_settings",
+      "status": "passed",
+      "seconds": 0.0,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_request_models.RequestModelTests.test_resume_updates_explicit_choices_without_changing_original_goal",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_rust_toolchain_licenses.RustLicenseTests.test_changed_version_rejected",
+      "status": "passed",
+      "seconds": 0.0002,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_rust_toolchain_licenses.RustLicenseTests.test_existing_version_and_unrelated_tools_accepted",
+      "status": "passed",
+      "seconds": 0.0002,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_rust_toolchain_licenses.RustLicenseTests.test_missing_toolchain_is_not_invented",
+      "status": "passed",
+      "seconds": 0.0002,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_rust_toolchain_licenses.RustLicenseTests.test_partial_toolchain_rejected",
+      "status": "passed",
+      "seconds": 0.0002,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_rust_toolchain_licenses.RustLicenseTests.test_tampered_pinned_rustup_license_rejected",
+      "status": "passed",
+      "seconds": 0.0009,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_score_export.ExportRoutingTests.test_exact_user_request_is_work_with_both_outputs",
+      "status": "passed",
+      "seconds": 0.0003,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_score_export.ExportRoutingTests.test_extra_work_is_never_short_circuited_by_score_export",
+      "status": "passed",
+      "seconds": 0.0002,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_score_export.ExportRoutingTests.test_plain_question_keeps_fast_answer_without_file_obligation",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_score_export.ScoreExportTests.test_export_saves_all_scores_opens_that_file_and_finishes",
+      "status": "passed",
+      "seconds": 0.0044,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_score_export.ScoreExportTests.test_failed_editor_preserves_file_and_requires_recovery",
+      "status": "passed",
+      "seconds": 0.0026,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_score_export.ScoreExportTests.test_invalid_export_options_fail_before_fetch",
+      "status": "passed",
+      "seconds": 0.0009,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_score_export.ScoreExportTests.test_lookup_only_cannot_finish_missing_json",
+      "status": "passed",
+      "seconds": 0.0016,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_score_export.ScoreExportTests.test_saved_but_unopened_json_cannot_complete",
+      "status": "passed",
+      "seconds": 0.003,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_score_export.ScoreExportTests.test_verification_commands_cannot_remove_required_output_then_finish",
+      "status": "passed",
+      "seconds": 0.0078,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_score_export.ScoreExportTests.test_wrong_missing_duplicate_and_nonfinite_scores_rejected",
+      "status": "passed",
+      "seconds": 0.0028,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_source_previews.SourcePreviewTests.test_large_source_explains_missing_lines_and_how_to_read_them",
+      "status": "passed",
+      "seconds": 0.0004,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_source_previews.SourcePreviewTests.test_long_single_line_is_explicitly_partial_without_fake_artifact",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_source_previews.SourcePreviewTests.test_modest_source_preserves_middle_needed_for_a_patch",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_source_previews.SourcePreviewTests.test_non_source_output_retains_existing_failure_footer",
+      "status": "passed",
+      "seconds": 0.0,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_task_date_cache.TaskDateCacheTests.test_missing_date_anchor_uses_the_current_local_date",
+      "status": "passed",
+      "seconds": 0.0892,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_task_date_cache.TaskDateCacheTests.test_new_task_uses_its_own_date_not_an_older_task_anchor",
+      "status": "passed",
+      "seconds": 0.0928,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_task_date_cache.TaskDateCacheTests.test_same_task_reuses_its_prefix_across_midnight",
+      "status": "passed",
+      "seconds": 0.0961,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_test_environment_memory.TestEnvironmentMemoryTests.test_large_commands_are_omitted_whole_and_total_receipt_is_bounded",
+      "status": "passed",
+      "seconds": 0.0002,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_test_environment_memory.TestEnvironmentMemoryTests.test_malformed_optional_data_never_raises_or_invents_availability",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_test_environment_memory.TestEnvironmentMemoryTests.test_real_receipt_fields_retained_without_mutating_input",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_test_environment_memory.TestEnvironmentRunnerTests.test_actual_empty_suite_recovery_updates_cached_environment",
+      "status": "passed",
+      "seconds": 0.2971,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_test_environment_memory.TestEnvironmentRunnerTests.test_actual_inspection_survives_two_compactions_and_resume",
+      "status": "passed",
+      "seconds": 0.0216,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_test_environment_memory.TestEnvironmentRunnerTests.test_available_runner_receipt_cannot_complete_work_without_checks",
+      "status": "passed",
+      "seconds": 0.0262,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_test_environment_memory.TestEnvironmentRunnerTests.test_legacy_history_receipt_is_carried_without_new_execution",
+      "status": "passed",
+      "seconds": 0.0201,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_tool_arguments.ToolArgumentDecodingTests.test_duplicate_fields_prevent_repair",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_tool_arguments.ToolArgumentDecodingTests.test_legitimate_nested_array_then_extra_closer_is_unambiguous",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_tool_arguments.ToolArgumentDecodingTests.test_non_object_inputs_remain_rejected",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_tool_arguments.ToolArgumentDecodingTests.test_observed_native_shell_closer_preserves_exact_command",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_tool_arguments.ToolArgumentDecodingTests.test_other_corruption_never_gets_guessed",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_tool_arguments.ToolArgumentDecodingTests.test_unicode_quotes_newlines_and_brackets_inside_values_survive",
+      "status": "passed",
+      "seconds": 0.0001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_tool_arguments.ToolArgumentDecodingTests.test_valid_nested_json_stays_unchanged",
+      "status": "passed",
+      "seconds": 0.0,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_tool_arguments.ToolArgumentRunnerTests.test_actual_repaired_command_runs_once_and_original_call_is_audited",
+      "status": "passed",
+      "seconds": 0.0303,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_tool_arguments.ToolArgumentRunnerTests.test_ambiguous_command_cannot_execute",
+      "status": "passed",
+      "seconds": 0.0058,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_tool_arguments.ToolArgumentRunnerTests.test_repair_positions_do_not_defeat_repeated_failure_guard",
+      "status": "passed",
+      "seconds": 0.0133,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_tool_runtime.ToolRuntimeTests.test_absent_project_wrapper_preserves_host_path_and_project_storage",
+      "status": "passed",
+      "seconds": 0.0015,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_tool_runtime.ToolRuntimeTests.test_actual_child_tempfile_stays_on_project_drive",
+      "status": "passed",
+      "seconds": 0.0212,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_tool_runtime.ToolRuntimeTests.test_existing_rust_toolchain_resolves_with_project_cargo_cache",
+      "status": "passed",
+      "seconds": 0.0893,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_tool_runtime.ToolRuntimeTests.test_project_runner_is_visible_to_inspection_and_shell_without_changing_python",
+      "status": "passed",
+      "seconds": 0.0244,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_tools.ComputerIntegrationTests.test_api_auth_and_origin",
+      "status": "passed",
+      "seconds": 0.1494,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_tools.ComputerIntegrationTests.test_browser_inspects_local_page",
+      "status": "passed",
+      "seconds": 2.2652,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_tools.ComputerIntegrationTests.test_browser_prefers_main_content_and_its_unique_links",
+      "status": "passed",
+      "seconds": 0.7751,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_tools.ComputerIntegrationTests.test_browser_reports_missing_page_status",
+      "status": "passed",
+      "seconds": 0.7224,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_tools.ComputerIntegrationTests.test_cancel_kills_background_group",
+      "status": "passed",
+      "seconds": 0.055,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_tools.ComputerIntegrationTests.test_desktop_lists_real_windows",
+      "status": "passed",
+      "seconds": 0.0283,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_tools.ComputerIntegrationTests.test_shell_and_file_backup",
+      "status": "passed",
+      "seconds": 0.0159,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_tools.ComputerIntegrationTests.test_sse_reconnect_resumes_after_last_event",
+      "status": "passed",
+      "seconds": 0.0555,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_tools.ComputerIntegrationTests.test_timeout_kills_shell",
+      "status": "passed",
+      "seconds": 1.0034,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_validation_results.ResultsHistoryTests.test_known_evidence_can_be_read_and_partial_json_does_not_crash",
+      "status": "passed",
+      "seconds": 0.0008,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_validation_results.ResultsHistoryTests.test_native_archive_preserves_previous_outcome_when_current_report_is_replaced",
+      "status": "passed",
+      "seconds": 0.0011,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_validation_results.ResultsHistoryTests.test_pass_failure_running_and_native_pause_are_distinct_and_preserved",
+      "status": "passed",
+      "seconds": 0.0009,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_validation_results.ResultsHistoryTests.test_running_native_reports_cannot_be_archived_and_live_ui_checks_are_counted",
+      "status": "passed",
+      "seconds": 0.0006,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_validation_results.ResultsHistoryTests.test_running_native_row_uses_public_elapsed_turn_and_prompt_measurements",
+      "status": "passed",
+      "seconds": 0.0005,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_validation_results.ResultsHistoryTests.test_simultaneous_evaluation_refreshes_keep_complete_index_and_readable_report",
+      "status": "passed",
+      "seconds": 0.0141,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_validation_results.ResultsHistoryTests.test_unknown_and_outside_evidence_paths_are_rejected",
+      "status": "passed",
+      "seconds": 0.0002,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_validation_results.ResultsHistoryTests.test_unregistered_current_report_does_not_hide_its_only_archived_evidence",
+      "status": "passed",
+      "seconds": 0.0007,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_verified_final.TestEvidenceTests.test_log_readers_and_complex_shell_commands_are_not_test_runs",
+      "status": "passed",
+      "seconds": 0.0002,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_verified_final.TestEvidenceTests.test_summary_uses_real_passes_and_ignores_skipped_or_failed_suites",
+      "status": "passed",
+      "seconds": 0.0002,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_verified_final.VerifiedFinalTests.test_file_changes_after_tests_invalidate_native_final",
+      "status": "failed",
+      "seconds": 0.3652,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_verified_final.VerifiedFinalTests.test_native_final_completes_after_actual_tests_without_finish_tool",
+      "status": "passed",
+      "seconds": 0.1813,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_verified_final.VerifiedFinalTests.test_pending_plan_steps_prevent_completion_after_passing_tests",
+      "status": "passed",
+      "seconds": 0.1842,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_verified_final.VerifiedFinalTests.test_reading_test_output_never_counts_as_running_tests",
+      "status": "passed",
+      "seconds": 0.0115,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_working_memory.WorkingMemoryTests.test_large_and_binary_files_are_not_copied_into_checkpoint",
+      "status": "passed",
+      "seconds": 0.001,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_working_memory.WorkingMemoryTests.test_malformed_optional_fields_do_not_break_compaction",
+      "status": "passed",
+      "seconds": 0.0004,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_working_memory.WorkingMemoryTests.test_preview_zero_and_small_budgets_are_bounded",
+      "status": "passed",
+      "seconds": 0.0003,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_working_memory.WorkingMemoryTests.test_refreshes_updated_observed_source_without_executing_it",
+      "status": "passed",
+      "seconds": 0.0006,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_working_memory.WorkingMemoryTests.test_retained_failure_survives_later_successful_diagnostics",
+      "status": "passed",
+      "seconds": 0.0003,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_working_memory.WorkingMemoryTests.test_retargeted_symlink_does_not_read_outside_project",
+      "status": "passed",
+      "seconds": 0.0004,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "tests.test_working_memory.WorkingMemoryTests.test_zero_remaining_budget_never_returns_entire_second_file",
+      "status": "passed",
+      "seconds": 0.0005,
+      "detail": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "tests_run": 270,
+  "failures": 2,
+  "errors": 0,
+  "skipped": 0,
+  "source_sha256": "ba0cc4713f73952102b2ad08d778ef85a38f2569d7cfb4fa6c1c1d5beebd01ba",
+  "seconds": 24.891,
+  "finished_at": "2026-10-11T10:43:02.725043+00:00"
+}

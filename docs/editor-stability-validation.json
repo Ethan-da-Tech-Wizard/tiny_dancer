@@ -1,0 +1,132 @@
+{
+  "started_at": 1791667759.4023006,
+  "launch": {
+    "opened": "[local detail omitted from GitHub snapshot]",
+    "line": 1,
+    "executable": "[local detail omitted from GitHub snapshot]",
+    "profile": "[local detail omitted from GitHub snapshot]"
+  },
+  "processes": [
+    {
+      "pid": 135365,
+      "name": "code-oss",
+      "flags": [
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]"
+      ]
+    },
+    {
+      "pid": 135405,
+      "name": "electron",
+      "flags": [
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]"
+      ]
+    },
+    {
+      "pid": 135410,
+      "name": "electron",
+      "flags": [
+        "[local detail omitted from GitHub snapshot]"
+      ]
+    },
+    {
+      "pid": 135436,
+      "name": "electron",
+      "flags": [
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]"
+      ]
+    },
+    {
+      "pid": 135452,
+      "name": "electron",
+      "flags": [
+        "[local detail omitted from GitHub snapshot]"
+      ]
+    },
+    {
+      "pid": 135472,
+      "name": "electron",
+      "flags": [
+        "[local detail omitted from GitHub snapshot]"
+      ]
+    },
+    {
+      "pid": 135498,
+      "name": "electron",
+      "flags": [
+        "[local detail omitted from GitHub snapshot]"
+      ]
+    },
+    {
+      "pid": 135499,
+      "name": "electron",
+      "flags": [
+        "[local detail omitted from GitHub snapshot]"
+      ]
+    },
+    {
+      "pid": 135536,
+      "name": "electron",
+      "flags": [
+        "[local detail omitted from GitHub snapshot]"
+      ]
+    }
+  ],
+  "windows": {
+    "executable": "[local detail omitted from GitHub snapshot]",
+    "windows": [
+      {
+        "address": "[local detail omitted from GitHub snapshot]",
+        "class": "[local detail omitted from GitHub snapshot]",
+        "title": "agent-verification.txt - workspace - Code - OSS",
+        "pid": 135365,
+        "at": [
+          967,
+          42
+        ],
+        "size": [
+          941,
+          1026
+        ],
+        "workspace": {
+          "id": 5,
+          "name": "5"
+        },
+        "focusHistoryID": 0
+      }
+    ]
+  },
+  "passed": true,
+  "observed_at": 1791669598.6582386,
+  "survived_seconds": 1839.3,
+  "main_process_alive": true,
+  "windows_after": {
+    "executable": "[local detail omitted from GitHub snapshot]",
+    "windows": [
+      {
+        "address": "[local detail omitted from GitHub snapshot]",
+        "class": "[local detail omitted from GitHub snapshot]",
+        "title": "● live-coding-demo.py - workspace - Code - OSS",
+        "pid": 135365,
+        "at": [
+          967,
+          42
+        ],
+        "size": [
+          941,
+          1026
+        ],
+        "workspace": {
+          "id": 5,
+          "name": "5"
+        },
+        "focusHistoryID": 1
+      }
+    ]
+  }
+}

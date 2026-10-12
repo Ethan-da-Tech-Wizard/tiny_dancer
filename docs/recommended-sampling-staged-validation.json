@@ -1,0 +1,35 @@
+{
+  "started_at": "2026-10-11T16:26:44.195420+00:00",
+  "status": "complete",
+  "passed": true,
+  "checks": {
+    "focused_after_pass": true,
+    "full_stage_355_pass": true,
+    "three_focused_failures_reproduced_before": true
+  },
+  "focused_tests": 27,
+  "focused_before_failures": 3,
+  "full_tests": 355,
+  "seconds": 26.564,
+  "files": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "logs": {
+    "before": "[local detail omitted from GitHub snapshot]",
+    "after": "[local detail omitted from GitHub snapshot]",
+    "full": "[local detail omitted from GitHub snapshot]"
+  },
+  "stage_sha256": {
+    "app/engine.py": "e9a13dece9f9922c883e1ae22b280df4b11d3e1d769833b159c1e468f5b3b4e6",
+    "app/llama_session.py": "1c003d964c213c19795e0def08fdeb8ef61d0122151c455b98e97265776e8f5f",
+    "app/reply_continuation.py": "18ec436dd7aa4c6ffd8f45492470a77c9c62a267dc0a1f3d0e893b8c1aa1070e",
+    "tests/test_llama_session.py": "79617a785b0dac5bed5bff352ee4663785a6486d9bd23f6849ca716b438793fd",
+    "tests/test_reply_continuation.py": "3673d0dcbccdc34f1151819da1e8b007cc86f5b6573c227dac240a66790adf87"
+  },
+  "source": "https://github.com/openai/gpt-oss#recommended-sampling-parameters",
+  "scope": "Scripted SSE and actual Harmony token parsing/continuation fixtures plus full harness/tool regressions. Confirms sampling profile and legacy compatibility, not native task success or a causal speed/accuracy improvement."
+}

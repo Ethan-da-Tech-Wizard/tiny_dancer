@@ -1,0 +1,1251 @@
+{
+  "started_at": "2026-10-11T16:27:52.338209+00:00",
+  "status": "cancelled",
+  "prompt": "[local detail omitted from GitHub snapshot]",
+  "cwd": "/mnt/GameDrive/tiny_dancer/workspace/precision-repair-20261011T162752Z",
+  "operator_interventions": [
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "scope": "Native repair on copies of the failed native implementation, with operator-seeded acceptance tests from its requirements. Final general recovery/requirements/test-parser harness; not an unassisted implementation or comparable full-build speed benchmark. No code or hints injected during execution.",
+  "backend": "llama.cpp",
+  "serving_model_path": "models/gpt-oss-20b-native-mxfp4",
+  "baseline": "[local detail omitted from GitHub snapshot]",
+  "acceptance_sha256": "2022e8a7d522322f05af37a701c05a0ce1377ab9fb94c497576ea55cfa8ba74f",
+  "samples": [
+    {
+      "elapsed_seconds": 0.0,
+      "status": "running",
+      "engine": "not loaded",
+      "turns": 0,
+      "available_ram_gib": 6.855,
+      "progress": {
+        "kind": "tool_start",
+        "data": {
+          "name": "run_checks",
+          "arguments": "[local detail omitted from GitHub snapshot]",
+          "step": 0,
+          "origin": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791736072.3866699
+      }
+    },
+    {
+      "elapsed_seconds": 20.3,
+      "status": "running",
+      "engine": "loading model",
+      "turns": 1,
+      "available_ram_gib": 6.665,
+      "progress": {
+        "kind": "tool_start",
+        "data": {
+          "name": "run_checks",
+          "arguments": "[local detail omitted from GitHub snapshot]",
+          "step": 0,
+          "origin": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791736072.3866699
+      },
+      "nice": 5,
+      "uss_gib": 2.352,
+      "read_bytes": 6860517376
+    },
+    {
+      "elapsed_seconds": 43.5,
+      "status": "running",
+      "engine": "loading model",
+      "turns": 1,
+      "available_ram_gib": 6.492,
+      "progress": {
+        "kind": "tool_start",
+        "data": {
+          "name": "run_checks",
+          "arguments": "[local detail omitted from GitHub snapshot]",
+          "step": 0,
+          "origin": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791736072.3866699
+      },
+      "nice": 5,
+      "uss_gib": 0.528,
+      "read_bytes": 17394286592
+    },
+    {
+      "elapsed_seconds": 66.0,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 1,
+      "available_ram_gib": 6.33,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3633,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736124.52121
+      },
+      "nice": 5,
+      "uss_gib": 6.512,
+      "read_bytes": 25608368128
+    },
+    {
+      "elapsed_seconds": 86.4,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 1,
+      "available_ram_gib": 6.313,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3633,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736124.52121
+      },
+      "nice": 5,
+      "uss_gib": 6.647,
+      "read_bytes": 28117176320
+    },
+    {
+      "elapsed_seconds": 106.8,
+      "status": "running",
+      "engine": "generating",
+      "turns": 1,
+      "available_ram_gib": 6.283,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 288,
+          "seconds": 54.0
+        },
+        "created": 1791736178.5120592
+      },
+      "nice": 5,
+      "uss_gib": 6.599,
+      "read_bytes": 29215924224
+    },
+    {
+      "elapsed_seconds": 127.1,
+      "status": "running",
+      "engine": "generating",
+      "turns": 1,
+      "available_ram_gib": 5.312,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 624,
+          "seconds": 73.6
+        },
+        "created": 1791736198.1475632
+      },
+      "nice": 5,
+      "uss_gib": 5.082,
+      "read_bytes": 31042834432
+    },
+    {
+      "elapsed_seconds": 147.5,
+      "status": "running",
+      "engine": "generating",
+      "turns": 2,
+      "available_ram_gib": 6.268,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 16,
+          "seconds": 13.2
+        },
+        "created": 1791736219.733527
+      },
+      "nice": 5,
+      "uss_gib": 6.679,
+      "read_bytes": 34382819328
+    },
+    {
+      "elapsed_seconds": 167.8,
+      "status": "running",
+      "engine": "generating",
+      "turns": 2,
+      "available_ram_gib": 6.267,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 416,
+          "seconds": 33.4
+        },
+        "created": 1791736239.952758
+      },
+      "nice": 5,
+      "uss_gib": 6.654,
+      "read_bytes": 34568527872
+    },
+    {
+      "elapsed_seconds": 188.1,
+      "status": "running",
+      "engine": "generating",
+      "turns": 2,
+      "available_ram_gib": 6.241,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 704,
+          "seconds": 52.7
+        },
+        "created": 1791736259.2392921
+      },
+      "nice": 5,
+      "uss_gib": 6.625,
+      "read_bytes": 34675429376
+    },
+    {
+      "elapsed_seconds": 208.2,
+      "status": "running",
+      "engine": "generating",
+      "turns": 2,
+      "available_ram_gib": 6.231,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 976,
+          "seconds": 73.8
+        },
+        "created": 1791736280.3769178
+      },
+      "nice": 5,
+      "uss_gib": 6.53,
+      "read_bytes": 34835238912
+    },
+    {
+      "elapsed_seconds": 228.5,
+      "status": "running",
+      "engine": "generating",
+      "turns": 2,
+      "available_ram_gib": 6.215,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1216,
+          "seconds": 93.8
+        },
+        "created": 1791736300.3291636
+      },
+      "nice": 5,
+      "uss_gib": 6.527,
+      "read_bytes": 35001786368
+    },
+    {
+      "elapsed_seconds": 248.9,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 4,
+      "available_ram_gib": 6.068,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3591,
+          "reused_tokens": 1096,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736314.618283
+      },
+      "nice": 5,
+      "uss_gib": 6.506,
+      "read_bytes": 35242729472
+    },
+    {
+      "elapsed_seconds": 269.1,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 4,
+      "available_ram_gib": 6.113,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3591,
+          "reused_tokens": 1096,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736314.618283
+      },
+      "nice": 5,
+      "uss_gib": 6.71,
+      "read_bytes": 35713974272
+    },
+    {
+      "elapsed_seconds": 289.4,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 4,
+      "available_ram_gib": 6.113,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3591,
+          "reused_tokens": 1096,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736314.618283
+      },
+      "nice": 5,
+      "uss_gib": 6.703,
+      "read_bytes": 36142346240
+    },
+    {
+      "elapsed_seconds": 309.5,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 4,
+      "available_ram_gib": 6.124,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3591,
+          "reused_tokens": 1096,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736314.618283
+      },
+      "nice": 5,
+      "uss_gib": 6.622,
+      "read_bytes": 36546527232
+    },
+    {
+      "elapsed_seconds": 329.8,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 4,
+      "available_ram_gib": 6.11,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3591,
+          "reused_tokens": 1096,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736314.618283
+      },
+      "nice": 5,
+      "uss_gib": 6.705,
+      "read_bytes": 36994027520
+    },
+    {
+      "elapsed_seconds": 350.0,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 4,
+      "available_ram_gib": 6.118,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3591,
+          "reused_tokens": 1096,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736314.618283
+      },
+      "nice": 5,
+      "uss_gib": 6.763,
+      "read_bytes": 37371338752
+    },
+    {
+      "elapsed_seconds": 370.2,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 4,
+      "available_ram_gib": 6.102,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3591,
+          "reused_tokens": 1096,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736314.618283
+      },
+      "nice": 5,
+      "uss_gib": 6.582,
+      "read_bytes": 37798817792
+    },
+    {
+      "elapsed_seconds": 390.4,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 5,
+      "available_ram_gib": 6.08,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 4465,
+          "reused_tokens": 3635,
+          "exact_history_cache_tokens": 3635,
+          "cache_saved_prefill_tokens": 25,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736461.2931602
+      },
+      "nice": 5,
+      "uss_gib": 6.627,
+      "read_bytes": 38348087296
+    },
+    {
+      "elapsed_seconds": 410.6,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 5,
+      "available_ram_gib": 5.998,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 4465,
+          "reused_tokens": 3635,
+          "exact_history_cache_tokens": 3635,
+          "cache_saved_prefill_tokens": 25,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736461.2931602
+      },
+      "nice": 5,
+      "uss_gib": 6.554,
+      "read_bytes": 38863511552
+    },
+    {
+      "elapsed_seconds": 430.9,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 5,
+      "available_ram_gib": 6.036,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 4465,
+          "reused_tokens": 3635,
+          "exact_history_cache_tokens": 3635,
+          "cache_saved_prefill_tokens": 25,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736461.2931602
+      },
+      "nice": 5,
+      "uss_gib": 6.665,
+      "read_bytes": 39367430144
+    },
+    {
+      "elapsed_seconds": 451.1,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 5,
+      "available_ram_gib": 6.035,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 4465,
+          "reused_tokens": 3635,
+          "exact_history_cache_tokens": 3635,
+          "cache_saved_prefill_tokens": 25,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736461.2931602
+      },
+      "nice": 5,
+      "uss_gib": 6.521,
+      "read_bytes": 39892811776
+    },
+    {
+      "elapsed_seconds": 471.3,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 5,
+      "available_ram_gib": 5.887,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 4465,
+          "reused_tokens": 3635,
+          "exact_history_cache_tokens": 3635,
+          "cache_saved_prefill_tokens": 25,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736461.2931602
+      },
+      "nice": 5,
+      "uss_gib": 6.493,
+      "read_bytes": 40372150272
+    },
+    {
+      "elapsed_seconds": 491.5,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 5,
+      "available_ram_gib": 6.037,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 4465,
+          "reused_tokens": 3635,
+          "exact_history_cache_tokens": 3635,
+          "cache_saved_prefill_tokens": 25,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736461.2931602
+      },
+      "nice": 5,
+      "uss_gib": 6.682,
+      "read_bytes": 40874500096
+    },
+    {
+      "elapsed_seconds": 511.7,
+      "status": "running",
+      "engine": "generating",
+      "turns": 5,
+      "available_ram_gib": 6.015,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 16,
+          "seconds": 122.2
+        },
+        "created": 1791736583.4531972
+      },
+      "nice": 5,
+      "uss_gib": 6.592,
+      "read_bytes": 41499418624
+    },
+    {
+      "elapsed_seconds": 531.9,
+      "status": "running",
+      "engine": "generating",
+      "turns": 5,
+      "available_ram_gib": 6.051,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 400,
+          "seconds": 142.6
+        },
+        "created": 1791736603.9103177
+      },
+      "nice": 5,
+      "uss_gib": 6.584,
+      "read_bytes": 41815388160
+    },
+    {
+      "elapsed_seconds": 552.2,
+      "status": "running",
+      "engine": "generating",
+      "turns": 5,
+      "available_ram_gib": 6.046,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 752,
+          "seconds": 163.2
+        },
+        "created": 1791736624.4570746
+      },
+      "nice": 5,
+      "uss_gib": 6.673,
+      "read_bytes": 42244210688
+    },
+    {
+      "elapsed_seconds": 572.5,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 7,
+      "available_ram_gib": 5.915,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3964,
+          "reused_tokens": 1309,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736637.823443
+      },
+      "nice": 5,
+      "uss_gib": 6.636,
+      "read_bytes": 42590814208
+    },
+    {
+      "elapsed_seconds": 592.7,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 7,
+      "available_ram_gib": 5.908,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3964,
+          "reused_tokens": 1309,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736637.823443
+      },
+      "nice": 5,
+      "uss_gib": 6.65,
+      "read_bytes": 43103772672
+    },
+    {
+      "elapsed_seconds": 612.9,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 7,
+      "available_ram_gib": 5.925,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3964,
+          "reused_tokens": 1309,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736637.823443
+      },
+      "nice": 5,
+      "uss_gib": 6.664,
+      "read_bytes": 43561820160
+    },
+    {
+      "elapsed_seconds": 633.1,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 7,
+      "available_ram_gib": 5.878,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3964,
+          "reused_tokens": 1309,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736637.823443
+      },
+      "nice": 5,
+      "uss_gib": 6.546,
+      "read_bytes": 44054106112
+    },
+    {
+      "elapsed_seconds": 653.3,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 7,
+      "available_ram_gib": 5.871,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3964,
+          "reused_tokens": 1309,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736637.823443
+      },
+      "nice": 5,
+      "uss_gib": 6.614,
+      "read_bytes": 44565241856
+    },
+    {
+      "elapsed_seconds": 673.5,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 7,
+      "available_ram_gib": 5.878,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3964,
+          "reused_tokens": 1309,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736637.823443
+      },
+      "nice": 5,
+      "uss_gib": 6.624,
+      "read_bytes": 45046423552
+    },
+    {
+      "elapsed_seconds": 693.7,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 7,
+      "available_ram_gib": 5.885,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3964,
+          "reused_tokens": 1309,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736637.823443
+      },
+      "nice": 5,
+      "uss_gib": 6.55,
+      "read_bytes": 45512568832
+    },
+    {
+      "elapsed_seconds": 713.9,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 7,
+      "available_ram_gib": 5.882,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3964,
+          "reused_tokens": 1309,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736637.823443
+      },
+      "nice": 5,
+      "uss_gib": 6.582,
+      "read_bytes": 45998403584
+    },
+    {
+      "elapsed_seconds": 734.1,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 7,
+      "available_ram_gib": 5.877,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3964,
+          "reused_tokens": 1309,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736637.823443
+      },
+      "nice": 5,
+      "uss_gib": 6.611,
+      "read_bytes": 46496935936
+    },
+    {
+      "elapsed_seconds": 754.3,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 7,
+      "available_ram_gib": 5.86,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3964,
+          "reused_tokens": 1309,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736637.823443
+      },
+      "nice": 5,
+      "uss_gib": 6.623,
+      "read_bytes": 46988120064
+    },
+    {
+      "elapsed_seconds": 774.6,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 7,
+      "available_ram_gib": 5.894,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3964,
+          "reused_tokens": 1309,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736637.823443
+      },
+      "nice": 5,
+      "uss_gib": 6.65,
+      "read_bytes": 47481741312
+    },
+    {
+      "elapsed_seconds": 794.8,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 7,
+      "available_ram_gib": 5.885,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3964,
+          "reused_tokens": 1309,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736637.823443
+      },
+      "nice": 5,
+      "uss_gib": 6.57,
+      "read_bytes": 47967207424
+    },
+    {
+      "elapsed_seconds": 815.0,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 7,
+      "available_ram_gib": 5.868,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3964,
+          "reused_tokens": 1309,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736637.823443
+      },
+      "nice": 5,
+      "uss_gib": 6.586,
+      "read_bytes": 48473477120
+    },
+    {
+      "elapsed_seconds": 835.2,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 7,
+      "available_ram_gib": 5.889,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3964,
+          "reused_tokens": 1309,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736637.823443
+      },
+      "nice": 5,
+      "uss_gib": 6.628,
+      "read_bytes": 48907694080
+    },
+    {
+      "elapsed_seconds": 855.4,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 7,
+      "available_ram_gib": 5.879,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3964,
+          "reused_tokens": 1309,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736637.823443
+      },
+      "nice": 5,
+      "uss_gib": 6.607,
+      "read_bytes": 49367461888
+    },
+    {
+      "elapsed_seconds": 875.6,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 7,
+      "available_ram_gib": 5.89,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3964,
+          "reused_tokens": 1309,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736637.823443
+      },
+      "nice": 5,
+      "uss_gib": 6.619,
+      "read_bytes": 49908678656
+    },
+    {
+      "elapsed_seconds": 895.8,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 7,
+      "available_ram_gib": 5.889,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3964,
+          "reused_tokens": 1309,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736637.823443
+      },
+      "nice": 5,
+      "uss_gib": 6.651,
+      "read_bytes": 50406109184
+    },
+    {
+      "elapsed_seconds": 900.0,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 7,
+      "available_ram_gib": 5.889,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3964,
+          "reused_tokens": 1309,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791736637.823443
+      },
+      "nice": 5,
+      "uss_gib": 6.602,
+      "read_bytes": 50502897664
+    },
+    {
+      "elapsed_seconds": 920.3,
+      "status": "cancelled",
+      "engine": "not loaded",
+      "turns": 7,
+      "available_ram_gib": 6.778,
+      "progress": {
+        "kind": "cancelled",
+        "data": {
+          "message": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791736972.594938
+      }
+    }
+  ],
+  "runtime_sha256_before": "0693bc7dccb019db5c8902525f4c1ce2d684c92ab05980dee23c9d6add0de757",
+  "acceptance_before_repair": {
+    "exit_code": 1,
+    "output": "[local detail omitted from GitHub snapshot]"
+  },
+  "execution": {
+    "observation_seconds": 900,
+    "initial_budget": "[local detail omitted from GitHub snapshot]",
+    "reasoning_effort": "medium"
+  },
+  "job": "b10706abf975478186199fe6cdb4f5ba",
+  "session": "eadc3ba4a5ed42ff8db3fa403bb1ba6a",
+  "supplemental_criteria": "[local detail omitted from GitHub snapshot]",
+  "supplemental_unseen": {
+    "signed": {
+      "exit_code": 1,
+      "passed": false,
+      "actual": null,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    "total": {
+      "exit_code": 1,
+      "passed": false,
+      "actual": null,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    }
+  },
+  "runtime_sha256_after": "0693bc7dccb019db5c8902525f4c1ce2d684c92ab05980dee23c9d6add0de757",
+  "passed": false,
+  "checks": {
+    "runtime_frozen": true,
+    "native_verified": false,
+    "acceptance_unchanged": true,
+    "independent_cli_checks": false,
+    "clear_errors": true,
+    "unseen_1600_digit_signed_case": false,
+    "automatic_initial_work_allowance": true,
+    "unseen_3200_digit_signed": false,
+    "unseen_3200_digit_total": false
+  },
+  "checkpoint": "[local detail omitted from GitHub snapshot]",
+  "job_elapsed_seconds": 900.25,
+  "independent_checks": [
+    {
+      "check": "exact decimals and negatives",
+      "passed": true,
+      "exit_code": 0,
+      "actual": {
+        "food": "[local detail omitted from GitHub snapshot]"
+      },
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "quoted category and sorted keys",
+      "passed": true,
+      "exit_code": 0,
+      "actual": {
+        "a,b": "[local detail omitted from GitHub snapshot]",
+        "z": "[local detail omitted from GitHub snapshot]"
+      },
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "large exact monetary values",
+      "passed": true,
+      "exit_code": 0,
+      "actual": {
+        "x": "[local detail omitted from GitHub snapshot]"
+      },
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "empty dataset",
+      "passed": true,
+      "exit_code": 0,
+      "actual": {},
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "reject 'bad'",
+      "passed": true,
+      "exit_code": 1,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "reject 'NaN'",
+      "passed": true,
+      "exit_code": 1,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "reject 'Infinity'",
+      "passed": true,
+      "exit_code": 1,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "reject '1.234'",
+      "passed": true,
+      "exit_code": 1,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "reject ''",
+      "passed": true,
+      "exit_code": 1,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "exact totals beyond default Decimal precision",
+      "passed": false,
+      "actual": null,
+      "exit_code": 1,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "many repeated signed amounts",
+      "passed": true,
+      "actual": {
+        "x": "[local detail omitted from GitHub snapshot]"
+      },
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "clear_error_checks": [
+    {
+      "value": "[local detail omitted from GitHub snapshot]",
+      "passed": true,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "value": "[local detail omitted from GitHub snapshot]",
+      "passed": true,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "value": "[local detail omitted from GitHub snapshot]",
+      "passed": true,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "value": "[local detail omitted from GitHub snapshot]",
+      "passed": true,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "value": "[local detail omitted from GitHub snapshot]",
+      "passed": true,
+      "output": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "unseen": {
+    "exit_code": 1,
+    "actual": null,
+    "stderr": "[local detail omitted from GitHub snapshot]"
+  },
+  "metrics": [
+    {
+      "prefill_seconds": 40.79456,
+      "decode_seconds": 41.125572,
+      "prefill_tokens": 3633,
+      "decode_tokens": 703,
+      "total_seconds": 81.96,
+      "backend": "llama.cpp-native-mxfp4",
+      "sampling_temperature": 1.0,
+      "sampling_top_p": 1.0,
+      "sampling_top_k": 0,
+      "sampling_min_p": 0.0,
+      "prefill_tokens_per_s": 89.05599177929606,
+      "decode_tokens_per_s": 17.093987166914054,
+      "native_reply_chunks": 1,
+      "completion_tokens": 703,
+      "prompt_tokens": 3633,
+      "canonical_prompt_tokens": 3633,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 0,
+      "reasoning_effort": "medium"
+    },
+    {
+      "prefill_seconds": 10.774778,
+      "decode_seconds": 96.990261,
+      "prefill_tokens": 712,
+      "decode_tokens": 1398,
+      "total_seconds": 107.93,
+      "backend": "llama.cpp-native-mxfp4",
+      "sampling_temperature": 1.0,
+      "sampling_top_p": 1.0,
+      "sampling_top_k": 0,
+      "sampling_min_p": 0.0,
+      "prefill_tokens_per_s": 66.08024777865494,
+      "decode_tokens_per_s": 14.413818311098265,
+      "native_reply_chunks": 1,
+      "completion_tokens": 1398,
+      "prompt_tokens": 5047,
+      "canonical_prompt_tokens": 5047,
+      "exact_history_cache_tokens": 4336,
+      "cache_saved_prefill_tokens": 31,
+      "reasoning_effort": "medium"
+    },
+    {
+      "prefill_seconds": 139.860217,
+      "decode_seconds": 3.4374119999999997,
+      "prefill_tokens": 3591,
+      "decode_tokens": 44,
+      "total_seconds": 143.61,
+      "backend": "llama.cpp-native-mxfp4",
+      "sampling_temperature": 1.0,
+      "sampling_top_p": 1.0,
+      "sampling_top_k": 0,
+      "sampling_min_p": 0.0,
+      "prefill_tokens_per_s": 25.675635838603053,
+      "decode_tokens_per_s": 12.800327688388824,
+      "native_reply_chunks": 1,
+      "completion_tokens": 44,
+      "prompt_tokens": 3591,
+      "canonical_prompt_tokens": 3591,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 0,
+      "reasoning_effort": "medium"
+    },
+    {
+      "prefill_seconds": 120.183201,
+      "decode_seconds": 52.796319000000004,
+      "prefill_tokens": 831,
+      "decode_tokens": 872,
+      "total_seconds": 173.0,
+      "backend": "llama.cpp-native-mxfp4",
+      "sampling_temperature": 1.0,
+      "sampling_top_p": 1.0,
+      "sampling_top_k": 0,
+      "sampling_min_p": 0.0,
+      "prefill_tokens_per_s": 6.91444389137214,
+      "decode_tokens_per_s": 16.516302964227485,
+      "native_reply_chunks": 1,
+      "completion_tokens": 872,
+      "prompt_tokens": 4465,
+      "canonical_prompt_tokens": 4465,
+      "exact_history_cache_tokens": 3635,
+      "cache_saved_prefill_tokens": 25,
+      "reasoning_effort": "medium"
+    }
+  ],
+  "tool_calls": [
+    {
+      "name": "inspect_project",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 0,
+      "origin": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "name": "run_checks",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 0,
+      "origin": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "name": "read_file",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 1
+    },
+    {
+      "name": "apply_patch",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 2
+    },
+    {
+      "name": "run_checks",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 4
+    },
+    {
+      "name": "apply_patch",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 5
+    },
+    {
+      "name": "run_checks",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 5,
+      "origin": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "errors": [],
+  "archive_metadata": {
+    "source": "precision-repair-retest-validation.json",
+    "kind": "native",
+    "title": "Failed exact-money task replay on final recovery harness",
+    "scope": "Native repair on copies of the failed native implementation, with operator-seeded acceptance tests from its requirements. Final general recovery/requirements/test-parser harness; not an unassisted implementation or comparable full-build speed benchmark. No code or hints injected during execution.",
+    "source_sha256": "7dc98ea677122c988dea48409569bd45302258d0037781eef344515da28c181e"
+  }
+}

@@ -1,0 +1,3406 @@
+{
+  "at": "2026-10-11T11:05:48.337221+00:00",
+  "status": "passed",
+  "passed": true,
+  "scope": "Experimental synthetic per-expert multi-row CPU arithmetic, linking unchanged MITPicchio scalar expert_apply as reference. No full model loaded, no sparse-routing integration, no kernel deployed, no whole-app speed or native-agent qualification claim. Timing uses one warm synthetic expert; disk streaming, attention and reasoning are excluded.",
+  "cases": [
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 1,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 0,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 1,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 0,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 0,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 0,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 1,
+      "bias": 0,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 1,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 2,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 7,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 16,
+      "input": 65,
+      "intermediate": 17,
+      "format": 2,
+      "group": 64,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "batch_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "rows": 32,
+      "input": 2880,
+      "intermediate": 2880,
+      "format": 2,
+      "group": 32,
+      "clipped": 1,
+      "bias": 1,
+      "threads": 8,
+      "byte_identical": true,
+      "max_abs_error": 0,
+      "scalar_seconds": [
+        0.034561473,
+        0.034748977,
+        0.036367992,
+        0.035301452,
+        0.03320727
+      ],
+      "batch_seconds": [
+        0.031848159,
+        0.027154138,
+        0.026276529,
+        0.028796393,
+        0.028169715
+      ]
+    }
+  ],
+  "checks": {
+    "cases": 129,
+    "all_byte_identical": true,
+    "max_abs_error": 0,
+    "source_unchanged": true
+  },
+  "execution": {
+    "exit_code": 0,
+    "elapsed_seconds": 0.41461255599278957,
+    "max_rss_kib": 20316,
+    "scope": "Synthetic standalone unchanged model kernels; no full model load or production replacement."
+  },
+  "timing": {
+    "production_dimensions": {
+      "input": 2880,
+      "gate_up": 5760,
+      "intermediate": 2880,
+      "output": 2880,
+      "rows": 32
+    },
+    "format": "[local detail omitted from GitHub snapshot]",
+    "threads": 8,
+    "paired_runs": 5,
+    "order": "[local detail omitted from GitHub snapshot]",
+    "scalar_median_seconds": 0.034748977,
+    "batch_median_seconds": 0.028169715,
+    "throughput_ratio": 1.2335579894933264,
+    "time_reduction_percent": 18.933685443459236
+  },
+  "source_sha256": {
+    "run/benchmarks/prefill_rows_probe.c": "c0add2255a76206f5597ea7a819abb860fac359e861a9eac84c093713d1fb8cc",
+    "vendor/picchio/picchio.c": "4f615d220117c3e4b60c7211dc2c514013d2cf905e4df42cf01917a5becd72ba",
+    "vendor/picchio/quant.h": "e0ef7b2a0a2c0d5641a2ab4fe317e1fd902293ff043a0e27433cee7faf1c68a6"
+  },
+  "failed_initial_invocation": {
+    "exit_code": 127,
+    "reason": "[local detail omitted from GitHub snapshot]"
+  },
+  "logs": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "next": "[local detail omitted from GitHub snapshot]"
+}

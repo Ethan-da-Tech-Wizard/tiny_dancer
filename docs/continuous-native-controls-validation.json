@@ -1,0 +1,20 @@
+{
+  "started_at": "2026-10-11T20:47:49.659179+00:00",
+  "status": "complete",
+  "passed": true,
+  "scope": "Regression and deployment controls only; not actual native coding quality or a speed claim. No new dependency, model weights, KV precision, thread or expert-placement change.",
+  "tests_run": 449,
+  "checks": {
+    "stage_suite": true,
+    "production_suite": true,
+    "guarded_idle_restart": true,
+    "stop_and_context_bounds": true,
+    "no_deadline_observer_policy": true
+  },
+  "stage_report": "docs/validation/runs/20261011T204419122684Z.json",
+  "production_report": "docs/validation/runs/20261011T204558105495Z.json",
+  "runtime_sha256": "90c14ea967a2f3c827b1598e2023bda1f48337ad9e08ff3829195592d93c327d",
+  "backup": "[local detail omitted from GitHub snapshot]",
+  "native_qualified": false,
+  "dependencies_added": []
+}

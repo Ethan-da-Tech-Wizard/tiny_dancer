@@ -1,0 +1,24 @@
+{
+  "title": "Longer-cooldown benchmark controls and regressions",
+  "started_at": "2026-10-11T18:12:15.353590+00:00",
+  "passed": true,
+  "scope": "13 benchmark-control fixtures and all377 regressions; no native speed or coding claim.",
+  "checks": {
+    "focused13": true,
+    "full377": true,
+    "syntax": true,
+    "licenses257_45_29": true,
+    "production_runtime_unchanged": true
+  },
+  "full_report": "docs/validation/runs/20261011T181017428893Z.json",
+  "full_seconds": 25.351,
+  "focused_log": "[local detail omitted from GitHub snapshot]",
+  "full_log": "[local detail omitted from GitHub snapshot]",
+  "archive_metadata": {
+    "source": "cpu-thread-controls-validation.json",
+    "kind": "automated",
+    "title": "Longer-cooldown benchmark controls and regressions",
+    "scope": "13 benchmark-control fixtures and all377 regressions; no native speed or coding claim.",
+    "source_sha256": "825339c638de34f6fff881e3e2c341a8448230c4255dc7bcc13ca184d63181b7"
+  }
+}

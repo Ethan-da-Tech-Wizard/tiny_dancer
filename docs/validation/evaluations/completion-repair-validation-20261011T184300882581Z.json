@@ -1,0 +1,36 @@
+{
+  "title": "Completion repair feedback and fresh contexts",
+  "status": "complete",
+  "passed": true,
+  "started_at": "2026-10-11T18:43:00.881154+00:00",
+  "finished_at": "2026-10-11T18:43:00.881154+00:00",
+  "scope": "388 harness regressions and actual runner/checkpoint fixtures; native task completion not established.",
+  "runtime_sha256": "0b691a6c03e2919ad4491d0acafd1b57c2f39802e45f4c6326f55166fc3471e1",
+  "native_quality_qualified": false,
+  "native_evaluation_pending": true,
+  "checks": {
+    "all_388_regressions": true,
+    "failure_identities_survive_previews": true,
+    "failed_edits_refresh_context": true,
+    "explicit_failed_edit_batch": true,
+    "passing_edits_can_finish": true,
+    "no_repeat_without_edit": true,
+    "full_4096_action_reserve": true,
+    "original_history_retained": true
+  },
+  "regression_report": "docs/validation/runs/20261011T184206001379Z.json",
+  "logs": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "documentation": "[local detail omitted from GitHub snapshot]",
+  "backup": "[local detail omitted from GitHub snapshot]",
+  "archive_metadata": {
+    "source": "completion-repair-validation.json",
+    "kind": "regression",
+    "title": "Completion repair feedback and fresh contexts",
+    "scope": "388 harness regressions and actual runner/checkpoint fixtures; native task completion not established.",
+    "source_sha256": "4e25006e4d62c67690d192c5171f531148257dd03c4cea7d3d85cf10cf31224f"
+  }
+}

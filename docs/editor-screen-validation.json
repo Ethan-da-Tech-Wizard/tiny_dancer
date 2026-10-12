@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "editor": {
+    "opened": "[local detail omitted from GitHub snapshot]",
+    "line": 1,
+    "executable": "[local detail omitted from GitHub snapshot]",
+    "profile": "[local detail omitted from GitHub snapshot]"
+  },
+  "editor_windows": 2,
+  "preview": {
+    "available": true,
+    "artifact": "[local detail omitted from GitHub snapshot]",
+    "at": 1791655730.6678524
+  },
+  "ocr_characters": 1075,
+  "saved_change_visible_in_ocr": true,
+  "active_window_class": "[local detail omitted from GitHub snapshot]",
+  "wayland_socket": "[local detail omitted from GitHub snapshot]",
+  "demo_file": "[local detail omitted from GitHub snapshot]",
+  "code_check": {
+    "exit_code": 0,
+    "timed_out": false,
+    "output": "[local detail omitted from GitHub snapshot]",
+    "truncated": false,
+    "artifact": "[local detail omitted from GitHub snapshot]"
+  },
+  "note": "[local detail omitted from GitHub snapshot]"
+}

@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tiny Dancer · Test results</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,sans-serif;background:#101311;color:#e4e8e2}*{box-sizing:border-box}body{max-width:1200px;margin:auto;padding:28px}a{color:#cde993}header{display:flex;justify-content:space-between;gap:20px;align-items:center}h1{font-size:28px;margin:18px 0 8px}h2{font-size:19px;margin-top:32px}p{color:#acb4a7;line-height:1.6}.note{padding:16px;background:#1b211a;border:1px solid #394334;border-radius:10px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:650px}th,td{text-align:left;padding:13px 12px;border-bottom:1px solid #31382e;vertical-align:top}th{font-size:12px;color:#b4bda9}td{font-size:14px}small{display:block;color:#a0a995;line-height:1.5;max-width:530px;margin-top:6px}.passed{color:#cde993}.failed,.paused,.error{color:#efaa92}.running{color:#e4d492}#updated{font-size:12px}#error{color:#efaa92}button{background:#222a1e;border:1px solid #485738;color:#d7edb4;border-radius:7px;padding:8px 14px;cursor:pointer}@media(max-width:600px){body{padding:16px}header{align-items:flex-start}h1{font-size:23px}}
+</style></head><body>
+<header><a href="/">← Workspace</a><button id="refresh">Refresh</button></header>
+<h1>Test results</h1><p>Current runs and saved history · on your GameDrive</p>
+<div class="note">Automated tests check tools and harness behavior. Local-model tests run GPT-OSS itself. Their scopes are shown separately; failures and pauses stay in the history.</div>
+<p id="updated"></p><p id="error" role="alert"></p>
+<h2>Local-model tests</h2><p>The repair comparison uses the same initial request and seeded files at different times. Computer load, disk warmth and model decisions can differ.</p><div class="table-wrap"><table><thead><tr><th>Run / scope</th><th>Status</th><th>Time</th><th>Prompt / turns</th><th>Evidence</th></tr></thead><tbody id="native"></tbody></table></div>
+<h2>Automated tests</h2><div class="table-wrap"><table><thead><tr><th>Run / scope</th><th>Status</th><th>Tests</th><th>Time</th><th>Evidence</th></tr></thead><tbody id="automated"></tbody></table></div>
+<p>Run the archived suite with <code>.venv/bin/python scripts/run_regressions.py</code>. Each run saves individual test names, outcomes, timing and failure details.</p>
+<script src="/static/results.js"></script></body></html>

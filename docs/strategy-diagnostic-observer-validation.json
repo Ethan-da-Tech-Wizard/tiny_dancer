@@ -1,0 +1,17 @@
+{
+  "started_at": "2026-10-11T11:19:09.513283+00:00",
+  "status": "complete",
+  "passed": true,
+  "elapsed_seconds": 0.084,
+  "checks": {
+    "public_final_privacy": true,
+    "refuse_other_active_job_without_mutation": true,
+    "deadline_stops_owned_job_at_900_seconds_without_followup": true,
+    "complete_answer_is_delivery_only_not_qualification": true,
+    "limited_analysis_is_not_answer": true
+  },
+  "scope": "Five isolated observer safety tests with a fake clock and client. No model or server call; does not establish strategy correctness, task completion or application speed.",
+  "command": "[local detail omitted from GitHub snapshot]",
+  "log": "[local detail omitted from GitHub snapshot]",
+  "script": "[local detail omitted from GitHub snapshot]"
+}

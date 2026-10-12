@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "options": [
+    {
+      "value": "[local detail omitted from GitHub snapshot]",
+      "label": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "value": "[local detail omitted from GitHub snapshot]",
+      "label": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "value": "[local detail omitted from GitHub snapshot]",
+      "label": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "value": "[local detail omitted from GitHub snapshot]",
+      "label": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "fresh_default": "[local detail omitted from GitHub snapshot]",
+  "preserved_explicit_high_after_reload": "[local detail omitted from GitHub snapshot]",
+  "scope": "Isolated real browser context; no task submitted or user browser changed."
+}

@@ -1,0 +1,22 @@
+{
+  "checked_at": "[local detail omitted from GitHub snapshot]",
+  "status": "passed",
+  "authenticated_desktop_preview": {
+    "available": true,
+    "artifact": "[local detail omitted from GitHub snapshot]",
+    "at": 1791658313.7719781
+  },
+  "image_bytes": 502048,
+  "editor_api": {
+    "opened": "[local detail omitted from GitHub snapshot]",
+    "line": 1,
+    "executable": "[local detail omitted from GitHub snapshot]",
+    "profile": "[local detail omitted from GitHub snapshot]"
+  },
+  "service_status": {
+    "engine": "not loaded",
+    "active_job": null,
+    "model_pid": null
+  },
+  "service_loaded_latest_graphical_fix": true
+}

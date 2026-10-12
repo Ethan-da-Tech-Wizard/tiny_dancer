@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-11T12:42:10.302816+00:00",
+  "passed": false,
+  "status": "failed",
+  "tests_run": 276,
+  "errors": 5,
+  "checks": {
+    "stage_dependency_imports": false
+  },
+  "assessment_note": "[local detail omitted from GitHub snapshot]",
+  "log": "[local detail omitted from GitHub snapshot]",
+  "production_changed": false,
+  "archive_metadata": {
+    "source": "pending-output-receipts-stage-setup-failure.json",
+    "kind": "automated",
+    "title": "Receipt stage: setup failure",
+    "scope": "Missing stage scripts caused import errors; not a native model run.",
+    "source_sha256": "6e424877408d6a0b15ae98914b0105e72b6ab6ab02dd39f789cf6292bb7aa9ea"
+  }
+}

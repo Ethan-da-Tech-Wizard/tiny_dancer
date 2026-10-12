@@ -1,0 +1,66 @@
+{
+  "title": "Native placement14 sustained thermal observations",
+  "job": "89e7496fcb254a69bcbfe08f43f7619b",
+  "scope": "Read-only NVIDIA driver snapshots during active native trial; observational, not a controlled causal or quality test. No host/model settings changed.",
+  "fields": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "samples": [
+    {
+      "at": "2026-10-11T17:13:51.570785+00:00",
+      "driver_csv": "[local detail omitted from GitHub snapshot]",
+      "returncode": 0,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "generating"
+    },
+    {
+      "at": "2026-10-11T17:13:56.615785+00:00",
+      "driver_csv": "[local detail omitted from GitHub snapshot]",
+      "returncode": 0,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "generating"
+    },
+    {
+      "at": "2026-10-11T17:14:01.659563+00:00",
+      "driver_csv": "[local detail omitted from GitHub snapshot]",
+      "returncode": 0,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "generating"
+    },
+    {
+      "at": "2026-10-11T17:14:06.703554+00:00",
+      "driver_csv": "[local detail omitted from GitHub snapshot]",
+      "returncode": 0,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "generating"
+    },
+    {
+      "at": "2026-10-11T17:14:11.756519+00:00",
+      "driver_csv": "[local detail omitted from GitHub snapshot]",
+      "returncode": 0,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "generating"
+    },
+    {
+      "at": "2026-10-11T17:14:16.800084+00:00",
+      "driver_csv": "[local detail omitted from GitHub snapshot]",
+      "returncode": 0,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "generating"
+    },
+    {
+      "at": "2026-10-11T17:14:21.849533+00:00",
+      "driver_csv": "[local detail omitted from GitHub snapshot]",
+      "returncode": 0,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "generating"
+    }
+  ]
+}

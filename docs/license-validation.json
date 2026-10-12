@@ -1,0 +1,21 @@
+{
+  "updated_at": "2026-10-10T18:40:17.622383+00:00",
+  "status": "passed",
+  "project_license": "[local detail omitted from GitHub snapshot]",
+  "copyright_notice": "[local detail omitted from GitHub snapshot]",
+  "canonical_license_source": "[local detail omitted from GitHub snapshot]",
+  "canonical_license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+  "archived_license_and_notice_files": 229,
+  "installed_python_distributions": 41,
+  "locked_python_distributions": 41,
+  "direct_host_dependencies": 25,
+  "verification": {
+    "source_and_copy_sha256": "passed: scripts/collect_licenses.py --check",
+    "installed_python_versions_match_lock": "[local detail omitted from GitHub snapshot]",
+    "license_index_local_links": "[local detail omitted from GitHub snapshot]",
+    "collector_python_syntax": "[local detail omitted from GitHub snapshot]",
+    "editor_electron_and_host_python": "[local detail omitted from GitHub snapshot]"
+  },
+  "coverage": "[local detail omitted from GitHub snapshot]",
+  "runtime_changes": false
+}

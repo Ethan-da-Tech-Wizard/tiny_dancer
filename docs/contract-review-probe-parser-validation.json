@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-11T09:07:12.688480+00:00",
+  "passed": true,
+  "checks": {
+    "actual_api_text_field_and_final_channel": true,
+    "analysis_and_tool_calls_excluded": true,
+    "plain_and_fenced_verdicts": true,
+    "four_invalid_shapes_rejected": true
+  },
+  "scope": "Observer parser fixtures; not native review capability."
+}

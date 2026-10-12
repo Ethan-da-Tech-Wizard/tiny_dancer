@@ -1,0 +1,6 @@
+{
+  "exit_code": 0,
+  "elapsed_seconds": 0.41461255599278957,
+  "max_rss_kib": 20316,
+  "scope": "Synthetic standalone unchanged model kernels; no full model load or production replacement."
+}

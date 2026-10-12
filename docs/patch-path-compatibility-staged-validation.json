@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-12T05:44:16.854218+00:00",
+  "passed": true,
+  "scope": "Offline replay of the actual public rejected patch into a fresh temporary fixture. Only the task folder prefix is relocated. No implementation correction, native task edit, or live deployment. Syntax/path compatibility is not semantic task qualification.",
+  "job": "ee6707ab8e07465389ff29c4d529abec",
+  "observed_error": "[local detail omitted from GitHub snapshot]",
+  "request_sha256": "7d44fd952833b8f1f1947c7be9b954003127da18633551b7ea3b54a1e3633d70",
+  "checks": {
+    "same_model_authored_file_bytes": true,
+    "actual_absolute_path_applied": true,
+    "python_syntax_valid": true,
+    "original_native_task_folder_untouched": true
+  },
+  "stage": "[local detail omitted from GitHub snapshot]",
+  "deployed": true,
+  "full_regression_report": "docs/validation/runs/20261012T054640463797Z.json",
+  "runtime_sha256": "391b59aeebf13b0bd5b8f1b42d664d65f2745b601f42affefe53a64f760b2545"
+}

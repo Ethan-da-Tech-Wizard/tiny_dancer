@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "job": "d90dee399436403c95f199208fc4ba05",
+  "child_pid": 50404,
+  "child_exited": true,
+  "startup_cancel": true,
+  "seconds_to_stop": 0.021,
+  "status": "cancelled",
+  "engine": "not loaded"
+}

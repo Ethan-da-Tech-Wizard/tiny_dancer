@@ -1,0 +1,375 @@
+{
+  "started_at": "2026-10-12T03:30:14.253138+00:00",
+  "status": "complete",
+  "case": "regression_repair_inventory",
+  "cwd": "/mnt/GameDrive/tiny_dancer/workspace/regression-repair-inventory-20261012T033014199471Z",
+  "prompt": "[local detail omitted from GitHub snapshot]",
+  "original_goal": "[local detail omitted from GitHub snapshot]",
+  "original_report": "docs/native-inventory-20261012T021158830837Z.json",
+  "initial_files_sha256": {
+    "report.json": "36b2e9a1c1b8c03a2bd94d1a302a4bf7fc431e4eed57610647e36b156952a812",
+    "test_additional_inventory.py": "3b86d93de5a71614054e4459b3a80db3c6c0e9da6c22d5f2a2054832176600e6",
+    "test_scan_regression.py": "fc5c467a79a6f213f7a297c1fa46a56465d93577186d5957eb64607d975b4f38",
+    "test_acceptance.py": "e45fea75d1a00bc2158d0f552b1f352e8375a27082999d8d45dfd91b68482475",
+    "CONTRACT.md": "155ec6ca74ca37c1e3b4baa346360c7331e7ba795901741905c1e152189ad62d",
+    "inventory.py": "8311163f108b0ec2ddb659015f2ea73d8222547bed3fb611f5b44ddf0d729592",
+    "sample_tree/.hidden": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample_tree/data.bin": "06eb7d6a69ee19e5fbdf749018d3d2abfa04bcbd1365db312eb86dc7169389b8",
+    "sample_tree/nested/hello.txt": "5891b5b522d5df086d0ff0b110fbd9d21bb4fc7163af34d08286a2e846f6be03"
+  },
+  "scope": "Known-failure repair through the normal local Agent API. At task start an exact copy of the failed native project receives two calibrated public scan-error regression tests. No implementation/fix supplied; no live hints or operator edits. Original acceptance and supplied regression remain unchanged. Separate predeclared eight behavior checks include previously unseen pipe/socket handling. Seeded repair, not fresh implementation or a release-gate pass.",
+  "effort": "[local detail omitted from GitHub snapshot]",
+  "runtime_sha256_before": "49db0778c0135c773b04098cd02f2884c096be4a077452ccc4c82fd01054458c",
+  "acceptance_sha256": "e45fea75d1a00bc2158d0f552b1f352e8375a27082999d8d45dfd91b68482475",
+  "additional_independent_criteria": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "operator_interventions": [],
+  "samples": [
+    {
+      "seconds": 0.0,
+      "status": "running",
+      "turns": 0,
+      "engine": "not loaded",
+      "progress": {
+        "kind": "tool_start",
+        "data": {
+          "name": "inspect_project",
+          "arguments": "[local detail omitted from GitHub snapshot]",
+          "step": 0,
+          "origin": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791775814.6637595
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 0.0,
+        "edited_files": 0,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": null,
+        "latest_tests_passed": null,
+        "native_verified": false,
+        "action_counts": {
+          "tool_start": 1
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      }
+    },
+    {
+      "seconds": 20.3,
+      "status": "running",
+      "turns": 1,
+      "engine": "loading model",
+      "progress": {
+        "kind": "tool_start",
+        "data": {
+          "name": "run_checks",
+          "arguments": "[local detail omitted from GitHub snapshot]",
+          "step": 0,
+          "origin": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791775814.6983538
+      },
+      "evidence": {
+        "changed_evidence": true,
+        "seconds_since_changed_evidence": 0.0,
+        "edited_files": 0,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 10,
+        "latest_tests_passed": false,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 2,
+          "tool_start": 2
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      }
+    },
+    {
+      "seconds": 40.4,
+      "status": "running",
+      "turns": 1,
+      "engine": "processing prompt",
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3703,
+          "reused_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791775851.010401
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 20.1,
+        "edited_files": 0,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 10,
+        "latest_tests_passed": false,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 2,
+          "tool_start": 2
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      }
+    },
+    {
+      "seconds": 60.4,
+      "status": "running",
+      "turns": 1,
+      "engine": "processing prompt",
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3703,
+          "reused_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791775874.582898
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 40.1,
+        "edited_files": 0,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 10,
+        "latest_tests_passed": false,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 2,
+          "tool_start": 2
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      }
+    },
+    {
+      "seconds": 80.4,
+      "status": "running",
+      "turns": 1,
+      "engine": "generating",
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 394,
+          "seconds": 44.0
+        },
+        "created": 1791775895.019075
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 60.1,
+        "edited_files": 0,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 10,
+        "latest_tests_passed": false,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 2,
+          "tool_start": 2
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      }
+    },
+    {
+      "seconds": 100.4,
+      "status": "running",
+      "turns": 1,
+      "engine": "generating",
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 941,
+          "seconds": 63.7
+        },
+        "created": 1791775914.7257147
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 80.1,
+        "edited_files": 0,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 10,
+        "latest_tests_passed": false,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 2,
+          "tool_start": 2
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      }
+    },
+    {
+      "seconds": 120.4,
+      "status": "running",
+      "turns": 1,
+      "engine": "ready",
+      "progress": {
+        "kind": "tool_start",
+        "data": {
+          "name": "run_checks",
+          "arguments": "[local detail omitted from GitHub snapshot]",
+          "step": 1,
+          "origin": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791775933.9312956
+      },
+      "evidence": {
+        "changed_evidence": true,
+        "seconds_since_changed_evidence": 0.0,
+        "edited_files": 1,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 10,
+        "latest_tests_passed": false,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 3,
+          "tool_start": 4
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      }
+    },
+    {
+      "seconds": 140.4,
+      "status": "running",
+      "turns": 4,
+      "engine": "generating",
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 16,
+          "seconds": 1.3
+        },
+        "created": 1791775954.9576175
+      },
+      "evidence": {
+        "changed_evidence": true,
+        "seconds_since_changed_evidence": 0.0,
+        "edited_files": 1,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 10,
+        "latest_tests_passed": true,
+        "native_verified": true,
+        "action_counts": {
+          "tool_result": 6,
+          "tool_start": 6
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      }
+    },
+    {
+      "seconds": 160.4,
+      "status": "complete",
+      "turns": 4,
+      "engine": "ready",
+      "progress": {
+        "kind": "done",
+        "data": {
+          "steps": 4,
+          "verified": true,
+          "evidence_checked": false,
+          "answer_origin": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791775956.3589947
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 20.0,
+        "edited_files": 1,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 10,
+        "latest_tests_passed": true,
+        "native_verified": true,
+        "action_counts": {
+          "tool_result": 6,
+          "tool_start": 6
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      }
+    }
+  ],
+  "baseline": {
+    "exit_code": 1,
+    "output": "[local detail omitted from GitHub snapshot]"
+  },
+  "job": "d9ae06be3cf3492cb9e489d8ea8cc1f8",
+  "session": "13a3e033f3614456938230af1800c2cd",
+  "seconds": 141.72,
+  "independent_checks": [
+    {
+      "check": "unseen binary/unicode/symlinks/output exclusion 1",
+      "passed": true,
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "unseen binary/unicode/symlinks/output exclusion 2",
+      "passed": true,
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "invalid root preserves actual prior bytes",
+      "passed": true,
+      "exit_code": 1
+    },
+    {
+      "check": "scan read failure preserves actual prior bytes",
+      "passed": true,
+      "exit_code": 1,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "requested real report.json complete and exact",
+      "passed": true
+    },
+    {
+      "check": "Repeated successful output outside ROOT is replaced with current data",
+      "passed": true,
+      "first_exit_code": 0,
+      "second_exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "Unreadable directory fails scanning and preserves prior output",
+      "passed": true,
+      "readable_control_passed": true,
+      "exit_code": 1,
+      "prior_output_preserved": true,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "Special files are excluded without blocking; regular files remain correct",
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "project_tests": {
+    "exit_code": 0,
+    "output": "[local detail omitted from GitHub snapshot]"
+  },
+  "runtime_sha256_after": "49db0778c0135c773b04098cd02f2884c096be4a077452ccc4c82fd01054458c",
+  "checks": {
+    "native_completion": true,
+    "runtime_frozen": true,
+    "acceptance_unchanged": true,
+    "project_tests_pass": true,
+    "independent_goal_checks": true,
+    "regression_tests_unchanged": true,
+    "implementation_changed": true
+  },
+  "passed": true
+}

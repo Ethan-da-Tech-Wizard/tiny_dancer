@@ -1,0 +1,107 @@
+{
+  "started_at": "2026-10-11T22:48:01.009765+00:00",
+  "status": "paused",
+  "case": "inventory_resume",
+  "scope": "Targeted Resume/completion repair from previously saved local-model inventory code. Original goal and supplied tests retained; no operator implementation or live hints. Not a fresh implementation and not eligible for the fresh inventory release gate.",
+  "original_report": "docs/native-inventory-20261011T221015281838Z.json",
+  "job": "23da82d91fbe4a638f46465295e866e0",
+  "cwd": "/mnt/GameDrive/tiny_dancer/workspace/native-inventory-20261011T221015281838Z",
+  "runtime_sha256_before": "69f742f02f6ebbc7be60a5a791cd379430ae34c9b6469fef001d429e3df31462",
+  "acceptance_sha256": "e45fea75d1a00bc2158d0f552b1f352e8375a27082999d8d45dfd91b68482475",
+  "observation_limit_seconds": null,
+  "prior_operator_interventions": [
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "operator_interventions": [],
+  "samples": [
+    {
+      "elapsed_seconds": 0.0,
+      "status": "running",
+      "run_until_done": true,
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 0.0,
+        "edited_files": 1,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 6,
+        "latest_tests_passed": true,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 14,
+          "tool_start": 14
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      }
+    },
+    {
+      "elapsed_seconds": 20.0,
+      "status": "paused",
+      "run_until_done": true,
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 20.0,
+        "edited_files": 1,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 6,
+        "latest_tests_passed": true,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 14,
+          "tool_start": 14
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      }
+    }
+  ],
+  "event_boundary": 15523,
+  "passed": false,
+  "checks": {
+    "native_verified": false,
+    "continuous_saved_policy": true,
+    "acceptance_unchanged": true,
+    "all_independent_checks": false,
+    "additional_passing_project_tests": false,
+    "runtime_frozen": true,
+    "no_operator_runtime_hints": true
+  },
+  "independent_checks": [
+    {
+      "check": "unseen binary/unicode/symlinks/output exclusion 1",
+      "passed": true,
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "unseen binary/unicode/symlinks/output exclusion 2",
+      "passed": true,
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "invalid root preserves actual prior bytes",
+      "passed": true,
+      "exit_code": 1
+    },
+    {
+      "check": "scan read failure preserves actual prior bytes",
+      "passed": true,
+      "exit_code": 1,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "requested real report.json complete and exact",
+      "passed": false
+    }
+  ],
+  "project_tests": {
+    "exit_code": 0,
+    "output": "[local detail omitted from GitHub snapshot]"
+  },
+  "metrics": [],
+  "elapsed_seconds": 20.42,
+  "runtime_sha256_after": "69f742f02f6ebbc7be60a5a791cd379430ae34c9b6469fef001d429e3df31462",
+  "blocking_condition": "[local detail omitted from GitHub snapshot]",
+  "completion_observation": "[local detail omitted from GitHub snapshot]"
+}

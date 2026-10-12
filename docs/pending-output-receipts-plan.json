@@ -1,0 +1,11 @@
+{
+  "started_at": "2026-10-11T12:36:38.510728+00:00",
+  "status": "294_staged_pass_await_idle_deployment",
+  "production_runtime_sha256": "978e3947077a8fff272c10e7a6111b1b149a82551eca7f8e307ca46c117475c6",
+  "stage": "[local detail omitted from GitHub snapshot]",
+  "observed_native_case": "[local detail omitted from GitHub snapshot]",
+  "defect": "[local detail omitted from GitHub snapshot]",
+  "requirement": "[local detail omitted from GitHub snapshot]",
+  "production_changed": false,
+  "validation": "[local detail omitted from GitHub snapshot]"
+}

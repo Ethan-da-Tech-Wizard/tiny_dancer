@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-10T23:29:04.992540+00:00",
+  "errors": [],
+  "checks": {
+    "unauthenticated_results_denied": true,
+    "unknown_evidence_denied": true,
+    "all_evidence_links_work": true,
+    "past_failure_kept": true,
+    "missing_export_kept": true,
+    "latest_suite_status_valid": true,
+    "results_render_all_rows": true,
+    "results_desktop_no_overflow": true,
+    "results_mobile_no_overflow": true,
+    "saved_text_cannot_execute_markup": true,
+    "sidebar_results_link": true,
+    "export_label": true,
+    "saved_path_shown": true,
+    "verified_complete_controls": true,
+    "old_tool_calls_not_running": true,
+    "export_desktop_no_overflow": true,
+    "export_desktop_messages_visible": true,
+    "export_mobile_no_overflow": true,
+    "export_mobile_messages_visible": true,
+    "export_short-window_no_overflow": true,
+    "export_short-window_messages_visible": false,
+    "no_javascript_errors": true
+  },
+  "results_count": 38,
+  "session": "e49878f2e88542cdaefe0fe660e32307",
+  "saved_file": "[local detail omitted from GitHub snapshot]",
+  "passed": false,
+  "archive_metadata": {
+    "source": "score-export-ui-validation.json",
+    "kind": "automated",
+    "title": "Completed score export interface",
+    "scope": "Live browser assertions; no model task actions.",
+    "source_sha256": "53717fe56c98164c8eb606aa2553e8bf7e4b0410e6e982b34e856ca77285b45e"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-10T23:33:49.218945+00:00",
+  "before_tokens": 1527,
+  "after_tokens": 908,
+  "reduction_percent": 40.54,
+  "scope": "Same frozen repair prompt/cwd/medium effort with actual tokenizer; includes generic minimal-edit/edge-case guidance. Native timing reported separately.",
+  "iterations": [
+    {
+      "at": "2026-10-10T23:23:27.100162+00:00",
+      "before_tokens": 1527,
+      "after_tokens": 895,
+      "reduction_percent": 41.39
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "started_at": "2026-10-12T02:40:17.101288+00:00",
+  "status": "complete",
+  "scope": "One local-model test-writing response receives original goal, current source and existing generic API facts. No hidden examples, outcome hints, implementation edits or pass/fail self-rating. Identical generated tests are executed against flawed and separately graded operator-written positive TEST CONTROL. Positive source is never sent to the model. Not production qualification.",
+  "source_report": "docs/native-inventory-20261012T021158830837Z.json",
+  "cwd": "/mnt/GameDrive/tiny_dancer/workspace/audit-test-probe-20261012T024017099792Z",
+  "runtime_sha256_before": "49db0778c0135c773b04098cd02f2884c096be4a077452ccc4c82fd01054458c",
+  "criteria": {
+    "nonempty_same_tests": true,
+    "assertion_failure_on_flawed": true,
+    "no_errors_on_flawed": true,
+    "all_pass_on_conforming": true,
+    "zero_skips": true,
+    "implementations_unchanged": true
+  },
+  "program_sha256": "8311163f108b0ec2ddb659015f2ea73d8222547bed3fb611f5b44ddf0d729592",
+  "conforming_sha256": "34e5e1dbf0627b78b7af71c63b0d7014795db7e043b64bf5655ad5f2b0e7dcdc",
+  "instructions": "[local detail omitted from GitHub snapshot]",
+  "prompt": "[local detail omitted from GitHub snapshot]",
+  "effort": "[local detail omitted from GitHub snapshot]",
+  "operator_interventions": [],
+  "metrics": [
+    {
+      "backend": "llama.cpp-native-chat-grammar",
+      "total_seconds": 158.29,
+      "prompt_tokens": 1634,
+      "completion_tokens": 3382,
+      "prefill_seconds": 18.316599999999998,
+      "decode_seconds": 139.954348,
+      "reasoning_effort": "medium",
+      "sampling_temperature": 1.0
+    }
+  ],
+  "samples": [
+    {
+      "seconds": 0.0,
+      "engine": "loading model",
+      "available_ram_gib": 7.939,
+      "activity": null
+    },
+    {
+      "seconds": 20.2,
+      "engine": "loading model",
+      "available_ram_gib": 7.702,
+      "activity": [
+        851421,
+        4.5,
+        8291774464,
+        8192
+      ]
+    },
+    {
+      "seconds": 40.3,
+      "engine": "loading model",
+      "available_ram_gib": 7.634,
+      "activity": [
+        851421,
+        9.06,
+        17409339392,
+        12288
+      ]
+    },
+    {
+      "seconds": 60.4,
+      "engine": "processing prompt",
+      "available_ram_gib": 7.456,
+      "activity": [
+        851421,
+        24.610000000000003,
+        24948404224,
+        16384
+      ]
+    },
+    {
+      "seconds": 80.5,
+      "engine": "generating",
+      "available_ram_gib": 7.414,
+      "activity": [
+        851421,
+        96.76,
+        25179447296,
+        16384
+      ]
+    },
+    {
+      "seconds": 100.5,
+      "engine": "generating",
+      "available_ram_gib": 7.403,
+      "activity": [
+        851421,
+        195.37,
+        25197477888,
+        20480
+      ]
+    },
+    {
+      "seconds": 120.6,
+      "engine": "generating",
+      "available_ram_gib": 7.393,
+      "activity": [
+        851421,
+        294.52000000000004,
+        25218179072,
+        24576
+      ]
+    },
+    {
+      "seconds": 140.6,
+      "engine": "generating",
+      "available_ram_gib": 7.389,
+      "activity": [
+        851421,
+        388.48,
+        25245429760,
+        28672
+      ]
+    },
+    {
+      "seconds": 160.7,
+      "engine": "generating",
+      "available_ram_gib": 7.402,
+      "activity": [
+        851421,
+        482.90999999999997,
+        25250304000,
+        32768
+      ]
+    },
+    {
+      "seconds": 180.8,
+      "engine": "generating",
+      "available_ram_gib": 7.43,
+      "activity": [
+        851421,
+        577.62,
+        25253552128,
+        32768
+      ]
+    },
+    {
+      "seconds": 200.8,
+      "engine": "generating",
+      "available_ram_gib": 7.414,
+      "activity": [
+        851421,
+        653.8000000000001,
+        25259851776,
+        36864
+      ]
+    }
+  ],
+  "generated_test_sha256": "73f16adccd4b6f41f99aaaf40877dfba6b1ed59b647ef890475ebbcff0f6eda8",
+  "private_reasoning_characters": 3749,
+  "verification": {
+    "passed": false,
+    "checks": {
+      "actual_nonempty_tests": true,
+      "finds_behavioral_failure": true,
+      "accepts_conforming_control": false,
+      "no_skipped_cases": true,
+      "does_not_change_implementations": true
+    },
+    "flawed": {
+      "tests": 9,
+      "failures": 1,
+      "errors": 0,
+      "skipped": 0,
+      "passed": false,
+      "output": "[local detail omitted from GitHub snapshot]",
+      "implementation_unchanged": true
+    },
+    "conforming": {
+      "tests": 9,
+      "failures": 3,
+      "errors": 0,
+      "skipped": 0,
+      "passed": false,
+      "output": "[local detail omitted from GitHub snapshot]",
+      "implementation_unchanged": true
+    }
+  },
+  "passed": false,
+  "runtime_sha256_after": "49db0778c0135c773b04098cd02f2884c096be4a077452ccc4c82fd01054458c",
+  "runtime_frozen": true,
+  "elapsed_seconds": 207.89,
+  "archive_metadata": {
+    "source": "audit-test-probe-20261012T024017099792Z.json",
+    "kind": "native",
+    "title": "Executable requirement-check generation probe",
+    "scope": "One local-model test-writing response receives original goal, current source and existing generic API facts. No hidden examples, outcome hints, implementation edits or pass/fail self-rating. Identical generated tests are executed against flawed and separately graded operator-written positive TEST CONTROL. Positive source is never sent to the model. Not production qualification.",
+    "source_sha256": "08b48646d029e96531ecd1ce09c0fae85e930c8ed00c3813e1016da9ed22878b"
+  }
+}

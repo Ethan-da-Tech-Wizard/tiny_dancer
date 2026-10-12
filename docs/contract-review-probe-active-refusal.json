@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-11T09:06:23.829046+00:00",
+  "passed": true,
+  "scope": "Probe isolation/safety check only; no native review executed.",
+  "checks": {
+    "refuses_active_money_job": true,
+    "money_report_unchanged": true
+  }
+}

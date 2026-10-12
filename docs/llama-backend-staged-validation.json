@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-11T13:20:50.925021+00:00",
+  "passed": true,
+  "status": "passed",
+  "tests_run": 315,
+  "seconds": 23.661,
+  "checks": {
+    "focused14": true,
+    "full315": true,
+    "default_picchio_compatibility": true,
+    "explicit_native_backend_selection": true,
+    "cancellation_and_protocol_guards": true
+  },
+  "stage_files_sha256": {
+    "app/engine.py": "e69ba9d887baaf7aa1581ea97eeaa443dab15d9688cde1acf632e53c4ff6511c",
+    "app/llama_session.py": "2064f4fd8cc35a9375430c6c809558115735bf21b9a103a3503c7ba69059dd66",
+    "app/server.py": "82406c1b7dd143b7f1a0deb1fae151f935e2a83a9d20764adae15e7f7c6824ab",
+    "app/static/index.html": "1b048707f0f683ef4f27fef112ea3ab80f1f91421cefc28f58d1bbb290e18acf",
+    "app/static/app.js": "c1fc688c18ef95062e5c3fb4a37f5cb71725e5d857af9e69a087a6e2ea85daef",
+    "tests/test_llama_session.py": "d84cd19675a3555538c50c2c8c00c9d555e83f82547f07740bd73e10e3a94d00",
+    "tests/test_llama_backend.py": "d584ad6cd1157beb22205681bb865e30a555a53e5e3b763a418b6336411fa09b"
+  },
+  "log": "[local detail omitted from GitHub snapshot]",
+  "scope": "Same-model local backend integration; scripted protocol/factory regressions plus real tool checks. Native strategy diagnostics failed and remain archived; native coding qualification pending."
+}

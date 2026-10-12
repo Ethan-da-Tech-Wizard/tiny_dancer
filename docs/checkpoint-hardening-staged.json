@@ -1,0 +1,90 @@
+{
+  "at": "2026-10-11T03:03:22.022947+00:00",
+  "status": "deployed_guarded_restart_ready",
+  "stage": "[local detail omitted from GitHub snapshot]",
+  "observed_native_run": "[local detail omitted from GitHub snapshot]",
+  "observed_rollover": {
+    "prompt_tokens": 5381,
+    "reused_tokens": 1009,
+    "new_prefill_tokens": 4372
+  },
+  "hypothesis": "[local detail omitted from GitHub snapshot]",
+  "production_unchanged": false,
+  "red_tests": {
+    "failed": 2,
+    "log": "[local detail omitted from GitHub snapshot]"
+  },
+  "focused_tests": {
+    "passed": 29,
+    "seconds": 5.069,
+    "log": "[local detail omitted from GitHub snapshot]"
+  },
+  "counterfactual": {
+    "report": "docs/checkpoint-token-counterfactual.json",
+    "before_prompt_tokens": 5381,
+    "after_prompt_tokens": 3736,
+    "current_source_preserved": true,
+    "native_speed_benchmark": false,
+    "full_current_source_retained": true
+  },
+  "files": [
+    {
+      "path": "app/agent.py",
+      "staged_sha256": "a885ece16d016eb1ca358a88cd65e466a8ff2921540b2a91c8ae2279bec625bc",
+      "current_sha256": "c28996ed5b0bd4cba00b5e36ace6372454c60dd2d7125dcce74f28cc8697bac2"
+    },
+    {
+      "path": "app/engine.py",
+      "staged_sha256": "9230df6f3069b954c8e6ced274f595117c83a075e6e4609afd9cbbebfd767ecb",
+      "current_sha256": "80f3242f9373ceb4612ec3f32a9790b1c02b38fb8db04cfdf0284975cc00d7b5"
+    },
+    {
+      "path": "app/working_memory.py",
+      "staged_sha256": "7056f1cb07000539e6bb48a62683f44466980e0a264e18c14da0a3b6dbfd4e39",
+      "current_sha256": null
+    },
+    {
+      "path": "app/tool_runtime.py",
+      "staged_sha256": "e49762415c1e20c0257a89647b837127c43203caf6c2ed9a9a4abb724b4b6a72",
+      "current_sha256": "da6274eb1ea4a1e13adfdb5587a993735b65fe8d73501b3962fea2ac88209ecd"
+    },
+    {
+      "path": "tests/test_agent.py",
+      "staged_sha256": "244af441c5a9aec444e42c901d5826b7cb99a8653f0b8c63a00e72f624568e11",
+      "current_sha256": "0ee30fd12b245c0df0e538027c6aa8c0780211252ab880e30adefde187060e34"
+    },
+    {
+      "path": "tests/test_output_reserve.py",
+      "staged_sha256": "5d77ee30f82f202657b64b76fc908c79afde9c79033d175aa1645981d4e3ea66",
+      "current_sha256": "55a6b77c0d921270c754e66997c10d26cdb903b3315f50d186d64f1882a395b2"
+    },
+    {
+      "path": "tests/test_checkpoint_evidence.py",
+      "staged_sha256": "899f1830f94a7a3befe6f9cea20c6b10b2e650cc761a220090dcc60afacde699",
+      "current_sha256": null
+    },
+    {
+      "path": "tests/test_working_memory.py",
+      "staged_sha256": "e447acca49cfc086574b05b54826383234a84f0c3de4c923ffc745f69e83ab4d",
+      "current_sha256": null
+    },
+    {
+      "path": "tests/test_tool_runtime.py",
+      "staged_sha256": "1edf8b3a2ff5f6abf1b393ae6d07bd371ec48125140e2c4d2f53567975b38db9",
+      "current_sha256": "0176b4b60737e804c59486ceb8d10e903993d7d11e2c0a3e66384e99f0e5c1c7"
+    }
+  ],
+  "full_regressions": {
+    "passed": 211,
+    "seconds": 14.413,
+    "report": "docs/validation/runs/checkpoint-staged-20261011T031517182320Z.json"
+  },
+  "backup": "[local detail omitted from GitHub snapshot]",
+  "copied_at": "[local detail omitted from GitHub snapshot]",
+  "production_regressions": {
+    "passed": 211,
+    "seconds": 12.741,
+    "report": "docs/validation/runs/20261011T033000098807Z.json"
+  },
+  "authenticated_ready": true
+}

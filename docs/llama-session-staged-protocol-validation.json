@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-11T13:01:42.143010+00:00",
+  "passed": true,
+  "status": "passed",
+  "tests_run": 10,
+  "checks": {
+    "token_boundary_receipts": true,
+    "analysis_continuation_within_budget": true,
+    "limit_is_incomplete": true,
+    "exact_prefix_replay": true,
+    "disconnect_rejected": true,
+    "truncation_rejected": true,
+    "budget_excess_rejected": true,
+    "cancellation_propagates": true,
+    "invalid_ids_rejected": true,
+    "context_reserve_checked": true
+  },
+  "seconds": 0.003,
+  "log": "[local detail omitted from GitHub snapshot]",
+  "source_sha256": "2064f4fd8cc35a9375430c6c809558115735bf21b9a103a3503c7ba69059dd66",
+  "assessment_note": "[local detail omitted from GitHub snapshot]"
+}

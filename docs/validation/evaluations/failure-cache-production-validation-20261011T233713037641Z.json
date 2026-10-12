@@ -1,0 +1,26 @@
+{
+  "title": "Failed-check review cache preservation — production checks",
+  "started_at": "2026-10-11T23:37:13.014714+00:00",
+  "status": "passed",
+  "passed": true,
+  "scope": "491 production regression controls. Failed checks preserve history prefix and actual failure; no native speed/quality claim yet. Saved-source Resume will test actual local model separately.",
+  "runtime_sha256": "baf0c8ea6d9e5ce9dbfeaf22b19424c2ccc2c122336663823d1fbe492d782455",
+  "checks": {
+    "full_regressions": 491,
+    "startup_ram_threshold_gib": 4.5,
+    "running_ram_floor_gib": 1.5,
+    "failed_checks_invalidate_proof": true,
+    "context_capacity_recovery_retained": true,
+    "guarded_idle_restart_ready": true
+  },
+  "regression_report": "docs/validation/runs/20261011T233613237259Z.json",
+  "regression_seconds": 39.161,
+  "log": "[local detail omitted from GitHub snapshot]",
+  "archive_metadata": {
+    "source": "failure-cache-production-validation.json",
+    "kind": "regression",
+    "title": "Failed-check review cache preservation — production checks",
+    "scope": "491 production regression controls. Failed checks preserve history prefix and actual failure; no native speed/quality claim yet. Saved-source Resume will test actual local model separately.",
+    "source_sha256": "5229a07ab3b0569ce36212a17acde0e737ec1416eb26683803c9d777206b1716"
+  }
+}

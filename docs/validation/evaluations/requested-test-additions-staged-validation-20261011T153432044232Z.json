@@ -1,0 +1,58 @@
+{
+  "started_at": "2026-10-11T15:32:06.405263+00:00",
+  "status": "passed",
+  "title": "Explicit added-test requirement from initial source snapshot",
+  "scope": "Source-presence requirement only for explicit requested additions in supported Python/Rust code goals. Real passing tests remain required by existing completion proof; independent graders assess behavior/counts. Bounded/incomplete or legacy snapshots do not invent a historical baseline. No semantic guarantee of test relevance.",
+  "before": {
+    "tests": 9,
+    "failures": 5,
+    "log": "[local detail omitted from GitHub snapshot]"
+  },
+  "after": {
+    "tests": 9,
+    "passed": true,
+    "seconds": 0.007,
+    "log": "[local detail omitted from GitHub snapshot]"
+  },
+  "stage": "[local detail omitted from GitHub snapshot]",
+  "native_failure": "[local detail omitted from GitHub snapshot]",
+  "passed": true,
+  "tests_run": 351,
+  "seconds": 22.296,
+  "checks": {
+    "preexisting_tests_not_additions": true,
+    "actual_new_definitions_in_hash_proof": true,
+    "comment_only_changes_not_additions": true,
+    "existing_test_file_extensions_allowed": true,
+    "negated_and_conditional_requests_respected": true,
+    "rust_request_needs_rust_definitions": true,
+    "rust_comment_marker_not_test": true,
+    "resume_baseline_persists": true,
+    "legacy_no_invented_baseline": true,
+    "full_final_regressions": true
+  },
+  "conditional": {
+    "before_failed": true,
+    "before_log": "[local detail omitted from GitHub snapshot]"
+  },
+  "intermediate_full": {
+    "tests": 350,
+    "passed": true,
+    "seconds": 23.806,
+    "log": "[local detail omitted from GitHub snapshot]"
+  },
+  "focused_final": {
+    "tests": 10,
+    "passed": true,
+    "seconds": 0.007,
+    "log": "[local detail omitted from GitHub snapshot]"
+  },
+  "full_log": "[local detail omitted from GitHub snapshot]",
+  "archive_metadata": {
+    "source": "requested-test-additions-staged-validation.json",
+    "kind": "automated",
+    "title": "351 staged explicit added-test requirement regressions",
+    "scope": "Source-presence requirement only for explicit requested additions in supported Python/Rust code goals. Real passing tests remain required by existing completion proof; independent graders assess behavior/counts. Bounded/incomplete or legacy snapshots do not invent a historical baseline. No semantic guarantee of test relevance.",
+    "source_sha256": "5e321568b52f65a4f63b5384dd44d50b379a1dd08453ff426b4ff94a0f09dd79"
+  }
+}

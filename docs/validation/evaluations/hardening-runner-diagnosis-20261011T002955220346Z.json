@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-11T00:29:55.220038+00:00",
+  "status": "failed",
+  "passed": false,
+  "scope": "Four scripted/actual-tool regressions for common nested source/test files, Python3-only runtimes and missing-runner metadata. No native inference or automatic replacement tests.",
+  "detail": "[local detail omitted from GitHub snapshot]",
+  "archive_metadata": {
+    "source": "hardening-runner-diagnosis.json",
+    "kind": "automated",
+    "title": "Nested tests and unavailable test runner diagnosis",
+    "scope": "Four scripted/actual-tool regressions for common nested source/test files, Python3-only runtimes and missing-runner metadata. No native inference or automatic replacement tests.",
+    "source_sha256": "eb221b3502395a6f56759cfbf3ca30882136bd24c65382b4bdcf263856560d2a"
+  }
+}

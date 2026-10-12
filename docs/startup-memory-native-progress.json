@@ -1,0 +1,22 @@
+{
+  "observed_at": "[local detail omitted from GitHub snapshot]",
+  "job": "23da82d91fbe4a638f46465295e866e0",
+  "runtime_sha256": "c5468637b99fc42e7437b92eae91ca4099a7a936ac35132e1abdfc839b7a2535",
+  "scope": "Read-only native progress and memory counts; no private analysis or credentials.",
+  "status": "running",
+  "engine": "processing prompt",
+  "turns": 19,
+  "available_ram_gib": 5.25,
+  "elapsed_seconds": 1443.4,
+  "min_sampled_ram_gib": 4.94,
+  "slots": [
+    {
+      "is_processing": true,
+      "n_prompt_tokens": 1664,
+      "n_prompt_tokens_processed": 1536,
+      "n_prompt_tokens_cache": 0
+    }
+  ],
+  "model_cpu_seconds": 466.23,
+  "physical_read_gib": 143.856
+}

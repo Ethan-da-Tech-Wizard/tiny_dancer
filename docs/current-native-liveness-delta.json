@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-11T22:22:28.221899+00:00",
+  "engine": "generating",
+  "active_job": "[local detail omitted from GitHub snapshot]",
+  "available_ram_gib": 5.906,
+  "sample_seconds": 161.28,
+  "physical_read_gib": 4.139,
+  "cpu_seconds": 96.51,
+  "related_model_memory": {
+    "model_file_rss_gib": 5.79,
+    "anonymous_rss_gib": 0.69,
+    "other_file_rss_gib": 0.107
+  },
+  "slots": [
+    {
+      "is_processing": true,
+      "n_ctx": 32768,
+      "n_prompt_tokens": 5096,
+      "n_prompt_tokens_processed": 349,
+      "n_prompt_tokens_cache": 4725
+    }
+  ]
+}

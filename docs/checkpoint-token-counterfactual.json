@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-11T03:17:17.493479+00:00",
+  "scope": "Counterfactual Harmony tokenizer and scripted session only; no native generation, no live task mutation, not a speed benchmark.",
+  "before_rolled_prompt_tokens": 5381,
+  "before_reused_tokens": 1009,
+  "before_reprocessed_tokens": 4372,
+  "staged_compacted_prompt_tokens": 3736,
+  "reserved_output_tokens": 2048,
+  "context": 8192,
+  "fits": true,
+  "goal_preserved": true,
+  "current_source_retained": true,
+  "passed": true,
+  "status": "passed"
+}

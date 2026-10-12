@@ -1,0 +1,132 @@
+{
+  "at": "2026-10-11T03:31:40.070499+00:00",
+  "status": "native_acceptance_in_progress",
+  "method": "[local detail omitted from GitHub snapshot]",
+  "preserve": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "series": [
+    {
+      "task": "[local detail omitted from GitHub snapshot]",
+      "purpose": "[local detail omitted from GitHub snapshot]",
+      "status": "passed",
+      "seconds": 498.72,
+      "turns": 4,
+      "report": "docs/batching-native-validation.json"
+    },
+    {
+      "task": "[local detail omitted from GitHub snapshot]",
+      "purpose": "[local detail omitted from GitHub snapshot]",
+      "status": "passed",
+      "report": "docs/score-export-validation.json",
+      "file": "/mnt/GameDrive/tiny_dancer/workspace/scores_2026-09-27.json"
+    },
+    {
+      "task": "[local detail omitted from GitHub snapshot]",
+      "purpose": "[local detail omitted from GitHub snapshot]",
+      "status": "failed_frozen",
+      "seconds": 3610.33,
+      "turns": 14,
+      "report": "docs/hardening-coding-validation.json",
+      "reason": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "task": "[local detail omitted from GitHub snapshot]",
+      "purpose": "[local detail omitted from GitHub snapshot]",
+      "status": "240_regressions_passed_deployed",
+      "report": "docs/validation/runs/20261011T075710463971Z.json"
+    },
+    {
+      "task": "[local detail omitted from GitHub snapshot]",
+      "purpose": "[local detail omitted from GitHub snapshot]",
+      "status": "22_live_ui_assertions_passed",
+      "report": "docs/score-export-ui-validation.json"
+    },
+    {
+      "task": "[local detail omitted from GitHub snapshot]",
+      "purpose": "[local detail omitted from GitHub snapshot]",
+      "status": "failed_frozen",
+      "job": "517749996eba44acbfce47f64b210be6",
+      "report": "docs/precision-repair-validation.json",
+      "seconds": 3606.48,
+      "reason": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "task": "[local detail omitted from GitHub snapshot]",
+      "purpose": "[local detail omitted from GitHub snapshot]",
+      "status": "passed",
+      "job": "e22ca98acb0547caa3219bd0930398ec",
+      "report": "docs/final-native-repair-validation.json",
+      "seconds": 517.15,
+      "turns": 4,
+      "checks": {
+        "project_inspection_used": true,
+        "checks_batched": true,
+        "patch_used": true,
+        "unseen_arithmetic_passed": true,
+        "native_verified": true
+      }
+    },
+    {
+      "task": "[local detail omitted from GitHub snapshot]",
+      "status": "cancelled_failed",
+      "seconds": 4027.47,
+      "report": "docs/precision-repair-before-checkpoint-validation.json",
+      "reason": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "task": "[local detail omitted from GitHub snapshot]",
+      "status": "failed_cancelled_at_declared_limit",
+      "job": "1401b79b138b4a41a29b5d4fd9b41ba3",
+      "report": "docs/precision-repair-inspection-date-validation.json",
+      "acceptance_unchanged": true,
+      "runtime_sha256": "c96b45453116dbb3662260082a87c6ecfa32e7bb02d5e1a761ddee3916fbf599",
+      "supplemental_criteria": "[local detail omitted from GitHub snapshot]",
+      "seconds": 7214.78,
+      "reason": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "completion": "[local detail omitted from GitHub snapshot]",
+  "remaining_required_work": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "known_limitations": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "updated_at": "2026-10-11T10:55:22.148936+00:00",
+  "additional_evaluations": [
+    {
+      "report": "docs/precision-repair-checkpoint-validation.json",
+      "passed": false,
+      "status": "paused",
+      "seconds": 6397.3,
+      "operator_interventions": [],
+      "diagnosis": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "report": "docs/precision-repair-recovery-validation.json",
+      "passed": false,
+      "status": "cancelled",
+      "seconds": 7214.9,
+      "operator_interventions": [
+        "[local detail omitted from GitHub snapshot]"
+      ],
+      "diagnosis": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "report": "docs/contract-review-probe-20261011T103848Z.json",
+      "passed": false,
+      "status": "complete",
+      "diagnosis": "[local detail omitted from GitHub snapshot]"
+    }
+  ]
+}

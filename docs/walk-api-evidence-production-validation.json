@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-12T00:37:37.733538+00:00",
+  "passed": true,
+  "scope": "Harness fixtures and actual filesystem default/callback behavior only; native coding retest pending. Generic call-derived standard-library facts, no project imports or replacement implementation.",
+  "runtime_sha256": "761df7c63e0a7135f723db74138a20cf22ce9c7c8f9b468c7d4769e57c1ba2e1",
+  "checks": {
+    "known_omitted_or_none_callback_facts": true,
+    "supplied_callback_or_unknown_options_excluded": true,
+    "comments_strings_imports_excluded": true,
+    "source_never_executed_and_notes_bounded": true,
+    "real_os_walk_permission_control": true,
+    "focused23": true,
+    "full_staged504": true,
+    "full_production504": true,
+    "idle_guarded_restart": true
+  },
+  "regression_report": "docs/validation/runs/20261012T003625498420Z.json",
+  "stage_report": "run/staging/walk-api-evidence/docs/validation/runs/20261012T003247554444Z.json",
+  "focused_log": "[local detail omitted from GitHub snapshot]",
+  "red_log": "[local detail omitted from GitHub snapshot]",
+  "backup": "[local detail omitted from GitHub snapshot]",
+  "primary_source": "[local detail omitted from GitHub snapshot]",
+  "model_parameters_changed": false,
+  "new_dependencies": []
+}

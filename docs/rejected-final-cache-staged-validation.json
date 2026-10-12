@@ -1,0 +1,19 @@
+{
+  "title": "Rejected draft cache and broader goal controls — staged",
+  "started_at": "2026-10-12T00:11:50.958170+00:00",
+  "status": "passed",
+  "passed": true,
+  "scope": "499 staged regressions and actual grader witnesses. No native speed/quality claim on this candidate. Unchecked final text and incomplete actions excluded from cached history. Broader inventory checks are declared before future trials.",
+  "checks": {
+    "full_regressions": 499,
+    "rejected_final_not_replayed": true,
+    "exact_stored_prefix_retained": true,
+    "changed_goal_invalidates_raw_cache": true,
+    "broader_goal_grader_detects_both_defects": true,
+    "release_requires_broader_cases": true
+  },
+  "runtime_sha256": "b1fd734f946c2bef46529b510557155d6d5d62c5fc5c7f54b42f0e1618a7ad5b",
+  "report": "run/staging/rejected-final-cache/docs/validation/runs/20261012T001027481987Z.json",
+  "seconds": 37.421,
+  "backup": "[local detail omitted from GitHub snapshot]"
+}

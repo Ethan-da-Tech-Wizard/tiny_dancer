@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-11T10:44:18.749788+00:00",
+  "status": "passed",
+  "passed": true,
+  "tests_run": 9,
+  "failures": 0,
+  "errors": 0,
+  "log": "[local detail omitted from GitHub snapshot]",
+  "scope": "Actual command execution: repeated-test batching, failed checks, unchanged reads, Resume, cancellation, mutation during checks, stale-bytecode rejection. Isolated fixtures, not native model qualification.",
+  "archive_metadata": {
+    "source": "post-edit-focused-green.json",
+    "kind": "automated",
+    "title": "post edit focused green",
+    "scope": "Actual command execution: repeated-test batching, failed checks, unchanged reads, Resume, cancellation, mutation during checks, stale-bytecode rejection. Isolated fixtures, not native model qualification.",
+    "source_sha256": "7d7ad1e896e3c3146f9e69e45262b23b240c534d085f6401193952df8a7c748a"
+  }
+}

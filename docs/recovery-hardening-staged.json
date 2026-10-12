@@ -1,0 +1,60 @@
+{
+  "status": "deployed_guarded_restart_ready",
+  "updated_at": "2026-10-11T05:16:40.973975+00:00",
+  "stage": "[local detail omitted from GitHub snapshot]",
+  "tests": 231,
+  "seconds": 16.278,
+  "regression_report": "docs/validation/runs/recovery-staged-20261011T051304643104Z.json",
+  "scope": "Isolated scripted-model and actual-tool regressions, including installed pytest subtest pass/failure checks. Concurrent with frozen native repair; not a production/native pass or controlled speed benchmark.",
+  "files": [
+    {
+      "path": "app/agent.py",
+      "preimage_sha256": "a885ece16d016eb1ca358a88cd65e466a8ff2921540b2a91c8ae2279bec625bc",
+      "staged_sha256": "7efce1e293dbd5e1cc06e592fa92a295b3052a0cde0220d268745e2a1d593761"
+    },
+    {
+      "path": "app/working_memory.py",
+      "preimage_sha256": "7056f1cb07000539e6bb48a62683f44466980e0a264e18c14da0a3b6dbfd4e39",
+      "staged_sha256": "84c7b90d596e6b22964e043ccd54e93b73b5ca5bb504d6b399393b09aa2f6626"
+    },
+    {
+      "path": "app/prompting.py",
+      "preimage_sha256": "bae3c357bc262aa8a069fec39f10d228db5be86c1648897c207b84ea1234af12",
+      "staged_sha256": "5bda76fbeb112873227760d9677cd2e19091a6ef92b2a821f005a3c3b9980b39"
+    },
+    {
+      "path": "app/verification.py",
+      "preimage_sha256": "add73ae6aea90c01d1bae9288dd7dc4a6f93c1a9fb7d0c5e0431adcbfa3666b0",
+      "staged_sha256": "4ab7931f04c72f0036c00179fb029430e2d4c2f695a3d3e000f892ff644bf5d3"
+    },
+    {
+      "path": "tests/test_adaptive_work_allowance.py",
+      "preimage_sha256": null,
+      "staged_sha256": "3c4d2fea517f97d78c7b2eda5f5756f4038bbe08e565fb3a98a2a353bfb0dcae"
+    },
+    {
+      "path": "tests/test_checkpoint_selection.py",
+      "preimage_sha256": null,
+      "staged_sha256": "a735a64c2f9598f89e42c7b534d168ccac7d76ede8b047f687ae7a81b4e5e22a"
+    },
+    {
+      "path": "tests/test_output_reserve.py",
+      "preimage_sha256": "5d77ee30f82f202657b64b76fc908c79afde9c79033d175aa1645981d4e3ea66",
+      "staged_sha256": "1a237202e0a0ac44cc21b7ea4c488acea0f211afbdbbb3cc5b709625cf4cef57"
+    },
+    {
+      "path": "tests/test_prompt_cache.py",
+      "preimage_sha256": "63941aa2f43f300d2fb5065d279f517fb2d7a19bbcfc3d7709e20a697db79f0d",
+      "staged_sha256": "2f7a024d1742fca6816ee674e94cf6179867f31bf1f93f052fcc82276a8d9b13"
+    },
+    {
+      "path": "tests/test_pytest_subtests.py",
+      "preimage_sha256": null,
+      "staged_sha256": "ddf05585e59fdc825807e07fb9afb4fceb674bb2a998adc87d059b65fd15496f"
+    }
+  ],
+  "deployed_at": "[local detail omitted from GitHub snapshot]",
+  "backup": "[local detail omitted from GitHub snapshot]",
+  "ready_at": "[local detail omitted from GitHub snapshot]",
+  "production_regression_report": "docs/validation/runs/20261011T052600822896Z.json"
+}

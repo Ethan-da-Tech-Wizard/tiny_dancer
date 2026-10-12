@@ -1,0 +1,13 @@
+{
+  "started_at": "2026-10-11T11:56:33.718726+00:00",
+  "status": "complete",
+  "passed": true,
+  "scope": "Exact public initial goal/tool history rendered with the production Harmony tokenizer and a fake backend. No native generation or app speed comparison; candidate not deployed.",
+  "baseline_prompt_tokens": 2933,
+  "candidate_prompt_tokens": 1854,
+  "removed_prompt_tokens": 1079,
+  "reduction_percent": 36.79,
+  "native_observed_initial_prompt_tokens": 2933,
+  "runtime_unchanged": true,
+  "native_report": "docs/native-inventory-20261011T114001664864Z.json"
+}

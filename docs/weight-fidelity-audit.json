@@ -1,0 +1,117 @@
+{
+  "started_at": "2026-10-11T12:23:25.222832+00:00",
+  "status": "complete",
+  "scope": "Read-only tensor reconstruction audit: six preselected expert tensors, first8rows/128columns/expert0 at layers0,11,23. No inference, runtime change or quality attribution. Sampling does not characterize every model weight.",
+  "selection": {
+    "layers": [
+      0,
+      11,
+      23
+    ],
+    "projections": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "expert": 0,
+    "rows": 8,
+    "columns": 128
+  },
+  "runtime_sha256_before": "978e3947077a8fff272c10e7a6111b1b149a82551eca7f8e307ca46c117475c6",
+  "decoder_self_checks": true,
+  "samples": [
+    {
+      "tensor": "[local detail omitted from GitHub snapshot]",
+      "values": 1024,
+      "changed_values": 819,
+      "changed_percent": 79.98,
+      "max_absolute_error": 0.008928567171096802,
+      "rmse": 0.004132289762714742,
+      "normalized_rmse": 0.10475689753688683,
+      "matches_deployed_converter": true,
+      "finite_original_and_serving": true
+    },
+    {
+      "tensor": "[local detail omitted from GitHub snapshot]",
+      "values": 1024,
+      "changed_values": 899,
+      "changed_percent": 87.793,
+      "max_absolute_error": 0.0267857164144516,
+      "rmse": 0.005847054519153113,
+      "normalized_rmse": 0.09932143932901559,
+      "matches_deployed_converter": true,
+      "finite_original_and_serving": true
+    },
+    {
+      "tensor": "[local detail omitted from GitHub snapshot]",
+      "values": 1024,
+      "changed_values": 856,
+      "changed_percent": 83.594,
+      "max_absolute_error": 0.0066964291036129,
+      "rmse": 0.0019521759517489611,
+      "normalized_rmse": 0.1138033123304592,
+      "matches_deployed_converter": true,
+      "finite_original_and_serving": true
+    },
+    {
+      "tensor": "[local detail omitted from GitHub snapshot]",
+      "values": 1024,
+      "changed_values": 837,
+      "changed_percent": 81.738,
+      "max_absolute_error": 0.2142857313156128,
+      "rmse": 0.08053327256668245,
+      "normalized_rmse": 0.11457334614210606,
+      "matches_deployed_converter": true,
+      "finite_original_and_serving": true
+    },
+    {
+      "tensor": "[local detail omitted from GitHub snapshot]",
+      "values": 1024,
+      "changed_values": 858,
+      "changed_percent": 83.789,
+      "max_absolute_error": 0.008928567171096802,
+      "rmse": 0.0023228979594927374,
+      "normalized_rmse": 0.10505765822062946,
+      "matches_deployed_converter": true,
+      "finite_original_and_serving": true
+    },
+    {
+      "tensor": "[local detail omitted from GitHub snapshot]",
+      "values": 1024,
+      "changed_values": 842,
+      "changed_percent": 82.227,
+      "max_absolute_error": 1.7142858505249023,
+      "rmse": 0.646057886009227,
+      "normalized_rmse": 0.12563339595240328,
+      "matches_deployed_converter": true,
+      "finite_original_and_serving": true
+    }
+  ],
+  "passed": true,
+  "elapsed_seconds": 0.33,
+  "original_headers": {
+    "model-00000-of-00002.safetensors": {
+      "header_sha256": "c3f0da47d5067762957fb7c2498baa7116dca369f7ec21cb87d534131f28a339"
+    },
+    "model-00001-of-00002.safetensors": {
+      "header_sha256": "2a5470e03fce466096b781271d6d5a6584080c97aa3bfe3ef5979b2ad504688f"
+    },
+    "model-00002-of-00002.safetensors": {
+      "header_sha256": "9417871457ee6416db1afa51d00a73fe10bb2b1ff2b82accf9920f60e277681f"
+    }
+  },
+  "serving_headers": {
+    "model-00000.safetensors": {
+      "header_sha256": "bb39e0bb18b21aadf2ea308c359622a4f364e87f1b0a6619cb2a6f77f4a9c0b3"
+    },
+    "model-00001.safetensors": {
+      "header_sha256": "ec47847c0f6d84f055abbd3f2f1c7a7231ea72fcb3e25d31328f2febb2770d74"
+    },
+    "model-00002.safetensors": {
+      "header_sha256": "e6d1e408fa1a505fc667dda7c1c83133aa93d5950eeb35bc8786abb746a726b8"
+    }
+  },
+  "runtime_sha256_after": "978e3947077a8fff272c10e7a6111b1b149a82551eca7f8e307ca46c117475c6",
+  "interpretation": "[local detail omitted from GitHub snapshot]",
+  "passed_scope": "[local detail omitted from GitHub snapshot]",
+  "expert_samples_bit_exact": false
+}

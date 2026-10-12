@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-11T09:05:41.996372+00:00",
+  "scope": "Proposed independent local native review capability probe, not deployed and not a repair hint. Run only after current task is terminal. Reviewer receives original goal and source, no initial acceptance examples or unseen inputs.",
+  "instructions": "[local detail omitted from GitHub snapshot]",
+  "cases": [
+    {
+      "name": "observed_wrong_assumption",
+      "goal": "[local detail omitted from GitHub snapshot]",
+      "source": "run/fixtures/observed-native-fixed-precision-2000.py",
+      "source_sha256": "6bd0df93d2293a33184fe2568233dc3a2eb88d91828639bd2bf32b98cf43c1d6",
+      "expected_decision": "[local detail omitted from GitHub snapshot]",
+      "expected_nonempty_issues": true
+    },
+    {
+      "name": "correct_simple_add",
+      "goal": "[local detail omitted from GitHub snapshot]",
+      "inline_source": "[local detail omitted from GitHub snapshot]",
+      "expected_decision": "[local detail omitted from GitHub snapshot]",
+      "expected_nonempty_issues": false
+    }
+  ],
+  "policy": "[local detail omitted from GitHub snapshot]"
+}

@@ -1,0 +1,21 @@
+{
+  "title": "25% startup-memory relaxation",
+  "started_at": "2026-10-11T23:10:28.439159+00:00",
+  "status": "passed",
+  "passed": true,
+  "scope": "Configuration/preflight and running-pressure controls plus 490 full regression tests. Native outcome will be recorded separately; no general memory or quality guarantee.",
+  "runtime_sha256": "c5468637b99fc42e7437b92eae91ca4099a7a936ac35132e1abdfc839b7a2535",
+  "checks": {
+    "startup_threshold_reduced_25_percent": true,
+    "running_floor_retained": true,
+    "pressure_duration_retained": true,
+    "focused_tests": 19,
+    "full_regressions": 490,
+    "authenticated_service_ready": true
+  },
+  "regression_report": "docs/validation/runs/20261011T230922234923Z.json",
+  "available_ram_before_native_gib": 5.555,
+  "red_log": "[local detail omitted from GitHub snapshot]",
+  "focused_log": "[local detail omitted from GitHub snapshot]",
+  "full_log": "[local detail omitted from GitHub snapshot]"
+}

@@ -1,0 +1,266 @@
+{
+  "started_at": "2026-10-11T16:04:26.333280+00:00",
+  "finished_at": "2026-10-11T16:04:55.479513+00:00",
+  "status": "complete",
+  "passed": true,
+  "checks": {
+    "all_http_responses_ok": true,
+    "native_task_active_during_observation": true,
+    "max_response_under_one_second": true,
+    "available_ram_above_runtime_reserve": true,
+    "model_priority_lower_than_normal": true
+  },
+  "samples": [
+    {
+      "http_status": 200,
+      "seconds": 0.004121,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "generating",
+      "available_ram_gib": 8.0,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.005189,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "generating",
+      "available_ram_gib": 7.999,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.003666,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "generating",
+      "available_ram_gib": 7.997,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.003411,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "generating",
+      "available_ram_gib": 7.996,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.003389,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "generating",
+      "available_ram_gib": 7.998,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.003534,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "generating",
+      "available_ram_gib": 7.998,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.002578,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "ready",
+      "available_ram_gib": 7.972,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.00555,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "processing prompt",
+      "available_ram_gib": 7.884,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.002871,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "processing prompt",
+      "available_ram_gib": 7.881,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.00307,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "processing prompt",
+      "available_ram_gib": 7.879,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.002824,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "processing prompt",
+      "available_ram_gib": 7.817,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.00275,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "processing prompt",
+      "available_ram_gib": 7.821,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.003412,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "processing prompt",
+      "available_ram_gib": 7.821,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.002833,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "processing prompt",
+      "available_ram_gib": 7.817,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.00292,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "processing prompt",
+      "available_ram_gib": 7.82,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.002873,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "processing prompt",
+      "available_ram_gib": 7.82,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.002887,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "processing prompt",
+      "available_ram_gib": 7.82,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.002619,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "processing prompt",
+      "available_ram_gib": 7.839,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.003264,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "processing prompt",
+      "available_ram_gib": 7.836,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.003045,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "processing prompt",
+      "available_ram_gib": 7.836,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.002864,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "processing prompt",
+      "available_ram_gib": 7.873,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.003848,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "processing prompt",
+      "available_ram_gib": 7.872,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.003025,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "processing prompt",
+      "available_ram_gib": 7.871,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.002787,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "processing prompt",
+      "available_ram_gib": 7.873,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.002942,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "processing prompt",
+      "available_ram_gib": 7.873,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.002711,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "processing prompt",
+      "available_ram_gib": 7.872,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.002776,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "processing prompt",
+      "available_ram_gib": 7.87,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.002737,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "processing prompt",
+      "available_ram_gib": 7.885,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.00295,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "processing prompt",
+      "available_ram_gib": 7.885,
+      "model_nice": 5
+    },
+    {
+      "http_status": 200,
+      "seconds": 0.002811,
+      "active_job": "[local detail omitted from GitHub snapshot]",
+      "engine": "processing prompt",
+      "available_ram_gib": 7.848,
+      "model_nice": 5
+    }
+  ],
+  "median_response_seconds": 0.002931,
+  "maximum_response_seconds": 0.00555,
+  "minimum_available_ram_gib": 7.817,
+  "scope": "Thirty authenticated read-only localhost status requests, one second apart, while a real native Rust task runs. The one-second response bound and existing 1.5GiB memory reserve were declared before observation. No source edits, restart, task hints or model configuration changes. This does not establish whole-desktop responsiveness or controlled memory savings.",
+  "archive_metadata": {
+    "source": "frozen-351-responsiveness-validation.json",
+    "kind": "tools",
+    "title": "Workspace responsiveness during native Rust351",
+    "scope": "Thirty authenticated read-only localhost status requests, one second apart, while a real native Rust task runs. The one-second response bound and existing 1.5GiB memory reserve were declared before observation. No source edits, restart, task hints or model configuration changes. This does not establish whole-desktop responsiveness or controlled memory savings.",
+    "source_sha256": "fa63578d2851275f2d4c517fc24fa0dd2de17a88f3fbc8f41c40e2a4909b1094"
+  }
+}

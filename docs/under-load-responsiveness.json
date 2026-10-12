@@ -1,0 +1,129 @@
+{
+  "at": 1791667870.7400064,
+  "method": "[local detail omitted from GitHub snapshot]",
+  "samples": [
+    {
+      "seconds": 0.0027,
+      "available_ram_gib": 6.678,
+      "engine": "processing prompt",
+      "active_job": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "seconds": 0.0033,
+      "available_ram_gib": 6.704,
+      "engine": "processing prompt",
+      "active_job": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "seconds": 0.0033,
+      "available_ram_gib": 6.629,
+      "engine": "processing prompt",
+      "active_job": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "seconds": 0.0031,
+      "available_ram_gib": 6.63,
+      "engine": "processing prompt",
+      "active_job": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "seconds": 0.0028,
+      "available_ram_gib": 6.643,
+      "engine": "processing prompt",
+      "active_job": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "seconds": 0.0027,
+      "available_ram_gib": 6.621,
+      "engine": "processing prompt",
+      "active_job": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "seconds": 0.0027,
+      "available_ram_gib": 6.597,
+      "engine": "processing prompt",
+      "active_job": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "seconds": 0.0071,
+      "available_ram_gib": 6.595,
+      "engine": "processing prompt",
+      "active_job": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "seconds": 0.0027,
+      "available_ram_gib": 6.568,
+      "engine": "processing prompt",
+      "active_job": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "seconds": 0.0026,
+      "available_ram_gib": 6.505,
+      "engine": "processing prompt",
+      "active_job": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "seconds": 0.0032,
+      "available_ram_gib": 6.526,
+      "engine": "processing prompt",
+      "active_job": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "seconds": 0.0031,
+      "available_ram_gib": 6.521,
+      "engine": "processing prompt",
+      "active_job": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "seconds": 0.0028,
+      "available_ram_gib": 6.501,
+      "engine": "processing prompt",
+      "active_job": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "seconds": 0.0027,
+      "available_ram_gib": 6.467,
+      "engine": "processing prompt",
+      "active_job": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "seconds": 0.0026,
+      "available_ram_gib": 6.446,
+      "engine": "processing prompt",
+      "active_job": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "seconds": 0.0023,
+      "available_ram_gib": 6.447,
+      "engine": "processing prompt",
+      "active_job": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "seconds": 0.0044,
+      "available_ram_gib": 6.428,
+      "engine": "processing prompt",
+      "active_job": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "seconds": 0.0062,
+      "available_ram_gib": 6.411,
+      "engine": "processing prompt",
+      "active_job": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "seconds": 0.0029,
+      "available_ram_gib": 6.396,
+      "engine": "processing prompt",
+      "active_job": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "seconds": 0.003,
+      "available_ram_gib": 6.415,
+      "engine": "processing prompt",
+      "active_job": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "median_seconds": 0.00285,
+  "max_seconds": 0.0071,
+  "minimum_available_ram_gib": 6.396
+}

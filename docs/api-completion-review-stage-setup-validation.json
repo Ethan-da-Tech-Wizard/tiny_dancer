@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-12T01:02:17.770499+00:00",
+  "passed": false,
+  "status": "failed",
+  "scope": "Incomplete isolated staging copy, not a production or native model failure. Missing existing money observer prevented twelve observer controls from importing; corrected before repeating the full suite.",
+  "checks": {
+    "staging_observer_import": false
+  },
+  "stage_report": "run/staging/api-completion-review/docs/validation/runs/20261012T010040271645Z.json",
+  "log": "[local detail omitted from GitHub snapshot]",
+  "tests_run": 499,
+  "errors": 1,
+  "diagnosis": "[local detail omitted from GitHub snapshot]"
+}

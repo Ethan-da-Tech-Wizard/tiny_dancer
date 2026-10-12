@@ -1,0 +1,18 @@
+{
+  "recorded_at": "[local detail omitted from GitHub snapshot]",
+  "scope": "Supplementary freeze record captured after the current replay started; original and additional criteria were declared before launch. This record freezes qualification scripts for subsequent cross-run audit, not new task hints.",
+  "runtime_sha256": "c96b45453116dbb3662260082a87c6ecfa32e7bb02d5e1a761ddee3916fbf599",
+  "production_regression_report": "docs/validation/runs/20261011T075710463971Z.json",
+  "money_job": "[local detail omitted from GitHub snapshot]",
+  "money_acceptance_sha256": "2022e8a7d522322f05af37a701c05a0ce1377ab9fb94c497576ea55cfa8ba74f",
+  "qualification_files": {
+    "docs/native-generalization-criteria.json": "28e82ab1cdd8736c59020dd270c4c4e47c83dde37ece35b92d1d7d519688b9ae",
+    "docs/native-money-supplemental-criteria.json": "e393b9411b6a211ebd906046b0323ef2729f7442119d495f4d493d0b92de0c55",
+    "scripts/native_suite_cases.py": "7d267ce59e9f50e8d9208c52fda3d21c33999f4e5997cadf25b170e86ec14b0d",
+    "scripts/evaluate_hardening_suite.py": "7f9fda27f5cb9212df4836d28334bf6f100383fd87dfd46043e1dd6ce90bac4b",
+    "scripts/coding_acceptance.py": "2139f29436c4f2792a27bf53ad0fdf4d10ff332b35796bf3caa839cd4324da10",
+    "run/evaluate_precision_retest.py": "24cae6680b7ae3a84a38515eb0beaadcb264a90291f421cd6550cf564eaba64c",
+    "run/evaluate_release_sequence.py": "6a3844ac3006b47b49e2bb7418c76787ca31175aa4957e9b9eec53cc3a21a63c",
+    "run/audit_money_replay.py": "1162ed631699904eda4bcdba5b10f15eba9b0bb4d466aceface0eee459123d99"
+  }
+}

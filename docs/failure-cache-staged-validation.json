@@ -1,0 +1,22 @@
+{
+  "title": "Failed-check repair keeps cached prompt — staged checks",
+  "started_at": "2026-10-11T23:28:39.695558+00:00",
+  "status": "passed",
+  "passed": true,
+  "scope": "Staged scripted-model and actual tool controls, 491 full regressions. Live runtime remains unchanged while native inventory runs. No native speed or quality result on this candidate yet.",
+  "runtime_sha256": "baf0c8ea6d9e5ce9dbfeaf22b19424c2ccc2c122336663823d1fbe492d782455",
+  "production_runtime_sha256": "c5468637b99fc42e7437b92eae91ca4099a7a936ac35132e1abdfc839b7a2535",
+  "checks": {
+    "failed_repair_preserves_prompt_prefix": true,
+    "failed_checks_clear_passing_proof": true,
+    "actual_distinct_repairs_can_finish_after_passing": true,
+    "cancellation_and_physical_context_recovery_retained": true,
+    "full_regressions": 491
+  },
+  "red_log": "[local detail omitted from GitHub snapshot]",
+  "focused_log": "[local detail omitted from GitHub snapshot]",
+  "focused_checks": 38,
+  "regression_report": "run/staging/failure-cache-continuity/docs/validation/runs/20261011T232631509112Z.json",
+  "seconds": 41.927,
+  "candidate_status": "[local detail omitted from GitHub snapshot]"
+}

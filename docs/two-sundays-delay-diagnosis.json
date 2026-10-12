@@ -1,0 +1,103 @@
+{
+  "job": {
+    "id": "[local detail omitted from GitHub snapshot]",
+    "session": "e49878f2e88542cdaefe0fe660e32307",
+    "status": "paused",
+    "created": 1791665702.3614793,
+    "finished": 1791666302.4899838,
+    "request": {
+      "prompt": "[local detail omitted from GitHub snapshot]",
+      "mode": "[local detail omitted from GitHub snapshot]",
+      "max_tokens": 1024,
+      "task_kind": "[local detail omitted from GitHub snapshot]",
+      "max_turns": null,
+      "max_seconds": null
+    },
+    "checkpoint": "[local detail omitted from GitHub snapshot]"
+  },
+  "elapsed_seconds": 600.13,
+  "public_events": [
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 554,
+        "reused_tokens": 0
+      },
+      "created": 1791665706.9365036
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 110.359883899,
+        "prefill_tokens": 554,
+        "prefill_tokens_per_s": 5.019940040051274,
+        "decode_seconds": 389.016987238,
+        "decode_tokens": 1024,
+        "decode_tokens_per_s": 2.6322757966698207,
+        "native_counters": {
+          "position": 1578,
+          "capacity": 8192,
+          "prefill_tokens": 554,
+          "decode_tokens": 1024,
+          "prefill_seconds": 110.359883899,
+          "decode_seconds": 389.016987238,
+          "gpu_dense_host_released_bytes": 0,
+          "expert_slots_per_layer": 6,
+          "available_ram_gib": 0.316437,
+          "expert_buffer_allocs": 302,
+          "expert_buffer_reuses": 3269,
+          "expert_compute_seconds": 61.497828695,
+          "process_page_faults": 0,
+          "private_gib": 0.0,
+          "peak_rss_gib": 0.0,
+          "forward": 1578,
+          "tokens_emitted": 1024,
+          "cache_hits": 944,
+          "cache_misses": 3571,
+          "cache_requests": 4515,
+          "expert_loads": 3571,
+          "expert_bytes_estimate": 14031360,
+          "disk_seconds": 95.324054877,
+          "async_batches": 0,
+          "async_wait_seconds": 0.0,
+          "attention_seconds": 111.83983787,
+          "moe_seconds": 373.985489478,
+          "head_seconds": 12.994988883,
+          "rss_gb": 4.04155,
+          "resident_gb": 1.807843,
+          "gpu_router_calls": 0,
+          "gpu_router_seconds": 0.0,
+          "gpu_dense_calls": 0,
+          "gpu_dense_seconds": 0.0,
+          "gpu_dense_fallbacks": 0,
+          "prefetch_issued": 0,
+          "prefetch_read_seconds": 0.0,
+          "predict_hits_a": 0,
+          "predict_hits_b": 0,
+          "predict_total": 0
+        },
+        "total_seconds": 499.39,
+        "completion_tokens": 1024,
+        "prompt_tokens": 554
+      },
+      "created": 1791666206.337378
+    },
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 591,
+        "reused_tokens": 553
+      },
+      "created": 1791666206.353604
+    },
+    {
+      "kind": "paused",
+      "data": {
+        "status": "paused",
+        "message": "[local detail omitted from GitHub snapshot]"
+      },
+      "created": 1791666302.491573
+    }
+  ],
+  "scope": "Unmodified user prompt baseline; private model analysis omitted."
+}

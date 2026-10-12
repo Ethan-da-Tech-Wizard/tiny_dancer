@@ -1,0 +1,33 @@
+{
+  "name": "@earendil-works/pi-coding-agent",
+  "version": "1.1.0",
+  "license": "MIT",
+  "license_url": "https://raw.githubusercontent.com/earendil-works/pi/v1.1.0/LICENSE",
+  "license_sha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48",
+  "tarball": {
+    "shasum": "0ebd064bf1342f812f9676dde85b2f0b3e02b7e6",
+    "tarball": "https://registry.npmjs.org/@earendil-works/pi-coding-agent/-/pi-coding-agent-1.1.0.tgz",
+    "fileCount": 1254,
+    "integrity": "sha512-SeEi/4hdcHNgA9UWlefZl7ZZpm3dzi2OoxNjDHsBJ9o298LNOtbL4DGKgitlEj6uCTccvtw6f2hlCkTPVJ2RXg==",
+    "signatures": [
+      {
+        "sig": "MEUCIQCqte7GUgr/3sfyBV+TJzIABHeMLOI5Oj7cfmFeD+HNGQIgI+cWG/Lr8050v+vA00izBD++Rzni4kxZtbZZWLh1rIQ=",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      },
+      {
+        "sig": "MEUCIQDbWUenUYEOxJM3aoosgkTZJOOaWqAHljyrghl2pukcIwIgS8pp9Ce4LZMfJYakmRk1y0jMS1AITfRzwak3WeSjUGQ=",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      }
+    ],
+    "attestations": {
+      "url": "https://registry.npmjs.org/-/npm/v1/attestations/@earendil-works%2fpi-coding-agent@1.1.0",
+      "provenance": {
+        "predicateType": "https://slsa.dev/provenance/v1"
+      }
+    },
+    "unpackedSize": 22924895
+  },
+  "tarball_sha256": "09cd8a0a43dbb1d81a67346b09400b439ce71d818caba4e963ea958846a1aed4",
+  "lifecycle_scripts": "disabled",
+  "scope": "Isolated comparison candidate; not adopted into production"
+}

@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-11T13:10:49.492269+00:00",
+  "passed": true,
+  "status": "complete",
+  "checks": {
+    "cmake_configure": true,
+    "two_job_cuda_build": true,
+    "server_and_cli_binaries_present": true
+  },
+  "source_commit": "1cf7767765b872806e1bb74cfb55614f4334f02f",
+  "architecture": "[local detail omitted from GitHub snapshot]",
+  "files_sha256": {
+    "build/llama-reference/bin/llama-server": "62375cf543372593a3a0ddd048e2add37c66820888e74bfd5a53ea26f5b5e329",
+    "build/llama-reference/bin/llama-cli": "b43d79ef5426aa39e45f7141c6855204026b4a37a60e74ca9fbdb84321febfe1"
+  },
+  "log": "[local detail omitted from GitHub snapshot]",
+  "scope": "Build-only checks; no inference correctness, latency or quality claim. ExistinghosttoolCMake and compiler/CUDA licenses archived.",
+  "archive_metadata": {
+    "source": "llama-reference-build-validation.json",
+    "kind": "automated",
+    "title": "Native-MXFP4 candidate:CUDA build passes",
+    "scope": "Pinned source, SM86 CUDA, two low-priority build jobs; no task accuracy claim.",
+    "source_sha256": "2be46283836ac21364882bff07e62b771ccc568423158c161f5a4efc797799ba"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "task": "[local detail omitted from GitHub snapshot]",
+      "passed": false,
+      "reasons": [
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]"
+      ],
+      "report": "docs/precision-repair-retest-validation.json"
+    },
+    {
+      "task": "[local detail omitted from GitHub snapshot]",
+      "passed": false,
+      "reasons": [
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]"
+      ],
+      "report": "docs/native-inventory-20261012T004058226417Z.json"
+    },
+    {
+      "task": "[local detail omitted from GitHub snapshot]",
+      "passed": false,
+      "reasons": [
+        "[local detail omitted from GitHub snapshot]"
+      ],
+      "report": "docs/native-ranges-20261011T160140232182Z.json"
+    },
+    {
+      "task": "[local detail omitted from GitHub snapshot]",
+      "passed": false,
+      "reasons": [
+        "[local detail omitted from GitHub snapshot]"
+      ],
+      "report": "docs/money-precision-boundary-validation.json"
+    }
+  ],
+  "current_runtime_sha256": "8c7b4485111cffa278e051a76315d844efc903fcaa8145ed12711444eff09a79",
+  "scope": "Three actual native outcomes: failed repair replay, fresh Python inventory, fresh Rust ranges. Historical arithmetic smoke and scripted regression passes cannot replace these.",
+  "at": "2026-10-12T01:06:12.663382+00:00",
+  "archive_metadata": {
+    "source": "native-release-gate-current.json",
+    "kind": "automated",
+    "title": "Current native qualification gate",
+    "scope": "Three actual native outcomes: failed repair replay, fresh Python inventory, fresh Rust ranges. Historical arithmetic smoke and scripted regression passes cannot replace these.",
+    "source_sha256": "d002460adcc04799b81695e0f2e7b889cbd08be3a52f979840aed396cbfee595"
+  }
+}

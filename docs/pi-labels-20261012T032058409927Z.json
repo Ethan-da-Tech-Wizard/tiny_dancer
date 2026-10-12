@@ -1,0 +1,613 @@
+{
+  "started_at": "2026-10-12T03:20:58.440474+00:00",
+  "case": "labels",
+  "status": "submitted",
+  "passed": false,
+  "cwd": "/mnt/GameDrive/tiny_dancer/workspace/pi-labels-20261012T032058409927Z",
+  "prompt": "[local detail omitted from GitHub snapshot]",
+  "scope": "Isolated upstream Pi1.1.0 default coding tools/system prompt, same original local GPT-OSS-20B and existing backend/context/sampler. Fresh original goal and supplied acceptance, independent grading. Several harness differences: comparison, not attribution or production qualification. No operator product edits or live hints.",
+  "runtime_sha256_before": "49db0778c0135c773b04098cd02f2884c096be4a077452ccc4c82fd01054458c",
+  "acceptance_sha256": "f61d8bba61cc6ef9afe832c591ba34ad7e65cf42bf74a98ada8da9a782bfaf52",
+  "observer_sha256": {
+    "evaluate_pi.py": "462f051735dc220c56e1163c26b4bd159095ebbbb9f059fe9ed8705af71e7a16",
+    "pi_baseline.py": "2142e636d84aeb54aed177c80c9354fe9130e9913c484efc1ee75d8352ef4c57"
+  },
+  "package_lock_sha256": "5c3d234d12344cc1b44af457c4b701957a6067c010d3f3ad4d53f94856169e57",
+  "reasoning_effort": "medium",
+  "aggregate_deadline_seconds": null,
+  "declared_additional_criteria": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "operator_interventions": [],
+  "events": [
+    {
+      "type": "agent_start",
+      "seconds": 45.31
+    },
+    {
+      "type": "turn_start",
+      "seconds": 45.31
+    },
+    {
+      "type": "inference",
+      "stop_reason": "[local detail omitted from GitHub snapshot]",
+      "usage": {
+        "input": 1230,
+        "output": 73,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 1303
+      },
+      "private_characters": 213,
+      "seconds": 61.84
+    },
+    {
+      "type": "tool_execution_start",
+      "name": "bash",
+      "args": {
+        "command": "[local detail omitted from GitHub snapshot]"
+      },
+      "id": "[local detail omitted from GitHub snapshot]",
+      "seconds": 61.84
+    },
+    {
+      "type": "tool_execution_end",
+      "name": "bash",
+      "id": "[local detail omitted from GitHub snapshot]",
+      "is_error": false,
+      "duration_ms": 13,
+      "result_text": "[local detail omitted from GitHub snapshot]",
+      "seconds": 61.86
+    },
+    {
+      "type": "turn_end",
+      "seconds": 61.86
+    },
+    {
+      "type": "turn_start",
+      "seconds": 61.86
+    },
+    {
+      "type": "inference",
+      "stop_reason": "[local detail omitted from GitHub snapshot]",
+      "usage": {
+        "input": 49,
+        "output": 45,
+        "cacheRead": 1279,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 1373
+      },
+      "private_characters": 46,
+      "seconds": 63.8
+    },
+    {
+      "type": "tool_execution_start",
+      "name": "read",
+      "args": {
+        "path": "test_acceptance.py",
+        "offset": 1,
+        "limit": 400
+      },
+      "id": "[local detail omitted from GitHub snapshot]",
+      "seconds": 63.8
+    },
+    {
+      "type": "tool_execution_end",
+      "name": "read",
+      "id": "[local detail omitted from GitHub snapshot]",
+      "is_error": false,
+      "duration_ms": 3,
+      "result_text": "[local detail omitted from GitHub snapshot]",
+      "seconds": 63.8
+    },
+    {
+      "type": "turn_end",
+      "seconds": 63.8
+    },
+    {
+      "type": "turn_start",
+      "seconds": 63.8
+    },
+    {
+      "type": "inference",
+      "stop_reason": "[local detail omitted from GitHub snapshot]",
+      "usage": {
+        "input": 219,
+        "output": 506,
+        "cacheRead": 1345,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 2070
+      },
+      "private_characters": 958,
+      "seconds": 82.29
+    },
+    {
+      "type": "tool_execution_start",
+      "name": "write",
+      "args": {
+        "path": "labels.py",
+        "content": "[local detail omitted from GitHub snapshot]"
+      },
+      "id": "[local detail omitted from GitHub snapshot]",
+      "seconds": 82.29
+    },
+    {
+      "type": "tool_execution_end",
+      "name": "write",
+      "id": "[local detail omitted from GitHub snapshot]",
+      "is_error": false,
+      "duration_ms": 2,
+      "result_text": "[local detail omitted from GitHub snapshot]",
+      "seconds": 82.29
+    },
+    {
+      "type": "turn_end",
+      "seconds": 82.29
+    },
+    {
+      "type": "turn_start",
+      "seconds": 82.29
+    },
+    {
+      "type": "inference",
+      "stop_reason": "[local detail omitted from GitHub snapshot]",
+      "usage": {
+        "input": 532,
+        "output": 405,
+        "cacheRead": 1559,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 2496
+      },
+      "private_characters": 13,
+      "seconds": 99.76
+    },
+    {
+      "type": "tool_execution_start",
+      "name": "write",
+      "args": {
+        "path": "test_labels.py",
+        "content": "[local detail omitted from GitHub snapshot]"
+      },
+      "id": "[local detail omitted from GitHub snapshot]",
+      "seconds": 99.76
+    },
+    {
+      "type": "tool_execution_end",
+      "name": "write",
+      "id": "[local detail omitted from GitHub snapshot]",
+      "is_error": false,
+      "duration_ms": 1,
+      "result_text": "[local detail omitted from GitHub snapshot]",
+      "seconds": 99.76
+    },
+    {
+      "type": "turn_end",
+      "seconds": 99.76
+    },
+    {
+      "type": "turn_start",
+      "seconds": 99.76
+    },
+    {
+      "type": "inference",
+      "stop_reason": "[local detail omitted from GitHub snapshot]",
+      "usage": {
+        "input": 432,
+        "output": 31,
+        "cacheRead": 2086,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 2549
+      },
+      "private_characters": 10,
+      "seconds": 103.5
+    },
+    {
+      "type": "tool_execution_start",
+      "name": "bash",
+      "args": {
+        "command": "[local detail omitted from GitHub snapshot]"
+      },
+      "id": "[local detail omitted from GitHub snapshot]",
+      "seconds": 103.5
+    },
+    {
+      "type": "tool_execution_end",
+      "name": "bash",
+      "id": "[local detail omitted from GitHub snapshot]",
+      "is_error": true,
+      "duration_ms": 62,
+      "result_text": "[local detail omitted from GitHub snapshot]",
+      "seconds": 103.56
+    },
+    {
+      "type": "turn_end",
+      "seconds": 103.56
+    },
+    {
+      "type": "turn_start",
+      "seconds": 103.56
+    },
+    {
+      "type": "inference",
+      "stop_reason": "[local detail omitted from GitHub snapshot]",
+      "usage": {
+        "input": 414,
+        "output": 560,
+        "cacheRead": 2527,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 3501
+      },
+      "private_characters": 1541,
+      "seconds": 128.34
+    },
+    {
+      "type": "tool_execution_start",
+      "name": "edit",
+      "args": {
+        "path": "labels.py",
+        "edits": [
+          {
+            "oldText": "[local detail omitted from GitHub snapshot]",
+            "newText": "[local detail omitted from GitHub snapshot]"
+          }
+        ]
+      },
+      "id": "[local detail omitted from GitHub snapshot]",
+      "seconds": 128.34
+    },
+    {
+      "type": "tool_execution_end",
+      "name": "edit",
+      "id": "[local detail omitted from GitHub snapshot]",
+      "is_error": false,
+      "duration_ms": 4,
+      "result_text": "[local detail omitted from GitHub snapshot]",
+      "seconds": 128.35
+    },
+    {
+      "type": "turn_end",
+      "seconds": 128.35
+    },
+    {
+      "type": "turn_start",
+      "seconds": 128.35
+    },
+    {
+      "type": "inference",
+      "stop_reason": "[local detail omitted from GitHub snapshot]",
+      "usage": {
+        "input": 596,
+        "output": 34,
+        "cacheRead": 2936,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 3566
+      },
+      "private_characters": 16,
+      "seconds": 133.31
+    },
+    {
+      "type": "tool_execution_start",
+      "name": "bash",
+      "args": {
+        "command": "[local detail omitted from GitHub snapshot]"
+      },
+      "id": "[local detail omitted from GitHub snapshot]",
+      "seconds": 133.31
+    },
+    {
+      "type": "tool_execution_end",
+      "name": "bash",
+      "id": "[local detail omitted from GitHub snapshot]",
+      "is_error": false,
+      "duration_ms": 44,
+      "result_text": "[local detail omitted from GitHub snapshot]",
+      "seconds": 133.35
+    },
+    {
+      "type": "turn_end",
+      "seconds": 133.35
+    },
+    {
+      "type": "turn_start",
+      "seconds": 133.36
+    },
+    {
+      "type": "inference",
+      "stop_reason": "[local detail omitted from GitHub snapshot]",
+      "usage": {
+        "input": 273,
+        "output": 48,
+        "cacheRead": 3542,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 3863
+      },
+      "private_characters": 15,
+      "seconds": 137.25
+    },
+    {
+      "type": "turn_end",
+      "seconds": 137.25
+    },
+    {
+      "type": "agent_end",
+      "seconds": 137.26
+    }
+  ],
+  "samples": [
+    {
+      "seconds": 0.1,
+      "available_ram_gib": 8.151,
+      "stream_events": 0,
+      "public_actions": 0,
+      "owned_model_activity": null
+    },
+    {
+      "seconds": 20.2,
+      "available_ram_gib": 7.892,
+      "stream_events": 0,
+      "public_actions": 0,
+      "owned_model_activity": [
+        854974,
+        4.11,
+        8211324928,
+        4096
+      ]
+    },
+    {
+      "seconds": 40.3,
+      "available_ram_gib": 7.79,
+      "stream_events": 0,
+      "public_actions": 0,
+      "owned_model_activity": [
+        854974,
+        12.23,
+        17160871936,
+        8192
+      ]
+    },
+    {
+      "seconds": 60.4,
+      "available_ram_gib": 7.534,
+      "stream_events": 32,
+      "public_actions": 0,
+      "owned_model_activity": [
+        854974,
+        30.51,
+        22290989056,
+        16384
+      ]
+    },
+    {
+      "seconds": 80.4,
+      "available_ram_gib": 7.46,
+      "stream_events": 537,
+      "public_actions": 2,
+      "owned_model_activity": [
+        854974,
+        121.97999999999999,
+        22336589824,
+        16384
+      ]
+    },
+    {
+      "seconds": 100.4,
+      "available_ram_gib": 7.463,
+      "stream_events": 960,
+      "public_actions": 4,
+      "owned_model_activity": [
+        854974,
+        209.46,
+        22357045248,
+        24576
+      ]
+    },
+    {
+      "seconds": 120.5,
+      "available_ram_gib": 7.475,
+      "stream_events": 1349,
+      "public_actions": 5,
+      "owned_model_activity": [
+        854974,
+        294.65000000000003,
+        22380400640,
+        28672
+      ]
+    }
+  ],
+  "stream_events": 1605,
+  "configuration": {
+    "models": {
+      "providers": {
+        "tiny-local": {
+          "baseUrl": "[local detail omitted from GitHub snapshot]",
+          "api": "[local detail omitted from GitHub snapshot]",
+          "apiKey": "[local detail omitted from GitHub snapshot]",
+          "models": [
+            {
+              "id": "[local detail omitted from GitHub snapshot]",
+              "name": "Local original GPT-OSS-20B",
+              "reasoning": true,
+              "input": [
+                "[local detail omitted from GitHub snapshot]"
+              ],
+              "contextWindow": 32768,
+              "maxTokens": 32768,
+              "cost": {
+                "input": 0,
+                "output": 0,
+                "cacheRead": 0,
+                "cacheWrite": 0
+              },
+              "thinkingLevelMap": {
+                "low": "[local detail omitted from GitHub snapshot]",
+                "medium": "[local detail omitted from GitHub snapshot]",
+                "high": "[local detail omitted from GitHub snapshot]"
+              },
+              "compat": {
+                "supportsStore": false,
+                "supportsDeveloperRole": false,
+                "supportsReasoningEffort": true,
+                "supportsUsageInStreaming": true,
+                "maxTokensField": "[local detail omitted from GitHub snapshot]",
+                "thinkingFormat": "[local detail omitted from GitHub snapshot]",
+                "requiresThinkingAsText": false
+              },
+              "samplingParams": {
+                "temperature": 1.0,
+                "top_p": 1.0,
+                "top_k": 0,
+                "min_p": 0.0,
+                "repeat_penalty": 1.0,
+                "cache_prompt": true,
+                "parallel_tool_calls": false,
+                "reasoning_format": "[local detail omitted from GitHub snapshot]"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "settings": {
+      "defaultProvider": "[local detail omitted from GitHub snapshot]",
+      "defaultModel": "[local detail omitted from GitHub snapshot]",
+      "defaultThinkingLevel": "[local detail omitted from GitHub snapshot]",
+      "enabledModels": [
+        "[local detail omitted from GitHub snapshot]"
+      ],
+      "enableInstallTelemetry": false,
+      "cacheWarming": "[local detail omitted from GitHub snapshot]",
+      "compaction": {
+        "enabled": true,
+        "reserveTokens": 8192,
+        "keepRecentTokens": 8192
+      },
+      "httpIdleTimeoutMs": 0,
+      "retry": {
+        "enabled": true,
+        "maxRetries": 3,
+        "provider": {
+          "timeoutMs": 2147483647,
+          "maxRetries": 0
+        }
+      },
+      "shellPath": "[local detail omitted from GitHub snapshot]"
+    },
+    "flags": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ]
+  },
+  "exit_code": 0,
+  "stderr_bytes": 0,
+  "seconds": 137.49,
+  "project_tests": {
+    "exit_code": 0,
+    "summary": "[local detail omitted from GitHub snapshot]",
+    "output": "[local detail omitted from GitHub snapshot]"
+  },
+  "independent_checks": [
+    {
+      "check": "unicode lowercase",
+      "passed": true,
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "unicode whitespace",
+      "passed": true,
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "zero-width text",
+      "passed": false,
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "numbers and punctuation",
+      "passed": true,
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "Already lowercase text retains combining marks",
+      "passed": true,
+      "examples": 2,
+      "failed_examples": 0,
+      "counterexamples": [],
+      "error": null
+    },
+    {
+      "check": "Unicode lowercase expansions follow Python str.lower",
+      "passed": true,
+      "examples": 2,
+      "failed_examples": 0,
+      "counterexamples": [],
+      "error": null
+    },
+    {
+      "check": "Lowercase does not introduce casefolding or accent removal",
+      "passed": false,
+      "examples": 4,
+      "failed_examples": 1,
+      "counterexamples": [
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": "[local detail omitted from GitHub snapshot]"
+        }
+      ],
+      "error": null
+    },
+    {
+      "check": "Whitespace and letter transformations compose across mixed inputs",
+      "passed": false,
+      "examples": 144,
+      "failed_examples": 36,
+      "counterexamples": [
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": "[local detail omitted from GitHub snapshot]"
+        },
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": "[local detail omitted from GitHub snapshot]"
+        },
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": "[local detail omitted from GitHub snapshot]"
+        }
+      ],
+      "error": null
+    }
+  ],
+  "checks": {
+    "submitted": true,
+    "runtime_frozen": true,
+    "acceptance_unchanged": true,
+    "nonempty_own_and_supplied_tests": true,
+    "independent_goal_checks": false,
+    "no_interruption": true
+  }
+}

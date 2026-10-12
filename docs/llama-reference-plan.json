@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-11T12:47:06.602849+00:00",
+  "status": "prepared_not_started",
+  "backend": "llama.cpp",
+  "model": "GPT-OSS-20B native MXFP4",
+  "source_commit": "1cf7767765b872806e1bb74cfb55614f4334f02f",
+  "model_source": "[local detail omitted from GitHub snapshot]",
+  "reason": "[local detail omitted from GitHub snapshot]",
+  "constraints": {
+    "local_only": true,
+    "same_model": true,
+    "no_additional_expert_quantization": true,
+    "no_concurrent_native_models": true,
+    "build_jobs": 2,
+    "priority_nice": 5,
+    "context": 8192,
+    "ram_reserve_gib": 1.5,
+    "deadline_per_run_seconds": 600
+  },
+  "validation": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "production_default": "[local detail omitted from GitHub snapshot]",
+  "license_inventory": "[local detail omitted from GitHub snapshot]"
+}

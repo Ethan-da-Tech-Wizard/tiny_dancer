@@ -1,0 +1,45 @@
+{
+  "started_at": "2026-10-11T14:03:09.323636+00:00",
+  "title": "Local transport recovery and Rust dependency scope",
+  "status": "passed",
+  "scope": "Isolated mocked local HTTP failure and actual manifest regressions; no native capability claim. Only retry before tokens and while the owned process is alive; never replay a partially delivered generation. No-new-dependency wording is not a standard-library-only constraint.",
+  "before": {
+    "tests": 24,
+    "failures": 1,
+    "errors": 1,
+    "log": "[local detail omitted from GitHub snapshot]"
+  },
+  "focused": {
+    "tests": 24,
+    "passed": true,
+    "log": "[local detail omitted from GitHub snapshot]"
+  },
+  "stage": "[local detail omitted from GitHub snapshot]",
+  "native_failure": "[local detail omitted from GitHub snapshot]",
+  "initial_full_stage": {
+    "passed": false,
+    "tests_run": 329,
+    "errors": 26,
+    "seconds": 22.943,
+    "reason": "[local detail omitted from GitHub snapshot]",
+    "log": "[local detail omitted from GitHub snapshot]"
+  },
+  "passed": true,
+  "tests_run": 329,
+  "seconds": 21.919,
+  "checks": {
+    "bounded_transport_recovery": true,
+    "no_partial_replay": true,
+    "dead_server_not_retried": true,
+    "existing_dependencies_allowed": true,
+    "full_staged_regressions": true
+  },
+  "full_log": "[local detail omitted from GitHub snapshot]",
+  "archive_metadata": {
+    "source": "transport-recovery-staged-validation.json",
+    "kind": "automated",
+    "title": "329 staged transport/dependency regressions",
+    "scope": "Isolated mocked local HTTP failure and actual manifest regressions; no native capability claim. Only retry before tokens and while the owned process is alive; never replay a partially delivered generation. No-new-dependency wording is not a standard-library-only constraint.",
+    "source_sha256": "5281e9bd7d648cff84ba94fdf5df6eeb0e0891d864f406404d7263f30601d96f"
+  }
+}

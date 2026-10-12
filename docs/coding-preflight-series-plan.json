@@ -1,0 +1,58 @@
+{
+  "at": "2026-10-11T12:17:12.227556+00:00",
+  "status": "inventory_failed_projection_regressions_passed_rust_next",
+  "authorization": "[local detail omitted from GitHub snapshot]",
+  "purpose": "[local detail omitted from GitHub snapshot]",
+  "changes": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "production_runtime_sha256": "978e3947077a8fff272c10e7a6111b1b149a82551eca7f8e307ca46c117475c6",
+  "backup": "[local detail omitted from GitHub snapshot]",
+  "regressions": {
+    "tests": 285,
+    "passed": true,
+    "seconds": 21.791,
+    "report": "docs/validation/runs/20261011T113754486591Z.json",
+    "targeted_tests": 12,
+    "targeted_seconds": 0.996,
+    "targeted_log": "[local detail omitted from GitHub snapshot]"
+  },
+  "license_check": "[local detail omitted from GitHub snapshot]",
+  "frozen_case_source_sha256": "7d267ce59e9f50e8d9208c52fda3d21c33999f4e5997cadf25b170e86ec14b0d",
+  "next_cases": [
+    {
+      "case": "ranges",
+      "observation_seconds": 1800,
+      "reasoning_effort": "low",
+      "why": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "followup": "[local detail omitted from GitHub snapshot]",
+  "qualification": "[local detail omitted from GitHub snapshot]",
+  "current_regressions": {
+    "tests": 289,
+    "passed": true,
+    "seconds": 22.325,
+    "report": "docs/validation/runs/20261011T121420167070Z.json"
+  },
+  "completed_cases": [
+    {
+      "case": "inventory",
+      "report": "docs/native-inventory-20261011T114001664864Z.json",
+      "passed": false,
+      "seconds": 1800.16,
+      "diagnosis": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "preview": {
+    "implemented": true,
+    "validation": "[local detail omitted from GitHub snapshot]",
+    "removed_tokens": 1079,
+    "reduction_percent": 36.79,
+    "measured_end_to_end_speedup": false,
+    "backup": "[local detail omitted from GitHub snapshot]"
+  }
+}

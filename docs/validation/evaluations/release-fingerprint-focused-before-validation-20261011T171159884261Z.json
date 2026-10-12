@@ -1,0 +1,31 @@
+{
+  "title": "Release fingerprint checks before repair",
+  "started_at": "2026-10-11T17:11:59.882464+00:00",
+  "passed": false,
+  "scope": "Scripted harness regression checks; expected new assertions expose the old defect before implementation. Actual native quality is evaluated separately.",
+  "tests_run": 12,
+  "elapsed_seconds": 0.225,
+  "log": "[local detail omitted from GitHub snapshot]",
+  "output": "[local detail omitted from GitHub snapshot]",
+  "checks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": false,
+    "5": false,
+    "6": false,
+    "7": false,
+    "8": false,
+    "9": false,
+    "10": false,
+    "11": false,
+    "12": false
+  },
+  "archive_metadata": {
+    "source": "release-fingerprint-focused-before-validation.json",
+    "kind": "automated",
+    "title": "Release fingerprint checks before repair",
+    "scope": "Scripted harness regression checks; expected new assertions expose the old defect before implementation. Actual native quality is evaluated separately.",
+    "source_sha256": "e142d3500e56989f122c749b34522e34a3672251becf753b084039e8493e0f7a"
+  }
+}

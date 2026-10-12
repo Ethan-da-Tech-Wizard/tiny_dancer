@@ -1,0 +1,128 @@
+{
+  "started_at": "2026-10-10T20:30:19.882418+00:00",
+  "prompt": "[local detail omitted from GitHub snapshot]",
+  "method": "[local detail omitted from GitHub snapshot]",
+  "status": "complete",
+  "resource_samples": [
+    {
+      "elapsed_seconds": 0.0,
+      "engine": "loading model",
+      "model_pid": 119266,
+      "rss_gib": 0.003,
+      "uss_gib": 0.0,
+      "cpu_seconds": 0.0,
+      "read_bytes": 118784
+    },
+    {
+      "elapsed_seconds": 30.13,
+      "engine": "processing prompt",
+      "model_pid": 119266,
+      "rss_gib": 2.529,
+      "uss_gib": 2.447,
+      "cpu_seconds": 70.33,
+      "read_bytes": 5203095552
+    },
+    {
+      "elapsed_seconds": 60.25,
+      "engine": "processing prompt",
+      "model_pid": 119266,
+      "rss_gib": 3.262,
+      "uss_gib": 3.18,
+      "cpu_seconds": 152.69,
+      "read_bytes": 8936992768
+    },
+    {
+      "elapsed_seconds": 90.37,
+      "engine": "generating",
+      "model_pid": 119266,
+      "rss_gib": 3.865,
+      "uss_gib": 3.784,
+      "cpu_seconds": 224.03,
+      "read_bytes": 14100385792
+    },
+    {
+      "elapsed_seconds": 120.54,
+      "engine": "generating",
+      "model_pid": 119266,
+      "rss_gib": 3.972,
+      "uss_gib": 3.891,
+      "cpu_seconds": 239.92,
+      "read_bytes": 24439246848
+    }
+  ],
+  "initial_engine": "[local detail omitted from GitHub snapshot]",
+  "job": "871ff54e9db54196b7633430852ce62f",
+  "session": "e49878f2e88542cdaefe0fe660e32307",
+  "elapsed_seconds": 134.62,
+  "checkpoint": "[local detail omitted from GitHub snapshot]",
+  "metrics": [
+    {
+      "prefill_seconds": 80.380097609,
+      "prefill_tokens": 406,
+      "prefill_tokens_per_s": 5.05100157970623,
+      "decode_seconds": 49.351515832,
+      "decode_tokens": 45,
+      "decode_tokens_per_s": 0.9118260957411478,
+      "native_counters": {
+        "position": 451,
+        "capacity": 8192,
+        "prefill_tokens": 406,
+        "decode_tokens": 45,
+        "prefill_seconds": 80.380097609,
+        "decode_seconds": 49.351515832,
+        "gpu_dense_host_released_bytes": 0,
+        "expert_slots_per_layer": 6,
+        "available_ram_gib": 1.077969,
+        "expert_buffer_allocs": 287,
+        "expert_buffer_reuses": 1475,
+        "expert_compute_seconds": 40.598922389,
+        "process_page_faults": 0,
+        "private_gib": 0.0,
+        "peak_rss_gib": 0.0,
+        "forward": 451,
+        "tokens_emitted": 45,
+        "cache_hits": 21,
+        "cache_misses": 1762,
+        "cache_requests": 1783,
+        "expert_loads": 1762,
+        "expert_bytes_estimate": 14031360,
+        "disk_seconds": 62.892331098,
+        "async_batches": 0,
+        "async_wait_seconds": 0.0,
+        "attention_seconds": 19.657690865,
+        "moe_seconds": 109.738117619,
+        "head_seconds": 0.310094708,
+        "rss_gb": 3.998356,
+        "resident_gb": 1.807843,
+        "gpu_router_calls": 0,
+        "gpu_router_seconds": 0.0,
+        "gpu_dense_calls": 0,
+        "gpu_dense_seconds": 0.0,
+        "gpu_dense_fallbacks": 0,
+        "prefetch_issued": 0,
+        "prefetch_read_seconds": 0.0,
+        "predict_hits_a": 0,
+        "predict_hits_b": 0,
+        "predict_total": 0
+      },
+      "total_seconds": 129.73,
+      "completion_tokens": 45,
+      "prompt_tokens": 406
+    }
+  ],
+  "tool_calls": [
+    {
+      "name": "nfl_scores",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 1
+    }
+  ],
+  "errors": [],
+  "comparison": {
+    "passed": true,
+    "games": 14,
+    "date": "2026-10-04",
+    "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261004",
+    "note": "[local detail omitted from GitHub snapshot]"
+  }
+}

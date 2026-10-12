@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "scope": "Operator-written positive TEST CONTROL only. Never native output or supplied to the test-generating model. Six supplied tests and all7 independent checks verify this control before probe launch.",
+  "project_test_output": "[local detail omitted from GitHub snapshot]",
+  "independent_checks": [
+    {
+      "check": "unseen binary/unicode/symlinks/output exclusion 1",
+      "passed": true,
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "unseen binary/unicode/symlinks/output exclusion 2",
+      "passed": true,
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "invalid root preserves actual prior bytes",
+      "passed": true,
+      "exit_code": 1
+    },
+    {
+      "check": "scan read failure preserves actual prior bytes",
+      "passed": true,
+      "exit_code": 1,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "requested real report.json complete and exact",
+      "passed": true
+    },
+    {
+      "check": "Repeated successful output outside ROOT is replaced with current data",
+      "passed": true,
+      "first_exit_code": 0,
+      "second_exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "Unreadable directory fails scanning and preserves prior output",
+      "passed": true,
+      "readable_control_passed": true,
+      "exit_code": 1,
+      "prior_output_preserved": true,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "archive_metadata": {
+    "source": "audit-positive-control-validation.json",
+    "kind": "integration",
+    "title": "Positive verification control covers original inventory requirements",
+    "scope": "Operator-written positive TEST CONTROL only. Never native output or supplied to the test-generating model. Six supplied tests and all7 independent checks verify this control before probe launch.",
+    "source_sha256": "2902741e08f22514217028156a1b8d0356b810414b685874b150398ce0529f35"
+  }
+}

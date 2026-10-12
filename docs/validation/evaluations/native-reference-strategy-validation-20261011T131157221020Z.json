@@ -1,0 +1,61 @@
+{
+  "at": "2026-10-11T13:10:48.433153+00:00",
+  "status": "complete",
+  "deadline_seconds": 600,
+  "scope": "Same prior source-free prompt, Chat/low/512, local GPT-OSS-20B nativeMXFP4. Shape/timing diagnostic, not code implementation or qualification.",
+  "baseline": "[local detail omitted from GitHub snapshot]",
+  "metrics": [
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 236,
+        "reused_tokens": 0,
+        "exact_history_cache_tokens": 0,
+        "cache_saved_prefill_tokens": 0,
+        "reasoning_effort": "low"
+      }
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 8.797149,
+        "decode_seconds": 12.010127,
+        "prefill_tokens": 236,
+        "decode_tokens": 382,
+        "total_seconds": 20.81,
+        "backend": "llama.cpp-native-mxfp4",
+        "prefill_tokens_per_s": 26.826873115369537,
+        "decode_tokens_per_s": 31.806491305212674,
+        "completion_tokens": 382,
+        "prompt_tokens": 236,
+        "canonical_prompt_tokens": 236,
+        "exact_history_cache_tokens": 0,
+        "cache_saved_prefill_tokens": 0,
+        "reasoning_effort": "low"
+      }
+    }
+  ],
+  "model_changed": false,
+  "backend": "llama.cpp-native-mxfp4",
+  "model_pid": 700946,
+  "load_seconds": 47.13,
+  "prompt": "[local detail omitted from GitHub snapshot]",
+  "reason": "[local detail omitted from GitHub snapshot]",
+  "final": "[local detail omitted from GitHub snapshot]",
+  "words": 188,
+  "checks": {
+    "complete_public_response": true,
+    "within_word_limit": false,
+    "within_deadline": true
+  },
+  "passed": false,
+  "assessment_note": "[local detail omitted from GitHub snapshot]",
+  "elapsed_seconds": 68.79,
+  "archive_metadata": {
+    "source": "native-reference-strategy-validation.json",
+    "kind": "native",
+    "title": "Native-MXFP4 reference: source-free diagnostic",
+    "scope": "Same prior source-free prompt, Chat/low/512, local GPT-OSS-20B nativeMXFP4. Shape/timing diagnostic, not code implementation or qualification.",
+    "source_sha256": "09e3fb5deb1d245a6e69774bd50e718c38b2c763f07bf30915e932fb07536513"
+  }
+}

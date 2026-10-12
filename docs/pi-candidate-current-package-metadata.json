@@ -1,0 +1,161 @@
+{
+  "bin": {
+    "pi": "[local detail omitted from GitHub snapshot]"
+  },
+  "bugs": {
+    "url": "https://github.com/earendil-works/pi/issues"
+  },
+  "dist": {
+    "shasum": "0ebd064bf1342f812f9676dde85b2f0b3e02b7e6",
+    "tarball": "[local detail omitted from GitHub snapshot]",
+    "fileCount": 1254,
+    "integrity": "[local detail omitted from GitHub snapshot]",
+    "signatures": [
+      {
+        "sig": "[local detail omitted from GitHub snapshot]",
+        "keyid": "[local detail omitted from GitHub snapshot]"
+      },
+      {
+        "sig": "[local detail omitted from GitHub snapshot]",
+        "keyid": "[local detail omitted from GitHub snapshot]"
+      }
+    ],
+    "attestations": {
+      "url": "https://registry.npmjs.org/-/npm/v1/attestations/@earendil-works%2fpi-coding-agent@1.1.0",
+      "provenance": {
+        "predicateType": "[local detail omitted from GitHub snapshot]"
+      }
+    },
+    "unpackedSize": 22924895
+  },
+  "main": "[local detail omitted from GitHub snapshot]",
+  "name": "@earendil-works/pi-coding-agent",
+  "type": "module",
+  "_from": "[local detail omitted from GitHub snapshot]",
+  "types": "[local detail omitted from GitHub snapshot]",
+  "author": {
+    "name": "Mario Zechner"
+  },
+  "engines": {
+    "node": "[local detail omitted from GitHub snapshot]"
+  },
+  "exports": {
+    ".": {
+      "types": "[local detail omitted from GitHub snapshot]",
+      "import": "[local detail omitted from GitHub snapshot]"
+    },
+    "./client": {
+      "source": "./src/client/index.ts"
+    },
+    "./rpc-entry": {
+      "import": "[local detail omitted from GitHub snapshot]"
+    },
+    "./experimental/plugin": {
+      "source": "./src/experimental/plugin.ts"
+    }
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "vitest --run",
+    "build": "[local detail omitted from GitHub snapshot]",
+    "clean": "[local detail omitted from GitHub snapshot]",
+    "copy-assets": "[local detail omitted from GitHub snapshot]",
+    "build:binary": "[local detail omitted from GitHub snapshot]",
+    "prepublishOnly": "[local detail omitted from GitHub snapshot]",
+    "build:unbundled": "[local detail omitted from GitHub snapshot]",
+    "copy-binary-assets": "[local detail omitted from GitHub snapshot]"
+  },
+  "_npmUser": {
+    "name": "GitHub Actions",
+    "email": "[local detail omitted from GitHub snapshot]",
+    "trustedPublisher": {
+      "id": "[local detail omitted from GitHub snapshot]",
+      "oidcConfigId": "[local detail omitted from GitHub snapshot]"
+    }
+  },
+  "homepage": "[local detail omitted from GitHub snapshot]",
+  "keywords": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "piConfig": {
+    "configDir": "[local detail omitted from GitHub snapshot]"
+  },
+  "_resolved": "[local detail omitted from GitHub snapshot]",
+  "overrides": {
+    "protobufjs": "[local detail omitted from GitHub snapshot]"
+  },
+  "_integrity": "[local detail omitted from GitHub snapshot]",
+  "repository": {
+    "url": "git+https://github.com/earendil-works/pi.git",
+    "type": "git",
+    "directory": "packages/coding-agent"
+  },
+  "_npmVersion": "[local detail omitted from GitHub snapshot]",
+  "description": "[local detail omitted from GitHub snapshot]",
+  "directories": {},
+  "maintainers": [
+    {
+      "name": "mitsuhiko",
+      "email": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "name": "badlogic",
+      "email": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "name": "rwachtler",
+      "email": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "_nodeVersion": "[local detail omitted from GitHub snapshot]",
+  "dependencies": {
+    "diff": "[local detail omitted from GitHub snapshot]",
+    "jiti": "[local detail omitted from GitHub snapshot]",
+    "yaml": "[local detail omitted from GitHub snapshot]",
+    "chalk": "[local detail omitted from GitHub snapshot]",
+    "ignore": "[local detail omitted from GitHub snapshot]",
+    "semver": "[local detail omitted from GitHub snapshot]",
+    "undici": "[local detail omitted from GitHub snapshot]",
+    "typebox": "[local detail omitted from GitHub snapshot]",
+    "minimatch": "[local detail omitted from GitHub snapshot]",
+    "cross-spawn": "[local detail omitted from GitHub snapshot]",
+    "grok-mermaid": "[local detail omitted from GitHub snapshot]",
+    "highlight.js": "[local detail omitted from GitHub snapshot]",
+    "quickjs-wasi": "[local detail omitted from GitHub snapshot]",
+    "brace-expansion": "[local detail omitted from GitHub snapshot]",
+    "hosted-git-info": "[local detail omitted from GitHub snapshot]",
+    "proper-lockfile": "[local detail omitted from GitHub snapshot]",
+    "@earendil-works/chord": "[local detail omitted from GitHub snapshot]",
+    "@earendil-works/pi-ai": "[local detail omitted from GitHub snapshot]",
+    "@earendil-works/pi-mcp": "[local detail omitted from GitHub snapshot]",
+    "@earendil-works/pi-tui": "[local detail omitted from GitHub snapshot]",
+    "@silvia-odwyer/photon-node": "[local detail omitted from GitHub snapshot]",
+    "@earendil-works/pi-codemode": "[local detail omitted from GitHub snapshot]",
+    "@earendil-works/pi-agent-core": "[local detail omitted from GitHub snapshot]"
+  },
+  "_hasShrinkwrap": false,
+  "devDependencies": {
+    "shx": "[local detail omitted from GitHub snapshot]",
+    "marked": "[local detail omitted from GitHub snapshot]",
+    "vitest": "[local detail omitted from GitHub snapshot]",
+    "@types/node": "[local detail omitted from GitHub snapshot]",
+    "@types/semver": "[local detail omitted from GitHub snapshot]",
+    "@types/cross-spawn": "[local detail omitted from GitHub snapshot]",
+    "@types/hosted-git-info": "[local detail omitted from GitHub snapshot]",
+    "@types/proper-lockfile": "[local detail omitted from GitHub snapshot]",
+    "@earendil-works/pi-client": "[local detail omitted from GitHub snapshot]",
+    "@earendil-works/pi-server": "[local detail omitted from GitHub snapshot]",
+    "@earendil-works/pi-protocol": "[local detail omitted from GitHub snapshot]"
+  },
+  "_npmOperationalInternal": {
+    "tmp": "[local detail omitted from GitHub snapshot]",
+    "host": "[local detail omitted from GitHub snapshot]"
+  },
+  "_id": "[local detail omitted from GitHub snapshot]",
+  "version": "1.1.0"
+}

@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-11T10:53:19.405667+00:00",
+  "status": "passed",
+  "passed": true,
+  "tests_run": 10,
+  "failures": 0,
+  "errors": 0,
+  "log": "[local detail omitted from GitHub snapshot]",
+  "scope": "Isolated proposed review component. Scripted reviewer plus actual tests; full source/goal excludes test examples, incomplete/inconsistent verdicts rejected, fresh source hashes and cancellation enforced. NOT deployed; actual local reviewer capability probe pending.",
+  "archive_metadata": {
+    "source": "goal-review-focused-green.json",
+    "kind": "automated",
+    "title": "goal review focused green",
+    "scope": "Isolated proposed review component. Scripted reviewer plus actual tests; full source/goal excludes test examples, incomplete/inconsistent verdicts rejected, fresh source hashes and cancellation enforced. NOT deployed; actual local reviewer capability probe pending.",
+    "source_sha256": "6bf4498d56a7969238272374520945a2ad4f3419c55808c1e548137da4be9de7"
+  }
+}

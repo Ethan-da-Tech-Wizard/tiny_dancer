@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-11T13:06:52.029705+00:00",
+  "passed": true,
+  "status": "passed",
+  "checks": {
+    "focused7_pass": true,
+    "full301_pass": true,
+    "forbidden_dependencies_rejected": true,
+    "allowed_dependencies_preserved": true,
+    "manifest_in_source_proof": true,
+    "requested_json_still_required": true
+  },
+  "tests_run": 301,
+  "seconds": 24.48,
+  "stage_files_sha256": {
+    "app/dependency_policy.py": "e18af28feb416fda230807dc5021bbae900c0130713ae67bc2bf0700f5284d59",
+    "app/deliverables.py": "1037a0f48995403c618ade4dd6c65ed2003275874c504dc472dd1ce0d694c5a7",
+    "tests/test_rust_dependency_guard.py": "4b72a4290804afafb55a2dabf97680c6729430e8973afb2830628d58d1f91644"
+  },
+  "before": {
+    "tests_run": 7,
+    "failures": 4,
+    "log": "[local detail omitted from GitHub snapshot]"
+  },
+  "focused_log": "[local detail omitted from GitHub snapshot]",
+  "full_log": "[local detail omitted from GitHub snapshot]",
+  "scope": "Explicit standard-library Rust constraint and actual Cargo manifest; no Python dependency classification or full semantic goal check. Scripted fixtures and actual files, not native qualification.",
+  "archive_metadata": {
+    "source": "rust-dependency-guard-staged-validation.json",
+    "kind": "automated",
+    "title": "Rust dependency constraint:301staged tests",
+    "scope": "Explicit standard-library Rust constraint and actual Cargo manifest; no Python dependency classification or full semantic goal check. Scripted fixtures and actual files, not native qualification.",
+    "source_sha256": "682305c54cdb7abed1c3b0380803b479281f67f7964b8d22afbd9c0f4748fe37"
+  }
+}

@@ -1,0 +1,47 @@
+dist/light/protobuf.js
+/*!
+ * protobuf.js v7.6.6 (c) 2016, daniel wirtz
+ * compiled thu, 27 aug 2026 10:13:18 utc
+ * licensed under the bsd-3-clause license
+ * see: https://github.com/dcodeio/protobuf.js for details
+ */
+
+dist/light/protobuf.min.js
+/*!
+ * protobuf.js v7.6.6 (c) 2016, daniel wirtz
+ * compiled thu, 27 aug 2026 10:13:19 utc
+ * licensed under the bsd-3-clause license
+ * see: https://github.com/dcodeio/protobuf.js for details
+ */
+
+dist/minimal/protobuf.js
+/*!
+ * protobuf.js v7.6.6 (c) 2016, daniel wirtz
+ * compiled thu, 27 aug 2026 10:13:18 utc
+ * licensed under the bsd-3-clause license
+ * see: https://github.com/dcodeio/protobuf.js for details
+ */
+
+dist/minimal/protobuf.min.js
+/*!
+ * protobuf.js v7.6.6 (c) 2016, daniel wirtz
+ * compiled thu, 27 aug 2026 10:13:19 utc
+ * licensed under the bsd-3-clause license
+ * see: https://github.com/dcodeio/protobuf.js for details
+ */
+
+dist/protobuf.js
+/*!
+ * protobuf.js v7.6.6 (c) 2016, daniel wirtz
+ * compiled thu, 27 aug 2026 10:13:18 utc
+ * licensed under the bsd-3-clause license
+ * see: https://github.com/dcodeio/protobuf.js for details
+ */
+
+dist/protobuf.min.js
+/*!
+ * protobuf.js v7.6.6 (c) 2016, daniel wirtz
+ * compiled thu, 27 aug 2026 10:13:19 utc
+ * licensed under the bsd-3-clause license
+ * see: https://github.com/dcodeio/protobuf.js for details
+ */

@@ -1,0 +1,34 @@
+{
+  "started_at": "2026-10-11T11:59:36.589053+00:00",
+  "status": "complete",
+  "passed": true,
+  "checks": {
+    "source_preservation_and_omission_hints": true,
+    "failure_status_and_output_ends_preserved": true,
+    "small_output_and_missing_source_unchanged": true
+  },
+  "scope": "Three isolated initial-context projection tests, not native execution; candidate remains staged. Real Harmony token measurement also preserved separately.",
+  "initial_failures": [
+    {
+      "command": "[local detail omitted from GitHub snapshot]",
+      "error": "[local detail omitted from GitHub snapshot]",
+      "fix": "[local detail omitted from GitHub snapshot]",
+      "log": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "command": "[local detail omitted from GitHub snapshot]",
+      "error": "[local detail omitted from GitHub snapshot]",
+      "fix": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "test_log": "[local detail omitted from GitHub snapshot]",
+  "token_report": "docs/preflight-projection-token-validation.json",
+  "deployed": false,
+  "archive_metadata": {
+    "source": "preflight-projection-staged-validation.json",
+    "kind": "automated",
+    "title": "Staged initial-context projection · 3 checks",
+    "scope": "Three isolated initial-context projection tests, not native execution; candidate remains staged. Real Harmony token measurement also preserved separately.",
+    "source_sha256": "6809e239ccd38434c5138c7c2515dc758c398595e29c31d0facf24cb730b0fd2"
+  }
+}

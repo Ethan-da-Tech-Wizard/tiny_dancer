@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-11T01:26:02.803606+00:00",
+  "passed": true,
+  "scope": "Read-only actual native read_file payload and real Harmony tokenizer compared with staged source preview. No native generation, runtime hints or future latency guarantee.",
+  "job": "517749996eba44acbfce47f64b210be6",
+  "checks": {
+    "actual_modest_source_in_full_preview": true,
+    "no_nonexistent_artifact_instruction": true,
+    "original_payload_unchanged": true,
+    "existing_source_tests_passed": true
+  },
+  "source_characters": 3900,
+  "old_preview_characters": 2456,
+  "new_preview_characters": 3900,
+  "old_preview_tokens": 816,
+  "new_preview_tokens": 1244,
+  "actual_source_read_calls_observed": 4,
+  "note": "[local detail omitted from GitHub snapshot]",
+  "setup_correction": "[local detail omitted from GitHub snapshot]",
+  "archive_metadata": {
+    "source": "source-preview-token-validation.json",
+    "kind": "automated",
+    "title": "Actual source coverage and token cost",
+    "scope": "Read-only actual read_file payload and real Harmony tokenizer; no native inference or speed guarantee.",
+    "source_sha256": "0034a85cb9524f552f5c76e8dcff323355e79dbfe2bc1efb17aefd43c2a15215"
+  }
+}

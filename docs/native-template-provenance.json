@@ -1,0 +1,20 @@
+{
+  "source": "Exact original template from /props of the pinned original GPT-OSS-20B MXFP4 local server",
+  "source_sha256": "b2215de6da8ba369957eece8c5aa18f4af94f6c4d311d85e691373a421d80e89",
+  "adapted_sha256": "6cc2ca90bf0ccc1cb0775e66a83d352e2e5a0915f5b183c5460c17496f55d1b4",
+  "license": "Apache-2.0 (model template); Tiny Dancer changes Apache-2.0",
+  "original_model_license": "[local detail omitted from GitHub snapshot]",
+  "changes": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "no_changes": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ]
+}

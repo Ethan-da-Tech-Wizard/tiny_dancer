@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark"><title>Tiny Dancer — Local agent workspace</title>
+  <link rel="stylesheet" href="/static/style.css?v=hardening-5"><script type="module" src="/static/app.js?v=hardening-5"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="Tiny Dancer home"><span class="brand-mark">t<span>d</span></span><div>tiny dancer<small>YOUR LOCAL WORKSPACE</small></div></a>
+    <button id="new-session" class="new-session"><span>＋</span> New session <kbd>N</kbd></button>
+    <div class="eyebrow sidebar-label">SESSIONS <span id="session-count">0</span></div>
+    <nav id="sessions" aria-label="Session history"></nav>
+    <a href="/results" target="_blank" rel="noopener" style="display:block;color:var(--accent);font-size:12px;margin-bottom:16px">Test results ↗</a>
+    <div class="sidebar-footer"><span class="local-dot"></span><div>On your machine<small>Local model · local history</small></div><span class="small-arrow">↗</span></div>
+  </aside>
+  <main>
+    <header><div class="breadcrumb">Workspace <span>/</span> <strong id="session-title">New session</strong></div><div class="header-actions"><button id="watch" class="text-button">◉ Watch</button><span class="privacy"><span class="local-dot"></span> LOCAL</span><button id="export" class="icon-button" title="Export this conversation" aria-label="Export conversation">↓</button></div></header>
+    <div class="workspace">
+      <section class="conversation" aria-label="Conversation">
+        <details id="progress-card" class="progress-card hidden"><summary>Task progress <span id="progress-label">Working</span></summary><div id="progress-summary"></div><ul id="progress-steps"></ul></details>
+        <div id="messages" aria-live="polite">
+          <div class="welcome" id="welcome"><span class="welcome-symbol">✳</span><div class="eyebrow">A LITTLE SPACE. A LOT OF POSSIBILITY.</div><h1>Make your next move.</h1><p>A private agent, right here on your computer.<br>Give it a task. Watch the work happen.</p><div class="suggestions"><button data-prompt="Inspect this computer's hardware and summarize the available memory and disk space."><span>⌘</span> Get to know this machine <span>↗</span></button><button data-prompt="Look in my workspace folder, list its files, and explain what is there."><span>▧</span> Explore my workspace <span>↗</span></button><button data-prompt="Create a short local project plan in workspace/PLAN.md for a Python command-line tool. Verify the file exists."><span>✎</span> Start something new <span>↗</span></button></div></div>
+        </div>
+        <div class="composer-wrap">
+          <div class="folder-control"><button id="change-folder" class="folder-path" title="Change working folder">▧ <span id="working-folder">workspace/</span></button><button id="open-editor" class="text-button">Open Code OSS ↗</button></div>
+          <div class="task-strip"><div id="task-status" class="task-status" role="status">Ready when you are</div><button id="resume-task" class="resume-button hidden" type="button" title="Continue the same saved goal and completed steps">↻ Resume task</button></div>
+          <div id="pause-reason" class="pause-reason hidden"></div>
+          <form id="composer"><textarea id="prompt" placeholder="What would you like to work on?" rows="3" aria-label="Task or message" required></textarea><div class="composer-bottom"><div class="composer-options"><label class="mode-control"><select id="mode" aria-label="Agent or chat mode"><option value="agent">✳ Agent</option><option value="chat">◌ Chat</option></select></label><label class="mode-control thinking-control" title="Auto uses thorough reasoning for work; Quick and Balanced use less"><select id="thinking" aria-label="Thinking effort"><option value="auto">Auto</option><option value="low">Quick</option><option value="medium">Balanced</option><option value="high">Thorough</option></select></label><span class="composer-model">GPT-OSS-20B</span><label class="budget">Starting budget <select id="budget" aria-label="Starting generated-token allowance" title="Auto gives work more room for a complete step; the model can finish earlier. Until-done retries may use a larger budget."><option value="auto" selected>Auto</option><option value="512">512</option><option value="1024">1024</option><option value="2048">2048</option></select></label></div><button id="stop" type="button" class="stop hidden">■ Stop</button><button id="send" type="submit" class="send" aria-label="Send task">↑</button></div>
+            <label class="run-policy"><input id="run-until-done" type="checkbox" checked> Keep working until done</label>
+          </form><div class="composer-note">Agent tools run with your user permissions. <span>Shift + Enter for a new line</span></div>
+        </div>
+      </section>
+      <aside class="inspector"><div class="inspector-heading"><span class="eyebrow">MISSION CONTROL</span><span class="inspector-symbol">◈</span></div>
+        <div class="model-card"><div class="model-icon">✳</div><div><h2>GPT-OSS-20B</h2><p>Open weights. Your hardware.</p></div><div id="engine-state" class="engine-state">CONNECTING</div></div>
+        <section class="inspector-section"><div class="section-label">ENGINE <span>01</span></div><h3 id="engine-label">Expert streaming</h3><p id="runtime-description">Picchio · inspired by Colibrì</p><div class="architecture"><span>DISK</span><i>→</i><span>RAM</span><i>→</i><span>COMPUTE</span></div><div class="subtle" id="compute-mode">Checking runtime…</div></section>
+        <section class="inspector-section"><div class="section-label">THIS MACHINE <span>02</span></div><div class="resource"><div>Memory <strong id="ram">—</strong></div><div class="meter"><span id="ram-meter"></span></div></div><div class="resource"><div>Game drive free <strong id="disk">—</strong></div></div><div class="resource"><div>CPU activity <strong id="cpu">—</strong></div></div></section>
+        <section class="inspector-section"><div class="section-label">CONNECTED TOOLS <span>03</span></div><div class="tool-grid"><span><i>⌘</i> Terminal</span><span><i>▧</i> Files</span><span><i>◎</i> Browser</span><span><i>▣</i> Desktop</span><span title="Docs, packages and dependencies when needed"><i>Py</i> Python</span><span title="Docs, crates and dependencies when needed"><i>Rs</i> Rust</span></div></section>
+        <section class="inspector-section activity-section"><div class="section-label">ACTIVITY <span id="activity-count">0</span></div><div id="activity"><p class="subtle">Tool calls and results will appear here.</p></div></section>
+        <div class="inspector-footer"><span class="local-dot"></span> Inference stays local <small>GameDrive / tiny_dancer</small></div>
+      </aside>
+    </div>
+  </main>
+  <div id="toast" role="alert" class="toast hidden"></div>
+  <dialog id="viewer" class="viewer"><div class="viewer-toolbar"><strong>Live view</strong><select id="view-source" aria-label="Screen to watch"><option value="browser">Agent browser</option><option value="desktop">Desktop / Code OSS</option></select><button id="close-viewer" aria-label="Close live view">×</button></div><p id="view-caption">Snapshots refresh every three seconds.</p><img id="view-image" alt="Current agent browser or desktop screenshot" class="hidden"><p class="viewer-note">The agent reads pages through the DOM and screens through OCR.</p></dialog>
+</body>
+</html>

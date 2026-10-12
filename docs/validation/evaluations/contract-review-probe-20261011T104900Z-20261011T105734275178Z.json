@@ -1,0 +1,50 @@
+{
+  "started_at": "2026-10-11T10:49:00.492199+00:00",
+  "status": "operator_stopped",
+  "scope": "Proposed independent local native review capability probe, not deployed and not a repair hint. Run only after current task is terminal. Reviewer receives original goal and source, no initial acceptance examples or unseen inputs. Before first native probe launch, verdict items clarified as strings and independent grading requires an issue about the observed numeric-capacity defect; these grader topic terms are not sent to the reviewer.",
+  "criteria_sha256": "9b1511e4f886f5ae43aabfe68071e5341cb2aaac61f6a90a9d602c22a1b2bd35",
+  "runtime_sha256_before": "5c7ee1267669e717559201b57ff5755c87c9844cd3f7293a5b4b67ab0b551199",
+  "operator_interventions": [
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "cases": [
+    {
+      "name": "observed_wrong_assumption",
+      "prompt": "[local detail omitted from GitHub snapshot]",
+      "job": "65a8c28d006e4f79868ab222a87ec922",
+      "session": "18a434ed31164481ad5e6852bfc1f587",
+      "status": "cancelled",
+      "response": "[local detail omitted from GitHub snapshot]",
+      "verdict": null,
+      "seconds": 495.21,
+      "metrics": [],
+      "known_defect_identified": false,
+      "passed": false
+    },
+    {
+      "name": "correct_simple_add",
+      "prompt": "[local detail omitted from GitHub snapshot]",
+      "job": "3229557867c4468a8d99f20a6e53951f",
+      "session": "b4605c6432fd48fd94a2b8e84fd3d248",
+      "status": "running",
+      "passed": false,
+      "seconds": 13.49,
+      "verdict": null,
+      "response": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "execution": {
+    "reasoning_effort": "high",
+    "max_tokens": 4096,
+    "observation_seconds": 3600
+  },
+  "passed": false,
+  "runtime_sha256_after": "5c7ee1267669e717559201b57ff5755c87c9844cd3f7293a5b4b67ab0b551199",
+  "archive_metadata": {
+    "source": "contract-review-probe-20261011T104900Z.json",
+    "kind": "native",
+    "title": "Thorough4096 review experiment stopped for elapsed-work concern",
+    "scope": "Stopped only this experimental review and its observer after user raised eight-hour elapsed work. No passing native qualification claimed.",
+    "source_sha256": "a5aa8dd4bec298dcb31beb3946ecf510d5edd43b1fc1acaae8c93e5d12476125"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "backup": "[local detail omitted from GitHub snapshot]",
+  "stage": "[local detail omitted from GitHub snapshot]",
+  "old_cpu_layers": 16,
+  "candidate_cpu_layers": 14,
+  "quality_gate": "[local detail omitted from GitHub snapshot]",
+  "updated_at": "2026-10-11T17:05:56.369128+00:00",
+  "runtime_sha256": "94eefa8d0cb44a35ffdd7c686b1f9f91a059fbe833ad9b936979f07d826bfdbe",
+  "model": "same native MXFP4 GPT-OSS-20B",
+  "context": 8192,
+  "threads": 8,
+  "initial_output_allowance": 2048,
+  "full_regressions": {
+    "passed": true,
+    "tests": 360,
+    "seconds": 23.083,
+    "report": "docs/validation/runs/20261011T170523710096Z.json"
+  },
+  "syntax_passed": true,
+  "license_check": "[local detail omitted from GitHub snapshot]",
+  "restart_ready": true,
+  "job": "89e7496fcb254a69bcbfe08f43f7619b",
+  "cwd": "/mnt/GameDrive/tiny_dancer/workspace/precision-repair-20261011T170622Z",
+  "quality_report": "docs/validation/evaluations/precision-repair-retest-validation-20261011T172143740942Z.json",
+  "native_passed": false,
+  "quality_checks": {
+    "runtime_frozen": true,
+    "native_verified": false,
+    "acceptance_unchanged": true,
+    "independent_cli_checks": true,
+    "clear_errors": true,
+    "unseen_1600_digit_signed_case": true,
+    "automatic_initial_work_allowance": true,
+    "unseen_3200_digit_signed": false,
+    "unseen_3200_digit_total": false
+  },
+  "elapsed_seconds": 900.29,
+  "candidate_source": "[local detail omitted from GitHub snapshot]"
+}

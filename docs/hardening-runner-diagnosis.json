@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-11T00:29:55.220038+00:00",
+  "status": "failed",
+  "passed": false,
+  "scope": "Four scripted/actual-tool regressions for common nested source/test files, Python3-only runtimes and missing-runner metadata. No native inference or automatic replacement tests.",
+  "detail": "[local detail omitted from GitHub snapshot]"
+}

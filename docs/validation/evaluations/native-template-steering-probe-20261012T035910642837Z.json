@@ -1,0 +1,22 @@
+{
+  "scope": "Exact loaded model apply-template using synthetic messages only; no inference or native private text",
+  "markers_present": {
+    "fixture_system_marker": true,
+    "fixture_initial_developer_marker": false,
+    "fixture_original_goal_marker": true,
+    "fixture_analysis_marker": true,
+    "fixture_tool_marker": true,
+    "fixture_late_developer_marker": false
+  },
+  "formatted_characters": 887,
+  "passed": false,
+  "checked_at": "[local detail omitted from GitHub snapshot]",
+  "finding": "[local detail omitted from GitHub snapshot]",
+  "archive_metadata": {
+    "source": "native-template-steering-probe.json",
+    "kind": "automated",
+    "title": "Native prompt drops harness instructions",
+    "scope": "Exact model /apply-template with synthetic markers; not native inference",
+    "source_sha256": "4d84ca258ddc77293cbc940e9d7fe2bebb1654b7c78a221cbabafcb91b2acc69"
+  }
+}

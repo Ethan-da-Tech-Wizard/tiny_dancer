@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-11T09:39:15.988416+00:00",
+  "passed": false,
+  "status": "failed",
+  "tests_run": 3,
+  "failures": 3,
+  "errors": 0,
+  "scope": "Counterfactual isolated run after initial focused green: removing only diagnostic event reproduces missing phase/count/privacy metadata in three cases. No production/native/clock/source hint change.",
+  "log": "[local detail omitted from GitHub snapshot]",
+  "failed_tests": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "archive_metadata": {
+    "source": "incomplete-diagnostics-counterfactual-red.json",
+    "kind": "regression",
+    "title": "Incomplete generation metadata absent: counterfactual red",
+    "scope": "Counterfactual isolated run after initial focused green: removing only diagnostic event reproduces missing phase/count/privacy metadata in three cases. No production/native/clock/source hint change.",
+    "source_sha256": "0538baa4ccec754602a8808bd7f995f377fd45a92be6cf1c84b74061bb937361"
+  }
+}

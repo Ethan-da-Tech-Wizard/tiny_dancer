@@ -1,0 +1,125 @@
+{
+  "checked_at": "[local detail omitted from GitHub snapshot]",
+  "status": "passed",
+  "test_suite": {
+    "tests": 20,
+    "status": "passed",
+    "seconds": 4.576,
+    "log": "[local detail omitted from GitHub snapshot]",
+    "kind": "scripted model with real file/shell/browser tools plus native Harmony context regression"
+  },
+  "editor": {
+    "status": "passed",
+    "editor": {
+      "opened": "[local detail omitted from GitHub snapshot]",
+      "line": 1,
+      "executable": "[local detail omitted from GitHub snapshot]",
+      "profile": "[local detail omitted from GitHub snapshot]"
+    },
+    "editor_windows": 2,
+    "preview": {
+      "available": true,
+      "artifact": "[local detail omitted from GitHub snapshot]",
+      "at": 1791655730.6678524
+    },
+    "ocr_characters": 1075,
+    "saved_change_visible_in_ocr": true,
+    "active_window_class": "[local detail omitted from GitHub snapshot]",
+    "wayland_socket": "[local detail omitted from GitHub snapshot]",
+    "demo_file": "[local detail omitted from GitHub snapshot]",
+    "code_check": {
+      "exit_code": 0,
+      "timed_out": false,
+      "output": "[local detail omitted from GitHub snapshot]",
+      "truncated": false,
+      "artifact": "[local detail omitted from GitHub snapshot]"
+    },
+    "note": "[local detail omitted from GitHub snapshot]"
+  },
+  "desktop_api": {
+    "checked_at": "[local detail omitted from GitHub snapshot]",
+    "status": "passed",
+    "authenticated_desktop_preview": {
+      "available": true,
+      "artifact": "[local detail omitted from GitHub snapshot]",
+      "at": 1791658313.7719781
+    },
+    "image_bytes": 502048,
+    "editor_api": {
+      "opened": "[local detail omitted from GitHub snapshot]",
+      "line": 1,
+      "executable": "[local detail omitted from GitHub snapshot]",
+      "profile": "[local detail omitted from GitHub snapshot]"
+    },
+    "service_status": {
+      "engine": "not loaded",
+      "active_job": null,
+      "model_pid": null
+    },
+    "service_loaded_latest_graphical_fix": true
+  },
+  "ui": {
+    "status": "passed",
+    "javascript_errors": [],
+    "mobile_overflow": false,
+    "watch_dialog": true,
+    "editor_button": true,
+    "active_user_job": "[local detail omitted from GitHub snapshot]",
+    "desktop_preview_endpoint": "[local detail omitted from GitHub snapshot]",
+    "actual_browser_preview": "[local detail omitted from GitHub snapshot]",
+    "browser_preview": {
+      "available": true,
+      "artifact": "[local detail omitted from GitHub snapshot]",
+      "url": "https://www.espn.com/nfl/",
+      "at": 1791656289.4244401
+    },
+    "checked_at": "[local detail omitted from GitHub snapshot]",
+    "desktop_watch_caption": "[local detail omitted from GitHub snapshot]"
+  },
+  "native_model": {
+    "job": "ae6182d2ec1e469f9be468d5422b019b",
+    "status": "complete",
+    "verified": true,
+    "goal": "[local detail omitted from GitHub snapshot]",
+    "native_finish_task": true,
+    "checks": [
+      {
+        "command": "[local detail omitted from GitHub snapshot]",
+        "exit_code": 0,
+        "timed_out": false,
+        "output": "[local detail omitted from GitHub snapshot]",
+        "truncated": false,
+        "artifact": "[local detail omitted from GitHub snapshot]"
+      }
+    ],
+    "metrics": [
+      {
+        "prefill_seconds": 238.682456735,
+        "prefill_tokens": 1268,
+        "prefill_tokens_per_s": 5.312497689798006,
+        "decode_seconds": 77.511931502,
+        "decode_tokens": 107,
+        "decode_tokens_per_s": 1.3804326369707243,
+        "total_seconds": 316.2,
+        "completion_tokens": 107,
+        "prompt_tokens": 1268
+      }
+    ],
+    "final": "[local detail omitted from GitHub snapshot]",
+    "operator_assistance": true,
+    "note": "[local detail omitted from GitHub snapshot]"
+  },
+  "service_status": {
+    "engine": "ready",
+    "active_job": null,
+    "model_pid": 91274
+  },
+  "completed_task_ui": {
+    "status": "passed",
+    "task_label": "[local detail omitted from GitHub snapshot]",
+    "result_visible": true,
+    "resume_hidden": true,
+    "javascript_errors": [],
+    "screenshot": "[local detail omitted from GitHub snapshot]"
+  }
+}

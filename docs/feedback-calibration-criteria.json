@@ -1,0 +1,16 @@
+{
+  "declared_at": "[local detail omitted from GitHub snapshot]",
+  "workspace": "workspace/agent-feedback-20261012T045341331895Z",
+  "scope": "Known historical instruction-loss defect; no solution given to contributor. Independent checks withheld until termination. A diagnostic workflow pass alone cannot approve a patch.",
+  "required": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "original_sha256": "b2215de6da8ba369957eece8c5aa18f4af94f6c4d311d85e691373a421d80e89",
+  "known_conforming_control_sha256": "6cc2ca90bf0ccc1cb0775e66a83d352e2e5a0915f5b183c5460c17496f55d1b4"
+}

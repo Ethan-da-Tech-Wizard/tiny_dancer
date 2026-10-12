@@ -1,0 +1,128 @@
+{
+  "started_at": "2026-10-11T20:05:59.482648+00:00",
+  "status": "coding_replay_running",
+  "passed": true,
+  "scope": "Parameter audit with424 passing regression fixtures and a passing actual9586-token native capacity/memory smoke. Capacity qualification only; native coding completion and sampler causality remain unproven.",
+  "runtime_context": 8192,
+  "model_maximum_context": 131072,
+  "initial_auto_work_chunk": 2048,
+  "native_reply_ceiling": 8192,
+  "native_reply_additional_chunks": 3,
+  "current_sampling": {
+    "temperature": 0.0,
+    "repeat_penalty": 1.0,
+    "top_p": "[local detail omitted from GitHub snapshot]",
+    "top_k": "[local detail omitted from GitHub snapshot]",
+    "min_p": "[local detail omitted from GitHub snapshot]"
+  },
+  "official_sampling": {
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "repeat_penalty": 1.0
+  },
+  "effort": "[local detail omitted from GitHub snapshot]",
+  "candidate": {
+    "context": 32768,
+    "changed_fields": [
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "stage": "[local detail omitted from GitHub snapshot]"
+  },
+  "sources": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "observations": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "current_native_job": "[local detail omitted from GitHub snapshot]",
+  "checks": {
+    "production_unchanged_during_active_trial": true
+  },
+  "candidate_deployed": true,
+  "stage_regressions": {
+    "tests": 424,
+    "passed": true,
+    "seconds": 38.73,
+    "report": "docs/validation/runs/20261011T200844392831Z.json",
+    "log": "[local detail omitted from GitHub snapshot]"
+  },
+  "stage_setup_failure": {
+    "tests": 419,
+    "errors": 51,
+    "cause": "[local detail omitted from GitHub snapshot]",
+    "log": "[local detail omitted from GitHub snapshot]"
+  },
+  "actual_context_exhaustion": {
+    "prompt_tokens": 3760,
+    "completion_tokens": 4431,
+    "reason": "[local detail omitted from GitHub snapshot]",
+    "native_reply_chunks": 3,
+    "complete_tool_call": false,
+    "channels": [
+      "[local detail omitted from GitHub snapshot]"
+    ]
+  },
+  "disk_observation": {
+    "read_gib": 51.28,
+    "model_process_status": "[local detail omitted from GitHub snapshot]",
+    "gpu_utilization_percent": 3,
+    "available_ram_gib": 5.75
+  },
+  "backup": "[local detail omitted from GitHub snapshot]",
+  "runtime_sha256": "03855cfdd0503f300f847c7b04ed5fba0d9a294ef183c3d4d682fd1620a276e9",
+  "production_setup_findings": [
+    {
+      "kind": "regression",
+      "tests": 424,
+      "failures": 1,
+      "report": "docs/validation/runs/20261011T201408481921Z.json",
+      "cause": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "kind": "observer",
+      "status": "API422_before_model_start",
+      "cause": "[local detail omitted from GitHub snapshot]",
+      "log": "[local detail omitted from GitHub snapshot]",
+      "focused_after": 9
+    }
+  ],
+  "production_regressions": {
+    "tests": 424,
+    "passed": true,
+    "seconds": 30.122,
+    "report": "docs/validation/runs/20261011T201605359763Z.json",
+    "log": "[local detail omitted from GitHub snapshot]"
+  },
+  "observer_followup_backup": "[local detail omitted from GitHub snapshot]",
+  "native_capacity": {
+    "job": "8b463564c6d94e21aca0920249dfada1",
+    "passed": true,
+    "seconds": 95.22,
+    "checks": {
+      "native_final_complete": true,
+      "actual_prompt_over_8192": true,
+      "native_backend": true,
+      "runtime_frozen": true,
+      "desktop_ram_reserve": true,
+      "desktop_vram_reserve": true,
+      "no_operator_intervention": true
+    },
+    "prompt_tokens": 9586,
+    "min_available_ram_gib": 6.449985504150391,
+    "min_free_vram_mib": 2228
+  },
+  "archive_metadata": {
+    "source": "context-parameter-audit-validation.json",
+    "kind": "native",
+    "title": "Context parameter audit with native capacity receipt",
+    "scope": "Parameter audit with424 passing regression fixtures and a passing actual9586-token native capacity/memory smoke. Capacity qualification only; native coding completion and sampler causality remain unproven.",
+    "source_sha256": "8659ede04a8a825abf135d67ac65c862f881c03e699dae6a06c22e4b8298edc9"
+  }
+}

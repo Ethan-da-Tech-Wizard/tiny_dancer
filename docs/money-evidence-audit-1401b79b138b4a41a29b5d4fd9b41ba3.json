@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-11T10:06:17.733862+00:00",
+  "source_report": "docs/precision-repair-retest-validation.json",
+  "job": "1401b79b138b4a41a29b5d4fd9b41ba3",
+  "cwd": "/mnt/GameDrive/tiny_dancer/workspace/precision-repair-20261011T080228Z",
+  "program_sha256": "6bd0df93d2293a33184fe2568233dc3a2eb88d91828639bd2bf32b98cf43c1d6",
+  "runtime_sha256": "c96b45453116dbb3662260082a87c6ecfa32e7bb02d5e1a761ddee3916fbf599",
+  "checks": [
+    {
+      "width": 1600,
+      "case": "signed",
+      "exit_code": 0,
+      "passed": true,
+      "actual": {
+        "huge": "[local detail omitted from GitHub snapshot]"
+      },
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "width": 3200,
+      "case": "signed",
+      "exit_code": 0,
+      "passed": false,
+      "actual": {
+        "huge": "[local detail omitted from GitHub snapshot]"
+      },
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "width": 3200,
+      "case": "total",
+      "exit_code": 1,
+      "passed": false,
+      "actual": null,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "scope": "Actual post-terminal CLI rerun of the predeclared independent cases. Preserves the original report; separates the 1600-digit displayed result from supplemental results despite observer variable reuse.",
+  "passed": false
+}

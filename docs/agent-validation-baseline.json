@@ -1,0 +1,46 @@
+{
+  "job": "4005e0bb6b6942d482e29f046048c50c",
+  "session": "9669b19367714fc08c4e881c0eec934b",
+  "status": "complete",
+  "file_exists": true,
+  "file_correct": true,
+  "tools": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "metrics": [
+    {
+      "prefill_seconds": 326.88599949,
+      "prefill_tokens": 700,
+      "prefill_tokens_per_s": 2.141419336074729,
+      "decode_seconds": 50.690680018,
+      "decode_tokens": 56,
+      "decode_tokens_per_s": 1.1047395690907025,
+      "total_seconds": 377.58,
+      "completion_tokens": 56,
+      "prompt_tokens": 700
+    },
+    {
+      "prefill_seconds": 50.322813191999956,
+      "prefill_tokens": 84,
+      "prefill_tokens_per_s": 1.6692230555455883,
+      "decode_seconds": 36.439087206,
+      "decode_tokens": 51,
+      "decode_tokens_per_s": 1.3995959808675564,
+      "total_seconds": 86.76,
+      "completion_tokens": 51,
+      "prompt_tokens": 797
+    },
+    {
+      "prefill_seconds": 56.19956988900003,
+      "prefill_tokens": 87,
+      "prefill_tokens_per_s": 1.5480545522293856,
+      "decode_seconds": 29.224145808999992,
+      "decode_tokens": 30,
+      "decode_tokens_per_s": 1.026548395839206,
+      "total_seconds": 85.42,
+      "completion_tokens": 30,
+      "prompt_tokens": 893
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+[Unit]
+Description=Tiny Dancer local GPT-OSS agent workspace
+After=graphical-session.target
+
+[Service]
+Type=simple
+WorkingDirectory=/mnt/GameDrive/tiny_dancer
+ExecStart=/mnt/GameDrive/tiny_dancer/scripts/start.sh
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=10
+StandardOutput=append:/mnt/GameDrive/tiny_dancer/logs/workspace.log
+StandardError=append:/mnt/GameDrive/tiny_dancer/logs/workspace.log
+UMask=0077
+
+[Install]
+WantedBy=default.target

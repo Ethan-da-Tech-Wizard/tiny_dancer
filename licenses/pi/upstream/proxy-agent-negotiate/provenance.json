@@ -1,0 +1,5 @@
+{
+  "url": "https://raw.githubusercontent.com/TooTallNate/proxy-agents/4813885d3f4e2ff837878ceffdba656a71dc31f0/packages/proxy-agent/LICENSE",
+  "sha256": "8d8c55319c7729d57be811c747452636688d54f19701ee0752b6b15ad3771d9a",
+  "note": "Package declares MIT but omits its own notice; preserve MIT notice from same upstream project/author as supplemental evidence, not a package-specific copyright assertion"
+}

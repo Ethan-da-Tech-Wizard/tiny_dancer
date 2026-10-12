@@ -1,0 +1,17 @@
+{
+  "started_at": "2026-10-11T22:43:32.666636+00:00",
+  "status": "passed",
+  "passed": true,
+  "scope": "Staged original generic direct-file preservation guard. Real filesystem rejection/allowance and passing-receipt controls; no model implementation or native quality qualification.",
+  "regressions": 488,
+  "seconds": 42.207,
+  "report": "docs/validation/runs/20261011T223915606168Z.json",
+  "focused_passes": 7,
+  "red_failures": 3,
+  "red_fixture_error_corrected": 1,
+  "deployed": false,
+  "limits": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ]
+}

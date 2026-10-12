@@ -1,0 +1,97 @@
+{
+  "at": "2026-10-11T00:52:52.708864+00:00",
+  "status": "deployed_and_guarded_idle_restart_completed",
+  "stage": "[local detail omitted from GitHub snapshot]",
+  "backup": "[local detail omitted from GitHub snapshot]",
+  "files": [
+    {
+      "path": "app/agent.py",
+      "before_sha256": "b76cc366aa8e123e3152cd25cb099cc615cb1e60e9683f924e1d307fb52d461d",
+      "after_sha256": "c28996ed5b0bd4cba00b5e36ace6372454c60dd2d7125dcce74f28cc8697bac2"
+    },
+    {
+      "path": "app/batching.py",
+      "before_sha256": "ce34e9216f9322e6597d441faa155b20ca1e74720aa546067575be2b13b39143",
+      "after_sha256": "2826bac3d8dd04c3a91a72021040f931adf2cc4c07f23db05091f3c7fe732a02"
+    },
+    {
+      "path": "app/deliverables.py",
+      "before_sha256": "4490128d27e61a16b805f995bcddf468b78aa5b316fd7344e4b9ac692844267c",
+      "after_sha256": "847307070035e98993b60722dda6b27396349645df0dffd662f4e02ca37714b4"
+    },
+    {
+      "path": "app/prompting.py",
+      "before_sha256": "c52fd59939765a0efc420b16041711eedd16df25c39fa90c157bcb7f20aefc9b",
+      "after_sha256": "49ed5b1d46de0a364215ccdf9cabc2a7b8ceb8fbc8f56cc66ab866b8e2bac195"
+    },
+    {
+      "path": "app/request_models.py",
+      "before_sha256": null,
+      "after_sha256": "e19932c52789962c96607607d0d4bbc49e94c980789e38bb6cbf1d3dc5bae67c"
+    },
+    {
+      "path": "app/server.py",
+      "before_sha256": "28a7f6bba4397ee8ff7b70f73ebb29f4af3befc658e2b24937a18ce83ab2452e",
+      "after_sha256": "045897f4546d3870f3700f6f83f6eaa771d48c6d4825ca1feac3fc15608454c3"
+    },
+    {
+      "path": "app/static/app.js",
+      "before_sha256": "f00877ea3ce9ed8c06c634f28446f871db482c0ccdbc575943a4fa971f27ea89",
+      "after_sha256": "7ccb81caef473a3efedd68713bae1f82180ec95fb7a1567f8079adc18dbee833"
+    },
+    {
+      "path": "app/static/index.html",
+      "before_sha256": "cfa58bf02b1bc6971824e5826a45fbcabbb22fc5d422c31826f5f330f04b024a",
+      "after_sha256": "fc2b42e2ede7576320ebc599e95a408af4310f5ae1af6ee3b9c6f753d931e801"
+    },
+    {
+      "path": "app/tool_runtime.py",
+      "before_sha256": null,
+      "after_sha256": "da6274eb1ea4a1e13adfdb5587a993735b65fe8d73501b3962fea2ac88209ecd"
+    },
+    {
+      "path": "app/tools.py",
+      "before_sha256": "99ec00698a202693e4df3b5921a47c9e81fbecdec2f831bf6fffbbf2442fe13d",
+      "after_sha256": "17fe3f0976ed1ed071d7c665fff8e49a99f7c7305caa07ddb8a7d7f706338285"
+    },
+    {
+      "path": "tests/test_batching.py",
+      "before_sha256": "4e05e7e7cec3cd4eddff5bd3a3732c3917cf1453560a4e82c0b8f59093273d82",
+      "after_sha256": "fcf170c3737f2a6a98b444b1a9811f2f3a57991b04f7a23fb1942729cfc421aa"
+    },
+    {
+      "path": "tests/test_generation_budget.py",
+      "before_sha256": "ddc3ce2c30378325c57cc086653c8422a81d6587d65983729bd3132551760b17",
+      "after_sha256": "d6820fd4d7de4b9cf76ae0bb45224cedeb06fe1131b445aa0a80b5a964834134"
+    },
+    {
+      "path": "tests/test_hardening.py",
+      "before_sha256": "10da1f23765123828ed82b8ffc41f4f93d842cb8e690f7808222746ff7fd8b3d",
+      "after_sha256": "d1b967df496c8ae3c715e521da36c473da54ee572137eeab4f4afc79af83690d"
+    },
+    {
+      "path": "tests/test_request_models.py",
+      "before_sha256": null,
+      "after_sha256": "a0080e96f57660ef0bd8ac64fed08fd42a01e134179efc69e9bdff50b948bfb1"
+    },
+    {
+      "path": "tests/test_tool_runtime.py",
+      "before_sha256": null,
+      "after_sha256": "0176b4b60737e804c59486ceb8d10e903993d7d11e2c0a3e66384e99f0e5c1c7"
+    },
+    {
+      "path": "scripts/ask.py",
+      "before_sha256": "62011b1f375bad101e6e4a1acc6f4c60d8bb018333dcef0b36cdbfe8f273166b",
+      "after_sha256": "fe4a62464c0c7fd6ad2540842c79250153e2653a39b68540ea5cc73d7c463ff6"
+    },
+    {
+      "path": "scripts/tool-bin/pytest",
+      "before_sha256": null,
+      "after_sha256": "50462135ac5149a500691edfd84158afd231803ee28e8198bfcd866fd18ff23b"
+    }
+  ],
+  "config_unchanged": true,
+  "tests_run": 172,
+  "current_tests_run": 177,
+  "readiness_improvement": "[local detail omitted from GitHub snapshot]"
+}

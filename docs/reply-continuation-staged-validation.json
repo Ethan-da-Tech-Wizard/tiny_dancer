@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-11T13:49:28.786639+00:00",
+  "passed": true,
+  "status": "passed",
+  "tests_run": 325,
+  "seconds": 22.041,
+  "checks": {
+    "unfinished_thought_continues": true,
+    "tool_payload_finishes_before_dispatch": true,
+    "explicit_and_chat_caps_preserved": true,
+    "raw_prefix_exact": true,
+    "private_thought_not_emitted": true,
+    "existing_context_and_chunk_bounds": true,
+    "exact_budget_eos": true,
+    "full325": true
+  },
+  "stage_files_sha256": {
+    "app/engine.py": "1f2387e20659f734021e870a6520103438dfd73b153a9ac8b5be90cbc07c87ae",
+    "app/agent.py": "752772afe4f7e06f532c6efce7ee07563d6eb325125e94cc70ea33fc43a5a85a",
+    "app/llama_session.py": "18371c3a30035f3cde77e545a56b4a6929620e47e880964b9b2d9d7983cfcf0a",
+    "app/reply_continuation.py": "dd41eb05e30f86bf66e337055d15451f8e35a52ed5f758c0789770009f7377f8",
+    "tests/test_reply_continuation.py": "9f4cec41cdc10d15a8e2bb996ddda2a64860a7a2fc0cf2084a1aafd21a8e7a68",
+    "tests/test_llama_session.py": "2cf6caa14a58d11c3d4dfd127965b3c55117bd0f34e875e4f39fc80d55c54c06"
+  },
+  "before": {
+    "continuation4tests": {
+      "failures": 2,
+      "log": "[local detail omitted from GitHub snapshot]"
+    },
+    "eos13tests": {
+      "failures": 2,
+      "log": "[local detail omitted from GitHub snapshot]"
+    }
+  },
+  "focused_log": "[local detail omitted from GitHub snapshot]",
+  "full_log": "[local detail omitted from GitHub snapshot]",
+  "scope": "Scripted native token streams with actual Harmony parser and real tool regressions. Auto/untilcompletework only; no continuation instruction/solution, no partialdispatch, context8192unchanged. No native qualification yet."
+}

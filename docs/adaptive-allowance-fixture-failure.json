@@ -1,0 +1,8 @@
+{
+  "passed": false,
+  "status": "isolated_fixture_setup_failure",
+  "created_at": "2026-10-11T04:47:55.784868+00:00",
+  "exit_code": 1,
+  "scope": "First staged candidate passed three new checks but the small-context fixture incorrectly changed configuration after constructor; not an active-runtime result. Fix fixture to configure engine before creating the runner.",
+  "output": "[local detail omitted from GitHub snapshot]"
+}
