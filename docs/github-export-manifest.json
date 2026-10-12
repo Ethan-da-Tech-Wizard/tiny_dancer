@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-10-12T06:06:55.232816+00:00",
+  "created_at": "2026-10-12T07:56:24.864909+00:00",
   "scope": "Source, licenses, documentation and public evidence views. Local original files remain unchanged. No runtime data or model weights.",
   "excluded": [
     "run",
@@ -31,9 +31,9 @@
     {
       "path": "AGENTS.md",
       "mode": "exact",
-      "source_sha256": "eda7b0b0940e1405f1069b55946f412c3a7f6cb2c9338370c6b817cb8a9f0006",
-      "export_sha256": "eda7b0b0940e1405f1069b55946f412c3a7f6cb2c9338370c6b817cb8a9f0006",
-      "bytes": 1977
+      "source_sha256": "010f62d0006dc87ce603dffc41591ca54a8049cef3d05388e845cea20701303b",
+      "export_sha256": "010f62d0006dc87ce603dffc41591ca54a8049cef3d05388e845cea20701303b",
+      "bytes": 2009
     },
     {
       "path": "LICENSE",
@@ -360,9 +360,9 @@
     {
       "path": "docs/AGENT_FEEDBACK.md",
       "mode": "exact",
-      "source_sha256": "5d98823da89f5c1b7f945c9e74ace57e589499d130955d247fef4597946cfb13",
-      "export_sha256": "5d98823da89f5c1b7f945c9e74ace57e589499d130955d247fef4597946cfb13",
-      "bytes": 4602
+      "source_sha256": "ab89691b698236df8171ffd0b1538f61606e8f9182d9362526d00e9610b54a0e",
+      "export_sha256": "ab89691b698236df8171ffd0b1538f61606e8f9182d9362526d00e9610b54a0e",
+      "bytes": 5024
     },
     {
       "path": "docs/CAPABILITY_LADDER.md",
@@ -430,23 +430,23 @@
     {
       "path": "docs/RESUME_HERE.md",
       "mode": "exact",
-      "source_sha256": "6bf0ca5c1ca89cfaafb14fd81e7278b344c89a27a14c1c643aa25a52273b2ec5",
-      "export_sha256": "6bf0ca5c1ca89cfaafb14fd81e7278b344c89a27a14c1c643aa25a52273b2ec5",
-      "bytes": 4585
+      "source_sha256": "b3be68d672a86ea74d0dd8fac1dddf7b741f16931e921d681488e42db57a509f",
+      "export_sha256": "b3be68d672a86ea74d0dd8fac1dddf7b741f16931e921d681488e42db57a509f",
+      "bytes": 11080
     },
     {
       "path": "docs/SESSION_LOG.md",
       "mode": "exact",
-      "source_sha256": "1b3c758361620b8ae8cc4a1e619ad8b7dace9e16061546ed3ee13b0c97310e00",
-      "export_sha256": "1b3c758361620b8ae8cc4a1e619ad8b7dace9e16061546ed3ee13b0c97310e00",
-      "bytes": 300564
+      "source_sha256": "0d3e7f7685e6080994c846b47c922910695524e605c1e5b2b62447153377fb9f",
+      "export_sha256": "0d3e7f7685e6080994c846b47c922910695524e605c1e5b2b62447153377fb9f",
+      "bytes": 303014
     },
     {
       "path": "docs/STATE.json",
       "mode": "public-evidence-view",
-      "source_sha256": "240e0585dc3206a1418aae7196f170411ca5bc7c5bbd19571e0904bd2d1b800f",
-      "export_sha256": "863fc8b1aa44d448770cd1339393da2be38f1b815e4741e13cd4579afdb37217",
-      "bytes": 12948
+      "source_sha256": "935596ef38a1c8c3bbbd898c6fa2e22adf4c48668a9f09d602c7c3b9b49d84f0",
+      "export_sha256": "20a9264c2b618490e8d87c3f19fe608dbfdf3569920c70b68f1f431769d0a2fe",
+      "bytes": 14454
     },
     {
       "path": "docs/TIME_LIMITED_STATUS.json",
@@ -1690,9 +1690,9 @@
     {
       "path": "docs/native-release-gate-current.json",
       "mode": "public-evidence-view",
-      "source_sha256": "f1ba9c4067ac16150350b027c0558415b7f5ceed7e4f8fa29f4b2361bd0d53ff",
-      "export_sha256": "dae2b87948ecae21981f223302d871efa0afa7363a4c87b3fa1f049f7c2e908b",
-      "bytes": 1687
+      "source_sha256": "002789ce74c5e23f361fcf5e876af041c68db34ca12e95ef770af751a2a2993a",
+      "export_sha256": "f04f8c7ded1673edab3afb2a82b3155453457edb8086c3f1f560def038d831c8",
+      "bytes": 1794
     },
     {
       "path": "docs/native-release-gate-validation.json",

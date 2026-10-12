@@ -1,6 +1,6 @@
 # Tiny Dancer continuity
 
-Read README.md, docs/STATE.json, and docs/SESSION_LOG.md before continuing.
+Read README.md, docs/RESUME_HERE.md, docs/STATE.json, and the end of docs/SESSION_LOG.md before continuing.
 Canonical root: /mnt/GameDrive/tiny_dancer. Keep project sources, models, caches, logs, and history on the GameDrive. /home/ethan/pg/tiny_dancer is a compatibility symlink.
 Owner-approved exception (2026-10-12 UTC, "FULL SEND"): an additional identical, SHA-256-verified native model cache may live on the internal SSD. Retain the complete original model/project on GameDrive; make cache location configurable and fall back to the original when the cache is unavailable. Do not infer authorization to delete unrelated files.
 User requested GPT-OSS-20B plus Colibri, no Ollama, local hosting, a functional computer agent, and durable documentation at every step. Never substitute another model silently.

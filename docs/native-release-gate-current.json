@@ -20,9 +20,10 @@
         "[local detail omitted from GitHub snapshot]",
         "[local detail omitted from GitHub snapshot]",
         "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]",
         "[local detail omitted from GitHub snapshot]"
       ],
-      "report": "docs/native-inventory-20261012T021158830837Z.json"
+      "report": "docs/native-inventory-20261012T041546625894Z.json"
     },
     {
       "task": "[local detail omitted from GitHub snapshot]",
@@ -41,6 +42,7 @@
       "report": "docs/money-precision-boundary-validation.json"
     }
   ],
-  "current_runtime_sha256": "49db0778c0135c773b04098cd02f2884c096be4a077452ccc4c82fd01054458c",
-  "scope": "Three actual native outcomes: failed repair replay, fresh Python inventory, fresh Rust ranges. Historical arithmetic smoke and scripted regression passes cannot replace these."
+  "current_runtime_sha256": "391b59aeebf13b0bd5b8f1b42d664d65f2745b601f42affefe53a64f760b2545",
+  "scope": "Three actual native outcomes: failed repair replay, fresh Python inventory, fresh Rust ranges. Historical arithmetic smoke and scripted regression passes cannot replace these.",
+  "updated_at": "2026-10-12T07:53:36.007876+00:00"
 }
