@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-10-12T14:46:20.492667+00:00",
+  "created_at": "2026-10-12T16:11:44.302640+00:00",
   "scope": "Source, licenses, documentation and public evidence views. Local original files remain unchanged. No runtime data or model weights.",
   "excluded": [
     "run",
@@ -52,9 +52,9 @@
     {
       "path": "README.md",
       "mode": "exact",
-      "source_sha256": "a0cb866a4e00d2795d950a17080c4ef769b0fd0b80841f04c1cc2ed2e7fcdeb2",
-      "export_sha256": "a0cb866a4e00d2795d950a17080c4ef769b0fd0b80841f04c1cc2ed2e7fcdeb2",
-      "bytes": 38475
+      "source_sha256": "0170d39ec9f76304af86f6bcf19de40bb6893beb8a12e26f7669f604cd16b1b0",
+      "export_sha256": "0170d39ec9f76304af86f6bcf19de40bb6893beb8a12e26f7669f604cd16b1b0",
+      "bytes": 38639
     },
     {
       "path": "app/__init__.py",
@@ -386,6 +386,20 @@
       "bytes": 3534
     },
     {
+      "path": "docs/DEPENDENCIES.txt",
+      "mode": "exact",
+      "source_sha256": "0f3bd7e76c268eae4f8ddb1e313ebca0c81e01797a4acc0574c0f786ef72b6b0",
+      "export_sha256": "0f3bd7e76c268eae4f8ddb1e313ebca0c81e01797a4acc0574c0f786ef72b6b0",
+      "bytes": 363608
+    },
+    {
+      "path": "docs/FILE_GUIDE.md",
+      "mode": "exact",
+      "source_sha256": "ba4554272bc840742bc8128f27c27c67eba6aea52031523b353d38b21ce13ebf",
+      "export_sha256": "ba4554272bc840742bc8128f27c27c67eba6aea52031523b353d38b21ce13ebf",
+      "bytes": 1820
+    },
+    {
       "path": "docs/GITHUB.md",
       "mode": "exact",
       "source_sha256": "aab0d9270ddd66d7decdcb72e390a0c626804af9551ac138c6ee9a0ff615080e",
@@ -398,6 +412,13 @@
       "source_sha256": "dc9686482317f61488cd0691ad18c2123b3471f72b704883d54e158385e39416",
       "export_sha256": "dc9686482317f61488cd0691ad18c2123b3471f72b704883d54e158385e39416",
       "bytes": 3380
+    },
+    {
+      "path": "docs/LICENSE_REVIEW.md",
+      "mode": "exact",
+      "source_sha256": "a9736bfa31e2331905b5d90ee4b3346342421a94a647d85ffbff27c4ed2fa74e",
+      "export_sha256": "a9736bfa31e2331905b5d90ee4b3346342421a94a647d85ffbff27c4ed2fa74e",
+      "bytes": 188012
     },
     {
       "path": "docs/MODEL_CACHE.md",
@@ -428,6 +449,13 @@
       "bytes": 29456
     },
     {
+      "path": "docs/PROJECT_GUIDE.md",
+      "mode": "exact",
+      "source_sha256": "7d54bc46c139956cbb5cef91ae559965db532e1ae80638ab305d99acee20c401",
+      "export_sha256": "7d54bc46c139956cbb5cef91ae559965db532e1ae80638ab305d99acee20c401",
+      "bytes": 2057
+    },
+    {
       "path": "docs/RESUME_HERE.md",
       "mode": "exact",
       "source_sha256": "19fc404ef2095bb7d185041c6f73ed4f00a1a8c637031e7280edf77adb590922",
@@ -437,16 +465,16 @@
     {
       "path": "docs/SESSION_LOG.md",
       "mode": "exact",
-      "source_sha256": "abc4f75f3c4619d3f0fe2b1d04098ea69f0be5499c4dc4d6ccabe4f92dd220ba",
-      "export_sha256": "abc4f75f3c4619d3f0fe2b1d04098ea69f0be5499c4dc4d6ccabe4f92dd220ba",
-      "bytes": 304686
+      "source_sha256": "0ce743a2468eecedc49027d01bf7cb4b19c2bf339febc213032d814f29e519cc",
+      "export_sha256": "0ce743a2468eecedc49027d01bf7cb4b19c2bf339febc213032d814f29e519cc",
+      "bytes": 305365
     },
     {
       "path": "docs/STATE.json",
       "mode": "public-evidence-view",
-      "source_sha256": "26c7d99e40ca456cddd6541f79ac790e1f47cdd2821e226f0e874c42e0d7beb8",
-      "export_sha256": "04bcde84383b2cc67f77961a794f93fdaffd4274389a92a7cc1e5721a04d1eb8",
-      "bytes": 15320
+      "source_sha256": "2207df66b2e1a4761d88c16c43ef0b1c98ac31ea74a588dc92a09dccc8ca18ad",
+      "export_sha256": "c7a1eada2c21638dd1be6c4b4b64fb26c9daf259528b002754ae7f1ebb8f7c9a",
+      "bytes": 15711
     },
     {
       "path": "docs/STORAGE_AND_PUBLICATION.md",
@@ -930,6 +958,62 @@
       "source_sha256": "aed8ac3c39ef9e607ee3ab19c979e5cebaa3bb632ac71dae4a16605753b204cd",
       "export_sha256": "7f8b3ae19d5b0d0b6c1bab3cf7bbdd9c6aa87495dbabac57948f59cdca94c339",
       "bytes": 1089
+    },
+    {
+      "path": "docs/file-guide/files-001.md",
+      "mode": "exact",
+      "source_sha256": "c2ec0a969f39b87bd4ac0d4a46ccc17b294915319ef42b3c0f63e3a3c3127321",
+      "export_sha256": "c2ec0a969f39b87bd4ac0d4a46ccc17b294915319ef42b3c0f63e3a3c3127321",
+      "bytes": 41507
+    },
+    {
+      "path": "docs/file-guide/files-002.md",
+      "mode": "exact",
+      "source_sha256": "9fd81ef581f7e87676d2c09ad98923b66930d190d0d203290999224c71c52963",
+      "export_sha256": "9fd81ef581f7e87676d2c09ad98923b66930d190d0d203290999224c71c52963",
+      "bytes": 50112
+    },
+    {
+      "path": "docs/file-guide/files-003.md",
+      "mode": "exact",
+      "source_sha256": "82c8e2b021e3f4dba8f3f4d0153e4de4f56fbc31513d6ecdf7d73181e6fecc13",
+      "export_sha256": "82c8e2b021e3f4dba8f3f4d0153e4de4f56fbc31513d6ecdf7d73181e6fecc13",
+      "bytes": 73506
+    },
+    {
+      "path": "docs/file-guide/files-004.md",
+      "mode": "exact",
+      "source_sha256": "bbb50aeba7946350cdc3357c608b04331a213f42f18569e468a724df8f4a722d",
+      "export_sha256": "bbb50aeba7946350cdc3357c608b04331a213f42f18569e468a724df8f4a722d",
+      "bytes": 54438
+    },
+    {
+      "path": "docs/file-guide/files-005.md",
+      "mode": "exact",
+      "source_sha256": "d88a809c31c6e54505997c393bf5b25ef3a4c3c9df563b3aaad5912cf2d03d95",
+      "export_sha256": "d88a809c31c6e54505997c393bf5b25ef3a4c3c9df563b3aaad5912cf2d03d95",
+      "bytes": 46041
+    },
+    {
+      "path": "docs/file-guide/files-006.md",
+      "mode": "exact",
+      "source_sha256": "e533d39597bd5ed550d772d5a0f754c2768bf1b32844f206d3c82d0eff673ae9",
+      "export_sha256": "e533d39597bd5ed550d772d5a0f754c2768bf1b32844f206d3c82d0eff673ae9",
+      "bytes": 46685
+    },
+    {
+      "path": "docs/file-guide/files-007.md",
+      "mode": "exact",
+      "source_sha256": "1470b3393b7310261ab8fb9e7405e3a720f52eab4aeb5108fc8ecfcc0b0c2798",
+      "export_sha256": "1470b3393b7310261ab8fb9e7405e3a720f52eab4aeb5108fc8ecfcc0b0c2798",
+      "bytes": 53158
+    },
+    {
+      "path": "docs/file-guide/files-008.md",
+      "mode": "exact",
+      "source_sha256": "52787fbfeeb27f634d2a9bfefd04b2b160a8bea70007c92b296dc2cce301e51e",
+      "export_sha256": "52787fbfeeb27f634d2a9bfefd04b2b160a8bea70007c92b296dc2cce301e51e",
+      "bytes": 23723
     },
     {
       "path": "docs/final-native-first-checkpoint-observation.json",

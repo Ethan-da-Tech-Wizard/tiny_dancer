@@ -363,5 +363,13 @@
     "source_checks": "[local detail omitted from GitHub snapshot]",
     "private_runtime_data_uploaded": false,
     "model_weights_uploaded": false
+  },
+  "portfolio_documentation": {
+    "updated_at": "2026-10-12T16:09:42.988468+00:00",
+    "project_guide": "[local detail omitted from GitHub snapshot]",
+    "file_guide": "[local detail omitted from GitHub snapshot]",
+    "license_review": "[local detail omitted from GitHub snapshot]",
+    "runtime_changed": false,
+    "project_license": "[local detail omitted from GitHub snapshot]"
   }
 }
