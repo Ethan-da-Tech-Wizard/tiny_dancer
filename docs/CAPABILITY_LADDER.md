@@ -4,8 +4,8 @@ Full native qualification has not passed. Actual independently graded model task
 
 | Level | Required outcome | Evidence and next step |
 | --- | --- | --- |
-| 0 | Correct instruction/tool delivery, Stop/Resume and checkpoints | Confirmed developer-instruction omission repaired; exact native formatter and two actual instruction receipts pass. 613 full regressions pass; deployed after idle checks |
-| 1 | Python function plus its own tests | After repair: medium pass in 143.36 s, 10 tests and all 152 Unicode inputs. Repeat after storage configuration change |
+| 0 | Correct instruction/tool delivery, Stop/Resume and checkpoints | Confirmed developer-instruction omission repaired; exact native formatter and two actual instruction receipts pass. 617 full regressions pass; deployed after idle checks |
+| 1 | Python function plus its own tests | Current runtime: medium pass in 563.32 s with all user apps open; 10 tests and all 152 Unicode inputs. No operator hints or edits |
 | 2 | Python CLI, actual JSON and error handling | Fresh repaired-runtime trial failed in 476.19 s: 7/8 checks; unreadable directory still omitted. Seeded known-bug repair passed all 8 checks |
 | 3 | Rust application, tests and compilation | Historical pass only; current-runtime check follows smaller tasks |
 | 4 | Local web app, browser and persistence | Not qualified |

@@ -56,8 +56,8 @@
     "npm_packages": 121,
     "pi_index": "[local detail omitted from GitHub snapshot]"
   },
-  "updated_at": "2026-10-12T05:59:31.316168+00:00",
-  "phase": "GitHub publication preparation; fresh labels test running with all user apps open",
+  "updated_at": "2026-10-12T06:04:36.726188+00:00",
+  "phase": "GitHub published; fresh labels passes all independent checks with all user apps open; larger native release still unqualified",
   "user_objective": "[local detail omitted from GitHub snapshot]",
   "current_runtime_sha256": "391b59aeebf13b0bd5b8f1b42d664d65f2745b601f42affefe53a64f760b2545",
   "current_regressions": {
@@ -109,28 +109,21 @@
   "native_release_qualified": false,
   "last_evaluation": {
     "case": "labels",
-    "job": "ee6707ab8e07465389ff29c4d529abec",
-    "status": "cancelled",
-    "passed": false,
+    "job": "5f0a8b9fa2fa4a958aa5cacacb343022",
+    "status": "complete",
+    "passed": true,
     "checks": {
-      "native_verified": false,
+      "native_verified": true,
       "acceptance_unchanged": true,
       "runtime_frozen": true,
-      "all_seeded_behavior_tests": false,
-      "all_independent_behavior_checks": false,
-      "additional_nonempty_passing_project_tests": false
+      "all_seeded_behavior_tests": true,
+      "all_independent_behavior_checks": true,
+      "additional_nonempty_passing_project_tests": true
     },
-    "job_elapsed_seconds": 1263.46,
-    "report": "docs/native-labels-20261012T052428411538Z.json"
+    "job_elapsed_seconds": 563.32,
+    "report": "docs/native-labels-20261012T055302670443Z.json"
   },
-  "active_evaluation": {
-    "case": "labels",
-    "job": "5f0a8b9fa2fa4a958aa5cacacb343022",
-    "report": "docs/native-labels-20261012T055302670443Z.json",
-    "observer_session": 26863,
-    "log": "[local detail omitted from GitHub snapshot]",
-    "status": "running"
-  },
+  "active_evaluation": null,
   "last_native_failure": {
     "report": "docs/native-inventory-20261012T021158830837Z.json",
     "status": "complete",
@@ -142,6 +135,7 @@
     "cause": "[local detail omitted from GitHub snapshot]"
   },
   "backups": [
+    "[local detail omitted from GitHub snapshot]",
     "[local detail omitted from GitHub snapshot]",
     "[local detail omitted from GitHub snapshot]",
     "[local detail omitted from GitHub snapshot]",
@@ -234,11 +228,14 @@
   },
   "last_native_medium_labels": {
     "passed": true,
-    "seconds": 143.36,
+    "seconds": 563.32,
     "project_tests": 10,
     "independent_groups": 8,
     "unicode_examples": 152,
-    "report": "docs/native-labels-20261012T041238448162Z.json"
+    "report": "docs/native-labels-20261012T055302670443Z.json",
+    "runtime_sha256": "391b59aeebf13b0bd5b8f1b42d664d65f2745b601f42affefe53a64f760b2545",
+    "all_user_apps_kept_open": true,
+    "operator_interventions": []
   },
   "performance_observation": {
     "report": "docs/feedback-paging-observation.json",
@@ -302,10 +299,15 @@
     "repository": "[local detail omitted from GitHub snapshot]",
     "url": "https://github.com/Ethan-da-Tech-Wizard/tiny_dancer",
     "visibility": "[local detail omitted from GitHub snapshot]",
-    "status": "preparing",
+    "status": "published",
     "checkout": "[local detail omitted from GitHub snapshot]",
     "guide": "[local detail omitted from GitHub snapshot]",
-    "scope": "Code, exact licenses, documentation and public report views; complete raw runtime data remains local."
+    "scope": "Code, exact licenses, documentation and public report views; complete raw runtime data remains local.",
+    "published_at": "[local detail omitted from GitHub snapshot]",
+    "initial_commit": "7cd401d3c38e951948844b2859b4ab2f4273bb62",
+    "remote_verified": true,
+    "ci_status": "[local detail omitted from GitHub snapshot]",
+    "ci_url": "[local detail omitted from GitHub snapshot]"
   },
   "publication_controls": {
     "tests": 13,

@@ -480,7 +480,7 @@
       "passed": true
     }
   ],
-  "checkpoint": "[local detail omitted from GitHub snapshot]",
+  "checkpoint": {},
   "job_elapsed_seconds": 434.29,
   "metrics": [
     {

@@ -510,7 +510,7 @@
   "session": "20d03b2a61444afe9de40d6bd02d6ceb",
   "job": "540e146c182b4c1b902d74842d0b6eca",
   "cwd": "/mnt/GameDrive/tiny_dancer/workspace/harness-probe-20261010T221357Z",
-  "checkpoint": "[local detail omitted from GitHub snapshot]",
+  "checkpoint": {},
   "elapsed_seconds": 600.4,
   "metrics": [
     {

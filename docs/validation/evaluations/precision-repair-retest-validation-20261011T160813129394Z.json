@@ -973,7 +973,7 @@
     "unseen_3200_digit_signed": false,
     "unseen_3200_digit_total": false
   },
-  "checkpoint": "[local detail omitted from GitHub snapshot]",
+  "checkpoint": {},
   "job_elapsed_seconds": 900.28,
   "independent_checks": [
     {

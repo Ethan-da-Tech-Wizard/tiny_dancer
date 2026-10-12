@@ -519,7 +519,7 @@
   "seconds": 137.49,
   "project_tests": {
     "exit_code": 0,
-    "summary": "[local detail omitted from GitHub snapshot]",
+    "summary": {},
     "output": "[local detail omitted from GitHub snapshot]"
   },
   "independent_checks": [

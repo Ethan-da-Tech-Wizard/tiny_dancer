@@ -54,7 +54,7 @@
   "job": "871ff54e9db54196b7633430852ce62f",
   "session": "e49878f2e88542cdaefe0fe660e32307",
   "elapsed_seconds": 134.62,
-  "checkpoint": "[local detail omitted from GitHub snapshot]",
+  "checkpoint": {},
   "metrics": [
     {
       "prefill_seconds": 80.380097609,
