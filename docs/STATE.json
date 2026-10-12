@@ -349,5 +349,14 @@
     "passed": false,
     "runtime_sha256": "391b59aeebf13b0bd5b8f1b42d664d65f2745b601f42affefe53a64f760b2545",
     "checked_at": "[local detail omitted from GitHub snapshot]"
+  },
+  "github_publication": {
+    "requested_at": "[local detail omitted from GitHub snapshot]",
+    "requested_visibility": "[local detail omitted from GitHub snapshot]",
+    "scope": "Application source, documentation, licenses, sanitized evidence, and model provenance. Private conversations, credentials, machine data and downloaded weights remain local.",
+    "canonical_root": "[local detail omitted from GitHub snapshot]",
+    "internal_cache": "[local detail omitted from GitHub snapshot]",
+    "repository": "[local detail omitted from GitHub snapshot]",
+    "state": "[local detail omitted from GitHub snapshot]"
   }
 }

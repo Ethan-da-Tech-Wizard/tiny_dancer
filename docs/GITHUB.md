@@ -2,14 +2,17 @@
 
 Repository: https://github.com/Ethan-da-Tech-Wizard/tiny_dancer
 
-The owner requested this repository on 2026-10-12 UTC. It starts private unless the
-owner selects public visibility. The software license remains Apache-2.0 either
+The owner requested this repository on 2026-10-12 UTC. The owner selected public visibility later on 2026-10-12 while requesting a
+review of GameDrive and internal-drive files and exclusion of credentials and personal data. The software license remains Apache-2.0 either
 way; all upstream notices retain their own terms.
 
 The working installation is `/mnt/GameDrive/tiny_dancer`. Its publishing Git
 checkout is `run/github/tiny_dancer`, on the same drive. Edit the working
 installation, validate the changes, then export them into that checkout. The
 export refuses to overwrite independent edits in the publishing checkout.
+
+The source installation and internal model-cache relationship is documented in
+[STORAGE_AND_PUBLICATION.md](STORAGE_AND_PUBLICATION.md).
 
 ## What is included
 

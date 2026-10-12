@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-10-12T07:56:24.864909+00:00",
+  "created_at": "2026-10-12T14:38:23.156575+00:00",
   "scope": "Source, licenses, documentation and public evidence views. Local original files remain unchanged. No runtime data or model weights.",
   "excluded": [
     "run",
@@ -388,9 +388,9 @@
     {
       "path": "docs/GITHUB.md",
       "mode": "exact",
-      "source_sha256": "0689d2b7be4f22c83d1744bba4c3b1cf5965d6f76e17564c6066c967aaaee176",
-      "export_sha256": "0689d2b7be4f22c83d1744bba4c3b1cf5965d6f76e17564c6066c967aaaee176",
-      "bytes": 3530
+      "source_sha256": "aab0d9270ddd66d7decdcb72e390a0c626804af9551ac138c6ee9a0ff615080e",
+      "export_sha256": "aab0d9270ddd66d7decdcb72e390a0c626804af9551ac138c6ee9a0ff615080e",
+      "bytes": 3775
     },
     {
       "path": "docs/INSTALL_NATIVE.md",
@@ -437,16 +437,23 @@
     {
       "path": "docs/SESSION_LOG.md",
       "mode": "exact",
-      "source_sha256": "0d3e7f7685e6080994c846b47c922910695524e605c1e5b2b62447153377fb9f",
-      "export_sha256": "0d3e7f7685e6080994c846b47c922910695524e605c1e5b2b62447153377fb9f",
-      "bytes": 303014
+      "source_sha256": "08f14a7030bc495873531c472b8bda636160c3881d123924cc7aba9ee73dff0a",
+      "export_sha256": "08f14a7030bc495873531c472b8bda636160c3881d123924cc7aba9ee73dff0a",
+      "bytes": 303814
     },
     {
       "path": "docs/STATE.json",
       "mode": "public-evidence-view",
-      "source_sha256": "935596ef38a1c8c3bbbd898c6fa2e22adf4c48668a9f09d602c7c3b9b49d84f0",
-      "export_sha256": "20a9264c2b618490e8d87c3f19fe608dbfdf3569920c70b68f1f431769d0a2fe",
-      "bytes": 14454
+      "source_sha256": "0bde8aeb650e85b56a78ec6ea807d66dbc9d6003ec18cad59d718af810d45146",
+      "export_sha256": "113e38c69bd70ce37e8ce4833fd37304b0ecbb216965ac3c79188a826c8c2eeb",
+      "bytes": 15078
+    },
+    {
+      "path": "docs/STORAGE_AND_PUBLICATION.md",
+      "mode": "exact",
+      "source_sha256": "32eaadc086f14cb26f6a70dc337d7ff05bd8ad024b824f6058e981995d7435e9",
+      "export_sha256": "32eaadc086f14cb26f6a70dc337d7ff05bd8ad024b824f6058e981995d7435e9",
+      "bytes": 2739
     },
     {
       "path": "docs/TIME_LIMITED_STATUS.json",
