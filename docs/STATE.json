@@ -357,6 +357,11 @@
     "canonical_root": "[local detail omitted from GitHub snapshot]",
     "internal_cache": "[local detail omitted from GitHub snapshot]",
     "repository": "[local detail omitted from GitHub snapshot]",
-    "state": "[local detail omitted from GitHub snapshot]"
+    "state": "[local detail omitted from GitHub snapshot]",
+    "status": "complete",
+    "verified_commit": "adabdf446003e759d0d53b7f716ad7c2dfe4ee3e",
+    "source_checks": "[local detail omitted from GitHub snapshot]",
+    "private_runtime_data_uploaded": false,
+    "model_weights_uploaded": false
   }
 }

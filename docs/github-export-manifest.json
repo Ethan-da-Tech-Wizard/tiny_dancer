@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-10-12T14:38:23.156575+00:00",
+  "created_at": "2026-10-12T14:46:20.492667+00:00",
   "scope": "Source, licenses, documentation and public evidence views. Local original files remain unchanged. No runtime data or model weights.",
   "excluded": [
     "run",
@@ -430,23 +430,23 @@
     {
       "path": "docs/RESUME_HERE.md",
       "mode": "exact",
-      "source_sha256": "b3be68d672a86ea74d0dd8fac1dddf7b741f16931e921d681488e42db57a509f",
-      "export_sha256": "b3be68d672a86ea74d0dd8fac1dddf7b741f16931e921d681488e42db57a509f",
-      "bytes": 11080
+      "source_sha256": "19fc404ef2095bb7d185041c6f73ed4f00a1a8c637031e7280edf77adb590922",
+      "export_sha256": "19fc404ef2095bb7d185041c6f73ed4f00a1a8c637031e7280edf77adb590922",
+      "bytes": 11125
     },
     {
       "path": "docs/SESSION_LOG.md",
       "mode": "exact",
-      "source_sha256": "08f14a7030bc495873531c472b8bda636160c3881d123924cc7aba9ee73dff0a",
-      "export_sha256": "08f14a7030bc495873531c472b8bda636160c3881d123924cc7aba9ee73dff0a",
-      "bytes": 303814
+      "source_sha256": "abc4f75f3c4619d3f0fe2b1d04098ea69f0be5499c4dc4d6ccabe4f92dd220ba",
+      "export_sha256": "abc4f75f3c4619d3f0fe2b1d04098ea69f0be5499c4dc4d6ccabe4f92dd220ba",
+      "bytes": 304686
     },
     {
       "path": "docs/STATE.json",
       "mode": "public-evidence-view",
-      "source_sha256": "0bde8aeb650e85b56a78ec6ea807d66dbc9d6003ec18cad59d718af810d45146",
-      "export_sha256": "113e38c69bd70ce37e8ce4833fd37304b0ecbb216965ac3c79188a826c8c2eeb",
-      "bytes": 15078
+      "source_sha256": "26c7d99e40ca456cddd6541f79ac790e1f47cdd2821e226f0e874c42e0d7beb8",
+      "export_sha256": "04bcde84383b2cc67f77961a794f93fdaffd4274389a92a7cc1e5721a04d1eb8",
+      "bytes": 15320
     },
     {
       "path": "docs/STORAGE_AND_PUBLICATION.md",
