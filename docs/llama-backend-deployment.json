@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-11T13:20:50.928053+00:00",
+  "backup": "[local detail omitted from GitHub snapshot]",
+  "status": "deployed_production_315_pass_guarded_restart_ready_for_native_tests",
+  "runtime_sha256": "7eb0bb25b2594dd616793e5f6d52fa1891c0b70241c114220dbc7bed75fa28ae",
+  "files": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "context": 8192,
+  "threads": 8,
+  "model": "GPT-OSS-20B; original nativeMXFP4, no added expert quantization",
+  "qualification": "[local detail omitted from GitHub snapshot]",
+  "regressions": "[local detail omitted from GitHub snapshot]",
+  "seconds": 21.468,
+  "restart_log": "[local detail omitted from GitHub snapshot]"
+}

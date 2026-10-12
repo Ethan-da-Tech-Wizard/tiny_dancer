@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-11T08:39:53.280433+00:00",
+  "status": "isolated_250_pass_not_deployed",
+  "stage": "[local detail omitted from GitHub snapshot]",
+  "production_runtime_sha256": "c96b45453116dbb3662260082a87c6ecfa32e7bb02d5e1a761ddee3916fbf599",
+  "production_tests": 240,
+  "staged_tests": 250,
+  "staged_report": "docs/validation/runs/tool-arguments-staged-20261011T083645424179Z.json",
+  "staged_source_sha256": "fa3921f612995ae0461c6e88af117c8ab3fcdced4ad4e17ead47ad8fbd26a48b",
+  "changes": [
+    {
+      "path": "app/agent.py",
+      "production_sha256": "7efce1e293dbd5e1cc06e592fa92a295b3052a0cde0220d268745e2a1d593761",
+      "staged_sha256": "eb691aaa9d4af9a6daec476ea8a90a849c98c701d81b61ec9a78604e1ba8e9aa"
+    },
+    {
+      "path": "app/tool_arguments.py",
+      "production_sha256": null,
+      "staged_sha256": "bb988fd8d49962e6eeff66a04770ab013c7bd388d94494a8befde28f0d296503"
+    },
+    {
+      "path": "tests/test_tool_arguments.py",
+      "production_sha256": null,
+      "staged_sha256": "8e328facabdc8044db536a78f3bb2fd5566f2560bf88c355100e8ced3813bf00"
+    }
+  ],
+  "scope": "Only an unexpected ] immediately before final } after a fully decoded value can be removed. Strict complete object reparse with duplicate rejection for repaired inputs; no keys, values, text, escapes, commands, missing delimiters or trailing data altered. Valid input unchanged. Complete original native call retained, repair offset event audited, constant result metadata preserves canonical loop detection. Incomplete native generations remain unexecuted. No dependency/model/precision/expert/context/cache change.",
+  "next": "[local detail omitted from GitHub snapshot]"
+}

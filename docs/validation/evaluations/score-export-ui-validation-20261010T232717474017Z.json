@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-10T23:27:16.113527+00:00",
+  "errors": [],
+  "checks": {
+    "unauthenticated_results_denied": true,
+    "unknown_evidence_denied": true,
+    "all_evidence_links_work": true,
+    "past_failure_kept": true,
+    "missing_export_kept": true,
+    "latest_suite_passes": false,
+    "results_render_all_rows": true,
+    "results_desktop_no_overflow": true,
+    "results_mobile_no_overflow": true,
+    "saved_text_cannot_execute_markup": true,
+    "sidebar_results_link": true,
+    "export_label": true,
+    "saved_path_shown": true,
+    "verified_complete_controls": true,
+    "old_tool_calls_not_running": true,
+    "export_desktop_no_overflow": true,
+    "export_mobile_no_overflow": true,
+    "no_javascript_errors": true
+  },
+  "results_count": 36,
+  "session": "e49878f2e88542cdaefe0fe660e32307",
+  "saved_file": "[local detail omitted from GitHub snapshot]",
+  "passed": false,
+  "archive_metadata": {
+    "source": "score-export-ui-validation.json",
+    "kind": "automated",
+    "title": "Completed score export interface",
+    "scope": "Live browser assertions; no model task actions.",
+    "source_sha256": "8f0c0ca958ee22733c7db5673a862aa86eb9facc62cad0387572c124c4bedef2"
+  }
+}

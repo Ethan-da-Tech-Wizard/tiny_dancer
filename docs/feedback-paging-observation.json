@@ -1,0 +1,33 @@
+{
+  "checked_at": "[local detail omitted from GitHub snapshot]",
+  "scope": "Three read-only process samples during the diagnostic task, not a controlled speed benchmark or proof of the underlying disk cause.",
+  "job": "ab5ae357accb4768a9661e731b891b0f",
+  "samples": [
+    {
+      "at": "2026-10-12T04:34:17.885798+00:00",
+      "process_status": "[local detail omitted from GitHub snapshot]",
+      "read_bytes": 87637737472,
+      "cpu_seconds": 1729.56,
+      "rss_gib": 6.137,
+      "available_ram_gib": 5.374
+    },
+    {
+      "at": "2026-10-12T04:34:22.886178+00:00",
+      "process_status": "[local detail omitted from GitHub snapshot]",
+      "read_bytes": 87776608256,
+      "cpu_seconds": 1730.13,
+      "rss_gib": 6.084,
+      "available_ram_gib": 5.348
+    },
+    {
+      "at": "2026-10-12T04:34:27.886610+00:00",
+      "process_status": "[local detail omitted from GitHub snapshot]",
+      "read_bytes": 87918264320,
+      "cpu_seconds": 1730.65,
+      "rss_gib": 5.825,
+      "available_ram_gib": 5.238
+    }
+  ],
+  "read_mib_delta": 267.53,
+  "cpu_seconds_delta": 1.09
+}

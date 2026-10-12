@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-11T13:49:28.811842+00:00",
+  "backup": "[local detail omitted from GitHub snapshot]",
+  "runtime_sha256": "45b55144b07d7a385e8e7bad84ef67fc89fd8b69b90eda955536d9c96999121e",
+  "status": "deployed_production_325_pass_guarded_restart_ready",
+  "files": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "regressions": "[local detail omitted from GitHub snapshot]",
+  "seconds": 21.665,
+  "restart_log": "[local detail omitted from GitHub snapshot]"
+}

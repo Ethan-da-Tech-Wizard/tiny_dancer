@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-11T07:24:34.372113+00:00",
+  "status": "deployed_guarded_restart_ready",
+  "stage": "[local detail omitted from GitHub snapshot]",
+  "production_runtime_sha256": "cd50a07dac4e8971ec614a2d53272dc04437a6da2225f40f433f6a71b83669d2",
+  "production_tests": 231,
+  "staged_tests": 240,
+  "staged_report": "docs/validation/runs/inspection-date-staged-20261011T070324877480Z.json",
+  "staged_source_sha256": "985ffb9109a1066201436d457a3ba4ebb2d82d599b6fea154b517f99ce41fed6",
+  "changes": [
+    {
+      "path": "app/prompting.py",
+      "production_sha256": "5bda76fbeb112873227760d9677cd2e19091a6ef92b2a821f005a3c3b9980b39",
+      "staged_sha256": "7bcefef013857993bae302358d9bc2f624678c19b8562acd42b515dd5df59eda"
+    },
+    {
+      "path": "app/batching.py",
+      "production_sha256": "2826bac3d8dd04c3a91a72021040f931adf2cc4c07f23db05091f3c7fe732a02",
+      "staged_sha256": "fc5f600336c6f0e96d0807f2c4ad62fd977a2aa9bc447fc8c20977da64f7d5e8"
+    },
+    {
+      "path": "app/engine.py",
+      "production_sha256": "9230df6f3069b954c8e6ced274f595117c83a075e6e4609afd9cbbebfd767ecb",
+      "staged_sha256": "0ae900b6081d67ae8341d553a16f6e82c8a43e278c36924d00866b003a16a416"
+    },
+    {
+      "path": "tests/test_batching.py",
+      "production_sha256": "fcf170c3737f2a6a98b444b1a9811f2f3a57991b04f7a23fb1942729cfc421aa",
+      "staged_sha256": "9f191c9e883e90f0a107bbee475d04089180c2464d2814155e601f38e2a9d7bd"
+    },
+    {
+      "path": "tests/test_inspection_source_batch.py",
+      "production_sha256": null,
+      "staged_sha256": "c4d6a8857ea3713cf7de4283811a1ef9fb3c81f8427f441df4e9eb332479f2c5"
+    },
+    {
+      "path": "tests/test_task_date_cache.py",
+      "production_sha256": null,
+      "staged_sha256": "8e77c997015a2377924c3cf77aa7b5e5ed9d9d63aef1ddfae7149fa1d09ec285"
+    }
+  ],
+  "scope": "Preserve modest source files through inspection and engine serialization. Shared 8000-character source budget, 4000 per file; inspection-specific serialized bound16000; full native token/output reserve enforced. No weights, precision, selected experts, context or cache budget change. Captured trusted task date anchors the system header across midnight; new tasks get their own date, missing anchor falls back to local date. Three new tests: two red before fix, focused19 and full240 green. No active-task injection or runtime change.",
+  "next": "[local detail omitted from GitHub snapshot]",
+  "deployed_at": "[local detail omitted from GitHub snapshot]",
+  "backup": "[local detail omitted from GitHub snapshot]",
+  "production_report": "docs/validation/runs/20261011T075710463971Z.json",
+  "ready_at": "[local detail omitted from GitHub snapshot]",
+  "runtime_sha256": "c96b45453116dbb3662260082a87c6ecfa32e7bb02d5e1a761ddee3916fbf599"
+}

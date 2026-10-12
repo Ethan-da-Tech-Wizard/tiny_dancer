@@ -1,0 +1,36 @@
+{
+  "started_at": "2026-10-11T21:54:52.411804+00:00",
+  "status": "passed",
+  "passed": true,
+  "scope": "Isolated harness regression tests and read-only replay of existing public native events; no current native coding qualification or measured speed multiplier. Candidate NOT DEPLOYED while inventory remains active.",
+  "stage": "[local detail omitted from GitHub snapshot]",
+  "regressions": 467,
+  "regression_seconds": 52.323,
+  "regression_report": "docs/validation/runs/20261011T214925320113Z.json",
+  "changes": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "evidence": {
+    "compatible_collection_red_failures": 2,
+    "post_pass_mutation_red_failures": 1,
+    "cli_focused_passes": 8,
+    "native_public_event_replay_passed": true,
+    "native_speed_effect_measured": false
+  },
+  "limits": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "next": "[local detail omitted from GitHub snapshot]",
+  "archive_metadata": {
+    "source": "completion-continuity-staged-validation.json",
+    "kind": "integration",
+    "title": "Completion coverage and continuous CLI candidate",
+    "scope": "Isolated harness regression tests and read-only replay of existing public native events; no current native coding qualification or measured speed multiplier. Candidate NOT DEPLOYED while inventory remains active.",
+    "source_sha256": "d68125dc60982b128222b5ffadd817571637309e84bd61bd49a742e132029cd5"
+  }
+}

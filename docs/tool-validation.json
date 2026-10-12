@@ -1,0 +1,16 @@
+{
+  "file_backup": true,
+  "shell_execution": true,
+  "shell_timeout": true,
+  "shell_process_group_cancellation": true,
+  "browser_inspection": true,
+  "desktop_window_listing": true,
+  "api_auth": true,
+  "foreign_origin_blocked": true,
+  "unexpected_host_blocked": true,
+  "logs": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "note": "[local detail omitted from GitHub snapshot]"
+}

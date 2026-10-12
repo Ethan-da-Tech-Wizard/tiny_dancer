@@ -1,0 +1,27 @@
+{
+  "started_at": "2026-10-11T21:56:05.929005+00:00",
+  "status": "passed",
+  "passed": true,
+  "scope": "Client/observer defaults installed after 470 staged tests. No running app/model/product/config changes or restart. Existing native task retains its frozen runtime and already-continuous request. Production client/observer harness regressions pass; API/server default update remains staged.",
+  "backup": "[local detail omitted from GitHub snapshot]",
+  "runtime_sha256_before": "90c14ea967a2f3c827b1598e2023bda1f48337ad9e08ff3829195592d93c327d",
+  "runtime_sha256_after": "90c14ea967a2f3c827b1598e2023bda1f48337ad9e08ff3829195592d93c327d",
+  "active_job_before": "[local detail omitted from GitHub snapshot]",
+  "active_job_after": "[local detail omitted from GitHub snapshot]",
+  "changes": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "checks": {
+    "470_staged_regressions_passed": true,
+    "runtime_unchanged": true,
+    "active_job_unchanged": true,
+    "no_restart": true
+  },
+  "production_regressions": {
+    "passed": 460,
+    "seconds": 39.557,
+    "report": "docs/validation/runs/20261011T215605987348Z.json"
+  }
+}

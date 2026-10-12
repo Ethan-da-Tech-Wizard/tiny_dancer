@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-11T10:44:18.749788+00:00",
+  "status": "failed",
+  "passed": false,
+  "tests_run": 8,
+  "failures": 1,
+  "errors": 0,
+  "log": "[local detail omitted from GitHub snapshot]",
+  "scope": "Actual behavior passed, one fixture inspected serialized Harmony author incorrectly; corrected with Message.from_dict.",
+  "archive_metadata": {
+    "source": "post-edit-fixture-role-failure.json",
+    "kind": "automated",
+    "title": "post edit fixture role failure",
+    "scope": "Actual behavior passed, one fixture inspected serialized Harmony author incorrectly; corrected with Message.from_dict.",
+    "source_sha256": "cf3f1e447762f4362fd838fcef7adb9100021af8ff363e5e45480996bbff36fc"
+  }
+}

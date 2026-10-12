@@ -1,0 +1,48 @@
+{
+  "started_at": "2026-10-12T04:05:59.177063+00:00",
+  "status": "complete",
+  "passed": true,
+  "scope": "Exact staged llama.cpp template formatting with synthetic messages, then two actual same-model instruction-following tool receipts. No coding task or general capability claim; no native private text emitted.",
+  "checks": {
+    "every_message_survives_exact_native_formatter": true,
+    "chronology_preserved": true,
+    "late_update_has_developer_role": true,
+    "unfinished_analysis_not_fake_final": true,
+    "late_review_native_receipt": true,
+    "checkpoint_native_receipt": true
+  },
+  "receipts": [
+    {
+      "case": "late_review",
+      "passed": true,
+      "seconds": 13.8,
+      "completion_tokens": 66,
+      "private_characters": 176
+    },
+    {
+      "case": "checkpoint",
+      "passed": true,
+      "seconds": 1.51,
+      "completion_tokens": 23,
+      "private_characters": 0
+    }
+  ],
+  "template_sha256": "6cc2ca90bf0ccc1cb0775e66a83d352e2e5a0915f5b183c5460c17496f55d1b4",
+  "markers_present": {
+    "fixture_base_policy": true,
+    "fixture_extra_policy": true,
+    "fixture_goal": true,
+    "fixture_tool_analysis": true,
+    "fixture_tool_result": true,
+    "fixture_unfinished_analysis": true,
+    "fixture_checkpoint_review": true
+  },
+  "seconds": 65.19,
+  "archive_metadata": {
+    "source": "native-template-candidate-20261012T040559177042Z.json",
+    "kind": "native",
+    "title": "Exact template and native steering receipts",
+    "scope": "Exact staged llama.cpp template formatting with synthetic messages, then two actual same-model instruction-following tool receipts. No coding task or general capability claim; no native private text emitted.",
+    "source_sha256": "99cca265a1af954470e351ae0ead6fcb6afb0893a13e8e135edb9a534aee8425"
+  }
+}

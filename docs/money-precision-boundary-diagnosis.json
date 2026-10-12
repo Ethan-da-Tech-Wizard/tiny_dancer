@@ -1,0 +1,24 @@
+{
+  "title": "Additional exactness boundary beyond observed precision limit",
+  "status": "complete",
+  "passed": false,
+  "started_at": "2026-10-11T19:31:38.224463+00:00",
+  "scope": "Post-terminal diagnosis on the unmodified native output. Additional 12000-digit cases, separate from original frozen checks; no live hints or edits.",
+  "job": "0bfdebce12d84420a04b8c1b50d4a0f1",
+  "runtime_sha256": "3a24f50f5d124979334ff151933a3fe9ae747f769704706af8922542dc7232f5",
+  "width": 12000,
+  "cases": {
+    "signed": {
+      "passed": false,
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]",
+      "actual_preview": "[local detail omitted from GitHub snapshot]"
+    },
+    "total": {
+      "passed": false,
+      "exit_code": 1,
+      "stderr": "[local detail omitted from GitHub snapshot]",
+      "actual_preview": "[local detail omitted from GitHub snapshot]"
+    }
+  }
+}

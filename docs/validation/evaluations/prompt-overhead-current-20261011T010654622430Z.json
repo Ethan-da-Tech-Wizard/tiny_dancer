@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-11T01:06:54.622055+00:00",
+  "passed": true,
+  "before_tokens": 1527,
+  "after_tokens": 919,
+  "reduction_percent": 39.82,
+  "checks": {
+    "frozen_prompt_smaller": true
+  },
+  "scope": "Same frozen repair goal/cwd/medium with actual Harmony tokenizer and fake native completion; no native inference or speed multiplier. Includes final concise-module guidance.",
+  "archive_metadata": {
+    "source": "prompt-overhead-current.json",
+    "kind": "automated",
+    "title": "Current frozen prompt overhead",
+    "scope": "Same frozen repair goal/cwd/medium with actual Harmony tokenizer and fake native completion; no native inference or speed multiplier. Includes final concise-module guidance.",
+    "source_sha256": "c31b1e758cefff44d49fbe1138b72c26d685b01d22fdf334eec901e1e17a5c21"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "title": "Declared additional exact-money boundary checks",
+  "status": "complete",
+  "passed": false,
+  "started_at": "2026-10-11T20:35:37.753337+00:00",
+  "scope": "Independent post-terminal CLI checks. No model call, live hint or product edit. Original frozen checks remain unchanged.",
+  "native_job": "[local detail omitted from GitHub snapshot]",
+  "runtime_sha256": "03855cfdd0503f300f847c7b04ed5fba0d9a294ef183c3d4d682fd1620a276e9",
+  "criteria_sha256": "95bac2818ffd553996c687b4796cc0dcd7c21cd96c9298389cec15bcdc58dda8",
+  "width": 12000,
+  "checks": {
+    "declared_before_native": true,
+    "native_complete": false,
+    "runtime_frozen": true,
+    "source_frozen": false,
+    "signed": false,
+    "total": false
+  },
+  "cases": {
+    "signed": {
+      "passed": false,
+      "exit_code": 1,
+      "stdout_chars": 0,
+      "actual_preview": "[local detail omitted from GitHub snapshot]",
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    "total": {
+      "passed": false,
+      "exit_code": 1,
+      "stdout_chars": 0,
+      "actual_preview": "[local detail omitted from GitHub snapshot]",
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    }
+  }
+}

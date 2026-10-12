@@ -1,0 +1,44 @@
+{
+  "started_at": "2026-10-11T14:26:49.671149+00:00",
+  "status": "passed",
+  "title": "Malformed native Harmony recovery without tool execution",
+  "scope": "Real Harmony parser/token callback and scripted runner failure/recovery with actual file/check tools. Invalid framing is discarded, healthy session stays available, three repeated format errors pause, Chat does not retry autonomously. Does not prove native completion.",
+  "before": {
+    "tests": 4,
+    "errors": 3,
+    "log": "[local detail omitted from GitHub snapshot]"
+  },
+  "focused_after": {
+    "tests": 4,
+    "passed": true,
+    "seconds": 0.145,
+    "log": "[local detail omitted from GitHub snapshot]"
+  },
+  "intermediate_full": {
+    "tests": 337,
+    "passed": true,
+    "seconds": 23.236,
+    "log": "[local detail omitted from GitHub snapshot]"
+  },
+  "native_failure": "[local detail omitted from GitHub snapshot]",
+  "stage": "[local detail omitted from GitHub snapshot]",
+  "passed": true,
+  "tests_run": 337,
+  "seconds": 21.795,
+  "checks": {
+    "real_header_error_keeps_native_session": true,
+    "invalid_content_not_published": true,
+    "valid_recovery_keeps_prior_work": true,
+    "three_errors_pause_without_tools": true,
+    "chat_not_retried": true,
+    "full_final_stage_regressions": true
+  },
+  "full_log": "[local detail omitted from GitHub snapshot]",
+  "archive_metadata": {
+    "source": "harmony-recovery-staged-validation.json",
+    "kind": "automated",
+    "title": "337 staged native framing recovery regressions",
+    "scope": "Real Harmony parser/token callback and scripted runner failure/recovery with actual file/check tools. Invalid framing is discarded, healthy session stays available, three repeated format errors pause, Chat does not retry autonomously. Does not prove native completion.",
+    "source_sha256": "53db1f0873744d577ac0ec0240d5f5153bd56bc4a5db65f353cc798e957cd8af"
+  }
+}

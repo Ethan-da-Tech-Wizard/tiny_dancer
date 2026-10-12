@@ -1,0 +1,38 @@
+{
+  "started_at": "2026-10-11T14:11:43.033272+00:00",
+  "status": "passed",
+  "title": "New-file patch compatibility and precise format failures",
+  "scope": "Actual file creation/program execution and negative patch atomicity fixtures; no implementation supplied to a native task. New-file literal content is preserved, mixed-format calls rejected with exact patch line. Existing update/rollback/path guards retained.",
+  "before": {
+    "tests": 12,
+    "failures": 1,
+    "errors": 2,
+    "log": "[local detail omitted from GitHub snapshot]"
+  },
+  "after": {
+    "tests": 12,
+    "passed": true,
+    "log": "[local detail omitted from GitHub snapshot]"
+  },
+  "initial_test_setup": "[local detail omitted from GitHub snapshot]",
+  "native_failure": "[local detail omitted from GitHub snapshot]",
+  "stage": "[local detail omitted from GitHub snapshot]",
+  "passed": true,
+  "tests_run": 333,
+  "seconds": 23.402,
+  "checks": {
+    "literal_manifest_preserved": true,
+    "mixed_format_exact_line": true,
+    "real_python_execution": true,
+    "multifile_no_partial_mutation": true,
+    "full_staged_regressions": true
+  },
+  "full_log": "[local detail omitted from GitHub snapshot]",
+  "archive_metadata": {
+    "source": "literal-add-staged-validation.json",
+    "kind": "automated",
+    "title": "333 staged literal new-file patch regressions",
+    "scope": "Actual file creation/program execution and negative patch atomicity fixtures; no implementation supplied to a native task. New-file literal content is preserved, mixed-format calls rejected with exact patch line. Existing update/rollback/path guards retained.",
+    "source_sha256": "ffe4f389c486f0a0b9c25984c601c5105a27273ad852cdc0bc02ae0c06a60638"
+  }
+}

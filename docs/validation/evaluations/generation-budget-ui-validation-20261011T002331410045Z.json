@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-11T00:23:29.015102+00:00",
+  "checks": {
+    "api_auto": false,
+    "api_minimum": true,
+    "api_maximum": true,
+    "api_below_minimum": true,
+    "api_above_maximum": true,
+    "api_omitted_auto": true,
+    "ui_auto_default": false,
+    "native_job_untouched": true
+  },
+  "errors": [
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "scope": "Actual nullable/bounded API validation against a nonexistent session, plus intercepted browser POSTs. No native task started, resumed or stopped.",
+  "passed": false,
+  "status": "failed",
+  "archive_metadata": {
+    "source": "generation-budget-ui-validation.json",
+    "kind": "automated",
+    "title": "Automatic starting allowance API and composer",
+    "scope": "Actual nullable/bounded API validation against a nonexistent session, plus intercepted browser POSTs. No native task started, resumed or stopped.",
+    "source_sha256": "bdc2d9c67d6da98a485752d74a8f6c246d3f1f2de8a9767fdab9d510e81a16b2"
+  }
+}

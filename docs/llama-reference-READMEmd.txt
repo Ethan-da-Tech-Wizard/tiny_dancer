@@ -1,0 +1,28 @@
+---
+license: apache-2.0
+pipeline_tag: text-generation
+tags:
+- gguf
+- quantized
+base_model:
+- openai/gpt-oss-20b
+---
+
+# gpt-oss-20b
+
+Run with https://llama.app
+
+```bash
+llama serve -hf ggml-org/gpt-oss-20b-GGUF
+```
+
+### Source models
+- https://huggingface.co/openai/gpt-oss-20b
+- https://huggingface.co/RedHatAI/gpt-oss-20b-speculator.eagle3
+
+### TODOs
+
+- add info
+
+> [!IMPORTANT]
+> This model is automatically converted using https://github.com/ggml-org/convert

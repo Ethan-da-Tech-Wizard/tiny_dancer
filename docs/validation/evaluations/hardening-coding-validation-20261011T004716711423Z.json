@@ -1,0 +1,4767 @@
+{
+  "started_at": "2026-10-10T23:46:46.083178+00:00",
+  "prompt": "[local detail omitted from GitHub snapshot]",
+  "status": "cancelled",
+  "operator_interventions": [
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "samples": [
+    {
+      "elapsed_seconds": 0.1,
+      "status": "running",
+      "engine": "loading model",
+      "available_ram_gib": 8.423,
+      "progress": null,
+      "turns": 1,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 0.0,
+      "cpu_seconds": 0.0,
+      "read_bytes": 36864
+    },
+    {
+      "elapsed_seconds": 20.1,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 6.396,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 971,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791676010.6440444
+      },
+      "turns": 1,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 2.007,
+      "cpu_seconds": 52.81,
+      "read_bytes": 2382454784
+    },
+    {
+      "elapsed_seconds": 40.1,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 6.223,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 971,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791676010.6440444
+      },
+      "turns": 1,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 2.17,
+      "cpu_seconds": 117.16,
+      "read_bytes": 3192369152
+    },
+    {
+      "elapsed_seconds": 60.1,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 6.125,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 971,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791676010.6440444
+      },
+      "turns": 1,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 2.344,
+      "cpu_seconds": 184.78,
+      "read_bytes": 3986898944
+    },
+    {
+      "elapsed_seconds": 80.2,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.968,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 971,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791676010.6440444
+      },
+      "turns": 1,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 2.472,
+      "cpu_seconds": 250.07,
+      "read_bytes": 4793581568
+    },
+    {
+      "elapsed_seconds": 100.2,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.839,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 971,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791676010.6440444
+      },
+      "turns": 1,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 2.615,
+      "cpu_seconds": 316.86,
+      "read_bytes": 5610110976
+    },
+    {
+      "elapsed_seconds": 120.2,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.66,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 971,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791676010.6440444
+      },
+      "turns": 1,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 2.796,
+      "cpu_seconds": 384.42,
+      "read_bytes": 6359203840
+    },
+    {
+      "elapsed_seconds": 140.2,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.186,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 971,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791676010.6440444
+      },
+      "turns": 1,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 2.964,
+      "cpu_seconds": 450.96,
+      "read_bytes": 7023509504
+    },
+    {
+      "elapsed_seconds": 160.3,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.325,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 971,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791676010.6440444
+      },
+      "turns": 1,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.119,
+      "cpu_seconds": 520.38,
+      "read_bytes": 7754240000
+    },
+    {
+      "elapsed_seconds": 180.3,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.261,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 971,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791676010.6440444
+      },
+      "turns": 1,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.169,
+      "cpu_seconds": 560.13,
+      "read_bytes": 11179622400
+    },
+    {
+      "elapsed_seconds": 200.3,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.245,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 32,
+          "seconds": 188.3
+        },
+        "created": 1791676198.9058893
+      },
+      "turns": 1,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.197,
+      "cpu_seconds": 574.11,
+      "read_bytes": 16355794944
+    },
+    {
+      "elapsed_seconds": 220.3,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.245,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 64,
+          "seconds": 207.6
+        },
+        "created": 1791676218.2779646
+      },
+      "turns": 1,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.199,
+      "cpu_seconds": 588.26,
+      "read_bytes": 21554049024
+    },
+    {
+      "elapsed_seconds": 240.4,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.233,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 112,
+          "seconds": 232.5
+        },
+        "created": 1791676243.160429
+      },
+      "turns": 1,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.201,
+      "cpu_seconds": 603.28,
+      "read_bytes": 26387103744
+    },
+    {
+      "elapsed_seconds": 260.4,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.208,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 1221,
+          "reused_tokens": 1094,
+          "exact_history_cache_tokens": 1094,
+          "cache_saved_prefill_tokens": 22,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791676247.809707
+      },
+      "turns": 2,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.205,
+      "cpu_seconds": 648.23,
+      "read_bytes": 29259649024
+    },
+    {
+      "elapsed_seconds": 280.4,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.209,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 1221,
+          "reused_tokens": 1094,
+          "exact_history_cache_tokens": 1094,
+          "cache_saved_prefill_tokens": 22,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791676247.809707
+      },
+      "turns": 2,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.21,
+      "cpu_seconds": 693.31,
+      "read_bytes": 32086630400
+    },
+    {
+      "elapsed_seconds": 300.5,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.227,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 32,
+          "seconds": 55.9
+        },
+        "created": 1791676303.6766775
+      },
+      "turns": 2,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.213,
+      "cpu_seconds": 707.45,
+      "read_bytes": 37164912640
+    },
+    {
+      "elapsed_seconds": 320.5,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.165,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 1347,
+          "reused_tokens": 1265,
+          "exact_history_cache_tokens": 1265,
+          "cache_saved_prefill_tokens": 193,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791676308.481298
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.241,
+      "cpu_seconds": 747.18,
+      "read_bytes": 40664936448
+    },
+    {
+      "elapsed_seconds": 340.5,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.198,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 1347,
+          "reused_tokens": 1265,
+          "exact_history_cache_tokens": 1265,
+          "cache_saved_prefill_tokens": 193,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791676308.481298
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.244,
+      "cpu_seconds": 776.97,
+      "read_bytes": 44908220416
+    },
+    {
+      "elapsed_seconds": 360.5,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.195,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 48,
+          "seconds": 54.8
+        },
+        "created": 1791676363.2410657
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.247,
+      "cpu_seconds": 792.2,
+      "read_bytes": 49657257984
+    },
+    {
+      "elapsed_seconds": 380.6,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.182,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 96,
+          "seconds": 78.0
+        },
+        "created": 1791676386.4975905
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.249,
+      "cpu_seconds": 807.67,
+      "read_bytes": 54344908800
+    },
+    {
+      "elapsed_seconds": 400.6,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.189,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 128,
+          "seconds": 93.7
+        },
+        "created": 1791676402.1939032
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.252,
+      "cpu_seconds": 823.19,
+      "read_bytes": 59006947328
+    },
+    {
+      "elapsed_seconds": 420.6,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.175,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 176,
+          "seconds": 115.6
+        },
+        "created": 1791676424.0916884
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.255,
+      "cpu_seconds": 838.71,
+      "read_bytes": 63583670272
+    },
+    {
+      "elapsed_seconds": 440.6,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.17,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 208,
+          "seconds": 133.6
+        },
+        "created": 1791676442.113025
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.266,
+      "cpu_seconds": 853.21,
+      "read_bytes": 68517195776
+    },
+    {
+      "elapsed_seconds": 460.7,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.179,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 256,
+          "seconds": 154.0
+        },
+        "created": 1791676462.4421036
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.264,
+      "cpu_seconds": 869.2,
+      "read_bytes": 72870768640
+    },
+    {
+      "elapsed_seconds": 480.7,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.173,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 304,
+          "seconds": 175.5
+        },
+        "created": 1791676483.9462476
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.272,
+      "cpu_seconds": 886.25,
+      "read_bytes": 76870926336
+    },
+    {
+      "elapsed_seconds": 500.7,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.16,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 336,
+          "seconds": 191.6
+        },
+        "created": 1791676500.0845218
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.275,
+      "cpu_seconds": 902.16,
+      "read_bytes": 81002213376
+    },
+    {
+      "elapsed_seconds": 520.8,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.163,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 368,
+          "seconds": 209.0
+        },
+        "created": 1791676517.5300472
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.277,
+      "cpu_seconds": 916.15,
+      "read_bytes": 86003453952
+    },
+    {
+      "elapsed_seconds": 540.8,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.152,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 416,
+          "seconds": 236.5
+        },
+        "created": 1791676545.01197
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.28,
+      "cpu_seconds": 931.44,
+      "read_bytes": 90528890880
+    },
+    {
+      "elapsed_seconds": 560.8,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.146,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 448,
+          "seconds": 253.5
+        },
+        "created": 1791676561.99006
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.282,
+      "cpu_seconds": 946.52,
+      "read_bytes": 95197315072
+    },
+    {
+      "elapsed_seconds": 580.9,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.137,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 480,
+          "seconds": 272.7
+        },
+        "created": 1791676581.1888363
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.285,
+      "cpu_seconds": 961.65,
+      "read_bytes": 99860635648
+    },
+    {
+      "elapsed_seconds": 600.9,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.207,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 512,
+          "seconds": 288.4
+        },
+        "created": 1791676596.9292166
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.287,
+      "cpu_seconds": 975.99,
+      "read_bytes": 104790773760
+    },
+    {
+      "elapsed_seconds": 620.9,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.201,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 560,
+          "seconds": 312.2
+        },
+        "created": 1791676620.6815062
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.29,
+      "cpu_seconds": 992.9,
+      "read_bytes": 108738904064
+    },
+    {
+      "elapsed_seconds": 641.0,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.18,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 592,
+          "seconds": 333.8
+        },
+        "created": 1791676642.2931836
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.292,
+      "cpu_seconds": 1007.07,
+      "read_bytes": 113578323968
+    },
+    {
+      "elapsed_seconds": 661.0,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.203,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 624,
+          "seconds": 351.1
+        },
+        "created": 1791676659.5519571
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.295,
+      "cpu_seconds": 1022.53,
+      "read_bytes": 118030225408
+    },
+    {
+      "elapsed_seconds": 681.0,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.186,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 656,
+          "seconds": 370.3
+        },
+        "created": 1791676678.747367
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.297,
+      "cpu_seconds": 1036.5,
+      "read_bytes": 123092692992
+    },
+    {
+      "elapsed_seconds": 701.0,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.181,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 704,
+          "seconds": 398.6
+        },
+        "created": 1791676707.0870574
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.299,
+      "cpu_seconds": 1052.1,
+      "read_bytes": 127598710784
+    },
+    {
+      "elapsed_seconds": 721.1,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.173,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 736,
+          "seconds": 414.5
+        },
+        "created": 1791676723.0029037
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.302,
+      "cpu_seconds": 1068.38,
+      "read_bytes": 131770675200
+    },
+    {
+      "elapsed_seconds": 741.1,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.169,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 784,
+          "seconds": 437.7
+        },
+        "created": 1791676746.1878042
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.305,
+      "cpu_seconds": 1085.18,
+      "read_bytes": 135584763904
+    },
+    {
+      "elapsed_seconds": 761.1,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.186,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 816,
+          "seconds": 456.6
+        },
+        "created": 1791676765.0607293
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.308,
+      "cpu_seconds": 1100.04,
+      "read_bytes": 140047839232
+    },
+    {
+      "elapsed_seconds": 781.1,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.192,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 848,
+          "seconds": 475.3
+        },
+        "created": 1791676783.7559583
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.31,
+      "cpu_seconds": 1115.09,
+      "read_bytes": 144543412224
+    },
+    {
+      "elapsed_seconds": 801.2,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.184,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 880,
+          "seconds": 493.9
+        },
+        "created": 1791676802.4139838
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.312,
+      "cpu_seconds": 1130.12,
+      "read_bytes": 149030764544
+    },
+    {
+      "elapsed_seconds": 821.2,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.17,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 912,
+          "seconds": 514.0
+        },
+        "created": 1791676822.4797184
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1145.27,
+      "read_bytes": 153444528128
+    },
+    {
+      "elapsed_seconds": 841.2,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.179,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 944,
+          "seconds": 533.8
+        },
+        "created": 1791676842.288995
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.316,
+      "cpu_seconds": 1159.98,
+      "read_bytes": 158046519296
+    },
+    {
+      "elapsed_seconds": 861.3,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.169,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 976,
+          "seconds": 554.8
+        },
+        "created": 1791676863.2571077
+      },
+      "turns": 3,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.318,
+      "cpu_seconds": 1174.31,
+      "read_bytes": 162757648384
+    },
+    {
+      "elapsed_seconds": 881.3,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.148,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 1384,
+          "reused_tokens": 1072,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791676886.1581511
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.321,
+      "cpu_seconds": 1195.47,
+      "read_bytes": 165955256320
+    },
+    {
+      "elapsed_seconds": 901.4,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.145,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 1384,
+          "reused_tokens": 1072,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791676886.1581511
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.321,
+      "cpu_seconds": 1254.3,
+      "read_bytes": 167281913856
+    },
+    {
+      "elapsed_seconds": 921.4,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.144,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 1384,
+          "reused_tokens": 1072,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791676886.1581511
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.321,
+      "cpu_seconds": 1309.73,
+      "read_bytes": 168925446144
+    },
+    {
+      "elapsed_seconds": 941.4,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.175,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 1384,
+          "reused_tokens": 1072,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791676886.1581511
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.321,
+      "cpu_seconds": 1364.42,
+      "read_bytes": 170636959744
+    },
+    {
+      "elapsed_seconds": 961.5,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.168,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 1384,
+          "reused_tokens": 1072,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791676886.1581511
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.321,
+      "cpu_seconds": 1411.07,
+      "read_bytes": 172922417152
+    },
+    {
+      "elapsed_seconds": 981.5,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.185,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 48,
+          "seconds": 101.4
+        },
+        "created": 1791676987.5506337
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.316,
+      "cpu_seconds": 1426.97,
+      "read_bytes": 177464872960
+    },
+    {
+      "elapsed_seconds": 1001.5,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.171,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 80,
+          "seconds": 118.0
+        },
+        "created": 1791677004.1478336
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1442.17,
+      "read_bytes": 182116421632
+    },
+    {
+      "elapsed_seconds": 1021.6,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.151,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 128,
+          "seconds": 141.3
+        },
+        "created": 1791677027.4973571
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1458.39,
+      "read_bytes": 186326339584
+    },
+    {
+      "elapsed_seconds": 1041.6,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.155,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 160,
+          "seconds": 156.6
+        },
+        "created": 1791677042.7693284
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1475.31,
+      "read_bytes": 190218952704
+    },
+    {
+      "elapsed_seconds": 1061.6,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.18,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 208,
+          "seconds": 178.8
+        },
+        "created": 1791677064.9458098
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1491.42,
+      "read_bytes": 194388193280
+    },
+    {
+      "elapsed_seconds": 1081.6,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.168,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 240,
+          "seconds": 192.5
+        },
+        "created": 1791677078.6405554
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1507.24,
+      "read_bytes": 198671777792
+    },
+    {
+      "elapsed_seconds": 1101.7,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.169,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 288,
+          "seconds": 218.0
+        },
+        "created": 1791677104.1163585
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1523.25,
+      "read_bytes": 202888871936
+    },
+    {
+      "elapsed_seconds": 1121.7,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.172,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 320,
+          "seconds": 235.9
+        },
+        "created": 1791677122.0789618
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1538.11,
+      "read_bytes": 207493496832
+    },
+    {
+      "elapsed_seconds": 1141.7,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.182,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 352,
+          "seconds": 255.1
+        },
+        "created": 1791677141.2507827
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1553.04,
+      "read_bytes": 212064677888
+    },
+    {
+      "elapsed_seconds": 1161.8,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.163,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 384,
+          "seconds": 275.5
+        },
+        "created": 1791677161.6114714
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1567.73,
+      "read_bytes": 216755060736
+    },
+    {
+      "elapsed_seconds": 1181.8,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.181,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 432,
+          "seconds": 299.6
+        },
+        "created": 1791677185.7464828
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1583.44,
+      "read_bytes": 221084467200
+    },
+    {
+      "elapsed_seconds": 1201.8,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.154,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 464,
+          "seconds": 315.9
+        },
+        "created": 1791677202.0387208
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1599.52,
+      "read_bytes": 225287335936
+    },
+    {
+      "elapsed_seconds": 1221.8,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.152,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 512,
+          "seconds": 337.5
+        },
+        "created": 1791677223.675723
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1617.63,
+      "read_bytes": 228769898496
+    },
+    {
+      "elapsed_seconds": 1241.9,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.187,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 560,
+          "seconds": 354.2
+        },
+        "created": 1791677240.310684
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1636.24,
+      "read_bytes": 232063414272
+    },
+    {
+      "elapsed_seconds": 1261.9,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.162,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 608,
+          "seconds": 375.6
+        },
+        "created": 1791677261.802995
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1653.33,
+      "read_bytes": 235868528640
+    },
+    {
+      "elapsed_seconds": 1281.9,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.18,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 640,
+          "seconds": 395.5
+        },
+        "created": 1791677281.6175022
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1668.0,
+      "read_bytes": 240611962880
+    },
+    {
+      "elapsed_seconds": 1301.9,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.187,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 672,
+          "seconds": 415.6
+        },
+        "created": 1791677301.7233455
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1682.86,
+      "read_bytes": 245293617152
+    },
+    {
+      "elapsed_seconds": 1322.0,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.175,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 704,
+          "seconds": 436.8
+        },
+        "created": 1791677322.9719622
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1698.02,
+      "read_bytes": 249836191744
+    },
+    {
+      "elapsed_seconds": 1342.0,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.186,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 736,
+          "seconds": 455.6
+        },
+        "created": 1791677341.7146668
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1714.04,
+      "read_bytes": 254066720768
+    },
+    {
+      "elapsed_seconds": 1362.0,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.167,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 800,
+          "seconds": 479.1
+        },
+        "created": 1791677365.2142375
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1734.17,
+      "read_bytes": 256789123072
+    },
+    {
+      "elapsed_seconds": 1382.1,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.176,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 848,
+          "seconds": 499.3
+        },
+        "created": 1791677385.4669013
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1751.65,
+      "read_bytes": 260445700096
+    },
+    {
+      "elapsed_seconds": 1402.1,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.177,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 880,
+          "seconds": 521.0
+        },
+        "created": 1791677407.1689205
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1766.13,
+      "read_bytes": 265175674880
+    },
+    {
+      "elapsed_seconds": 1422.1,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.189,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 912,
+          "seconds": 538.7
+        },
+        "created": 1791677424.88378
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1781.76,
+      "read_bytes": 269394616320
+    },
+    {
+      "elapsed_seconds": 1442.1,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.157,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 944,
+          "seconds": 552.9
+        },
+        "created": 1791677439.0199118
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.315,
+      "cpu_seconds": 1798.34,
+      "read_bytes": 273342275584
+    },
+    {
+      "elapsed_seconds": 1462.2,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.137,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 992,
+          "seconds": 581.9
+        },
+        "created": 1791677468.0481496
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.316,
+      "cpu_seconds": 1813.56,
+      "read_bytes": 277783904256
+    },
+    {
+      "elapsed_seconds": 1466.7,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.15,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 992,
+          "seconds": 581.9
+        },
+        "created": 1791677468.0481496
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.316,
+      "cpu_seconds": 1816.76,
+      "read_bytes": 278864805888
+    },
+    {
+      "elapsed_seconds": 1486.7,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.183,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1024,
+          "seconds": 604.6
+        },
+        "created": 1791677490.77209
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.318,
+      "cpu_seconds": 1831.28,
+      "read_bytes": 283560292352
+    },
+    {
+      "elapsed_seconds": 1506.8,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.17,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1056,
+          "seconds": 619.0
+        },
+        "created": 1791677505.1698298
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.321,
+      "cpu_seconds": 1848.34,
+      "read_bytes": 287337558016
+    },
+    {
+      "elapsed_seconds": 1526.8,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.16,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1104,
+          "seconds": 645.7
+        },
+        "created": 1791677531.8206124
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.323,
+      "cpu_seconds": 1864.91,
+      "read_bytes": 291304157184
+    },
+    {
+      "elapsed_seconds": 1546.8,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.172,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1152,
+          "seconds": 665.5
+        },
+        "created": 1791677551.6859577
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.327,
+      "cpu_seconds": 1883.65,
+      "read_bytes": 294352863232
+    },
+    {
+      "elapsed_seconds": 1566.9,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.161,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1184,
+          "seconds": 684.0
+        },
+        "created": 1791677570.158468
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.335,
+      "cpu_seconds": 1898.71,
+      "read_bytes": 298834722816
+    },
+    {
+      "elapsed_seconds": 1586.9,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.136,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1216,
+          "seconds": 705.0
+        },
+        "created": 1791677591.1388626
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.354,
+      "cpu_seconds": 1913.84,
+      "read_bytes": 303297118208
+    },
+    {
+      "elapsed_seconds": 1606.9,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.12,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1248,
+          "seconds": 721.3
+        },
+        "created": 1791677607.4679677
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.378,
+      "cpu_seconds": 1929.86,
+      "read_bytes": 307350142976
+    },
+    {
+      "elapsed_seconds": 1626.9,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.096,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1280,
+          "seconds": 740.8
+        },
+        "created": 1791677626.9939098
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.387,
+      "cpu_seconds": 1946.71,
+      "read_bytes": 311098216448
+    },
+    {
+      "elapsed_seconds": 1647.0,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.085,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1328,
+          "seconds": 766.4
+        },
+        "created": 1791677652.602373
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.389,
+      "cpu_seconds": 1962.58,
+      "read_bytes": 315197677568
+    },
+    {
+      "elapsed_seconds": 1667.0,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.119,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1360,
+          "seconds": 780.5
+        },
+        "created": 1791677666.649385
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.39,
+      "cpu_seconds": 1979.67,
+      "read_bytes": 318752579584
+    },
+    {
+      "elapsed_seconds": 1687.1,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.119,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1392,
+          "seconds": 797.6
+        },
+        "created": 1791677683.7259371
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.392,
+      "cpu_seconds": 1995.9,
+      "read_bytes": 322748399616
+    },
+    {
+      "elapsed_seconds": 1707.1,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.119,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1440,
+          "seconds": 822.4
+        },
+        "created": 1791677708.5802753
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.393,
+      "cpu_seconds": 2013.49,
+      "read_bytes": 326215131136
+    },
+    {
+      "elapsed_seconds": 1727.1,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.121,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1488,
+          "seconds": 845.2
+        },
+        "created": 1791677731.4022539
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.395,
+      "cpu_seconds": 2031.96,
+      "read_bytes": 329345912832
+    },
+    {
+      "elapsed_seconds": 1747.1,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.11,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1536,
+          "seconds": 864.5
+        },
+        "created": 1791677750.6831913
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.397,
+      "cpu_seconds": 2051.36,
+      "read_bytes": 332142202880
+    },
+    {
+      "elapsed_seconds": 1767.2,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.125,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1568,
+          "seconds": 878.7
+        },
+        "created": 1791677764.8420246
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.399,
+      "cpu_seconds": 2069.51,
+      "read_bytes": 335407722496
+    },
+    {
+      "elapsed_seconds": 1787.2,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.097,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1616,
+          "seconds": 903.3
+        },
+        "created": 1791677789.4875758
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.4,
+      "cpu_seconds": 2086.8,
+      "read_bytes": 338906259456
+    },
+    {
+      "elapsed_seconds": 1807.2,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.097,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1664,
+          "seconds": 926.2
+        },
+        "created": 1791677812.375667
+      },
+      "turns": 4,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.402,
+      "cpu_seconds": 2104.77,
+      "read_bytes": 342172549120
+    },
+    {
+      "elapsed_seconds": 1827.3,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.098,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3135,
+          "reused_tokens": 3077,
+          "exact_history_cache_tokens": 3077,
+          "cache_saved_prefill_tokens": 1118,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791677825.5538714
+      },
+      "turns": 5,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.404,
+      "cpu_seconds": 2132.72,
+      "read_bytes": 344992665600
+    },
+    {
+      "elapsed_seconds": 1847.3,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.082,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3135,
+          "reused_tokens": 3077,
+          "exact_history_cache_tokens": 3077,
+          "cache_saved_prefill_tokens": 1118,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791677825.5538714
+      },
+      "turns": 5,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.405,
+      "cpu_seconds": 2168.93,
+      "read_bytes": 348351283200
+    },
+    {
+      "elapsed_seconds": 1867.3,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.111,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 32,
+          "seconds": 47.1
+        },
+        "created": 1791677872.6361547
+      },
+      "turns": 5,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.407,
+      "cpu_seconds": 2186.08,
+      "read_bytes": 352207519744
+    },
+    {
+      "elapsed_seconds": 1887.4,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.085,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 80,
+          "seconds": 65.7
+        },
+        "created": 1791677891.2906387
+      },
+      "turns": 5,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.409,
+      "cpu_seconds": 2206.5,
+      "read_bytes": 354556915712
+    },
+    {
+      "elapsed_seconds": 1907.4,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.099,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 112,
+          "seconds": 83.5
+        },
+        "created": 1791677909.1036513
+      },
+      "turns": 5,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.41,
+      "cpu_seconds": 2223.24,
+      "read_bytes": 358262341632
+    },
+    {
+      "elapsed_seconds": 1927.4,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.087,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 160,
+          "seconds": 103.3
+        },
+        "created": 1791677928.8374016
+      },
+      "turns": 5,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.412,
+      "cpu_seconds": 2243.85,
+      "read_bytes": 360541302784
+    },
+    {
+      "elapsed_seconds": 1947.5,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.077,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 208,
+          "seconds": 123.3
+        },
+        "created": 1791677948.893122
+      },
+      "turns": 5,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.414,
+      "cpu_seconds": 2263.33,
+      "read_bytes": 363181785088
+    },
+    {
+      "elapsed_seconds": 1967.5,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.088,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 240,
+          "seconds": 140.2
+        },
+        "created": 1791677965.7346854
+      },
+      "turns": 5,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.416,
+      "cpu_seconds": 2280.46,
+      "read_bytes": 366686363648
+    },
+    {
+      "elapsed_seconds": 1987.5,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.064,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 288,
+          "seconds": 164.4
+        },
+        "created": 1791677989.9717724
+      },
+      "turns": 5,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.417,
+      "cpu_seconds": 2298.77,
+      "read_bytes": 369687724032
+    },
+    {
+      "elapsed_seconds": 2007.5,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.061,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 336,
+          "seconds": 186.1
+        },
+        "created": 1791678011.664701
+      },
+      "turns": 5,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.419,
+      "cpu_seconds": 2317.3,
+      "read_bytes": 372637102080
+    },
+    {
+      "elapsed_seconds": 2027.6,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.094,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 368,
+          "seconds": 201.5
+        },
+        "created": 1791678027.0353599
+      },
+      "turns": 5,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.421,
+      "cpu_seconds": 2336.42,
+      "read_bytes": 375354540032
+    },
+    {
+      "elapsed_seconds": 2047.6,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.07,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 416,
+          "seconds": 225.8
+        },
+        "created": 1791678051.3139315
+      },
+      "turns": 5,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.422,
+      "cpu_seconds": 2354.46,
+      "read_bytes": 378448740352
+    },
+    {
+      "elapsed_seconds": 2067.6,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.056,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 448,
+          "seconds": 245.9
+        },
+        "created": 1791678071.4607358
+      },
+      "turns": 5,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.424,
+      "cpu_seconds": 2370.59,
+      "read_bytes": 382280683520
+    },
+    {
+      "elapsed_seconds": 2087.7,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.052,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 496,
+          "seconds": 265.6
+        },
+        "created": 1791678091.1195138
+      },
+      "turns": 5,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.443,
+      "cpu_seconds": 2391.17,
+      "read_bytes": 384407101440
+    },
+    {
+      "elapsed_seconds": 2107.7,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.047,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 528,
+          "seconds": 284.2
+        },
+        "created": 1791678109.761154
+      },
+      "turns": 5,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.451,
+      "cpu_seconds": 2408.63,
+      "read_bytes": 387747786752
+    },
+    {
+      "elapsed_seconds": 2127.7,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.032,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3759,
+          "reused_tokens": 3699,
+          "exact_history_cache_tokens": 3699,
+          "cache_saved_prefill_tokens": 1740,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791678128.899742
+      },
+      "turns": 6,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.454,
+      "cpu_seconds": 2432.27,
+      "read_bytes": 390695120896
+    },
+    {
+      "elapsed_seconds": 2147.8,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.026,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3759,
+          "reused_tokens": 3699,
+          "exact_history_cache_tokens": 3699,
+          "cache_saved_prefill_tokens": 1740,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791678128.899742
+      },
+      "turns": 6,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.456,
+      "cpu_seconds": 2469.05,
+      "read_bytes": 393559101440
+    },
+    {
+      "elapsed_seconds": 2167.8,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.042,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 16,
+          "seconds": 41.3
+        },
+        "created": 1791678170.176191
+      },
+      "turns": 6,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.459,
+      "cpu_seconds": 2490.95,
+      "read_bytes": 397296435200
+    },
+    {
+      "elapsed_seconds": 2187.8,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.05,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3934,
+          "reused_tokens": 3800,
+          "exact_history_cache_tokens": 3800,
+          "cache_saved_prefill_tokens": 1841,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791678183.432647
+      },
+      "turns": 7,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.462,
+      "cpu_seconds": 2523.86,
+      "read_bytes": 399314415616
+    },
+    {
+      "elapsed_seconds": 2207.9,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.03,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3934,
+          "reused_tokens": 3800,
+          "exact_history_cache_tokens": 3800,
+          "cache_saved_prefill_tokens": 1841,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791678183.432647
+      },
+      "turns": 7,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.465,
+      "cpu_seconds": 2565.07,
+      "read_bytes": 401086599168
+    },
+    {
+      "elapsed_seconds": 2227.9,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.022,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3934,
+          "reused_tokens": 3800,
+          "exact_history_cache_tokens": 3800,
+          "cache_saved_prefill_tokens": 1841,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791678183.432647
+      },
+      "turns": 7,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.468,
+      "cpu_seconds": 2605.07,
+      "read_bytes": 402963791872
+    },
+    {
+      "elapsed_seconds": 2247.9,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.025,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 16,
+          "seconds": 69.0
+        },
+        "created": 1791678252.3932989
+      },
+      "turns": 7,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.471,
+      "cpu_seconds": 2627.67,
+      "read_bytes": 406834651136
+    },
+    {
+      "elapsed_seconds": 2267.9,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.036,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 48,
+          "seconds": 87.7
+        },
+        "created": 1791678271.0899498
+      },
+      "turns": 7,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.473,
+      "cpu_seconds": 2643.74,
+      "read_bytes": 410490548224
+    },
+    {
+      "elapsed_seconds": 2288.0,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.011,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 4120,
+          "reused_tokens": 3990,
+          "exact_history_cache_tokens": 3990,
+          "cache_saved_prefill_tokens": 2031,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791678277.0424473
+      },
+      "turns": 8,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.475,
+      "cpu_seconds": 2679.75,
+      "read_bytes": 412793659392
+    },
+    {
+      "elapsed_seconds": 2308.0,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.018,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 4120,
+          "reused_tokens": 3990,
+          "exact_history_cache_tokens": 3990,
+          "cache_saved_prefill_tokens": 2031,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791678277.0424473
+      },
+      "turns": 8,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.478,
+      "cpu_seconds": 2716.99,
+      "read_bytes": 415422513152
+    },
+    {
+      "elapsed_seconds": 2328.0,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 4.97,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 4120,
+          "reused_tokens": 3990,
+          "exact_history_cache_tokens": 3990,
+          "cache_saved_prefill_tokens": 2031,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791678277.0424473
+      },
+      "turns": 8,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.482,
+      "cpu_seconds": 2754.2,
+      "read_bytes": 417960726528
+    },
+    {
+      "elapsed_seconds": 2348.1,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.99,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 16,
+          "seconds": 74.0
+        },
+        "created": 1791678351.089223
+      },
+      "turns": 8,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.483,
+      "cpu_seconds": 2770.66,
+      "read_bytes": 422311182336
+    },
+    {
+      "elapsed_seconds": 2368.1,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.954,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 48,
+          "seconds": 89.6
+        },
+        "created": 1791678366.681961
+      },
+      "turns": 8,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.486,
+      "cpu_seconds": 2788.73,
+      "read_bytes": 425117200384
+    },
+    {
+      "elapsed_seconds": 2388.1,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.979,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 96,
+          "seconds": 115.5
+        },
+        "created": 1791678392.5352044
+      },
+      "turns": 8,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.489,
+      "cpu_seconds": 2805.96,
+      "read_bytes": 428193800192
+    },
+    {
+      "elapsed_seconds": 2408.2,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.954,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 112,
+          "seconds": 128.7
+        },
+        "created": 1791678405.757797
+      },
+      "turns": 8,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.491,
+      "cpu_seconds": 2820.74,
+      "read_bytes": 432204115968
+    },
+    {
+      "elapsed_seconds": 2428.2,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 4.98,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 4290,
+          "reused_tokens": 4253,
+          "exact_history_cache_tokens": 4253,
+          "cache_saved_prefill_tokens": 2294,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791678420.3049634
+      },
+      "turns": 9,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.492,
+      "cpu_seconds": 2847.1,
+      "read_bytes": 436000563200
+    },
+    {
+      "elapsed_seconds": 2448.2,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.964,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 4290,
+          "reused_tokens": 4253,
+          "exact_history_cache_tokens": 4253,
+          "cache_saved_prefill_tokens": 2294,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791678420.3049634
+      },
+      "turns": 9,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.494,
+      "cpu_seconds": 2870.7,
+      "read_bytes": 440627367936
+    },
+    {
+      "elapsed_seconds": 2468.3,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.982,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 32,
+          "seconds": 45.5
+        },
+        "created": 1791678465.782012
+      },
+      "turns": 9,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.496,
+      "cpu_seconds": 2886.81,
+      "read_bytes": 444256796672
+    },
+    {
+      "elapsed_seconds": 2488.3,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.97,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 64,
+          "seconds": 70.5
+        },
+        "created": 1791678490.7898908
+      },
+      "turns": 9,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.498,
+      "cpu_seconds": 2901.74,
+      "read_bytes": 448215572480
+    },
+    {
+      "elapsed_seconds": 2508.4,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.969,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 96,
+          "seconds": 88.8
+        },
+        "created": 1791678509.1389482
+      },
+      "turns": 9,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.501,
+      "cpu_seconds": 2919.17,
+      "read_bytes": 451232571392
+    },
+    {
+      "elapsed_seconds": 2528.4,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.978,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 128,
+          "seconds": 106.0
+        },
+        "created": 1791678526.323078
+      },
+      "turns": 9,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.503,
+      "cpu_seconds": 2935.94,
+      "read_bytes": 454437105664
+    },
+    {
+      "elapsed_seconds": 2548.4,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.973,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 176,
+          "seconds": 134.0
+        },
+        "created": 1791678554.2757754
+      },
+      "turns": 9,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.506,
+      "cpu_seconds": 2953.62,
+      "read_bytes": 457333227520
+    },
+    {
+      "elapsed_seconds": 2568.4,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.975,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 208,
+          "seconds": 151.3
+        },
+        "created": 1791678571.574235
+      },
+      "turns": 9,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.508,
+      "cpu_seconds": 2971.94,
+      "read_bytes": 459980693504
+    },
+    {
+      "elapsed_seconds": 2588.5,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.951,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 240,
+          "seconds": 171.7
+        },
+        "created": 1791678592.0119123
+      },
+      "turns": 9,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.51,
+      "cpu_seconds": 2987.41,
+      "read_bytes": 463783636992
+    },
+    {
+      "elapsed_seconds": 2608.5,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.958,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 256,
+          "seconds": 186.4
+        },
+        "created": 1791678606.7553182
+      },
+      "turns": 9,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.512,
+      "cpu_seconds": 3001.72,
+      "read_bytes": 468079575040
+    },
+    {
+      "elapsed_seconds": 2628.6,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.954,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 288,
+          "seconds": 210.2
+        },
+        "created": 1791678630.4649682
+      },
+      "turns": 9,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.514,
+      "cpu_seconds": 3017.12,
+      "read_bytes": 471901560832
+    },
+    {
+      "elapsed_seconds": 2648.6,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.926,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 320,
+          "seconds": 230.3
+        },
+        "created": 1791678650.6457796
+      },
+      "turns": 9,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.518,
+      "cpu_seconds": 3033.35,
+      "read_bytes": 475374374912
+    },
+    {
+      "elapsed_seconds": 2668.6,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.953,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 336,
+          "seconds": 243.0
+        },
+        "created": 1791678663.2887695
+      },
+      "turns": 9,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.537,
+      "cpu_seconds": 3048.16,
+      "read_bytes": 479512641536
+    },
+    {
+      "elapsed_seconds": 2688.6,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.938,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 368,
+          "seconds": 268.2
+        },
+        "created": 1791678688.5144784
+      },
+      "turns": 9,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.554,
+      "cpu_seconds": 3063.75,
+      "read_bytes": 483250917376
+    },
+    {
+      "elapsed_seconds": 2708.7,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.905,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 400,
+          "seconds": 291.5
+        },
+        "created": 1791678711.8045344
+      },
+      "turns": 9,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.575,
+      "cpu_seconds": 3078.71,
+      "read_bytes": 487250685952
+    },
+    {
+      "elapsed_seconds": 2728.7,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.921,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 432,
+          "seconds": 314.1
+        },
+        "created": 1791678734.3823764
+      },
+      "turns": 9,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.582,
+      "cpu_seconds": 3094.36,
+      "read_bytes": 490942672896
+    },
+    {
+      "elapsed_seconds": 2748.7,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.911,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 448,
+          "seconds": 328.1
+        },
+        "created": 1791678748.436508
+      },
+      "turns": 9,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.583,
+      "cpu_seconds": 3108.66,
+      "read_bytes": 495278862336
+    },
+    {
+      "elapsed_seconds": 2768.8,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.893,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 480,
+          "seconds": 350.6
+        },
+        "created": 1791678770.9127185
+      },
+      "turns": 9,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.584,
+      "cpu_seconds": 3124.6,
+      "read_bytes": 498918735872
+    },
+    {
+      "elapsed_seconds": 2788.8,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.908,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 512,
+          "seconds": 374.2
+        },
+        "created": 1791678794.4688642
+      },
+      "turns": 9,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.584,
+      "cpu_seconds": 3140.31,
+      "read_bytes": 502620356608
+    },
+    {
+      "elapsed_seconds": 2808.8,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.893,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 528,
+          "seconds": 384.7
+        },
+        "created": 1791678804.9619071
+      },
+      "turns": 9,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.585,
+      "cpu_seconds": 3157.13,
+      "read_bytes": 505867669504
+    },
+    {
+      "elapsed_seconds": 2828.9,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.878,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 560,
+          "seconds": 407.3
+        },
+        "created": 1791678827.6049857
+      },
+      "turns": 9,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.586,
+      "cpu_seconds": 3172.28,
+      "read_bytes": 509717102592
+    },
+    {
+      "elapsed_seconds": 2848.9,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 4.896,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 4924,
+          "reused_tokens": 4862,
+          "exact_history_cache_tokens": 4862,
+          "cache_saved_prefill_tokens": 2903,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791678836.9656928
+      },
+      "turns": 10,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.587,
+      "cpu_seconds": 3205.55,
+      "read_bytes": 512419946496
+    },
+    {
+      "elapsed_seconds": 2869.0,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.803,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 4924,
+          "reused_tokens": 4862,
+          "exact_history_cache_tokens": 4862,
+          "cache_saved_prefill_tokens": 2903,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791678836.9656928
+      },
+      "turns": 10,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.588,
+      "cpu_seconds": 3238.25,
+      "read_bytes": 515202908160
+    },
+    {
+      "elapsed_seconds": 2889.0,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.893,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 16,
+          "seconds": 50.3
+        },
+        "created": 1791678887.3025327
+      },
+      "turns": 10,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.589,
+      "cpu_seconds": 3252.7,
+      "read_bytes": 519374909440
+    },
+    {
+      "elapsed_seconds": 2909.0,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 4.865,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 5130,
+          "reused_tokens": 4973,
+          "exact_history_cache_tokens": 4973,
+          "cache_saved_prefill_tokens": 3014,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791678910.1452882
+      },
+      "turns": 11,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.59,
+      "cpu_seconds": 3275.07,
+      "read_bytes": 521814503424
+    },
+    {
+      "elapsed_seconds": 2929.1,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 4.901,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 5130,
+          "reused_tokens": 4973,
+          "exact_history_cache_tokens": 4973,
+          "cache_saved_prefill_tokens": 3014,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791678910.1452882
+      },
+      "turns": 11,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.591,
+      "cpu_seconds": 3315.93,
+      "read_bytes": 523266002944
+    },
+    {
+      "elapsed_seconds": 2949.1,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 4.851,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 5130,
+          "reused_tokens": 4973,
+          "exact_history_cache_tokens": 4973,
+          "cache_saved_prefill_tokens": 3014,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791678910.1452882
+      },
+      "turns": 11,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.593,
+      "cpu_seconds": 3352.59,
+      "read_bytes": 524977926144
+    },
+    {
+      "elapsed_seconds": 2969.1,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 4.869,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 5130,
+          "reused_tokens": 4973,
+          "exact_history_cache_tokens": 4973,
+          "cache_saved_prefill_tokens": 3014,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791678910.1452882
+      },
+      "turns": 11,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.594,
+      "cpu_seconds": 3390.47,
+      "read_bytes": 526612332544
+    },
+    {
+      "elapsed_seconds": 2989.2,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.878,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 5130,
+          "reused_tokens": 4973,
+          "exact_history_cache_tokens": 4973,
+          "cache_saved_prefill_tokens": 3014,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791678910.1452882
+      },
+      "turns": 11,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.595,
+      "cpu_seconds": 3417.09,
+      "read_bytes": 529528631296
+    },
+    {
+      "elapsed_seconds": 3009.2,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.877,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 32,
+          "seconds": 98.4
+        },
+        "created": 1791679008.590359
+      },
+      "turns": 11,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.596,
+      "cpu_seconds": 3434.64,
+      "read_bytes": 532437753856
+    },
+    {
+      "elapsed_seconds": 3029.2,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.853,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 64,
+          "seconds": 118.8
+        },
+        "created": 1791679028.9543476
+      },
+      "turns": 11,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.597,
+      "cpu_seconds": 3451.98,
+      "read_bytes": 535420674048
+    },
+    {
+      "elapsed_seconds": 3049.3,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.83,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 112,
+          "seconds": 145.2
+        },
+        "created": 1791679055.3769524
+      },
+      "turns": 11,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.598,
+      "cpu_seconds": 3472.42,
+      "read_bytes": 537127047168
+    },
+    {
+      "elapsed_seconds": 3069.3,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.851,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 128,
+          "seconds": 154.5
+        },
+        "created": 1791679064.663473
+      },
+      "turns": 11,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.599,
+      "cpu_seconds": 3489.65,
+      "read_bytes": 540145872896
+    },
+    {
+      "elapsed_seconds": 3089.3,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 4.422,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 5376,
+          "reused_tokens": 5294,
+          "exact_history_cache_tokens": 5294,
+          "cache_saved_prefill_tokens": 3335,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791679093.0833127
+      },
+      "turns": 12,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.6,
+      "cpu_seconds": 3507.9,
+      "read_bytes": 543426605056
+    },
+    {
+      "elapsed_seconds": 3109.4,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 4.815,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 5376,
+          "reused_tokens": 5294,
+          "exact_history_cache_tokens": 5294,
+          "cache_saved_prefill_tokens": 3335,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791679093.0833127
+      },
+      "turns": 12,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.601,
+      "cpu_seconds": 3543.98,
+      "read_bytes": 545533407232
+    },
+    {
+      "elapsed_seconds": 3129.4,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 4.844,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 5376,
+          "reused_tokens": 5294,
+          "exact_history_cache_tokens": 5294,
+          "cache_saved_prefill_tokens": 3335,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791679093.0833127
+      },
+      "turns": 12,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.602,
+      "cpu_seconds": 3578.15,
+      "read_bytes": 547822153728
+    },
+    {
+      "elapsed_seconds": 3149.4,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.841,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 16,
+          "seconds": 61.7
+        },
+        "created": 1791679154.74248
+      },
+      "turns": 12,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.603,
+      "cpu_seconds": 3598.41,
+      "read_bytes": 551527325696
+    },
+    {
+      "elapsed_seconds": 3169.5,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 4.809,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 5485,
+          "reused_tokens": 5408,
+          "exact_history_cache_tokens": 5408,
+          "cache_saved_prefill_tokens": 3449,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791679166.705162
+      },
+      "turns": 13,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.604,
+      "cpu_seconds": 3623.71,
+      "read_bytes": 554245320704
+    },
+    {
+      "elapsed_seconds": 3189.5,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 4.857,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 5485,
+          "reused_tokens": 5408,
+          "exact_history_cache_tokens": 5408,
+          "cache_saved_prefill_tokens": 3449,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791679166.705162
+      },
+      "turns": 13,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.605,
+      "cpu_seconds": 3656.81,
+      "read_bytes": 556796526592
+    },
+    {
+      "elapsed_seconds": 3209.5,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.872,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 5485,
+          "reused_tokens": 5408,
+          "exact_history_cache_tokens": 5408,
+          "cache_saved_prefill_tokens": 3449,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791679166.705162
+      },
+      "turns": 13,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.606,
+      "cpu_seconds": 3687.4,
+      "read_bytes": 559483686912
+    },
+    {
+      "elapsed_seconds": 3229.6,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.84,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 16,
+          "seconds": 59.1
+        },
+        "created": 1791679225.850914
+      },
+      "turns": 13,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.607,
+      "cpu_seconds": 3703.06,
+      "read_bytes": 563139616768
+    },
+    {
+      "elapsed_seconds": 3249.6,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.832,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 48,
+          "seconds": 80.3
+        },
+        "created": 1791679246.9987087
+      },
+      "turns": 13,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.608,
+      "cpu_seconds": 3719.6,
+      "read_bytes": 566284378112
+    },
+    {
+      "elapsed_seconds": 3269.6,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.827,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 80,
+          "seconds": 103.8
+        },
+        "created": 1791679270.458049
+      },
+      "turns": 13,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.609,
+      "cpu_seconds": 3736.33,
+      "read_bytes": 569441689600
+    },
+    {
+      "elapsed_seconds": 3289.6,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 4.82,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 5747,
+          "reused_tokens": 5584,
+          "exact_history_cache_tokens": 5584,
+          "cache_saved_prefill_tokens": 3625,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791679284.5450432
+      },
+      "turns": 14,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.617,
+      "cpu_seconds": 3765.22,
+      "read_bytes": 571139821568
+    },
+    {
+      "elapsed_seconds": 3309.7,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 4.8,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 5747,
+          "reused_tokens": 5584,
+          "exact_history_cache_tokens": 5584,
+          "cache_saved_prefill_tokens": 3625,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791679284.5450432
+      },
+      "turns": 14,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.626,
+      "cpu_seconds": 3803.89,
+      "read_bytes": 572424306688
+    },
+    {
+      "elapsed_seconds": 3329.7,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 4.817,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 5747,
+          "reused_tokens": 5584,
+          "exact_history_cache_tokens": 5584,
+          "cache_saved_prefill_tokens": 3625,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791679284.5450432
+      },
+      "turns": 14,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.637,
+      "cpu_seconds": 3840.29,
+      "read_bytes": 574115573760
+    },
+    {
+      "elapsed_seconds": 3349.8,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 4.819,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 5747,
+          "reused_tokens": 5584,
+          "exact_history_cache_tokens": 5584,
+          "cache_saved_prefill_tokens": 3625,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791679284.5450432
+      },
+      "turns": 14,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.65,
+      "cpu_seconds": 3873.96,
+      "read_bytes": 575736680448
+    },
+    {
+      "elapsed_seconds": 3369.8,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.797,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 5747,
+          "reused_tokens": 5584,
+          "exact_history_cache_tokens": 5584,
+          "cache_saved_prefill_tokens": 3625,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791679284.5450432
+      },
+      "turns": 14,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.657,
+      "cpu_seconds": 3902.87,
+      "read_bytes": 578299600896
+    },
+    {
+      "elapsed_seconds": 3389.8,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.779,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 16,
+          "seconds": 103.2
+        },
+        "created": 1791679387.7779768
+      },
+      "turns": 14,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.659,
+      "cpu_seconds": 3918.11,
+      "read_bytes": 582147637248
+    },
+    {
+      "elapsed_seconds": 3409.8,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.774,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 48,
+          "seconds": 123.4
+        },
+        "created": 1791679407.9473026
+      },
+      "turns": 14,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.66,
+      "cpu_seconds": 3935.01,
+      "read_bytes": 585183997952
+    },
+    {
+      "elapsed_seconds": 3429.9,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.797,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 80,
+          "seconds": 147.0
+        },
+        "created": 1791679431.5327132
+      },
+      "turns": 14,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.662,
+      "cpu_seconds": 3950.99,
+      "read_bytes": 588527788032
+    },
+    {
+      "elapsed_seconds": 3449.9,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.771,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 96,
+          "seconds": 159.0
+        },
+        "created": 1791679443.5874777
+      },
+      "turns": 14,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.663,
+      "cpu_seconds": 3967.28,
+      "read_bytes": 591744389120
+    },
+    {
+      "elapsed_seconds": 3469.9,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.78,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 128,
+          "seconds": 180.6
+        },
+        "created": 1791679465.191919
+      },
+      "turns": 14,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.664,
+      "cpu_seconds": 3984.59,
+      "read_bytes": 594485006336
+    },
+    {
+      "elapsed_seconds": 3490.0,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.797,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 160,
+          "seconds": 205.2
+        },
+        "created": 1791679489.7051246
+      },
+      "turns": 14,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.666,
+      "cpu_seconds": 4000.77,
+      "read_bytes": 597765689344
+    },
+    {
+      "elapsed_seconds": 3510.0,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.766,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 192,
+          "seconds": 230.3
+        },
+        "created": 1791679514.8125887
+      },
+      "turns": 14,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.667,
+      "cpu_seconds": 4017.1,
+      "read_bytes": 600967942144
+    },
+    {
+      "elapsed_seconds": 3530.0,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.779,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 208,
+          "seconds": 242.9
+        },
+        "created": 1791679527.4959223
+      },
+      "turns": 14,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.669,
+      "cpu_seconds": 4033.65,
+      "read_bytes": 604011360256
+    },
+    {
+      "elapsed_seconds": 3550.1,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.734,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 240,
+          "seconds": 265.9
+        },
+        "created": 1791679550.4471152
+      },
+      "turns": 14,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.67,
+      "cpu_seconds": 4051.25,
+      "read_bytes": 606645338112
+    },
+    {
+      "elapsed_seconds": 3570.1,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.757,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 256,
+          "seconds": 277.8
+        },
+        "created": 1791679562.372907
+      },
+      "turns": 14,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.671,
+      "cpu_seconds": 4066.51,
+      "read_bytes": 610303250432
+    },
+    {
+      "elapsed_seconds": 3590.1,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.782,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 288,
+          "seconds": 307.1
+        },
+        "created": 1791679591.6933904
+      },
+      "turns": 14,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.672,
+      "cpu_seconds": 4081.52,
+      "read_bytes": 614159953920
+    },
+    {
+      "elapsed_seconds": 3610.2,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 4.761,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 304,
+          "seconds": 320.6
+        },
+        "created": 1791679605.1148665
+      },
+      "turns": 14,
+      "pid": 211524,
+      "nice": 5,
+      "uss_gib": 3.674,
+      "cpu_seconds": 4097.83,
+      "read_bytes": 617367158784
+    },
+    {
+      "elapsed_seconds": 3630.2,
+      "status": "cancelled",
+      "engine": "not loaded",
+      "available_ram_gib": 8.455,
+      "progress": {
+        "kind": "cancelled",
+        "data": {
+          "message": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791679616.4407463
+      },
+      "turns": 14
+    }
+  ],
+  "scope": "Frozen initial prompt, no operator code/recovery notes during native execution. Original CSV goal and input only in a fresh folder; no implementation or tests supplied. Independent/friendly-error checks run after termination.",
+  "job": "088a09a3b18c42c4ba1d5cb478d5d2f0",
+  "session": "00a78f76015548b1907b91c2c07b25c5",
+  "cwd": "/mnt/GameDrive/tiny_dancer/workspace/native-coding-20261010T234646Z",
+  "observation_notes": [
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "checkpoint": "[local detail omitted from GitHub snapshot]",
+  "job_elapsed_seconds": 3610.33,
+  "metrics": [
+    {
+      "prefill_seconds": 165.948431906,
+      "prefill_tokens": 971,
+      "prefill_tokens_per_s": 5.851215277225483,
+      "decode_seconds": 71.177944561,
+      "decode_tokens": 123,
+      "decode_tokens_per_s": 1.7280633875931628,
+      "native_counters": {
+        "position": 1094,
+        "capacity": 8192,
+        "prefill_tokens": 971,
+        "decode_tokens": 123,
+        "prefill_seconds": 165.948431906,
+        "decode_seconds": 71.177944561,
+        "gpu_dense_host_released_bytes": 0,
+        "expert_slots_per_layer": 4,
+        "available_ram_gib": 0.166195,
+        "expert_buffer_allocs": 198,
+        "expert_buffer_reuses": 2462,
+        "expert_compute_seconds": 101.07079391,
+        "process_page_faults": 0,
+        "private_gib": 0.0,
+        "peak_rss_gib": 0.0,
+        "forward": 1094,
+        "tokens_emitted": 123,
+        "cache_hits": 31,
+        "cache_misses": 2660,
+        "cache_requests": 2691,
+        "expert_loads": 2660,
+        "expert_bytes_estimate": 14031360,
+        "disk_seconds": 63.078322537,
+        "async_batches": 0,
+        "async_wait_seconds": 0.0,
+        "attention_seconds": 58.992908724,
+        "moe_seconds": 177.368295461,
+        "head_seconds": 0.701695532,
+        "rss_gb": 3.301899,
+        "resident_gb": 1.807843,
+        "gpu_router_calls": 0,
+        "gpu_router_seconds": 0.0,
+        "gpu_dense_calls": 0,
+        "gpu_dense_seconds": 0.0,
+        "gpu_dense_fallbacks": 0,
+        "prefetch_issued": 0,
+        "prefetch_read_seconds": 0.0,
+        "predict_hits_a": 0,
+        "predict_hits_b": 0,
+        "predict_total": 0
+      },
+      "total_seconds": 237.13,
+      "completion_tokens": 123,
+      "prompt_tokens": 971,
+      "canonical_prompt_tokens": 971,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 0,
+      "reasoning_effort": "medium"
+    },
+    {
+      "prefill_seconds": 37.16494519,
+      "prefill_tokens": 127,
+      "prefill_tokens_per_s": 3.417198635723321,
+      "decode_seconds": 23.480423375,
+      "decode_tokens": 44,
+      "decode_tokens_per_s": 1.8739014751687797,
+      "native_counters": {
+        "position": 1265,
+        "capacity": 8192,
+        "prefill_tokens": 1098,
+        "decode_tokens": 167,
+        "prefill_seconds": 203.113377096,
+        "decode_seconds": 94.658367936,
+        "gpu_dense_host_released_bytes": 0,
+        "expert_slots_per_layer": 4,
+        "available_ram_gib": 0.165092,
+        "expert_buffer_allocs": 198,
+        "expert_buffer_reuses": 3658,
+        "expert_compute_seconds": 116.112736002,
+        "process_page_faults": 0,
+        "private_gib": 0.0,
+        "peak_rss_gib": 0.0,
+        "forward": 1265,
+        "tokens_emitted": 167,
+        "cache_hits": 63,
+        "cache_misses": 3856,
+        "cache_requests": 3919,
+        "expert_loads": 3856,
+        "expert_bytes_estimate": 14031360,
+        "disk_seconds": 90.617400411,
+        "async_batches": 0,
+        "async_wait_seconds": 0.0,
+        "attention_seconds": 72.4977379,
+        "moe_seconds": 224.252552203,
+        "head_seconds": 0.936224957,
+        "rss_gb": 3.301899,
+        "resident_gb": 1.807843,
+        "gpu_router_calls": 0,
+        "gpu_router_seconds": 0.0,
+        "gpu_dense_calls": 0,
+        "gpu_dense_seconds": 0.0,
+        "gpu_dense_fallbacks": 0,
+        "prefetch_issued": 0,
+        "prefetch_read_seconds": 0.0,
+        "predict_hits_a": 0,
+        "predict_hits_b": 0,
+        "predict_total": 0
+      },
+      "total_seconds": 60.65,
+      "completion_tokens": 44,
+      "prompt_tokens": 1221,
+      "canonical_prompt_tokens": 1221,
+      "exact_history_cache_tokens": 1094,
+      "cache_saved_prefill_tokens": 22,
+      "reasoning_effort": "medium"
+    },
+    {
+      "prefill_seconds": 29.244935244999994,
+      "prefill_tokens": 82,
+      "prefill_tokens_per_s": 2.8039043107137513,
+      "decode_seconds": 548.401710683,
+      "decode_tokens": 1024,
+      "decode_tokens_per_s": 1.8672443576528455,
+      "native_counters": {
+        "position": 2371,
+        "capacity": 8192,
+        "prefill_tokens": 1180,
+        "decode_tokens": 1191,
+        "prefill_seconds": 232.358312341,
+        "decode_seconds": 643.060078619,
+        "gpu_dense_host_released_bytes": 0,
+        "expert_slots_per_layer": 4,
+        "available_ram_gib": 0.177967,
+        "expert_buffer_allocs": 202,
+        "expert_buffer_reuses": 18566,
+        "expert_compute_seconds": 126.543486658,
+        "process_page_faults": 0,
+        "private_gib": 0.0,
+        "peak_rss_gib": 0.0,
+        "forward": 2371,
+        "tokens_emitted": 1191,
+        "cache_hits": 250,
+        "cache_misses": 18768,
+        "cache_requests": 19018,
+        "expert_loads": 18768,
+        "expert_bytes_estimate": 14031360,
+        "disk_seconds": 416.965712776,
+        "async_batches": 0,
+        "async_wait_seconds": 0.0,
+        "attention_seconds": 194.284149768,
+        "moe_seconds": 673.437629453,
+        "head_seconds": 7.100410479,
+        "rss_gb": 3.401917,
+        "resident_gb": 1.807843,
+        "gpu_router_calls": 0,
+        "gpu_router_seconds": 0.0,
+        "gpu_dense_calls": 0,
+        "gpu_dense_seconds": 0.0,
+        "gpu_dense_fallbacks": 0,
+        "prefetch_issued": 0,
+        "prefetch_read_seconds": 0.0,
+        "predict_hits_a": 0,
+        "predict_hits_b": 0,
+        "predict_total": 0
+      },
+      "total_seconds": 577.65,
+      "completion_tokens": 1024,
+      "prompt_tokens": 1347,
+      "canonical_prompt_tokens": 1347,
+      "exact_history_cache_tokens": 1265,
+      "cache_saved_prefill_tokens": 193,
+      "reasoning_effort": "medium"
+    },
+    {
+      "prefill_seconds": 78.32435397500001,
+      "prefill_tokens": 312,
+      "prefill_tokens_per_s": 3.9834353450216247,
+      "decode_seconds": 861.008808756,
+      "decode_tokens": 1693,
+      "decode_tokens_per_s": 1.9662981177231798,
+      "native_counters": {
+        "position": 3077,
+        "capacity": 8192,
+        "prefill_tokens": 1492,
+        "decode_tokens": 2884,
+        "prefill_seconds": 310.682666316,
+        "decode_seconds": 1504.068887375,
+        "gpu_dense_host_released_bytes": 0,
+        "expert_slots_per_layer": 4,
+        "available_ram_gib": 0.155025,
+        "expert_buffer_allocs": 202,
+        "expert_buffer_reuses": 40690,
+        "expert_compute_seconds": 164.286963789,
+        "process_page_faults": 0,
+        "private_gib": 0.0,
+        "peak_rss_gib": 0.0,
+        "forward": 4376,
+        "tokens_emitted": 2884,
+        "cache_hits": 506,
+        "cache_misses": 40892,
+        "cache_requests": 41398,
+        "expert_loads": 40892,
+        "expert_bytes_estimate": 14031360,
+        "disk_seconds": 864.411995676,
+        "async_batches": 0,
+        "async_wait_seconds": 0.0,
+        "attention_seconds": 434.024368213,
+        "moe_seconds": 1360.609075308,
+        "head_seconds": 18.65033015,
+        "rss_gb": 3.482918,
+        "resident_gb": 1.807843,
+        "gpu_router_calls": 0,
+        "gpu_router_seconds": 0.0,
+        "gpu_dense_calls": 0,
+        "gpu_dense_seconds": 0.0,
+        "gpu_dense_fallbacks": 0,
+        "prefetch_issued": 0,
+        "prefetch_read_seconds": 0.0,
+        "predict_hits_a": 0,
+        "predict_hits_b": 0,
+        "predict_total": 0
+      },
+      "total_seconds": 939.35,
+      "completion_tokens": 1693,
+      "prompt_tokens": 1384,
+      "canonical_prompt_tokens": 1384,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 0,
+      "reasoning_effort": "medium"
+    },
+    {
+      "prefill_seconds": 29.12612303000003,
+      "prefill_tokens": 58,
+      "prefill_tokens_per_s": 1.991339525011954,
+      "decode_seconds": 274.180254248,
+      "decode_tokens": 564,
+      "decode_tokens_per_s": 2.0570409110856462,
+      "native_counters": {
+        "position": 3699,
+        "capacity": 8192,
+        "prefill_tokens": 1550,
+        "decode_tokens": 3448,
+        "prefill_seconds": 339.808789346,
+        "decode_seconds": 1778.249141623,
+        "gpu_dense_host_released_bytes": 0,
+        "expert_slots_per_layer": 4,
+        "available_ram_gib": 0.192833,
+        "expert_buffer_allocs": 202,
+        "expert_buffer_reuses": 46786,
+        "expert_compute_seconds": 172.408058652,
+        "process_page_faults": 0,
+        "private_gib": 0.0,
+        "peak_rss_gib": 0.0,
+        "forward": 4998,
+        "tokens_emitted": 3448,
+        "cache_hits": 639,
+        "cache_misses": 46988,
+        "cache_requests": 47627,
+        "expert_loads": 46988,
+        "expert_bytes_estimate": 14031360,
+        "disk_seconds": 981.236805125,
+        "async_batches": 0,
+        "async_wait_seconds": 0.0,
+        "attention_seconds": 544.358818841,
+        "moe_seconds": 1549.347434124,
+        "head_seconds": 22.586635497,
+        "rss_gb": 3.532959,
+        "resident_gb": 1.807843,
+        "gpu_router_calls": 0,
+        "gpu_router_seconds": 0.0,
+        "gpu_dense_calls": 0,
+        "gpu_dense_seconds": 0.0,
+        "gpu_dense_fallbacks": 0,
+        "prefetch_issued": 0,
+        "prefetch_read_seconds": 0.0,
+        "predict_hits_a": 0,
+        "predict_hits_b": 0,
+        "predict_total": 0
+      },
+      "total_seconds": 303.31,
+      "completion_tokens": 564,
+      "prompt_tokens": 3135,
+      "canonical_prompt_tokens": 3136,
+      "exact_history_cache_tokens": 3077,
+      "cache_saved_prefill_tokens": 1118,
+      "reasoning_effort": "medium"
+    },
+    {
+      "prefill_seconds": 30.68727384699997,
+      "prefill_tokens": 60,
+      "prefill_tokens_per_s": 1.9552078916865299,
+      "decode_seconds": 23.806242254999916,
+      "decode_tokens": 41,
+      "decode_tokens_per_s": 1.722237367864681,
+      "native_counters": {
+        "position": 3800,
+        "capacity": 8192,
+        "prefill_tokens": 1610,
+        "decode_tokens": 3489,
+        "prefill_seconds": 370.496063193,
+        "decode_seconds": 1802.055383878,
+        "gpu_dense_host_released_bytes": 0,
+        "expert_slots_per_layer": 4,
+        "available_ram_gib": 0.17992,
+        "expert_buffer_allocs": 202,
+        "expert_buffer_reuses": 47854,
+        "expert_compute_seconds": 180.937507093,
+        "process_page_faults": 0,
+        "private_gib": 0.0,
+        "peak_rss_gib": 0.0,
+        "forward": 5099,
+        "tokens_emitted": 3489,
+        "cache_hits": 669,
+        "cache_misses": 48056,
+        "cache_requests": 48725,
+        "expert_loads": 48056,
+        "expert_bytes_estimate": 14031360,
+        "disk_seconds": 1002.069446356,
+        "async_batches": 0,
+        "async_wait_seconds": 0.0,
+        "attention_seconds": 564.123983955,
+        "moe_seconds": 1583.744064106,
+        "head_seconds": 22.896671936,
+        "rss_gb": 3.539673,
+        "resident_gb": 1.807843,
+        "gpu_router_calls": 0,
+        "gpu_router_seconds": 0.0,
+        "gpu_dense_calls": 0,
+        "gpu_dense_seconds": 0.0,
+        "gpu_dense_fallbacks": 0,
+        "prefetch_issued": 0,
+        "prefetch_read_seconds": 0.0,
+        "predict_hits_a": 0,
+        "predict_hits_b": 0,
+        "predict_total": 0
+      },
+      "total_seconds": 54.49,
+      "completion_tokens": 41,
+      "prompt_tokens": 3759,
+      "canonical_prompt_tokens": 3760,
+      "exact_history_cache_tokens": 3699,
+      "cache_saved_prefill_tokens": 1740,
+      "reasoning_effort": "medium"
+    },
+    {
+      "prefill_seconds": 56.73309894900001,
+      "prefill_tokens": 134,
+      "prefill_tokens_per_s": 2.3619369024854215,
+      "decode_seconds": 36.77186696800004,
+      "decode_tokens": 56,
+      "decode_tokens_per_s": 1.5229033665528282,
+      "native_counters": {
+        "position": 3990,
+        "capacity": 8192,
+        "prefill_tokens": 1744,
+        "decode_tokens": 3545,
+        "prefill_seconds": 427.229162142,
+        "decode_seconds": 1838.827250846,
+        "gpu_dense_host_released_bytes": 0,
+        "expert_slots_per_layer": 4,
+        "available_ram_gib": 0.564552,
+        "expert_buffer_allocs": 202,
+        "expert_buffer_reuses": 49236,
+        "expert_compute_seconds": 198.252391151,
+        "process_page_faults": 0,
+        "private_gib": 0.0,
+        "peak_rss_gib": 0.0,
+        "forward": 5289,
+        "tokens_emitted": 3545,
+        "cache_hits": 694,
+        "cache_misses": 49438,
+        "cache_requests": 50132,
+        "expert_loads": 49438,
+        "expert_bytes_estimate": 14031360,
+        "disk_seconds": 1032.697502333,
+        "async_batches": 0,
+        "async_wait_seconds": 0.0,
+        "attention_seconds": 602.398026051,
+        "moe_seconds": 1638.558430296,
+        "head_seconds": 23.28414265,
+        "rss_gb": 3.55249,
+        "resident_gb": 1.807843,
+        "gpu_router_calls": 0,
+        "gpu_router_seconds": 0.0,
+        "gpu_dense_calls": 0,
+        "gpu_dense_seconds": 0.0,
+        "gpu_dense_fallbacks": 0,
+        "prefetch_issued": 0,
+        "prefetch_read_seconds": 0.0,
+        "predict_hits_a": 0,
+        "predict_hits_b": 0,
+        "predict_total": 0
+      },
+      "total_seconds": 93.51,
+      "completion_tokens": 56,
+      "prompt_tokens": 3934,
+      "canonical_prompt_tokens": 3935,
+      "exact_history_cache_tokens": 3800,
+      "cache_saved_prefill_tokens": 1841,
+      "reasoning_effort": "medium"
+    },
+    {
+      "prefill_seconds": 60.731484341,
+      "prefill_tokens": 130,
+      "prefill_tokens_per_s": 2.140570108085381,
+      "decode_seconds": 82.49518700900012,
+      "decode_tokens": 133,
+      "decode_tokens_per_s": 1.612215267606944,
+      "native_counters": {
+        "position": 4253,
+        "capacity": 8192,
+        "prefill_tokens": 1874,
+        "decode_tokens": 3678,
+        "prefill_seconds": 487.960646483,
+        "decode_seconds": 1921.322437855,
+        "gpu_dense_host_released_bytes": 0,
+        "expert_slots_per_layer": 4,
+        "available_ram_gib": 0.180435,
+        "expert_buffer_allocs": 202,
+        "expert_buffer_reuses": 51241,
+        "expert_compute_seconds": 214.626430077,
+        "process_page_faults": 0,
+        "private_gib": 0.0,
+        "peak_rss_gib": 0.0,
+        "forward": 5552,
+        "tokens_emitted": 3678,
+        "cache_hits": 751,
+        "cache_misses": 51443,
+        "cache_requests": 52194,
+        "expert_loads": 51443,
+        "expert_bytes_estimate": 14031360,
+        "disk_seconds": 1088.447898553,
+        "async_batches": 0,
+        "async_wait_seconds": 0.0,
+        "attention_seconds": 657.889555135,
+        "moe_seconds": 1725.349376469,
+        "head_seconds": 24.16078932,
+        "rss_gb": 3.570557,
+        "resident_gb": 1.807843,
+        "gpu_router_calls": 0,
+        "gpu_router_seconds": 0.0,
+        "gpu_dense_calls": 0,
+        "gpu_dense_seconds": 0.0,
+        "gpu_dense_fallbacks": 0,
+        "prefetch_issued": 0,
+        "prefetch_read_seconds": 0.0,
+        "predict_hits_a": 0,
+        "predict_hits_b": 0,
+        "predict_total": 0
+      },
+      "total_seconds": 143.23,
+      "completion_tokens": 133,
+      "prompt_tokens": 4120,
+      "canonical_prompt_tokens": 4121,
+      "exact_history_cache_tokens": 3990,
+      "cache_saved_prefill_tokens": 2031,
+      "reasoning_effort": "medium"
+    },
+    {
+      "prefill_seconds": 26.976420563000033,
+      "prefill_tokens": 37,
+      "prefill_tokens_per_s": 1.371568177979401,
+      "decode_seconds": 389.64800226600005,
+      "decode_tokens": 572,
+      "decode_tokens_per_s": 1.4679916146715264,
+      "native_counters": {
+        "position": 4862,
+        "capacity": 8192,
+        "prefill_tokens": 1911,
+        "decode_tokens": 4250,
+        "prefill_seconds": 514.937067046,
+        "decode_seconds": 2310.970440121,
+        "gpu_dense_host_released_bytes": 0,
+        "expert_slots_per_layer": 4,
+        "available_ram_gib": 0.212162,
+        "expert_buffer_allocs": 202,
+        "expert_buffer_reuses": 58707,
+        "expert_compute_seconds": 220.274453695,
+        "process_page_faults": 0,
+        "private_gib": 0.0,
+        "peak_rss_gib": 0.0,
+        "forward": 6161,
+        "tokens_emitted": 4250,
+        "cache_hits": 910,
+        "cache_misses": 58909,
+        "cache_requests": 59819,
+        "expert_loads": 58909,
+        "expert_bytes_estimate": 14031360,
+        "disk_seconds": 1278.866673585,
+        "async_batches": 0,
+        "async_wait_seconds": 0.0,
+        "attention_seconds": 805.645689619,
+        "moe_seconds": 1989.996634057,
+        "head_seconds": 28.090248464,
+        "rss_gb": 3.666084,
+        "resident_gb": 1.807843,
+        "gpu_router_calls": 0,
+        "gpu_router_seconds": 0.0,
+        "gpu_dense_calls": 0,
+        "gpu_dense_seconds": 0.0,
+        "gpu_dense_fallbacks": 0,
+        "prefetch_issued": 0,
+        "prefetch_read_seconds": 0.0,
+        "predict_hits_a": 0,
+        "predict_hits_b": 0,
+        "predict_total": 0
+      },
+      "total_seconds": 416.63,
+      "completion_tokens": 572,
+      "prompt_tokens": 4290,
+      "canonical_prompt_tokens": 4291,
+      "exact_history_cache_tokens": 4253,
+      "cache_saved_prefill_tokens": 2294,
+      "reasoning_effort": "medium"
+    },
+    {
+      "prefill_seconds": 37.08601995699996,
+      "prefill_tokens": 62,
+      "prefill_tokens_per_s": 1.671788994124659,
+      "decode_seconds": 36.00915257099996,
+      "decode_tokens": 49,
+      "decode_tokens_per_s": 1.3607651527868014,
+      "native_counters": {
+        "position": 4973,
+        "capacity": 8192,
+        "prefill_tokens": 1973,
+        "decode_tokens": 4299,
+        "prefill_seconds": 552.023087003,
+        "decode_seconds": 2346.979592692,
+        "gpu_dense_host_released_bytes": 0,
+        "expert_slots_per_layer": 4,
+        "available_ram_gib": 0.191483,
+        "expert_buffer_allocs": 202,
+        "expert_buffer_reuses": 59921,
+        "expert_compute_seconds": 228.901520181,
+        "process_page_faults": 0,
+        "private_gib": 0.0,
+        "peak_rss_gib": 0.0,
+        "forward": 6272,
+        "tokens_emitted": 4299,
+        "cache_hits": 947,
+        "cache_misses": 60123,
+        "cache_requests": 61070,
+        "expert_loads": 60123,
+        "expert_bytes_estimate": 14031360,
+        "disk_seconds": 1307.098331307,
+        "async_batches": 0,
+        "async_wait_seconds": 0.0,
+        "attention_seconds": 835.388824954,
+        "moe_seconds": 2032.965293788,
+        "head_seconds": 28.447914592,
+        "rss_gb": 3.669136,
+        "resident_gb": 1.807843,
+        "gpu_router_calls": 0,
+        "gpu_router_seconds": 0.0,
+        "gpu_dense_calls": 0,
+        "gpu_dense_seconds": 0.0,
+        "gpu_dense_fallbacks": 0,
+        "prefetch_issued": 0,
+        "prefetch_read_seconds": 0.0,
+        "predict_hits_a": 0,
+        "predict_hits_b": 0,
+        "predict_total": 0
+      },
+      "total_seconds": 73.1,
+      "completion_tokens": 49,
+      "prompt_tokens": 4924,
+      "canonical_prompt_tokens": 4925,
+      "exact_history_cache_tokens": 4862,
+      "cache_saved_prefill_tokens": 2903,
+      "reasoning_effort": "medium"
+    },
+    {
+      "prefill_seconds": 77.09405220099995,
+      "prefill_tokens": 157,
+      "prefill_tokens_per_s": 2.0364735737417057,
+      "decode_seconds": 105.79293652499973,
+      "decode_tokens": 164,
+      "decode_tokens_per_s": 1.5501980130898954,
+      "native_counters": {
+        "position": 5294,
+        "capacity": 8192,
+        "prefill_tokens": 2130,
+        "decode_tokens": 4463,
+        "prefill_seconds": 629.117139204,
+        "decode_seconds": 2452.772529217,
+        "gpu_dense_host_released_bytes": 0,
+        "expert_slots_per_layer": 4,
+        "available_ram_gib": 0.193111,
+        "expert_buffer_allocs": 202,
+        "expert_buffer_reuses": 62101,
+        "expert_compute_seconds": 248.301716955,
+        "process_page_faults": 0,
+        "private_gib": 0.0,
+        "peak_rss_gib": 0.0,
+        "forward": 6593,
+        "tokens_emitted": 4463,
+        "cache_hits": 1004,
+        "cache_misses": 62303,
+        "cache_requests": 63307,
+        "expert_loads": 62303,
+        "expert_bytes_estimate": 14031360,
+        "disk_seconds": 1360.276840031,
+        "async_batches": 0,
+        "async_wait_seconds": 0.0,
+        "attention_seconds": 926.738683468,
+        "moe_seconds": 2123.329292542,
+        "head_seconds": 29.535200415,
+        "rss_gb": 3.679878,
+        "resident_gb": 1.807843,
+        "gpu_router_calls": 0,
+        "gpu_router_seconds": 0.0,
+        "gpu_dense_calls": 0,
+        "gpu_dense_seconds": 0.0,
+        "gpu_dense_fallbacks": 0,
+        "prefetch_issued": 0,
+        "prefetch_read_seconds": 0.0,
+        "predict_hits_a": 0,
+        "predict_hits_b": 0,
+        "predict_total": 0
+      },
+      "total_seconds": 182.89,
+      "completion_tokens": 164,
+      "prompt_tokens": 5130,
+      "canonical_prompt_tokens": 5131,
+      "exact_history_cache_tokens": 4973,
+      "cache_saved_prefill_tokens": 3014,
+      "reasoning_effort": "medium"
+    },
+    {
+      "prefill_seconds": 48.545184726,
+      "prefill_tokens": 82,
+      "prefill_tokens_per_s": 1.689147965196271,
+      "decode_seconds": 25.037876888000028,
+      "decode_tokens": 32,
+      "decode_tokens_per_s": 1.278063637070471,
+      "native_counters": {
+        "position": 5408,
+        "capacity": 8192,
+        "prefill_tokens": 2212,
+        "decode_tokens": 4495,
+        "prefill_seconds": 677.66232393,
+        "decode_seconds": 2477.810406105,
+        "gpu_dense_host_released_bytes": 0,
+        "expert_slots_per_layer": 4,
+        "available_ram_gib": 0.161419,
+        "expert_buffer_allocs": 202,
+        "expert_buffer_reuses": 63162,
+        "expert_compute_seconds": 259.169048174,
+        "process_page_faults": 0,
+        "private_gib": 0.0,
+        "peak_rss_gib": 0.0,
+        "forward": 6707,
+        "tokens_emitted": 4495,
+        "cache_hits": 1025,
+        "cache_misses": 63364,
+        "cache_requests": 64389,
+        "expert_loads": 63364,
+        "expert_bytes_estimate": 14031360,
+        "disk_seconds": 1384.773018363,
+        "async_batches": 0,
+        "async_wait_seconds": 0.0,
+        "attention_seconds": 961.034554717,
+        "moe_seconds": 2162.390336317,
+        "head_seconds": 29.744572729,
+        "rss_gb": 3.683296,
+        "resident_gb": 1.807843,
+        "gpu_router_calls": 0,
+        "gpu_router_seconds": 0.0,
+        "gpu_dense_calls": 0,
+        "gpu_dense_seconds": 0.0,
+        "gpu_dense_fallbacks": 0,
+        "prefetch_issued": 0,
+        "prefetch_read_seconds": 0.0,
+        "predict_hits_a": 0,
+        "predict_hits_b": 0,
+        "predict_total": 0
+      },
+      "total_seconds": 73.58,
+      "completion_tokens": 32,
+      "prompt_tokens": 5376,
+      "canonical_prompt_tokens": 5377,
+      "exact_history_cache_tokens": 5294,
+      "cache_saved_prefill_tokens": 3335,
+      "reasoning_effort": "medium"
+    },
+    {
+      "prefill_seconds": 46.60129109700006,
+      "prefill_tokens": 77,
+      "prefill_tokens_per_s": 1.6523147360815686,
+      "decode_seconds": 71.12927964000028,
+      "decode_tokens": 99,
+      "decode_tokens_per_s": 1.3918318939972272,
+      "native_counters": {
+        "position": 5584,
+        "capacity": 8192,
+        "prefill_tokens": 2289,
+        "decode_tokens": 4594,
+        "prefill_seconds": 724.263615027,
+        "decode_seconds": 2548.939685745,
+        "gpu_dense_host_released_bytes": 0,
+        "expert_slots_per_layer": 4,
+        "available_ram_gib": 0.166531,
+        "expert_buffer_allocs": 202,
+        "expert_buffer_reuses": 64948,
+        "expert_compute_seconds": 269.417943482,
+        "process_page_faults": 0,
+        "private_gib": 0.0,
+        "peak_rss_gib": 0.0,
+        "forward": 6883,
+        "tokens_emitted": 4594,
+        "cache_hits": 1068,
+        "cache_misses": 65150,
+        "cache_requests": 66218,
+        "expert_loads": 65150,
+        "expert_bytes_estimate": 14031360,
+        "disk_seconds": 1427.259175967,
+        "async_batches": 0,
+        "async_wait_seconds": 0.0,
+        "attention_seconds": 1013.89256706,
+        "moe_seconds": 2226.550809513,
+        "head_seconds": 30.407723271,
+        "rss_gb": 3.688911,
+        "resident_gb": 1.807843,
+        "gpu_router_calls": 0,
+        "gpu_router_seconds": 0.0,
+        "gpu_dense_calls": 0,
+        "gpu_dense_seconds": 0.0,
+        "gpu_dense_fallbacks": 0,
+        "prefetch_issued": 0,
+        "prefetch_read_seconds": 0.0,
+        "predict_hits_a": 0,
+        "predict_hits_b": 0,
+        "predict_total": 0
+      },
+      "total_seconds": 117.73,
+      "completion_tokens": 99,
+      "prompt_tokens": 5485,
+      "canonical_prompt_tokens": 5486,
+      "exact_history_cache_tokens": 5408,
+      "cache_saved_prefill_tokens": 3449,
+      "reasoning_effort": "medium"
+    }
+  ],
+  "tool_calls": [
+    {
+      "name": "inspect_project",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 1
+    },
+    {
+      "name": "read_file",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 2
+    },
+    {
+      "name": "apply_patch",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 4
+    },
+    {
+      "name": "apply_patch",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 5
+    },
+    {
+      "name": "run_checks",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 6
+    },
+    {
+      "name": "run_checks",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 7
+    },
+    {
+      "name": "apply_patch",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 8
+    },
+    {
+      "name": "apply_patch",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 9
+    },
+    {
+      "name": "run_checks",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 10
+    },
+    {
+      "name": "list_directory",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 11
+    },
+    {
+      "name": "list_directory",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 12
+    },
+    {
+      "name": "run_checks",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 13
+    }
+  ],
+  "independent_checks": [
+    {
+      "check": "exact decimals and negatives",
+      "passed": true,
+      "exit_code": 0,
+      "actual": {
+        "food": "[local detail omitted from GitHub snapshot]"
+      },
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "quoted category and sorted keys",
+      "passed": true,
+      "exit_code": 0,
+      "actual": {
+        "a,b": "[local detail omitted from GitHub snapshot]",
+        "z": "[local detail omitted from GitHub snapshot]"
+      },
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "large exact monetary values",
+      "passed": true,
+      "exit_code": 0,
+      "actual": {
+        "x": "[local detail omitted from GitHub snapshot]"
+      },
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "empty dataset",
+      "passed": true,
+      "exit_code": 0,
+      "actual": {},
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "reject 'bad'",
+      "passed": true,
+      "exit_code": 1,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "reject 'NaN'",
+      "passed": true,
+      "exit_code": 1,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "reject 'Infinity'",
+      "passed": true,
+      "exit_code": 1,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "reject '1.234'",
+      "passed": true,
+      "exit_code": 1,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "reject ''",
+      "passed": true,
+      "exit_code": 1,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "exact totals beyond default Decimal precision",
+      "passed": false,
+      "actual": null,
+      "exit_code": 1,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "many repeated signed amounts",
+      "passed": true,
+      "actual": {
+        "x": "[local detail omitted from GitHub snapshot]"
+      },
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "clear_error_checks": [
+    {
+      "value": "[local detail omitted from GitHub snapshot]",
+      "passed": true,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "value": "[local detail omitted from GitHub snapshot]",
+      "passed": true,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "value": "[local detail omitted from GitHub snapshot]",
+      "passed": true,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "value": "[local detail omitted from GitHub snapshot]",
+      "passed": true,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "value": "[local detail omitted from GitHub snapshot]",
+      "passed": true,
+      "output": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "checks": {
+    "independent_cli_checks": false,
+    "clear_invalid_amount_errors": true,
+    "native_verified": false,
+    "own_tests_created": true
+  },
+  "errors": [],
+  "harness_continuations": [
+    {
+      "message": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "generated_files": [
+    {
+      "path": "/mnt/GameDrive/tiny_dancer/workspace/native-coding-20261010T234646Z/summarize.py",
+      "bytes": 3514
+    },
+    {
+      "path": "/mnt/GameDrive/tiny_dancer/workspace/native-coding-20261010T234646Z/tests/test_summarize_unittest.py",
+      "bytes": 1258
+    },
+    {
+      "path": "/mnt/GameDrive/tiny_dancer/workspace/native-coding-20261010T234646Z/tests/test_summarize.py",
+      "bytes": 1346
+    }
+  ],
+  "resources": {
+    "minimum_available_ram_gib": 4.422,
+    "maximum_observed_model_uss_gib": 3.674,
+    "worker_nice_values": [
+      5
+    ],
+    "scope": "20-second observations, not continuous peaks."
+  },
+  "passed": false,
+  "archive_metadata": {
+    "source": "hardening-coding-validation.json",
+    "kind": "native",
+    "title": "Fresh CSV implementation after hardening",
+    "scope": "Frozen initial prompt, no operator code/recovery notes during native execution. Original CSV goal and input only in a fresh folder; no implementation or tests supplied. Independent/friendly-error checks run after termination.",
+    "source_sha256": "72f75ca833d9eb378f556c35b916415f43030d6bbb3a5f92dc9f4874c8a80265"
+  }
+}

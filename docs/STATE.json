@@ -1,0 +1,316 @@
+{
+  "root": "/mnt/GameDrive/tiny_dancer",
+  "requested_model": "[local detail omitted from GitHub snapshot]",
+  "no_ollama": true,
+  "hardware": {
+    "cpu": "[local detail omitted from GitHub snapshot]",
+    "ram_gib": 15.24,
+    "gpu": "[local detail omitted from GitHub snapshot]",
+    "vram_gib": 8,
+    "game_drive_free_gib": 58.32
+  },
+  "installed": {
+    "colibri": "[local detail omitted from GitHub snapshot]",
+    "gpt_oss_original": "[local detail omitted from GitHub snapshot]",
+    "gpt_oss_serving": "[local detail omitted from GitHub snapshot]",
+    "picchio": "[local detail omitted from GitHub snapshot]",
+    "cuda": "[local detail omitted from GitHub snapshot]",
+    "workspace_url": "[local detail omitted from GitHub snapshot]",
+    "service": "[local detail omitted from GitHub snapshot]",
+    "database": "[local detail omitted from GitHub snapshot]",
+    "llama_cpp": "[local detail omitted from GitHub snapshot]",
+    "pi_comparison": "[local detail omitted from GitHub snapshot]"
+  },
+  "preferences": {
+    "open_source_tools": true,
+    "local_inference_only": true,
+    "no_hosted_ai_api_dependency": true,
+    "license_archive_for_every_added_dependency": true,
+    "keep_all_existing_apps_open": true,
+    "github_repository": "[local detail omitted from GitHub snapshot]"
+  },
+  "licensing": {
+    "project": "[local detail omitted from GitHub snapshot]",
+    "colibri": "[local detail omitted from GitHub snapshot]",
+    "gpt_oss": "[local detail omitted from GitHub snapshot]",
+    "picchio": "[local detail omitted from GitHub snapshot]",
+    "license": "LICENSE",
+    "notice": "[local detail omitted from GitHub snapshot]",
+    "index": "[local detail omitted from GitHub snapshot]",
+    "inventory": "[local detail omitted from GitHub snapshot]",
+    "validation": "[local detail omitted from GitHub snapshot]",
+    "refresh": "[local detail omitted from GitHub snapshot]",
+    "check": ".venv/bin/python scripts/collect_licenses.py --check",
+    "texts": null,
+    "python_distributions": 45,
+    "direct_host_dependencies": 29,
+    "scope": "Pinned Colibri/GPT-OSS/Picchio source licenses and notices, both original and converted model license/policy files, every project venv distribution and shipped bundled notices, plus direct external host tools. The entire OS dependency tree is outside this inventory.",
+    "native_rust_toolchain_archive": {
+      "texts": 241,
+      "python_distributions": 45,
+      "direct_host_dependencies": 28,
+      "existing_tools_only": true,
+      "check_passed": true
+    },
+    "archived_evidence_files": 523,
+    "npm_packages": 121,
+    "pi_index": "[local detail omitted from GitHub snapshot]"
+  },
+  "updated_at": "2026-10-12T05:59:31.316168+00:00",
+  "phase": "GitHub publication preparation; fresh labels test running with all user apps open",
+  "user_objective": "[local detail omitted from GitHub snapshot]",
+  "current_runtime_sha256": "391b59aeebf13b0bd5b8f1b42d664d65f2745b601f42affefe53a64f760b2545",
+  "current_regressions": {
+    "tests": 617,
+    "status": "passed",
+    "seconds": 51.576,
+    "report": "docs/validation/runs/20261012T054640463797Z.json",
+    "scope": "Scripted-model regression fixtures plus actual file, shell, browser and desktop tool checks. No native generation in this suite."
+  },
+  "current_setup": {
+    "backend": "llama.cpp",
+    "native_tool_protocol": "[local detail omitted from GitHub snapshot]",
+    "work_reasoning_effort": "high",
+    "chat_auto_effort": "low",
+    "model": "original GPT-OSS-20B MXFP4",
+    "context": 32768,
+    "kv": "[local detail omitted from GitHub snapshot]",
+    "threads": 8,
+    "cpu_expert_layers": 16,
+    "batch": 512,
+    "microbatch": 512,
+    "sampler": {
+      "temperature": 1,
+      "top_p": 1,
+      "top_k": 0,
+      "min_p": 0,
+      "repeat_penalty": 1
+    },
+    "min_start_available_ram_gib": 4.5,
+    "min_running_available_ram_gib": 1.5,
+    "pressure_seconds": 6,
+    "chat_template": "app/templates/gpt-oss-agent.jinja",
+    "chat_template_sha256": "6cc2ca90bf0ccc1cb0775e66a83d352e2e5a0915f5b183c5460c17496f55d1b4"
+  },
+  "run_policy": {
+    "aggregate_deadline_seconds": null,
+    "default_agent_continuous": true,
+    "native_observation": "[local detail omitted from GitHub snapshot]",
+    "guards": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ]
+  },
+  "native_release_qualified": false,
+  "last_evaluation": {
+    "case": "labels",
+    "job": "ee6707ab8e07465389ff29c4d529abec",
+    "status": "cancelled",
+    "passed": false,
+    "checks": {
+      "native_verified": false,
+      "acceptance_unchanged": true,
+      "runtime_frozen": true,
+      "all_seeded_behavior_tests": false,
+      "all_independent_behavior_checks": false,
+      "additional_nonempty_passing_project_tests": false
+    },
+    "job_elapsed_seconds": 1263.46,
+    "report": "docs/native-labels-20261012T052428411538Z.json"
+  },
+  "active_evaluation": {
+    "case": "labels",
+    "job": "5f0a8b9fa2fa4a958aa5cacacb343022",
+    "report": "docs/native-labels-20261012T055302670443Z.json",
+    "observer_session": 26863,
+    "log": "[local detail omitted from GitHub snapshot]",
+    "status": "running"
+  },
+  "last_native_failure": {
+    "report": "docs/native-inventory-20261012T021158830837Z.json",
+    "status": "complete",
+    "passed": false,
+    "seconds": 1077.26,
+    "project_tests": 8,
+    "independent_passed": 6,
+    "independent_total": 7,
+    "cause": "[local detail omitted from GitHub snapshot]"
+  },
+  "backups": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "history_archive": "[local detail omitted from GitHub snapshot]",
+  "next": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "handoff": "docs/RESUME_HERE.md",
+  "native_current_default_labels": {
+    "passed": true,
+    "report": "docs/native-labels-20261012T020756703007Z.json",
+    "seconds": 182.55,
+    "project_tests": 11,
+    "independent_groups": 8,
+    "unicode_examples": 152,
+    "effort": "[local detail omitted from GitHub snapshot]",
+    "runtime_frozen": true,
+    "operator_interventions": []
+  },
+  "active_experiment": null,
+  "last_experiment": {
+    "report": "docs/native-regression-repair-inventory-20261012T033014199471Z.json",
+    "passed": true,
+    "scope": "Known-failure repair through the normal local Agent API. At task start an exact copy of the failed native project receives two calibrated public scan-error regression tests. No implementation/fix supplied; no live hints or operator edits. Original acceptance and supplied regression remain unchanged. Separate predeclared eight behavior checks include previously unseen pipe/socket handling. Seeded repair, not fresh implementation or a release-gate pass."
+  },
+  "pi_comparison": {
+    "adopted": false,
+    "passed": false,
+    "report": "docs/pi-labels-20261012T032058409927Z.json",
+    "seconds": 137.49,
+    "project_tests": 11,
+    "independent_groups_passed": 5,
+    "independent_groups_total": 8,
+    "failure": "[local detail omitted from GitHub snapshot]",
+    "inventory_attempted": false
+  },
+  "native_known_failure_repair": {
+    "passed": true,
+    "report": "docs/native-regression-repair-inventory-20261012T033014199471Z.json",
+    "seconds": 141.72,
+    "project_tests": 10,
+    "independent_checks": 8,
+    "scope": "Seeded existing implementation with real regression tests supplied before task; not fresh implementation"
+  },
+  "native_medium_labels": {
+    "passed": true,
+    "report": "docs/native-labels-20261012T033900484055Z.json",
+    "seconds": 131.48,
+    "project_tests": 12,
+    "independent_groups": 8,
+    "unicode_examples": 152,
+    "runtime_sha256": "960e43ef3ae74455757650649e6bc973251b1247a69698eb21b442fcb838cd87",
+    "operator_interventions": []
+  },
+  "last_native_medium_inventory": {
+    "passed": false,
+    "seconds": 476.19,
+    "project_tests": 9,
+    "independent_passed": 7,
+    "independent_total": 8,
+    "report": "docs/native-inventory-20261012T041546625894Z.json",
+    "reason": "[local detail omitted from GitHub snapshot]"
+  },
+  "last_protocol_fix": {
+    "stage": "[local detail omitted from GitHub snapshot]",
+    "issues": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "probe": "[local detail omitted from GitHub snapshot]",
+    "native_probe": "[local detail omitted from GitHub snapshot]",
+    "native_probe_passed": true,
+    "deployed": true
+  },
+  "requested_next_capability": "[local detail omitted from GitHub snapshot]",
+  "active_feedback": {
+    "job": "ab5ae357accb4768a9661e731b891b0f",
+    "report": "docs/native-agent-feedback-20261012T042654614528Z.json",
+    "workspace": "workspace/agent-feedback-20261012T042601878880Z",
+    "status": "cancelled",
+    "intervention": "[local detail omitted from GitHub snapshot]"
+  },
+  "last_native_medium_labels": {
+    "passed": true,
+    "seconds": 143.36,
+    "project_tests": 10,
+    "independent_groups": 8,
+    "unicode_examples": 152,
+    "report": "docs/native-labels-20261012T041238448162Z.json"
+  },
+  "performance_observation": {
+    "report": "docs/feedback-paging-observation.json",
+    "read_mib_in_10s": 267.53,
+    "cpu_seconds_in_10s": 1.09,
+    "gpu_thermal_flag": "[local detail omitted from GitHub snapshot]",
+    "model_mapping_gib": 7.319,
+    "resident_model_gib": 4.861,
+    "scope": "Observed paging during current task; no controlled speedup claim",
+    "next_hypothesis": "[local detail omitted from GitHub snapshot]"
+  },
+  "active_speed_probe": null,
+  "storage_cache_authorization": {
+    "at": "2026-10-12T04:59:14.011961+00:00",
+    "approved": true,
+    "user_reply": "[local detail omitted from GitHub snapshot]",
+    "scope": "Retain complete original model/project on GameDrive; test additional identical model cache on internal SSD. Implement configurable cache/fallback so feature is portable."
+  },
+  "last_batch_probe": {
+    "passed": true,
+    "report": "docs/prompt-batch-probe-20261012T045157003763Z.json",
+    "prefill_seconds": [
+      64.981779,
+      42.974125,
+      68.982993
+    ],
+    "same_tokens": 815,
+    "production_batch": 128
+  },
+  "model_cache": {
+    "enabled_in_config": true,
+    "deployed": true,
+    "directory": "~/.cache/tiny-dancer/models",
+    "report": "docs/model-cache-install-20261012T050801565147Z.json",
+    "installed": true,
+    "original_retained": true,
+    "native_speed_measured": true,
+    "probe": "[local detail omitted from GitHub snapshot]",
+    "prefill_seconds": [
+      69.019836,
+      29.858468000000002,
+      73.343541
+    ]
+  },
+  "performance_observation_after_cache": {
+    "report": "docs/ssd-coding-memory-observation.json",
+    "current_start_ram_gib": 4.696,
+    "prior_fast_start_ram_gib": 7.284,
+    "whole_task_speedup_established": false,
+    "apps_closed_by_maintainer": false,
+    "compressed_swap_research_only": true
+  },
+  "last_intervention": "[local detail omitted from GitHub snapshot]",
+  "pending_patch_compatibility": {
+    "stage": "[local detail omitted from GitHub snapshot]",
+    "validation": "[local detail omitted from GitHub snapshot]",
+    "deployed": true,
+    "regression_report": "docs/validation/runs/20261012T054640463797Z.json"
+  },
+  "github": {
+    "repository": "[local detail omitted from GitHub snapshot]",
+    "url": "https://github.com/Ethan-da-Tech-Wizard/tiny_dancer",
+    "visibility": "[local detail omitted from GitHub snapshot]",
+    "status": "preparing",
+    "checkout": "[local detail omitted from GitHub snapshot]",
+    "guide": "[local detail omitted from GitHub snapshot]",
+    "scope": "Code, exact licenses, documentation and public report views; complete raw runtime data remains local."
+  },
+  "publication_controls": {
+    "tests": 13,
+    "passed": true,
+    "report": "docs/github-export-validation.json",
+    "scope": "Stdlib export tests; does not change or validate model inference."
+  }
+}

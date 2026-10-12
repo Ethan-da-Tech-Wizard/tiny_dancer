@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-11T10:25:12.591457+00:00",
+  "passed": false,
+  "status": "failed",
+  "tests_run": 6,
+  "failures": 6,
+  "errors": 0,
+  "scope": "Isolated equivalent receipt-loss baseline; six actual fixture/runner preservation failures, no import/setup failures. Production/model unchanged.",
+  "log": "[local detail omitted from GitHub snapshot]",
+  "failed_tests": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "archive_metadata": {
+    "source": "test-environment-memory-red.json",
+    "kind": "regression",
+    "title": "test-environment-memory-red",
+    "scope": "Isolated equivalent receipt-loss baseline; six actual fixture/runner preservation failures, no import/setup failures. Production/model unchanged.",
+    "source_sha256": "cb22d16a7d884722c6be91651686689eaf01794535e8bd82df8c21e203b4f4b9"
+  }
+}

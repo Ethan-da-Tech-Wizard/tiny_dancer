@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-11T05:57:01.560098+00:00",
+  "job": "89c0f45d0a9c47f6acae3c2157ef4847",
+  "runtime_sha256": "cd50a07dac4e8971ec614a2d53272dc04437a6da2225f40f433f6a71b83669d2",
+  "scope": "Read-only observation of first three completed native steps of the running money replay, not a controlled speed comparison or full-task success. No benchmark, model hints or runtime changes.",
+  "completed_steps": 3,
+  "prefill_seconds": 786.699297272,
+  "decode_seconds": 69.556851623,
+  "prefill_share_of_recorded_inference": 0.9187663040869682,
+  "prefill_new_tokens": 3517,
+  "decode_tokens": 117,
+  "cumulative_native_counters": {
+    "attention_seconds": 348.184741671,
+    "moe_seconds": 507.238743025,
+    "expert_compute_seconds": 368.428889136,
+    "disk_seconds": 123.717183179,
+    "head_seconds": 0.76865206,
+    "cache_hits": 110,
+    "cache_misses": 5395,
+    "expert_loads": 5395
+  },
+  "limits": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "started_at": "2026-10-12T01:20:15.193821+00:00",
+  "scope": "Post-pass diagnostic declared AFTER the native trial. Original 12 project tests and four independent passes are preserved; this is not a predeclared pass/fail criterion of that completed trial. No product edits or hints.",
+  "original_report": "docs/native-labels-20261012T010612854536Z.json",
+  "criteria": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "source_sha256": "5aacd5a7737572b55c344e2f2759f302e27416e05eacf3db1af3b6f9afb6f126",
+  "checks": [
+    {
+      "check": "Already lowercase text retains combining marks",
+      "passed": false,
+      "examples": 2,
+      "failed_examples": 2,
+      "counterexamples": [
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": "[local detail omitted from GitHub snapshot]"
+        },
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": "[local detail omitted from GitHub snapshot]"
+        }
+      ],
+      "error": null
+    },
+    {
+      "check": "Unicode lowercase expansions follow Python str.lower",
+      "passed": false,
+      "examples": 2,
+      "failed_examples": 2,
+      "counterexamples": [
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": "[local detail omitted from GitHub snapshot]"
+        },
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": "[local detail omitted from GitHub snapshot]"
+        }
+      ],
+      "error": null
+    },
+    {
+      "check": "Lowercase does not introduce casefolding or accent removal",
+      "passed": true,
+      "examples": 4,
+      "failed_examples": 0,
+      "counterexamples": [],
+      "error": null
+    },
+    {
+      "check": "Whitespace and letter transformations compose across mixed inputs",
+      "passed": false,
+      "examples": 144,
+      "failed_examples": 80,
+      "counterexamples": [
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": "[local detail omitted from GitHub snapshot]"
+        },
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": "[local detail omitted from GitHub snapshot]"
+        },
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": "[local detail omitted from GitHub snapshot]"
+        }
+      ],
+      "error": null
+    }
+  ],
+  "passed": false,
+  "completed_at": "[local detail omitted from GitHub snapshot]",
+  "archive_metadata": {
+    "source": "labels-additional-goal-audit-validation.json",
+    "kind": "native",
+    "title": "Labels: original checks passed, broader Unicode goal failed",
+    "scope": "Post-pass diagnostic declared AFTER the native trial. Original 12 project tests and four independent passes are preserved; this is not a predeclared pass/fail criterion of that completed trial. No product edits or hints.",
+    "source_sha256": "a063a3b75e18317cc8c9aac3bf001c947f1d53beb94658fb45543e4872c0b90a"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-11T10:25:12.595991+00:00",
+  "passed": true,
+  "status": "passed",
+  "tests_run": 28,
+  "failures": 0,
+  "errors": 0,
+  "scope": "First isolated focused28 green, before strengthening the automatic recovery and legacy-history cases.",
+  "log": "[local detail omitted from GitHub snapshot]",
+  "failed_tests": [],
+  "archive_metadata": {
+    "source": "test-environment-memory-initial-green.json",
+    "kind": "regression",
+    "title": "test-environment-memory-initial-green",
+    "scope": "First isolated focused28 green, before strengthening the automatic recovery and legacy-history cases.",
+    "source_sha256": "538b9590bdb487b73b4982f1f18a80dc14daff7db4ddf97c33613c86e16faa78"
+  }
+}

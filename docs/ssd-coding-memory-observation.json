@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-12T05:31:45.008754+00:00",
+  "job": "ee6707ab8e07465389ff29c4d529abec",
+  "scope": "Read-only observation during native task. Different desktop memory conditions prevent comparison of whole-task speed against earlier coding runs. No claim of a controlled RAM experiment.",
+  "current_available_ram_gib": 4.123,
+  "earlier_labels_start_available_ram_gib": 7.284,
+  "current_labels_start_available_ram_gib": 4.696,
+  "earlier_labels_prefill_2000_tokens_seconds": 24.743268,
+  "current_labels_prefill_1998_tokens_seconds": 115.461379,
+  "owned_validation_browser_profiles_found": 0,
+  "other_apps_changed": false,
+  "model_selection": {
+    "kind": "cache",
+    "path": "/home/ethan/.cache/tiny-dancer/models/27cd6c432c7672cb812a92f611cf3ba7bbc35928262bb1e1253ff4ee6ae35901/gpt-oss-20b-MXFP4.gguf",
+    "sha256": "27cd6c432c7672cb812a92f611cf3ba7bbc35928262bb1e1253ff4ee6ae35901",
+    "reason": "[local detail omitted from GitHub snapshot]",
+    "verification_seconds": 13.839
+  },
+  "model_mapped_gib": 7.319,
+  "model_resident_gib": 3.851,
+  "physical_read_gib": 77.343
+}

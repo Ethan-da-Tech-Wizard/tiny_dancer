@@ -1,0 +1,19 @@
+{
+  "job": "89c0f45d0a9c47f6acae3c2157ef4847",
+  "scope": "Read-only inspection of the actual first saved checkpoint; no model hints or edited task files. This is not native completion.",
+  "message_id": 328,
+  "source_snapshots": [
+    {
+      "path": "/mnt/GameDrive/tiny_dancer/workspace/precision-repair-20261011T053407Z/summarize.py",
+      "chars": 3508,
+      "truncated": false
+    },
+    {
+      "path": "/mnt/GameDrive/tiny_dancer/workspace/precision-repair-20261011T053407Z/test_acceptance.py",
+      "chars": 1852,
+      "truncated": false
+    }
+  ],
+  "last_failed_tool": "[local detail omitted from GitHub snapshot]",
+  "failure_preview_chars": 1600
+}

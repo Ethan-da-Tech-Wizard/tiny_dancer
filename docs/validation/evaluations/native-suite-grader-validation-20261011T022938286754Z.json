@@ -1,0 +1,65 @@
+{
+  "at": "2026-10-11T02:29:38.286536+00:00",
+  "status": "passed",
+  "passed": true,
+  "checks": [
+    {
+      "test": "test_inventory_accepts_complete_fixture (tests.test_native_suite_grading.NativeSuiteGradingTests.test_inventory_accepts_complete_fixture)",
+      "status": "passed",
+      "log": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "test_inventory_rejects_silent_read_failure (tests.test_native_suite_grading.NativeSuiteGradingTests.test_inventory_rejects_silent_read_failure)",
+      "status": "passed",
+      "log": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "test_inventory_rejects_wrong_digest_and_missing_deliverable (tests.test_native_suite_grading.NativeSuiteGradingTests.test_inventory_rejects_wrong_digest_and_missing_deliverable)",
+      "status": "passed",
+      "log": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "test_ranges_accepts_signed_boundary_fixture_but_rejects_partial_error_output (tests.test_native_suite_grading.NativeSuiteGradingTests.test_ranges_accepts_signed_boundary_fixture_but_rejects_partial_error_output)",
+      "status": "passed",
+      "log": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "test_ranges_rejects_missing_binary (tests.test_native_suite_grading.NativeSuiteGradingTests.test_ranges_rejects_missing_binary)",
+      "status": "passed",
+      "log": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "test_changed_version_rejected (tests.test_rust_toolchain_licenses.RustLicenseTests.test_changed_version_rejected)",
+      "status": "passed",
+      "log": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "test_existing_version_and_unrelated_tools_accepted (tests.test_rust_toolchain_licenses.RustLicenseTests.test_existing_version_and_unrelated_tools_accepted)",
+      "status": "passed",
+      "log": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "test_missing_toolchain_is_not_invented (tests.test_rust_toolchain_licenses.RustLicenseTests.test_missing_toolchain_is_not_invented)",
+      "status": "passed",
+      "log": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "test_partial_toolchain_rejected (tests.test_rust_toolchain_licenses.RustLicenseTests.test_partial_toolchain_rejected)",
+      "status": "passed",
+      "log": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "test": "test_tampered_pinned_rustup_license_rejected (tests.test_rust_toolchain_licenses.RustLicenseTests.test_tampered_pinned_rustup_license_rejected)",
+      "status": "passed",
+      "log": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "scope": "Controlled black-box grading fixtures and offline license-inventory checks, not native model success.",
+  "archive_metadata": {
+    "source": "native-suite-grader-validation.json",
+    "kind": "automated",
+    "title": "Native suite graders and Rust license inventory",
+    "scope": "Ten scripted checks including plausible wrong outputs; no model inference.",
+    "source_sha256": "b6a90b85cdcc6660fa0c812063955c6aff7601700633c113aa09451fa14267cb"
+  }
+}

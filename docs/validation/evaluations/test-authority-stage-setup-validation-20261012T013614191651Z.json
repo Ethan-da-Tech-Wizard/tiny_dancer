@@ -1,0 +1,12 @@
+{
+  "passed": false,
+  "scope": "Staging setup omitted its workspace directory;20 fixture FileNotFoundErrors. Production unchanged. Corrected rerun required.",
+  "report": "run/staging/test-authority/docs/validation/runs/20261012T013347673042Z.json",
+  "archive_metadata": {
+    "source": "test-authority-stage-setup-validation.json",
+    "kind": "integration",
+    "title": "Test provenance: first staged setup failed",
+    "scope": "Staging setup omitted its workspace directory;20 fixture FileNotFoundErrors. Production unchanged. Corrected rerun required.",
+    "source_sha256": "2c3df3a345d942d1b6e0ac0a2044e0a32a6aa59158b7caac038eea2624b27fd2"
+  }
+}

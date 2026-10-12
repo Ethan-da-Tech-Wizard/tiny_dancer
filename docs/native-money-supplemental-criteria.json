@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-11T08:02:28.420218+00:00",
+  "scope": "Additional independent exactness cases declared before the next native replay. Original goal, six initial tests and original1,600-digit checks remain unchanged. No extra inputs or hints sent to the model.",
+  "reason": "[local detail omitted from GitHub snapshot]",
+  "checks": {
+    "unseen_3200_digit_signed": "[local detail omitted from GitHub snapshot]",
+    "unseen_3200_digit_total": "[local detail omitted from GitHub snapshot]"
+  },
+  "required": "[local detail omitted from GitHub snapshot]"
+}

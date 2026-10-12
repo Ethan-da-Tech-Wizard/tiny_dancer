@@ -1,0 +1,20 @@
+{
+  "title": "Batching, completion and full regressions",
+  "started_at": "2026-10-10T23:02:41.509834+00:00",
+  "status": "failed",
+  "scope": "Scripted-model regression fixtures plus actual file, shell, browser and desktop tool checks. No native generation in this suite.",
+  "results": [
+    {
+      "test": "runner.discovery",
+      "status": "error",
+      "detail": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "tests_run": 0,
+  "failures": 0,
+  "errors": 1,
+  "skipped": 0,
+  "source_sha256": "b86693eec57c4a22f39b6c609c36cac49712fabc0f507eb542aaac325a149678",
+  "finished_at": "2026-10-10T23:03:21.090243+00:00",
+  "seconds": null
+}

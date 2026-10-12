@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-11T08:39:53.280433+00:00",
+  "status": "isolated_254_pass_not_deployed",
+  "stage": "[local detail omitted from GitHub snapshot]",
+  "production_runtime_sha256": "c96b45453116dbb3662260082a87c6ecfa32e7bb02d5e1a761ddee3916fbf599",
+  "production_tests": 240,
+  "staged_tests": 254,
+  "staged_report": "docs/validation/runs/tool-arguments-masked-staged-20261011T094101728920Z.json",
+  "staged_source_sha256": "d00b4d764ad55b3b0aa0bd2f6cd5ded98cd1b46fd2adbc019b4320e83c005783",
+  "changes": [
+    {
+      "path": "app/agent.py",
+      "production_sha256": "7efce1e293dbd5e1cc06e592fa92a295b3052a0cde0220d268745e2a1d593761",
+      "staged_sha256": "499b601be848ec53887c3eb576c9c1b65023ebcc8933d3e0da78baa85a51731a"
+    },
+    {
+      "path": "app/tool_arguments.py",
+      "production_sha256": null,
+      "staged_sha256": "bb988fd8d49962e6eeff66a04770ab013c7bd388d94494a8befde28f0d296503"
+    },
+    {
+      "path": "tests/test_tool_arguments.py",
+      "production_sha256": null,
+      "staged_sha256": "8e328facabdc8044db536a78f3bb2fd5566f2560bf88c355100e8ced3813bf00"
+    },
+    {
+      "path": "tests/test_incomplete_generation_diagnostics.py",
+      "production_sha256": null,
+      "staged_sha256": "8cde9969f71e876d1451998eca776dc88f8e3d0c899a56b105e4922e1f591790"
+    }
+  ],
+  "scope": "Only an unexpected ] immediately before final } after a fully decoded value can be removed. Strict complete object reparse with duplicate rejection for repaired inputs; no keys, values, text, escapes, commands, missing delimiters or trailing data altered. Valid input unchanged. Complete original native call retained, repair offset event audited, constant result metadata preserves canonical loop detection. Incomplete native generations remain unexecuted. No dependency/model/precision/expert/context/cache change. Partial-generation diagnostics add only whitelisted phase/recipient and character counts, never private analysis/partial command text; unrecognized tags masked. Partial execution and existing retry behavior unchanged.",
+  "next": "[local detail omitted from GitHub snapshot]",
+  "updated_at": "2026-10-11T09:45:03.533385+00:00"
+}

@@ -1,0 +1,85 @@
+{
+  "baseline_prefill_batch": 64,
+  "final_prefill_batch": 1024,
+  "prompt_tokens": 700,
+  "baseline_prefill_seconds": 326.88599949,
+  "final_prefill_seconds": 125.562473602,
+  "speedup": 2.603373365565755,
+  "time_reduction_percent": 61.588298734757785,
+  "baseline_total_generation_seconds": 549.76,
+  "final_total_generation_seconds": 310.32,
+  "final_decode_tokens_per_second": [
+    1.1637118388789716,
+    1.5045968606135949,
+    1.1446248060876714
+  ],
+  "note": "[local detail omitted from GitHub snapshot]",
+  "larger_prompt_observations": {
+    "job": "ae6182d2ec1e469f9be468d5422b019b",
+    "note": "[local detail omitted from GitHub snapshot]",
+    "metrics": [
+      {
+        "prefill_seconds": 811.608208485,
+        "prefill_tokens": 3646,
+        "prefill_tokens_per_s": 4.492315333781379,
+        "decode_seconds": 61.684317332,
+        "decode_tokens": 57,
+        "decode_tokens_per_s": 0.9240598334453819,
+        "total_seconds": 873.29,
+        "completion_tokens": 57,
+        "prompt_tokens": 3646
+      },
+      {
+        "prefill_seconds": 952.112852466,
+        "prefill_tokens": 2402,
+        "prefill_tokens_per_s": 2.5228101834554066,
+        "decode_seconds": 63.160971929000006,
+        "decode_tokens": 61,
+        "decode_tokens_per_s": 0.9657862780922818,
+        "total_seconds": 1015.28,
+        "completion_tokens": 61,
+        "prompt_tokens": 6075
+      },
+      {
+        "prefill_seconds": 629.8341352209998,
+        "prefill_tokens": 1231,
+        "prefill_tokens_per_s": 1.9544828251775521,
+        "decode_seconds": 62.073705399999994,
+        "decode_tokens": 56,
+        "decode_tokens_per_s": 0.9021533294836948,
+        "total_seconds": 691.91,
+        "completion_tokens": 56,
+        "prompt_tokens": 7328
+      },
+      {
+        "prefill_seconds": 238.682456735,
+        "prefill_tokens": 1268,
+        "prefill_tokens_per_s": 5.312497689798006,
+        "decode_seconds": 77.511931502,
+        "decode_tokens": 107,
+        "decode_tokens_per_s": 1.3804326369707243,
+        "total_seconds": 316.2,
+        "completion_tokens": 107,
+        "prompt_tokens": 1268
+      }
+    ]
+  },
+  "compact_checkpoint_resume": {
+    "prompt_tokens": 1268,
+    "job": "ae6182d2ec1e469f9be468d5422b019b",
+    "metrics": [
+      {
+        "prefill_seconds": 238.682456735,
+        "prefill_tokens": 1268,
+        "prefill_tokens_per_s": 5.312497689798006,
+        "decode_seconds": 77.511931502,
+        "decode_tokens": 107,
+        "decode_tokens_per_s": 1.3804326369707243,
+        "total_seconds": 316.2,
+        "completion_tokens": 107,
+        "prompt_tokens": 1268
+      }
+    ],
+    "note": "[local detail omitted from GitHub snapshot]"
+  }
+}

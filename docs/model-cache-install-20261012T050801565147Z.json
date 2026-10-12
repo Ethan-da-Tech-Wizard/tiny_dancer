@@ -1,0 +1,25 @@
+{
+  "started_at": "2026-10-12T05:08:01.565147+00:00",
+  "status": "complete",
+  "passed": true,
+  "scope": "Actual identical model copy, destination SHA-256 readback, preserved source and upstream notices. No inference speed claim.",
+  "copied_bytes": 12109566624,
+  "total_bytes": 12109566624,
+  "installation": {
+    "path": "/home/ethan/.cache/tiny-dancer/models/27cd6c432c7672cb812a92f611cf3ba7bbc35928262bb1e1253ff4ee6ae35901/gpt-oss-20b-MXFP4.gguf",
+    "model": {
+      "sha256": "27cd6c432c7672cb812a92f611cf3ba7bbc35928262bb1e1253ff4ee6ae35901",
+      "size": 12109566624,
+      "repo": "ggml-org/gpt-oss-20b-GGUF",
+      "revision": "ef9b12f2ff56c69cf32153a02784e7a3c88bf524",
+      "name": "gpt-oss-20b-MXFP4.gguf"
+    },
+    "reused": false,
+    "original_unchanged": true,
+    "free_before_bytes": 34369585152,
+    "free_after_bytes": 22256599040,
+    "reserve_bytes": 10737418240,
+    "seconds": 177.14
+  },
+  "finished_at": "2026-10-12T05:10:58.710989+00:00"
+}

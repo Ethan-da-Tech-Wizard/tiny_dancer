@@ -1,0 +1,1892 @@
+{
+  "started_at": "2026-10-12T03:42:03.250290+00:00",
+  "status": "complete",
+  "case": "inventory",
+  "prompt": "[local detail omitted from GitHub snapshot]",
+  "cwd": "/mnt/GameDrive/tiny_dancer/workspace/native-inventory-20261012T034203209533Z",
+  "acceptance_sha256": "e45fea75d1a00bc2158d0f552b1f352e8375a27082999d8d45dfd91b68482475",
+  "runtime_sha256_before": "960e43ef3ae74455757650649e6bc973251b1247a69698eb21b442fcb838cd87",
+  "independent_criteria": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "backend": "llama.cpp",
+  "serving_model_path": "models/gpt-oss-20b-native-mxfp4",
+  "scope": "Fresh implementation from a frozen goal, sample input and operator-seeded acceptance tests only. No implementation supplied, no operator runtime hints, actual local GPT-OSS-20B. Generic project baseline/importfacts may be supplied by the configured harness. Independent checks withheld until termination.",
+  "operator_interventions": [],
+  "observation_limit_seconds": null,
+  "observation_policy": "until_terminal",
+  "execution": {
+    "reasoning_effort": "medium",
+    "initial_budget": "[local detail omitted from GitHub snapshot]"
+  },
+  "samples": [
+    {
+      "elapsed_seconds": 0.0,
+      "status": "running",
+      "turns": 0,
+      "engine": "ready",
+      "available_ram_gib": 7.244,
+      "progress": {
+        "kind": "tool_start",
+        "data": {
+          "name": "inspect_project",
+          "arguments": "[local detail omitted from GitHub snapshot]",
+          "step": 0,
+          "origin": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791776523.2791493
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 0.0,
+        "edited_files": 0,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": null,
+        "latest_tests_passed": null,
+        "native_verified": false,
+        "action_counts": {
+          "tool_start": 1
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 6.891
+    },
+    {
+      "elapsed_seconds": 20.0,
+      "status": "running",
+      "turns": 2,
+      "engine": "processing prompt",
+      "available_ram_gib": 7.193,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3890,
+          "reused_tokens": 2773,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791776543.1856701
+      },
+      "evidence": {
+        "changed_evidence": true,
+        "seconds_since_changed_evidence": 0.0,
+        "edited_files": 0,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 6,
+        "latest_tests_passed": false,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 3,
+          "tool_start": 3
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 7.037
+    },
+    {
+      "elapsed_seconds": 40.1,
+      "status": "running",
+      "turns": 2,
+      "engine": "generating",
+      "available_ram_gib": 7.174,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 432,
+          "seconds": 22.5
+        },
+        "created": 1791776563.2538614
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 20.1,
+        "edited_files": 0,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 6,
+        "latest_tests_passed": false,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 3,
+          "tool_start": 3
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 7.052
+    },
+    {
+      "elapsed_seconds": 60.2,
+      "status": "running",
+      "turns": 2,
+      "engine": "generating",
+      "available_ram_gib": 6.651,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 880,
+          "seconds": 42.7
+        },
+        "created": 1791776583.4474878
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 40.2,
+        "edited_files": 0,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 6,
+        "latest_tests_passed": false,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 3,
+          "tool_start": 3
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 7.005
+    },
+    {
+      "elapsed_seconds": 80.2,
+      "status": "running",
+      "turns": 2,
+      "engine": "generating",
+      "available_ram_gib": 6.751,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1328,
+          "seconds": 62.6
+        },
+        "created": 1791776603.3603826
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 60.2,
+        "edited_files": 0,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 6,
+        "latest_tests_passed": false,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 3,
+          "tool_start": 3
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 6.951
+    },
+    {
+      "elapsed_seconds": 100.3,
+      "status": "running",
+      "turns": 2,
+      "engine": "generating",
+      "available_ram_gib": 6.813,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1697,
+          "seconds": 82.1
+        },
+        "created": 1791776622.8475776
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 80.3,
+        "edited_files": 0,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 6,
+        "latest_tests_passed": false,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 3,
+          "tool_start": 3
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 6.956
+    },
+    {
+      "elapsed_seconds": 120.4,
+      "status": "running",
+      "turns": 2,
+      "engine": "generating",
+      "available_ram_gib": 7.136,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 2017,
+          "seconds": 102.8
+        },
+        "created": 1791776643.5847
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 100.4,
+        "edited_files": 0,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 6,
+        "latest_tests_passed": false,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 3,
+          "tool_start": 3
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 6.965
+    },
+    {
+      "elapsed_seconds": 140.4,
+      "status": "running",
+      "turns": 2,
+      "engine": "generating",
+      "available_ram_gib": 7.181,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 2323,
+          "seconds": 122.6
+        },
+        "created": 1791776663.3151486
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 120.4,
+        "edited_files": 0,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 6,
+        "latest_tests_passed": false,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 3,
+          "tool_start": 3
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 6.974
+    },
+    {
+      "elapsed_seconds": 160.5,
+      "status": "running",
+      "turns": 2,
+      "engine": "generating",
+      "available_ram_gib": 7.167,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 2628,
+          "seconds": 142.4
+        },
+        "created": 1791776683.181167
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 140.5,
+        "edited_files": 0,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 6,
+        "latest_tests_passed": false,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 3,
+          "tool_start": 3
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 6.997
+    },
+    {
+      "elapsed_seconds": 180.6,
+      "status": "running",
+      "turns": 2,
+      "engine": "generating",
+      "available_ram_gib": 7.189,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 2937,
+          "seconds": 162.7
+        },
+        "created": 1791776703.4791853
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 160.6,
+        "edited_files": 0,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 6,
+        "latest_tests_passed": false,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 3,
+          "tool_start": 3
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 6.998
+    },
+    {
+      "elapsed_seconds": 200.6,
+      "status": "running",
+      "turns": 3,
+      "engine": "processing prompt",
+      "available_ram_gib": 7.187,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 7465,
+          "reused_tokens": 3885,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791776722.755716
+      },
+      "evidence": {
+        "changed_evidence": true,
+        "seconds_since_changed_evidence": 0.0,
+        "edited_files": 1,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 6,
+        "latest_tests_passed": true,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 5,
+          "tool_start": 5
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 7.006
+    },
+    {
+      "elapsed_seconds": 220.7,
+      "status": "running",
+      "turns": 3,
+      "engine": "processing prompt",
+      "available_ram_gib": 7.229,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 7465,
+          "reused_tokens": 3885,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791776743.4018357
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 20.1,
+        "edited_files": 1,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 6,
+        "latest_tests_passed": true,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 5,
+          "tool_start": 5
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 7.006
+    },
+    {
+      "elapsed_seconds": 240.7,
+      "status": "running",
+      "turns": 3,
+      "engine": "generating",
+      "available_ram_gib": 7.202,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 176,
+          "seconds": 46.2
+        },
+        "created": 1791776763.1745365
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 40.1,
+        "edited_files": 1,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 6,
+        "latest_tests_passed": true,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 5,
+          "tool_start": 5
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 7.027
+    },
+    {
+      "elapsed_seconds": 260.8,
+      "status": "running",
+      "turns": 3,
+      "engine": "generating",
+      "available_ram_gib": 7.215,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 490,
+          "seconds": 66.7
+        },
+        "created": 1791776783.7084363
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 60.2,
+        "edited_files": 1,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 6,
+        "latest_tests_passed": true,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 5,
+          "tool_start": 5
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 7.028
+    },
+    {
+      "elapsed_seconds": 280.8,
+      "status": "running",
+      "turns": 3,
+      "engine": "generating",
+      "available_ram_gib": 7.294,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 779,
+          "seconds": 86.0
+        },
+        "created": 1791776803.0453424
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 80.2,
+        "edited_files": 1,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 6,
+        "latest_tests_passed": true,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 5,
+          "tool_start": 5
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 7.028
+    },
+    {
+      "elapsed_seconds": 300.9,
+      "status": "running",
+      "turns": 3,
+      "engine": "generating",
+      "available_ram_gib": 7.312,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1069,
+          "seconds": 106.4
+        },
+        "created": 1791776823.3845863
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 100.3,
+        "edited_files": 1,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 6,
+        "latest_tests_passed": true,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 5,
+          "tool_start": 5
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 7.041
+    },
+    {
+      "elapsed_seconds": 320.9,
+      "status": "running",
+      "turns": 4,
+      "engine": "processing prompt",
+      "available_ram_gib": 7.216,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 10180,
+          "reused_tokens": 7460,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791776843.9155774
+      },
+      "evidence": {
+        "changed_evidence": true,
+        "seconds_since_changed_evidence": 0.0,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": false,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 7,
+          "tool_start": 7
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 7.043
+    },
+    {
+      "elapsed_seconds": 341.0,
+      "status": "running",
+      "turns": 4,
+      "engine": "processing prompt",
+      "available_ram_gib": 6.646,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 10180,
+          "reused_tokens": 7460,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791776862.192068
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 20.1,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": false,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 7,
+          "tool_start": 7
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 6.967
+    },
+    {
+      "elapsed_seconds": 361.1,
+      "status": "running",
+      "turns": 4,
+      "engine": "generating",
+      "available_ram_gib": 6.723,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 208,
+          "seconds": 46.7
+        },
+        "created": 1791776884.0536942
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 40.2,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": false,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 7,
+          "tool_start": 7
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 7.001
+    },
+    {
+      "elapsed_seconds": 381.1,
+      "status": "running",
+      "turns": 4,
+      "engine": "generating",
+      "available_ram_gib": 6.871,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 485,
+          "seconds": 66.3
+        },
+        "created": 1791776903.621475
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 60.2,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": false,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 7,
+          "tool_start": 7
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 7.001
+    },
+    {
+      "elapsed_seconds": 401.2,
+      "status": "running",
+      "turns": 5,
+      "engine": "processing prompt",
+      "available_ram_gib": 6.136,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 11201,
+          "reused_tokens": 10175,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791776923.7414966
+      },
+      "evidence": {
+        "changed_evidence": true,
+        "seconds_since_changed_evidence": 0.0,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": true,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 9,
+          "tool_start": 9
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 6.694
+    },
+    {
+      "elapsed_seconds": 421.3,
+      "status": "running",
+      "turns": 5,
+      "engine": "generating",
+      "available_ram_gib": 6.344,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 80,
+          "seconds": 34.6
+        },
+        "created": 1791776943.6167378
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 20.1,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": true,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 9,
+          "tool_start": 9
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 6.728
+    },
+    {
+      "elapsed_seconds": 441.4,
+      "status": "running",
+      "turns": 8,
+      "engine": "generating",
+      "available_ram_gib": 6.439,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 17,
+          "seconds": 2.7
+        },
+        "created": 1791776964.3977911
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 40.2,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": true,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 12,
+          "tool_start": 12
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 6.849
+    },
+    {
+      "elapsed_seconds": 461.4,
+      "status": "running",
+      "turns": 9,
+      "engine": "generating",
+      "available_ram_gib": 6.421,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 176,
+          "seconds": 17.8
+        },
+        "created": 1791776983.6068594
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 60.2,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": true,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 13,
+          "tool_start": 13
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 6.799
+    },
+    {
+      "elapsed_seconds": 481.5,
+      "status": "running",
+      "turns": 10,
+      "engine": "processing prompt",
+      "available_ram_gib": 6.513,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 13926,
+          "reused_tokens": 11958,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791777003.7212703
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 80.3,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": true,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 14,
+          "tool_start": 14
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 6.915
+    },
+    {
+      "elapsed_seconds": 501.6,
+      "status": "running",
+      "turns": 10,
+      "engine": "generating",
+      "available_ram_gib": 6.661,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 80,
+          "seconds": 36.6
+        },
+        "created": 1791777023.9939325
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 100.4,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": true,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 14,
+          "tool_start": 14
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 6.983
+    },
+    {
+      "elapsed_seconds": 521.6,
+      "status": "running",
+      "turns": 11,
+      "engine": "generating",
+      "available_ram_gib": 6.987,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 176,
+          "seconds": 15.1
+        },
+        "created": 1791777044.8239317
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 120.4,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": true,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 15,
+          "tool_start": 15
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 7.054
+    },
+    {
+      "elapsed_seconds": 541.7,
+      "status": "running",
+      "turns": 11,
+      "engine": "generating",
+      "available_ram_gib": 6.752,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 448,
+          "seconds": 34.9
+        },
+        "created": 1791777064.6414855
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 140.5,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": true,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 15,
+          "tool_start": 15
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 7.047
+    },
+    {
+      "elapsed_seconds": 561.8,
+      "status": "running",
+      "turns": 11,
+      "engine": "generating",
+      "available_ram_gib": 6.804,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 716,
+          "seconds": 54.5
+        },
+        "created": 1791777084.1789076
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 160.6,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": true,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 15,
+          "tool_start": 15
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 7.059
+    },
+    {
+      "elapsed_seconds": 581.9,
+      "status": "running",
+      "turns": 12,
+      "engine": "generating",
+      "available_ram_gib": 6.698,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 15266,
+          "reused_tokens": 14197,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791777104.139333
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 180.7,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": true,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 16,
+          "tool_start": 16
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 7.074
+    },
+    {
+      "elapsed_seconds": 602.0,
+      "status": "running",
+      "turns": 12,
+      "engine": "generating",
+      "available_ram_gib": 6.348,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 256,
+          "seconds": 33.9
+        },
+        "created": 1791777124.8747318
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 200.8,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": true,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 16,
+          "tool_start": 16
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 6.759
+    },
+    {
+      "elapsed_seconds": 622.0,
+      "status": "running",
+      "turns": 13,
+      "engine": "processing prompt",
+      "available_ram_gib": 6.229,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 16157,
+          "reused_tokens": 15563,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791777138.3466372
+      },
+      "evidence": {
+        "changed_evidence": true,
+        "seconds_since_changed_evidence": 0.0,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": true,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 18,
+          "tool_start": 18
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 6.686
+    },
+    {
+      "elapsed_seconds": 642.1,
+      "status": "running",
+      "turns": 13,
+      "engine": "processing prompt",
+      "available_ram_gib": 6.291,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 16157,
+          "reused_tokens": 15563,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791777158.3094018
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 20.1,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": true,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 18,
+          "tool_start": 18
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 6.832
+    },
+    {
+      "elapsed_seconds": 662.2,
+      "status": "running",
+      "turns": 14,
+      "engine": "processing prompt",
+      "available_ram_gib": 6.358,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 16702,
+          "reused_tokens": 16178,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791777183.7219107
+      },
+      "evidence": {
+        "changed_evidence": true,
+        "seconds_since_changed_evidence": 0.0,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": true,
+        "native_verified": true,
+        "action_counts": {
+          "tool_result": 20,
+          "tool_start": 20
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 6.853
+    },
+    {
+      "elapsed_seconds": 682.2,
+      "status": "running",
+      "turns": 14,
+      "engine": "generating",
+      "available_ram_gib": 5.74,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 36,
+          "seconds": 27.7
+        },
+        "created": 1791777205.2659905
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 20.0,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": true,
+        "native_verified": true,
+        "action_counts": {
+          "tool_result": 20,
+          "tool_start": 20
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 6.298
+    },
+    {
+      "elapsed_seconds": 702.3,
+      "status": "running",
+      "turns": 15,
+      "engine": "processing prompt",
+      "available_ram_gib": 5.384,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 17098,
+          "reused_tokens": 16730,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791777208.7791853
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 40.1,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": true,
+        "native_verified": true,
+        "action_counts": {
+          "tool_result": 21,
+          "tool_start": 21
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 5.602
+    },
+    {
+      "elapsed_seconds": 722.4,
+      "status": "running",
+      "turns": 15,
+      "engine": "processing prompt",
+      "available_ram_gib": 5.46,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 17098,
+          "reused_tokens": 16730,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791777208.7791853
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 60.2,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": true,
+        "native_verified": true,
+        "action_counts": {
+          "tool_result": 21,
+          "tool_start": 21
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 5.44
+    },
+    {
+      "elapsed_seconds": 742.4,
+      "status": "running",
+      "turns": 15,
+      "engine": "processing prompt",
+      "available_ram_gib": 5.669,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 17098,
+          "reused_tokens": 16730,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791777262.0310094
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 80.2,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": true,
+        "native_verified": true,
+        "action_counts": {
+          "tool_result": 21,
+          "tool_start": 21
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 5.858
+    },
+    {
+      "elapsed_seconds": 762.5,
+      "status": "running",
+      "turns": 15,
+      "engine": "processing prompt",
+      "available_ram_gib": 5.731,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 17098,
+          "reused_tokens": 16730,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791777262.0310094
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 100.3,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": true,
+        "native_verified": true,
+        "action_counts": {
+          "tool_result": 21,
+          "tool_start": 21
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 5.954
+    },
+    {
+      "elapsed_seconds": 782.5,
+      "status": "running",
+      "turns": 15,
+      "engine": "processing prompt",
+      "available_ram_gib": 5.732,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 17098,
+          "reused_tokens": 16730,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791777262.0310094
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 120.3,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": true,
+        "native_verified": true,
+        "action_counts": {
+          "tool_result": 21,
+          "tool_start": 21
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 6.102
+    },
+    {
+      "elapsed_seconds": 802.6,
+      "status": "complete",
+      "turns": 15,
+      "engine": "ready",
+      "available_ram_gib": 5.702,
+      "progress": {
+        "kind": "done",
+        "data": {
+          "steps": 15,
+          "verified": true,
+          "evidence_checked": false,
+          "answer_origin": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791777324.9015899
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 140.4,
+        "edited_files": 2,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 9,
+        "latest_tests_passed": true,
+        "native_verified": true,
+        "action_counts": {
+          "tool_result": 21,
+          "tool_start": 21
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 6.399
+    }
+  ],
+  "additional_independent_criteria": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "job": "205b600baaaa4f37ae0dbaf03853a295",
+  "session": "b586585d4c5f45aba62140b30515a8ce",
+  "additional_goal_checks": [
+    {
+      "check": "Repeated successful output outside ROOT is replaced with current data",
+      "passed": true,
+      "first_exit_code": 0,
+      "second_exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "Unreadable directory fails scanning and preserves prior output",
+      "passed": false,
+      "readable_control_passed": true,
+      "exit_code": 0,
+      "prior_output_preserved": false,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "Special files are excluded without blocking; regular files remain correct",
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "independent_project_tests": {
+    "exit_code": 0,
+    "output": "[local detail omitted from GitHub snapshot]"
+  },
+  "passed": false,
+  "checks": {
+    "native_verified": true,
+    "acceptance_unchanged": true,
+    "runtime_frozen": true,
+    "all_seeded_cli_tests": true,
+    "all_independent_cli_checks": false,
+    "additional_nonempty_passing_project_tests": true
+  },
+  "acceptance_after": {
+    "exit_code": 0,
+    "output": "[local detail omitted from GitHub snapshot]"
+  },
+  "independent_checks": [
+    {
+      "check": "unseen binary/unicode/symlinks/output exclusion 1",
+      "passed": true,
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "unseen binary/unicode/symlinks/output exclusion 2",
+      "passed": true,
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "invalid root preserves actual prior bytes",
+      "passed": true,
+      "exit_code": 1
+    },
+    {
+      "check": "scan read failure preserves actual prior bytes",
+      "passed": true,
+      "exit_code": 1,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "requested real report.json complete and exact",
+      "passed": true
+    },
+    {
+      "check": "Repeated successful output outside ROOT is replaced with current data",
+      "passed": true,
+      "first_exit_code": 0,
+      "second_exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "Unreadable directory fails scanning and preserves prior output",
+      "passed": false,
+      "readable_control_passed": true,
+      "exit_code": 0,
+      "prior_output_preserved": false,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "Special files are excluded without blocking; regular files remain correct",
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "checkpoint": "[local detail omitted from GitHub snapshot]",
+  "job_elapsed_seconds": 801.64,
+  "metrics": [
+    {
+      "backend": "llama.cpp-native-chat-grammar",
+      "total_seconds": 17.0,
+      "prompt_tokens": 2701,
+      "completion_tokens": 100,
+      "prefill_tokens": 2701,
+      "prefill_seconds": 13.614197,
+      "decode_tokens": 100,
+      "decode_seconds": 3.308713,
+      "canonical_prompt_tokens": 2701,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 0,
+      "reasoning_effort": "medium",
+      "sampling_temperature": 1.0,
+      "sampling_top_p": 1.0,
+      "sampling_top_k": 0,
+      "sampling_min_p": 0.0,
+      "sampling_repeat_penalty": 1.0,
+      "prefill_tokens_per_s": 198.3958363464257,
+      "decode_tokens_per_s": 30.223231812490233
+    },
+    {
+      "backend": "llama.cpp-native-chat-grammar",
+      "total_seconds": 174.21,
+      "prompt_tokens": 3890,
+      "completion_tokens": 3110,
+      "prefill_tokens": 1117,
+      "prefill_seconds": 5.64595,
+      "decode_tokens": 3110,
+      "decode_seconds": 168.54255600000002,
+      "canonical_prompt_tokens": 3890,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 2773,
+      "reasoning_effort": "medium",
+      "sampling_temperature": 1.0,
+      "sampling_top_p": 1.0,
+      "sampling_top_k": 0,
+      "sampling_min_p": 0.0,
+      "sampling_repeat_penalty": 1.0,
+      "prefill_tokens_per_s": 197.8409302243201,
+      "decode_tokens_per_s": 18.452313017016305
+    },
+    {
+      "backend": "llama.cpp-native-chat-grammar",
+      "total_seconds": 118.27,
+      "prompt_tokens": 7465,
+      "completion_tokens": 1238,
+      "prefill_tokens": 3580,
+      "prefill_seconds": 35.20549,
+      "decode_tokens": 1238,
+      "decode_seconds": 83.015332,
+      "canonical_prompt_tokens": 7465,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 3885,
+      "reasoning_effort": "medium",
+      "sampling_temperature": 1.0,
+      "sampling_top_p": 1.0,
+      "sampling_top_k": 0,
+      "sampling_min_p": 0.0,
+      "sampling_repeat_penalty": 1.0,
+      "prefill_tokens_per_s": 101.68868548626934,
+      "decode_tokens_per_s": 14.912907895134358
+    },
+    {
+      "backend": "llama.cpp-native-chat-grammar",
+      "total_seconds": 68.35,
+      "prompt_tokens": 10180,
+      "completion_tokens": 512,
+      "prefill_tokens": 2720,
+      "prefill_seconds": 32.588633,
+      "decode_tokens": 512,
+      "decode_seconds": 35.703827,
+      "canonical_prompt_tokens": 10180,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 7460,
+      "reasoning_effort": "medium",
+      "sampling_temperature": 1.0,
+      "sampling_top_p": 1.0,
+      "sampling_top_k": 0,
+      "sampling_min_p": 0.0,
+      "sampling_repeat_penalty": 1.0,
+      "prefill_tokens_per_s": 83.4646853705094,
+      "decode_tokens_per_s": 14.340199441365208
+    },
+    {
+      "backend": "llama.cpp-native-chat-grammar",
+      "total_seconds": 38.29,
+      "prompt_tokens": 11201,
+      "completion_tokens": 126,
+      "prefill_tokens": 1026,
+      "prefill_seconds": 27.722794999999998,
+      "decode_tokens": 126,
+      "decode_seconds": 10.488575999999998,
+      "canonical_prompt_tokens": 11201,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 10175,
+      "reasoning_effort": "medium",
+      "sampling_temperature": 1.0,
+      "sampling_top_p": 1.0,
+      "sampling_top_k": 0,
+      "sampling_min_p": 0.0,
+      "sampling_repeat_penalty": 1.0,
+      "prefill_tokens_per_s": 37.009255379913895,
+      "decode_tokens_per_s": 12.013070220399797
+    },
+    {
+      "backend": "llama.cpp-native-chat-grammar",
+      "total_seconds": 6.45,
+      "prompt_tokens": 11389,
+      "completion_tokens": 26,
+      "prefill_tokens": 88,
+      "prefill_seconds": 4.69836,
+      "decode_tokens": 26,
+      "decode_seconds": 1.676039,
+      "canonical_prompt_tokens": 11389,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 11301,
+      "reasoning_effort": "medium",
+      "sampling_temperature": 1.0,
+      "sampling_top_p": 1.0,
+      "sampling_top_k": 0,
+      "sampling_min_p": 0.0,
+      "sampling_repeat_penalty": 1.0,
+      "prefill_tokens_per_s": 18.72993980878434,
+      "decode_tokens_per_s": 15.512765514406286
+    },
+    {
+      "backend": "llama.cpp-native-chat-grammar",
+      "total_seconds": 7.53,
+      "prompt_tokens": 11508,
+      "completion_tokens": 44,
+      "prefill_tokens": 108,
+      "prefill_seconds": 4.224894,
+      "decode_tokens": 44,
+      "decode_seconds": 3.245736,
+      "canonical_prompt_tokens": 11508,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 11400,
+      "reasoning_effort": "medium",
+      "sampling_temperature": 1.0,
+      "sampling_top_p": 1.0,
+      "sampling_top_k": 0,
+      "sampling_min_p": 0.0,
+      "sampling_repeat_penalty": 1.0,
+      "prefill_tokens_per_s": 25.562771515687732,
+      "decode_tokens_per_s": 13.556247334965013
+    },
+    {
+      "backend": "llama.cpp-native-chat-grammar",
+      "total_seconds": 3.85,
+      "prompt_tokens": 11616,
+      "completion_tokens": 33,
+      "prefill_tokens": 84,
+      "prefill_seconds": 1.509229,
+      "decode_tokens": 33,
+      "decode_seconds": 2.25931,
+      "canonical_prompt_tokens": 11616,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 11532,
+      "reasoning_effort": "medium",
+      "sampling_temperature": 1.0,
+      "sampling_top_p": 1.0,
+      "sampling_top_k": 0,
+      "sampling_min_p": 0.0,
+      "sampling_repeat_penalty": 1.0,
+      "prefill_tokens_per_s": 55.65755760060269,
+      "decode_tokens_per_s": 14.606229335505088
+    },
+    {
+      "backend": "llama.cpp-native-chat-grammar",
+      "total_seconds": 21.5,
+      "prompt_tokens": 11759,
+      "completion_tokens": 224,
+      "prefill_tokens": 133,
+      "prefill_seconds": 4.501308,
+      "decode_tokens": 224,
+      "decode_seconds": 16.904062000000003,
+      "canonical_prompt_tokens": 11759,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 11626,
+      "reasoning_effort": "medium",
+      "sampling_temperature": 1.0,
+      "sampling_top_p": 1.0,
+      "sampling_top_k": 0,
+      "sampling_min_p": 0.0,
+      "sampling_repeat_penalty": 1.0,
+      "prefill_tokens_per_s": 29.546967237078647,
+      "decode_tokens_per_s": 13.251252864548174
+    },
+    {
+      "backend": "llama.cpp-native-chat-grammar",
+      "total_seconds": 40.81,
+      "prompt_tokens": 13926,
+      "completion_tokens": 142,
+      "prefill_tokens": 1968,
+      "prefill_seconds": 31.124596,
+      "decode_tokens": 142,
+      "decode_seconds": 9.603566,
+      "canonical_prompt_tokens": 13926,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 11958,
+      "reasoning_effort": "medium",
+      "sampling_temperature": 1.0,
+      "sampling_top_p": 1.0,
+      "sampling_top_k": 0,
+      "sampling_min_p": 0.0,
+      "sampling_repeat_penalty": 1.0,
+      "prefill_tokens_per_s": 63.22973637955011,
+      "decode_tokens_per_s": 14.786174219034887
+    },
+    {
+      "backend": "llama.cpp-native-chat-grammar",
+      "total_seconds": 61.04,
+      "prompt_tokens": 14202,
+      "completion_tokens": 804,
+      "prefill_tokens": 162,
+      "prefill_seconds": 2.471326,
+      "decode_tokens": 804,
+      "decode_seconds": 58.492104,
+      "canonical_prompt_tokens": 14202,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 14040,
+      "reasoning_effort": "medium",
+      "sampling_temperature": 1.0,
+      "sampling_top_p": 1.0,
+      "sampling_top_k": 0,
+      "sampling_min_p": 0.0,
+      "sampling_repeat_penalty": 1.0,
+      "prefill_tokens_per_s": 65.551853539355,
+      "decode_tokens_per_s": 13.745445026220976
+    },
+    {
+      "backend": "llama.cpp-native-chat-grammar",
+      "total_seconds": 43.94,
+      "prompt_tokens": 15266,
+      "completion_tokens": 379,
+      "prefill_tokens": 1069,
+      "prefill_seconds": 13.061038,
+      "decode_tokens": 379,
+      "decode_seconds": 30.787611000000002,
+      "canonical_prompt_tokens": 15266,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 14197,
+      "reasoning_effort": "medium",
+      "sampling_temperature": 1.0,
+      "sampling_top_p": 1.0,
+      "sampling_top_k": 0,
+      "sampling_min_p": 0.0,
+      "sampling_repeat_penalty": 1.0,
+      "prefill_tokens_per_s": 81.84648111428817,
+      "decode_tokens_per_s": 12.310146441696954
+    },
+    {
+      "backend": "llama.cpp-native-chat-grammar",
+      "total_seconds": 36.4,
+      "prompt_tokens": 16157,
+      "completion_tokens": 45,
+      "prefill_tokens": 594,
+      "prefill_seconds": 34.025005,
+      "decode_tokens": 45,
+      "decode_seconds": 2.250403,
+      "canonical_prompt_tokens": 16157,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 15563,
+      "reasoning_effort": "medium",
+      "sampling_temperature": 1.0,
+      "sampling_top_p": 1.0,
+      "sampling_top_k": 0,
+      "sampling_min_p": 0.0,
+      "sampling_repeat_penalty": 1.0,
+      "prefill_tokens_per_s": 17.457749087766484,
+      "decode_tokens_per_s": 19.99641841927868
+    },
+    {
+      "backend": "llama.cpp-native-chat-grammar",
+      "total_seconds": 30.98,
+      "prompt_tokens": 16702,
+      "completion_tokens": 53,
+      "prefill_tokens": 524,
+      "prefill_seconds": 22.845716,
+      "decode_tokens": 53,
+      "decode_seconds": 8.028987,
+      "canonical_prompt_tokens": 16702,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 16178,
+      "reasoning_effort": "medium",
+      "sampling_temperature": 1.0,
+      "sampling_top_p": 1.0,
+      "sampling_top_k": 0,
+      "sampling_min_p": 0.0,
+      "sampling_repeat_penalty": 1.0,
+      "prefill_tokens_per_s": 22.93646651302152,
+      "decode_tokens_per_s": 6.601081805214032
+    },
+    {
+      "backend": "llama.cpp-native-chat-grammar",
+      "total_seconds": 116.18,
+      "prompt_tokens": 17098,
+      "completion_tokens": 81,
+      "prefill_tokens": 368,
+      "prefill_seconds": 105.465901,
+      "decode_tokens": 81,
+      "decode_seconds": 10.597811,
+      "canonical_prompt_tokens": 17098,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 16730,
+      "reasoning_effort": "medium",
+      "sampling_temperature": 1.0,
+      "sampling_top_p": 1.0,
+      "sampling_top_k": 0,
+      "sampling_min_p": 0.0,
+      "sampling_repeat_penalty": 1.0,
+      "prefill_tokens_per_s": 3.489279440186075,
+      "decode_tokens_per_s": 7.64308780369833
+    }
+  ],
+  "tool_calls": [
+    {
+      "name": "inspect_project",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 0,
+      "origin": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "name": "run_checks",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 0,
+      "origin": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "name": "read_file",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 1
+    },
+    {
+      "name": "apply_patch",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 2
+    },
+    {
+      "name": "run_checks",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 2,
+      "origin": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "name": "apply_patch",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 3
+    },
+    {
+      "name": "run_checks",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 3,
+      "origin": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "name": "apply_patch",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 4
+    },
+    {
+      "name": "run_checks",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 4,
+      "origin": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "name": "read_file",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 5
+    },
+    {
+      "name": "list_directory",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 6
+    },
+    {
+      "name": "list_directory",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 7
+    },
+    {
+      "name": "shell",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 8
+    },
+    {
+      "name": "read_file",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 9
+    },
+    {
+      "name": "run_checks",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 10
+    },
+    {
+      "name": "shell",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 11
+    },
+    {
+      "name": "apply_patch",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 12
+    },
+    {
+      "name": "run_checks",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 12,
+      "origin": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "name": "shell",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 13
+    },
+    {
+      "name": "run_checks",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 13,
+      "origin": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "name": "read_file",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 14
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,188 @@
+{
+  "started_at": "2026-10-12T02:47:27.824540+00:00",
+  "status": "complete",
+  "scope": "One local-model test-writing response receives original goal and existing generic API facts, with implementation source withheld. No hidden examples, outcome hints, implementation edits or pass/fail self-rating. Identical generated tests are executed against flawed and separately graded operator-written positive TEST CONTROL. Positive source is never sent to the model. Not production qualification.",
+  "source_report": "docs/native-inventory-20261012T021158830837Z.json",
+  "cwd": "/mnt/GameDrive/tiny_dancer/workspace/audit-test-probe-20261012T024727822429Z",
+  "runtime_sha256_before": "49db0778c0135c773b04098cd02f2884c096be4a077452ccc4c82fd01054458c",
+  "criteria": {
+    "nonempty_same_tests": true,
+    "assertion_failure_on_flawed": true,
+    "no_errors_on_flawed": true,
+    "all_pass_on_conforming": true,
+    "zero_skips": true,
+    "implementations_unchanged": true
+  },
+  "program_sha256": "8311163f108b0ec2ddb659015f2ea73d8222547bed3fb611f5b44ddf0d729592",
+  "conforming_sha256": "34e5e1dbf0627b78b7af71c63b0d7014795db7e043b64bf5655ad5f2b0e7dcdc",
+  "instructions": "[local detail omitted from GitHub snapshot]",
+  "prompt": "[local detail omitted from GitHub snapshot]",
+  "implementation_withheld": true,
+  "observer_sha256": {
+    "evaluate_audit_test_probe.py": "0f459355a5a03e44f23ad94f2a75f3c5047fe40905ddf4ec84eb8c6016105d2b",
+    "audit_test_probe.py": "39ec0cd56e4bf0f23b0fd1c8c17411d312673aca3eaacc94462fad2f47b959ed",
+    "llama_chat_baseline.py": "3ef9044ad3a0831a8d795e4024f21192106bfd4a4f7aa59766e0277ba8d8e79c"
+  },
+  "effort": "[local detail omitted from GitHub snapshot]",
+  "operator_interventions": [],
+  "metrics": [
+    {
+      "backend": "llama.cpp-native-chat-grammar",
+      "total_seconds": 151.73,
+      "prompt_tokens": 650,
+      "completion_tokens": 3353,
+      "prefill_seconds": 11.253754,
+      "decode_seconds": 140.45973,
+      "reasoning_effort": "medium",
+      "sampling_temperature": 1.0
+    }
+  ],
+  "samples": [
+    {
+      "seconds": 0.0,
+      "engine": "loading model",
+      "available_ram_gib": 7.925,
+      "activity": null
+    },
+    {
+      "seconds": 20.2,
+      "engine": "loading model",
+      "available_ram_gib": 7.71,
+      "activity": [
+        851686,
+        4.26,
+        7925026816,
+        8192
+      ]
+    },
+    {
+      "seconds": 40.3,
+      "engine": "loading model",
+      "available_ram_gib": 7.602,
+      "activity": [
+        851686,
+        19.66,
+        16793026560,
+        12288
+      ]
+    },
+    {
+      "seconds": 60.4,
+      "engine": "generating",
+      "available_ram_gib": 7.409,
+      "activity": [
+        851686,
+        67.83,
+        19981066240,
+        16384
+      ]
+    },
+    {
+      "seconds": 80.4,
+      "engine": "generating",
+      "available_ram_gib": 7.421,
+      "activity": [
+        851686,
+        166.12,
+        20020490240,
+        16384
+      ]
+    },
+    {
+      "seconds": 100.5,
+      "engine": "generating",
+      "available_ram_gib": 7.407,
+      "activity": [
+        851686,
+        265.29,
+        20085907456,
+        20480
+      ]
+    },
+    {
+      "seconds": 120.6,
+      "engine": "generating",
+      "available_ram_gib": 7.326,
+      "activity": [
+        851686,
+        360.04999999999995,
+        20168085504,
+        28672
+      ]
+    },
+    {
+      "seconds": 140.6,
+      "engine": "generating",
+      "available_ram_gib": 7.332,
+      "activity": [
+        851686,
+        454.6,
+        20207079424,
+        28672
+      ]
+    },
+    {
+      "seconds": 160.7,
+      "engine": "generating",
+      "available_ram_gib": 7.344,
+      "activity": [
+        851686,
+        549.22,
+        20230266880,
+        32768
+      ]
+    },
+    {
+      "seconds": 180.8,
+      "engine": "generating",
+      "available_ram_gib": 7.385,
+      "activity": [
+        851686,
+        622.1199999999999,
+        20238946304,
+        32768
+      ]
+    }
+  ],
+  "generated_test_sha256": "a66bf7089f43214c179878aa756039b753be3868df1d742e50188f4720dd0dbc",
+  "private_reasoning_characters": 7056,
+  "verification": {
+    "passed": false,
+    "checks": {
+      "actual_nonempty_tests": true,
+      "finds_behavioral_failure": false,
+      "accepts_conforming_control": false,
+      "no_skipped_cases": true,
+      "does_not_change_implementations": true
+    },
+    "flawed": {
+      "tests": 7,
+      "failures": 2,
+      "errors": 1,
+      "skipped": 0,
+      "passed": false,
+      "output": "[local detail omitted from GitHub snapshot]",
+      "implementation_unchanged": true
+    },
+    "conforming": {
+      "tests": 7,
+      "failures": 2,
+      "errors": 1,
+      "skipped": 0,
+      "passed": false,
+      "output": "[local detail omitted from GitHub snapshot]",
+      "implementation_unchanged": true
+    }
+  },
+  "passed": false,
+  "runtime_sha256_after": "49db0778c0135c773b04098cd02f2884c096be4a077452ccc4c82fd01054458c",
+  "runtime_frozen": true,
+  "elapsed_seconds": 192.91,
+  "archive_metadata": {
+    "source": "audit-test-probe-20261012T024727822429Z.json",
+    "kind": "native",
+    "title": "Executable requirement-check generation probe",
+    "scope": "One local-model test-writing response receives original goal and existing generic API facts, with implementation source withheld. No hidden examples, outcome hints, implementation edits or pass/fail self-rating. Identical generated tests are executed against flawed and separately graded operator-written positive TEST CONTROL. Positive source is never sent to the model. Not production qualification.",
+    "source_sha256": "a23e39c7fcdcefb6e927257866aeee563c5fdeab355226b9397270cc4968ffbc"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "task": "[local detail omitted from GitHub snapshot]",
+      "passed": false,
+      "reasons": [
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]"
+      ],
+      "report": "docs/precision-repair-retest-validation.json"
+    },
+    {
+      "task": "[local detail omitted from GitHub snapshot]",
+      "passed": false,
+      "reasons": [
+        "[local detail omitted from GitHub snapshot]"
+      ],
+      "report": "docs/native-inventory-20261011T153646048958Z.json"
+    },
+    {
+      "task": "[local detail omitted from GitHub snapshot]",
+      "passed": false,
+      "reasons": [
+        "[local detail omitted from GitHub snapshot]"
+      ],
+      "report": "docs/native-ranges-20261011T160140232182Z.json"
+    }
+  ],
+  "current_runtime_sha256": "2ac0f93c6ffe8e8f3e4970389581111f94303168fe2e5894518464697daebe39",
+  "scope": "Three actual native outcomes: failed repair replay, fresh Python inventory, fresh Rust ranges. Historical arithmetic smoke and scripted regression passes cannot replace these.",
+  "title": "Current native release gate",
+  "started_at": "2026-10-11T17:50:16.464980+00:00",
+  "status": "qualification_failed",
+  "active_job": null,
+  "assessment_note": "[local detail omitted from GitHub snapshot]",
+  "archive_metadata": {
+    "source": "native-release-gate-current.json",
+    "kind": "automated",
+    "title": "Historical native qualification gate",
+    "scope": "Frozen native outcome gate; pending cases fail. Does not run a model task.",
+    "source_sha256": "dce752871c5d0fbe4329547145d7cce67afa3d9d4c20a889166da6c7b29e4192"
+  }
+}

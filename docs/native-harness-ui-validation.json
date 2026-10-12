@@ -1,0 +1,20 @@
+{
+  "session": "20d03b2a61444afe9de40d6bd02d6ceb",
+  "job": "540e146c182b4c1b902d74842d0b6eca",
+  "errors": [],
+  "checks": [
+    {
+      "viewport": "[local detail omitted from GitHub snapshot]",
+      "completed_controls": true,
+      "overflow": false
+    },
+    {
+      "viewport": "[local detail omitted from GitHub snapshot]",
+      "completed_controls": true,
+      "overflow": false
+    }
+  ],
+  "task_status": "[local detail omitted from GitHub snapshot]",
+  "native_answer": "[local detail omitted from GitHub snapshot]",
+  "passed": true
+}

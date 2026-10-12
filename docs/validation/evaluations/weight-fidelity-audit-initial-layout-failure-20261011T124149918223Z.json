@@ -1,0 +1,31 @@
+{
+  "started_at": "2026-10-11T12:22:10.832803+00:00",
+  "status": "failed",
+  "scope": "Read-only tensor reconstruction audit: six preselected expert tensors, first8rows/128columns/expert0 at layers0,11,23. No inference, runtime change or quality attribution. Sampling does not characterize every model weight.",
+  "selection": {
+    "layers": [
+      0,
+      11,
+      23
+    ],
+    "projections": [
+      "[local detail omitted from GitHub snapshot]",
+      "[local detail omitted from GitHub snapshot]"
+    ],
+    "expert": 0,
+    "rows": 8,
+    "columns": 128
+  },
+  "runtime_sha256_before": "978e3947077a8fff272c10e7a6111b1b149a82551eca7f8e307ca46c117475c6",
+  "decoder_self_checks": true,
+  "samples": [],
+  "passed": false,
+  "error": "[local detail omitted from GitHub snapshot]",
+  "archive_metadata": {
+    "source": "weight-fidelity-audit-initial-layout-failure.json",
+    "kind": "automated",
+    "title": "Weight audit: initial layout failure",
+    "scope": "Six small samples and decoder consistency only; no task accuracy, causality or full-model equivalence claim. Production unchanged.",
+    "source_sha256": "930e5372f46a6fdca78fd426a203418d1f2b859a8a8ccd8427dd7c8017e047cf"
+  }
+}

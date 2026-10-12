@@ -1,0 +1,33 @@
+{
+  "started_at": "2026-10-11T16:19:56.116134+00:00",
+  "status": "complete",
+  "passed": false,
+  "checks": {
+    "engine_temperature_matches_upstream_recommendation": false
+  },
+  "findings": {
+    "actual_turn_call_sites": [
+      {
+        "file": "app/engine.py",
+        "line": 268,
+        "temperature": 0.0
+      }
+    ],
+    "upstream_recommended": {
+      "temperature": 1.0,
+      "top_p": 1.0
+    },
+    "source": "https://github.com/openai/gpt-oss#recommended-sampling-parameters",
+    "native_adapter": "[local detail omitted from GitHub snapshot]",
+    "observed_native_payload": "[local detail omitted from GitHub snapshot]"
+  },
+  "runtime_sha256": "a39f23d4cf70bd8289e6a54198c3de2f93e5d7e370e76a50260ac23aa0862019",
+  "scope": "Read-only sampling configuration audit against the primary upstream README, verified by browsing2026-10-11. Configuration mismatch is observed; causal contribution to native failures is unproven. No setting/source/model changes during active frozen351 money run. Candidate experiment only if the remaining repair fails.",
+  "archive_metadata": {
+    "source": "native-sampling-audit-validation.json",
+    "kind": "tools",
+    "title": "Native sampling differs from GPT-OSS recommendation",
+    "scope": "Read-only sampling configuration audit against the primary upstream README, verified by browsing2026-10-11. Configuration mismatch is observed; causal contribution to native failures is unproven. No setting/source/model changes during active frozen351 money run. Candidate experiment only if the remaining repair fails.",
+    "source_sha256": "33af641d8f869cdf35ee66b968c47afd7ef60cb75ab79f6a890735df58c97148"
+  }
+}

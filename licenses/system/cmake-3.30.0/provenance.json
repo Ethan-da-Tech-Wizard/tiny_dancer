@@ -1,0 +1,9 @@
+{
+  "version": "3.30.0",
+  "binary": "/home/ethan/.local/bin/cmake",
+  "copyright_source": "https://raw.githubusercontent.com/Kitware/CMake/v3.30.0/Copyright.txt",
+  "license_text_sha256": "0676e30827684487aa0ea8f72f01e9460a6320fa34a2888df0ad1dd3e8a06eb8",
+  "role": "Existing host CMake; local llama.cpp candidate build, not inference runtime",
+  "main_license": "BSD-3-Clause; bundled components retain separate terms",
+  "candidate_build_started": false
+}

@@ -1,0 +1,16 @@
+{
+  "started_at": 1791664503.3878305,
+  "method": "[local detail omitted from GitHub snapshot]",
+  "model_pid_before": 119266,
+  "before": {
+    "rss_gib": 3.999767303466797,
+    "uss_gib": 3.918323516845703
+  },
+  "gpu_before": "[local detail omitted from GitHub snapshot]",
+  "status": "passed",
+  "engine_after": "[local detail omitted from GitHub snapshot]",
+  "model_pid_after": null,
+  "old_pid_exists": false,
+  "gpu_after": "[local detail omitted from GitHub snapshot]",
+  "finished_at": 1791664663.5990694
+}

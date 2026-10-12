@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-11T11:25:03.634101+00:00",
+  "status": "complete_diagnostic_failed",
+  "purpose": "[local detail omitted from GitHub snapshot]",
+  "next_experiment": {
+    "scope": "One fresh localGPTOSS Chat strategy diagnostic, not task completion or release qualification. Same original user goal, without previous implementation, acceptance examples, or hidden cases.",
+    "instruction": "[local detail omitted from GitHub snapshot]",
+    "goal_source": "[local detail omitted from GitHub snapshot]",
+    "reasoning_effort": "low",
+    "max_tokens": 512,
+    "deadline_seconds": 900,
+    "operator_hint_policy": "[local detail omitted from GitHub snapshot]",
+    "assessment": "[local detail omitted from GitHub snapshot]"
+  },
+  "decisions": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "current_constraints": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "latest_report": "docs/strategy-diagnostic-20261011T111720Z.json",
+  "diagnostic_passed": false,
+  "decision": "[local detail omitted from GitHub snapshot]"
+}

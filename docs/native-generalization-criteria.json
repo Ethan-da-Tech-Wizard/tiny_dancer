@@ -1,0 +1,41 @@
+{
+  "frozen_at": "[local detail omitted from GitHub snapshot]",
+  "required": "[local detail omitted from GitHub snapshot]",
+  "cases": {
+    "inventory": {
+      "title": "Fresh Python file inventory and atomic JSON output",
+      "prompt": "[local detail omitted from GitHub snapshot]",
+      "acceptance_sha256": "e45fea75d1a00bc2158d0f552b1f352e8375a27082999d8d45dfd91b68482475",
+      "acceptance_methods": 6,
+      "independent_criteria": [
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]"
+      ],
+      "scope": "Fresh implementation with frozen acceptance tests and sample input only; withheld independent checks after termination.",
+      "additional_required": "[local detail omitted from GitHub snapshot]"
+    },
+    "ranges": {
+      "title": "Fresh Rust CLI ranges, validation and integer boundaries",
+      "prompt": "[local detail omitted from GitHub snapshot]",
+      "acceptance_sha256": "86dbc5fd77e99fc84ebe50f8aa6e3208c02a6f0994d1dda193ef5e28d671588f",
+      "acceptance_methods": 6,
+      "independent_criteria": [
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]",
+        "[local detail omitted from GitHub snapshot]"
+      ],
+      "scope": "Fresh implementation with frozen acceptance tests and sample input only; withheld independent checks after termination.",
+      "additional_required": "[local detail omitted from GitHub snapshot]"
+    }
+  },
+  "repair": {
+    "prompt": "[local detail omitted from GitHub snapshot]",
+    "acceptance_sha256": "2022e8a7d522322f05af37a701c05a0ce1377ab9fb94c497576ea55cfa8ba74f",
+    "baseline": "[local detail omitted from GitHub snapshot]",
+    "scope": "Identical failed implementation, goal and unchanged supplied tests; independent extra monetary checks after termination."
+  }
+}

@@ -1,0 +1,1237 @@
+{
+  "started_at": "2026-10-12T01:40:30.571147+00:00",
+  "status": "submitted",
+  "case": "inventory",
+  "cwd": "/mnt/GameDrive/tiny_dancer/workspace/minimal-inventory-20261012T014030513755Z",
+  "prompt": "[local detail omitted from GitHub snapshot]",
+  "instructions": "[local detail omitted from GitHub snapshot]",
+  "scope": "Experimental minimal shell-only loop inspired by mini-SWE-agent, using the unchanged local GPT-OSS-20B and existing Harmony/backend adapter. Original frozen goals and acceptance seeds. Multiple harness components differ; this is a baseline comparison, not a one-variable attribution or production qualification. No operator source edits or live hints.",
+  "runtime_sha256_before": "8c7b4485111cffa278e051a76315d844efc903fcaa8145ed12711444eff09a79",
+  "observer_sha256": {
+    "evaluate_minimal_coding.py": "62d9bcbbd0b7a49af441ec96221614533071a47bd1aa748335f850344b91730b",
+    "minimal_coding.py": "dfeee461406e6f29fdd25e5688ddf5dc8b86fec567ac52f4ca95c8b560187824"
+  },
+  "acceptance_sha256": "e45fea75d1a00bc2158d0f552b1f352e8375a27082999d8d45dfd91b68482475",
+  "reasoning_effort": "medium",
+  "protocol": "[local detail omitted from GitHub snapshot]",
+  "grammar_adapter_sha256": "3ef9044ad3a0831a8d795e4024f21192106bfd4a4f7aa59766e0277ba8d8e79c",
+  "additional_independent_criteria": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "operator_interventions": [],
+  "events": [
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 1
+      },
+      "seconds": 0.0
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 15.34,
+        "prompt_tokens": 446,
+        "completion_tokens": 56,
+        "prefill_seconds": 13.445067,
+        "decode_seconds": 1.880004,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 45.21
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 1
+      },
+      "seconds": 45.22
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 1
+      },
+      "seconds": 45.24
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 2
+      },
+      "seconds": 45.25
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 2.01,
+        "prompt_tokens": 603,
+        "completion_tokens": 38,
+        "prefill_seconds": 0.748,
+        "decode_seconds": 1.253536,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 47.26
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 2
+      },
+      "seconds": 47.26
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 2
+      },
+      "seconds": 47.27
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 3
+      },
+      "seconds": 47.27
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 7.5,
+        "prompt_tokens": 1508,
+        "completion_tokens": 82,
+        "prefill_seconds": 4.569828,
+        "decode_seconds": 2.9227109999999996,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 54.77
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 3
+      },
+      "seconds": 54.77
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 3
+      },
+      "seconds": 54.78
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 4
+      },
+      "seconds": 54.78
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 7.4,
+        "prompt_tokens": 2459,
+        "completion_tokens": 74,
+        "prefill_seconds": 4.668211,
+        "decode_seconds": 2.717125,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 62.18
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 4
+      },
+      "seconds": 62.18
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 4
+      },
+      "seconds": 62.19
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 5
+      },
+      "seconds": 62.19
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 37.9,
+        "prompt_tokens": 3401,
+        "completion_tokens": 784,
+        "prefill_seconds": 4.811166,
+        "decode_seconds": 33.06951,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 100.09
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 5
+      },
+      "seconds": 100.09
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 5
+      },
+      "seconds": 100.1
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 6
+      },
+      "seconds": 100.1
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 99.74,
+        "prompt_tokens": 4271,
+        "completion_tokens": 1399,
+        "prefill_seconds": 0.802156,
+        "decode_seconds": 98.912877,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 199.85
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 6
+      },
+      "seconds": 199.85
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 6
+      },
+      "seconds": 199.86
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 7
+      },
+      "seconds": 199.86
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 18.84,
+        "prompt_tokens": 5748,
+        "completion_tokens": 40,
+        "prefill_seconds": 16.001163000000002,
+        "decode_seconds": 2.7885329999999997,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 218.7
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 7
+      },
+      "seconds": 218.7
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]",
+          "python_bytecode": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 7
+      },
+      "seconds": 220.82
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 8
+      },
+      "seconds": 220.83
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 9.59,
+        "prompt_tokens": 5879,
+        "completion_tokens": 111,
+        "prefill_seconds": 1.53417,
+        "decode_seconds": 8.02083,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 230.42
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 8
+      },
+      "seconds": 230.42
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 8
+      },
+      "seconds": 230.5
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 9
+      },
+      "seconds": 230.5
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 3.27,
+        "prompt_tokens": 6057,
+        "completion_tokens": 31,
+        "prefill_seconds": 1.294342,
+        "decode_seconds": 1.9319549999999999,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 233.77
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 9
+      },
+      "seconds": 233.78
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 9
+      },
+      "seconds": 233.78
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 10
+      },
+      "seconds": 233.78
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 15.51,
+        "prompt_tokens": 6350,
+        "completion_tokens": 172,
+        "prefill_seconds": 3.232707,
+        "decode_seconds": 12.23611,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 249.29
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 10
+      },
+      "seconds": 249.29
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 10
+      },
+      "seconds": 249.3
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 11
+      },
+      "seconds": 249.3
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 21.46,
+        "prompt_tokens": 6609,
+        "completion_tokens": 268,
+        "prefill_seconds": 1.464032,
+        "decode_seconds": 19.951591,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 270.76
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 11
+      },
+      "seconds": 270.76
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 11
+      },
+      "seconds": 270.77
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 12
+      },
+      "seconds": 270.78
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 51.79,
+        "prompt_tokens": 7140,
+        "completion_tokens": 652,
+        "prefill_seconds": 3.92104,
+        "decode_seconds": 47.809345,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 322.57
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 12
+      },
+      "seconds": 322.57
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 12
+      },
+      "seconds": 322.64
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 13
+      },
+      "seconds": 322.64
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 14.56,
+        "prompt_tokens": 8027,
+        "completion_tokens": 81,
+        "prefill_seconds": 8.893291,
+        "decode_seconds": 5.615213,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 337.2
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 13
+      },
+      "seconds": 337.2
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 13
+      },
+      "seconds": 337.21
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 14
+      },
+      "seconds": 337.21
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 95.34,
+        "prompt_tokens": 8209,
+        "completion_tokens": 1314,
+        "prefill_seconds": 1.369385,
+        "decode_seconds": 93.90598299999999,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 432.55
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 14
+      },
+      "seconds": 432.55
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 14
+      },
+      "seconds": 432.57
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 15
+      },
+      "seconds": 432.57
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 16.48,
+        "prompt_tokens": 9603,
+        "completion_tokens": 34,
+        "prefill_seconds": 14.183965,
+        "decode_seconds": 2.234074,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 449.05
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 15
+      },
+      "seconds": 449.05
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 1,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]",
+          "python_bytecode": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 15
+      },
+      "seconds": 451.2
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 16
+      },
+      "seconds": 451.2
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 18.91,
+        "prompt_tokens": 10342,
+        "completion_tokens": 163,
+        "prefill_seconds": 7.7182129999999995,
+        "decode_seconds": 11.127510000000001,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 470.12
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 16
+      },
+      "seconds": 470.12
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 16
+      },
+      "seconds": 470.13
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 17
+      },
+      "seconds": 470.13
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 5.58,
+        "prompt_tokens": 10588,
+        "completion_tokens": 48,
+        "prefill_seconds": 2.236951,
+        "decode_seconds": 3.259382,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 475.71
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 17
+      },
+      "seconds": 475.71
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]",
+          "python_bytecode": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 17
+      },
+      "seconds": 477.05
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 18
+      },
+      "seconds": 477.06
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 3.63,
+        "prompt_tokens": 10721,
+        "completion_tokens": 32,
+        "prefill_seconds": 1.453495,
+        "decode_seconds": 2.1014899999999996,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 480.68
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 18
+      },
+      "seconds": 480.68
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]",
+          "python_bytecode": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 18
+      },
+      "seconds": 482.98
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 19
+      },
+      "seconds": 482.98
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 5.1,
+        "prompt_tokens": 10841,
+        "completion_tokens": 55,
+        "prefill_seconds": 1.370988,
+        "decode_seconds": 3.6572139999999997,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 488.08
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 19
+      },
+      "seconds": 488.09
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 19
+      },
+      "seconds": 488.09
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 20
+      },
+      "seconds": 488.1
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "backend": "llama.cpp-native-chat-grammar",
+        "total_seconds": 7.4,
+        "prompt_tokens": 10967,
+        "completion_tokens": 87,
+        "prefill_seconds": 1.360219,
+        "decode_seconds": 5.957884,
+        "reasoning_effort": "medium",
+        "sampling_temperature": 1.0
+      },
+      "seconds": 495.5
+    }
+  ],
+  "samples": [
+    {
+      "seconds": 0.1,
+      "engine": "loading model",
+      "available_ram_gib": 9.723,
+      "activity": null
+    },
+    {
+      "seconds": 20.2,
+      "engine": "loading model",
+      "available_ram_gib": 9.433,
+      "activity": [
+        835942,
+        5.09,
+        7848873984,
+        0
+      ]
+    },
+    {
+      "seconds": 40.3,
+      "engine": "processing prompt",
+      "available_ram_gib": 9.228,
+      "activity": [
+        835942,
+        21.77,
+        15964352512,
+        4096
+      ]
+    },
+    {
+      "seconds": 60.3,
+      "engine": "generating",
+      "available_ram_gib": 9.139,
+      "activity": [
+        835942,
+        72.28999999999999,
+        16441786368,
+        12288
+      ]
+    },
+    {
+      "seconds": 80.4,
+      "engine": "generating",
+      "available_ram_gib": 9.118,
+      "activity": [
+        835942,
+        148.84,
+        16469487616,
+        16384
+      ]
+    },
+    {
+      "seconds": 100.5,
+      "engine": "processing prompt",
+      "available_ram_gib": 9.091,
+      "activity": [
+        835942,
+        242.0,
+        16485228544,
+        20480
+      ]
+    },
+    {
+      "seconds": 120.5,
+      "engine": "generating",
+      "available_ram_gib": 9.083,
+      "activity": [
+        835942,
+        305.52,
+        16489512960,
+        24576
+      ]
+    },
+    {
+      "seconds": 140.6,
+      "engine": "generating",
+      "available_ram_gib": 9.069,
+      "activity": [
+        835942,
+        370.34999999999997,
+        16506449920,
+        24576
+      ]
+    },
+    {
+      "seconds": 160.6,
+      "engine": "generating",
+      "available_ram_gib": 8.252,
+      "activity": [
+        835942,
+        438.83000000000004,
+        16548929536,
+        36864
+      ]
+    },
+    {
+      "seconds": 180.7,
+      "engine": "generating",
+      "available_ram_gib": 7.793,
+      "activity": [
+        835942,
+        510.40999999999997,
+        16600879104,
+        45056
+      ]
+    },
+    {
+      "seconds": 200.8,
+      "engine": "processing prompt",
+      "available_ram_gib": 7.521,
+      "activity": [
+        835942,
+        577.8,
+        16645242880,
+        45056
+      ]
+    },
+    {
+      "seconds": 220.8,
+      "engine": "processing prompt",
+      "available_ram_gib": 7.764,
+      "activity": [
+        835942,
+        602.87,
+        16652955648,
+        53248
+      ]
+    },
+    {
+      "seconds": 240.9,
+      "engine": "generating",
+      "available_ram_gib": 8.019,
+      "activity": [
+        835942,
+        662.1800000000001,
+        16723607552,
+        57344
+      ]
+    },
+    {
+      "seconds": 261.0,
+      "engine": "generating",
+      "available_ram_gib": 7.588,
+      "activity": [
+        835942,
+        728.85,
+        16749289472,
+        57344
+      ]
+    },
+    {
+      "seconds": 281.0,
+      "engine": "generating",
+      "available_ram_gib": 7.309,
+      "activity": [
+        835942,
+        794.48,
+        16787750912,
+        69632
+      ]
+    },
+    {
+      "seconds": 301.1,
+      "engine": "generating",
+      "available_ram_gib": 7.451,
+      "activity": [
+        835942,
+        864.11,
+        16821174272,
+        73728
+      ]
+    },
+    {
+      "seconds": 321.1,
+      "engine": "generating",
+      "available_ram_gib": 7.221,
+      "activity": [
+        835942,
+        932.3,
+        16858259456,
+        73728
+      ]
+    },
+    {
+      "seconds": 341.2,
+      "engine": "generating",
+      "available_ram_gib": 7.329,
+      "activity": [
+        835942,
+        976.1,
+        16893263872,
+        81920
+      ]
+    },
+    {
+      "seconds": 361.3,
+      "engine": "generating",
+      "available_ram_gib": 7.435,
+      "activity": [
+        835942,
+        1045.23,
+        16949678080,
+        86016
+      ]
+    },
+    {
+      "seconds": 381.3,
+      "engine": "generating",
+      "available_ram_gib": 7.446,
+      "activity": [
+        835942,
+        1113.1299999999999,
+        17010601984,
+        86016
+      ]
+    },
+    {
+      "seconds": 401.4,
+      "engine": "generating",
+      "available_ram_gib": 7.457,
+      "activity": [
+        835942,
+        1181.67,
+        17028857856,
+        90112
+      ]
+    },
+    {
+      "seconds": 421.5,
+      "engine": "generating",
+      "available_ram_gib": 7.469,
+      "activity": [
+        835942,
+        1249.62,
+        17054306304,
+        94208
+      ]
+    },
+    {
+      "seconds": 441.5,
+      "engine": "processing prompt",
+      "available_ram_gib": 7.466,
+      "activity": [
+        835942,
+        1296.39,
+        17063632896,
+        98304
+      ]
+    },
+    {
+      "seconds": 461.6,
+      "engine": "generating",
+      "available_ram_gib": 7.471,
+      "activity": [
+        835942,
+        1326.8100000000002,
+        17124257792,
+        102400
+      ]
+    },
+    {
+      "seconds": 481.6,
+      "engine": "ready",
+      "available_ram_gib": 7.454,
+      "activity": [
+        835942,
+        1382.6299999999999,
+        17145565184,
+        110592
+      ]
+    }
+  ],
+  "turns": 20,
+  "seconds": 495.77,
+  "project_tests": {
+    "exit_code": 0,
+    "output": "[local detail omitted from GitHub snapshot]",
+    "summary": "[local detail omitted from GitHub snapshot]"
+  },
+  "independent_checks": [
+    {
+      "check": "unseen binary/unicode/symlinks/output exclusion 1",
+      "passed": true,
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "unseen binary/unicode/symlinks/output exclusion 2",
+      "passed": true,
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "invalid root preserves actual prior bytes",
+      "passed": true,
+      "exit_code": 1
+    },
+    {
+      "check": "scan read failure preserves actual prior bytes",
+      "passed": true,
+      "exit_code": 1,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "requested real report.json complete and exact",
+      "passed": true
+    },
+    {
+      "check": "Repeated successful output outside ROOT is replaced with current data",
+      "passed": true,
+      "first_exit_code": 0,
+      "second_exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "Unreadable directory fails scanning and preserves prior output",
+      "passed": false,
+      "readable_control_passed": true,
+      "exit_code": 0,
+      "prior_output_preserved": false,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "checks": {
+    "submitted": true,
+    "runtime_frozen": true,
+    "acceptance_unchanged": true,
+    "nonempty_own_and_supplied_tests": true,
+    "independent_goal_checks": false,
+    "no_interruption": true
+  },
+  "passed": false
+}

@@ -1,0 +1,31 @@
+diff --git a/chat.py b/chat.py
+index afdb683..0066c4e 100644
+--- a/chat.py
++++ b/chat.py
+@@ -51,7 +51,7 @@ class PicchioSession:
+                  async_moe=False, direct=False, io_threads=None, flat=None,
+                  gpu_router=False, gpu_prefetch=False, gpu_dense=False,
+                  gpu_experts=False, gpu_dense_release_host=False, expert_reuse=True,
+-                 tensor_index=True):
++                 tensor_index=True, gpu_lmhead=False, on_process_started=None):
+         if gpu_dense_release_host and not gpu_dense:
+             raise ValueError("host weight release requires gpu_dense=True")
+         env = os.environ.copy()
+@@ -85,6 +85,8 @@ class PicchioSession:
+             env["GPU_DENSE_RELEASE_HOST"] = "1"
+         if gpu_experts:
+             env["GPU_EXPERTS"] = "1"
++        if gpu_lmhead:
++            env["GPU_LMHEAD"] = "1"
+         # Default sampling sent with every TURN (a per-turn override is possible).
+         s = sampling or {}
+         self.temperature = 1.0 if s.get("TEMPERATURE") is None else float(s["TEMPERATURE"])
+@@ -96,6 +98,8 @@ class PicchioSession:
+             [_resolve_exe(exe), str(model)], env=env, stdin=subprocess.PIPE,
+             stdout=subprocess.PIPE, text=True, encoding="ascii",
+             errors="replace", bufsize=1)
++        if on_process_started is not None:
++            on_process_started(self.proc)
+         try:
+             ready = self._line()
+             if not ready.startswith("READY "):

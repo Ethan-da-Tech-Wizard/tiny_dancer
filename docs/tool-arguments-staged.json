@@ -1,0 +1,74 @@
+{
+  "at": "2026-10-11T08:39:53.280433+00:00",
+  "status": "deployed_production_273_pass_guarded_restart_ready",
+  "stage": "[local detail omitted from GitHub snapshot]",
+  "production_runtime_sha256": "c96b45453116dbb3662260082a87c6ecfa32e7bb02d5e1a761ddee3916fbf599",
+  "production_tests": 273,
+  "staged_tests": 273,
+  "staged_report": "docs/validation/runs/runner-batching-budget-staged-273-20261011T104704587302Z.json",
+  "staged_source_sha256": "0e167e66477f9b2393e10bec1385f83d24cd80a9879aec3d66a2c999772ae6be",
+  "changes": [
+    {
+      "path": "app/agent.py",
+      "production_sha256": "7efce1e293dbd5e1cc06e592fa92a295b3052a0cde0220d268745e2a1d593761",
+      "staged_sha256": "5bcb1e83f1502bb1596d6181c612334b077074bd57f3e8bd48b6cf6166eb6cec"
+    },
+    {
+      "path": "app/request_models.py",
+      "production_sha256": "e19932c52789962c96607607d0d4bbc49e94c980789e38bb6cbf1d3dc5bae67c",
+      "staged_sha256": "b73efbae83343c19477a2b4917bf346631f993251fbaf3a5af4af71b367c8476"
+    },
+    {
+      "path": "app/tool_arguments.py",
+      "production_sha256": null,
+      "staged_sha256": "bb988fd8d49962e6eeff66a04770ab013c7bd388d94494a8befde28f0d296503"
+    },
+    {
+      "path": "app/tools.py",
+      "production_sha256": "17fe3f0976ed1ed071d7c665fff8e49a99f7c7305caa07ddb8a7d7f706338285",
+      "staged_sha256": "49f4835bbfb7ab94f64e8a6c5a4bd90028f6591910dc29eca79b46e983004d15"
+    },
+    {
+      "path": "app/working_memory.py",
+      "production_sha256": "84c7b90d596e6b22964e043ccd54e93b73b5ca5bb504d6b399393b09aa2f6626",
+      "staged_sha256": "9e99777bb7b795c0e270c1a383e4ceba120604fd648d032a448c9003f6a17828"
+    },
+    {
+      "path": "tests/test_explicit_budget.py",
+      "production_sha256": null,
+      "staged_sha256": "08a3404fab682295318ce577a8d65315f46a0289d43ee1c0e43047622221f305"
+    },
+    {
+      "path": "tests/test_incomplete_generation_diagnostics.py",
+      "production_sha256": null,
+      "staged_sha256": "8cde9969f71e876d1451998eca776dc88f8e3d0c899a56b105e4922e1f591790"
+    },
+    {
+      "path": "tests/test_post_edit_checks.py",
+      "production_sha256": null,
+      "staged_sha256": "490d58d7625ff43496f5403e8ea6a2566d5829c2388e21672488e24ae9182070"
+    },
+    {
+      "path": "tests/test_request_models.py",
+      "production_sha256": "a0080e96f57660ef0bd8ac64fed08fd42a01e134179efc69e9bdff50b948bfb1",
+      "staged_sha256": "62d280708b3f56a533294a2b1cc616e80e293ce161f632a9cd05a25d1f4089b1"
+    },
+    {
+      "path": "tests/test_test_environment_memory.py",
+      "production_sha256": null,
+      "staged_sha256": "3aaf58b45e28c45fead68f72855b7a4f5c3d9ebd0c9b905e192a4fe719eedeef"
+    },
+    {
+      "path": "tests/test_tool_arguments.py",
+      "production_sha256": null,
+      "staged_sha256": "8e328facabdc8044db536a78f3bb2fd5566f2560bf88c355100e8ced3813bf00"
+    }
+  ],
+  "scope": "Only an unexpected ] immediately before final } after a fully decoded value can be removed. Strict complete object reparse with duplicate rejection for repaired inputs; no keys, values, text, escapes, commands, missing delimiters or trailing data altered. Valid input unchanged. Complete original native call retained, repair offset event audited, constant result metadata preserves canonical loop detection. Incomplete native generations remain unexecuted. No dependency/model/precision/expert/context/cache change. Partial-generation diagnostics add only whitelisted phase/recipient and character counts, never private analysis/partial command text; unrecognized tags masked. Partial execution and existing retry behavior unchanged. Actual test-runner receipts retained through compaction/Resume without invented passing evidence. After a changed source batch, rerun only recognized previously selected and executed nonempty tests in task cwd, with actual artifacts/source hashes/cancellation checks. Unchanged reads and known availability never rerun/verify. Tests use unique empty Python bytecode prefixes without writing caches, rejecting stale same-size edits. Explicit API starting allowance can be4096; existing automatic defaults unchanged.",
+  "next": "[local detail omitted from GitHub snapshot]",
+  "updated_at": "2026-10-11T10:48:01.723023+00:00",
+  "deployed_at": "[local detail omitted from GitHub snapshot]",
+  "backup": "[local detail omitted from GitHub snapshot]",
+  "production_report": "docs/validation/runs/20261011T104802059101Z.json",
+  "deployed_runtime_sha256": "5c7ee1267669e717559201b57ff5755c87c9844cd3f7293a5b4b67ab0b551199"
+}

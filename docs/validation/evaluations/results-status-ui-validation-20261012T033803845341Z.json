@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "checked_at": "[local detail omitted from GitHub snapshot]",
+  "checks": {
+    "failed_submission_shown_failed": true,
+    "native_duration_visible": true,
+    "repair_pass_visible": true,
+    "integration_preflight_visible": true,
+    "all_archived_rows_visible": true
+  },
+  "visible_rows": 353,
+  "scope": "Actual authenticated browser and live results endpoint; no native inference. Failed/successful examples and all report categories rendered.",
+  "screenshot": "[local detail omitted from GitHub snapshot]",
+  "archive_metadata": {
+    "source": "results-status-ui-validation.json",
+    "kind": "automated",
+    "title": "Results display correctness",
+    "scope": "Actual browser/live API, no native inference",
+    "source_sha256": "45db92c0fa118631a4519cd6f50a72a0849ae656874f88a39894dcaf71254252"
+  }
+}

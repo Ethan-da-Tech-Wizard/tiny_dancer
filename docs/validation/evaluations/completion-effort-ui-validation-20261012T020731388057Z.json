@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "options": [
+    {
+      "value": "[local detail omitted from GitHub snapshot]",
+      "label": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "value": "[local detail omitted from GitHub snapshot]",
+      "label": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "value": "[local detail omitted from GitHub snapshot]",
+      "label": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "value": "[local detail omitted from GitHub snapshot]",
+      "label": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "fresh_default": "[local detail omitted from GitHub snapshot]",
+  "preserved_explicit_high_after_reload": "[local detail omitted from GitHub snapshot]",
+  "scope": "Isolated real browser context; no task submitted or user browser changed.",
+  "archive_metadata": {
+    "source": "completion-effort-ui-validation.json",
+    "kind": "integration",
+    "title": "Thinking controls persist high and default Auto",
+    "scope": "Actual isolated browser; no model task. Does not qualify inference.",
+    "source_sha256": "857a48dfeed7733ffd8b56706fa22b8e6868177790665521a99e4400d5f91619"
+  }
+}

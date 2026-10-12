@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-11T00:55:10.370867+00:00",
+  "checks": {
+    "api_auto": true,
+    "api_minimum": true,
+    "api_maximum": true,
+    "api_below_minimum": true,
+    "api_above_maximum": true,
+    "api_omitted_auto": true,
+    "ui_auto_default": true,
+    "ui_agent_auto": true,
+    "ui_agent_512": true,
+    "ui_chat_auto": true,
+    "ui_chat_1024": true,
+    "numeric_choice_persists": true,
+    "no_javascript_errors": true,
+    "native_job_untouched": true
+  },
+  "errors": [],
+  "scope": "Actual nullable/bounded API validation against a nonexistent session, plus intercepted browser POSTs. No native task started, resumed or stopped.",
+  "passed": true,
+  "status": "passed"
+}

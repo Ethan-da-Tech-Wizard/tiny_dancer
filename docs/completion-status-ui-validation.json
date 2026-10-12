@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "completed_status": "[local detail omitted from GitHub snapshot]",
+  "pause_reason": "[local detail omitted from GitHub snapshot]",
+  "scope": "Actual production JavaScript in isolated browser with intercepted fixture session API. No model task or user browser changed. Initial attempt called a module-private function and failed; this check exercises normal session loading."
+}

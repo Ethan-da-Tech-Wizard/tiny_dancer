@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-11T00:16:26.775497+00:00",
+  "status": "failed",
+  "passed": false,
+  "scope": "Six scripted-runner tests, eleven failing subcases; automatic starting budget is unimplemented. Actual local shell checks; no native generation.",
+  "logs": [
+    {
+      "path": "logs/hardening-generation-budget-diagnosis.log",
+      "detail": "[local detail omitted from GitHub snapshot]"
+    }
+  ]
+}

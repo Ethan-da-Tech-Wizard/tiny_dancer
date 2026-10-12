@@ -1,0 +1,47 @@
+bignumber.js
+/*
+ *      bignumber.js v9.3.1
+ *      A JavaScript library for arbitrary-precision arithmetic.
+ *      https://github.com/MikeMcl/bignumber.js
+ *      Copyright (c) 2025 Michael Mclaughlin <M8ch88l@gmail.com>
+ *      MIT Licensed.
+ *
+ *      BigNumber.prototype methods     |  BigNumber methods
+ *                                      |
+ *      absoluteValue            abs    |  clone
+ *      comparedTo                      |  config               set
+ *      decimalPlaces            dp     |      DECIMAL_PLACES
+ *      dividedBy                div    |      ROUNDING_MODE
+ *      dividedToIntegerBy       idiv   |      EXPONENTIAL_AT
+ *      exponentiatedBy          pow    |      RANGE
+ *      integerValue                    |      CRYPTO
+ *      isEqualTo                eq     |      MODULO_MODE
+ *      isFinite                        |      POW_PRECISION
+ *      isGreaterThan            gt     |      FORMAT
+ *      isGreaterThanOrEqualTo   gte    |      ALPHABET
+ *      isInteger                       |  isBigNumber
+ *      isLessThan               lt     |  maximum              max
+ *      isLessThanOrEqualTo      lte    |  minimum              min
+ *      isNaN                           |  random
+ *      isNegative                      |  sum
+ *      isPositive                      |
+ *      isZero                          |
+ *      minus                           |
+ *      modulo                   mod    |
+ *      multipliedBy             times  |
+ *      negated                         |
+ *      plus                            |
+ *      precision                sd     |
+ *      shiftedBy                       |
+ *      squareRoot               sqrt   |
+ *      toExponential                   |
+ *      toFixed                         |
+ *      toFormat                        |
+ *      toFraction                      |
+ *      toJSON                          |
+ *      toNumber                        |
+ *      toPrecision                     |
+ *      toString                        |
+ *      valueOf                         |
+ *
+ */

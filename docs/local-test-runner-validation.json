@@ -1,0 +1,89 @@
+{
+  "at": "2026-10-11T00:56:43.890120+00:00",
+  "passed": true,
+  "checks": {
+    "local_runner_discovered": true,
+    "real_two_test_suite_passed": true,
+    "real_failure_retained_and_later_command_skipped": true,
+    "zero_selected_tests_retained": true
+  },
+  "scope": "Actual project-owned pytest through the same inspection/shell/batched-check handlers; success, tmp_path under GameDrive, failure and zero selected tests. No native model or user task invoked.",
+  "runtime": {
+    "python": "[local detail omitted from GitHub snapshot]",
+    "pytest_command": "[local detail omitted from GitHub snapshot]",
+    "cargo": "[local detail omitted from GitHub snapshot]",
+    "version": "3.14.7",
+    "pytest_module": false
+  },
+  "outcomes": {
+    "good": {
+      "checks": [
+        {
+          "command": "[local detail omitted from GitHub snapshot]",
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        }
+      ],
+      "requested": 1,
+      "complete": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "artifact": "[local detail omitted from GitHub snapshot]"
+    },
+    "bad": {
+      "checks": [
+        {
+          "command": "[local detail omitted from GitHub snapshot]",
+          "exit_code": 1,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        }
+      ],
+      "requested": 2,
+      "complete": false,
+      "exit_code": 1,
+      "timed_out": false,
+      "artifact": "[local detail omitted from GitHub snapshot]"
+    },
+    "empty": {
+      "checks": [
+        {
+          "command": "[local detail omitted from GitHub snapshot]",
+          "exit_code": 5,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        }
+      ],
+      "requested": 1,
+      "complete": true,
+      "exit_code": 5,
+      "timed_out": false,
+      "artifact": "[local detail omitted from GitHub snapshot]",
+      "recovery": {
+        "runtime": {
+          "python": "[local detail omitted from GitHub snapshot]",
+          "pytest_command": "[local detail omitted from GitHub snapshot]",
+          "cargo": "[local detail omitted from GitHub snapshot]",
+          "version": "3.14.7",
+          "pytest_module": false
+        },
+        "test_candidates": [
+          {
+            "command": "[local detail omitted from GitHub snapshot]",
+            "available": true,
+            "evidence": "[local detail omitted from GitHub snapshot]"
+          }
+        ],
+        "artifact": "[local detail omitted from GitHub snapshot]",
+        "note": "[local detail omitted from GitHub snapshot]"
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "checked_at": "[local detail omitted from GitHub snapshot]",
+  "scope": "Actual upstream CLI against scripted local endpoint, not native inference",
+  "tests": 9,
+  "seconds": 0.807,
+  "log": "[local detail omitted from GitHub snapshot]",
+  "checks": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "full_regression_report": "docs/validation/runs/20261012T031957213503Z.json"
+}

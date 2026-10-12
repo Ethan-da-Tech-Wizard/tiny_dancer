@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-11T01:00:18.347585+00:00",
+  "passed": false,
+  "status": "failed",
+  "scope": "Evaluator startup setup failure; API not yet ready immediately after restart. No native task created or resumed.",
+  "detail": "[local detail omitted from GitHub snapshot]"
+}

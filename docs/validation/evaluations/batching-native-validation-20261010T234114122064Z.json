@@ -1,0 +1,861 @@
+{
+  "started_at": "2026-10-10T23:32:53.278579+00:00",
+  "prompt": "[local detail omitted from GitHub snapshot]",
+  "status": "complete",
+  "operator_interventions": [],
+  "samples": [
+    {
+      "elapsed_seconds": 0.1,
+      "status": "running",
+      "engine": "loading model",
+      "available_ram_gib": 8.442,
+      "progress": null,
+      "turns": 1,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 0.0,
+      "cpu_seconds": 0.0,
+      "read_bytes": 36864
+    },
+    {
+      "elapsed_seconds": 20.1,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 6.407,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 908,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791675177.8638136
+      },
+      "turns": 1,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 2.008,
+      "cpu_seconds": 53.19,
+      "read_bytes": 2427363328
+    },
+    {
+      "elapsed_seconds": 40.2,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 6.264,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 908,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791675177.8638136
+      },
+      "turns": 1,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 2.165,
+      "cpu_seconds": 116.92,
+      "read_bytes": 3448078336
+    },
+    {
+      "elapsed_seconds": 60.2,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 6.083,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 908,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791675177.8638136
+      },
+      "turns": 1,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 2.351,
+      "cpu_seconds": 185.42,
+      "read_bytes": 4367396864
+    },
+    {
+      "elapsed_seconds": 80.2,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.944,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 908,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791675177.8638136
+      },
+      "turns": 1,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 2.536,
+      "cpu_seconds": 249.91,
+      "read_bytes": 5283606528
+    },
+    {
+      "elapsed_seconds": 100.2,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.767,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 908,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791675177.8638136
+      },
+      "turns": 1,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 2.694,
+      "cpu_seconds": 314.33,
+      "read_bytes": 6237483008
+    },
+    {
+      "elapsed_seconds": 120.2,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.55,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 908,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791675177.8638136
+      },
+      "turns": 1,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 2.879,
+      "cpu_seconds": 378.8,
+      "read_bytes": 7151120384
+    },
+    {
+      "elapsed_seconds": 140.3,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.414,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 908,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791675177.8638136
+      },
+      "turns": 1,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 3.036,
+      "cpu_seconds": 444.84,
+      "read_bytes": 7927230464
+    },
+    {
+      "elapsed_seconds": 160.3,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.256,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 908,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791675177.8638136
+      },
+      "turns": 1,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 3.207,
+      "cpu_seconds": 507.2,
+      "read_bytes": 9398091776
+    },
+    {
+      "elapsed_seconds": 180.3,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.238,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 16,
+          "seconds": 169.1
+        },
+        "created": 1791675346.9711537
+      },
+      "turns": 1,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 3.222,
+      "cpu_seconds": 520.78,
+      "read_bytes": 14928281600
+    },
+    {
+      "elapsed_seconds": 200.3,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.255,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 1287,
+          "reused_tokens": 940,
+          "exact_history_cache_tokens": 940,
+          "cache_saved_prefill_tokens": 19,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791675354.0773416
+      },
+      "turns": 2,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 3.225,
+      "cpu_seconds": 575.19,
+      "read_bytes": 16525037568
+    },
+    {
+      "elapsed_seconds": 220.4,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.25,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 1287,
+          "reused_tokens": 940,
+          "exact_history_cache_tokens": 940,
+          "cache_saved_prefill_tokens": 19,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791675354.0773416
+      },
+      "turns": 2,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 3.229,
+      "cpu_seconds": 631.34,
+      "read_bytes": 18009448448
+    },
+    {
+      "elapsed_seconds": 240.4,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.249,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 1287,
+          "reused_tokens": 940,
+          "exact_history_cache_tokens": 940,
+          "cache_saved_prefill_tokens": 19,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791675354.0773416
+      },
+      "turns": 2,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 3.221,
+      "cpu_seconds": 685.79,
+      "read_bytes": 19737366528
+    },
+    {
+      "elapsed_seconds": 260.4,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.227,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 1287,
+          "reused_tokens": 940,
+          "exact_history_cache_tokens": 940,
+          "cache_saved_prefill_tokens": 19,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791675354.0773416
+      },
+      "turns": 2,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 3.24,
+      "cpu_seconds": 741.71,
+      "read_bytes": 21271027712
+    },
+    {
+      "elapsed_seconds": 280.5,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.217,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 32,
+          "seconds": 97.8
+        },
+        "created": 1791675451.8434286
+      },
+      "turns": 2,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 3.242,
+      "cpu_seconds": 756.3,
+      "read_bytes": 26319450112
+    },
+    {
+      "elapsed_seconds": 300.5,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.231,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 80,
+          "seconds": 119.5
+        },
+        "created": 1791675473.5860088
+      },
+      "turns": 2,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 3.244,
+      "cpu_seconds": 771.76,
+      "read_bytes": 31051550720
+    },
+    {
+      "elapsed_seconds": 320.5,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.229,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 96,
+          "seconds": 131.5
+        },
+        "created": 1791675485.6038973
+      },
+      "turns": 2,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 3.245,
+      "cpu_seconds": 784.23,
+      "read_bytes": 36812324864
+    },
+    {
+      "elapsed_seconds": 340.5,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.233,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 128,
+          "seconds": 154.6
+        },
+        "created": 1791675508.6700556
+      },
+      "turns": 2,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 3.247,
+      "cpu_seconds": 797.91,
+      "read_bytes": 42169995264
+    },
+    {
+      "elapsed_seconds": 360.6,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.2,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 1522,
+          "reused_tokens": 1430,
+          "exact_history_cache_tokens": 1430,
+          "cache_saved_prefill_tokens": 509,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791675517.7701805
+      },
+      "turns": 3,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 3.262,
+      "cpu_seconds": 835.5,
+      "read_bytes": 45672321024
+    },
+    {
+      "elapsed_seconds": 380.6,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.167,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 1522,
+          "reused_tokens": 1430,
+          "exact_history_cache_tokens": 1430,
+          "cache_saved_prefill_tokens": 509,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791675517.7701805
+      },
+      "turns": 3,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 3.265,
+      "cpu_seconds": 872.37,
+      "read_bytes": 49356136448
+    },
+    {
+      "elapsed_seconds": 400.6,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.169,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 1766,
+          "reused_tokens": 1573,
+          "exact_history_cache_tokens": 1573,
+          "cache_saved_prefill_tokens": 652,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791675572.9380474
+      },
+      "turns": 4,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 3.285,
+      "cpu_seconds": 891.23,
+      "read_bytes": 53446234112
+    },
+    {
+      "elapsed_seconds": 420.6,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.126,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 1766,
+          "reused_tokens": 1573,
+          "exact_history_cache_tokens": 1573,
+          "cache_saved_prefill_tokens": 652,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791675572.9380474
+      },
+      "turns": 4,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 3.302,
+      "cpu_seconds": 941.01,
+      "read_bytes": 55314505728
+    },
+    {
+      "elapsed_seconds": 440.7,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.114,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 1766,
+          "reused_tokens": 1573,
+          "exact_history_cache_tokens": 1573,
+          "cache_saved_prefill_tokens": 652,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791675572.9380474
+      },
+      "turns": 4,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 3.318,
+      "cpu_seconds": 991.23,
+      "read_bytes": 57596567552
+    },
+    {
+      "elapsed_seconds": 460.7,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.104,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 1766,
+          "reused_tokens": 1573,
+          "exact_history_cache_tokens": 1573,
+          "cache_saved_prefill_tokens": 652,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791675572.9380474
+      },
+      "turns": 4,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 3.332,
+      "cpu_seconds": 1029.29,
+      "read_bytes": 60819927040
+    },
+    {
+      "elapsed_seconds": 480.7,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.125,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 32,
+          "seconds": 80.7
+        },
+        "created": 1791675653.609611
+      },
+      "turns": 4,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 3.334,
+      "cpu_seconds": 1042.23,
+      "read_bytes": 66228580352
+    },
+    {
+      "elapsed_seconds": 500.8,
+      "status": "complete",
+      "engine": "ready",
+      "available_ram_gib": 5.116,
+      "progress": {
+        "kind": "done",
+        "data": {
+          "steps": 4,
+          "verified": true,
+          "evidence_checked": false,
+          "answer_origin": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791675672.026352
+      },
+      "turns": 4,
+      "pid": 201678,
+      "nice": 5,
+      "uss_gib": 3.335,
+      "cpu_seconds": 1054.53,
+      "read_bytes": 70827941888
+    }
+  ],
+  "scope": "Frozen initial prompt, no operator code/recovery notes during native execution. Seeded bug/tests identical to previous repair probe; historical timing comparison.",
+  "job": "903d5c65ab2b4eebbfad6ca5b1d5bb83",
+  "session": "3a4bf0102ac643f1bf780663bd546f70",
+  "cwd": "/mnt/GameDrive/tiny_dancer/workspace/harness-probe-20261010T233253Z",
+  "comparison": {
+    "before_seconds": 584.59,
+    "before_first_prompt_tokens": 1527,
+    "before_turns": 6,
+    "note": "[local detail omitted from GitHub snapshot]"
+  },
+  "checkpoint": "[local detail omitted from GitHub snapshot]",
+  "job_elapsed_seconds": 498.72,
+  "metrics": [
+    {
+      "prefill_seconds": 153.870560122,
+      "prefill_tokens": 908,
+      "prefill_tokens_per_s": 5.901063850551205,
+      "decode_seconds": 22.29947958,
+      "decode_tokens": 32,
+      "decode_tokens_per_s": 1.4350110676439383,
+      "native_counters": {
+        "position": 940,
+        "capacity": 8192,
+        "prefill_tokens": 908,
+        "decode_tokens": 32,
+        "prefill_seconds": 153.870560122,
+        "decode_seconds": 22.29947958,
+        "gpu_dense_host_released_bytes": 0,
+        "expert_slots_per_layer": 4,
+        "available_ram_gib": 0.173119,
+        "expert_buffer_allocs": 184,
+        "expert_buffer_reuses": 1146,
+        "expert_compute_seconds": 92.477832418,
+        "process_page_faults": 0,
+        "private_gib": 0.0,
+        "peak_rss_gib": 0.0,
+        "forward": 940,
+        "tokens_emitted": 32,
+        "cache_hits": 4,
+        "cache_misses": 1330,
+        "cache_requests": 1334,
+        "expert_loads": 1330,
+        "expert_bytes_estimate": 14031360,
+        "disk_seconds": 32.951603871,
+        "async_batches": 0,
+        "async_wait_seconds": 0.0,
+        "attention_seconds": 46.105167176,
+        "moe_seconds": 129.810401601,
+        "head_seconds": 0.236340128,
+        "rss_gb": 3.315239,
+        "resident_gb": 1.807843,
+        "gpu_router_calls": 0,
+        "gpu_router_seconds": 0.0,
+        "gpu_dense_calls": 0,
+        "gpu_dense_seconds": 0.0,
+        "gpu_dense_fallbacks": 0,
+        "prefetch_issued": 0,
+        "prefetch_read_seconds": 0.0,
+        "predict_hits_a": 0,
+        "predict_hits_b": 0,
+        "predict_total": 0
+      },
+      "total_seconds": 176.17,
+      "completion_tokens": 32,
+      "prompt_tokens": 908,
+      "canonical_prompt_tokens": 908,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 0,
+      "reasoning_effort": "medium"
+    },
+    {
+      "prefill_seconds": 79.278529475,
+      "prefill_tokens": 347,
+      "prefill_tokens_per_s": 4.376973214537542,
+      "decode_seconds": 84.37153323700001,
+      "decode_tokens": 143,
+      "decode_tokens_per_s": 1.694884453484001,
+      "native_counters": {
+        "position": 1430,
+        "capacity": 8192,
+        "prefill_tokens": 1255,
+        "decode_tokens": 175,
+        "prefill_seconds": 233.149089597,
+        "decode_seconds": 106.671012817,
+        "gpu_dense_host_released_bytes": 0,
+        "expert_slots_per_layer": 4,
+        "available_ram_gib": 0.158497,
+        "expert_buffer_allocs": 199,
+        "expert_buffer_reuses": 4076,
+        "expert_compute_seconds": 131.006412756,
+        "process_page_faults": 0,
+        "private_gib": 0.0,
+        "peak_rss_gib": 0.0,
+        "forward": 1430,
+        "tokens_emitted": 175,
+        "cache_hits": 42,
+        "cache_misses": 4275,
+        "cache_requests": 4317,
+        "expert_loads": 4275,
+        "expert_bytes_estimate": 14031360,
+        "disk_seconds": 103.44669127,
+        "async_batches": 0,
+        "async_wait_seconds": 0.0,
+        "attention_seconds": 85.204586821,
+        "moe_seconds": 253.55358922,
+        "head_seconds": 0.973097704,
+        "rss_gb": 3.327644,
+        "resident_gb": 1.807843,
+        "gpu_router_calls": 0,
+        "gpu_router_seconds": 0.0,
+        "gpu_dense_calls": 0,
+        "gpu_dense_seconds": 0.0,
+        "gpu_dense_fallbacks": 0,
+        "prefetch_issued": 0,
+        "prefetch_read_seconds": 0.0,
+        "predict_hits_a": 0,
+        "predict_hits_b": 0,
+        "predict_total": 0
+      },
+      "total_seconds": 163.65,
+      "completion_tokens": 143,
+      "prompt_tokens": 1287,
+      "canonical_prompt_tokens": 1287,
+      "exact_history_cache_tokens": 940,
+      "cache_saved_prefill_tokens": 19,
+      "reasoning_effort": "medium"
+    },
+    {
+      "prefill_seconds": 32.561114868999994,
+      "prefill_tokens": 92,
+      "prefill_tokens_per_s": 2.825456080669681,
+      "decode_seconds": 22.521503466,
+      "decode_tokens": 51,
+      "decode_tokens_per_s": 2.2645024599264914,
+      "native_counters": {
+        "position": 1573,
+        "capacity": 8192,
+        "prefill_tokens": 1347,
+        "decode_tokens": 226,
+        "prefill_seconds": 265.710204466,
+        "decode_seconds": 129.192516283,
+        "gpu_dense_host_released_bytes": 0,
+        "expert_slots_per_layer": 4,
+        "available_ram_gib": 0.162041,
+        "expert_buffer_allocs": 201,
+        "expert_buffer_reuses": 5217,
+        "expert_compute_seconds": 142.401036411,
+        "process_page_faults": 0,
+        "private_gib": 0.0,
+        "peak_rss_gib": 0.0,
+        "forward": 1573,
+        "tokens_emitted": 226,
+        "cache_hits": 69,
+        "cache_misses": 5418,
+        "cache_requests": 5487,
+        "expert_loads": 5418,
+        "expert_bytes_estimate": 14031360,
+        "disk_seconds": 129.260585163,
+        "async_batches": 0,
+        "async_wait_seconds": 0.0,
+        "attention_seconds": 98.279035725,
+        "moe_seconds": 295.250231886,
+        "head_seconds": 1.260178601,
+        "rss_gb": 3.365505,
+        "resident_gb": 1.807843,
+        "gpu_router_calls": 0,
+        "gpu_router_seconds": 0.0,
+        "gpu_dense_calls": 0,
+        "gpu_dense_seconds": 0.0,
+        "gpu_dense_fallbacks": 0,
+        "prefetch_issued": 0,
+        "prefetch_read_seconds": 0.0,
+        "predict_hits_a": 0,
+        "predict_hits_b": 0,
+        "predict_total": 0
+      },
+      "total_seconds": 55.08,
+      "completion_tokens": 51,
+      "prompt_tokens": 1522,
+      "canonical_prompt_tokens": 1522,
+      "exact_history_cache_tokens": 1430,
+      "cache_saved_prefill_tokens": 509,
+      "reasoning_effort": "medium"
+    },
+    {
+      "prefill_seconds": 55.733021877,
+      "prefill_tokens": 193,
+      "prefill_tokens_per_s": 3.462938012332103,
+      "decode_seconds": 43.33968005899999,
+      "decode_tokens": 60,
+      "decode_tokens_per_s": 1.3844126195283322,
+      "native_counters": {
+        "position": 1826,
+        "capacity": 8192,
+        "prefill_tokens": 1540,
+        "decode_tokens": 286,
+        "prefill_seconds": 321.443226343,
+        "decode_seconds": 172.532196342,
+        "gpu_dense_host_released_bytes": 0,
+        "expert_slots_per_layer": 4,
+        "available_ram_gib": 0.182571,
+        "expert_buffer_allocs": 202,
+        "expert_buffer_reuses": 6824,
+        "expert_compute_seconds": 165.070893091,
+        "process_page_faults": 0,
+        "private_gib": 0.0,
+        "peak_rss_gib": 0.0,
+        "forward": 1826,
+        "tokens_emitted": 286,
+        "cache_hits": 117,
+        "cache_misses": 7026,
+        "cache_requests": 7143,
+        "expert_loads": 7026,
+        "expert_bytes_estimate": 14031360,
+        "disk_seconds": 173.447692806,
+        "async_batches": 0,
+        "async_wait_seconds": 0.0,
+        "attention_seconds": 123.6009913,
+        "moe_seconds": 368.640727946,
+        "head_seconds": 1.589252441,
+        "rss_gb": 3.415565,
+        "resident_gb": 1.807843,
+        "gpu_router_calls": 0,
+        "gpu_router_seconds": 0.0,
+        "gpu_dense_calls": 0,
+        "gpu_dense_seconds": 0.0,
+        "gpu_dense_fallbacks": 0,
+        "prefetch_issued": 0,
+        "prefetch_read_seconds": 0.0,
+        "predict_hits_a": 0,
+        "predict_hits_b": 0,
+        "predict_total": 0
+      },
+      "total_seconds": 99.07,
+      "completion_tokens": 60,
+      "prompt_tokens": 1766,
+      "canonical_prompt_tokens": 1766,
+      "exact_history_cache_tokens": 1573,
+      "cache_saved_prefill_tokens": 652,
+      "reasoning_effort": "medium"
+    }
+  ],
+  "tool_calls": [
+    {
+      "name": "inspect_project",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 1
+    },
+    {
+      "name": "apply_patch",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 2
+    },
+    {
+      "name": "run_checks",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 3
+    }
+  ],
+  "checks": {
+    "project_inspection_used": true,
+    "checks_batched": true,
+    "patch_used": true,
+    "unseen_arithmetic_passed": true,
+    "native_verified": true
+  },
+  "errors": [],
+  "harness_continuations": [],
+  "resources": {
+    "minimum_available_ram_gib": 5.104,
+    "maximum_observed_model_uss_gib": 3.335,
+    "worker_nice_values": [
+      5
+    ],
+    "scope": "20-second observations, not continuous peak measurements; whole-machine available RAM includes other applications."
+  },
+  "passed": true,
+  "archive_metadata": {
+    "source": "batching-native-validation.json",
+    "kind": "native",
+    "title": "Seeded repair after batching",
+    "scope": "Frozen initial prompt, no operator code/recovery notes during native execution. Seeded bug/tests identical to previous repair probe; historical timing comparison.",
+    "source_sha256": "65ef28c3f1690b91015725e3ef26ca25937cb308eb4f927cd2e5c6b3162672a8"
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "started_at": "2026-10-11T22:04:57.687772+00:00",
+  "status": "complete",
+  "scope": "Actual local-model tiny answer with run_until_done omitted from the API request. Tests deployed Agent defaults and sampling; not coding, long-context or general autonomous capability.",
+  "runtime_sha256_before": "a024d24712e615b0f3a0884624b90c6316986d9ddf31d2e1ddc75dc95b65ccfd",
+  "observation_limit_seconds": null,
+  "operator_interventions": [],
+  "samples": [
+    {
+      "elapsed_seconds": 0.09,
+      "status": "running",
+      "run_until_done": true,
+      "max_seconds": null,
+      "max_turns": null,
+      "available_ram_gib": 7.252094268798828
+    },
+    {
+      "elapsed_seconds": 10.25,
+      "status": "running",
+      "run_until_done": true,
+      "max_seconds": null,
+      "max_turns": null,
+      "available_ram_gib": 7.0648345947265625
+    },
+    {
+      "elapsed_seconds": 20.43,
+      "status": "running",
+      "run_until_done": true,
+      "max_seconds": null,
+      "max_turns": null,
+      "available_ram_gib": 7.140769958496094
+    },
+    {
+      "elapsed_seconds": 30.55,
+      "status": "running",
+      "run_until_done": true,
+      "max_seconds": null,
+      "max_turns": null,
+      "available_ram_gib": 7.105556488037109
+    },
+    {
+      "elapsed_seconds": 40.68,
+      "status": "running",
+      "run_until_done": true,
+      "max_seconds": null,
+      "max_turns": null,
+      "available_ram_gib": 7.027626037597656
+    },
+    {
+      "elapsed_seconds": 50.71,
+      "status": "running",
+      "run_until_done": true,
+      "max_seconds": null,
+      "max_turns": null,
+      "available_ram_gib": 6.923191070556641
+    },
+    {
+      "elapsed_seconds": 60.73,
+      "status": "running",
+      "run_until_done": true,
+      "max_seconds": null,
+      "max_turns": null,
+      "available_ram_gib": 6.881168365478516
+    },
+    {
+      "elapsed_seconds": 70.74,
+      "status": "complete",
+      "run_until_done": true,
+      "max_seconds": null,
+      "max_turns": null,
+      "available_ram_gib": 6.830242156982422
+    }
+  ],
+  "request": {
+    "prompt": "[local detail omitted from GitHub snapshot]",
+    "mode": "[local detail omitted from GitHub snapshot]",
+    "task_kind": "[local detail omitted from GitHub snapshot]",
+    "reasoning_effort": "low"
+  },
+  "job": "b7b9c5fde2a44ba594b50da9dc9b2d59",
+  "session": "2ced9a6391ca479cb1c5913296988e3a",
+  "runtime_sha256_after": "a024d24712e615b0f3a0884624b90c6316986d9ddf31d2e1ddc75dc95b65ccfd",
+  "passed": true,
+  "checks": {
+    "native_final_complete": true,
+    "implicit_agent_policy_continuous": true,
+    "actual_native_recommended_sampling": true,
+    "runtime_frozen": true,
+    "desktop_ram_reserve": true,
+    "no_operator_intervention": true
+  },
+  "finals": [
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "metrics": [
+    {
+      "prefill_seconds": 12.404368,
+      "decode_seconds": 0.83933,
+      "prefill_tokens": 579,
+      "decode_tokens": 27,
+      "total_seconds": 13.25,
+      "backend": "llama.cpp-native-mxfp4",
+      "sampling_temperature": 1.0,
+      "sampling_top_p": 1.0,
+      "sampling_top_k": 0,
+      "sampling_min_p": 0.0,
+      "sampling_repeat_penalty": 1.0,
+      "prefill_tokens_per_s": 46.677106000079974,
+      "decode_tokens_per_s": 32.168515363444655,
+      "completion_tokens": 27,
+      "prompt_tokens": 579,
+      "canonical_prompt_tokens": 579,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 0,
+      "reasoning_effort": "low"
+    }
+  ],
+  "elapsed_seconds": 70.77,
+  "finished_at": "2026-10-11T22:06:08.495149+00:00",
+  "archive_metadata": {
+    "source": "agent-default-native-validation.json",
+    "kind": "native",
+    "title": "Continuous Agent API default and native sampler",
+    "scope": "Actual local-model tiny answer with run_until_done omitted from the API request. Tests deployed Agent defaults and sampling; not coding, long-context or general autonomous capability.",
+    "source_sha256": "54a2602ef3a6cb7cff146527b882386755573b0d381b4fdd00f240b954ff9bba"
+  }
+}

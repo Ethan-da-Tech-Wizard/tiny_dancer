@@ -1,0 +1,14 @@
+{
+  "errors": [],
+  "scroll_at_latest_answer": true,
+  "task_status": "[local detail omitted from GitHub snapshot]",
+  "progress_label": "[local detail omitted from GitHub snapshot]",
+  "correct_date_visible": true,
+  "all_rows_visible": true,
+  "stop_hidden": true,
+  "resume_hidden": true,
+  "historical_tools_marked_running": false,
+  "desktop_overflow": false,
+  "artifact_http_status": 200,
+  "mobile_overflow": false
+}

@@ -1,0 +1,167 @@
+{
+  "title": "Native expert placement comparison",
+  "started_at": "2026-10-11T16:58:20.339212+00:00",
+  "passed": false,
+  "scope": "Same native MXFP4 model, greedy forced-final prompts, context8192/threads8/batch128. Speed experiment only; does not qualify autonomous coding.",
+  "design": {
+    "order_cpu_expert_layers": [
+      16,
+      14,
+      16
+    ],
+    "max_new_tokens": 128,
+    "per_variant_seconds": 180,
+    "ram_reserve_gib": 1.5,
+    "vram_reserve_mib": 1500,
+    "production_changes": false,
+    "cache_policy": "[local detail omitted from GitHub snapshot]"
+  },
+  "variants": [
+    {
+      "cpu_expert_layers": 16,
+      "turns": [
+        {
+          "reason": "[local detail omitted from GitHub snapshot]",
+          "token_count": 128,
+          "tokens_sha256": "b7b5b99c399042dbf075675bb2f2613a4312f81fedeba03f594e8cf1b8d8c8c6",
+          "physical_read_bytes": 3880521728,
+          "timings": {
+            "prefill_seconds": 7.008697,
+            "decode_seconds": 8.466894,
+            "prefill_tokens": 23,
+            "decode_tokens": 128,
+            "total_seconds": 15.478122005006298,
+            "backend": "llama.cpp-native-mxfp4",
+            "prefill_tokens_per_s": 3.281637086037533,
+            "decode_tokens_per_s": 15.11770431990763
+          }
+        },
+        {
+          "reason": "[local detail omitted from GitHub snapshot]",
+          "token_count": 128,
+          "tokens_sha256": "43844b0a97ef5761dbc4a121f4a3d624c1e5084a847c48bc76ebf5e2b281f38c",
+          "physical_read_bytes": 479760384,
+          "timings": {
+            "prefill_seconds": 7.612696,
+            "decode_seconds": 4.338208,
+            "prefill_tokens": 1743,
+            "decode_tokens": 128,
+            "total_seconds": 11.95473724999465,
+            "backend": "llama.cpp-native-mxfp4",
+            "prefill_tokens_per_s": 228.9596221890379,
+            "decode_tokens_per_s": 29.505270378921438
+          }
+        }
+      ],
+      "peak_gpu_mib": 5085.0,
+      "min_ram_gib": 6.565116882324219,
+      "last_gpu_temperature_c": 79.0,
+      "load_seconds": 49.22,
+      "completed": true,
+      "seconds": 77.475
+    },
+    {
+      "cpu_expert_layers": 14,
+      "turns": [
+        {
+          "reason": "[local detail omitted from GitHub snapshot]",
+          "token_count": 128,
+          "tokens_sha256": "4d9e132614c35942d32e55315402dfd1a20942d884405eae7aaa4a4ac41e525a",
+          "physical_read_bytes": 3146018816,
+          "timings": {
+            "prefill_seconds": 6.280023,
+            "decode_seconds": 6.578433,
+            "prefill_tokens": 23,
+            "decode_tokens": 128,
+            "total_seconds": 12.859645905991783,
+            "backend": "llama.cpp-native-mxfp4",
+            "prefill_tokens_per_s": 3.6624069688916743,
+            "decode_tokens_per_s": 19.457521266842726
+          }
+        },
+        {
+          "reason": "[local detail omitted from GitHub snapshot]",
+          "token_count": 128,
+          "tokens_sha256": "43844b0a97ef5761dbc4a121f4a3d624c1e5084a847c48bc76ebf5e2b281f38c",
+          "physical_read_bytes": 279941120,
+          "timings": {
+            "prefill_seconds": 6.582214,
+            "decode_seconds": 3.9551979999999998,
+            "prefill_tokens": 1743,
+            "decode_tokens": 128,
+            "total_seconds": 10.541715867992025,
+            "backend": "llama.cpp-native-mxfp4",
+            "prefill_tokens_per_s": 264.8045171427122,
+            "decode_tokens_per_s": 32.362475911446154
+          }
+        }
+      ],
+      "peak_gpu_mib": 5893.0,
+      "min_ram_gib": 6.566158294677734,
+      "last_gpu_temperature_c": 82.0,
+      "load_seconds": 49.321,
+      "completed": true,
+      "seconds": 73.543
+    },
+    {
+      "cpu_expert_layers": 16,
+      "turns": [
+        {
+          "reason": "[local detail omitted from GitHub snapshot]",
+          "token_count": 128,
+          "tokens_sha256": "b7b5b99c399042dbf075675bb2f2613a4312f81fedeba03f594e8cf1b8d8c8c6",
+          "physical_read_bytes": 4554215424,
+          "timings": {
+            "prefill_seconds": 9.29743,
+            "decode_seconds": 6.6929549999999995,
+            "prefill_tokens": 23,
+            "decode_tokens": 128,
+            "total_seconds": 15.992612259986345,
+            "backend": "llama.cpp-native-mxfp4",
+            "prefill_tokens_per_s": 2.4738019000949723,
+            "decode_tokens_per_s": 19.124586972421003
+          }
+        },
+        {
+          "reason": "[local detail omitted from GitHub snapshot]",
+          "token_count": 128,
+          "tokens_sha256": "43844b0a97ef5761dbc4a121f4a3d624c1e5084a847c48bc76ebf5e2b281f38c",
+          "physical_read_bytes": 519581696,
+          "timings": {
+            "prefill_seconds": 7.880985,
+            "decode_seconds": 4.682582,
+            "prefill_tokens": 1743,
+            "decode_tokens": 128,
+            "total_seconds": 12.773649064998608,
+            "backend": "llama.cpp-native-mxfp4",
+            "prefill_tokens_per_s": 221.1652477450471,
+            "decode_tokens_per_s": 27.33534618293924
+          }
+        }
+      ],
+      "peak_gpu_mib": 5085.0,
+      "min_ram_gib": 6.374320983886719,
+      "last_gpu_temperature_c": 84.0,
+      "load_seconds": 42.947,
+      "completed": true,
+      "seconds": 72.534
+    }
+  ],
+  "abort_reason": null,
+  "prompts": "[local detail omitted from GitHub snapshot]",
+  "seconds": 223.591,
+  "finished_at": "2026-10-11T17:02:04.019174+00:00",
+  "comparison_complete": true,
+  "greedy_token_parity": false,
+  "speed_ratios_vs_bracketed_baseline": [
+    1.223623671096934,
+    1.1728824142413306
+  ],
+  "archive_metadata": {
+    "source": "expert-placement-validation.json",
+    "kind": "evaluation",
+    "title": "Native expert placement comparison",
+    "scope": "Same native MXFP4 model, greedy forced-final prompts, context8192/threads8/batch128. Speed experiment only; does not qualify autonomous coding.",
+    "source_sha256": "2efd84d5cf23c0fd969bff9db5e7f9b506644c8f11cb69d74c6727dd27f2aad5"
+  }
+}

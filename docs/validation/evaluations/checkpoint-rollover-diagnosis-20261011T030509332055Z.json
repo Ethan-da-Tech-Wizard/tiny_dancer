@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-11T03:05:09.331796+00:00",
+  "status": "failed",
+  "passed": false,
+  "scope": "Two isolated scripted red regressions in a staging copy; production and native task unchanged. Desired checkpoint behavior is not yet implemented.",
+  "checks": {
+    "checkpoint_before_expensive_agent_rolling": false,
+    "current_source_survives_checkpoint": false
+  },
+  "test_methods": 2,
+  "log": "[local detail omitted from GitHub snapshot]",
+  "setup_failure_log": "[local detail omitted from GitHub snapshot]",
+  "stage": "[local detail omitted from GitHub snapshot]",
+  "observed_native_rollover": {
+    "prompt_tokens": 5381,
+    "reused_tokens": 1009,
+    "reprocessed_tokens": 4372
+  },
+  "archive_metadata": {
+    "source": "checkpoint-rollover-diagnosis.json",
+    "kind": "automated",
+    "title": "Checkpoint rollover diagnosis: two red regressions",
+    "scope": "Two isolated scripted red regressions in a staging copy; production and native task unchanged. Desired checkpoint behavior is not yet implemented.",
+    "source_sha256": "830cf93a2bfb486f11422079e6b1c1b7bf27c81a773bbecfca12551f02e68abc"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "created_at": "2026-10-11T05:12:59.128384+00:00",
+  "passed": false,
+  "status": "isolated_red_reproduced",
+  "tests_run": 7,
+  "failures": 6,
+  "errors": 1,
+  "scope": "Five protocol cases plus two actual installed pytest invocations in isolated staging. Actual native task footer returned no test summary, so real passing tests were not accepted for native final. No active runtime changes.",
+  "log": "[local detail omitted from GitHub snapshot]",
+  "native_job": "[local detail omitted from GitHub snapshot]",
+  "native_passing_footer": "[local detail omitted from GitHub snapshot]",
+  "held_final_reason": "[local detail omitted from GitHub snapshot]"
+}

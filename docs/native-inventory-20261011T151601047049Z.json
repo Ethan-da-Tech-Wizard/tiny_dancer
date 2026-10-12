@@ -1,0 +1,340 @@
+{
+  "started_at": "2026-10-11T15:16:01.068569+00:00",
+  "status": "complete",
+  "case": "inventory",
+  "prompt": "[local detail omitted from GitHub snapshot]",
+  "cwd": "/mnt/GameDrive/tiny_dancer/workspace/native-inventory-20261011T151601047049Z",
+  "acceptance_sha256": "e45fea75d1a00bc2158d0f552b1f352e8375a27082999d8d45dfd91b68482475",
+  "runtime_sha256_before": "2321176b8bce1052fdd25c8f5aa4f766d2641228be51cefcc30de4a373024e4f",
+  "independent_criteria": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "backend": "llama.cpp",
+  "serving_model_path": "models/gpt-oss-20b-native-mxfp4",
+  "scope": "Fresh implementation from a frozen goal, sample input and operator-seeded acceptance tests only. No implementation supplied, no operator runtime hints, actual local GPT-OSS-20B. Generic project baseline/importfacts may be supplied by the configured harness. Independent checks withheld until termination.",
+  "operator_interventions": [],
+  "observation_limit_seconds": 900,
+  "execution": {
+    "reasoning_effort": "low",
+    "initial_budget": "[local detail omitted from GitHub snapshot]"
+  },
+  "samples": [
+    {
+      "elapsed_seconds": 0.0,
+      "status": "running",
+      "turns": 0,
+      "engine": "not loaded",
+      "available_ram_gib": 8.655,
+      "progress": {
+        "kind": "tool_start",
+        "data": {
+          "name": "inspect_project",
+          "arguments": "[local detail omitted from GitHub snapshot]",
+          "step": 0,
+          "origin": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791731761.084294
+      }
+    },
+    {
+      "elapsed_seconds": 20.2,
+      "status": "running",
+      "turns": 1,
+      "engine": "loading model",
+      "available_ram_gib": 8.342,
+      "progress": {
+        "kind": "tool_start",
+        "data": {
+          "name": "run_checks",
+          "arguments": "[local detail omitted from GitHub snapshot]",
+          "step": 0,
+          "origin": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791731761.1131072
+      },
+      "nice": 5,
+      "uss_gib": 3.928
+    },
+    {
+      "elapsed_seconds": 40.3,
+      "status": "running",
+      "turns": 1,
+      "engine": "processing prompt",
+      "available_ram_gib": 8.136,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 1920,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "low"
+        },
+        "created": 1791731793.43168
+      },
+      "nice": 5,
+      "uss_gib": 6.157
+    },
+    {
+      "elapsed_seconds": 60.3,
+      "status": "running",
+      "turns": 2,
+      "engine": "generating",
+      "available_ram_gib": 8.061,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 112,
+          "seconds": 9.0
+        },
+        "created": 1791731821.323724
+      },
+      "nice": 5,
+      "uss_gib": 6.892
+    },
+    {
+      "elapsed_seconds": 80.4,
+      "status": "running",
+      "turns": 2,
+      "engine": "generating",
+      "available_ram_gib": 8.052,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 608,
+          "seconds": 28.6
+        },
+        "created": 1791731840.914465
+      },
+      "nice": 5,
+      "uss_gib": 6.895
+    },
+    {
+      "elapsed_seconds": 100.4,
+      "status": "running",
+      "turns": 3,
+      "engine": "processing prompt",
+      "available_ram_gib": 8.035,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 4226,
+          "reused_tokens": 3962,
+          "exact_history_cache_tokens": 3962,
+          "cache_saved_prefill_tokens": 2020,
+          "reasoning_effort": "low"
+        },
+        "created": 1791731859.200619
+      },
+      "nice": 5,
+      "uss_gib": 6.915
+    },
+    {
+      "elapsed_seconds": 120.5,
+      "status": "complete",
+      "turns": 5,
+      "engine": "ready",
+      "available_ram_gib": 8.016,
+      "progress": {
+        "kind": "done",
+        "data": {
+          "steps": 5,
+          "verified": true,
+          "evidence_checked": false,
+          "answer_origin": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791731878.4251988
+      },
+      "nice": 5,
+      "uss_gib": 6.948
+    }
+  ],
+  "job": "a1f9f726e99c49688e21eff491475f73",
+  "session": "1523770cc0514bda9803c29c6e771dca",
+  "independent_project_tests": {
+    "exit_code": 0,
+    "output": "[local detail omitted from GitHub snapshot]"
+  },
+  "passed": false,
+  "checks": {
+    "native_verified": true,
+    "acceptance_unchanged": true,
+    "runtime_frozen": true,
+    "all_seeded_cli_tests": true,
+    "all_independent_cli_checks": true,
+    "additional_nonempty_passing_project_tests": false
+  },
+  "acceptance_after": {
+    "exit_code": 0,
+    "output": "[local detail omitted from GitHub snapshot]"
+  },
+  "independent_checks": [
+    {
+      "check": "unseen binary/unicode/symlinks/output exclusion 1",
+      "passed": true,
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "unseen binary/unicode/symlinks/output exclusion 2",
+      "passed": true,
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "invalid root preserves actual prior bytes",
+      "passed": true,
+      "exit_code": 1
+    },
+    {
+      "check": "scan read failure preserves actual prior bytes",
+      "passed": true,
+      "exit_code": 1,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "requested real report.json complete and exact",
+      "passed": true
+    }
+  ],
+  "checkpoint": "[local detail omitted from GitHub snapshot]",
+  "job_elapsed_seconds": 117.35,
+  "metrics": [
+    {
+      "prefill_seconds": 17.145436,
+      "decode_seconds": 1.6935129999999998,
+      "prefill_tokens": 1920,
+      "decode_tokens": 53,
+      "total_seconds": 18.84,
+      "backend": "llama.cpp-native-mxfp4",
+      "prefill_tokens_per_s": 111.98315400086646,
+      "decode_tokens_per_s": 31.295892030353475,
+      "native_reply_chunks": 1,
+      "completion_tokens": 53,
+      "prompt_tokens": 1920,
+      "canonical_prompt_tokens": 1920,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 0,
+      "reasoning_effort": "low"
+    },
+    {
+      "prefill_seconds": 5.024774000000001,
+      "decode_seconds": 40.739574999999995,
+      "prefill_tokens": 973,
+      "decode_tokens": 1017,
+      "total_seconds": 45.77,
+      "backend": "llama.cpp-native-mxfp4",
+      "prefill_tokens_per_s": 193.64054980383193,
+      "decode_tokens_per_s": 24.963441567566676,
+      "native_reply_chunks": 1,
+      "completion_tokens": 1017,
+      "prompt_tokens": 2945,
+      "canonical_prompt_tokens": 2945,
+      "exact_history_cache_tokens": 1973,
+      "cache_saved_prefill_tokens": 31,
+      "reasoning_effort": "low"
+    },
+    {
+      "prefill_seconds": 3.023588,
+      "decode_seconds": 2.46541,
+      "prefill_tokens": 265,
+      "decode_tokens": 40,
+      "total_seconds": 5.49,
+      "backend": "llama.cpp-native-mxfp4",
+      "prefill_tokens_per_s": 87.64421607705812,
+      "decode_tokens_per_s": 16.224481932011308,
+      "native_reply_chunks": 1,
+      "completion_tokens": 40,
+      "prompt_tokens": 4226,
+      "canonical_prompt_tokens": 4226,
+      "exact_history_cache_tokens": 3962,
+      "cache_saved_prefill_tokens": 2020,
+      "reasoning_effort": "low"
+    },
+    {
+      "prefill_seconds": 3.8449920000000004,
+      "decode_seconds": 2.6248400000000003,
+      "prefill_tokens": 350,
+      "decode_tokens": 43,
+      "total_seconds": 6.47,
+      "backend": "llama.cpp-native-mxfp4",
+      "prefill_tokens_per_s": 91.02749758647091,
+      "decode_tokens_per_s": 16.38195089986437,
+      "native_reply_chunks": 1,
+      "completion_tokens": 43,
+      "prompt_tokens": 4615,
+      "canonical_prompt_tokens": 4615,
+      "exact_history_cache_tokens": 4266,
+      "cache_saved_prefill_tokens": 2324,
+      "reasoning_effort": "low"
+    },
+    {
+      "prefill_seconds": 3.3319099999999997,
+      "decode_seconds": 2.8778479999999997,
+      "prefill_tokens": 289,
+      "decode_tokens": 46,
+      "total_seconds": 6.21,
+      "backend": "llama.cpp-native-mxfp4",
+      "prefill_tokens_per_s": 86.73703671467717,
+      "decode_tokens_per_s": 15.984165946220928,
+      "native_reply_chunks": 1,
+      "completion_tokens": 46,
+      "prompt_tokens": 4946,
+      "canonical_prompt_tokens": 4946,
+      "exact_history_cache_tokens": 4658,
+      "cache_saved_prefill_tokens": 2716,
+      "reasoning_effort": "low"
+    }
+  ],
+  "tool_calls": [
+    {
+      "name": "inspect_project",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 0,
+      "origin": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "name": "run_checks",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 0,
+      "origin": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "name": "read_file",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 1
+    },
+    {
+      "name": "apply_patch",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 2
+    },
+    {
+      "name": "run_checks",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 2,
+      "origin": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "name": "shell",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 3
+    },
+    {
+      "name": "run_checks",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 3,
+      "origin": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "name": "read_file",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 4
+    }
+  ],
+  "errors": []
+}

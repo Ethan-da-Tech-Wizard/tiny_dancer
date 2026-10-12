@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-10T22:50:59.035581+00:00",
+  "scope": "Real Harmony token counts for the identical initial repair request/cwd/effort. No model inference or speed claim.",
+  "prompt": "[local detail omitted from GitHub snapshot]",
+  "cwd": "/mnt/GameDrive/tiny_dancer/workspace/harness-probe-20261010T221357Z",
+  "effort": "[local detail omitted from GitHub snapshot]",
+  "before_tokens": 1527,
+  "prior_native_tokens": 1527,
+  "source_backup": "[local detail omitted from GitHub snapshot]",
+  "after_tokens": 859,
+  "reduction_percent": 43.75
+}

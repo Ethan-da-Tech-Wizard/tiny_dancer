@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-11T02:37:49.882184+00:00",
+  "status": "passed",
+  "passed": true,
+  "checks": [
+    {
+      "test": "test_all_distinct_verified_native_reports_required (tests.test_native_release_gate.NativeReleaseGateTests.test_all_distinct_verified_native_reports_required)",
+      "passed": true
+    },
+    {
+      "test": "test_changed_goal_or_tests_reject_release (tests.test_native_release_gate.NativeReleaseGateTests.test_changed_goal_or_tests_reject_release)",
+      "passed": true
+    },
+    {
+      "test": "test_missing_reports_reject_release (tests.test_native_release_gate.NativeReleaseGateTests.test_missing_reports_reject_release)",
+      "passed": true
+    },
+    {
+      "test": "test_newer_failure_cannot_be_hidden_by_older_pass (tests.test_native_release_gate.NativeReleaseGateTests.test_newer_failure_cannot_be_hidden_by_older_pass)",
+      "passed": true
+    },
+    {
+      "test": "test_regressions_and_arithmetic_smoke_cannot_replace_actual_runs (tests.test_native_release_gate.NativeReleaseGateTests.test_regressions_and_arithmetic_smoke_cannot_replace_actual_runs)",
+      "passed": true
+    },
+    {
+      "test": "test_top_level_pass_cannot_hide_failed_checks_or_runtime_hints (tests.test_native_release_gate.NativeReleaseGateTests.test_top_level_pass_cannot_hide_failed_checks_or_runtime_hints)",
+      "passed": true
+    }
+  ],
+  "scope": "Scripted release-gate negative controls, not native success.",
+  "archive_metadata": {
+    "source": "native-release-gate-validation.json",
+    "kind": "automated",
+    "title": "Native release gate negative controls",
+    "scope": "Scripted release-gate negative controls, not native success.",
+    "source_sha256": "9886674d854fb8af5567e846332bfb7cc99d64078aeb6063de591c38e18e3f31"
+  }
+}

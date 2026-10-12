@@ -1,0 +1,19 @@
+{
+  "colibri": {
+    "url": "https://github.com/JustVugg/colibri.git",
+    "commit": "bf2442915d6e3dd4cdfd2eb9c2a3d2aa44a25850"
+  },
+  "picchio": {
+    "url": "https://github.com/benmaster82/picchio.git",
+    "commit": "a86393b90bd8ccc1935139a14d619cf409f6ca89"
+  },
+  "gpt-oss": {
+    "url": "https://github.com/openai/gpt-oss.git",
+    "commit": "7b583341fe16729127f6d5b94a7b09ccae97e1a1"
+  },
+  "llama.cpp": {
+    "url": "https://github.com/ggml-org/llama.cpp.git",
+    "commit": "1cf7767765b872806e1bb74cfb55614f4334f02f",
+    "role": "[local detail omitted from GitHub snapshot]"
+  }
+}

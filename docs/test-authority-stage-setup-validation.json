@@ -1,0 +1,5 @@
+{
+  "passed": false,
+  "scope": "Staging setup omitted its workspace directory;20 fixture FileNotFoundErrors. Production unchanged. Corrected rerun required.",
+  "report": "run/staging/test-authority/docs/validation/runs/20261012T013347673042Z.json"
+}

@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "runtime_sha256": "49db0778c0135c773b04098cd02f2884c096be4a077452ccc4c82fd01054458c",
+  "scope": "Harness regression/UI/deployment integration controls only. First native trial failed adapter integration; corrected native effectiveness pending. Not native qualification.",
+  "staged_controls": {
+    "tests": 553,
+    "seconds": 43.652,
+    "report": "run/staging/test-authority/docs/validation/runs/20261012T020427993412Z.json"
+  },
+  "production_controls": {
+    "tests": 553,
+    "seconds": 42.589,
+    "report": "docs/validation/runs/20261012T020607138869Z.json"
+  },
+  "ui_reports": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "backups": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "preserved_failures": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "checks": {
+    "real_initial_and_post_edit_history": true,
+    "saved_failing_history_converts_without_inference": true,
+    "cancel_context_and_partial_call_controls": true,
+    "test_provenance_controls": true,
+    "original_model_sampling_unchanged": true,
+    "no_new_dependency": true
+  },
+  "archive_metadata": {
+    "source": "completion-quality-production-validation.json",
+    "kind": "integration",
+    "title": "Native chat, reasoning and assertion provenance integration",
+    "scope": "Harness regression/UI/deployment integration controls only. First native trial failed adapter integration; corrected native effectiveness pending. Not native qualification.",
+    "source_sha256": "bb32515191bfc0364db86c5fef9a1a9f6ee8ce49acb8af849394ccacab68bfca"
+  }
+}

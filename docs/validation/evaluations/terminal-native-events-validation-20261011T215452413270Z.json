@@ -1,0 +1,15 @@
+{
+  "scope": "Read-only replay of existing completed native public events through candidate CLI; no new inference/task/implementation.",
+  "exit_code": 0,
+  "public_output_characters": 61,
+  "public_tool_metadata_characters": 5776,
+  "public_answer_received": true,
+  "passed": true,
+  "archive_metadata": {
+    "source": "terminal-native-events-validation.json",
+    "kind": "integration",
+    "title": "CLI public native event replay",
+    "scope": "Read-only existing completed native events through candidate client; no new task or implementation.",
+    "source_sha256": "c5b8b68e0b705f39d616955b18192f752e02226ca8d5ce954e6e3ac52370a33d"
+  }
+}

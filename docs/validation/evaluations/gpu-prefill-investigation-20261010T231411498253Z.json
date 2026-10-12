@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-10T23:08:28.490796+00:00",
+  "scope": "Existing CUDA output-head INT8 and expert INT4 matvec numeric self-test. No batched-prefill implementation was added.",
+  "passed": true,
+  "max_abs_differences": [
+    3.815e-06,
+    1.431e-06
+  ],
+  "source": "vendor/picchio/picchio_cuda.cu",
+  "log": "[local detail omitted from GitHub snapshot]",
+  "findings": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "primary_reference": "[local detail omitted from GitHub snapshot]",
+  "archive_metadata": {
+    "source": "gpu-prefill-investigation.json",
+    "kind": "automated",
+    "title": "Existing CUDA numeric self-test",
+    "scope": "Existing INT8 output-head/INT4 expert numeric test, no new kernel.",
+    "source_sha256": "879ca3cfa7893027d4babe26e2b8821155acf36c9f75d7f6d684913501ba6481"
+  }
+}

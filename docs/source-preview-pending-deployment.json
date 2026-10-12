@@ -1,0 +1,61 @@
+{
+  "at": "2026-10-11T02:02:25.365408+00:00",
+  "status": "deployed_guarded_restart_ready",
+  "stage": "[local detail omitted from GitHub snapshot]",
+  "files": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "observed": "[local detail omitted from GitHub snapshot]",
+  "change": "[local detail omitted from GitHub snapshot]",
+  "validation": {
+    "passed": true,
+    "tests_run": 184,
+    "production_report": "docs/validation/runs/20261011T020111718528Z.json"
+  },
+  "no_runtime_hints": true,
+  "no_new_dependencies": true,
+  "additional_fixes": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "test_fixture_correction": "[local detail omitted from GitHub snapshot]",
+  "changes": [
+    {
+      "path": "app/prompting.py",
+      "before_sha256": "49ed5b1d46de0a364215ccdf9cabc2a7b8ceb8fbc8f56cc66ab866b8e2bac195",
+      "after_sha256": "bae3c357bc262aa8a069fec39f10d228db5be86c1648897c207b84ea1234af12"
+    },
+    {
+      "path": "app/engine.py",
+      "before_sha256": "8d45b62235b8572a8e689fc38695052c22f51e9bc667d793790cc65af4bb129e",
+      "after_sha256": "80f3242f9373ceb4612ec3f32a9790b1c02b38fb8db04cfdf0284975cc00d7b5"
+    },
+    {
+      "path": "app/validation_results.py",
+      "before_sha256": "b9d5d2b45dfe29d9b28bedac8daf7202702530ff3d4e2449ca21bd28a801aa65",
+      "after_sha256": "f1d94cf4741e31f61845fb2bc5e9dc126a6b3ab89c9d87e32151f75d96a2a358"
+    },
+    {
+      "path": "tests/test_source_previews.py",
+      "before_sha256": null,
+      "after_sha256": "3b57f89b58f1f56f339f0cc13c0c79c804441401309e8d2f97049f86a6126d1a"
+    },
+    {
+      "path": "tests/test_output_reserve.py",
+      "before_sha256": null,
+      "after_sha256": "55a6b77c0d921270c754e66997c10d26cdb903b3315f50d186d64f1882a395b2"
+    },
+    {
+      "path": "tests/test_validation_results.py",
+      "before_sha256": "1939cdf049e6c91a8144b83a67708737d296ed15d9e753fa616bf8e6bd7f2d13",
+      "after_sha256": "5d36ca7b24a138c739fd95872b0c3619ccd4fc53c4972c62b93514f213e9e109"
+    }
+  ],
+  "backup": "[local detail omitted from GitHub snapshot]",
+  "real_restart_readiness_verified": true
+}

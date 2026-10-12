@@ -1,0 +1,42 @@
+{
+  "title": "Native final goal review with independent precision boundary",
+  "status": "complete",
+  "passed": true,
+  "started_at": "2026-10-11T19:42:54.237049+00:00",
+  "finished_at": "2026-10-11T19:42:54.237049+00:00",
+  "scope": "413 regression fixtures and actual local tool/grader controls; native completion remains unqualified. No native generation in this suite.",
+  "runtime_sha256": "ebb8f9444624347dce720baa2c91fa76ffba793198d4a2b85ae13fbf27a0e62f",
+  "regression_report": "docs/validation/runs/20261011T193909612721Z.json",
+  "native_quality_qualified": false,
+  "native_evaluation_pending": true,
+  "checks": {
+    "native_final_required": true,
+    "unchanged_proof_review_once": true,
+    "failed_checks_and_missing_outputs_block": true,
+    "external_source_changes_invalidate": true,
+    "pending_steps_keep_task_open": true,
+    "review_reason_reaches_model": true,
+    "checkpoint_marker_compatible": true,
+    "boundary_wrong_json_and_failed_exit_rejected": true,
+    "boundary_requires_matching_job_runtime_declaration": true,
+    "all_413_regressions": true
+  },
+  "failed_reports": [
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "logs": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "documentation": "[local detail omitted from GitHub snapshot]",
+  "backup": "[local detail omitted from GitHub snapshot]",
+  "archive_metadata": {
+    "source": "completion-finish-validation.json",
+    "kind": "regression",
+    "title": "Native final goal review with independent precision boundary",
+    "scope": "413 regression fixtures and actual local tool/grader controls; native completion remains unqualified. No native generation in this suite.",
+    "source_sha256": "d492a23d0a27a1399d8888d3766909aaaa7095cd5ca422289250cd4e4405e348"
+  }
+}

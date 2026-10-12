@@ -1,0 +1,408 @@
+{
+  "started_at": "2026-10-12T01:58:12.705632+00:00",
+  "status": "paused",
+  "case": "labels",
+  "prompt": "[local detail omitted from GitHub snapshot]",
+  "cwd": "/mnt/GameDrive/tiny_dancer/workspace/native-labels-20261012T015812683517Z",
+  "acceptance_sha256": "f61d8bba61cc6ef9afe832c591ba34ad7e65cf42bf74a98ada8da9a782bfaf52",
+  "runtime_sha256_before": "c5f4fbe856f1f9466775f9812813530a6c6c1a68009fe1362b9fdf9b5187a011",
+  "independent_criteria": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "backend": "llama.cpp",
+  "serving_model_path": "models/gpt-oss-20b-native-mxfp4",
+  "scope": "Fresh implementation from a frozen goal, sample input and operator-seeded acceptance tests only. No implementation supplied, no operator runtime hints, actual local GPT-OSS-20B. Generic project baseline/importfacts may be supplied by the configured harness. Independent checks withheld until termination.",
+  "operator_interventions": [],
+  "observation_limit_seconds": null,
+  "observation_policy": "until_terminal",
+  "execution": {
+    "reasoning_effort": "auto",
+    "initial_budget": "[local detail omitted from GitHub snapshot]"
+  },
+  "samples": [
+    {
+      "elapsed_seconds": 0.0,
+      "status": "running",
+      "turns": 0,
+      "engine": "not loaded",
+      "available_ram_gib": 8.196,
+      "progress": {
+        "kind": "tool_start",
+        "data": {
+          "name": "inspect_project",
+          "arguments": "[local detail omitted from GitHub snapshot]",
+          "step": 0,
+          "origin": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791770292.729611
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 0.0,
+        "edited_files": 0,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": null,
+        "latest_tests_passed": null,
+        "native_verified": false,
+        "action_counts": {
+          "tool_start": 1
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      }
+    },
+    {
+      "elapsed_seconds": 20.2,
+      "status": "running",
+      "turns": 1,
+      "engine": "loading model",
+      "available_ram_gib": 7.982,
+      "progress": {
+        "kind": "tool_start",
+        "data": {
+          "name": "run_checks",
+          "arguments": "[local detail omitted from GitHub snapshot]",
+          "step": 0,
+          "origin": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791770292.7605543
+      },
+      "evidence": {
+        "changed_evidence": true,
+        "seconds_since_changed_evidence": 0.0,
+        "edited_files": 0,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 1,
+        "latest_tests_passed": false,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 2,
+          "tool_start": 2
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 1.971
+    },
+    {
+      "elapsed_seconds": 40.4,
+      "status": "running",
+      "turns": 1,
+      "engine": "loading model",
+      "available_ram_gib": 7.916,
+      "progress": {
+        "kind": "tool_start",
+        "data": {
+          "name": "run_checks",
+          "arguments": "[local detail omitted from GitHub snapshot]",
+          "step": 0,
+          "origin": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791770292.7605543
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 20.2,
+        "edited_files": 0,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 1,
+        "latest_tests_passed": false,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 2,
+          "tool_start": 2
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 0.672
+    },
+    {
+      "elapsed_seconds": 60.5,
+      "status": "paused",
+      "turns": 3,
+      "engine": "ready",
+      "available_ram_gib": 7.907,
+      "progress": {
+        "kind": "paused",
+        "data": {
+          "status": "paused",
+          "message": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791770341.9158733
+      },
+      "evidence": {
+        "changed_evidence": false,
+        "seconds_since_changed_evidence": 40.3,
+        "edited_files": 0,
+        "completed_plan_steps": 0,
+        "total_plan_steps": 0,
+        "latest_test_count": 1,
+        "latest_tests_passed": false,
+        "native_verified": false,
+        "action_counts": {
+          "tool_result": 2,
+          "tool_start": 2
+        },
+        "interpretation": "[local detail omitted from GitHub snapshot]"
+      },
+      "nice": 5,
+      "uss_gib": 2.393
+    }
+  ],
+  "additional_independent_criteria": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "job": "9a9b01f072ce4156af9309f4d021d255",
+  "session": "f1de630a9a1e4e3bbd2877912a2b9082",
+  "additional_goal_checks": [
+    {
+      "check": "Already lowercase text retains combining marks",
+      "passed": false,
+      "examples": 2,
+      "failed_examples": 2,
+      "counterexamples": [
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": null
+        },
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": null
+        }
+      ],
+      "error": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "Unicode lowercase expansions follow Python str.lower",
+      "passed": false,
+      "examples": 2,
+      "failed_examples": 2,
+      "counterexamples": [
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": null
+        },
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": null
+        }
+      ],
+      "error": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "Lowercase does not introduce casefolding or accent removal",
+      "passed": false,
+      "examples": 4,
+      "failed_examples": 4,
+      "counterexamples": [
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": null
+        },
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": null
+        },
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": null
+        }
+      ],
+      "error": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "Whitespace and letter transformations compose across mixed inputs",
+      "passed": false,
+      "examples": 144,
+      "failed_examples": 144,
+      "counterexamples": [
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": null
+        },
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": null
+        },
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": null
+        }
+      ],
+      "error": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "independent_project_tests": {
+    "exit_code": 2,
+    "output": "[local detail omitted from GitHub snapshot]"
+  },
+  "passed": false,
+  "checks": {
+    "native_verified": false,
+    "acceptance_unchanged": true,
+    "runtime_frozen": true,
+    "all_seeded_behavior_tests": false,
+    "all_independent_behavior_checks": false,
+    "additional_nonempty_passing_project_tests": false
+  },
+  "acceptance_after": {
+    "exit_code": 1,
+    "output": "[local detail omitted from GitHub snapshot]"
+  },
+  "independent_checks": [
+    {
+      "check": "unicode lowercase",
+      "passed": false,
+      "exit_code": 1,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "unicode whitespace",
+      "passed": false,
+      "exit_code": 1,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "zero-width text",
+      "passed": false,
+      "exit_code": 1,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "numbers and punctuation",
+      "passed": false,
+      "exit_code": 1,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "Already lowercase text retains combining marks",
+      "passed": false,
+      "examples": 2,
+      "failed_examples": 2,
+      "counterexamples": [
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": null
+        },
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": null
+        }
+      ],
+      "error": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "Unicode lowercase expansions follow Python str.lower",
+      "passed": false,
+      "examples": 2,
+      "failed_examples": 2,
+      "counterexamples": [
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": null
+        },
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": null
+        }
+      ],
+      "error": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "Lowercase does not introduce casefolding or accent removal",
+      "passed": false,
+      "examples": 4,
+      "failed_examples": 4,
+      "counterexamples": [
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": null
+        },
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": null
+        },
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": null
+        }
+      ],
+      "error": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "Whitespace and letter transformations compose across mixed inputs",
+      "passed": false,
+      "examples": 144,
+      "failed_examples": 144,
+      "counterexamples": [
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": null
+        },
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": null
+        },
+        {
+          "input": "[local detail omitted from GitHub snapshot]",
+          "expected": "[local detail omitted from GitHub snapshot]",
+          "actual": null
+        }
+      ],
+      "error": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "checkpoint": "[local detail omitted from GitHub snapshot]",
+  "job_elapsed_seconds": 49.2,
+  "metrics": [],
+  "tool_calls": [
+    {
+      "name": "inspect_project",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 0,
+      "origin": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "name": "run_checks",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 0,
+      "origin": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "errors": [],
+  "archive_metadata": {
+    "source": "native-labels-20261012T015812683517Z.json",
+    "kind": "native",
+    "title": "Small native Python label function and new tests",
+    "scope": "Fresh implementation from a frozen goal, sample input and operator-seeded acceptance tests only. No implementation supplied, no operator runtime hints, actual local GPT-OSS-20B. Generic project baseline/importfacts may be supplied by the configured harness. Independent checks withheld until termination.",
+    "source_sha256": "6bc82d885b02c12ead7725def4341a72930610c4c5f4d5b0821974699f6dd9f0"
+  }
+}

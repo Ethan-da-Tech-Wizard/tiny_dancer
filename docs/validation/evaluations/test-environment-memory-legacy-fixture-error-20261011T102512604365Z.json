@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-11T10:25:12.604178+00:00",
+  "passed": false,
+  "status": "failed",
+  "tests_run": 29,
+  "failures": 0,
+  "errors": 1,
+  "scope": "Strengthened isolated29 run:28pass/1fixture error from using nonexistent Harmony Message.with_name; not a production or native failure. Correct constructor before testing legacy behavior.",
+  "log": "[local detail omitted from GitHub snapshot]",
+  "failed_tests": [
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "archive_metadata": {
+    "source": "test-environment-memory-legacy-fixture-error.json",
+    "kind": "regression",
+    "title": "test-environment-memory-legacy-fixture-error",
+    "scope": "Strengthened isolated29 run:28pass/1fixture error from using nonexistent Harmony Message.with_name; not a production or native failure. Correct constructor before testing legacy behavior.",
+    "source_sha256": "19334509ebc5e2be01afb6cb6a42b0ec75222e19ae2a2e130dea597cf9aa0524"
+  }
+}

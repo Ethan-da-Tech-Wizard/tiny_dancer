@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-11T11:08:02.793210+00:00",
+  "status": "completed_focused_iteration_unqualified",
+  "passed": false,
+  "scope": "User requested at most15minutes then exact outcomes; focused work finished before11:15:34Z. Overall native release remains unqualified. No long experiment remains active.",
+  "production": {
+    "tests": 273,
+    "passed": true,
+    "report": "docs/validation/runs/20261011T104802059101Z.json",
+    "syntax": true,
+    "license_inventory": "[local detail omitted from GitHub snapshot]",
+    "idle": true,
+    "engine": "not loaded"
+  },
+  "isolated_review_candidate": {
+    "tests": 284,
+    "passed": true,
+    "deployed": false,
+    "native_capability_proven": false,
+    "report": "docs/validation/runs/goal-review-staged-284-20261011T105521002064Z.json"
+  },
+  "expert_batch_probe": {
+    "cases": 129,
+    "passed": true,
+    "byte_identical": true,
+    "deployed": false,
+    "report": "docs/prefill-rows-probe-validation.json",
+    "throughput_ratio": 1.2335579894933264,
+    "time_reduction_percent": 18.933685443459236,
+    "scope": "One synthetic CPU expert, existing precision/math; no whole-app speed claim."
+  },
+  "picchio_existing_self_test": {
+    "passed": true,
+    "log": "[local detail omitted from GitHub snapshot]"
+  },
+  "native_release": {
+    "passed": false,
+    "money": "[local detail omitted from GitHub snapshot]",
+    "inventory": "[local detail omitted from GitHub snapshot]",
+    "ranges": "[local detail omitted from GitHub snapshot]",
+    "report": "docs/native-release-gate-current.json"
+  },
+  "reviews": {
+    "high2048": "[local detail omitted from GitHub snapshot]",
+    "low2048": "[local detail omitted from GitHub snapshot]",
+    "high4096": "[local detail omitted from GitHub snapshot]"
+  },
+  "next": "[local detail omitted from GitHub snapshot]",
+  "archive_metadata": {
+    "source": "TIME_LIMITED_STATUS.json",
+    "kind": "automated",
+    "title": "Time-limited follow-up: current exact pass/fail status",
+    "scope": "User requested at most15minutes then exact outcomes; focused work finished before11:15:34Z. Overall native release remains unqualified. No long experiment remains active.",
+    "source_sha256": "42b07b14cf81c609edf9ee454b0f99bdaf136e0b198dfca0c8cfffc25ec013b1"
+  }
+}

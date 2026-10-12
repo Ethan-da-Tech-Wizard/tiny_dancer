@@ -1,0 +1,138 @@
+{
+  "bin": {
+    "pi": "[local detail omitted from GitHub snapshot]"
+  },
+  "bugs": {
+    "url": "https://github.com/badlogic/pi-mono/issues"
+  },
+  "dist": {
+    "shasum": "a14f26f45d3553556149432d743242675771862a",
+    "tarball": "[local detail omitted from GitHub snapshot]",
+    "fileCount": 711,
+    "integrity": "[local detail omitted from GitHub snapshot]",
+    "signatures": [
+      {
+        "sig": "[local detail omitted from GitHub snapshot]",
+        "keyid": "[local detail omitted from GitHub snapshot]"
+      }
+    ],
+    "unpackedSize": 11231768
+  },
+  "main": "[local detail omitted from GitHub snapshot]",
+  "name": "@mariozechner/pi-coding-agent",
+  "type": "module",
+  "types": "[local detail omitted from GitHub snapshot]",
+  "author": {
+    "name": "Mario Zechner"
+  },
+  "engines": {
+    "node": "[local detail omitted from GitHub snapshot]"
+  },
+  "exports": {
+    ".": {
+      "types": "[local detail omitted from GitHub snapshot]",
+      "import": "[local detail omitted from GitHub snapshot]"
+    },
+    "./hooks": {
+      "types": "[local detail omitted from GitHub snapshot]",
+      "import": "[local detail omitted from GitHub snapshot]"
+    }
+  },
+  "gitHead": "781152fc24841dc54b22284514604048ebe5e2c9",
+  "license": "MIT",
+  "scripts": {
+    "dev": "[local detail omitted from GitHub snapshot]",
+    "test": "vitest --run",
+    "build": "[local detail omitted from GitHub snapshot]",
+    "clean": "[local detail omitted from GitHub snapshot]",
+    "copy-assets": "[local detail omitted from GitHub snapshot]",
+    "build:binary": "[local detail omitted from GitHub snapshot]",
+    "prepublishOnly": "[local detail omitted from GitHub snapshot]",
+    "copy-binary-assets": "[local detail omitted from GitHub snapshot]"
+  },
+  "_npmUser": {
+    "name": "badlogic",
+    "email": "[local detail omitted from GitHub snapshot]"
+  },
+  "homepage": "[local detail omitted from GitHub snapshot]",
+  "keywords": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "piConfig": {
+    "configDir": "[local detail omitted from GitHub snapshot]"
+  },
+  "overrides": {
+    "gaxios": {
+      "rimraf": "[local detail omitted from GitHub snapshot]"
+    },
+    "rimraf": "[local detail omitted from GitHub snapshot]"
+  },
+  "deprecated": "[local detail omitted from GitHub snapshot]",
+  "repository": {
+    "url": "git+https://github.com/badlogic/pi-mono.git",
+    "type": "git",
+    "directory": "packages/coding-agent"
+  },
+  "_npmVersion": "[local detail omitted from GitHub snapshot]",
+  "description": "[local detail omitted from GitHub snapshot]",
+  "directories": {},
+  "maintainers": [
+    {
+      "name": "badlogic",
+      "email": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "name": "mitsuhiko",
+      "email": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "_nodeVersion": "[local detail omitted from GitHub snapshot]",
+  "dependencies": {
+    "diff": "[local detail omitted from GitHub snapshot]",
+    "glob": "[local detail omitted from GitHub snapshot]",
+    "jiti": "[local detail omitted from GitHub snapshot]",
+    "uuid": "[local detail omitted from GitHub snapshot]",
+    "yaml": "[local detail omitted from GitHub snapshot]",
+    "chalk": "[local detail omitted from GitHub snapshot]",
+    "ignore": "[local detail omitted from GitHub snapshot]",
+    "marked": "[local detail omitted from GitHub snapshot]",
+    "undici": "[local detail omitted from GitHub snapshot]",
+    "typebox": "[local detail omitted from GitHub snapshot]",
+    "file-type": "[local detail omitted from GitHub snapshot]",
+    "minimatch": "[local detail omitted from GitHub snapshot]",
+    "strip-ansi": "[local detail omitted from GitHub snapshot]",
+    "extract-zip": "[local detail omitted from GitHub snapshot]",
+    "cli-highlight": "[local detail omitted from GitHub snapshot]",
+    "hosted-git-info": "[local detail omitted from GitHub snapshot]",
+    "proper-lockfile": "[local detail omitted from GitHub snapshot]",
+    "@mariozechner/pi-ai": "[local detail omitted from GitHub snapshot]",
+    "@mariozechner/pi-tui": "[local detail omitted from GitHub snapshot]",
+    "@silvia-odwyer/photon-node": "[local detail omitted from GitHub snapshot]",
+    "@mariozechner/pi-agent-core": "[local detail omitted from GitHub snapshot]"
+  },
+  "_hasShrinkwrap": false,
+  "devDependencies": {
+    "shx": "[local detail omitted from GitHub snapshot]",
+    "vitest": "[local detail omitted from GitHub snapshot]",
+    "@types/ms": "[local detail omitted from GitHub snapshot]",
+    "typescript": "[local detail omitted from GitHub snapshot]",
+    "@types/diff": "[local detail omitted from GitHub snapshot]",
+    "@types/node": "[local detail omitted from GitHub snapshot]",
+    "@types/hosted-git-info": "[local detail omitted from GitHub snapshot]",
+    "@types/proper-lockfile": "[local detail omitted from GitHub snapshot]"
+  },
+  "optionalDependencies": {
+    "@mariozechner/clipboard": "[local detail omitted from GitHub snapshot]"
+  },
+  "_npmOperationalInternal": {
+    "tmp": "[local detail omitted from GitHub snapshot]",
+    "host": "[local detail omitted from GitHub snapshot]"
+  },
+  "_id": "[local detail omitted from GitHub snapshot]",
+  "version": "0.73.1"
+}

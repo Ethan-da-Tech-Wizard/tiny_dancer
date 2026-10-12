@@ -1,0 +1,1179 @@
+{
+  "started_at": "2026-10-11T13:23:54.935057+00:00",
+  "status": "cancelled",
+  "prompt": "[local detail omitted from GitHub snapshot]",
+  "cwd": "/mnt/GameDrive/tiny_dancer/workspace/precision-repair-20261011T132354Z",
+  "operator_interventions": [
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "scope": "Native repair on copies of the failed native implementation, with operator-seeded acceptance tests from its requirements. Final general recovery/requirements/test-parser harness; not an unassisted implementation or comparable full-build speed benchmark. No code or hints injected during execution.",
+  "backend": "llama.cpp",
+  "serving_model_path": "models/gpt-oss-20b-native-mxfp4",
+  "baseline": "[local detail omitted from GitHub snapshot]",
+  "acceptance_sha256": "2022e8a7d522322f05af37a701c05a0ce1377ab9fb94c497576ea55cfa8ba74f",
+  "samples": [
+    {
+      "elapsed_seconds": 0.0,
+      "status": "running",
+      "engine": "not loaded",
+      "turns": 0,
+      "available_ram_gib": 8.669,
+      "progress": {
+        "kind": "tool_start",
+        "data": {
+          "name": "run_checks",
+          "arguments": "[local detail omitted from GitHub snapshot]",
+          "step": 0,
+          "origin": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791725034.9931421
+      }
+    },
+    {
+      "elapsed_seconds": 20.1,
+      "status": "running",
+      "engine": "loading model",
+      "turns": 1,
+      "available_ram_gib": 8.37,
+      "progress": {
+        "kind": "tool_start",
+        "data": {
+          "name": "run_checks",
+          "arguments": "[local detail omitted from GitHub snapshot]",
+          "step": 0,
+          "origin": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791725034.9931421
+      },
+      "nice": 5,
+      "uss_gib": 4.166,
+      "read_bytes": 6954786816
+    },
+    {
+      "elapsed_seconds": 42.8,
+      "status": "running",
+      "engine": "loading model",
+      "turns": 1,
+      "available_ram_gib": 8.266,
+      "progress": {
+        "kind": "tool_start",
+        "data": {
+          "name": "run_checks",
+          "arguments": "[local detail omitted from GitHub snapshot]",
+          "step": 0,
+          "origin": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791725034.9931421
+      },
+      "nice": 5,
+      "uss_gib": 2.013,
+      "read_bytes": 16904519680
+    },
+    {
+      "elapsed_seconds": 64.4,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 1,
+      "available_ram_gib": 8.106,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3573,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791725079.5087395
+      },
+      "nice": 5,
+      "uss_gib": 6.8,
+      "read_bytes": 22807105536
+    },
+    {
+      "elapsed_seconds": 84.5,
+      "status": "running",
+      "engine": "generating",
+      "turns": 1,
+      "available_ram_gib": 8.066,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 320,
+          "seconds": 39.9
+        },
+        "created": 1791725119.4089565
+      },
+      "nice": 5,
+      "uss_gib": 6.952,
+      "read_bytes": 22937559040
+    },
+    {
+      "elapsed_seconds": 104.6,
+      "status": "running",
+      "engine": "generating",
+      "turns": 2,
+      "available_ram_gib": 8.052,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 384,
+          "seconds": 16.3
+        },
+        "created": 1791725139.2119887
+      },
+      "nice": 5,
+      "uss_gib": 6.985,
+      "read_bytes": 22980308992
+    },
+    {
+      "elapsed_seconds": 124.7,
+      "status": "running",
+      "engine": "generating",
+      "turns": 2,
+      "available_ram_gib": 8.038,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 960,
+          "seconds": 36.3
+        },
+        "created": 1791725159.175437
+      },
+      "nice": 5,
+      "uss_gib": 6.987,
+      "read_bytes": 22983192576
+    },
+    {
+      "elapsed_seconds": 144.8,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 4,
+      "available_ram_gib": 7.876,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3926,
+          "reused_tokens": 1033,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791725169.829215
+      },
+      "nice": 5,
+      "uss_gib": 7.113,
+      "read_bytes": 22987767808
+    },
+    {
+      "elapsed_seconds": 164.8,
+      "status": "running",
+      "engine": "generating",
+      "turns": 4,
+      "available_ram_gib": 7.84,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 208,
+          "seconds": 29.6
+        },
+        "created": 1791725199.3855567
+      },
+      "nice": 5,
+      "uss_gib": 7.114,
+      "read_bytes": 22987767808
+    },
+    {
+      "elapsed_seconds": 184.9,
+      "status": "running",
+      "engine": "generating",
+      "turns": 4,
+      "available_ram_gib": 7.853,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 720,
+          "seconds": 49.5
+        },
+        "created": 1791725219.3243244
+      },
+      "nice": 5,
+      "uss_gib": 7.121,
+      "read_bytes": 22993059840
+    },
+    {
+      "elapsed_seconds": 205.0,
+      "status": "running",
+      "engine": "generating",
+      "turns": 4,
+      "available_ram_gib": 7.829,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1232,
+          "seconds": 70.0
+        },
+        "created": 1791725239.788696
+      },
+      "nice": 5,
+      "uss_gib": 7.122,
+      "read_bytes": 22993059840
+    },
+    {
+      "elapsed_seconds": 225.1,
+      "status": "running",
+      "engine": "generating",
+      "turns": 4,
+      "available_ram_gib": 7.817,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1728,
+          "seconds": 90.1
+        },
+        "created": 1791725259.948365
+      },
+      "nice": 5,
+      "uss_gib": 7.122,
+      "read_bytes": 22993059840
+    },
+    {
+      "elapsed_seconds": 245.3,
+      "status": "running",
+      "engine": "generating",
+      "turns": 5,
+      "available_ram_gib": 7.845,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 128,
+          "seconds": 6.6
+        },
+        "created": 1791725279.751938
+      },
+      "nice": 5,
+      "uss_gib": 7.123,
+      "read_bytes": 22993137664
+    },
+    {
+      "elapsed_seconds": 265.4,
+      "status": "running",
+      "engine": "generating",
+      "turns": 5,
+      "available_ram_gib": 7.845,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 496,
+          "seconds": 26.5
+        },
+        "created": 1791725299.700984
+      },
+      "nice": 5,
+      "uss_gib": 7.123,
+      "read_bytes": 22993137664
+    },
+    {
+      "elapsed_seconds": 285.5,
+      "status": "running",
+      "engine": "generating",
+      "turns": 5,
+      "available_ram_gib": 7.829,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 816,
+          "seconds": 46.5
+        },
+        "created": 1791725319.6825953
+      },
+      "nice": 5,
+      "uss_gib": 7.124,
+      "read_bytes": 22993137664
+    },
+    {
+      "elapsed_seconds": 305.6,
+      "status": "running",
+      "engine": "generating",
+      "turns": 5,
+      "available_ram_gib": 7.829,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1136,
+          "seconds": 67.2
+        },
+        "created": 1791725340.3583531
+      },
+      "nice": 5,
+      "uss_gib": 7.124,
+      "read_bytes": 22993137664
+    },
+    {
+      "elapsed_seconds": 325.7,
+      "status": "running",
+      "engine": "generating",
+      "turns": 5,
+      "available_ram_gib": 7.836,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1440,
+          "seconds": 86.9
+        },
+        "created": 1791725360.0774286
+      },
+      "nice": 5,
+      "uss_gib": 7.124,
+      "read_bytes": 22993137664
+    },
+    {
+      "elapsed_seconds": 345.8,
+      "status": "running",
+      "engine": "generating",
+      "turns": 5,
+      "available_ram_gib": 7.836,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1744,
+          "seconds": 106.7
+        },
+        "created": 1791725379.87249
+      },
+      "nice": 5,
+      "uss_gib": 7.124,
+      "read_bytes": 22993137664
+    },
+    {
+      "elapsed_seconds": 365.9,
+      "status": "running",
+      "engine": "generating",
+      "turns": 5,
+      "available_ram_gib": 7.824,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 2064,
+          "seconds": 127.6
+        },
+        "created": 1791725400.7538865
+      },
+      "nice": 5,
+      "uss_gib": 7.125,
+      "read_bytes": 22993137664
+    },
+    {
+      "elapsed_seconds": 386.0,
+      "status": "running",
+      "engine": "generating",
+      "turns": 5,
+      "available_ram_gib": 7.801,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 2368,
+          "seconds": 147.5
+        },
+        "created": 1791725420.641748
+      },
+      "nice": 5,
+      "uss_gib": 7.125,
+      "read_bytes": 22993137664
+    },
+    {
+      "elapsed_seconds": 406.1,
+      "status": "running",
+      "engine": "generating",
+      "turns": 5,
+      "available_ram_gib": 7.812,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 2672,
+          "seconds": 167.6
+        },
+        "created": 1791725440.7654536
+      },
+      "nice": 5,
+      "uss_gib": 7.125,
+      "read_bytes": 22993137664
+    },
+    {
+      "elapsed_seconds": 426.2,
+      "status": "running",
+      "engine": "generating",
+      "turns": 5,
+      "available_ram_gib": 7.805,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 2976,
+          "seconds": 187.7
+        },
+        "created": 1791725460.815117
+      },
+      "nice": 5,
+      "uss_gib": 7.125,
+      "read_bytes": 22993137664
+    },
+    {
+      "elapsed_seconds": 446.3,
+      "status": "running",
+      "engine": "generating",
+      "turns": 5,
+      "available_ram_gib": 7.813,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 3280,
+          "seconds": 207.9
+        },
+        "created": 1791725481.0900462
+      },
+      "nice": 5,
+      "uss_gib": 7.126,
+      "read_bytes": 22993137664
+    },
+    {
+      "elapsed_seconds": 466.4,
+      "status": "running",
+      "engine": "generating",
+      "turns": 5,
+      "available_ram_gib": 7.792,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 3584,
+          "seconds": 228.0
+        },
+        "created": 1791725501.1851113
+      },
+      "nice": 5,
+      "uss_gib": 7.126,
+      "read_bytes": 22993137664
+    },
+    {
+      "elapsed_seconds": 486.5,
+      "status": "running",
+      "engine": "generating",
+      "turns": 5,
+      "available_ram_gib": 7.795,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 3872,
+          "seconds": 247.5
+        },
+        "created": 1791725520.6647844
+      },
+      "nice": 5,
+      "uss_gib": 7.126,
+      "read_bytes": 22993137664
+    },
+    {
+      "elapsed_seconds": 506.6,
+      "status": "running",
+      "engine": "generating",
+      "turns": 6,
+      "available_ram_gib": 7.587,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 64,
+          "seconds": 5.3
+        },
+        "created": 1791725541.1072886
+      },
+      "nice": 5,
+      "uss_gib": 7.331,
+      "read_bytes": 22993137664
+    },
+    {
+      "elapsed_seconds": 526.7,
+      "status": "running",
+      "engine": "generating",
+      "turns": 6,
+      "available_ram_gib": 7.623,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 368,
+          "seconds": 25.7
+        },
+        "created": 1791725561.4984155
+      },
+      "nice": 5,
+      "uss_gib": 7.331,
+      "read_bytes": 22993137664
+    },
+    {
+      "elapsed_seconds": 546.8,
+      "status": "running",
+      "engine": "generating",
+      "turns": 6,
+      "available_ram_gib": 7.611,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 656,
+          "seconds": 45.1
+        },
+        "created": 1791725580.8983657
+      },
+      "nice": 5,
+      "uss_gib": 7.331,
+      "read_bytes": 22993137664
+    },
+    {
+      "elapsed_seconds": 566.9,
+      "status": "running",
+      "engine": "generating",
+      "turns": 6,
+      "available_ram_gib": 7.622,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 960,
+          "seconds": 65.5
+        },
+        "created": 1791725601.3713326
+      },
+      "nice": 5,
+      "uss_gib": 7.331,
+      "read_bytes": 22993137664
+    },
+    {
+      "elapsed_seconds": 587.0,
+      "status": "running",
+      "engine": "generating",
+      "turns": 6,
+      "available_ram_gib": 7.606,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1248,
+          "seconds": 85.2
+        },
+        "created": 1791725621.0070798
+      },
+      "nice": 5,
+      "uss_gib": 7.332,
+      "read_bytes": 22994472960
+    },
+    {
+      "elapsed_seconds": 607.1,
+      "status": "running",
+      "engine": "generating",
+      "turns": 6,
+      "available_ram_gib": 7.599,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1552,
+          "seconds": 105.9
+        },
+        "created": 1791725641.6921196
+      },
+      "nice": 5,
+      "uss_gib": 7.332,
+      "read_bytes": 22994472960
+    },
+    {
+      "elapsed_seconds": 627.2,
+      "status": "running",
+      "engine": "generating",
+      "turns": 6,
+      "available_ram_gib": 7.595,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1840,
+          "seconds": 125.5
+        },
+        "created": 1791725661.3612897
+      },
+      "nice": 5,
+      "uss_gib": 7.332,
+      "read_bytes": 22994472960
+    },
+    {
+      "elapsed_seconds": 647.3,
+      "status": "running",
+      "engine": "generating",
+      "turns": 6,
+      "available_ram_gib": 7.601,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 2144,
+          "seconds": 146.4
+        },
+        "created": 1791725682.2035942
+      },
+      "nice": 5,
+      "uss_gib": 7.332,
+      "read_bytes": 22994472960
+    },
+    {
+      "elapsed_seconds": 667.4,
+      "status": "running",
+      "engine": "generating",
+      "turns": 6,
+      "available_ram_gib": 7.594,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 2432,
+          "seconds": 166.2
+        },
+        "created": 1791725701.9890366
+      },
+      "nice": 5,
+      "uss_gib": 7.332,
+      "read_bytes": 22994472960
+    },
+    {
+      "elapsed_seconds": 687.6,
+      "status": "running",
+      "engine": "generating",
+      "turns": 6,
+      "available_ram_gib": 7.629,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 2720,
+          "seconds": 185.8
+        },
+        "created": 1791725721.6282845
+      },
+      "nice": 5,
+      "uss_gib": 7.332,
+      "read_bytes": 22994472960
+    },
+    {
+      "elapsed_seconds": 707.6,
+      "status": "running",
+      "engine": "generating",
+      "turns": 6,
+      "available_ram_gib": 7.615,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 3024,
+          "seconds": 206.5
+        },
+        "created": 1791725742.346076
+      },
+      "nice": 5,
+      "uss_gib": 7.333,
+      "read_bytes": 22994472960
+    },
+    {
+      "elapsed_seconds": 727.8,
+      "status": "running",
+      "engine": "generating",
+      "turns": 6,
+      "available_ram_gib": 7.618,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 3312,
+          "seconds": 226.3
+        },
+        "created": 1791725762.16881
+      },
+      "nice": 5,
+      "uss_gib": 7.333,
+      "read_bytes": 22994472960
+    },
+    {
+      "elapsed_seconds": 747.9,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 8,
+      "available_ram_gib": 7.43,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3566,
+          "reused_tokens": 1246,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791725763.8830838
+      },
+      "nice": 5,
+      "uss_gib": 7.52,
+      "read_bytes": 22997647360
+    },
+    {
+      "elapsed_seconds": 767.9,
+      "status": "running",
+      "engine": "generating",
+      "turns": 8,
+      "available_ram_gib": 7.429,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 48,
+          "seconds": 38.7
+        },
+        "created": 1791725802.6219342
+      },
+      "nice": 5,
+      "uss_gib": 7.521,
+      "read_bytes": 22997647360
+    },
+    {
+      "elapsed_seconds": 788.0,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 10,
+      "available_ram_gib": 7.334,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3964,
+          "reused_tokens": 1246,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791725804.8532505
+      },
+      "nice": 5,
+      "uss_gib": 7.607,
+      "read_bytes": 22999228416
+    },
+    {
+      "elapsed_seconds": 808.1,
+      "status": "running",
+      "engine": "processing prompt",
+      "turns": 10,
+      "available_ram_gib": 7.347,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 3964,
+          "reused_tokens": 1246,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "medium"
+        },
+        "created": 1791725804.8532505
+      },
+      "nice": 5,
+      "uss_gib": 7.599,
+      "read_bytes": 22999228416
+    },
+    {
+      "elapsed_seconds": 828.2,
+      "status": "running",
+      "engine": "generating",
+      "turns": 10,
+      "available_ram_gib": 7.218,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 272,
+          "seconds": 58.0
+        },
+        "created": 1791725862.8135555
+      },
+      "nice": 5,
+      "uss_gib": 7.591,
+      "read_bytes": 23002566656
+    },
+    {
+      "elapsed_seconds": 848.3,
+      "status": "running",
+      "engine": "generating",
+      "turns": 10,
+      "available_ram_gib": 7.194,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 560,
+          "seconds": 78.3
+        },
+        "created": 1791725883.1616647
+      },
+      "nice": 5,
+      "uss_gib": 7.507,
+      "read_bytes": 23020892160
+    },
+    {
+      "elapsed_seconds": 868.5,
+      "status": "running",
+      "engine": "generating",
+      "turns": 10,
+      "available_ram_gib": 7.426,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 848,
+          "seconds": 97.6
+        },
+        "created": 1791725902.45921
+      },
+      "nice": 5,
+      "uss_gib": 7.517,
+      "read_bytes": 23054168064
+    },
+    {
+      "elapsed_seconds": 888.7,
+      "status": "running",
+      "engine": "generating",
+      "turns": 10,
+      "available_ram_gib": 7.406,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1152,
+          "seconds": 118.4
+        },
+        "created": 1791725923.2177432
+      },
+      "nice": 5,
+      "uss_gib": 7.526,
+      "read_bytes": 23065448448
+    },
+    {
+      "elapsed_seconds": 900.0,
+      "status": "running",
+      "engine": "generating",
+      "turns": 10,
+      "available_ram_gib": 7.405,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 1312,
+          "seconds": 129.3
+        },
+        "created": 1791725934.1488187
+      },
+      "nice": 5,
+      "uss_gib": 7.526,
+      "read_bytes": 23071576064
+    },
+    {
+      "elapsed_seconds": 920.2,
+      "status": "cancelled",
+      "engine": "not loaded",
+      "turns": 10,
+      "available_ram_gib": 8.667,
+      "progress": {
+        "kind": "cancelled",
+        "data": {
+          "message": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791725935.1061046
+      }
+    }
+  ],
+  "runtime_sha256_before": "7eb0bb25b2594dd616793e5f6d52fa1891c0b70241c114220dbc7bed75fa28ae",
+  "acceptance_before_repair": {
+    "exit_code": 1,
+    "output": "[local detail omitted from GitHub snapshot]"
+  },
+  "execution": {
+    "observation_seconds": 900,
+    "initial_budget": "[local detail omitted from GitHub snapshot]",
+    "reasoning_effort": "medium"
+  },
+  "job": "6b1e3f9d75ad48799fa309b3ed2f84aa",
+  "session": "5af11b4a0af74c3fb1287d5b9a206fb0",
+  "supplemental_criteria": "[local detail omitted from GitHub snapshot]",
+  "supplemental_unseen": {
+    "signed": {
+      "exit_code": 1,
+      "passed": false,
+      "actual": null,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    "total": {
+      "exit_code": 1,
+      "passed": false,
+      "actual": null,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    }
+  },
+  "runtime_sha256_after": "7eb0bb25b2594dd616793e5f6d52fa1891c0b70241c114220dbc7bed75fa28ae",
+  "passed": false,
+  "checks": {
+    "runtime_frozen": true,
+    "native_verified": false,
+    "acceptance_unchanged": true,
+    "independent_cli_checks": false,
+    "clear_errors": true,
+    "unseen_1600_digit_signed_case": false,
+    "automatic_initial_work_allowance": true,
+    "unseen_3200_digit_signed": false,
+    "unseen_3200_digit_total": false
+  },
+  "checkpoint": "[local detail omitted from GitHub snapshot]",
+  "job_elapsed_seconds": 900.16,
+  "independent_checks": [
+    {
+      "check": "exact decimals and negatives",
+      "passed": true,
+      "exit_code": 0,
+      "actual": {
+        "food": "[local detail omitted from GitHub snapshot]"
+      },
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "quoted category and sorted keys",
+      "passed": true,
+      "exit_code": 0,
+      "actual": {
+        "a,b": "[local detail omitted from GitHub snapshot]",
+        "z": "[local detail omitted from GitHub snapshot]"
+      },
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "large exact monetary values",
+      "passed": true,
+      "exit_code": 0,
+      "actual": {
+        "x": "[local detail omitted from GitHub snapshot]"
+      },
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "empty dataset",
+      "passed": true,
+      "exit_code": 0,
+      "actual": {},
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "reject 'bad'",
+      "passed": true,
+      "exit_code": 1,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "reject 'NaN'",
+      "passed": true,
+      "exit_code": 1,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "reject 'Infinity'",
+      "passed": true,
+      "exit_code": 1,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "reject '1.234'",
+      "passed": true,
+      "exit_code": 1,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "reject ''",
+      "passed": true,
+      "exit_code": 1,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "exact totals beyond default Decimal precision",
+      "passed": false,
+      "actual": null,
+      "exit_code": 1,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "many repeated signed amounts",
+      "passed": true,
+      "actual": {
+        "x": "[local detail omitted from GitHub snapshot]"
+      },
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "clear_error_checks": [
+    {
+      "value": "[local detail omitted from GitHub snapshot]",
+      "passed": true,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "value": "[local detail omitted from GitHub snapshot]",
+      "passed": true,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "value": "[local detail omitted from GitHub snapshot]",
+      "passed": true,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "value": "[local detail omitted from GitHub snapshot]",
+      "passed": true,
+      "output": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "value": "[local detail omitted from GitHub snapshot]",
+      "passed": true,
+      "output": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "unseen": {
+    "exit_code": 1,
+    "actual": null,
+    "stderr": "[local detail omitted from GitHub snapshot]"
+  },
+  "metrics": [
+    {
+      "prefill_seconds": 29.897631,
+      "decode_seconds": 13.418691,
+      "prefill_tokens": 3573,
+      "decode_tokens": 428,
+      "total_seconds": 43.32,
+      "backend": "llama.cpp-native-mxfp4",
+      "prefill_tokens_per_s": 119.50779645383943,
+      "decode_tokens_per_s": 31.89580861501319,
+      "completion_tokens": 428,
+      "prompt_tokens": 3573,
+      "canonical_prompt_tokens": 3573,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 0,
+      "reasoning_effort": "medium"
+    },
+    {
+      "prefill_seconds": 3.734509,
+      "decode_seconds": 41.567431,
+      "prefill_tokens": 712,
+      "decode_tokens": 1195,
+      "total_seconds": 45.31,
+      "backend": "llama.cpp-native-mxfp4",
+      "prefill_tokens_per_s": 190.65424664929176,
+      "decode_tokens_per_s": 28.74846896359797,
+      "completion_tokens": 1195,
+      "prompt_tokens": 4712,
+      "canonical_prompt_tokens": 4712,
+      "exact_history_cache_tokens": 4001,
+      "cache_saved_prefill_tokens": 28,
+      "reasoning_effort": "medium"
+    },
+    {
+      "prefill_seconds": 21.747836,
+      "decode_seconds": 81.501985,
+      "prefill_tokens": 3926,
+      "decode_tokens": 2048,
+      "total_seconds": 103.3,
+      "backend": "llama.cpp-native-mxfp4",
+      "prefill_tokens_per_s": 180.5237081979099,
+      "decode_tokens_per_s": 25.12822233716148,
+      "completion_tokens": 2048,
+      "prompt_tokens": 3926,
+      "canonical_prompt_tokens": 3926,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 0,
+      "reasoning_effort": "medium"
+    },
+    {
+      "prefill_seconds": 0.6426470000000001,
+      "decode_seconds": 261.997901,
+      "prefill_tokens": 42,
+      "decode_tokens": 4096,
+      "total_seconds": 262.65,
+      "backend": "llama.cpp-native-mxfp4",
+      "prefill_tokens_per_s": 65.35469705763816,
+      "decode_tokens_per_s": 15.633713034975802,
+      "completion_tokens": 4096,
+      "prompt_tokens": 3963,
+      "canonical_prompt_tokens": 3963,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 0,
+      "reasoning_effort": "medium"
+    },
+    {
+      "prefill_seconds": 0.976084,
+      "decode_seconds": 226.941862,
+      "prefill_tokens": 42,
+      "decode_tokens": 3336,
+      "total_seconds": 228.0,
+      "backend": "llama.cpp-native-mxfp4",
+      "prefill_tokens_per_s": 43.02908356248028,
+      "decode_tokens_per_s": 14.699800074787436,
+      "completion_tokens": 3336,
+      "prompt_tokens": 4000,
+      "canonical_prompt_tokens": 4000,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 0,
+      "reasoning_effort": "medium"
+    },
+    {
+      "prefill_seconds": 35.744514,
+      "decode_seconds": 3.2996619999999997,
+      "prefill_tokens": 3566,
+      "decode_tokens": 54,
+      "total_seconds": 39.12,
+      "backend": "llama.cpp-native-mxfp4",
+      "prefill_tokens_per_s": 99.76356092014566,
+      "decode_tokens_per_s": 16.36531256837822,
+      "completion_tokens": 54,
+      "prompt_tokens": 3566,
+      "canonical_prompt_tokens": 3566,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 0,
+      "reasoning_effort": "medium"
+    }
+  ],
+  "tool_calls": [
+    {
+      "name": "inspect_project",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 0,
+      "origin": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "name": "run_checks",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 0,
+      "origin": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "name": "read_file",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 1
+    },
+    {
+      "name": "apply_patch",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 2
+    },
+    {
+      "name": "run_checks",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 2,
+      "origin": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "name": "read_file",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 6
+    },
+    {
+      "name": "run_checks",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 8
+    }
+  ],
+  "errors": [],
+  "archive_metadata": {
+    "source": "precision-repair-retest-validation.json",
+    "kind": "native",
+    "title": "Previous frozen moneyrepair replay",
+    "scope": "Preserved before a new bounded samegoal evaluation.",
+    "source_sha256": "0b3f8ce0ed713bbb4d62b7a61ac7d49671cbe16fe98415e68d587dad94855ab7"
+  }
+}

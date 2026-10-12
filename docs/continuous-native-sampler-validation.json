@@ -1,0 +1,31 @@
+{
+  "started_at": "2026-10-11T20:46:40.257393+00:00",
+  "status": "complete",
+  "passed": true,
+  "scope": "Actual local native protocol, long-context retrieval and scalar sampler receipts; no coding-quality or causal speed claim.",
+  "job": "11769256d7464f43991c7047893ef8f7",
+  "runtime_sha256": "90c14ea967a2f3c827b1598e2023bda1f48337ad9e08ff3829195592d93c327d",
+  "checks": {
+    "native_final_complete": true,
+    "actual_prompt_over_8192": true,
+    "native_backend": true,
+    "runtime_frozen": true,
+    "desktop_ram_reserve": true,
+    "desktop_vram_reserve": true,
+    "no_operator_intervention": true,
+    "sampling_temperature": true,
+    "sampling_top_p": true,
+    "sampling_top_k": true,
+    "sampling_min_p": true,
+    "sampling_repeat_penalty": true
+  },
+  "seconds": 95.07,
+  "prompt_tokens": 9586,
+  "completion_tokens": 24,
+  "memory": {
+    "minimum_available_ram_gib": 6.451148986816406,
+    "minimum_free_vram_mib": 2228.0
+  },
+  "source_report": "docs/context-capacity-native-validation.json",
+  "operator_interventions": []
+}

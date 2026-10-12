@@ -1,0 +1,59 @@
+{
+  "status": "observing",
+  "scope": "Read-only process/GPU samples during the frozen native inventory task; observational bottleneck evidence, not a controlled speed claim.",
+  "samples": [
+    {
+      "at": "2026-10-11T21:01:05.554896+00:00",
+      "job": "4058254e027a43619595a32bbf6c8580",
+      "engine": "generating",
+      "process_status": "[local detail omitted from GitHub snapshot]",
+      "cpu_seconds": 727.95,
+      "read_bytes": 50287517696,
+      "uss_gib": 6.824848175048828,
+      "available_ram_gib": 5.914878845214844,
+      "gpu_values": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "at": "2026-10-11T21:03:40.834193+00:00",
+      "job": "4058254e027a43619595a32bbf6c8580",
+      "engine": "processing prompt",
+      "process_status": "[local detail omitted from GitHub snapshot]",
+      "cpu_seconds": 953.8000000000001,
+      "read_bytes": 54302547968,
+      "uss_gib": 6.721870422363281,
+      "available_ram_gib": 5.778766632080078,
+      "gpu_values": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "at": "2026-10-11T21:11:09.953282+00:00",
+      "job": "4058254e027a43619595a32bbf6c8580",
+      "engine": "processing prompt",
+      "process_status": "[local detail omitted from GitHub snapshot]",
+      "cpu_seconds": 1019.24,
+      "read_bytes": 65443221504,
+      "uss_gib": 6.806011199951172,
+      "available_ram_gib": 5.762184143066406
+    }
+  ],
+  "latest_delta": {
+    "seconds": 449.119089,
+    "physical_reads_gib": 10.375560760498047,
+    "cpu_seconds": 65.43999999999994
+  },
+  "native_prefill_samples": [
+    {
+      "at": "2026-10-11T21:29:08.628077+00:00",
+      "job": "4058254e027a43619595a32bbf6c8580",
+      "expected_prompt_tokens": 4415,
+      "slots": [
+        {
+          "is_processing": true,
+          "n_ctx": 32768,
+          "n_prompt_tokens": 1152,
+          "n_prompt_tokens_processed": 1024,
+          "n_prompt_tokens_cache": 0
+        }
+      ]
+    }
+  ]
+}

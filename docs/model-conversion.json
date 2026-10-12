@@ -1,0 +1,17 @@
+{
+  "original_shards": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "output_shards": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "tensor_count": 3533,
+  "bytes": 12584334800,
+  "experts": "[local detail omitted from GitHub snapshot]",
+  "dense": "[local detail omitted from GitHub snapshot]",
+  "coverage_verified": true
+}

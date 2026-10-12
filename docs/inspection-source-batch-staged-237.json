@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-11T06:57:47.445358+00:00",
+  "status": "isolated_237_pass_not_deployed",
+  "stage": "[local detail omitted from GitHub snapshot]",
+  "production_runtime_sha256": "cd50a07dac4e8971ec614a2d53272dc04437a6da2225f40f433f6a71b83669d2",
+  "production_tests": 231,
+  "staged_tests": 237,
+  "staged_report": "docs/validation/runs/inspection-staged-20261011T065430314538Z.json",
+  "staged_source_sha256": "bd2d610eb80a734f53115bcaa89efc70ed67f4d9c962f0ae0c1de97542719657",
+  "changes": [
+    {
+      "path": "app/prompting.py",
+      "production_sha256": "5bda76fbeb112873227760d9677cd2e19091a6ef92b2a821f005a3c3b9980b39",
+      "staged_sha256": "7bcefef013857993bae302358d9bc2f624678c19b8562acd42b515dd5df59eda"
+    },
+    {
+      "path": "app/batching.py",
+      "production_sha256": "2826bac3d8dd04c3a91a72021040f931adf2cc4c07f23db05091f3c7fe732a02",
+      "staged_sha256": "fc5f600336c6f0e96d0807f2c4ad62fd977a2aa9bc447fc8c20977da64f7d5e8"
+    },
+    {
+      "path": "app/engine.py",
+      "production_sha256": "9230df6f3069b954c8e6ced274f595117c83a075e6e4609afd9cbbebfd767ecb",
+      "staged_sha256": "33db57e31c646b72b2429f00844109d45e7334617be17cadbb84e90c1711223c"
+    },
+    {
+      "path": "tests/test_batching.py",
+      "production_sha256": "fcf170c3737f2a6a98b444b1a9811f2f3a57991b04f7a23fb1942729cfc421aa",
+      "staged_sha256": "9f191c9e883e90f0a107bbee475d04089180c2464d2814155e601f38e2a9d7bd"
+    },
+    {
+      "path": "tests/test_inspection_source_batch.py",
+      "production_sha256": null,
+      "staged_sha256": "c4d6a8857ea3713cf7de4283811a1ef9fb3c81f8427f441df4e9eb332479f2c5"
+    }
+  ],
+  "scope": "Preserve modest source files through inspection and engine serialization. Shared 8000-character source budget, 4000 per file; inspection-specific serialized bound16000; full native token/output reserve enforced. No weights, precision, selected experts, context or cache budget change.",
+  "next": "[local detail omitted from GitHub snapshot]"
+}

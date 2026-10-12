@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-11T12:55:22.600759+00:00",
+  "status": "complete",
+  "passed": true,
+  "checks": {
+    "six_native_expert_samples_bit_exact": true,
+    "all_original_added_token_ids_preserved": true
+  },
+  "samples": [
+    {
+      "tensor": "[local detail omitted from GitHub snapshot]",
+      "values": 1024,
+      "bit_exact": true,
+      "max_absolute_error": 0.0
+    },
+    {
+      "tensor": "[local detail omitted from GitHub snapshot]",
+      "values": 1024,
+      "bit_exact": true,
+      "max_absolute_error": 0.0
+    },
+    {
+      "tensor": "[local detail omitted from GitHub snapshot]",
+      "values": 1024,
+      "bit_exact": true,
+      "max_absolute_error": 0.0
+    },
+    {
+      "tensor": "[local detail omitted from GitHub snapshot]",
+      "values": 1024,
+      "bit_exact": true,
+      "max_absolute_error": 0.0
+    },
+    {
+      "tensor": "[local detail omitted from GitHub snapshot]",
+      "values": 1024,
+      "bit_exact": true,
+      "max_absolute_error": 0.0
+    },
+    {
+      "tensor": "[local detail omitted from GitHub snapshot]",
+      "values": 1024,
+      "bit_exact": true,
+      "max_absolute_error": 0.0
+    }
+  ],
+  "added_tokens_checked": 21,
+  "elapsed_seconds": 9.84,
+  "scope": "Six preselected expert samples only; added-token vocabulary and Harmony boundary IDs. No inference/task-accuracy claim; no full-model bitwise equivalence claim.",
+  "archive_metadata": {
+    "source": "native-gguf-fidelity-validation.json",
+    "kind": "automated",
+    "title": "Native MXFP4 reference: samples and tokens match",
+    "scope": "Six predeclared expert samples bit-exact to official originals;21added token IDs plus Harmony boundaries. Not inference/task-accuracy evidence.",
+    "source_sha256": "f5878b551f728d595e81d2e8f7f356c06c8f2a757cc30191534363915fe366cc"
+  }
+}

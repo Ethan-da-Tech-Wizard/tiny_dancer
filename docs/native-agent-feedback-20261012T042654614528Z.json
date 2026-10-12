@@ -1,0 +1,335 @@
+{
+  "started_at": "2026-10-12T04:26:54.614564+00:00",
+  "status": "cancelled",
+  "cwd": "/mnt/GameDrive/tiny_dancer/workspace/agent-feedback-20261012T042601878880Z",
+  "runtime_sha256_before": "b3ac6d947adc7d0479dbe5c70b066f0ad985d4a4bc5f960a66ad0cced0c3eab7",
+  "samples": [
+    {
+      "elapsed_seconds": 0.0,
+      "status": "running",
+      "turns": 1,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 20.1,
+      "status": "running",
+      "turns": 1,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 40.1,
+      "status": "running",
+      "turns": 1,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 60.2,
+      "status": "running",
+      "turns": 2,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 80.3,
+      "status": "running",
+      "turns": 2,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 100.3,
+      "status": "running",
+      "turns": 4,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 120.4,
+      "status": "running",
+      "turns": 5,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 140.4,
+      "status": "running",
+      "turns": 5,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 160.4,
+      "status": "running",
+      "turns": 5,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 180.4,
+      "status": "running",
+      "turns": 5,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 200.4,
+      "status": "running",
+      "turns": 5,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 220.4,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 240.4,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 260.4,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 280.4,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 300.4,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 320.4,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 340.4,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 360.4,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 380.4,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 400.5,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 420.5,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 440.5,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 460.5,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 480.5,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 500.5,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 520.5,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 540.5,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 560.5,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 580.5,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 600.5,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 620.5,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 640.5,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 660.5,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 680.5,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 700.5,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 720.5,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 740.5,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 760.5,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 780.6,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 800.6,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 820.6,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 840.6,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 860.6,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 880.6,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 900.6,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 920.6,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 940.6,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 960.6,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 980.6,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 1000.6,
+      "status": "running",
+      "turns": 6,
+      "verified": false
+    },
+    {
+      "elapsed_seconds": 1020.6,
+      "status": "cancelled",
+      "turns": 6,
+      "verified": false
+    }
+  ],
+  "scope": "Actual local model diagnostic proposal on an isolated source copy. Workflow checks do not approve the diagnosis or patch. Independent reproduction/control checks are required.",
+  "operator_interventions": [],
+  "observation_limit_seconds": null,
+  "job": "ab5ae357accb4768a9661e731b891b0f",
+  "session": "e9768df48e4745b8b69fd4ea1ca3d7cf",
+  "passed": false,
+  "checks": {
+    "agent_completed": false,
+    "feedback_schema": false,
+    "original_evidence_unchanged": true,
+    "runtime_frozen": true
+  },
+  "seconds": 1020.65,
+  "verdict": null,
+  "independent_proposal_validation": "[local detail omitted from GitHub snapshot]"
+}

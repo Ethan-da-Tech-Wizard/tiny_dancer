@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-12T01:06:12.663382+00:00",
+  "passed": true,
+  "scope": "Final-review harness fixtures and actual project/source/permission controls only; fresh native effectiveness remains pending. Generic source facts are advisory, not a defect verdict. No operator implementation/live hints or extra model reviewer.",
+  "runtime_sha256": "8c7b4485111cffa278e051a76315d844efc903fcaa8145ed12711444eff09a79",
+  "checks": {
+    "focused31": true,
+    "staged_observer_controls12": true,
+    "full_staged510": true,
+    "full_production510": true,
+    "known_source_api_fact_at_final_review": true,
+    "decimal_same_generic_path": true,
+    "irrelevant_and_explicit_callback_excluded": true,
+    "source_refresh_never_imports_project": true,
+    "repaired_source_drops_old_fact": true,
+    "concurrent_source_change_invalidates_proof": true,
+    "history_prefix_preserved": true,
+    "idle_guarded_restart": true
+  },
+  "regression_report": "docs/validation/runs/20261012T010411771609Z.json",
+  "stage_report": "run/staging/api-completion-review/docs/validation/runs/20261012T010222340102Z.json",
+  "stage_setup_failure": "[local detail omitted from GitHub snapshot]",
+  "backup": "[local detail omitted from GitHub snapshot]",
+  "focused_log": "[local detail omitted from GitHub snapshot]",
+  "red_log": "[local detail omitted from GitHub snapshot]",
+  "model_parameters_changed": false,
+  "new_dependencies": [],
+  "archive_metadata": {
+    "source": "api-completion-review-production-validation.json",
+    "kind": "automated",
+    "title": "Final goal review with relevant API facts",
+    "scope": "Final-review harness fixtures and actual project/source/permission controls only; fresh native effectiveness remains pending. Generic source facts are advisory, not a defect verdict. No operator implementation/live hints or extra model reviewer.",
+    "source_sha256": "0c20d22a172863d1f726612057b3a8a4d01b29db44e51aafd4b7b9d5296b2e47"
+  }
+}

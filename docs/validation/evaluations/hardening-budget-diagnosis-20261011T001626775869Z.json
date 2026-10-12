@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-11T00:16:26.775497+00:00",
+  "status": "failed",
+  "passed": false,
+  "scope": "Six scripted-runner tests, eleven failing subcases; automatic starting budget is unimplemented. Actual local shell checks; no native generation.",
+  "logs": [
+    {
+      "path": "logs/hardening-generation-budget-diagnosis.log",
+      "detail": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "archive_metadata": {
+    "source": "hardening-budget-diagnosis.json",
+    "kind": "automated",
+    "title": "Starting generation allowance diagnosis",
+    "scope": "Six scripted-runner tests, eleven failing subcases; automatic starting budget is unimplemented. Actual local shell checks; no native generation.",
+    "source_sha256": "43b52edf7b50bb06dcc24d1465f785a13546968e697f3bb3d09a0e16defe41d3"
+  }
+}

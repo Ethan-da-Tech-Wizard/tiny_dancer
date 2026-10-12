@@ -1,0 +1,237 @@
+{
+  "started_at": "2026-10-10T23:23:32.673470+00:00",
+  "prompt": "[local detail omitted from GitHub snapshot]",
+  "status": "complete",
+  "operator_interventions": [],
+  "samples": [
+    {
+      "elapsed_seconds": 0.1,
+      "status": "running",
+      "engine": "loading model",
+      "available_ram_gib": 8.465,
+      "progress": null
+    },
+    {
+      "elapsed_seconds": 20.1,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 6.388,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 508,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "low"
+        },
+        "created": 1791674617.2558215
+      }
+    },
+    {
+      "elapsed_seconds": 40.1,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 6.099,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 508,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "low"
+        },
+        "created": 1791674617.2558215
+      }
+    },
+    {
+      "elapsed_seconds": 60.1,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.836,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 508,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "low"
+        },
+        "created": 1791674617.2558215
+      }
+    },
+    {
+      "elapsed_seconds": 80.2,
+      "status": "running",
+      "engine": "processing prompt",
+      "available_ram_gib": 5.556,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 508,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "low"
+        },
+        "created": 1791674617.2558215
+      }
+    },
+    {
+      "elapsed_seconds": 100.2,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.359,
+      "progress": {
+        "kind": "inference",
+        "data": {
+          "prompt_tokens": 508,
+          "reused_tokens": 0,
+          "exact_history_cache_tokens": 0,
+          "cache_saved_prefill_tokens": 0,
+          "reasoning_effort": "low"
+        },
+        "created": 1791674617.2558215
+      }
+    },
+    {
+      "elapsed_seconds": 120.2,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.332,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 16,
+          "seconds": 107.6
+        },
+        "created": 1791674724.8253152
+      }
+    },
+    {
+      "elapsed_seconds": 140.2,
+      "status": "running",
+      "engine": "generating",
+      "available_ram_gib": 5.319,
+      "progress": {
+        "kind": "progress",
+        "data": {
+          "tokens": 48,
+          "seconds": 128.6
+        },
+        "created": 1791674745.827999
+      }
+    },
+    {
+      "elapsed_seconds": 160.2,
+      "status": "complete",
+      "engine": "ready",
+      "available_ram_gib": 5.206,
+      "progress": {
+        "kind": "done",
+        "data": {
+          "steps": 1,
+          "verified": true,
+          "evidence_checked": true,
+          "answer_origin": "[local detail omitted from GitHub snapshot]"
+        },
+        "created": 1791674769.884721
+      }
+    }
+  ],
+  "scope": "Frozen initial prompt, no operator code/recovery notes during native execution. Exact original user request in the original workspace/session. Typed host export is explicitly identified; the model selects tool arguments.",
+  "job": "4242f101ce3f4669a90354d3bd10a774",
+  "session": "e49878f2e88542cdaefe0fe660e32307",
+  "cwd": "/mnt/GameDrive/tiny_dancer/workspace",
+  "saved_file": "[local detail omitted from GitHub snapshot]",
+  "games": 14,
+  "independent_source": "[local detail omitted from GitHub snapshot]",
+  "checkpoint": "[local detail omitted from GitHub snapshot]",
+  "job_elapsed_seconds": 157.18,
+  "metrics": [
+    {
+      "prefill_seconds": 89.910570006,
+      "prefill_tokens": 508,
+      "prefill_tokens_per_s": 5.650058719081635,
+      "decode_seconds": 61.193171704,
+      "decode_tokens": 90,
+      "decode_tokens_per_s": 1.4707523322265872,
+      "native_counters": {
+        "position": 598,
+        "capacity": 8192,
+        "prefill_tokens": 508,
+        "decode_tokens": 90,
+        "prefill_seconds": 89.910570006,
+        "decode_seconds": 61.193171704,
+        "gpu_dense_host_released_bytes": 0,
+        "expert_slots_per_layer": 4,
+        "available_ram_gib": 0.211697,
+        "expert_buffer_allocs": 194,
+        "expert_buffer_reuses": 2283,
+        "expert_compute_seconds": 51.847862356,
+        "process_page_faults": 0,
+        "private_gib": 0.0,
+        "peak_rss_gib": 0.0,
+        "forward": 598,
+        "tokens_emitted": 90,
+        "cache_hits": 20,
+        "cache_misses": 2477,
+        "cache_requests": 2497,
+        "expert_loads": 2477,
+        "expert_bytes_estimate": 14031360,
+        "disk_seconds": 61.039193624,
+        "async_batches": 0,
+        "async_wait_seconds": 0.0,
+        "attention_seconds": 27.214449501,
+        "moe_seconds": 123.307331681,
+        "head_seconds": 0.534309437,
+        "rss_gb": 3.249676,
+        "resident_gb": 1.807843,
+        "gpu_router_calls": 0,
+        "gpu_router_seconds": 0.0,
+        "gpu_dense_calls": 0,
+        "gpu_dense_seconds": 0.0,
+        "gpu_dense_fallbacks": 0,
+        "prefetch_issued": 0,
+        "prefetch_read_seconds": 0.0,
+        "predict_hits_a": 0,
+        "predict_hits_b": 0,
+        "predict_total": 0
+      },
+      "total_seconds": 151.1,
+      "completion_tokens": 90,
+      "prompt_tokens": 508,
+      "canonical_prompt_tokens": 508,
+      "exact_history_cache_tokens": 0,
+      "cache_saved_prefill_tokens": 0,
+      "reasoning_effort": "low"
+    }
+  ],
+  "tool_calls": [
+    {
+      "name": "nfl_scores",
+      "arguments": "[local detail omitted from GitHub snapshot]",
+      "step": 1
+    }
+  ],
+  "checks": {
+    "requested_json_saved": true,
+    "correct_date": true,
+    "every_matchup_matches_separate_fetch": true,
+    "actual_editor_action": true,
+    "completion_checks_passed": true,
+    "editor_window_shows_json": true
+  },
+  "errors": [],
+  "harness_continuations": [],
+  "passed": true,
+  "archive_metadata": {
+    "source": "score-export-validation.json",
+    "kind": "native",
+    "title": "Scores → JSON → Code OSS",
+    "scope": "Frozen initial prompt, no operator code/recovery notes during native execution. Exact original user request in the original workspace/session. Typed host export is explicitly identified; the model selects tool arguments.",
+    "source_sha256": "4bf908e1b0b0bf739f178a48f69c1b28afcaad0d782089d8e4b94891187bcb7b"
+  }
+}

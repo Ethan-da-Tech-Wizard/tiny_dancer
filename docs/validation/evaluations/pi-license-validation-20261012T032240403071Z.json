@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "checked_at": "[local detail omitted from GitHub snapshot]",
+  "scope": "Preserved installed notices/metadata/locks and declared package licenses, not entire OS or a legal opinion",
+  "npm_packages": 121,
+  "archived_evidence_files": 523,
+  "python_distributions": 45,
+  "direct_host_dependencies": 29,
+  "check_log": "[local detail omitted from GitHub snapshot]",
+  "inventory": "[local detail omitted from GitHub snapshot]",
+  "limitations": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "archive_metadata": {
+    "source": "pi-license-validation.json",
+    "kind": "integration",
+    "title": "pi-license",
+    "scope": "Preserved installed notices/metadata/locks and declared package licenses, not entire OS or a legal opinion",
+    "source_sha256": "598cb6e1679724d79d79e167fc5900691bcaf3b173d86e827e714e3bcf8148ec"
+  }
+}

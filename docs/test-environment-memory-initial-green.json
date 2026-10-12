@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-11T10:25:12.595991+00:00",
+  "passed": true,
+  "status": "passed",
+  "tests_run": 28,
+  "failures": 0,
+  "errors": 0,
+  "scope": "First isolated focused28 green, before strengthening the automatic recovery and legacy-history cases.",
+  "log": "[local detail omitted from GitHub snapshot]",
+  "failed_tests": []
+}

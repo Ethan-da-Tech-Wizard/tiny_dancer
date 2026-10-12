@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Tiny Dancer
+Comment=Local GPT-OSS computer agent workspace
+Exec=xdg-open http://127.0.0.1:3210
+Icon=utilities-terminal
+Terminal=false
+Categories=Development;Utility;

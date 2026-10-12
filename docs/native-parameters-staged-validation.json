@@ -1,0 +1,25 @@
+{
+  "started_at": "2026-10-11T20:28:38.833049+00:00",
+  "status": "complete",
+  "passed": true,
+  "checks": {
+    "focused": true,
+    "full_regressions": true,
+    "deployed": false,
+    "native_quality_qualified": false
+  },
+  "scope": "431 regression fixtures and real local tool checks. Verifies explicit recommended sampler propagation/receipts and legacy controls, not native coding success or causal quality improvement. Current greedy trial remains frozen.",
+  "tests_run": 431,
+  "seconds": 70.848,
+  "report": "docs/validation/runs/20261011T202614185770Z.json",
+  "stage": "[local detail omitted from GitHub snapshot]",
+  "profile": {
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "top_k": 0,
+    "min_p": 0.0,
+    "repeat_penalty": 1.0
+  },
+  "source": "https://github.com/openai/gpt-oss#recommended-sampling-parameters",
+  "dependencies_added": []
+}

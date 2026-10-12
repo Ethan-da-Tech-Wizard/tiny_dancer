@@ -1,0 +1,8 @@
+{
+  "scope": "Read-only replay of existing completed native public events through candidate CLI; no new inference/task/implementation.",
+  "exit_code": 0,
+  "public_output_characters": 61,
+  "public_tool_metadata_characters": 5776,
+  "public_answer_received": true,
+  "passed": true
+}

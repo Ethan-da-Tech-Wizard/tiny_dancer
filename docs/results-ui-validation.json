@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-11T02:03:19.536946+00:00",
+  "errors": [],
+  "checks": {
+    "unauthenticated_results_denied": true,
+    "unknown_evidence_denied": true,
+    "all_evidence_links_work": true,
+    "past_failure_kept": true,
+    "missing_export_kept": true,
+    "latest_suite_status_valid": true,
+    "results_render_all_rows": true,
+    "results_desktop_no_overflow": true,
+    "results_mobile_no_overflow": true,
+    "saved_text_cannot_execute_markup": true,
+    "sidebar_results_link": true,
+    "no_javascript_errors": true
+  },
+  "results_count": 87,
+  "passed": true
+}

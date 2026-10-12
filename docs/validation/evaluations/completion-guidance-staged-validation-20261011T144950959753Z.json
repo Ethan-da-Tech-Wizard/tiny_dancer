@@ -1,0 +1,37 @@
+{
+  "started_at": "2026-10-11T14:48:46.887420+00:00",
+  "status": "passed",
+  "title": "Checked work exposes pending requirements and finish direction",
+  "scope": "Actual file/check tool regressions on unchanged tracked files; factual completion feedback only after passing real checks and requested outputs. Does not certify all goal clauses or native behavior. No automatic host-authored final or solution supplied.",
+  "before": {
+    "tests": 4,
+    "errors": 2,
+    "log": "[local detail omitted from GitHub snapshot]"
+  },
+  "after": {
+    "tests": 4,
+    "passed": true,
+    "seconds": 0.705,
+    "log": "[local detail omitted from GitHub snapshot]"
+  },
+  "stage": "[local detail omitted from GitHub snapshot]",
+  "native_failure": "[local detail omitted from GitHub snapshot]",
+  "passed": true,
+  "tests_run": 341,
+  "seconds": 24.411,
+  "checks": {
+    "passing_checks_expose_goal_review": true,
+    "pending_steps_named": true,
+    "missing_output_not_ready": true,
+    "failed_checks_not_ready": true,
+    "full_staged_regressions": true
+  },
+  "full_log": "[local detail omitted from GitHub snapshot]",
+  "archive_metadata": {
+    "source": "completion-guidance-staged-validation.json",
+    "kind": "automated",
+    "title": "341 staged completion guidance regressions",
+    "scope": "Actual file/check tool regressions on unchanged tracked files; factual completion feedback only after passing real checks and requested outputs. Does not certify all goal clauses or native behavior. No automatic host-authored final or solution supplied.",
+    "source_sha256": "45e9e3d2ec10e2d760a7823e85942b8da118837d99e02a96371dbf1295512382"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "at": 1791669632.460295,
+  "passed": true,
+  "checks": [
+    {
+      "check": "actual paused desktop",
+      "passed": true,
+      "resume_in_viewport": true,
+      "overflow": false
+    },
+    {
+      "check": "actual paused mobile",
+      "passed": true,
+      "resume_in_viewport": true,
+      "overflow": false
+    },
+    {
+      "check": "polling recovers progress and pause after stream disconnect",
+      "passed": true,
+      "scope": "network fixture"
+    },
+    {
+      "check": "Resume sends saved-job request and until-done policy",
+      "passed": true,
+      "scope": "intercepted request; no native task resumed"
+    }
+  ],
+  "javascript_errors": [],
+  "scope": "Real paused user UI, screenshots and public heartbeat; fixture stream/Resume only. No model task started or modified."
+}

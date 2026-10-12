@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "javascript_errors": [],
+  "mobile_overflow": false,
+  "watch_dialog": true,
+  "editor_button": true,
+  "active_user_job": "[local detail omitted from GitHub snapshot]",
+  "desktop_preview_endpoint": "[local detail omitted from GitHub snapshot]",
+  "actual_browser_preview": "[local detail omitted from GitHub snapshot]",
+  "browser_preview": {
+    "available": true,
+    "artifact": "[local detail omitted from GitHub snapshot]",
+    "url": "https://www.espn.com/nfl/",
+    "at": 1791656289.4244401
+  },
+  "checked_at": "[local detail omitted from GitHub snapshot]",
+  "desktop_watch_caption": "[local detail omitted from GitHub snapshot]"
+}

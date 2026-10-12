@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-10-11T04:52:20.664614+00:00",
+  "passed": false,
+  "status": "isolated_stage_setup_failure",
+  "tests_run": 22,
+  "errors": 7,
+  "scope": "Seven existing working-memory tests failed in setUp because new staging/run directory was absent; no helper execution in those cases. Isolated stage only, no production/native changes. Directory prepared before rerun.",
+  "failed_tests": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ]
+}

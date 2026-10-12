@@ -1,0 +1,27 @@
+{
+  "title": "Stored-history cache and broader goal controls — production",
+  "started_at": "2026-10-12T00:13:10.535050+00:00",
+  "status": "passed",
+  "passed": true,
+  "scope": "499 production regressions. Original local model/context/sampler/precision unchanged. Rejected final and incomplete action text is excluded from cache. Original native 8+5 pass and subsequent 2 goal failures are historical on the prior harness. Fresh current-runtime default-effort cases pending.",
+  "runtime_sha256": "b1fd734f946c2bef46529b510557155d6d5d62c5fc5c7f54b42f0e1618a7ad5b",
+  "checks": {
+    "full_regressions": 499,
+    "startup_threshold_gib": 4.5,
+    "running_floor_gib": 1.5,
+    "rejected_answer_not_replayed": true,
+    "changed_goal_blocks_old_prefix": true,
+    "broader_goal_controls_required": true,
+    "guarded_restart_ready": true
+  },
+  "regression_report": "docs/validation/runs/20261012T001151760471Z.json",
+  "seconds": 37.192,
+  "backup": "[local detail omitted from GitHub snapshot]",
+  "archive_metadata": {
+    "source": "rejected-final-cache-production-validation.json",
+    "kind": "regression",
+    "title": "Stored-history cache and broader goal controls — production",
+    "scope": "499 production regressions. Original local model/context/sampler/precision unchanged. Rejected final and incomplete action text is excluded from cache. Original native 8+5 pass and subsequent 2 goal failures are historical on the prior harness. Fresh current-runtime default-effort cases pending.",
+    "source_sha256": "598d74f1e75689f5d5209be8da364ca5324f69dac333630360bb6e405e1eebfc"
+  }
+}

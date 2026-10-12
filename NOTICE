@@ -1,0 +1,40 @@
+Tiny Dancer
+Copyright 2026 Tiny Dancer contributors
+
+Tiny Dancer's original application code, scripts, tests, and project
+documentation are licensed under the Apache License, Version 2.0.
+The full license text is in LICENSE.
+
+Third-party software and model assets retain their own licenses:
+
+Colibri
+Copyright 2026 Vincenzo Fornaro
+Apache License, Version 2.0
+See licenses/colibri-LICENSE, licenses/colibri-NOTICE, and
+licenses/colibri-THIRD_PARTY_NOTICES.md for the complete upstream notices.
+
+OpenAI GPT-OSS source and GPT-OSS-20B model
+Apache License, Version 2.0
+See licenses/gpt-oss-LICENSE and licenses/models/ for the original model
+license and usage policy accompanying the installed weights.
+
+Picchio
+Copyright (c) 2026 benmaster82
+MIT License
+See licenses/picchio-LICENSE. Local modifications to the vendored Picchio
+bridge retain its MIT license; the modification record is
+docs/picchio-local.patch.
+
+Additional dependency licenses and bundled notices are organized under
+licenses/. Start with licenses/README.md for the complete inventory of
+the recorded application dependencies and direct external tools.
+
+This notice is informational and does not modify any license.
+
+GPT-OSS chat template adaptation
+Apache License, Version 2.0
+app/templates/gpt-oss-upstream.jinja preserves the original model template.
+app/templates/gpt-oss-agent.jinja adds Tiny Dancer modifications that retain
+later developer instructions and unfinished analysis messages.
+Source hashes and modifications: docs/native-template-provenance.json.
+Original license: licenses/models/gpt-oss-20b-original/LICENSE.

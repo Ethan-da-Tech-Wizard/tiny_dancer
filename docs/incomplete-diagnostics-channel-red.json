@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-11T09:41:01.614025+00:00",
+  "passed": false,
+  "status": "failed",
+  "tests_run": 1,
+  "failures": 1,
+  "errors": 0,
+  "scope": "Isolated new diagnostic privacy case: arbitrary channel tag copied verbatim. No actual private text/credential or production change; fake tag only.",
+  "log": "[local detail omitted from GitHub snapshot]",
+  "failed_tests": [
+    "[local detail omitted from GitHub snapshot]"
+  ]
+}

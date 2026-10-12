@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-11T12:55:22.600759+00:00",
+  "status": "complete",
+  "passed": true,
+  "checks": {
+    "six_native_expert_samples_bit_exact": true,
+    "all_original_added_token_ids_preserved": true
+  },
+  "samples": [
+    {
+      "tensor": "[local detail omitted from GitHub snapshot]",
+      "values": 1024,
+      "bit_exact": true,
+      "max_absolute_error": 0.0
+    },
+    {
+      "tensor": "[local detail omitted from GitHub snapshot]",
+      "values": 1024,
+      "bit_exact": true,
+      "max_absolute_error": 0.0
+    },
+    {
+      "tensor": "[local detail omitted from GitHub snapshot]",
+      "values": 1024,
+      "bit_exact": true,
+      "max_absolute_error": 0.0
+    },
+    {
+      "tensor": "[local detail omitted from GitHub snapshot]",
+      "values": 1024,
+      "bit_exact": true,
+      "max_absolute_error": 0.0
+    },
+    {
+      "tensor": "[local detail omitted from GitHub snapshot]",
+      "values": 1024,
+      "bit_exact": true,
+      "max_absolute_error": 0.0
+    },
+    {
+      "tensor": "[local detail omitted from GitHub snapshot]",
+      "values": 1024,
+      "bit_exact": true,
+      "max_absolute_error": 0.0
+    }
+  ],
+  "added_tokens_checked": 21,
+  "elapsed_seconds": 9.84,
+  "scope": "Six preselected expert samples only; added-token vocabulary and Harmony boundary IDs. No inference/task-accuracy claim; no full-model bitwise equivalence claim."
+}

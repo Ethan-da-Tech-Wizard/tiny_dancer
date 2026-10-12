@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "status": "passed",
+  "checks": {
+    "bounded_default_1800": true,
+    "explicit_900_medium": true,
+    "invalid_bounds_refused": true,
+    "original_acceptance_sha_unchanged": true
+  },
+  "seconds": 0.001,
+  "log": "[local detail omitted from GitHub snapshot]",
+  "scope": "Observer parameter/immutableacceptance checks only; no native qualification.",
+  "archive_metadata": {
+    "source": "precision-observer-bounds-validation.json",
+    "kind": "automated",
+    "title": "Frozen moneyobserver:4bounds/criteria tests",
+    "scope": "Observer parameter/immutableacceptance checks only; no native qualification.",
+    "source_sha256": "1a9eec1b6e0e045dfd393b5a0790deb79debaf6c9e815f4d6261928b16b88c60"
+  }
+}

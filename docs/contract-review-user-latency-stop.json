@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-11T10:57:15.652212+00:00",
+  "passed": false,
+  "status": "operator_stopped",
+  "job": "65a8c28d006e4f79868ab222a87ec922",
+  "scope": "Stopped only this review experiment after the user raised the eight-hour elapsed-work concern. Not autonomous completion or a passing capability result.",
+  "report": "docs/contract-review-probe-20261011T104900Z.json"
+}

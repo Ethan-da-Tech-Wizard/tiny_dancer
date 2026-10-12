@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-11T00:16:26.776069+00:00",
+  "status": "failed",
+  "passed": false,
+  "scope": "Four scripted-runner regressions reproduce JSON output/evidence interoperability failures; no native inference. An earlier targeted command used the wrong test class and is retained as runner setup failure.",
+  "logs": [
+    {
+      "path": "logs/hardening-shell-json-diagnosis.log",
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "path": "logs/hardening-shell-json-evidence-diagnosis.log",
+      "detail": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "path": "logs/hardening-shell-json-evidence-red.log",
+      "detail": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "archive_metadata": {
+    "source": "hardening-output-diagnosis.json",
+    "kind": "automated",
+    "title": "Shell-created JSON diagnosis",
+    "scope": "Four scripted-runner regressions reproduce JSON output/evidence interoperability failures; no native inference. An earlier targeted command used the wrong test class and is retained as runner setup failure.",
+    "source_sha256": "0f4706c397457db93db6dff0217df2d0da1b599a4bb0cdedd4558b0a76d3f5c9"
+  }
+}

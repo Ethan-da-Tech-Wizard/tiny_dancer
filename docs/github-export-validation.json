@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-12T05:59:31.316168+00:00",
+  "passed": true,
+  "tests_run": 13,
+  "scope": "Publication controls only: preserves exact source/notices, retains failed outcomes, omits private traces and runtime folders, refuses known credentials, symlink escapes, invalid manifest paths and conflicting checkout edits. No inference result implied.",
+  "log": "[local detail omitted from GitHub snapshot]",
+  "observed_correction": "[local detail omitted from GitHub snapshot]",
+  "native_runtime_unchanged": true
+}

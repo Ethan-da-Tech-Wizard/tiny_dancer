@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-11T10:44:18.749788+00:00",
+  "status": "failed",
+  "passed": false,
+  "tests_run": 2,
+  "failures": 0,
+  "errors": 2,
+  "log": "[local detail omitted from GitHub snapshot]",
+  "scope": "Evaluation invocation incorrectly resolved venv binary to base interpreter, so harmony missing. No capability result.",
+  "archive_metadata": {
+    "source": "post-edit-counterfactual-invocation-error.json",
+    "kind": "automated",
+    "title": "post edit counterfactual invocation error",
+    "scope": "Evaluation invocation incorrectly resolved venv binary to base interpreter, so harmony missing. No capability result.",
+    "source_sha256": "5aa1b9e6f07c2727e19f97a0d538e72a0452f0d6bd4ae00bc9de4470238ff19a"
+  }
+}

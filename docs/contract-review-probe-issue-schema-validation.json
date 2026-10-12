@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-11T09:58:53.112245+00:00",
+  "passed": true,
+  "scope": "Observer schema fixtures only; native probe remains unrun.",
+  "checks": {
+    "four_invalid_issue_lists_rejected": true,
+    "empty_positive_issue_list_accepted": true
+  }
+}

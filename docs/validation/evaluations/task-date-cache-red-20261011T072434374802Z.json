@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-11T07:24:34.372113+00:00",
+  "status": "failed",
+  "passed": false,
+  "tests_run": 3,
+  "failures": 2,
+  "errors": 0,
+  "scope": "Isolated midnight/task-date cache regression; no system clock or active task changed.",
+  "log": "[local detail omitted from GitHub snapshot]",
+  "failed_tests": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "archive_metadata": {
+    "source": "task-date-cache-red.json",
+    "kind": "automated",
+    "title": "Task-date cache before fix",
+    "scope": "Isolated midnight/task-date cache regression; no system clock or active task changed.",
+    "source_sha256": "0f43a683dc3a0ff53e79c9398927561ca7f04c0124021e4fdb1466b3bdad5b9e"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-10-11T04:50:41.784958+00:00",
+  "passed": false,
+  "status": "isolated_red_reproduced",
+  "scope": "Five isolated source-selection checks; three reproduce lost implementation or duplicate alias slots. Active harness/native job unchanged.",
+  "exit_code": 1,
+  "output": "[local detail omitted from GitHub snapshot]",
+  "archive_metadata": {
+    "source": "checkpoint-selection-red.json",
+    "kind": "regression",
+    "title": "Checkpoint workset-selection red reproduction",
+    "scope": "Five isolated source-selection checks; three reproduce lost implementation or duplicate alias slots. Active harness/native job unchanged.",
+    "source_sha256": "2c827acd36f1b014338a9d361be7f056975ca07d05deb7eac83bfe5685de71f0"
+  }
+}

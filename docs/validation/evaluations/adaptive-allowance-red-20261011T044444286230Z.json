@@ -1,0 +1,22 @@
+{
+  "status": "isolated_red_reproduced",
+  "passed": false,
+  "created_at": "2026-10-11T04:44:43.871848+00:00",
+  "exit_code": 1,
+  "tests": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "stage": "[local detail omitted from GitHub snapshot]",
+  "scope": "Four scripted capacity/recovery tests in isolated staging; active production harness and native task unchanged. Desired larger retry allowance is not yet deployed.",
+  "output": "[local detail omitted from GitHub snapshot]",
+  "archive_metadata": {
+    "source": "adaptive-allowance-red.json",
+    "kind": "regression",
+    "title": "Isolated larger-step recovery red reproduction",
+    "scope": "Four scripted capacity/recovery tests in isolated staging; active production harness and native task unchanged. Desired larger retry allowance is not yet deployed.",
+    "source_sha256": "20d52ea382eaf23483e35746949db4d905203175288c0a98e029a7cf1b0e235a"
+  }
+}

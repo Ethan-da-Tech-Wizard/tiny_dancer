@@ -1,0 +1,1706 @@
+{
+  "started_at": "2026-10-12T01:25:25.008455+00:00",
+  "status": "repeated_failures",
+  "case": "inventory",
+  "cwd": "/mnt/GameDrive/tiny_dancer/workspace/minimal-inventory-20261012T012524949205Z",
+  "prompt": "[local detail omitted from GitHub snapshot]",
+  "instructions": "[local detail omitted from GitHub snapshot]",
+  "scope": "Experimental minimal shell-only loop inspired by mini-SWE-agent, using the unchanged local GPT-OSS-20B and existing Harmony/backend adapter. Original frozen goals and acceptance seeds. Multiple harness components differ; this is a baseline comparison, not a one-variable attribution or production qualification. No operator source edits or live hints.",
+  "runtime_sha256_before": "8c7b4485111cffa278e051a76315d844efc903fcaa8145ed12711444eff09a79",
+  "observer_sha256": {
+    "evaluate_minimal_coding.py": "8dddabbe4338303bcff059ffe4d9736f9bfaf2c748b47eacb4b4d89b6fb77dab",
+    "minimal_coding.py": "dfeee461406e6f29fdd25e5688ddf5dc8b86fec567ac52f4ca95c8b560187824"
+  },
+  "acceptance_sha256": "e45fea75d1a00bc2158d0f552b1f352e8375a27082999d8d45dfd91b68482475",
+  "reasoning_effort": "medium",
+  "additional_independent_criteria": [
+    "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]"
+  ],
+  "operator_interventions": [],
+  "events": [
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 1
+      },
+      "seconds": 0.0
+    },
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 446,
+        "reused_tokens": 0,
+        "exact_history_cache_tokens": 0,
+        "cache_saved_prefill_tokens": 0,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 26.26
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 13.288402,
+        "decode_seconds": 1.747935,
+        "prefill_tokens": 446,
+        "decode_tokens": 52,
+        "total_seconds": 15.04,
+        "backend": "llama.cpp-native-mxfp4",
+        "sampling_temperature": 1.0,
+        "sampling_top_p": 1.0,
+        "sampling_top_k": 0,
+        "sampling_min_p": 0.0,
+        "sampling_repeat_penalty": 1.0,
+        "prefill_tokens_per_s": 33.56310262136862,
+        "decode_tokens_per_s": 29.7493899944792,
+        "native_reply_chunks": 1,
+        "native_reply_context_capacity": 32321,
+        "completion_tokens": 52,
+        "prompt_tokens": 446,
+        "canonical_prompt_tokens": 446,
+        "exact_history_cache_tokens": 0,
+        "cache_saved_prefill_tokens": 0,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 41.31
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 1
+      },
+      "seconds": 41.31
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 1
+      },
+      "seconds": 41.33
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 2
+      },
+      "seconds": 41.33
+    },
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 585,
+        "reused_tokens": 498,
+        "exact_history_cache_tokens": 498,
+        "cache_saved_prefill_tokens": 16,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 41.34
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 0.7281409999999999,
+        "decode_seconds": 1.172075,
+        "prefill_tokens": 88,
+        "decode_tokens": 38,
+        "total_seconds": 1.9,
+        "backend": "llama.cpp-native-mxfp4",
+        "sampling_temperature": 1.0,
+        "sampling_top_p": 1.0,
+        "sampling_top_k": 0,
+        "sampling_min_p": 0.0,
+        "sampling_repeat_penalty": 1.0,
+        "prefill_tokens_per_s": 120.85571338518228,
+        "decode_tokens_per_s": 32.42113345988951,
+        "native_reply_chunks": 1,
+        "native_reply_context_capacity": 32182,
+        "completion_tokens": 38,
+        "prompt_tokens": 585,
+        "canonical_prompt_tokens": 585,
+        "exact_history_cache_tokens": 498,
+        "cache_saved_prefill_tokens": 16,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 43.24
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 2
+      },
+      "seconds": 43.24
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 2
+      },
+      "seconds": 43.25
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 3
+      },
+      "seconds": 43.25
+    },
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 1397,
+        "reused_tokens": 623,
+        "exact_history_cache_tokens": 623,
+        "cache_saved_prefill_tokens": 141,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 43.25
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 4.026458,
+        "decode_seconds": 1.823049,
+        "prefill_tokens": 775,
+        "decode_tokens": 56,
+        "total_seconds": 5.85,
+        "backend": "llama.cpp-native-mxfp4",
+        "sampling_temperature": 1.0,
+        "sampling_top_p": 1.0,
+        "sampling_top_k": 0,
+        "sampling_min_p": 0.0,
+        "sampling_repeat_penalty": 1.0,
+        "prefill_tokens_per_s": 192.47686179763951,
+        "decode_tokens_per_s": 30.717770065423366,
+        "native_reply_chunks": 1,
+        "native_reply_context_capacity": 31370,
+        "completion_tokens": 56,
+        "prompt_tokens": 1397,
+        "canonical_prompt_tokens": 1397,
+        "exact_history_cache_tokens": 623,
+        "cache_saved_prefill_tokens": 141,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 49.11
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 3
+      },
+      "seconds": 49.11
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 3
+      },
+      "seconds": 49.11
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 4
+      },
+      "seconds": 49.11
+    },
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 1509,
+        "reused_tokens": 1453,
+        "exact_history_cache_tokens": 1453,
+        "cache_saved_prefill_tokens": 971,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 49.12
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 0.589755,
+        "decode_seconds": 1.284945,
+        "prefill_tokens": 57,
+        "decode_tokens": 39,
+        "total_seconds": 1.88,
+        "backend": "llama.cpp-native-mxfp4",
+        "sampling_temperature": 1.0,
+        "sampling_top_p": 1.0,
+        "sampling_top_k": 0,
+        "sampling_min_p": 0.0,
+        "sampling_repeat_penalty": 1.0,
+        "prefill_tokens_per_s": 96.65030393977159,
+        "decode_tokens_per_s": 30.351493643696813,
+        "native_reply_chunks": 1,
+        "native_reply_context_capacity": 31258,
+        "completion_tokens": 39,
+        "prompt_tokens": 1509,
+        "canonical_prompt_tokens": 1509,
+        "exact_history_cache_tokens": 1453,
+        "cache_saved_prefill_tokens": 971,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 51.0
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 4
+      },
+      "seconds": 51.0
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 4
+      },
+      "seconds": 51.0
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 5
+      },
+      "seconds": 51.0
+    },
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 1612,
+        "reused_tokens": 1548,
+        "exact_history_cache_tokens": 1548,
+        "cache_saved_prefill_tokens": 1066,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 51.01
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 0.604496,
+        "decode_seconds": 1.287711,
+        "prefill_tokens": 65,
+        "decode_tokens": 40,
+        "total_seconds": 1.89,
+        "backend": "llama.cpp-native-mxfp4",
+        "sampling_temperature": 1.0,
+        "sampling_top_p": 1.0,
+        "sampling_top_k": 0,
+        "sampling_min_p": 0.0,
+        "sampling_repeat_penalty": 1.0,
+        "prefill_tokens_per_s": 107.52759323469468,
+        "decode_tokens_per_s": 31.062870473266127,
+        "native_reply_chunks": 1,
+        "native_reply_context_capacity": 31155,
+        "completion_tokens": 40,
+        "prompt_tokens": 1612,
+        "canonical_prompt_tokens": 1612,
+        "exact_history_cache_tokens": 1548,
+        "cache_saved_prefill_tokens": 1066,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 52.9
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 5
+      },
+      "seconds": 52.9
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 5
+      },
+      "seconds": 52.91
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 6
+      },
+      "seconds": 52.91
+    },
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 2428,
+        "reused_tokens": 1652,
+        "exact_history_cache_tokens": 1652,
+        "cache_saved_prefill_tokens": 1170,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 52.91
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 3.9488670000000003,
+        "decode_seconds": 1.37906,
+        "prefill_tokens": 777,
+        "decode_tokens": 41,
+        "total_seconds": 5.33,
+        "backend": "llama.cpp-native-mxfp4",
+        "sampling_temperature": 1.0,
+        "sampling_top_p": 1.0,
+        "sampling_top_k": 0,
+        "sampling_min_p": 0.0,
+        "sampling_repeat_penalty": 1.0,
+        "prefill_tokens_per_s": 196.76530002149983,
+        "decode_tokens_per_s": 29.73039606688614,
+        "native_reply_chunks": 1,
+        "native_reply_context_capacity": 30339,
+        "completion_tokens": 41,
+        "prompt_tokens": 2428,
+        "canonical_prompt_tokens": 2428,
+        "exact_history_cache_tokens": 1652,
+        "cache_saved_prefill_tokens": 1170,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 58.25
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 6
+      },
+      "seconds": 58.25
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 6
+      },
+      "seconds": 58.25
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 7
+      },
+      "seconds": 58.26
+    },
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 2523,
+        "reused_tokens": 2469,
+        "exact_history_cache_tokens": 2469,
+        "cache_saved_prefill_tokens": 1987,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 58.26
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 0.581405,
+        "decode_seconds": 2.410241,
+        "prefill_tokens": 55,
+        "decode_tokens": 68,
+        "total_seconds": 2.99,
+        "backend": "llama.cpp-native-mxfp4",
+        "sampling_temperature": 1.0,
+        "sampling_top_p": 1.0,
+        "sampling_top_k": 0,
+        "sampling_min_p": 0.0,
+        "sampling_repeat_penalty": 1.0,
+        "prefill_tokens_per_s": 94.59842966606755,
+        "decode_tokens_per_s": 28.21294634022075,
+        "native_reply_chunks": 1,
+        "native_reply_context_capacity": 30244,
+        "completion_tokens": 68,
+        "prompt_tokens": 2523,
+        "canonical_prompt_tokens": 2523,
+        "exact_history_cache_tokens": 2469,
+        "cache_saved_prefill_tokens": 1987,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 61.26
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 7
+      },
+      "seconds": 61.26
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 7
+      },
+      "seconds": 61.27
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 8
+      },
+      "seconds": 61.27
+    },
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 2668,
+        "reused_tokens": 2591,
+        "exact_history_cache_tokens": 2591,
+        "cache_saved_prefill_tokens": 2109,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 61.28
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 0.7097619999999999,
+        "decode_seconds": 1.367855,
+        "prefill_tokens": 78,
+        "decode_tokens": 40,
+        "total_seconds": 2.08,
+        "backend": "llama.cpp-native-mxfp4",
+        "sampling_temperature": 1.0,
+        "sampling_top_p": 1.0,
+        "sampling_top_k": 0,
+        "sampling_min_p": 0.0,
+        "sampling_repeat_penalty": 1.0,
+        "prefill_tokens_per_s": 109.89599330479797,
+        "decode_tokens_per_s": 29.242865654619823,
+        "native_reply_chunks": 1,
+        "native_reply_context_capacity": 30099,
+        "completion_tokens": 40,
+        "prompt_tokens": 2668,
+        "canonical_prompt_tokens": 2668,
+        "exact_history_cache_tokens": 2591,
+        "cache_saved_prefill_tokens": 2109,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 63.36
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 8
+      },
+      "seconds": 63.37
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 8
+      },
+      "seconds": 63.37
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 9
+      },
+      "seconds": 63.37
+    },
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 3312,
+        "reused_tokens": 2708,
+        "exact_history_cache_tokens": 2708,
+        "cache_saved_prefill_tokens": 2226,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 63.38
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 3.613944,
+        "decode_seconds": 95.934049,
+        "prefill_tokens": 606,
+        "decode_tokens": 2082,
+        "total_seconds": 99.56,
+        "backend": "llama.cpp-native-mxfp4",
+        "sampling_temperature": 1.0,
+        "sampling_top_p": 1.0,
+        "sampling_top_k": 0,
+        "sampling_min_p": 0.0,
+        "sampling_repeat_penalty": 1.0,
+        "prefill_tokens_per_s": 167.68383793440074,
+        "decode_tokens_per_s": 21.702409329142355,
+        "native_reply_chunks": 2,
+        "native_reply_context_capacity": 29455,
+        "completion_tokens": 2082,
+        "prompt_tokens": 3312,
+        "canonical_prompt_tokens": 3312,
+        "exact_history_cache_tokens": 2708,
+        "cache_saved_prefill_tokens": 2226,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 162.94
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 9
+      },
+      "seconds": 162.94
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 9
+      },
+      "seconds": 162.96
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 10
+      },
+      "seconds": 162.96
+    },
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 5467,
+        "reused_tokens": 5394,
+        "exact_history_cache_tokens": 5394,
+        "cache_saved_prefill_tokens": 4912,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 162.97
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 1.3358409999999998,
+        "decode_seconds": 2.108441,
+        "prefill_tokens": 74,
+        "decode_tokens": 33,
+        "total_seconds": 3.45,
+        "backend": "llama.cpp-native-mxfp4",
+        "sampling_temperature": 1.0,
+        "sampling_top_p": 1.0,
+        "sampling_top_k": 0,
+        "sampling_min_p": 0.0,
+        "sampling_repeat_penalty": 1.0,
+        "prefill_tokens_per_s": 55.3958143222135,
+        "decode_tokens_per_s": 15.651374641263379,
+        "native_reply_chunks": 1,
+        "native_reply_context_capacity": 27300,
+        "completion_tokens": 33,
+        "prompt_tokens": 5467,
+        "canonical_prompt_tokens": 5467,
+        "exact_history_cache_tokens": 5394,
+        "cache_saved_prefill_tokens": 4912,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 166.42
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "error": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 10
+      },
+      "seconds": 166.42
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 11
+      },
+      "seconds": 166.42
+    },
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 5529,
+        "reused_tokens": 5500,
+        "exact_history_cache_tokens": 5500,
+        "cache_saved_prefill_tokens": 5018,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 166.43
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 0.8799859999999999,
+        "decode_seconds": 6.096935,
+        "prefill_tokens": 30,
+        "decode_tokens": 92,
+        "total_seconds": 6.98,
+        "backend": "llama.cpp-native-mxfp4",
+        "sampling_temperature": 1.0,
+        "sampling_top_p": 1.0,
+        "sampling_top_k": 0,
+        "sampling_min_p": 0.0,
+        "sampling_repeat_penalty": 1.0,
+        "prefill_tokens_per_s": 34.09145145490951,
+        "decode_tokens_per_s": 15.089549093109898,
+        "native_reply_chunks": 1,
+        "native_reply_context_capacity": 27238,
+        "completion_tokens": 92,
+        "prompt_tokens": 5529,
+        "canonical_prompt_tokens": 5529,
+        "exact_history_cache_tokens": 5500,
+        "cache_saved_prefill_tokens": 5018,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 173.42
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "error": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 11
+      },
+      "seconds": 173.42
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 12
+      },
+      "seconds": 173.43
+    },
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 5650,
+        "reused_tokens": 5621,
+        "exact_history_cache_tokens": 5621,
+        "cache_saved_prefill_tokens": 5139,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 173.44
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 0.9738680000000001,
+        "decode_seconds": 5.844031,
+        "prefill_tokens": 30,
+        "decode_tokens": 90,
+        "total_seconds": 6.82,
+        "backend": "llama.cpp-native-mxfp4",
+        "sampling_temperature": 1.0,
+        "sampling_top_p": 1.0,
+        "sampling_top_k": 0,
+        "sampling_min_p": 0.0,
+        "sampling_repeat_penalty": 1.0,
+        "prefill_tokens_per_s": 30.80499615964381,
+        "decode_tokens_per_s": 15.400328985250077,
+        "native_reply_chunks": 1,
+        "native_reply_context_capacity": 27117,
+        "completion_tokens": 90,
+        "prompt_tokens": 5650,
+        "canonical_prompt_tokens": 5650,
+        "exact_history_cache_tokens": 5621,
+        "cache_saved_prefill_tokens": 5139,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 180.27
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 12
+      },
+      "seconds": 180.27
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 12
+      },
+      "seconds": 180.38
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 13
+      },
+      "seconds": 180.39
+    },
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 5797,
+        "reused_tokens": 5740,
+        "exact_history_cache_tokens": 5740,
+        "cache_saved_prefill_tokens": 5258,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 180.39
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 1.023549,
+        "decode_seconds": 60.498456,
+        "prefill_tokens": 58,
+        "decode_tokens": 892,
+        "total_seconds": 61.53,
+        "backend": "llama.cpp-native-mxfp4",
+        "sampling_temperature": 1.0,
+        "sampling_top_p": 1.0,
+        "sampling_top_k": 0,
+        "sampling_min_p": 0.0,
+        "sampling_repeat_penalty": 1.0,
+        "prefill_tokens_per_s": 56.6655822046624,
+        "decode_tokens_per_s": 14.744177934061657,
+        "native_reply_chunks": 1,
+        "native_reply_context_capacity": 26970,
+        "completion_tokens": 892,
+        "prompt_tokens": 5797,
+        "canonical_prompt_tokens": 5797,
+        "exact_history_cache_tokens": 5740,
+        "cache_saved_prefill_tokens": 5258,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 241.93
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 13
+      },
+      "seconds": 241.93
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 13
+      },
+      "seconds": 241.95
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 14
+      },
+      "seconds": 241.95
+    },
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 6757,
+        "reused_tokens": 6689,
+        "exact_history_cache_tokens": 6689,
+        "cache_saved_prefill_tokens": 6207,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 241.96
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 1.3312899999999999,
+        "decode_seconds": 12.796145000000001,
+        "prefill_tokens": 69,
+        "decode_tokens": 180,
+        "total_seconds": 14.13,
+        "backend": "llama.cpp-native-mxfp4",
+        "sampling_temperature": 1.0,
+        "sampling_top_p": 1.0,
+        "sampling_top_k": 0,
+        "sampling_min_p": 0.0,
+        "sampling_repeat_penalty": 1.0,
+        "prefill_tokens_per_s": 51.82942859932847,
+        "decode_tokens_per_s": 14.066736505408464,
+        "native_reply_chunks": 1,
+        "native_reply_context_capacity": 26010,
+        "completion_tokens": 180,
+        "prompt_tokens": 6757,
+        "canonical_prompt_tokens": 6757,
+        "exact_history_cache_tokens": 6689,
+        "cache_saved_prefill_tokens": 6207,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 256.1
+    },
+    {
+      "kind": "tool_start",
+      "data": {
+        "name": "shell",
+        "arguments": "[local detail omitted from GitHub snapshot]",
+        "turn": 14
+      },
+      "seconds": 256.11
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "exit_code": 0,
+          "timed_out": false,
+          "output": "[local detail omitted from GitHub snapshot]",
+          "truncated": false,
+          "artifact": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 14
+      },
+      "seconds": 256.12
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 15
+      },
+      "seconds": 256.12
+    },
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 7004,
+        "reused_tokens": 6937,
+        "exact_history_cache_tokens": 6937,
+        "cache_saved_prefill_tokens": 6455,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 256.13
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 1.093561,
+        "decode_seconds": 2.175978,
+        "prefill_tokens": 68,
+        "decode_tokens": 33,
+        "total_seconds": 3.27,
+        "backend": "llama.cpp-native-mxfp4",
+        "sampling_temperature": 1.0,
+        "sampling_top_p": 1.0,
+        "sampling_top_k": 0,
+        "sampling_min_p": 0.0,
+        "sampling_repeat_penalty": 1.0,
+        "prefill_tokens_per_s": 62.18217365103547,
+        "decode_tokens_per_s": 15.165594505091502,
+        "native_reply_chunks": 1,
+        "native_reply_context_capacity": 25763,
+        "completion_tokens": 33,
+        "prompt_tokens": 7004,
+        "canonical_prompt_tokens": 7004,
+        "exact_history_cache_tokens": 6937,
+        "cache_saved_prefill_tokens": 6455,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 259.42
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "error": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 15
+      },
+      "seconds": 259.42
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 16
+      },
+      "seconds": 259.42
+    },
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 7066,
+        "reused_tokens": 7037,
+        "exact_history_cache_tokens": 7037,
+        "cache_saved_prefill_tokens": 6555,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 259.44
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 1.0164819999999999,
+        "decode_seconds": 23.406830999999997,
+        "prefill_tokens": 30,
+        "decode_tokens": 340,
+        "total_seconds": 24.43,
+        "backend": "llama.cpp-native-mxfp4",
+        "sampling_temperature": 1.0,
+        "sampling_top_p": 1.0,
+        "sampling_top_k": 0,
+        "sampling_min_p": 0.0,
+        "sampling_repeat_penalty": 1.0,
+        "prefill_tokens_per_s": 29.513557544550718,
+        "decode_tokens_per_s": 14.525674150422159,
+        "native_reply_chunks": 1,
+        "native_reply_context_capacity": 25701,
+        "completion_tokens": 340,
+        "prompt_tokens": 7066,
+        "canonical_prompt_tokens": 7066,
+        "exact_history_cache_tokens": 7037,
+        "cache_saved_prefill_tokens": 6555,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 283.88
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "error": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 16
+      },
+      "seconds": 283.88
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 17
+      },
+      "seconds": 283.88
+    },
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 7435,
+        "reused_tokens": 7406,
+        "exact_history_cache_tokens": 7406,
+        "cache_saved_prefill_tokens": 6924,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 283.89
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 1.0514059999999998,
+        "decode_seconds": 14.594702,
+        "prefill_tokens": 30,
+        "decode_tokens": 210,
+        "total_seconds": 15.65,
+        "backend": "llama.cpp-native-mxfp4",
+        "sampling_temperature": 1.0,
+        "sampling_top_p": 1.0,
+        "sampling_top_k": 0,
+        "sampling_min_p": 0.0,
+        "sampling_repeat_penalty": 1.0,
+        "prefill_tokens_per_s": 28.533221229477483,
+        "decode_tokens_per_s": 14.38878299810438,
+        "native_reply_chunks": 1,
+        "native_reply_context_capacity": 25332,
+        "completion_tokens": 210,
+        "prompt_tokens": 7435,
+        "canonical_prompt_tokens": 7435,
+        "exact_history_cache_tokens": 7406,
+        "cache_saved_prefill_tokens": 6924,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 299.56
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "error": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 17
+      },
+      "seconds": 299.56
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 18
+      },
+      "seconds": 299.56
+    },
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 7674,
+        "reused_tokens": 7645,
+        "exact_history_cache_tokens": 7645,
+        "cache_saved_prefill_tokens": 7163,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 299.58
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 1.1425509999999999,
+        "decode_seconds": 27.167906,
+        "prefill_tokens": 30,
+        "decode_tokens": 386,
+        "total_seconds": 28.32,
+        "backend": "llama.cpp-native-mxfp4",
+        "sampling_temperature": 1.0,
+        "sampling_top_p": 1.0,
+        "sampling_top_k": 0,
+        "sampling_min_p": 0.0,
+        "sampling_repeat_penalty": 1.0,
+        "prefill_tokens_per_s": 26.257033602876373,
+        "decode_tokens_per_s": 14.207940796026017,
+        "native_reply_chunks": 1,
+        "native_reply_context_capacity": 25093,
+        "completion_tokens": 386,
+        "prompt_tokens": 7674,
+        "canonical_prompt_tokens": 7674,
+        "exact_history_cache_tokens": 7645,
+        "cache_saved_prefill_tokens": 7163,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 327.91
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "error": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 18
+      },
+      "seconds": 327.91
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 19
+      },
+      "seconds": 327.91
+    },
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 8089,
+        "reused_tokens": 8060,
+        "exact_history_cache_tokens": 8060,
+        "cache_saved_prefill_tokens": 7578,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 327.93
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 1.064924,
+        "decode_seconds": 22.440791,
+        "prefill_tokens": 30,
+        "decode_tokens": 313,
+        "total_seconds": 23.51,
+        "backend": "llama.cpp-native-mxfp4",
+        "sampling_temperature": 1.0,
+        "sampling_top_p": 1.0,
+        "sampling_top_k": 0,
+        "sampling_min_p": 0.0,
+        "sampling_repeat_penalty": 1.0,
+        "prefill_tokens_per_s": 28.171024411131686,
+        "decode_tokens_per_s": 13.947814941104347,
+        "native_reply_chunks": 1,
+        "native_reply_context_capacity": 24678,
+        "completion_tokens": 313,
+        "prompt_tokens": 8089,
+        "canonical_prompt_tokens": 8089,
+        "exact_history_cache_tokens": 8060,
+        "cache_saved_prefill_tokens": 7578,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 351.46
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "error": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 19
+      },
+      "seconds": 351.46
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 20
+      },
+      "seconds": 351.46
+    },
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 8431,
+        "reused_tokens": 8402,
+        "exact_history_cache_tokens": 8402,
+        "cache_saved_prefill_tokens": 7920,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 351.49
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 1.180074,
+        "decode_seconds": 28.208118,
+        "prefill_tokens": 30,
+        "decode_tokens": 392,
+        "total_seconds": 29.4,
+        "backend": "llama.cpp-native-mxfp4",
+        "sampling_temperature": 1.0,
+        "sampling_top_p": 1.0,
+        "sampling_top_k": 0,
+        "sampling_min_p": 0.0,
+        "sampling_repeat_penalty": 1.0,
+        "prefill_tokens_per_s": 25.42213454410486,
+        "decode_tokens_per_s": 13.896708741788446,
+        "native_reply_chunks": 1,
+        "native_reply_context_capacity": 24336,
+        "completion_tokens": 392,
+        "prompt_tokens": 8431,
+        "canonical_prompt_tokens": 8431,
+        "exact_history_cache_tokens": 8402,
+        "cache_saved_prefill_tokens": 7920,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 380.9
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "error": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 20
+      },
+      "seconds": 380.9
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 21
+      },
+      "seconds": 380.9
+    },
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 8852,
+        "reused_tokens": 8823,
+        "exact_history_cache_tokens": 8823,
+        "cache_saved_prefill_tokens": 8341,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 380.92
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 1.121431,
+        "decode_seconds": 13.387739,
+        "prefill_tokens": 30,
+        "decode_tokens": 189,
+        "total_seconds": 14.51,
+        "backend": "llama.cpp-native-mxfp4",
+        "sampling_temperature": 1.0,
+        "sampling_top_p": 1.0,
+        "sampling_top_k": 0,
+        "sampling_min_p": 0.0,
+        "sampling_repeat_penalty": 1.0,
+        "prefill_tokens_per_s": 26.751534423428634,
+        "decode_tokens_per_s": 14.117395028391277,
+        "native_reply_chunks": 1,
+        "native_reply_context_capacity": 23915,
+        "completion_tokens": 189,
+        "prompt_tokens": 8852,
+        "canonical_prompt_tokens": 8852,
+        "exact_history_cache_tokens": 8823,
+        "cache_saved_prefill_tokens": 8341,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 395.45
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "error": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 21
+      },
+      "seconds": 395.45
+    },
+    {
+      "kind": "turn",
+      "data": {
+        "turn": 22
+      },
+      "seconds": 395.45
+    },
+    {
+      "kind": "inference",
+      "data": {
+        "prompt_tokens": 9070,
+        "reused_tokens": 9041,
+        "exact_history_cache_tokens": 9041,
+        "cache_saved_prefill_tokens": 8559,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 395.48
+    },
+    {
+      "kind": "metrics",
+      "data": {
+        "prefill_seconds": 1.092257,
+        "decode_seconds": 6.006214,
+        "prefill_tokens": 30,
+        "decode_tokens": 83,
+        "total_seconds": 7.1,
+        "backend": "llama.cpp-native-mxfp4",
+        "sampling_temperature": 1.0,
+        "sampling_top_p": 1.0,
+        "sampling_top_k": 0,
+        "sampling_min_p": 0.0,
+        "sampling_repeat_penalty": 1.0,
+        "prefill_tokens_per_s": 27.46606338984323,
+        "decode_tokens_per_s": 13.819021433468738,
+        "native_reply_chunks": 1,
+        "native_reply_context_capacity": 23697,
+        "completion_tokens": 83,
+        "prompt_tokens": 9070,
+        "canonical_prompt_tokens": 9070,
+        "exact_history_cache_tokens": 9041,
+        "cache_saved_prefill_tokens": 8559,
+        "reasoning_effort": "medium"
+      },
+      "seconds": 402.6
+    },
+    {
+      "kind": "tool_result",
+      "data": {
+        "name": "shell",
+        "result": {
+          "error": "[local detail omitted from GitHub snapshot]"
+        },
+        "turn": 22
+      },
+      "seconds": 402.61
+    }
+  ],
+  "samples": [
+    {
+      "seconds": 0.1,
+      "engine": "loading model",
+      "available_ram_gib": 9.773,
+      "activity": null
+    },
+    {
+      "seconds": 20.2,
+      "engine": "loading model",
+      "available_ram_gib": 9.438,
+      "activity": [
+        832164,
+        9.100000000000001,
+        7722074112,
+        12288
+      ]
+    },
+    {
+      "seconds": 40.3,
+      "engine": "generating",
+      "available_ram_gib": 9.22,
+      "activity": [
+        832164,
+        27.11,
+        14714945536,
+        16384
+      ]
+    },
+    {
+      "seconds": 60.4,
+      "engine": "generating",
+      "available_ram_gib": 9.15,
+      "activity": [
+        832164,
+        88.99000000000001,
+        14886371328,
+        24576
+      ]
+    },
+    {
+      "seconds": 80.4,
+      "engine": "generating",
+      "available_ram_gib": 9.149,
+      "activity": [
+        832164,
+        167.38,
+        14922829824,
+        28672
+      ]
+    },
+    {
+      "seconds": 100.5,
+      "engine": "generating",
+      "available_ram_gib": 9.128,
+      "activity": [
+        832164,
+        260.68,
+        14935756800,
+        32768
+      ]
+    },
+    {
+      "seconds": 120.5,
+      "engine": "generating",
+      "available_ram_gib": 9.129,
+      "activity": [
+        832164,
+        354.67,
+        14954795008,
+        36864
+      ]
+    },
+    {
+      "seconds": 140.6,
+      "engine": "generating",
+      "available_ram_gib": 9.124,
+      "activity": [
+        832164,
+        447.67,
+        14954795008,
+        36864
+      ]
+    },
+    {
+      "seconds": 160.7,
+      "engine": "generating",
+      "available_ram_gib": 9.127,
+      "activity": [
+        832164,
+        511.28,
+        14955061248,
+        45056
+      ]
+    },
+    {
+      "seconds": 180.7,
+      "engine": "processing prompt",
+      "available_ram_gib": 9.109,
+      "activity": [
+        832164,
+        578.46,
+        14962802688,
+        49152
+      ]
+    },
+    {
+      "seconds": 200.8,
+      "engine": "generating",
+      "available_ram_gib": 9.107,
+      "activity": [
+        832164,
+        642.1899999999999,
+        14978088960,
+        57344
+      ]
+    },
+    {
+      "seconds": 220.8,
+      "engine": "generating",
+      "available_ram_gib": 9.102,
+      "activity": [
+        832164,
+        707.22,
+        14981746688,
+        57344
+      ]
+    },
+    {
+      "seconds": 240.9,
+      "engine": "generating",
+      "available_ram_gib": 9.104,
+      "activity": [
+        832164,
+        772.61,
+        14989496320,
+        61440
+      ]
+    },
+    {
+      "seconds": 260.9,
+      "engine": "generating",
+      "available_ram_gib": 9.066,
+      "activity": [
+        832164,
+        838.69,
+        14995009536,
+        65536
+      ]
+    },
+    {
+      "seconds": 281.0,
+      "engine": "generating",
+      "available_ram_gib": 9.085,
+      "activity": [
+        832164,
+        904.97,
+        14995009536,
+        69632
+      ]
+    },
+    {
+      "seconds": 301.0,
+      "engine": "generating",
+      "available_ram_gib": 9.003,
+      "activity": [
+        832164,
+        977.91,
+        14998306816,
+        69632
+      ]
+    },
+    {
+      "seconds": 321.1,
+      "engine": "generating",
+      "available_ram_gib": 9.086,
+      "activity": [
+        832164,
+        1045.1200000000001,
+        15005040640,
+        73728
+      ]
+    },
+    {
+      "seconds": 341.2,
+      "engine": "generating",
+      "available_ram_gib": 9.087,
+      "activity": [
+        832164,
+        1114.16,
+        15005040640,
+        77824
+      ]
+    },
+    {
+      "seconds": 361.2,
+      "engine": "generating",
+      "available_ram_gib": 9.043,
+      "activity": [
+        832164,
+        1186.84,
+        15010435072,
+        81920
+      ]
+    },
+    {
+      "seconds": 381.3,
+      "engine": "processing prompt",
+      "available_ram_gib": 9.062,
+      "activity": [
+        832164,
+        1253.83,
+        15010435072,
+        86016
+      ]
+    },
+    {
+      "seconds": 401.3,
+      "engine": "generating",
+      "available_ram_gib": 9.062,
+      "activity": [
+        832164,
+        1325.4299999999998,
+        15017041920,
+        90112
+      ]
+    }
+  ],
+  "turns": 22,
+  "seconds": 402.82,
+  "project_tests": {
+    "exit_code": 0,
+    "output": "[local detail omitted from GitHub snapshot]",
+    "summary": "[local detail omitted from GitHub snapshot]"
+  },
+  "independent_checks": [
+    {
+      "check": "unseen binary/unicode/symlinks/output exclusion 1",
+      "passed": true,
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "unseen binary/unicode/symlinks/output exclusion 2",
+      "passed": true,
+      "exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "invalid root preserves actual prior bytes",
+      "passed": true,
+      "exit_code": 1
+    },
+    {
+      "check": "scan read failure preserves actual prior bytes",
+      "passed": true,
+      "exit_code": 1,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "requested real report.json complete and exact",
+      "passed": false
+    },
+    {
+      "check": "Repeated successful output outside ROOT is replaced with current data",
+      "passed": true,
+      "first_exit_code": 0,
+      "second_exit_code": 0,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    },
+    {
+      "check": "Unreadable directory fails scanning and preserves prior output",
+      "passed": false,
+      "readable_control_passed": true,
+      "exit_code": 0,
+      "prior_output_preserved": false,
+      "stderr": "[local detail omitted from GitHub snapshot]"
+    }
+  ],
+  "checks": {
+    "submitted": false,
+    "runtime_frozen": true,
+    "acceptance_unchanged": true,
+    "nonempty_own_and_supplied_tests": false,
+    "independent_goal_checks": false,
+    "no_interruption": true
+  },
+  "passed": false,
+  "archive_metadata": {
+    "source": "minimal-inventory-20261012T012524949205Z.json",
+    "kind": "native",
+    "title": "Minimal local coding baseline: inventory",
+    "scope": "Experimental minimal shell-only loop inspired by mini-SWE-agent, using the unchanged local GPT-OSS-20B and existing Harmony/backend adapter. Original frozen goals and acceptance seeds. Multiple harness components differ; this is a baseline comparison, not a one-variable attribution or production qualification. No operator source edits or live hints.",
+    "source_sha256": "a5db5377e8cd8d36844d76f4eadd7d1164da79241f9b6ed3255b64a6e786307e"
+  }
+}
