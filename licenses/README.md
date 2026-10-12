@@ -81,3 +81,7 @@ The original model template and the modified agent template under `app/templates
 The optional local diagnostic feedback preparation, observer and controls are original Tiny Dancer Apache-2.0, using existing Python/HTTPX and the normal local agent. No additional package/model/framework was installed. Copies of upstream source retain their existing terms; generated review artifacts and task data are not automatically covered by the project software license. Research links are recorded in docs/OPEN_SOURCE_RESEARCH.md.
 
 The optional SSD model cache, copy/verification helpers and storage controls are original Apache-2.0 code using existing dependencies. Each cache bundle preserves the exact GPT-OSS model LICENSE and USAGE_POLICY alongside the byte-identical weights and source/hash manifest. The canonical license archive and original model remain on GameDrive. No model conversion, new dependency or license change is involved.
+
+## GitHub publication checks
+
+The GitHub-only source/publication workflow uses the MIT-licensed `actions/checkout` and `actions/setup-python` actions. Exact upstream license texts and source/commit/hash records are archived in [github-actions/](github-actions/provenance.json). Workflow references are pinned to those full commits. These build-service dependencies are separate from the local application inventory and introduce no hosted inference or local runtime package. The export script and its tests are original Apache-2.0 project code.
