@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-10-12T06:04:39.572925+00:00",
+  "created_at": "2026-10-12T06:06:55.232816+00:00",
   "scope": "Source, licenses, documentation and public evidence views. Local original files remain unchanged. No runtime data or model weights.",
   "excluded": [
     "run",
@@ -17,9 +17,9 @@
     {
       "path": ".github/workflows/source-checks.yml",
       "mode": "exact",
-      "source_sha256": "0ba79851df7cb5d6923c0ef75cd45b016ae916be349b6749ebacccef1c7de8b9",
-      "export_sha256": "0ba79851df7cb5d6923c0ef75cd45b016ae916be349b6749ebacccef1c7de8b9",
-      "bytes": 504
+      "source_sha256": "e5ea5eeba140cb9d2267bd5c3f086f5bc7b812e4a0b711bd447c572d24bc775f",
+      "export_sha256": "e5ea5eeba140cb9d2267bd5c3f086f5bc7b812e4a0b711bd447c572d24bc775f",
+      "bytes": 590
     },
     {
       "path": ".gitignore",
@@ -437,9 +437,9 @@
     {
       "path": "docs/SESSION_LOG.md",
       "mode": "exact",
-      "source_sha256": "48f0c4415c48eeed281308fd92d41b6e4a41098b6c2f29cbda23ca4a2b29bf76",
-      "export_sha256": "48f0c4415c48eeed281308fd92d41b6e4a41098b6c2f29cbda23ca4a2b29bf76",
-      "bytes": 299925
+      "source_sha256": "1b3c758361620b8ae8cc4a1e619ad8b7dace9e16061546ed3ee13b0c97310e00",
+      "export_sha256": "1b3c758361620b8ae8cc4a1e619ad8b7dace9e16061546ed3ee13b0c97310e00",
+      "bytes": 300564
     },
     {
       "path": "docs/STATE.json",
@@ -4882,9 +4882,9 @@
     {
       "path": "licenses/README.md",
       "mode": "exact",
-      "source_sha256": "eea1c0686bb3560ecd27e5b57aec18611e49ea9f7ec494b6371e2430b42a00c1",
-      "export_sha256": "eea1c0686bb3560ecd27e5b57aec18611e49ea9f7ec494b6371e2430b42a00c1",
-      "bytes": 12280
+      "source_sha256": "7a1103e7ed5d3cf37aed15ee772600fe2313f3b3dc5271276f514696cdd4c89e",
+      "export_sha256": "7a1103e7ed5d3cf37aed15ee772600fe2313f3b3dc5271276f514696cdd4c89e",
+      "bytes": 12826
     },
     {
       "path": "licenses/RESEARCH.md",
@@ -4990,6 +4990,27 @@
       "source_sha256": "ab745c5061d1dea43a3885e5b4b6befc7e983954954775c5736debeefcdfd89b",
       "export_sha256": "ab745c5061d1dea43a3885e5b4b6befc7e983954954775c5736debeefcdfd89b",
       "bytes": 2427
+    },
+    {
+      "path": "licenses/github-actions/checkout-LICENSE",
+      "mode": "exact",
+      "source_sha256": "3e855ffa704114a51628ef8f0bf3aeb41728adf9d9070e263bf58aa5640b0eb5",
+      "export_sha256": "3e855ffa704114a51628ef8f0bf3aeb41728adf9d9070e263bf58aa5640b0eb5",
+      "bytes": 1097
+    },
+    {
+      "path": "licenses/github-actions/provenance.json",
+      "mode": "exact",
+      "source_sha256": "5eae018850a9f122be428368f56b2cfab82b415432a528efa2e225515a3896ee",
+      "export_sha256": "5eae018850a9f122be428368f56b2cfab82b415432a528efa2e225515a3896ee",
+      "bytes": 894
+    },
+    {
+      "path": "licenses/github-actions/setup-python-LICENSE",
+      "mode": "exact",
+      "source_sha256": "7d070f6b64d9bcc530fe99cc21eaaa4b3c364e0b2d367d7735671fa202a03b32",
+      "export_sha256": "7d070f6b64d9bcc530fe99cc21eaaa4b3c364e0b2d367d7735671fa202a03b32",
+      "bytes": 1096
     },
     {
       "path": "licenses/gpt-oss-LICENSE",
