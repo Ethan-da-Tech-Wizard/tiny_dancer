@@ -56,8 +56,8 @@
     "npm_packages": 121,
     "pi_index": "[local detail omitted from GitHub snapshot]"
   },
-  "updated_at": "2026-10-12T06:04:36.726188+00:00",
-  "phase": "GitHub published; fresh labels passes all independent checks with all user apps open; larger native release still unqualified",
+  "updated_at": "2026-10-12T07:53:36.007876+00:00",
+  "phase": "Session handoff saved; service idle and model unloaded; next work awaits a new session",
   "user_objective": "[local detail omitted from GitHub snapshot]",
   "current_runtime_sha256": "391b59aeebf13b0bd5b8f1b42d664d65f2745b601f42affefe53a64f760b2545",
   "current_regressions": {
@@ -142,10 +142,12 @@
     "[local detail omitted from GitHub snapshot]",
     "[local detail omitted from GitHub snapshot]",
     "[local detail omitted from GitHub snapshot]",
+    "[local detail omitted from GitHub snapshot]",
     "[local detail omitted from GitHub snapshot]"
   ],
   "history_archive": "[local detail omitted from GitHub snapshot]",
   "next": [
+    "[local detail omitted from GitHub snapshot]",
     "[local detail omitted from GitHub snapshot]",
     "[local detail omitted from GitHub snapshot]",
     "[local detail omitted from GitHub snapshot]",
@@ -219,13 +221,7 @@
     "deployed": true
   },
   "requested_next_capability": "[local detail omitted from GitHub snapshot]",
-  "active_feedback": {
-    "job": "ab5ae357accb4768a9661e731b891b0f",
-    "report": "docs/native-agent-feedback-20261012T042654614528Z.json",
-    "workspace": "workspace/agent-feedback-20261012T042601878880Z",
-    "status": "cancelled",
-    "intervention": "[local detail omitted from GitHub snapshot]"
-  },
+  "active_feedback": null,
   "last_native_medium_labels": {
     "passed": true,
     "seconds": 563.32,
@@ -307,12 +303,51 @@
     "initial_commit": "7cd401d3c38e951948844b2859b4ab2f4273bb62",
     "remote_verified": true,
     "ci_status": "[local detail omitted from GitHub snapshot]",
-    "ci_url": "[local detail omitted from GitHub snapshot]"
+    "ci_url": "[local detail omitted from GitHub snapshot]",
+    "verified_commit_before_handoff": "ab8fedaa77fca36e4474211189b4b49697fa8932",
+    "latest_local_receipt": "[local detail omitted from GitHub snapshot]"
   },
   "publication_controls": {
     "tests": 13,
     "passed": true,
     "report": "docs/github-export-validation.json",
     "scope": "Stdlib export tests; does not change or validate model inference."
+  },
+  "last_feedback": {
+    "job": "ab5ae357accb4768a9661e731b891b0f",
+    "report": "docs/native-agent-feedback-20261012T042654614528Z.json",
+    "workspace": "workspace/agent-feedback-20261012T042601878880Z",
+    "status": "cancelled",
+    "intervention": "[local detail omitted from GitHub snapshot]"
+  },
+  "prepared_feedback": {
+    "status": "prepared_not_started",
+    "workspace": "workspace/agent-feedback-20261012T045341331895Z",
+    "criteria": "[local detail omitted from GitHub snapshot]",
+    "original_source_and_report_hashes_verified": true,
+    "checked_at": "[local detail omitted from GitHub snapshot]",
+    "feedback_json_exists": false
+  },
+  "session_handoff": {
+    "saved_at": "[local detail omitted from GitHub snapshot]",
+    "request": "[local detail omitted from GitHub snapshot]",
+    "entrypoint": "[local detail omitted from GitHub snapshot]",
+    "status_observed": {
+      "active_job": null,
+      "durable_running_jobs": [],
+      "model_pid": null,
+      "engine": "not loaded",
+      "inference_processes": [],
+      "service_responding": true
+    },
+    "no_new_native_trial_started": true,
+    "runtime_sha256_verified": "391b59aeebf13b0bd5b8f1b42d664d65f2745b601f42affefe53a64f760b2545",
+    "github_final_receipt": "[local detail omitted from GitHub snapshot]"
+  },
+  "native_release_gate": {
+    "report": "docs/native-release-gate-current.json",
+    "passed": false,
+    "runtime_sha256": "391b59aeebf13b0bd5b8f1b42d664d65f2745b601f42affefe53a64f760b2545",
+    "checked_at": "[local detail omitted from GitHub snapshot]"
   }
 }
