@@ -1,12 +1,14 @@
 # Tiny Dancer
 
+> **Research prototype — historical records.** Full native qualification had not passed in the recorded 2026-10-12 status. Fixture results are not proof of general task performance. The setup, paths, test counts and operational claims below describe a historical installation and have not been independently verified as current. Model weights and machine-specific components are separate; see [native installation notes](docs/INSTALL_NATIVE.md).
+
 [Project guide](docs/PROJECT_GUIDE.md) · [Every file explained](docs/FILE_GUIDE.md) · [Licenses and dependencies](docs/LICENSE_REVIEW.md)
 
 A local GPT-OSS-20B computer agent and workspace. Open **http://127.0.0.1:3210** or launch **Tiny Dancer** from the desktop application menu.
 
 Project sources, original models, conversations and validation history live in `/mnt/GameDrive/tiny_dancer`. The original `/home/user/pg/tiny_dancer` is a symlink here. An optional [verified model cache](docs/MODEL_CACHE.md) can keep identical model bytes on a faster local drive; the GameDrive original remains intact. The desktop launcher and user-service registrations are also symlinks into this folder. No Ollama, cloud inference, remote hosting, or paid model API is used.
 
-**Full native qualification has not passed.** The current 617 harness and comparison regression checks pass. The first normal task using the new native tool connection exposed an integration defect before the model acted; that defect is corrected. The fresh small Python task passes all independent checks; the larger inventory task still fails directory-error handling. Small, independently graded tasks must pass before moving to larger applications. [Current status and next steps](docs/RESUME_HERE.md) distinguish actual native results from test fixtures. Historical failures remain visible; `.venv/bin/python scripts/check_native_release.py` checks the same-runtime coding and precision gate.
+**Full native qualification has not passed.** A recorded 2026-10-12 run reported 617 passing harness and comparison regression checks; these included scripted-model fixtures and did not establish general native-model performance. The first normal task using the new native tool connection exposed an integration defect before the model acted; that defect is corrected. The fresh small Python task passes all independent checks; the larger inventory task still fails directory-error handling. Small, independently graded tasks must pass before moving to larger applications. [Current status and next steps](docs/RESUME_HERE.md) distinguish actual native results from test fixtures. Historical failures remain visible; `.venv/bin/python scripts/check_native_release.py` checks the same-runtime coding and precision gate.
 
 [Local agent feedback](docs/AGENT_FEEDBACK.md) lets GPT-OSS propose corrections and reproduction tests from saved public evidence in a separate source copy. Independent validation is required before adoption.
 
