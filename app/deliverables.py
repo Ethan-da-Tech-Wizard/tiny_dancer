@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: deliverables.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Validates and packages target code deliverables, verifying that generated patches satisfy all benchmark requirements before submission.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Verify requested saved JSON and editor actions using actual files/results."""
 import json

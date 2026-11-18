@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: working_memory.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Manages agent working memory buffers, contextual observation compaction, recent turn history, and rolling window limits to keep prompt size within model context capacity.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Bounded factual working evidence for a new model context; never execute code."""
 import hashlib

@@ -1,3 +1,9 @@
+// ==============================================================================
+// Program: app.js
+// Programmer: Ethan-da-Tech-Wizard
+// Last Modified: November 18, 2026
+// Purpose: Front-end JavaScript application controller powering the interactive evaluation dashboard and live run visualizer.
+// ==============================================================================
 const $ = (s) => document.querySelector(s);
 let sessionId = null, currentJob = null, source = null, live = null, activityCount = 0;
 let latestJob = null, currentFolder = '', viewTimer = null;

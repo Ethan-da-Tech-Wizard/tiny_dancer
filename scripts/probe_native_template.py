@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: probe_native_template.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Exact staged backend/template check, plus two real native instruction receipts."""
 from datetime import datetime,timezone

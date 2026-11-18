@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: language_tools.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Provides language-specific static analysis, syntax tree inspection, and symbol discovery tools used during codebase exploration.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """On-demand, read-only Python/Rust evidence. No package code is executed."""
 import hashlib

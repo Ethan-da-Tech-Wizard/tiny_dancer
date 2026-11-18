@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: validate_local_test_runner.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Actual project pytest, fixtures, failure and zero-suite checks; no inference."""
 import asyncio

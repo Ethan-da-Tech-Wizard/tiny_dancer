@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: test_authority.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Manages test discovery, test command construction, test requirement enforcement, and authoritative verdict evaluation.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Explain test provenance without treating model-authored assertions as truth."""
 import re

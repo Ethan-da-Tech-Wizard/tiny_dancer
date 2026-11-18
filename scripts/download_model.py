@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: download_model.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# ==============================================================================
+
 """Pinned, resumable official weights download. All assets live on GameDrive."""
 import json
 from pathlib import Path

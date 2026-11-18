@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: reply_continuation.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Handles token truncation and continuation logic when model responses exceed max output limits, seamlessly stitching multi-part replies.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Continue Auto work to a real response boundary or the physical context limit."""
 

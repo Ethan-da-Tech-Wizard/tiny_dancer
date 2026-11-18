@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: tool_runtime.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Validates, deserializes, and safely dispatches tool invocations and structured JSON arguments from agent response messages to target tool handlers.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Project-owned command wrappers; preserve the ordinary Python and host PATH."""
 import os

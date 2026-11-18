@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: preserved_files.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Tracks unmodified reference files and guarantees that critical repository configuration files are preserved throughout agent edits.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Honor explicit user requests to leave literal files unchanged."""
 from pathlib import Path

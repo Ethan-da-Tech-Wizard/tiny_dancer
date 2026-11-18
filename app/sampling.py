@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: sampling.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Defines temperature, top-p, min-p, repetition penalty, and nucleus sampling strategies for generation.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Explicit native profiles; preserve legacy greedy runs for comparisons."""
 

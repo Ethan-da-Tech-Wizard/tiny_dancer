@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: history.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Maintains chronological conversation turn history, message serialization, and checkpointing for session resumption and retrospective analysis.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Keep previous task instructions out of a new goal, without deleting history."""
 import json

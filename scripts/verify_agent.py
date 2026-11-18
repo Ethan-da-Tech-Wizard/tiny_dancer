@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: verify_agent.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# ==============================================================================
+
 """Actual local-model E2E: native function calls create and read back a file."""
 import json
 import shlex

@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: scan_regression_tests.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Known filesystem error regressions supplied before a native repair task."""
 from pathlib import Path

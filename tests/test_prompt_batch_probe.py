@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: test_prompt_batch_probe.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Automated test suite verifying functional correctness, regression resistance, boundary conditions, and edge cases.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 import unittest
 from scripts.benchmark_prompt_batches import batch_command, verdict

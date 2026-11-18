@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: native_suite_cases.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Frozen native task criteria; no solution code is supplied to the agent."""
 from pathlib import Path

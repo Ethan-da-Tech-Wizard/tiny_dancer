@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: test_post_edit_checks.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Automated test suite verifying functional correctness, regression resistance, boundary conditions, and edge cases.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Actual execution verifies batching, failed checks, snapshots and cancellation."""
 import json

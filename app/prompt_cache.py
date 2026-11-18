@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: prompt_cache.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Optimizes inference latency through prompt prefix caching and KV-cache reuse, reducing time-to-first-token on repetitive system prompts and repository context.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Reuse the model's exact emitted history when canonical messages still match."""
 

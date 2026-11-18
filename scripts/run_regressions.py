@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: run_regressions.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Run real regressions and preserve named outcomes in a unique results report."""
 import hashlib

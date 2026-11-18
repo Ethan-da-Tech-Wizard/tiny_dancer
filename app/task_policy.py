@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: task_policy.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Specifies evaluation constraints, maximum turn limits, timeout thresholds, and goal criteria per task.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Trusted task constraints derived from the current user request and host date."""
 import re

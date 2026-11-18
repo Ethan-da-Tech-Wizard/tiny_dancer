@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: evaluate_agent_default.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Real API default/answer smoke, using public facts and no aggregate cutoff."""
 from datetime import datetime,timezone

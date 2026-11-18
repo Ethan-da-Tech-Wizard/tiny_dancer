@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: verification.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Executes post-generation verification suites to ensure code syntactical correctness and test pass rates.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Bounded evidence for actual test runs, without inventing task assertions."""
 import hashlib

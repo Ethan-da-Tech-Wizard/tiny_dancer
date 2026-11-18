@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: baseline_preview.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Generates baseline summaries and diff previews comparing initial and current workspace states.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Bounded initial-context projection; does not mutate saved tool evidence."""
 import copy

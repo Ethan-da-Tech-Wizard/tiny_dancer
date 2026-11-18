@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: reasoning.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Manages extended reasoning policies, thinking budget allocation, internal scratchpad parsing, and thought extraction during agent decision cycles.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Resolve an explicit effort choice before the configurable automatic default."""
 def effective_effort(requested,contract,config,agent=True):

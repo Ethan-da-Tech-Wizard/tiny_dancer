@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: facts.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Provides auxiliary factual query lookups, web data retrieval helpers, and cached external facts supporting agent reasoning tasks.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Bounded, decoded HTTP data and a checked NFL scoreboard workflow."""
 import json

@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: tool_arguments.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Validates, deserializes, and safely dispatches tool invocations and structured JSON arguments from agent response messages to target tool handlers.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Decode native arguments with one unambiguous structural correction."""
 import json

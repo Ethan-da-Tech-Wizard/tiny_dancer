@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: checkpoint.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# ==============================================================================
+
 """Use after meaningful setup transitions: checkpoint.py PHASE MESSAGE."""
 import json, sys
 from pathlib import Path

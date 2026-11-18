@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: test_task_date_cache.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Automated test suite verifying functional correctness, regression resistance, boundary conditions, and edge cases.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Long-running tasks keep their date anchor without re-prefilling at midnight."""
 import threading

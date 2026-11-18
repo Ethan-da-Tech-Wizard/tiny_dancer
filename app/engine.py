@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: engine.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Core model inference engine interfacing with local LLM backends (llama.cpp / OpenAI format), handling token generation, sampling parameters, stopping sequences, and streaming outputs.
+# ==============================================================================
+
 """Native Harmony function calls on the Colibri-inspired Picchio streaming engine."""
 import asyncio
 import json

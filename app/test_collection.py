@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: test_collection.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Manages test discovery, test command construction, test requirement enforcement, and authoritative verdict evaluation.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Require actual compatible checks for newly added plain Python test functions."""
 import ast

@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: model_cache.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Manages local GGUF and safetensors model weight downloads, checksum verification, disk caching, and version management.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Optional identical local model cache; the project copy remains authoritative."""
 import hashlib

@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: test_pi_cli_integration.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Automated test suite verifying functional correctness, regression resistance, boundary conditions, and edge cases.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Actual upstream CLI against a scripted loopback endpoint; not native ability."""
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer

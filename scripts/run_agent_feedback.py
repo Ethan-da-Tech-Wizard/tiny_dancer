@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: run_agent_feedback.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Run a prepared diagnostic task through the ordinary local agent, one at a time."""
 import argparse

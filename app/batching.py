@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: batching.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Orchestrates prompt batching pipelines to maximize GPU/CPU utilization and throughput across concurrent benchmark evaluations.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Bounded project inspection and sequential, auditable groups of checks."""
 import asyncio

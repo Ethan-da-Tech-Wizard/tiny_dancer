@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: tools.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Defines the agent tool execution registry, providing sandboxed filesystem manipulation, code search, bash command invocation, and structured result formatting.
+# ==============================================================================
+
 """Computer tools run as the logged-in user. Every invocation is audited by the agent."""
 import asyncio
 import json

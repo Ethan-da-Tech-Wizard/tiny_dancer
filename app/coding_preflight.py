@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: coding_preflight.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Validates repository prerequisites, baseline test suites, and clean git worktree status before starting runs.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Select bounded local baseline checks from actual project inspection."""
 from app.verification import test_command

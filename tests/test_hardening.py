@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: test_hardening.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Automated test suite verifying functional correctness, regression resistance, boundary conditions, and edge cases.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Regression scenarios derived from observed native waste and completion risks."""
 import json

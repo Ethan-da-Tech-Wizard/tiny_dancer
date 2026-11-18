@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: dependency_policy.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Enforces dependency isolation rules and verifies package manifests against permitted license and security standards.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Verify an explicitly requested Rust standard-library constraint from Cargo."""
 from pathlib import Path

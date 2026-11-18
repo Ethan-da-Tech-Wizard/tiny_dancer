@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: test_harmony.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Automated test suite verifying functional correctness, regression resistance, boundary conditions, and edge cases.
+# ==============================================================================
+
 import json
 import unittest
 from openai_harmony import (Author,Conversation,HarmonyEncodingName,Message,Role,TextContent,load_harmony_encoding)

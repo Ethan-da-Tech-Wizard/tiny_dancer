@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: restart_when_idle.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Restart only after both the service and its durable job table report idle."""
 import argparse

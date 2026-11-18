@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+# ==============================================================================
+# Program: env.sh
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Shell script automating environment setup, model conversion, test runs, or daemon service execution.
+# ==============================================================================
+
 export TINY_DANCER_ROOT=/mnt/GameDrive/tiny_dancer
 export HF_HOME="$TINY_DANCER_ROOT/cache/huggingface"
 export HF_HUB_CACHE="$HF_HOME/hub"

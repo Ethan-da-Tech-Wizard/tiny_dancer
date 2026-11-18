@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: llama_session.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Controls persistent local llama.cpp server and CLI process sessions, managing socket connections, health checks, slot allocation, and crash recovery.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Isolated same-model session adapter; compatible with the native Harmony runner."""
 import json

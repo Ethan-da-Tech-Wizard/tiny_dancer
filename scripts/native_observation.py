@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: native_observation.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Observer policy and public progress evidence, separate from model reasoning."""
 import hashlib

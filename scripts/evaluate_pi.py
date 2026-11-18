@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: evaluate_pi.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Frozen same-model comparison with upstream Pi; no live hints or product edits."""
 import argparse

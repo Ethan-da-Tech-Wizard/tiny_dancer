@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: test_context_capacity.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Automated test suite verifying functional correctness, regression resistance, boundary conditions, and edge cases.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Long native prompts must retain their goal and complete action allowance."""
 import threading

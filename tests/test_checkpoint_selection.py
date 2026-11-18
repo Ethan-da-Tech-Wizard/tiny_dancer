@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: test_checkpoint_selection.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Automated test suite verifying functional correctness, regression resistance, boundary conditions, and edge cases.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Preserve actual work after test reads; inspect no code outside the project."""
 import tempfile

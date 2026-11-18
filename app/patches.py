@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: patches.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Computes unified code diffs, verifies file patch applicability, and applies localized source edits with fuzzy whitespace tolerance.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Small, exact-context file edits using the familiar Begin Patch format."""
 import os

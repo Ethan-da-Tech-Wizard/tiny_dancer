@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: native_chat.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Implements terminal-based native chat interaction client for direct developer-to-agent conversation and debugging sessions.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Native GPT-OSS tool grammar through the existing local llama.cpp server."""
 import json

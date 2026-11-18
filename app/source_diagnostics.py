@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: source_diagnostics.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Parses compiler warnings, syntax errors, and test runner outputs into structured diagnostic records.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Small, read-only runtime notes derived from inspected Python imports."""
 import ast

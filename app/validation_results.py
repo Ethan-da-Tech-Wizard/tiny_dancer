@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: validation_results.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Records, grades, and serializes coding benchmark outcomes, capturing unit test passes/failures, execution timings, and token metrics.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Read-only test summaries and a bounded allowlist of their saved evidence."""
 import json

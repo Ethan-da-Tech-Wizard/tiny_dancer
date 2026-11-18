@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: request_models.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Pydantic / dataclass schemas defining API request bodies, query models, and tool invocation parameters.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Pure API validation; importing it never starts services or modifies jobs."""
 from pathlib import Path

@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: test_requirements.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Manages test discovery, test command construction, test requirement enforcement, and authoritative verdict evaluation.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Check explicitly requested test-source additions, preserving the initial snapshot."""
 import ast

@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: failure_feedback.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Analyzes failed test runs and compiler tracebacks to generate diagnostic repair feedback guiding subsequent agent correction turns.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Bounded excerpts of real runner failures; never a test verdict or diagnosis."""
 import json

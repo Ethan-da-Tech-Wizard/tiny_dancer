@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: server.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: FastAPI / ASGI application providing HTTP REST endpoints and static asset serving for the Tiny Dancer web monitoring dashboard and evaluation inspector.
+# ==============================================================================
+
 import asyncio
 import hmac
 import json

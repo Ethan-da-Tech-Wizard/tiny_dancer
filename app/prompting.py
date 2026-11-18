@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: prompting.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Assembles structured system instructions, role prompts, tool definitions, and repository guidance into model-ready prompt templates.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Compact instructions and tool previews; durable evidence remains unchanged."""
 import json

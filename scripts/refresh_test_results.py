@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: refresh_test_results.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 from pathlib import Path
 import sys

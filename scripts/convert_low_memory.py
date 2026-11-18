@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: convert_low_memory.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# ==============================================================================
+
 """Resume GPT-OSS conversion with bounded memory and atomic per-tensor output shards.
 
 Uses the upstream Picchio quantizers and the same INT4-gs64/INT8 scheme.

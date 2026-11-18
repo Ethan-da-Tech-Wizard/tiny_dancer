@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: agent.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Implements the autonomous coding agent runtime loop, managing conversation state, multi-turn tool execution cycles, observation feedback, and completion termination conditions.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Bounded answer/work runner with durable progress and task-specific completion."""
 import asyncio

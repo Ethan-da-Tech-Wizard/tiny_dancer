@@ -1,3 +1,10 @@
+# ==============================================================================
+# Program: test_native_suite_grading.py
+# Programmer: Ethan-da-Tech-Wizard
+# Last Modified: November 18, 2026
+# Purpose: Automated test suite verifying functional correctness, regression resistance, boundary conditions, and edge cases.
+# ==============================================================================
+
 # SPDX-License-Identifier: Apache-2.0
 """Ensure withheld graders reject plausible incomplete or incorrect products."""
 import hashlib
