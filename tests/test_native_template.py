@@ -1,3 +1,7 @@
+# Program: tiny_dancer - tests/test_native_template.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for native template (exercises app.llama_session).
 # SPDX-License-Identifier: Apache-2.0
 """Template fidelity uses synthetic text only, never model private reasoning."""
 import hashlib
@@ -11,21 +15,27 @@ ROOT=Path(__file__).resolve().parents[1]
 
 
 def render(name,messages):
+    """Test helper: render."""
     env=Environment()
     env.globals['strftime_now']=lambda _: '2026-10-12'
+    # Test helper: raise exception.
     def raise_exception(message):raise ValueError(message)
     env.globals['raise_exception']=raise_exception
     return env.from_string((ROOT/'app/templates'/name).read_text()).render(
         messages=messages,tools=[],builtin_tools=[],reasoning_effort='medium',add_generation_prompt=True)
 
 
+# -------- native template tests --------
 class NativeTemplateTests(unittest.TestCase):
+    """Test group for native template."""
     def history(self):
+        """Test helper: history."""
         return [{'role':'system','content':'BASE_POLICY'}, {'role':'user','content':'USER_GOAL'},
             {'role':'assistant','thinking':'TOOL_REASONING','tool_calls':[{'function':{'name':'shell','arguments':{'command':'true'}}}]},
             {'role':'tool','content':'TOOL_RESULT'}]
 
     def test_upstream_silently_drops_late_review_but_candidate_preserves_role_and_order(self):
+        """Checks that upstream silently drops late review but candidate preserves role and order."""
         messages=self.history()+[{'role':'developer','content':'REVIEW_UPDATE'}]
         old=render('gpt-oss-upstream.jinja',messages);new=render('gpt-oss-agent.jinja',messages)
         self.assertNotIn('REVIEW_UPDATE',old)
@@ -34,6 +44,7 @@ class NativeTemplateTests(unittest.TestCase):
         self.assertIn('TOOL_REASONING',new)
 
     def test_initial_extra_developer_and_compacted_checkpoint_are_retained(self):
+        """Checks that initial extra developer and compacted checkpoint are retained."""
         messages=[{'role':'system','content':'BASE_POLICY'}, {'role':'developer','content':'EXTRA_POLICY'},
                   {'role':'user','content':'USER_GOAL'}, {'role':'developer','content':'SAVED_CHECKPOINT'}]
         text=render('gpt-oss-agent.jinja',messages)
@@ -41,6 +52,7 @@ class NativeTemplateTests(unittest.TestCase):
         self.assertEqual(positions,sorted(positions))
 
     def test_unfinished_private_analysis_is_not_an_empty_final(self):
+        """Checks that unfinished private analysis is not an empty final."""
         messages=self.history()+[{'role':'assistant','thinking':'UNFINISHED_REASONING','content':''},
                                  {'role':'developer','content':'RECOVERY_UPDATE'}]
         old=render('gpt-oss-upstream.jinja',messages);new=render('gpt-oss-agent.jinja',messages)
@@ -50,15 +62,18 @@ class NativeTemplateTests(unittest.TestCase):
         self.assertNotIn('<|channel|>final',new)
 
     def test_supported_history_is_byte_for_byte_identical(self):
+        """Checks that supported history is byte for byte identical."""
         for messages in (self.history(),self.history()+[{'role':'user','content':'AUTOMATIC_OBSERVATION'}]):
             self.assertEqual(render('gpt-oss-upstream.jinja',messages),render('gpt-oss-agent.jinja',messages))
 
     def test_actual_completed_final_retains_upstream_reasoning_drop(self):
+        """Checks that actual completed final retains upstream reasoning drop."""
         messages=self.history()+[{'role':'assistant','content':'ACTUAL_FINAL'}, {'role':'user','content':'NEXT_GOAL'}]
         self.assertEqual(render('gpt-oss-upstream.jinja',messages),render('gpt-oss-agent.jinja',messages))
         self.assertNotIn('TOOL_REASONING',render('gpt-oss-agent.jinja',messages))
 
     def test_override_is_pinned_and_confined_to_project(self):
+        """Checks that override is pinned and confined to project."""
         with tempfile.TemporaryDirectory() as temp:
             root=Path(temp);template=root/'template.jinja';template.write_text('fixture')
             cfg={'llama_chat_template_file':'template.jinja','llama_chat_template_sha256':hashlib.sha256(template.read_bytes()).hexdigest()}

@@ -1,3 +1,7 @@
+# Program: tiny_dancer - tests/test_output_reserve.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for output reserve (exercises app.agent, app.engine).
 # SPDX-License-Identifier: Apache-2.0
 """A requested complete action needs real space after its input prompt."""
 import json
@@ -10,15 +14,21 @@ from app.engine import LocalEngine,ContextBudgetError
 from tests.raw_engine_fixture import legacy_raw_engine
 
 
+# -------- output reserve tests --------
 class OutputReserveTests(unittest.TestCase):
+    """Test group for output reserve."""
     def setup_engine(self,first=None):
+        """Test helper: setup engine."""
         enc=load_harmony_encoding(HarmonyEncodingName.HARMONY_GPT_OSS)
         prefix=enc.render_conversation_for_completion(Conversation.from_messages([]),Role.ASSISTANT)
         final=enc.render_conversation(Conversation.from_messages([Message.from_role_and_content(Role.ASSISTANT,'Checked.').with_channel('final')]))[len(prefix):]
         calls=[]
+        # -------- session --------
         class Session:
+            """Helper type session."""
             ctx=8192;proc=SimpleNamespace(poll=lambda:None);last_timing={}
             def turn(self,ids,maximum,keep,callback,temperature=0):
+                """Test helper: turn."""
                 calls.append({'prompt_tokens':len(ids)+keep,'maximum':maximum,'text':enc.decode(ids)})
                 tokens=first if first is not None and len(calls)==1 else final
                 return tokens,'RETURN',None
@@ -26,9 +36,11 @@ class OutputReserveTests(unittest.TestCase):
         return engine,enc,calls
 
     def tool(self,name,payload):
+        """Test helper: tool."""
         return Message(author=Author.new(Role.TOOL,'functions.'+name),content=[TextContent(text=json.dumps(payload))]).with_recipient('assistant').to_dict()
 
     def test_rolling_history_reserves_full_action_preserving_goal_and_latest_failure(self):
+        """Checks that rolling history reserves full action preserving goal and latest failure."""
         engine,enc,calls=self.setup_engine()
         goal='Repair summarize.py and run real tests. ORIGINAL_GOAL_SENTINEL'
         history=[Message.from_role_and_content(Role.USER,goal).to_dict()]
@@ -56,6 +68,7 @@ class OutputReserveTests(unittest.TestCase):
         self.assertEqual(json.dumps(history),unchanged)
 
     def test_oversized_latest_transaction_requests_recovery_before_generation(self):
+        """Checks that oversized latest transaction requests recovery before generation."""
         enc=load_harmony_encoding(HarmonyEncodingName.HARMONY_GPT_OSS)
         prefix=enc.render_conversation_for_completion(Conversation.from_messages([]),Role.ASSISTANT)
         emitted=[Message.from_role_and_content(Role.ASSISTANT,'Consider. '*600).with_channel('analysis'),Message.from_role_and_content(Role.ASSISTANT,'{"command":"pytest"}').with_channel('commentary').with_recipient('functions.shell')]
@@ -73,6 +86,7 @@ class OutputReserveTests(unittest.TestCase):
         self.assertEqual(json.dumps(history),unchanged)
 
     def test_larger_learned_action_fits_after_checkpoint_with_current_source(self):
+        """Checks that larger learned action fits after checkpoint with current source."""
         import tempfile
         from pathlib import Path
         from app.agent import AgentRun

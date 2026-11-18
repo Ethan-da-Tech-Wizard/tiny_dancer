@@ -1,5 +1,10 @@
+# Program: tiny_dancer - preserved_files.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Honor explicit user requests to leave literal files unchanged.
 # SPDX-License-Identifier: Apache-2.0
 """Honor explicit user requests to leave literal files unchanged."""
+# ---- Imports ----
 from pathlib import Path
 import re
 
@@ -7,7 +12,9 @@ _FILE = r"""(`[^`\n]+`|"[^"\n]+"|'[^'\n]+'|[^\s,;]+)"""
 _RULE = re.compile(r'\b(?:keep|leave)\s+(?:(?:the|supplied|existing)\s+)*'+_FILE+r'\s+(?:unchanged|untouched)\b',re.I)
 
 
+# ---- Definitions ----
 def issue(goal,cwd,name,args):
+    """Step: issue. Inputs: goal, cwd, name, args."""
     if name not in ('write_file','apply_patch'):return None
     targets=[args.get('path')] if name=='write_file' else re.findall(r'^\*\*\* (?:Update|Add|Delete) File: (.+)$',str(args.get('patch','')),re.M)
     folder=Path(cwd).resolve()

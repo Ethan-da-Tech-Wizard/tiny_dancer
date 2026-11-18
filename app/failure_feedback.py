@@ -1,5 +1,10 @@
+# Program: tiny_dancer - failure_feedback.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Bounded excerpts of real runner failures; never a test verdict or diagnosis.
 # SPDX-License-Identifier: Apache-2.0
 """Bounded excerpts of real runner failures; never a test verdict or diagnosis."""
+# ---- Imports ----
 import json
 import re
 
@@ -8,7 +13,9 @@ HEADERS = re.compile(r'^(?:FAIL|ERROR): (.+)$|^_{3,}\s+(.+?)\s+_{3,}$|^-{4,}\s+(
 HINT = 'Failure excerpts are observations, not a diagnosis. Read the saved artifact for omitted details.'
 
 
+# ---- Definitions ----
 def clipped(value, limit):
+    """Step: clipped. Inputs: value, limit."""
     if len(value) <= limit: return value
     return value[:limit//2] + ' [... omitted ...] ' + value[-limit//2:]
 

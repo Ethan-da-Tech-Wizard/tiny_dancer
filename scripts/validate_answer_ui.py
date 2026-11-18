@@ -1,5 +1,10 @@
+# Program: tiny_dancer - validate_answer_ui.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Check the actual completed answer UI without starting model work.
 # SPDX-License-Identifier: Apache-2.0
 """Check the actual completed answer UI without starting model work."""
+# ---- Imports ----
 import asyncio
 import json
 from pathlib import Path
@@ -9,7 +14,9 @@ ROOT = Path('/mnt/GameDrive/tiny_dancer')
 URL = 'http://127.0.0.1:3210'
 
 
+# ---- Definitions ----
 async def main():
+    """Async step: main."""
     validation = json.loads((ROOT/'docs/answer-completion-validation.json').read_text())
     report = {'errors':[]}
     async with async_playwright() as playwright:
@@ -46,4 +53,5 @@ async def main():
     print(json.dumps(report))
 
 
+# ---- Script entry point ----
 if __name__=='__main__': asyncio.run(main())

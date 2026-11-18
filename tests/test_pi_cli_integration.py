@@ -1,3 +1,7 @@
+# Program: tiny_dancer - tests/test_pi_cli_integration.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for pi cli integration (exercises scripts.pi_baseline).
 # SPDX-License-Identifier: Apache-2.0
 """Actual upstream CLI against a scripted loopback endpoint; not native ability."""
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -12,12 +16,19 @@ from scripts.pi_baseline import FLAGS, child_environment, models_config, setting
 ROOT = Path(__file__).resolve().parents[1]
 
 
+# -------- pi c l i integration tests --------
 class PiCLIIntegrationTests(unittest.TestCase):
+    """Test group for pi c l i integration."""
     def test_actual_cli_tool_execution_sampler_and_reasoning_replay(self):
+        """Checks that actual cli tool execution sampler and reasoning replay."""
         requests = []
+        # -------- handler --------
         class Handler(BaseHTTPRequestHandler):
+            # Test helper: log message.
+            """Helper type handler."""
             def log_message(self, *args): pass
             def do_POST(self):
+                """Test helper: do POST."""
                 data=json.loads(self.rfile.read(int(self.headers['Content-Length'])))
                 requests.append({'path':self.path,'authorized':self.headers.get('Authorization')=='Bearer fixture-key','body':data})
                 self.send_response(200);self.send_header('Content-Type','text/event-stream');self.end_headers()

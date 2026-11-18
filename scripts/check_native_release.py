@@ -1,5 +1,10 @@
+# Program: tiny_dancer - check_native_release.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Require a fixed failed task and two distinct native coding passes.
 # SPDX-License-Identifier: Apache-2.0
 """Require a fixed failed task and two distinct native coding passes."""
+# ---- Imports ----
 import hashlib
 import json
 from pathlib import Path
@@ -14,6 +19,7 @@ from scripts.inventory_extended_audit import CRITERIA as SPECIAL_FILE_CRITERIA
 ALL_INVENTORY_CRITERIA=INVENTORY_GOAL_CRITERIA+SPECIAL_FILE_CRITERIA
 
 
+# ---- Definitions ----
 def runtime_fingerprint(root):
     """Match native observers' source/config/UI digest without importing server."""
     root=Path(root)
@@ -32,15 +38,18 @@ def runtime_fingerprint(root):
 
 
 def release_checks(root):
+    """Step: release checks. Inputs: root."""
     root=Path(root);docs=root/'docs';results=[]
     current=runtime_fingerprint(root)
     repair=docs/'precision-repair-retest-validation.json'
     def read(path):
+        """Step: read. Inputs: path."""
         try:
             data=json.loads(path.read_text())
             return data if isinstance(data,dict) else None
         except (OSError,ValueError):return None
     def check(name,path,expected=None):
+        """Step: check. Inputs: name, path, expected."""
         report=read(path) if path else None
         reasons=[]
         if not report:reasons.append('No completed report')
@@ -101,6 +110,7 @@ def release_checks(root):
             'scope':'Three actual native outcomes: failed repair replay, fresh Python inventory, fresh Rust ranges. Historical arithmetic smoke and scripted regression passes cannot replace these.'}
 
 
+# ---- Script entry point ----
 if __name__=='__main__':
     result=release_checks(ROOT);print(json.dumps(result,indent=2))
     if not result['passed']:raise SystemExit(1)

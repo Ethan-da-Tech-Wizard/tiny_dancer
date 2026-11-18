@@ -1,8 +1,14 @@
+# Program: tiny_dancer - reply_continuation.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Continue Auto work to a real response boundary or the physical context limit.
 # SPDX-License-Identifier: Apache-2.0
 """Continue Auto work to a real response boundary or the physical context limit."""
 
 
+# ---- Definitions ----
 def continue_reply(session,prompt_length,produced,reason,chunk_tokens,on_token,*,temperature=0.0):
+    """Step: continue reply. Inputs: session, prompt_length, produced, reason, chunk_tokens, on_token, temperature."""
     if type(chunk_tokens) is not int or chunk_tokens<=0:
         raise ValueError('Native continuation requires a positive integer chunk size')
     timings=[dict(session.last_timing)]

@@ -1,5 +1,10 @@
+# Program: tiny_dancer - llama_chat_baseline.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Experimental adapter to the pinned llama.cpp native GPT-OSS tool grammar.
 # SPDX-License-Identifier: Apache-2.0
 """Experimental adapter to the pinned llama.cpp native GPT-OSS tool grammar."""
+# ---- Imports ----
 import json
 import time
 from openai_harmony import Message, Role, TextContent
@@ -8,6 +13,7 @@ from app.prompting import compact_result
 from app.sampling import native_temperature
 
 
+# ---- Definitions ----
 def chat_history(history):
     """Translate complete Harmony transactions; private reasoning stays private."""
     result=[];reasoning=[];content=[];pending=[];serial=0
@@ -41,10 +47,13 @@ def chat_history(history):
 
 
 class ChatStream:
+    """Defines the chatstream type."""
     def __init__(self):
+        """Step: init."""
         self.reasoning=[];self.content=[];self.calls={};self.finish=None;self.usage={};self.timings={}
 
     def accept(self,event):
+        """Step: accept. Inputs: event."""
         if event.get('error'):raise ModelFormatError('Local chat endpoint returned an error')
         if event.get('usage'):self.usage=event['usage']
         if event.get('timings'):self.timings=event['timings']
@@ -60,6 +69,7 @@ class ChatStream:
             if choice.get('finish_reason') is not None:self.finish=choice['finish_reason']
 
     def replies(self,allowed):
+        """Step: replies. Inputs: allowed."""
         if self.finish=='length':return [],'MAX_TOKENS'
         if self.finish not in ('stop','tool_calls'):
             raise ModelFormatError('Stream ended without an accepted completion boundary')
@@ -81,10 +91,13 @@ class ChatStream:
 
 
 class LlamaChatBaselineEngine(LocalEngine):
+    """Defines the llamachatbaselineengine type."""
     def __init__(self,instructions,definitions):
+        """Step: init. Inputs: instructions, definitions."""
         super().__init__();self.instructions=instructions;self.definitions=definitions
 
     def generate(self,history,cwd,emit,cancel,agent=True,max_tokens=2048,task_contract=None,reasoning_effort='medium'):
+        """Step: generate. Inputs: history, cwd, emit, cancel, agent, max_tokens, task_contract, reasoning_effort."""
         with self.lock:
             self.last_activity=time.monotonic();self.load(cancel)
             if cancel.is_set():raise Cancelled()

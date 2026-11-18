@@ -1,3 +1,7 @@
+# Program: tiny_dancer - tests/test_native_suite_grading.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for native suite scoring (exercises scripts.native_suite_cases).
 # SPDX-License-Identifier: Apache-2.0
 """Ensure withheld graders reject plausible incomplete or incorrect products."""
 import hashlib
@@ -11,8 +15,11 @@ from unittest.mock import patch
 from scripts.native_suite_cases import CASES, grade
 
 
+# -------- native suite scoring tests --------
 class NativeSuiteGradingTests(unittest.TestCase):
+    """Test group for native suite scoring."""
     def setUp(self):
+        """Prepare the fixtures for each test."""
         root=Path(__file__).resolve().parents[1]
         self.temp=tempfile.TemporaryDirectory(dir=root/'run')
         self.addCleanup(self.temp.cleanup)
@@ -20,7 +27,9 @@ class NativeSuiteGradingTests(unittest.TestCase):
         self.folder=self.root/'task';self.folder.mkdir()
 
     def inventory_fixture(self, skip_unreadable=False, wrong_digest=False):
+        """Test helper: inventory fixture."""
         def invoke(args, **kwargs):
+            """Test helper: invoke."""
             source,out=map(Path,args[-2:])
             if not source.is_dir():return subprocess.CompletedProcess(args,1,'','invalid root')
             rows=[]
@@ -35,33 +44,40 @@ class NativeSuiteGradingTests(unittest.TestCase):
         return invoke
 
     def sample_inventory(self):
+        """Test helper: sample inventory."""
         rows=[{'path':p.removeprefix('sample_tree/'),'size':len(data),'sha256':hashlib.sha256(data).hexdigest()} for p,data in CASES['inventory']['inputs'].items()]
         (self.folder/'report.json').write_text(json.dumps(sorted(rows,key=lambda r:r['path'])))
 
     def test_inventory_accepts_complete_fixture(self):
+        """Checks that inventory accepts complete fixture."""
         self.sample_inventory()
         with patch('scripts.native_suite_cases.subprocess.run',side_effect=self.inventory_fixture()):
             checks=grade(self.folder,'inventory',self.root)
         self.assertEqual(len(checks),5);self.assertTrue(all(c['passed'] for c in checks),checks)
 
     def test_inventory_rejects_silent_read_failure(self):
+        """Checks that inventory rejects silent read failure."""
         self.sample_inventory()
         with patch('scripts.native_suite_cases.subprocess.run',side_effect=self.inventory_fixture(skip_unreadable=True)):
             checks=grade(self.folder,'inventory',self.root)
         self.assertFalse(next(c['passed'] for c in checks if c['check'].startswith('scan read failure')))
 
     def test_inventory_rejects_wrong_digest_and_missing_deliverable(self):
+        """Checks that inventory rejects wrong digest and missing deliverable."""
         with patch('scripts.native_suite_cases.subprocess.run',side_effect=self.inventory_fixture(wrong_digest=True)):
             checks=grade(self.folder,'inventory',self.root)
         self.assertFalse(checks[0]['passed']);self.assertFalse(checks[-1]['passed'])
 
     def test_ranges_rejects_missing_binary(self):
+        """Checks that ranges rejects missing binary."""
         self.assertEqual(grade(self.folder,'ranges',self.root),[{'check':'actual compiled CLI exists','passed':False}])
 
     def test_ranges_accepts_signed_boundary_fixture_but_rejects_partial_error_output(self):
+        """Checks that ranges accepts signed boundary fixture but rejects partial error output."""
         binary=self.folder/'target/debug/ranges';binary.parent.mkdir(parents=True);binary.touch()
         (self.folder/'ranges.json').write_text('[{"start":-1,"end":2},{"start":4,"end":5},{"start":9,"end":9}]')
         def invoke(args, **kwargs):
+            """Test helper: invoke."""
             try:values=sorted(set(map(int,Path(args[1]).read_text().split())))
             except ValueError:return subprocess.CompletedProcess(args,1,'','invalid integer')
             if any(v < -2**63 or v > 2**63-1 for v in values):return subprocess.CompletedProcess(args,1,'','out of range')
@@ -74,6 +90,7 @@ class NativeSuiteGradingTests(unittest.TestCase):
             checks=grade(self.folder,'ranges',self.root)
         self.assertEqual(len(checks),4);self.assertTrue(all(c['passed'] for c in checks),checks)
         def partial(args, **kwargs):
+            """Test helper: partial."""
             result=invoke(args,**kwargs)
             if result.returncode:result.stdout='[]'
             return result

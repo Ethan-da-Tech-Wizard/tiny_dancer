@@ -1,3 +1,7 @@
+# Program: tiny_dancer - tests/test_native_chat_timeout.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for native chat timeout (exercises app.engine, app.native_chat, app.task_policy).
 # SPDX-License-Identifier: Apache-2.0
 """Real local HTTP delay/cancellation checks without native model inference."""
 from concurrent.futures import ThreadPoolExecutor
@@ -16,12 +20,19 @@ from app.native_chat import generate
 from app.task_policy import contract_for
 
 
+# -------- native chat timeout tests --------
 class NativeChatTimeoutTests(unittest.TestCase):
+    """Test group for native chat timeout."""
     def make_engine(self,hang=False):
+        """Test helper: make engine."""
         entered=threading.Event();release=threading.Event();connections=[]
+        # -------- handler --------
         class Handler(BaseHTTPRequestHandler):
+            # Test helper: log message.
+            """Helper type handler."""
             def log_message(self,*args):pass
             def do_POST(self):
+                """Test helper: do POST."""
                 self.rfile.read(int(self.headers['Content-Length']))
                 if self.path=='/apply-template': data={'prompt':'fixture prompt'}
                 elif self.path=='/tokenize': data={'tokens':[1]*100}
@@ -39,6 +50,7 @@ class NativeChatTimeoutTests(unittest.TestCase):
                 self.send_response(200);self.send_header('Content-Type','application/json');self.end_headers();self.wfile.write(json.dumps(data).encode())
         server=ThreadingHTTPServer(('127.0.0.1',0),Handler)
         thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
+        # Test helper: cleanup.
         def cleanup():release.set();server.shutdown();server.server_close();thread.join()
         self.addCleanup(cleanup)
         client=httpx.Client(base_url='http://127.0.0.1:'+str(server.server_port),trust_env=False,
@@ -46,6 +58,7 @@ class NativeChatTimeoutTests(unittest.TestCase):
         self.addCleanup(client.close)
         def cancel_owned_server():
             # Models Stop killing the owned inference process/its pending socket.
+            """Test helper: cancel owned server."""
             for connection in connections:
                 try:connection.shutdown(socket.SHUT_RDWR)
                 except OSError:pass
@@ -56,12 +69,14 @@ class NativeChatTimeoutTests(unittest.TestCase):
         return engine,entered
 
     def generate(self,engine,flag):
+        """Test helper: generate."""
         contract=contract_for('Make a Python program','work',cwd='/fixture')
         contract['_auto_reply_continuation']=True
         return generate(engine,[Message.from_role_and_content(Role.USER,'Make a program').to_dict()],'/fixture',
             lambda *_:None,flag,2048,contract,'medium')
 
     def test_active_inference_outlives_transport_read_timer(self):
+        """Checks that active inference outlives transport read timer."""
         engine,_=self.make_engine();result,reason=self.generate(engine,threading.Event())
         self.assertEqual(reason,'EOS');self.assertEqual(len(result),1)
         engine.cancel.assert_not_called()
@@ -70,6 +85,7 @@ class NativeChatTimeoutTests(unittest.TestCase):
         self.assertEqual(engine.session.client.timeout.connect,1)
 
     def test_stop_interrupts_inference_waiting_for_first_byte(self):
+        """Checks that stop interrupts inference waiting for first byte."""
         engine,entered=self.make_engine(hang=True);flag=threading.Event()
         with ThreadPoolExecutor(max_workers=1) as pool:
             future=pool.submit(self.generate,engine,flag)

@@ -1,5 +1,10 @@
+# Program: tiny_dancer - validate_batching_ui.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Read-only live results/workspace validation; never starts model tasks.
 # SPDX-License-Identifier: Apache-2.0
 """Read-only live results/workspace validation; never starts model tasks."""
+# ---- Imports ----
 import argparse
 import asyncio
 import json
@@ -17,7 +22,9 @@ from app.validation_results import archive_report,refresh_results
 BASE = 'http://127.0.0.1:3210'
 
 
+# ---- Definitions ----
 async def main():
+    """Async step: main."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--export', action='store_true', help='Also inspect completed exact-user export session')
     args = parser.parse_args()
@@ -94,5 +101,6 @@ async def main():
         raise SystemExit(1)
 
 
+# ---- Script entry point ----
 if __name__ == '__main__':
     asyncio.run(main())

@@ -1,4 +1,9 @@
+# Program: tiny_dancer - tests/test_language_tools.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for language tools (exercises app.agent, app.language_tools, app.task_policy).
 # SPDX-License-Identifier: Apache-2.0
+"""Tests for language tools (exercises app.agent, app.language_tools, app.task_policy)."""
 import json
 import tempfile
 import threading
@@ -16,16 +21,21 @@ from app.tools import ComputerTools, ROOT, TOOLS
 from tests.test_agent import ScriptedEngine, call
 
 
+# -------- routing tests --------
 class RoutingTests(unittest.TestCase):
+    """Test group for routing."""
     def names(self, text, cwd=None):
+        """Test helper: names."""
         return {item['name'] for item in tools_for(contract_for(text,cwd=cwd),TOOLS)}
 
     def test_unrelated_tasks_do_not_load_language_schemas(self):
+        """Checks that unrelated tasks do not load language schemas."""
         for text in ('Who won the latest NFL game?', 'Write me a grocery list', 'Remove rust from the bicycle'):
             self.assertFalse(self.names(text) & {'python_lookup','rust_lookup'})
         self.assertIn('discover_tools',self.names('Who won the latest NFL game?'))
 
     def test_language_and_project_hints_select_only_relevant_tools(self):
+        """Checks that language and project hints select only relevant tools."""
         self.assertEqual(self.names('Look up Python pathlib docs') & {'python_lookup','rust_lookup'}, {'python_lookup'})
         self.assertEqual(self.names('What are the Cargo dependencies?') & {'python_lookup','rust_lookup'}, {'rust_lookup'})
         with tempfile.TemporaryDirectory() as folder:
@@ -34,21 +44,28 @@ class RoutingTests(unittest.TestCase):
             self.assertNotIn('rust_lookup',self.names('Who won the NFL game?',folder))
 
 
+# -------- lookup tests --------
 class LookupTests(unittest.IsolatedAsyncioTestCase):
+    """Test group for lookup."""
     async def asyncSetUp(self):
+        """Test helper: asyncSetUp."""
         self.temp = tempfile.TemporaryDirectory(dir=ROOT/'run/artifacts')
         self.path = Path(self.temp.name)
         self.artifacts, self.cache = self.path/'artifacts', self.path/'cache'
 
+    # Test helper: asyncTearDown.
     async def asyncTearDown(self): self.temp.cleanup()
 
     async def run_lookup(self, language, args, handler=None):
+        """Test helper: run lookup."""
         transport = httpx.MockTransport(handler) if handler else httpx.MockTransport(lambda r: self.fail('Unexpected network access'))
         return await lookup(language,args,str(self.path),self.artifacts,self.cache,transport)
 
     async def test_python_exact_version_dependency_markers_and_cache(self):
+        """Checks that python exact version dependency markers and cache."""
         calls = []
         def handle(request):
+            """Test helper: handle."""
             calls.append(str(request.url))
             return httpx.Response(200,json={'info':{'name':'httpx','version':'0.28.1','requires_python':'>=3.8',
                 'requires_dist':['anyio>=3; python_version >= "3.8"','rich; extra == "cli"'],
@@ -63,8 +80,10 @@ class LookupTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(first['license_expression'],'BSD-3-Clause')
 
     async def test_rust_pins_dependency_endpoint_and_preserves_features(self):
+        """Checks that rust pins dependency endpoint and preserves features."""
         calls = []
         def handle(request):
+            """Test helper: handle."""
             calls.append(request.url.path)
             self.assertIn('TinyDancer',request.headers['user-agent'])
             if request.url.path.endswith('/dependencies'):
@@ -79,8 +98,10 @@ class LookupTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(len(result['sources']),2)
 
     async def test_docs_version_anchor_excludes_navigation_and_scripts(self):
+        """Checks that docs version anchor excludes navigation and scripts."""
         urls = []
         def handle(request):
+            """Test helper: handle."""
             urls.append(str(request.url))
             return httpx.Response(200,text='<html><head><title>Pathlib</title></head><body><nav>NOISE</nav><main><h1>Pathlib</h1><section id="pathlib.Path"><p>Correct version.</p><pre>Path("a").read_text()</pre></section><section id="other">Wrong section</section><script>bad()</script></main></body></html>')
         result = await self.run_lookup('python',{'action':'docs','url':'https://docs.python.org/3.12/library/pathlib.html#pathlib.Path'},handle)
@@ -92,8 +113,10 @@ class LookupTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(result['source'].endswith('#pathlib.Path'))
 
     async def test_documentation_redirects_cannot_leave_reference_hosts(self):
+        """Checks that documentation redirects cannot leave reference hosts."""
         calls = []
         def handle(request):
+            """Test helper: handle."""
             calls.append(str(request.url))
             return httpx.Response(302,headers={'Location':'http://127.0.0.1/private'})
         with self.assertRaises(ValueError):
@@ -101,6 +124,7 @@ class LookupTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(len(calls),1)
 
     async def test_sphinx_and_rustdoc_anchors_include_the_method_description(self):
+        """Checks that sphinx and rustdoc anchors include the method description."""
         for language,url,html in (
             ('python','https://docs.python.org/3.12/library/pathlib.html#method','<main><dl><dt id="method">Signature</dt><dd>Description and examples</dd></dl><dl><dt>Next method</dt><dd>OTHER</dd></dl></main>'),
             ('rust','https://doc.rust-lang.org/stable/std/result/enum.Result.html#method','<main><details class="method-toggle"><summary><section id="method">Signature</section></summary><div class="docblock">Description and examples</div></details><details class="method-toggle">OTHER</details></main>'),
@@ -111,14 +135,17 @@ class LookupTests(unittest.IsolatedAsyncioTestCase):
                 self.assertNotIn('OTHER',result['text'])
 
     async def test_default_python_docs_and_exact_rust_crate_docs(self):
+        """Checks that default python docs and exact rust crate docs."""
         urls = []
         def handle(request):
+            """Test helper: handle."""
             urls.append(str(request.url)); return httpx.Response(200,text='<main>API docs</main>')
         await self.run_lookup('python',{'action':'docs','topic':'asyncio','version':'3.12'},handle)
         await self.run_lookup('rust',{'action':'docs','package':'serde-json','version':'1.0.1'},handle)
         self.assertEqual(urls,['https://docs.python.org/3.12/library/asyncio.html','https://docs.rs/serde-json/1.0.1/serde_json/'])
 
     async def test_errors_and_invalid_identifiers_are_not_saved_as_evidence(self):
+        """Checks that errors and invalid identifiers are not saved as evidence."""
         for language,args,status in (
             ('python',{'action':'package','package':'missing'},404),
             ('rust',{'action':'package','package':'missing'},429),
@@ -130,6 +157,7 @@ class LookupTests(unittest.IsolatedAsyncioTestCase):
         self.assertFalse(self.artifacts.exists())
 
     async def test_response_and_prompt_bounds_preserve_full_evidence(self):
+        """Checks that response and prompt bounds preserve full evidence."""
         rows = ['dependency'+str(n)+'>=1' for n in range(300)]
         result = await self.run_lookup('python',{'action':'package','package':'demo'},lambda r:httpx.Response(200,json={'info':{'name':'demo','version':'1','requires_dist':rows}}))
         self.assertTrue(result['truncated'])
@@ -140,6 +168,7 @@ class LookupTests(unittest.IsolatedAsyncioTestCase):
             await self.run_lookup('rust',{'action':'docs','topic':'book'},lambda r:httpx.Response(200,text='x'*2_000_001))
 
     async def test_local_python_manifest_groups_and_literal_includes_no_execution(self):
+        """Checks that local python manifest groups and literal includes no execution."""
         (self.path/'pyproject.toml').write_text('[project]\nname="demo"\nrequires-python=">=3.12"\ndependencies=["httpx>=0.28"]\n[project.optional-dependencies]\ntest=["pytest"]\n[dependency-groups]\ndev=[{include-group="test"}]\n')
         (self.path/'requirements.txt').write_text('requests==2.32.3\n-r other.txt\n--index-url https://example.com\n')
         (self.path/'setup.py').write_text('raise RuntimeError("Never execute this")')
@@ -152,6 +181,7 @@ class LookupTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(requirements['content']['directives'],['-r other.txt','--index-url https://example.com'])
 
     async def test_rust_local_manifest_targets_workspace_and_lock_versions(self):
+        """Checks that rust local manifest targets workspace and lock versions."""
         (self.path/'Cargo.toml').write_text('[package]\nname="demo"\nversion="0.1.0"\n[dependencies]\nserde={workspace=true}\n[workspace.dependencies]\nserde="1"\n[target.\'cfg(unix)\'.dependencies]\nlibc="0.2"\n')
         (self.path/'Cargo.lock').write_text('version=4\n[[package]]\nname="serde"\nversion="1.0.219"\nsource="registry+https://github.com/rust-lang/crates.io-index"\n')
         result = await self.run_lookup('rust',{'action':'dependencies'})
@@ -162,8 +192,11 @@ class LookupTests(unittest.IsolatedAsyncioTestCase):
         self.assertFalse(result['network_used'])
 
 
+# -------- agent discovery tests --------
 class AgentDiscoveryTests(unittest.IsolatedAsyncioTestCase):
+    """Test group for agent discovery."""
     async def test_late_discovery_changes_tools_and_survives_resume(self):
+        """Checks that late discovery changes tools and survives resume."""
         with tempfile.TemporaryDirectory(dir=ROOT/'workspace') as folder:
             Path(folder,'Cargo.toml').write_text('[dependencies]\nserde="1"\n')
             messages, events = [], []
@@ -181,6 +214,7 @@ class AgentDiscoveryTests(unittest.IsolatedAsyncioTestCase):
             await tools.close()
 
     async def test_discovery_does_no_network_and_unselected_lookup_is_rejected(self):
+        """Checks that discovery does no network and unselected lookup is rejected."""
         with tempfile.TemporaryDirectory() as folder:
             tools = ComputerTools()
             run = AgentRun(ScriptedEngine([]),tools,folder,SimpleNamespace(prompt='What does this do?',mode='agent',max_tokens=512),

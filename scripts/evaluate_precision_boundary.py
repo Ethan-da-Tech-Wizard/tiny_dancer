@@ -1,5 +1,10 @@
+# Program: tiny_dancer - evaluate_precision_boundary.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Post-terminal independent boundary checks; never supply model hints or edits.
 # SPDX-License-Identifier: Apache-2.0
 """Post-terminal independent boundary checks; never supply model hints or edits."""
+# ---- Imports ----
 import hashlib
 import json
 from pathlib import Path
@@ -15,7 +20,9 @@ from app.verification import source_hashes
 from scripts.evaluate_hardening_suite import runtime_digest
 
 
+# ---- Definitions ----
 def probe(folder,width):
+    """Step: probe. Inputs: folder, width."""
     folder=Path(folder).resolve();whole=('1234567890'*((width+9)//10))[:width]
     outcomes={}
     with tempfile.TemporaryDirectory(dir=folder) as temporary:
@@ -36,6 +43,7 @@ def probe(folder,width):
 
 
 def main():
+    """Step: main."""
     criteria_path=ROOT/'docs/native-money-extended-criteria.json'
     criteria=json.loads(criteria_path.read_text());native=json.loads((ROOT/'docs/precision-repair-retest-validation.json').read_text())
     if native.get('status') in ('running','starting'):raise SystemExit('Refusing boundary grading while native task is active')
@@ -61,4 +69,5 @@ def main():
     if not report['passed']:raise SystemExit(1)
 
 
+# ---- Script entry point ----
 if __name__=='__main__':main()

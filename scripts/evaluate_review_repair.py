@@ -1,5 +1,10 @@
+# Program: tiny_dancer - evaluate_review_repair.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Fresh-context repair experiment; never counted as fresh implementation.
 # SPDX-License-Identifier: Apache-2.0
 """Fresh-context repair experiment; never counted as fresh implementation."""
+# ---- Imports ----
 from datetime import datetime,timezone
 import argparse
 import hashlib
@@ -22,7 +27,9 @@ from scripts.native_observation import ProgressTracker,public_action_counts
 from app.validation_results import archive_report,refresh_results
 
 
+# ---- Definitions ----
 def main(with_regression=False):
+    """Step: main. Inputs: with_regression."""
     stamp=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ');case=CASES['inventory']
     prefix='regression-repair-inventory-' if with_regression else 'review-inventory-'
     folder=ROOT/'workspace'/(prefix+stamp);path=ROOT/'docs'/('native-'+prefix+stamp+'.json')
@@ -53,6 +60,7 @@ def main(with_regression=False):
             if baseline.returncode!=1 or 'test_unreadable_nested_directory' not in baseline.stdout:
                 raise RuntimeError('Required baseline regression did not reproduce')
         def save():
+            """Step: save."""
             temporary=path.with_suffix('.tmp');temporary.write_text(json.dumps(report,indent=2)+'\n');temporary.replace(path)
         save()
         response=client.post('/api/sessions',json={'title':'Validation · regression-guided repair' if with_regression else 'Validation · fresh-context contract review','cwd':str(folder)});response.raise_for_status();sid=response.json()['id']
@@ -87,6 +95,7 @@ def main(with_regression=False):
     print(json.dumps({'passed':report['passed'],'status':report['status'],'checks':report['checks'],'seconds':report['seconds']}),flush=True)
 
 
+# ---- Script entry point ----
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--with-regression',action='store_true');args=parser.parse_args()
     main(args.with_regression)

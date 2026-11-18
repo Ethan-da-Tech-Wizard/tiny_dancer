@@ -1,4 +1,9 @@
+# Program: tiny_dancer - verify_agent.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Actual local-model E2E: native function calls create and read back a file.
 """Actual local-model E2E: native function calls create and read back a file."""
+# ---- Imports ----
 import json
 import shlex
 import time

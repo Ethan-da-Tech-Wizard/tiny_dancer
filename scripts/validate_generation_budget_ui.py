@@ -1,5 +1,10 @@
+# Program: tiny_dancer - validate_generation_budget_ui.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Check budget validation and intercepted composer requests without inference.
 # SPDX-License-Identifier: Apache-2.0
 """Check budget validation and intercepted composer requests without inference."""
+# ---- Imports ----
 import asyncio
 from datetime import datetime, timezone
 import json
@@ -18,7 +23,9 @@ BASE = 'http://127.0.0.1:3210'
 SID = 'e49878f2e88542cdaefe0fe660e32307'
 
 
+# ---- Definitions ----
 async def main():
+    """Async step: main."""
     report = {'at': datetime.now(timezone.utc).isoformat(), 'checks': {}, 'errors': [],
               'scope': 'Actual nullable/bounded API validation against a nonexistent session, plus intercepted browser POSTs. No native task started, resumed or stopped.'}
     with httpx.Client(base_url=BASE, timeout=10) as client:
@@ -43,11 +50,13 @@ async def main():
                 received = asyncio.Event()
 
                 async def task_route(route):
+                    """Async step: task route. Inputs: route."""
                     posted.append(route.request.post_data_json)
                     await route.fulfill(json={'job': 'budget-fixture'})
                     received.set()
 
                 async def fixture_route(route):
+                    """Async step: fixture route. Inputs: route."""
                     if route.request.url.endswith('/events'):
                         await route.fulfill(content_type='text/event-stream', body='event: closed\ndata: {}\n\n')
                     else:
@@ -92,5 +101,6 @@ async def main():
         raise SystemExit(1)
 
 
+# ---- Script entry point ----
 if __name__ == '__main__':
     asyncio.run(main())

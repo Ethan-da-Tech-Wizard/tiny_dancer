@@ -1,5 +1,10 @@
+# Program: tiny_dancer - ask.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Terminal client with continuous Agent work and incremental public events.
 # SPDX-License-Identifier: Apache-2.0
 """Terminal client with continuous Agent work and incremental public events."""
+# ---- Imports ----
 import argparse
 import json
 import sys
@@ -10,7 +15,9 @@ import httpx
 ROOT=Path('/mnt/GameDrive/tiny_dancer')
 
 
+# ---- Definitions ----
 def parse_options(argv=None):
+    """Step: parse options. Inputs: argv."""
     parser=argparse.ArgumentParser(description='Ask the local Tiny Dancer computer agent')
     parser.add_argument('prompt',nargs='*')
     parser.add_argument('--session',help='Start a new goal in an existing session')
@@ -27,6 +34,7 @@ def parse_options(argv=None):
 
 
 def task_options(args,resume=False):
+    """Step: task options. Inputs: args, resume."""
     body={}
     if not resume or args.max_tokens is not None:body['max_tokens']=args.max_tokens
     if not resume:body.update(prompt=' '.join(args.prompt),mode='chat' if args.chat else 'agent',run_until_done=args.run_until_done if args.run_until_done is not None else not args.chat)
@@ -35,6 +43,7 @@ def task_options(args,resume=False):
 
 
 def watch(client,job,stdout=sys.stdout,stderr=sys.stderr):
+    """Step: watch. Inputs: client, job, stdout, stderr."""
     cursor=0
     while True:
         try:
@@ -56,6 +65,7 @@ def watch(client,job,stdout=sys.stdout,stderr=sys.stderr):
 
 
 def main():
+    """Step: main."""
     args=parse_options()
     with httpx.Client(base_url='http://127.0.0.1:3210',trust_env=False,timeout=20) as client:
         client.get('/').raise_for_status();sid=args.session
@@ -77,4 +87,5 @@ def main():
             return 130
 
 
+# ---- Script entry point ----
 if __name__=='__main__':raise SystemExit(main())

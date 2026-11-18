@@ -1,5 +1,10 @@
+# Program: tiny_dancer - labels_goal_audit.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Independent Unicode behavior audit; declared after the original labels trial.
 # SPDX-License-Identifier: Apache-2.0
 """Independent Unicode behavior audit; declared after the original labels trial."""
+# ---- Imports ----
 import itertools
 import json
 from pathlib import Path
@@ -14,7 +19,9 @@ CRITERIA = (
 )
 
 
+# ---- Definitions ----
 def cases():
+    """Step: cases."""
     groups = [
         ['i\u0307', ' x i\u0307 y '],
         ['\u0130', '\u00c7\u00dc\u0130  123'],

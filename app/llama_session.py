@@ -1,5 +1,10 @@
+# Program: tiny_dancer - llama_session.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Isolated same-model session adapter; compatible with the native Harmony runner.
 # SPDX-License-Identifier: Apache-2.0
 """Isolated same-model session adapter; compatible with the native Harmony runner."""
+# ---- Imports ----
 import json
 import hashlib
 import secrets
@@ -13,7 +18,9 @@ from app.sampling import native_temperature
 from app.model_cache import select_model
 
 
+# ---- Definitions ----
 def batch_arguments(config):
+    """Step: batch arguments. Inputs: config."""
     batch = config.get('llama_batch_size', 128)
     microbatch = config.get('llama_microbatch_size', batch)
     if (type(batch) is not int or type(microbatch) is not int or
@@ -23,6 +30,7 @@ def batch_arguments(config):
 
 
 def template_arguments(root,config):
+    """Step: template arguments. Inputs: root, config."""
     template_name=config.get('llama_chat_template_file')
     if not template_name:return []
     template=(root/template_name).resolve()
@@ -34,7 +42,9 @@ def template_arguments(root,config):
 
 
 class LlamaReferenceSession:
+    """Defines the llamareferencesession type."""
     def __init__(self, root, config, on_process_started=None):
+        """Step: init. Inputs: root, config, on_process_started."""
         batch_args = batch_arguments(config)
         binary = root/'build/llama-reference/bin/llama-server'
         model = root/'models/gpt-oss-20b-native-mxfp4/gpt-oss-20b-MXFP4.gguf'
@@ -84,6 +94,7 @@ class LlamaReferenceSession:
             raise
 
     def close(self):
+        """Step: close."""
         if self.proc.poll() is None:
             self.proc.terminate()
             try: self.proc.wait(timeout=3)
@@ -92,6 +103,7 @@ class LlamaReferenceSession:
         self.client.close()
 
     def turn(self, ids, max_new, keep, on_token, temperature=None, **unused):
+        """Step: turn. Inputs: ids, max_new, keep, on_token, temperature."""
         if type(keep) is not int or not 0 <= keep <= len(self.tokens):
             raise ValueError('Invalid retained prefix')
         if type(max_new) is not int or max_new <= 0:

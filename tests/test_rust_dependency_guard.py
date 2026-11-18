@@ -1,4 +1,9 @@
+# Program: tiny_dancer - tests/test_rust_dependency_guard.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for rust dependency guard (exercises app.deliverables, app.task_policy).
 # SPDX-License-Identifier: Apache-2.0
+"""Tests for rust dependency guard (exercises app.deliverables, app.task_policy)."""
 import tempfile
 from pathlib import Path
 import unittest
@@ -7,8 +12,11 @@ from app.deliverables import inspect_deliverables,verification_paths
 from app.task_policy import contract_for
 
 
+# -------- dependency completion tests --------
 class DependencyCompletionTests(unittest.TestCase):
+    """Test group for dependency completion."""
     def setUp(self):
+        """Prepare the fixtures for each test."""
         self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup)
         self.root=Path(self.temp.name)
         (self.root/'report.json').write_text('[]\n')
@@ -17,41 +25,50 @@ class DependencyCompletionTests(unittest.TestCase):
         self.contract=contract_for(self.goal)
 
     def issue(self,manifest):
+        """Test helper: issue."""
         (self.root/'Cargo.toml').write_text(manifest)
         return inspect_deliverables(self.contract,self.state)[0]
 
     def test_saved_json_cannot_hide_forbidden_dependencies(self):
+        """Checks that saved json cannot hide forbidden dependencies."""
         issue=self.issue('[package]\nname="ranges"\nversion="0.1.0"\n[dependencies]\nserde_json="1.0"\n')
         self.assertIsNotNone(issue);self.assertIn('serde_json',issue)
 
     def test_actual_manifest_is_part_of_source_proof(self):
+        """Checks that actual manifest is part of source proof."""
         self.issue('[package]\nname="ranges"\nversion="0.1.0"\n')
         self.assertIn(str(self.root/'Cargo.toml'),verification_paths(self.contract,self.state))
 
     def test_removing_dependency_repairs_constraint_and_preserves_json_check(self):
+        """Checks that removing dependency repairs constraint and preserves json check."""
         self.assertIsNone(self.issue('[package]\nname="ranges"\nversion="0.1.0"\n[dependencies]\n'))
         (self.root/'report.json').unlink()
         self.assertIn('Save the requested JSON',inspect_deliverables(self.contract,self.state)[0])
 
     def test_target_and_test_dependencies_are_checked(self):
+        """Checks that target and test dependencies are checked."""
         issue=self.issue('[package]\nname="ranges"\nversion="0.1.0"\n[target."cfg(unix)".dev-dependencies]\nhelper="1.0"\n')
         self.assertIsNotNone(issue);self.assertIn('helper',issue)
 
     def test_unreadable_manifest_does_not_establish_compliance(self):
+        """Checks that unreadable manifest does not establish compliance."""
         self.assertIsNotNone(self.issue('this is not TOML'))
 
     def test_dependencies_remain_allowed_when_user_allows_them(self):
+        """Checks that dependencies remain allowed when user allows them."""
         self.state['goal']='Create a Rust Cargo application; dependencies are allowed. Write report.json.'
         self.contract=contract_for(self.state['goal'])
         self.assertIsNone(self.issue('[dependencies]\nserde_json="1.0"\n'))
 
     def test_python_goal_does_not_inspect_unrelated_cargo_manifest(self):
+        """Checks that python goal does not inspect unrelated cargo manifest."""
         self.state['goal']='Write a standard-library-only Python script and report.json.'
         self.contract=contract_for(self.state['goal'])
         self.assertIsNone(self.issue('[dependencies]\nserde_json="1.0"\n'))
 
 
     def test_existing_dependencies_allowed_when_only_new_ones_forbidden(self):
+        """Checks that existing dependencies allowed when only new ones forbidden."""
         self.state['goal']='Fix a Rust application. Do not add external dependencies. Write report.json.'
         self.contract=contract_for(self.state['goal'])
         self.assertIsNone(self.issue('[dependencies]\nserde_json="1.0"\n'))

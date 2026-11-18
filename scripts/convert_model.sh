@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+# Program: tiny_dancer - convert_model.sh
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Runs the bounded-memory model conversion, writing checkpoint notes before and after it.
 set -euo pipefail
 source /mnt/GameDrive/tiny_dancer/scripts/env.sh
 cd "$TINY_DANCER_ROOT"

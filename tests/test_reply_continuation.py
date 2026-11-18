@@ -1,4 +1,9 @@
+# Program: tiny_dancer - tests/test_reply_continuation.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for reply continuation (exercises app.engine, app.llama_session, app.reply_continuation).
 # SPDX-License-Identifier: Apache-2.0
+"""Tests for reply continuation (exercises app.engine, app.llama_session, app.reply_continuation)."""
 import json
 from types import SimpleNamespace
 import threading
@@ -13,8 +18,11 @@ from app.reply_continuation import continue_reply
 from tests.raw_engine_fixture import legacy_raw_engine
 
 
+# -------- native continuation tests --------
 class NativeContinuationTests(unittest.TestCase):
+    """Test group for native continuation."""
     def engine(self,reply,auto=True,agent=True,profile='greedy',backend='llama.cpp'):
+        """Test helper: engine."""
         encoding=load_harmony_encoding(HarmonyEncodingName.HARMONY_GPT_OSS)
         prefix=list(encoding.render_conversation_for_completion(Conversation.from_messages([]),Role.ASSISTANT))
         output=list(encoding.render_conversation(Conversation.from_messages(reply)))[len(prefix):]
@@ -22,6 +30,7 @@ class NativeContinuationTests(unittest.TestCase):
         cut=len(output)//2+1;parts=[output[:cut],output[cut:]]
         self.requests=[]
         def handle(request):
+            """Test helper: handle."""
             self.requests.append(json.loads(request.content))
             tokens=parts.pop(0)
             event={'tokens':tokens,'stop':True,'stop_type':'limit' if parts else 'eos',
@@ -39,6 +48,7 @@ class NativeContinuationTests(unittest.TestCase):
         return engine,result,output,cut
 
     def test_unfinished_thought_continues_to_real_final_without_restart(self):
+        """Checks that unfinished thought continues to real final without restart."""
         reply=[Message.from_role_and_content(Role.ASSISTANT,'Private test scratch.').with_channel('analysis'),
                Message.from_role_and_content(Role.ASSISTANT,'Done.').with_channel('final')]
         engine,(messages,reason),output,cut=self.engine(reply)
@@ -49,6 +59,7 @@ class NativeContinuationTests(unittest.TestCase):
         self.assertTrue(all('Private test scratch' not in str(data) for kind,data in self.events))
 
     def test_partial_tool_arguments_finish_before_dispatch(self):
+        """Checks that partial tool arguments finish before dispatch."""
         reply=[Message.from_role_and_content(Role.ASSISTANT,'Private test scratch.').with_channel('analysis'),
                Message.from_role_and_content(Role.ASSISTANT,'{"path":"x.txt","content":"ok"}').with_channel('commentary').with_recipient('functions.write_file')]
         _,(messages,reason),_,_=self.engine(reply)
@@ -56,12 +67,14 @@ class NativeContinuationTests(unittest.TestCase):
         self.assertEqual(json.loads(text_of_message(calls[0])),{'path':'x.txt','content':'ok'})
 
     def test_explicit_reply_allowance_stays_capped(self):
+        """Checks that explicit reply allowance stays capped."""
         reply=[Message.from_role_and_content(Role.ASSISTANT,'Private test scratch.').with_channel('analysis'),
                Message.from_role_and_content(Role.ASSISTANT,'Done.').with_channel('final')]
         _,(_,reason),_,_=self.engine(reply,auto=False)
         self.assertEqual(reason,'MAX_TOKENS');self.assertEqual(len(self.requests),1)
 
     def test_recommended_sampling_is_preserved_across_native_chunks(self):
+        """Checks that recommended sampling is preserved across native chunks."""
         reply=[Message.from_role_and_content(Role.ASSISTANT,'Private test scratch.').with_channel('analysis'),
                Message.from_role_and_content(Role.ASSISTANT,'Done.').with_channel('final')]
         engine,(_,reason),_,_=self.engine(reply,profile='recommended')
@@ -75,43 +88,53 @@ class NativeContinuationTests(unittest.TestCase):
         self.assertEqual(engine.last_timing['sampling_temperature'],1.0)
 
     def test_picchio_keeps_its_legacy_greedy_call_with_native_profile_present(self):
+        """Checks that picchio keeps its legacy greedy call with native profile present."""
         reply=[Message.from_role_and_content(Role.ASSISTANT,'Done.').with_channel('final')]
         _,(_,reason),_,_=self.engine(reply,auto=False,profile='recommended',backend='picchio')
         self.assertEqual(reason,'MAX_TOKENS');self.assertEqual(len(self.requests),1)
         self.assertEqual(self.requests[0]['temperature'],0.0)
 
     def test_chat_does_not_expand_explicit_output(self):
+        """Checks that chat does not expand explicit output."""
         reply=[Message.from_role_and_content(Role.ASSISTANT,'Private test scratch.').with_channel('analysis'),
                Message.from_role_and_content(Role.ASSISTANT,'Done.').with_channel('final')]
         _,(_,reason),_,_=self.engine(reply,auto=True,agent=False)
         self.assertEqual(reason,'MAX_TOKENS');self.assertEqual(len(self.requests),1)
 
 
+# -------- continuation bounds tests --------
 class ContinuationBoundsTests(unittest.TestCase):
+    """Test group for continuation bounds."""
     def session(self,ctx,respond):
+        """Test helper: session."""
         self.calls=[]
         def turn(ids,allowance,keep,callback,**kwargs):
+            """Test helper: turn."""
             self.calls.append((ids,allowance,keep))
             return respond(allowance)
         return SimpleNamespace(ctx=ctx,last_timing={},turn=turn)
 
     def test_only_remaining_context_is_used(self):
+        """Checks that only remaining context is used."""
         session=self.session(20,lambda allowance:([7]*allowance,'MAX_TOKENS',0))
         tokens,reason,_=continue_reply(session,15,[1,2,3],'MAX_TOKENS',10,lambda token:None)
         self.assertEqual(self.calls,[([],1,18)]);self.assertEqual(tokens,[1,2,3,7]);self.assertEqual(reason,'CONTEXT_FULL')
 
     def test_empty_receipt_stops_instead_of_looping(self):
+        """Checks that empty receipt stops instead of looping."""
         session=self.session(128,lambda allowance:([],'MAX_TOKENS',0))
         with self.assertRaisesRegex(RuntimeError,'bounded'):continue_reply(session,10,[1],'MAX_TOKENS',10,lambda token:None)
         self.assertEqual(len(self.calls),1)
 
     def test_continuation_stops_at_real_context_capacity(self):
+        """Checks that continuation stops at real context capacity."""
         session=self.session(15,lambda allowance:([7]*allowance,'MAX_TOKENS',0))
         tokens,reason,timing=continue_reply(session,10,[1],'MAX_TOKENS',1,lambda token:None)
         self.assertEqual(len(self.calls),3);self.assertEqual(len(tokens),4);self.assertEqual(reason,'CONTEXT_FULL')
         self.assertEqual(timing['native_reply_chunks'],4)
 
     def test_useful_reply_can_finish_after_the_old_four_chunk_limit(self):
+        """Checks that useful reply can finish after the old four chunk limit."""
         parts=iter([([7]*2048,'MAX_TOKENS',0)]*4+[([8,9],'EOS',0)])
         session=self.session(32768,lambda allowance:next(parts))
         tokens,reason,timing=continue_reply(session,100,[1]*2048,'MAX_TOKENS',2048,lambda token:None)
@@ -120,6 +143,7 @@ class ContinuationBoundsTests(unittest.TestCase):
         self.assertEqual(timing['native_reply_chunks'],6)
 
     def test_invalid_chunk_cannot_create_a_nonprogressing_loop(self):
+        """Checks that invalid chunk cannot create a nonprogressing loop."""
         session=self.session(128,lambda allowance:([7]*allowance,'MAX_TOKENS',0))
         for chunk in (0,-1,True,1.5):
             with self.subTest(chunk=chunk),self.assertRaises(ValueError):
@@ -127,15 +151,19 @@ class ContinuationBoundsTests(unittest.TestCase):
         self.assertEqual(self.calls,[])
 
     def test_oversized_receipt_is_rejected(self):
+        """Checks that oversized receipt is rejected."""
         session=self.session(128,lambda allowance:([7]*(allowance+1),'MAX_TOKENS',0))
         with self.assertRaisesRegex(RuntimeError,'bounded'):
             continue_reply(session,10,[1],'MAX_TOKENS',10,lambda token:None)
 
     def test_stop_interrupts_a_late_continuation(self):
+        """Checks that stop interrupts a late continuation."""
         def cancelled(token):
+            """Test helper: cancelled."""
             raise InterruptedError('User stopped the task')
         calls=[]
         def turn(ids,allowance,keep,callback,**kwargs):
+            """Test helper: turn."""
             calls.append(keep);callback(7)
         session=SimpleNamespace(ctx=32768,last_timing={},turn=turn)
         with self.assertRaises(InterruptedError):

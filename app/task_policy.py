@@ -1,11 +1,17 @@
+# Program: tiny_dancer - task_policy.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Trusted task constraints derived from the current user request and host date.
 # SPDX-License-Identifier: Apache-2.0
 """Trusted task constraints derived from the current user request and host date."""
+# ---- Imports ----
 import re
 from pathlib import Path
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
 
+# ---- Definitions ----
 def lookup_languages(prompt, cwd=None):
     """Expose language tools for relevant goals; discovery handles missed cues."""
     text = prompt.lower()
@@ -48,6 +54,7 @@ def completed_weekday(prompt, today, weekday):
 
 
 def contract_for(prompt, kind='auto', today=None, cwd=None):
+    """Step: contract for. Inputs: prompt, kind, today, cwd."""
     today = today or datetime.now(ZoneInfo('America/Phoenix')).date()
     text = prompt.lower()
     action = re.search(r'\b(create|edit|install|implement|fix|build|write|run|execute|delete|rename|move|open|modify|update|change|add|remove|launch|stop|debug|optimize|configure|save|export|store)\b', text)
@@ -86,6 +93,7 @@ def contract_for(prompt, kind='auto', today=None, cwd=None):
 
 
 def answer_issue(text, contract, sources):
+    """Step: answer issue. Inputs: text, contract, sources."""
     if not text.strip():
         return 'The answer is empty.'
     if contract['needs_source'] and not any(source in text for source in sources):
@@ -100,6 +108,7 @@ def answer_issue(text, contract, sources):
 
 
 def tools_for(contract, definitions):
+    """Step: tools for. Inputs: contract, definitions."""
     languages = set(contract.get('lookup_languages', []))
     definitions = [tool for tool in definitions if tool['name'] not in ('python_lookup','rust_lookup')
                    or tool['name'].removesuffix('_lookup') in languages]

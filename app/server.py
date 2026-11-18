@@ -1,3 +1,9 @@
+# Program: tiny_dancer - server.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Serves the local web workspace and its HTTP API for submitting, streaming, resuming and inspecting agent jobs.
+"""Serves the local web workspace and its HTTP API for submitting, streaming, resuming and inspecting agent jobs."""
+# ---- Imports ----
 import asyncio
 import hmac
 import json
@@ -35,7 +41,9 @@ os.chmod(TOKEN, 0o600)
 DB = RUN / 'workspace.sqlite3'
 db_lock = threading.Lock()
 
+# ---- Definitions ----
 def query(sql, params=(), one=False):
+    """Step: query. Inputs: sql, params, one."""
     with db_lock, sqlite3.connect(DB, timeout=15) as con:
         con.row_factory = sqlite3.Row
         cursor = con.execute(sql, params)
@@ -60,9 +68,11 @@ cancel_flags = {}
 active_job = None
 
 def text_of(message):
+    """Step: text of. Inputs: message."""
     return ''.join(c.text for c in message.content if isinstance(c, TextContent))
 
 def save_message(session, message, display_role=None):
+    """Step: save message. Inputs: session, message, display_role."""
     with db_lock, sqlite3.connect(DB, timeout=15) as con:
         cursor = con.execute('INSERT INTO messages(session,role,text,harmony,created) VALUES(?,?,?,?,?)',
             (session, display_role or str(message.author.role.value), text_of(message),
@@ -70,6 +80,7 @@ def save_message(session, message, display_role=None):
         return cursor.lastrowid
 
 def event(job, kind, data):
+    """Step: event. Inputs: job, kind, data."""
     query('INSERT INTO events(job,kind,data,created) VALUES(?,?,?,?)', (job, kind, json.dumps(data), time.time()))
     if kind in ('tool_start', 'tool_result', 'error', 'done', 'cancelled', 'checkpoint', 'continuation'):
         with (ROOT / 'logs/agent-audit.jsonl').open('a') as f:
@@ -77,7 +88,9 @@ def event(job, kind, data):
 
 @asynccontextmanager
 async def lifespan(app):
+    """Async step: lifespan. Inputs: app."""
     async def idle_maintenance():
+        """Async step: idle maintenance."""
         while True:
             await asyncio.sleep(10)
             seconds = engine.config.get('idle_unload_seconds', 300)
@@ -102,6 +115,7 @@ app = FastAPI(title='Tiny Dancer', lifespan=lifespan, docs_url=None, redoc_url=N
 
 @app.middleware('http')
 async def local_auth(request, call_next):
+    """Async step: local auth. Inputs: request, call_next."""
     host = request.headers.get('host', '').split(':')[0]
     if host not in ('127.0.0.1', 'localhost', 'testserver'):
         return JSONResponse({'detail':'Invalid local host'}, status_code=403)
@@ -131,6 +145,7 @@ def test_results(): return collect_results(ROOT)
 
 @app.get('/api/test-results/{identifier}')
 def test_evidence(identifier: str):
+    """Step: test evidence. Inputs: identifier."""
     try: return FileResponse(evidence_path(ROOT,identifier,collect_results(ROOT)))
     except ValueError: raise HTTPException(404,'Unknown test evidence')
 
@@ -138,6 +153,7 @@ app.mount('/static', StaticFiles(directory=str(ROOT / 'app/static')), name='stat
 app.mount('/artifacts', StaticFiles(directory=str(RUN / 'artifacts')), name='artifacts')
 
 def persist_checkpoint(job, state):
+    """Step: persist checkpoint. Inputs: job, state."""
     serialized = json.dumps(state)
     query('UPDATE job_context SET checkpoint=? WHERE job=?', (serialized, job))
     directory = RUN / 'tasks'
@@ -148,6 +164,7 @@ def persist_checkpoint(job, state):
 
 @app.post('/api/sessions/{sid}/editor')
 async def open_editor(sid: str):
+    """Async step: open editor. Inputs: sid."""
     s = query('SELECT * FROM sessions WHERE id=?', (sid,), one=True)
     if not s: raise HTTPException(404, 'Session not found')
     try: return await tools.editor({'action':'open','path':s['cwd']}, s['cwd'])
@@ -155,11 +172,13 @@ async def open_editor(sid: str):
 
 @app.get('/api/observe')
 async def observe(source: str = 'browser'):
+    """Async step: observe. Inputs: source."""
     try: return await tools.observe(source)
     except Exception as exc: raise HTTPException(400, str(exc))
 
 @app.patch('/api/sessions/{sid}')
 def change_directory(sid: str, data: NewSession):
+    """Step: change directory. Inputs: sid, data."""
     if active_job: raise HTTPException(409, 'Stop the current task before changing its folder')
     path = Path(data.cwd).expanduser().resolve()
     if not path.is_dir(): raise HTTPException(400, 'Working directory must exist')
@@ -169,6 +188,7 @@ def change_directory(sid: str, data: NewSession):
 
 @app.get('/api/status')
 def status():
+    """Step: status."""
     vm = psutil.virtual_memory()
     disk = psutil.disk_usage(ROOT)
     if engine.session and engine.session.proc.poll() is not None and engine.status in ('ready', 'generating', 'processing prompt'):
@@ -199,6 +219,7 @@ def task_snapshot(job):
 
 @app.get('/api/jobs/{job}/progress')
 def job_progress(job):
+    """Step: job progress. Inputs: job."""
     return task_snapshot(job)
 
 @app.get('/api/sessions')
@@ -206,6 +227,7 @@ def sessions(): return query('SELECT * FROM sessions ORDER BY created DESC')
 
 @app.post('/api/sessions')
 def new_session(data: NewSession):
+    """Step: new session. Inputs: data."""
     cwd = Path(data.cwd).expanduser().resolve()
     if not cwd.is_dir(): raise HTTPException(400, 'Working directory must exist')
     sid = uuid.uuid4().hex
@@ -214,6 +236,7 @@ def new_session(data: NewSession):
 
 @app.get('/api/sessions/{sid}')
 def session(sid):
+    """Step: session. Inputs: sid."""
     s = query('SELECT * FROM sessions WHERE id=?', (sid,), one=True)
     if not s: raise HTTPException(404, 'Session not found')
     s['messages'] = query('SELECT id,role,text,harmony,created FROM messages WHERE session=? ORDER BY id', (sid,))
@@ -225,6 +248,7 @@ def session(sid):
 
 @app.post('/api/sessions/{sid}/tasks')
 async def start_task(sid: str, data: NewTask):
+    """Async step: start task. Inputs: sid, data."""
     global active_job
     s = query('SELECT * FROM sessions WHERE id=?', (sid,), one=True)
     if not s: raise HTTPException(404, 'Session not found')
@@ -247,10 +271,12 @@ async def start_task(sid: str, data: NewTask):
     return {'job':job}
 
 async def run_agent(job, s, data, flag, checkpoint=None):
+    """Async step: run agent. Inputs: job, s, data, flag, checkpoint."""
     global active_job
     sid = s['id']
     try:
         def history():
+            """Step: history."""
             return task_history(query('SELECT id,harmony FROM messages WHERE session=? ORDER BY id', (sid,)),
                                 data.prompt, data.mode, run.state)
         run = AgentRun(engine, tools, s['cwd'], data,
@@ -279,6 +305,7 @@ async def run_agent(job, s, data, flag, checkpoint=None):
 
 @app.post('/api/jobs/{job}/resume')
 async def resume(job: str, options: ResumeTask):
+    """Async step: resume. Inputs: job, options."""
     global active_job
     if active_job: raise HTTPException(409, 'Another task is running')
     previous = query('SELECT * FROM jobs WHERE id=?', (job,), one=True)
@@ -326,6 +353,7 @@ async def resume(job: str, options: ResumeTask):
 
 @app.post('/api/jobs/{job}/stop')
 async def stop(job):
+    """Async step: stop. Inputs: job."""
     if job not in cancel_flags: raise HTTPException(404, 'Task is not running')
     cancel_flags[job].set()
     engine.cancel()
@@ -334,6 +362,7 @@ async def stop(job):
 
 @app.get('/api/jobs/{job}')
 def job_status(job):
+    """Step: job status. Inputs: job."""
     j = query('SELECT * FROM jobs WHERE id=?', (job,), one=True)
     if not j: raise HTTPException(404, 'Job not found')
     j['events'] = query('SELECT * FROM events WHERE job=? ORDER BY id', (job,))
@@ -343,10 +372,12 @@ def job_status(job):
 
 @app.get('/api/jobs/{job}/events')
 async def events(job: str, request: Request, after: int = 0):
+    """Async step: events. Inputs: job, request, after."""
     if not query('SELECT id FROM jobs WHERE id=?', (job,), one=True): raise HTTPException(404, 'Job not found')
     try: after = max(after, int(request.headers.get('last-event-id', '0')))
     except ValueError: pass
     async def stream():
+        """Async step: stream."""
         cursor = after
         while True:
             rows = query('SELECT * FROM events WHERE job=? AND id>? ORDER BY id', (job, cursor))
@@ -362,6 +393,7 @@ async def events(job: str, request: Request, after: int = 0):
 
 @app.get('/api/sessions/{sid}/export')
 def export(sid):
+    """Step: export. Inputs: sid."""
     s = session(sid)
     text = f"# {s['title']}\n\nWorking directory: `{s['cwd']}`\n\n"
     for m in s['messages']:
@@ -375,6 +407,7 @@ def models(): return {'object':'list','data':[{'id':'gpt-oss-20b','object':'mode
 
 @app.post('/v1/chat/completions')
 async def completions(request: Request):
+    """Async step: completions. Inputs: request."""
     if active_job: raise HTTPException(409, 'Computer agent is using the model')
     data = await request.json()
     if data.get('stream'): raise HTTPException(400, 'Use workspace events for streaming; this compatibility endpoint is non-streaming')

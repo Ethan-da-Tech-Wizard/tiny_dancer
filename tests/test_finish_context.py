@@ -1,3 +1,7 @@
+# Program: tiny_dancer - tests/test_finish_context.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for finish context.
 # SPDX-License-Identifier: Apache-2.0
 """A factual final review can finish, remain open, or reject stale evidence."""
 import json
@@ -7,19 +11,23 @@ from tests.test_post_edit_checks import PostEditCheckTests
 from tests.test_agent import call
 
 
+# -------- finish context tests --------
 class FinishContextTests(unittest.IsolatedAsyncioTestCase):
+    """Test group for finish context."""
     asyncSetUp=PostEditCheckTests.asyncSetUp
     asyncTearDown=PostEditCheckTests.asyncTearDown
     runner=PostEditCheckTests.runner
     prepare=PostEditCheckTests.prepare
 
     async def passing(self,run):
+        """Test helper: passing."""
         await self.prepare(run)
         await run.execute('write_file',{'path':'program.py','content':'def add(a,b):return a+b\n'})
         await run.check_after_edit()
         self.assertTrue(run.state['verified'])
 
     async def test_actual_pass_gets_goal_review_and_native_final_not_host_final(self):
+        """Checks that actual pass gets goal review and native final not host final."""
         final=Message.from_role_and_content(Role.ASSISTANT,'Implemented and tested.').with_channel('final')
         run=self.runner([call('write_file',{'path':'program.py','content':'def add(a,b):return a+b\n'}),final])
         await self.prepare(run)
@@ -31,12 +39,14 @@ class FinishContextTests(unittest.IsolatedAsyncioTestCase):
         self.assertIn('concise final',prompt)
 
     async def test_failed_real_check_never_enters_finish_review(self):
+        """Checks that failed real check never enters finish review."""
         run=self.runner();await self.prepare(run)
         await run.review_completion()
         self.assertFalse(run.state['verified'])
         self.assertNotIn('completion_reviews',run.state)
 
     async def test_missing_requested_file_blocks_finish_review(self):
+        """Checks that missing requested file blocks finish review."""
         run=self.runner();run.contract['deliverables']={'json':True,'path':'report.json'}
         await self.prepare(run)
         await run.execute('write_file',{'path':'program.py','content':'def add(a,b):return a+b\n'})
@@ -45,6 +55,7 @@ class FinishContextTests(unittest.IsolatedAsyncioTestCase):
         self.assertNotIn('completion_reviews',run.state)
 
     async def test_same_verified_files_get_one_review_and_external_change_invalidates(self):
+        """Checks that same verified files get one review and external change invalidates."""
         run=self.runner();await self.passing(run)
         await run.review_completion();await run.review_completion()
         self.assertEqual(run.state['completion_reviews'],1)
@@ -55,6 +66,7 @@ class FinishContextTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(run.state['completion_reviews'],1)
 
     async def test_pending_step_remains_open_then_can_be_reviewed_when_done(self):
+        """Checks that pending step remains open then can be reviewed when done."""
         run=self.runner();await self.passing(run)
         run.state['steps']=[{'title':'Check the requested signed case','done':False}]
         await run.review_completion()
@@ -64,11 +76,13 @@ class FinishContextTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(run.state['completion_reviews'],1)
 
     async def test_recovery_reason_is_in_model_context_not_only_ui_event(self):
+        """Checks that recovery reason is in model context not only ui event."""
         run=self.runner()
         run.compact_context('CONTROL_REASON_SENTINEL: repair the actual failed assertions.')
         self.assertIn('CONTROL_REASON_SENTINEL',json.dumps(run.prompt_history()))
 
     async def test_success_review_preserves_history_instead_of_rebuilding_the_prompt(self):
+        """Checks that success review preserves history instead of rebuilding the prompt."""
         run=self.runner();await self.passing(run)
         before=list(run.prompt_history());compactions=run.state.get('context_compactions',0)
         await run.review_completion()

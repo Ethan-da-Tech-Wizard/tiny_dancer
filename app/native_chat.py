@@ -1,5 +1,10 @@
+# Program: tiny_dancer - native_chat.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Native GPT-OSS tool grammar through the existing local llama.cpp server.
 # SPDX-License-Identifier: Apache-2.0
 """Native GPT-OSS tool grammar through the existing local llama.cpp server."""
+# ---- Imports ----
 import json
 import time
 import httpx
@@ -13,6 +18,7 @@ from app.reasoning import effective_effort
 from app.sampling import native_temperature
 
 
+# ---- Definitions ----
 def chat_history(history):
     """Translate complete Harmony transactions; private reasoning stays private."""
     result=[];reasoning=[];content=[];pending=[];serial=0
@@ -69,10 +75,13 @@ def chat_history(history):
 
 
 class ChatStream:
+    """Defines the chatstream type."""
     def __init__(self):
+        """Step: init."""
         self.reasoning=[];self.content=[];self.calls={};self.finish=None;self.usage={};self.timings={}
 
     def accept(self,event):
+        """Step: accept. Inputs: event."""
         if event.get('error'):raise ModelFormatError('Local chat endpoint returned an error')
         if event.get('usage'):self.usage=event['usage']
         if event.get('timings'):self.timings=event['timings']
@@ -88,6 +97,7 @@ class ChatStream:
             if choice.get('finish_reason') is not None:self.finish=choice['finish_reason']
 
     def replies(self,allowed):
+        """Step: replies. Inputs: allowed."""
         if self.finish=='length':return [],'MAX_TOKENS'
         if self.finish not in ('stop','tool_calls'):
             raise ModelFormatError('Stream ended without an accepted completion boundary')

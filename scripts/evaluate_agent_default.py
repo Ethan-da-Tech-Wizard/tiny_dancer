@@ -1,5 +1,10 @@
+# Program: tiny_dancer - evaluate_agent_default.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Real API default/answer smoke, using public facts and no aggregate cutoff.
 # SPDX-License-Identifier: Apache-2.0
 """Real API default/answer smoke, using public facts and no aggregate cutoff."""
+# ---- Imports ----
 from datetime import datetime,timezone
 import json
 from pathlib import Path
@@ -17,7 +22,9 @@ from scripts.check_native_release import runtime_fingerprint
 EXPECTED='TINY_DANCER_READY'
 
 
+# ---- Definitions ----
 def main():
+    """Step: main."""
     path=ROOT/'docs/agent-default-native-validation.json'
     if path.exists():
         archive_report(ROOT,path.name,'native','Previous API-default smoke','Previous tiny answer/API-policy probe, not coding qualification.')
@@ -26,6 +33,7 @@ def main():
             'runtime_sha256_before':runtime_fingerprint(ROOT),'observation_limit_seconds':None,
             'operator_interventions':[],'samples':[],'request':{'prompt':'Reply with exactly '+EXPECTED+'.','mode':'agent','task_kind':'answer','reasoning_effort':'low'}}
     def save():
+        """Step: save."""
         temp=path.with_suffix('.tmp');temp.write_text(json.dumps(report,indent=2)+'\n');temp.replace(path)
     with httpx.Client(base_url='http://127.0.0.1:3210',trust_env=False,timeout=10) as client:
         client.get('/').raise_for_status();response=client.get('/api/status');response.raise_for_status()
@@ -62,4 +70,5 @@ def main():
     if not report['passed']:raise SystemExit(1)
 
 
+# ---- Script entry point ----
 if __name__=='__main__':main()

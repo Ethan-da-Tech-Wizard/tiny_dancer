@@ -1,5 +1,10 @@
+# Program: tiny_dancer - evaluate_audit_test_probe.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Idle-only same-model executable verification probe; no production mutation.
 # SPDX-License-Identifier: Apache-2.0
 """Idle-only same-model executable verification probe; no production mutation."""
+# ---- Imports ----
 import asyncio
 import argparse
 from datetime import datetime,timezone
@@ -24,7 +29,9 @@ from app.working_memory import runtime_source_evidence
 from app.validation_results import archive_report,refresh_results
 
 
+# ---- Definitions ----
 async def evaluate(spec_only=False):
+    """Async step: evaluate. Inputs: spec_only."""
     client=httpx.AsyncClient(base_url='http://127.0.0.1:3210',trust_env=False,timeout=5)
     await client.get('/');status=(await client.get('/api/status')).json()
     if status.get('active_job') or status.get('model_pid'):
@@ -51,12 +58,15 @@ async def evaluate(spec_only=False):
             'effort':'medium','operator_interventions':[],'metrics':[],'samples':[]}
     if spec_only:report['scope']=report['scope'].replace('original goal, current source and existing generic API facts','original goal and existing generic API facts, with implementation source withheld')
     def save():
+        """Step: save."""
         temporary=path.with_suffix('.tmp');temporary.write_text(json.dumps(report,indent=2)+'\n');temporary.replace(path)
     def record(kind,data):
+        """Step: record. Inputs: kind, data."""
         if kind=='metrics':report['metrics'].append(data);save()
     def emit(kind,data):loop.call_soon_threadsafe(record,kind,data)
     done=asyncio.Event()
     async def monitor():
+        """Async step: monitor."""
         low_since=None;last=0
         while not done.is_set():
             now=time.monotonic()
@@ -97,6 +107,7 @@ async def evaluate(spec_only=False):
     print(json.dumps({'passed':report['passed'],'status':report['status'],'seconds':report['elapsed_seconds'],'report':str(path)}),flush=True)
 
 
+# ---- Script entry point ----
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--spec-only',action='store_true');args=parser.parse_args()
     asyncio.run(evaluate(args.spec_only))

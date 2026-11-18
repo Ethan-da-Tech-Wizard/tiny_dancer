@@ -1,5 +1,10 @@
+# Program: tiny_dancer - validate_local_test_runner.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Actual project pytest, fixtures, failure and zero-suite checks; no inference.
 # SPDX-License-Identifier: Apache-2.0
 """Actual project pytest, fixtures, failure and zero-suite checks; no inference."""
+# ---- Imports ----
 import asyncio
 from datetime import datetime,timezone
 import json
@@ -15,7 +20,9 @@ from app.verification import test_summary
 from app.validation_results import archive_report,refresh_results
 
 
+# ---- Definitions ----
 async def main():
+    """Async step: main."""
     with tempfile.TemporaryDirectory(dir=ROOT/'workspace',prefix='runner-validation-') as temporary:
         folder=Path(temporary)
         (folder/'test_good.py').write_text('''from pathlib import Path
@@ -45,4 +52,5 @@ def test_sum():assert 6*7==42
     if not report['passed']:raise SystemExit(1)
 
 
+# ---- Script entry point ----
 if __name__=='__main__':asyncio.run(main())

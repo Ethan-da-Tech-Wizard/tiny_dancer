@@ -1,5 +1,10 @@
+# Program: tiny_dancer - validate_language_tools.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Validate real read-only lookups, without starting or steering model tasks.
 # SPDX-License-Identifier: Apache-2.0
 """Validate real read-only lookups, without starting or steering model tasks."""
+# ---- Imports ----
 import asyncio
 import json
 import sys
@@ -11,7 +16,9 @@ sys.path.insert(0,str(ROOT))
 from app.language_tools import lookup
 
 
+# ---- Definitions ----
 async def main():
+    """Async step: main."""
     rows = []
     checks = [
         ('python',{'action':'package','package':'httpx','version':'0.28.1'}),
@@ -46,4 +53,5 @@ async def main():
     if not report['passed']: raise SystemExit(1)
 
 
+# ---- Script entry point ----
 if __name__=='__main__': asyncio.run(main())

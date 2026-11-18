@@ -1,4 +1,9 @@
+# Program: tiny_dancer - engine.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Native Harmony function calls on the Colibri-inspired Picchio streaming engine.
 """Native Harmony function calls on the Colibri-inspired Picchio streaming engine."""
+# ---- Imports ----
 import asyncio
 import json
 import os
@@ -28,6 +33,7 @@ For current internet facts, find a dated source and follow actual links. Check m
 Follow the current task contract. For work, save multi-step progress, make changes, test and repair. Use editor.open for visible Code OSS and desktop.inspect for OCR. A final answer can finish tested work when the harness confirms the edited files remain unchanged and all plan steps are done. Otherwise use finish_task(summary,checks) with relevant executable checks. For questions, retrieve needed evidence and answer once with cited sources; shell tests are unnecessary. Never invent current facts. Use blocked_reason for a specific missing input. Keep working until checked completion or a specific blocker; the harness preserves progress.
 The default working directory is {cwd}. Project files and durable memory belong in /mnt/GameDrive/tiny_dancer. For long work, maintain notes in workspace/MEMORY.md so another session can resume.''' 
 
+# ---- Definitions ----
 class Cancelled(Exception): pass
 
 class ModelFormatError(ValueError):
@@ -43,10 +49,13 @@ class ResourcePressure(RuntimeError):
     pass
 
 def text_of_message(message):
+    """Step: text of message. Inputs: message."""
     return ''.join(c.text for c in message.content if isinstance(c, TextContent))
 
 class LocalEngine:
+    """Defines the localengine type."""
     def memory_issue(self, before_start=False):
+        """Step: memory issue. Inputs: before_start."""
         import psutil
         key = 'min_start_available_ram_gb' if before_start else 'min_available_ram_gb'
         reserve = float(self.config.get(key, 0))
@@ -69,6 +78,7 @@ class LocalEngine:
             return None
 
     def __init__(self):
+        """Step: init."""
         self.session = None
         self.starting_proc = None
         self.encoding = None
@@ -81,6 +91,7 @@ class LocalEngine:
         self.config = json.loads((ROOT / 'config.json').read_text())
 
     def load(self, cancel=None):
+        """Step: load. Inputs: cancel."""
         if self.session and self.session.proc.poll() is None: return
         issue = self.memory_issue(before_start=True)
         if issue: raise ResourcePressure(issue)
@@ -92,6 +103,7 @@ class LocalEngine:
         os.environ['PIN_VRAM_GB'] = str(c.get('gpu_cache_gb', 5.0))
         os.environ['PREFILL_BATCH'] = str(c.get('prefill_batch', 1024))
         def started(proc):
+            """Step: started. Inputs: proc."""
             self.starting_proc = proc
             # Apply only to the model child, leaving the UI and other apps responsive.
             os.setpriority(os.PRIO_PROCESS, proc.pid, int(c.get('model_nice', 0)))
@@ -115,6 +127,7 @@ class LocalEngine:
         self.status = 'ready'
 
     def cancel(self):
+        """Step: cancel."""
         for proc in (self.starting_proc, self.session.proc if self.session else None):
             if proc is not None and proc.poll() is None:
                 proc.kill()
@@ -123,6 +136,7 @@ class LocalEngine:
         self.exact_history.clear()
 
     def close(self):
+        """Step: close."""
         self.cancel()
         if self.session:
             try: self.session.proc.wait(timeout=3)
@@ -131,6 +145,7 @@ class LocalEngine:
         self.session = None
 
     def unload_if_idle(self, seconds):
+        """Step: unload if idle. Inputs: seconds."""
         if seconds <= 0 or time.monotonic() - self.last_activity < seconds:
             return False
         if not self.lock.acquire(blocking=False): return False
@@ -144,6 +159,7 @@ class LocalEngine:
             self.lock.release()
 
     def generate(self, history, cwd, emit, cancel, agent=True, max_tokens=512, task_contract=None, reasoning_effort='auto'):
+        """Step: generate. Inputs: history, cwd, emit, cancel, agent, max_tokens, task_contract, reasoning_effort."""
         if agent and self.config.get('backend')=='llama.cpp' and self.config.get('native_tool_protocol')=='chat':
             from app.native_chat import generate
             contract=task_contract or contract_for(next((text_of_message(Message.from_dict(m)) for m in reversed(history) if m.get('role')=='user'),'Complete the task'))
@@ -250,6 +266,7 @@ class LocalEngine:
             token_count = 0
             parser_error = False
             def on_token(tok):
+                """Step: on token. Inputs: tok."""
                 nonlocal token_count, parser_error
                 if cancel.is_set(): raise Cancelled()
                 self.status = 'generating'

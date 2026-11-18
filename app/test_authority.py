@@ -1,5 +1,10 @@
+# Program: tiny_dancer - test_authority.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Explain test provenance without treating model-authored assertions as truth.
 # SPDX-License-Identifier: Apache-2.0
 """Explain test provenance without treating model-authored assertions as truth."""
+# ---- Imports ----
 import re
 import hashlib
 from pathlib import Path
@@ -7,6 +12,7 @@ from app.failure_feedback import checkpoint_failures
 from app.test_requirements import snapshot as test_definitions
 
 
+# ---- Definitions ----
 def snapshot(cwd):
     """Track whole test files, including fixtures/constants outside test bodies."""
     root=Path(cwd).resolve();tests=test_definitions(cwd);sources={};complete=tests['complete']
@@ -23,6 +29,7 @@ def snapshot(cwd):
 
 
 def failure_test_origins(result, baseline, current, cwd):
+    """Step: failure test origins. Inputs: result, baseline, current, cwd."""
     evidence = checkpoint_failures(result)
     if not evidence: return None
     root = Path(cwd).resolve()

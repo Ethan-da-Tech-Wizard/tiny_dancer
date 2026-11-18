@@ -1,5 +1,10 @@
+# Program: tiny_dancer - pi_baseline.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Local-only Pi configuration and public event filtering for native comparisons.
 # SPDX-License-Identifier: Apache-2.0
 """Local-only Pi configuration and public event filtering for native comparisons."""
+# ---- Imports ----
 import os
 from pathlib import Path
 
@@ -7,8 +12,10 @@ FLAGS = ['--offline', '--no-context-files', '--no-extensions', '--no-mcp',
          '--no-skills', '--no-prompt-templates', '--no-themes', '--no-approve']
 
 
+# ---- Definitions ----
 def child_environment(root, private, key):
     # Deliberately do not inherit cloud credentials, proxy settings or shell startup hooks.
+    """Step: child environment. Inputs: root, private, key."""
     env = {k: os.environ[k] for k in ('HOME', 'USER', 'LANG', 'LC_ALL', 'TZ') if k in os.environ}
     env.update(PATH=str(root / '.venv/bin') + ':/usr/local/bin:/usr/bin:/bin',
                PI_CODING_AGENT_DIR=str(private), PI_OFFLINE='1', PI_TELEMETRY='0',
@@ -18,6 +25,7 @@ def child_environment(root, private, key):
 
 
 def models_config(base_url):
+    """Step: models config. Inputs: base_url."""
     from urllib.parse import urlsplit
     url = urlsplit(base_url)
     if url.scheme != 'http' or url.hostname != '127.0.0.1' or url.username or url.password:
@@ -38,6 +46,7 @@ def models_config(base_url):
 
 
 def settings_config(effort):
+    """Step: settings config. Inputs: effort."""
     return {'defaultProvider': 'tiny-local', 'defaultModel': 'gpt-oss-20b',
         'defaultThinkingLevel': effort, 'enabledModels': ['tiny-local/gpt-oss-20b'],
         'enableInstallTelemetry': False, 'cacheWarming': 'off',

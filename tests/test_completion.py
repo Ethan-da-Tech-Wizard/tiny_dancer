@@ -1,4 +1,9 @@
+# Program: tiny_dancer - tests/test_completion.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for completion (exercises app.agent, app.engine, app.facts).
 # SPDX-License-Identifier: Apache-2.0
+"""Tests for completion (exercises app.agent, app.engine, app.facts)."""
 import asyncio
 import gzip
 import json
@@ -24,6 +29,7 @@ PROMPT = 'tell me all the stats of the most recent nfl sunday football list by s
 
 
 def scoreboard():
+    """Test helper: scoreboard."""
     return {'events': [{'id':str(n), 'date':'2026-10-04T20:25:00Z',
                        'competitions':[{'status':{'type':{'completed':True}}, 'competitors':[
                            {'homeAway':'away', 'team':{'displayName':f'Away {n}'}, 'score':str(n)},
@@ -31,8 +37,11 @@ def scoreboard():
                       for n in (1, 2)]}
 
 
+# -------- policy tests --------
 class PolicyTests(unittest.TestCase):
+    """Test group for policy."""
     def test_exact_user_question_resolves_last_completed_sunday(self):
+        """Checks that exact user question resolves last completed sunday."""
         contract = contract_for(PROMPT, today=date(2026, 10, 10))
         self.assertEqual(contract['target_date'], '2026-10-04')
         self.assertEqual(contract['kind'], 'answer')
@@ -40,10 +49,12 @@ class PolicyTests(unittest.TestCase):
         self.assertEqual(contract_for(PROMPT, today=date(2026, 10, 11))['target_date'], '2026-10-04')
 
     def test_player_stats_or_analysis_are_not_replaced_with_score_lookup(self):
+        """Checks that player stats or analysis are not replaced with score lookup."""
         self.assertIsNone(contract_for('Compare player stats from the most recent NFL Sunday')['workflow'])
         self.assertEqual(contract_for('Update the app with an NFL scores panel')['kind'],'work')
 
     def test_new_task_does_not_inherit_old_operator_instructions(self):
+        """Checks that new task does not inherit old operator instructions."""
         messages = [Message.from_role_and_content(Role.USER, 'Thursday'),
                     Message.from_role_and_content(Role.DEVELOPER, 'Only answer Thursday'),
                     Message.from_role_and_content(Role.USER, PROMPT)]
@@ -56,6 +67,7 @@ class PolicyTests(unittest.TestCase):
         self.assertEqual(Message.from_dict(resumed[0]).author.role, Role.USER)
 
     def test_chat_history_excludes_operator_notes_and_tools(self):
+        """Checks that chat history excludes operator notes and tools."""
         messages = [Message.from_role_and_content(Role.USER, 'hi'),
                     Message.from_role_and_content(Role.DEVELOPER, 'operator note'),
                     call('shell',{'command':'pwd'}),
@@ -64,6 +76,7 @@ class PolicyTests(unittest.TestCase):
         self.assertEqual(len(task_history(rows,'hi','chat',{})),2)
 
     def test_incomplete_wrong_date_and_duplicate_games_are_rejected(self):
+        """Checks that incomplete wrong date and duplicate games are rejected."""
         for mutation in ('unfinished','wrong_date','duplicate','missing_team'):
             data = scoreboard()
             if mutation == 'unfinished': data['events'][0]['competitions'][0]['status']['type']['completed'] = False
@@ -74,14 +87,20 @@ class PolicyTests(unittest.TestCase):
                 validate_scores(data,'2026-10-04')
 
 
+# -------- retrieval tests --------
 class RetrievalTests(unittest.IsolatedAsyncioTestCase):
+    """Test group for retrieval."""
     async def asyncSetUp(self):
+        """Test helper: asyncSetUp."""
         self.temp = tempfile.TemporaryDirectory(dir=ROOT/'run/artifacts')
+    # Test helper: asyncTearDown.
     async def asyncTearDown(self): self.temp.cleanup()
 
     async def test_gzip_decoded_and_date_compact_and_all_games_returned(self):
+        """Checks that gzip decoded and date compact and all games returned."""
         urls = []
         def handle(request):
+            """Test helper: handle."""
             urls.append(str(request.url))
             return httpx.Response(200, headers={'Content-Encoding':'gzip'}, content=gzip.compress(json.dumps(scoreboard()).encode()))
         result = await nfl_scores({},self.temp.name,httpx.MockTransport(handle),today=date(2026,10,10))
@@ -91,12 +110,14 @@ class RetrievalTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(Path(result['local_path']).is_file())
 
     async def test_http_and_application_errors_do_not_become_evidence(self):
+        """Checks that http and application errors do not become evidence."""
         for status, data in ((404, {}), (200, {'code':400,'message':'Invalid date'})):
             transport = httpx.MockTransport(lambda request:httpx.Response(status,json=data))
             with self.subTest(status=status), self.assertRaises((httpx.HTTPStatusError,ValueError)):
                 await fetch_json({'url':'https://example.com/data'},self.temp.name,transport)
 
     async def test_targeted_json_pointer_and_future_date_rejected(self):
+        """Checks that targeted json pointer and future date rejected."""
         transport=httpx.MockTransport(lambda request:httpx.Response(200,json={'rows':[{'score':42}]}))
         result=await fetch_json({'url':'https://example.com/data','pointer':'/rows/0/score'},self.temp.name,transport)
         self.assertEqual(result['data'],42)
@@ -104,14 +125,19 @@ class RetrievalTests(unittest.IsolatedAsyncioTestCase):
             await nfl_scores({'date':'2026-10-11'},self.temp.name,transport,today=date(2026,10,10))
 
 
+# -------- completion tests --------
 class CompletionTests(unittest.IsolatedAsyncioTestCase):
+    """Test group for completion."""
     async def asyncSetUp(self):
+        """Test helper: asyncSetUp."""
         self.temp=tempfile.TemporaryDirectory(dir=ROOT/'workspace')
         self.tools=ComputerTools(); self.events=[]; self.messages=[]
     async def asyncTearDown(self):
+        """Test helper: asyncTearDown."""
         await self.tools.close();self.temp.cleanup()
 
     def runner(self, actions, prompt='What is 6 times 7?', **options):
+        """Test helper: runner."""
         engine=ScriptedEngine(actions)
         request=SimpleNamespace(mode='agent',prompt=prompt,max_tokens=512,**options)
         return AgentRun(engine,self.tools,self.temp.name,request,lambda:self.messages,
@@ -119,6 +145,7 @@ class CompletionTests(unittest.IsolatedAsyncioTestCase):
                         lambda kind,data:self.events.append((kind,data)),lambda state:None,threading.Event())
 
     async def test_factual_answer_finishes_without_shell_loop(self):
+        """Checks that factual answer finishes without shell loop."""
         final=Message.from_role_and_content(Role.ASSISTANT,'42').with_channel('final')
         run=self.runner([final])
         self.assertEqual(await run.run(),'complete')
@@ -127,6 +154,7 @@ class CompletionTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual([data['text'] for kind,data in self.events if kind=='delta'],['42'])
 
     async def test_unchecked_draft_is_hidden_and_pauses_after_one_repair(self):
+        """Checks that unchecked draft is hidden and pauses after one repair."""
         final=Message.from_role_and_content(Role.ASSISTANT,'Tomorrow won today').with_channel('final')
         run=self.runner([final,final],prompt='Who won the most recent football game?')
         self.assertEqual(await run.run(),'paused')
@@ -134,13 +162,16 @@ class CompletionTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(run.state['turns'],2)
 
     async def test_draft_alongside_tool_call_is_not_saved_as_final(self):
+        """Checks that draft alongside tool call is not saved as final."""
         draft=Message.from_role_and_content(Role.ASSISTANT,'Unsupported claim').with_channel('final')
         run=self.runner([([draft,call('read_file',{'path':'missing.txt'})],'RETURN')],max_turns=1)
         self.assertEqual(await run.run(),'paused')
         self.assertNotIn('Unsupported claim',json.dumps(self.messages))
 
     async def test_checked_score_data_published_once_without_second_inference(self):
+        """Checks that checked score data published once without second inference."""
         async def execute(name,args,cwd):
+            """Test helper: execute."""
             data=scoreboard()
             for event in data['events']: event['date']=run.contract['target_date']+'T20:25:00Z'
             games=validate_scores(data,run.contract['target_date'])
@@ -154,15 +185,18 @@ class CompletionTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(run.state['turns'],1)
 
     async def test_turn_budget_saves_progress_without_restarting_loop(self):
+        """Checks that turn budget saves progress without restarting loop."""
         run=self.runner([call('read_file',{'path':'missing.txt'})]*3,max_turns=2)
         self.assertEqual(await run.run(),'paused')
         self.assertIn('budget',run.state['next_action'])
         self.assertEqual(run.state['turns'],2)
 
     async def test_inference_deadline_cancels_engine_and_pauses(self):
+        """Checks that inference deadline cancels engine and pauses."""
         released=threading.Event()
         run=self.runner([],max_seconds=0.02)
         def generate(*args,**kwargs):
+            """Test helper: generate."""
             released.wait(1)
             raise Cancelled()
         run.engine.generate=generate
@@ -172,8 +206,11 @@ class CompletionTests(unittest.IsolatedAsyncioTestCase):
         self.assertIn('Time budget',run.state['next_action'])
 
 
+# -------- idle tests --------
 class IdleTests(unittest.TestCase):
+    """Test group for idle."""
     def test_idle_unload_releases_session_but_cannot_interrupt_locked_inference(self):
+        """Checks that idle unload releases session but cannot interrupt locked inference."""
         engine=LocalEngine()
         killed=[]
         engine.session=SimpleNamespace(proc=SimpleNamespace(poll=lambda:None,kill=lambda:killed.append(True),wait=lambda timeout:None))

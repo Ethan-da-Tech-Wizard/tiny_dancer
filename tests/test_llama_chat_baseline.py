@@ -1,4 +1,9 @@
+# Program: tiny_dancer - tests/test_llama_chat_baseline.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for llama chat baseline (exercises app.engine, scripts.llama_chat_baseline).
 # SPDX-License-Identifier: Apache-2.0
+"""Tests for llama chat baseline (exercises app.engine, scripts.llama_chat_baseline)."""
 import json
 import unittest
 import threading
@@ -10,10 +15,14 @@ from app.engine import ModelFormatError
 from scripts.llama_chat_baseline import ChatStream,chat_history,LlamaChatBaselineEngine
 
 
+# -------- llama chat baseline tests --------
 class LlamaChatBaselineTests(unittest.TestCase):
+    # Test helper: chunk.
+    """Test group for llama chat baseline."""
     def chunk(self,delta,finish=None):return {'choices':[{'index':0,'delta':delta,'finish_reason':finish}]}
 
     def test_fragmented_arguments_preserve_quotes_and_newlines(self):
+        """Checks that fragmented arguments preserve quotes and newlines."""
         s=ChatStream();args=json.dumps({'command':'printf \'"\\n\'\npython -c "print(1)"'})
         s.accept(self.chunk({'reasoning_content':'private'}))
         for i,piece in enumerate((args[:15],args[15:])):
@@ -23,25 +32,30 @@ class LlamaChatBaselineTests(unittest.TestCase):
         self.assertEqual(json.loads(replies[-1].content[0].text)['command'],json.loads(args)['command'])
 
     def test_length_never_dispatches_partial_action(self):
+        """Checks that length never dispatches partial action."""
         s=ChatStream();s.accept(self.chunk({'tool_calls':[{'function':{'name':'shell','arguments':'{"command":'}}]},'length'))
         self.assertEqual(s.replies({'shell'}),([], 'MAX_TOKENS'))
 
     def test_invalid_json_or_unknown_tool_rejected(self):
+        """Checks that invalid json or unknown tool rejected."""
         for name,args in (('shell','{bad'),('unknown','{}'),('shell','[]')):
             s=ChatStream();s.accept(self.chunk({'tool_calls':[{'function':{'name':name,'arguments':args}}]},'tool_calls'))
             with self.assertRaises(ModelFormatError):s.replies({'shell'})
 
     def test_missing_terminal_receipt_rejected(self):
+        """Checks that missing terminal receipt rejected."""
         s=ChatStream();s.accept(self.chunk({'content':'draft'}))
         with self.assertRaises(ModelFormatError):s.replies({'shell'})
 
     def test_final_channel_is_separate_from_reasoning(self):
+        """Checks that final channel is separate from reasoning."""
         s=ChatStream();s.accept(self.chunk({'reasoning_content':'private','content':'answer'},'stop'))
         replies,_=s.replies({'shell'})
         self.assertEqual([m.channel for m in replies],['analysis','final'])
         self.assertEqual(replies[-1].content[0].text,'answer')
 
     def test_history_keeps_matching_tool_identity(self):
+        """Checks that history keeps matching tool identity."""
         messages=[Message.from_role_and_content(Role.USER,'task'),
           Message.from_role_and_content(Role.ASSISTANT,'private').with_channel('analysis'),
           Message.from_role_and_content(Role.ASSISTANT,'{"command":"pwd"}').with_channel('analysis').with_recipient('functions.shell'),
@@ -51,12 +65,15 @@ class LlamaChatBaselineTests(unittest.TestCase):
         self.assertEqual(rows[1]['reasoning_content'],'private');self.assertNotIn('private',rows[2]['content'])
 
     def test_orphaned_tool_result_rejected(self):
+        """Checks that orphaned tool result rejected."""
         m=Message(author=Author(role=Role.TOOL,name='shell'),content=[TextContent(text='{}')])
         with self.assertRaises(ModelFormatError):chat_history([m.to_dict()])
 
     def test_adapter_requests_native_tool_grammar_and_preserves_sampling(self):
+        """Checks that adapter requests native tool grammar and preserves sampling."""
         captured=[]
         def handle(request):
+            """Test helper: handle."""
             captured.append((request.url.path,json.loads(request.content)))
             frame=self.chunk({'tool_calls':[{'index':0,'function':{'name':'shell','arguments':'{"command":"pwd"}'}}]},'tool_calls')
             frame.update(usage={'prompt_tokens':30,'completion_tokens':20})

@@ -1,5 +1,10 @@
+# Program: tiny_dancer - evaluate_pi.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Frozen same-model comparison with upstream Pi; no live hints or product edits.
 # SPDX-License-Identifier: Apache-2.0
 """Frozen same-model comparison with upstream Pi; no live hints or product edits."""
+# ---- Imports ----
 import argparse
 import asyncio
 from datetime import datetime, timezone
@@ -28,11 +33,14 @@ from scripts.pi_baseline import FLAGS, child_environment, models_config, setting
 from scripts.node_licenses import verify_node
 
 
+# ---- Definitions ----
 def file_hash(path):
+    """Step: file hash. Inputs: path."""
     return hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else None
 
 
 async def evaluate(case_name, effort):
+    """Async step: evaluate. Inputs: case_name, effort."""
     verify_node(ROOT)
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
     case = CASES[case_name]
@@ -63,6 +71,7 @@ async def evaluate(case_name, effort):
             'declared_additional_criteria': list(LABEL_CRITERIA if case_name == 'labels' else INVENTORY_CRITERIA),
             'operator_interventions': [], 'events': [], 'samples': [], 'stream_events': 0}
         def save():
+            """Step: save."""
             temporary = report_path.with_suffix('.tmp')
             temporary.write_text(json.dumps(report, indent=2) + '\n'); temporary.replace(report_path)
         save()
@@ -75,6 +84,7 @@ async def evaluate(case_name, effort):
         process = None; done = asyncio.Event(); last_stream = time.monotonic()
 
         async def stop_owned():
+            """Async step: stop owned."""
             cancel.set()
             if process and process.returncode is None:
                 try: os.killpg(process.pid, signal.SIGTERM)
@@ -82,6 +92,7 @@ async def evaluate(case_name, effort):
             await asyncio.to_thread(engine.cancel)
 
         async def monitor():
+            """Async step: monitor."""
             low_since = None; last_sample = 0; activity_previous = None; last_activity = time.monotonic()
             while not done.is_set():
                 try:
@@ -181,6 +192,7 @@ async def evaluate(case_name, effort):
         return report['passed']
 
 
+# ---- Script entry point ----
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('case',choices=('labels','inventory'))
     parser.add_argument('--effort',choices=('low','medium','high'),default='medium');args=parser.parse_args()

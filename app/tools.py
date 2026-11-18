@@ -1,4 +1,9 @@
+# Program: tiny_dancer - tools.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Computer tools run as the logged-in user. Every invocation is audited by the agent.
 """Computer tools run as the logged-in user. Every invocation is audited by the agent."""
+# ---- Imports ----
 import asyncio
 import json
 import os
@@ -16,6 +21,7 @@ ROOT = Path('/mnt/GameDrive/tiny_dancer')
 ARTIFACTS = ROOT / 'run/artifacts'
 ARTIFACTS.mkdir(parents=True, exist_ok=True)
 
+# ---- Definitions ----
 def graphical_env():
     """Resolve the active compositor socket instead of a stale login value."""
     env = os.environ.copy()
@@ -31,9 +37,11 @@ def graphical_env():
     return env
 
 def brief_window(window):
+    """Step: brief window. Inputs: window."""
     return {key:window[key] for key in ('address','class','title','pid','at','size','workspace','focusHistoryID') if key in window}
 
 def schema(name, description, properties, required=()):
+    """Step: schema. Inputs: name, description, properties, required."""
     return {'name': name, 'description': description, 'parameters': {
         'type': 'object', 'properties': properties, 'required': list(required), 'additionalProperties': False}}
 
@@ -94,6 +102,7 @@ for definition in TOOLS:
     definition['description']=COMPACT_DESCRIPTIONS.get(definition['name'],definition['description'])
 
 def path_for(value, cwd):
+    """Step: path for. Inputs: value, cwd."""
     p = Path(value).expanduser()
     return (p if p.is_absolute() else Path(cwd) / p).resolve()
 
@@ -108,6 +117,7 @@ def observation_path(value,cwd):
     return path_for(value,cwd),False
 
 async def shell(command, cwd, timeout=120):
+    """Async step: shell. Inputs: command, cwd, timeout."""
     timeout = max(1, min(int(timeout), 300))
     out = ARTIFACTS / f'command-{uuid.uuid4().hex}.txt'
     env=tool_environment()
@@ -146,7 +156,9 @@ async def shell(command, cwd, timeout=120):
             **({'python_bytecode':'fresh_source'} if fresh_source else {})}
 
 class ComputerTools:
+    """Defines the computertools type."""
     def __init__(self, browser_profile=None):
+        """Step: init. Inputs: browser_profile."""
         self.playwright = None
         self.context = None
         self.page = None
@@ -155,6 +167,7 @@ class ComputerTools:
         self.last_browser_activity = time.monotonic()
 
     async def release_idle_browser(self, seconds):
+        """Async step: release idle browser. Inputs: seconds."""
         if not self.context or self.browser_lock.locked() or time.monotonic() - self.last_browser_activity < seconds:
             return False
         async with self.browser_lock:
@@ -162,11 +175,13 @@ class ComputerTools:
         return True
 
     async def close(self):
+        """Async step: close."""
         if self.context: await self.context.close()
         if self.playwright: await self.playwright.stop()
         self.context = self.page = self.playwright = None
 
     async def browser(self, args):
+        """Async step: browser. Inputs: args."""
         async with self.browser_lock:
             self.last_browser_activity = time.monotonic()
             if self.page is None:
@@ -211,6 +226,7 @@ class ComputerTools:
                 'fields': await p.locator('input,textarea,button,select').evaluate_all('(els)=>els.slice(0,50).map(e=>({tag:e.tagName,id:e.id,name:e.name,type:e.type,text:e.innerText,placeholder:e.placeholder}))')}
 
     async def execute(self, name, args, cwd):
+        """Async step: execute. Inputs: name, args, cwd."""
         if name=='inspect_project':
             from app.batching import inspect_project
             return await inspect_project(args,cwd,ARTIFACTS)
@@ -276,6 +292,7 @@ class ComputerTools:
         raise ValueError('Unknown tool: ' + name)
 
     async def editor(self, args, cwd):
+        """Async step: editor. Inputs: args, cwd."""
         executable = shutil.which('code-oss') or shutil.which('code')
         if not executable: raise RuntimeError('Code OSS / VS Code is not installed')
         if args['action'] == 'status':
@@ -310,6 +327,7 @@ class ComputerTools:
         return {'opened':str(path), 'line':args.get('line', 1), 'executable':executable, 'profile':str(profile)}
 
     async def observe(self, source):
+        """Async step: observe. Inputs: source."""
         if source == 'browser':
             async with self.browser_lock:
                 self.last_browser_activity = time.monotonic()
@@ -323,6 +341,7 @@ class ComputerTools:
             file = ARTIFACTS / 'live-desktop.png'
             temporary = file.with_name(file.name + '.' + uuid.uuid4().hex + '.tmp')
             def capture():
+                """Step: capture."""
                 subprocess.run(['grim', '-t', 'png', str(temporary)], env=graphical_env(), capture_output=True, timeout=10, check=True)
                 temporary.replace(file)
             await asyncio.to_thread(capture)
@@ -330,7 +349,9 @@ class ComputerTools:
         raise ValueError('Choose browser or desktop')
 
     async def desktop(self, args):
+        """Async step: desktop. Inputs: args."""
         def run(*cmd):
+            """Step: run."""
             return subprocess.run(cmd, env=graphical_env(), capture_output=True, text=True, timeout=15, check=True).stdout
         action = args['action']
         if action == 'windows': return [brief_window(w) for w in json.loads(await asyncio.to_thread(run, 'hyprctl', '-i', '0', '-j', 'clients'))]

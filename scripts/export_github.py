@@ -1,8 +1,13 @@
+# Program: tiny_dancer - export_github.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Build a reviewable GitHub checkout without changing local runtime evidence.
 # SPDX-License-Identifier: Apache-2.0
 """Build a reviewable GitHub checkout without changing local runtime evidence.
 
 This command copies files only. Commit and push are explicit separate steps.
 """
+# ---- Imports ----
 import argparse
 from datetime import datetime, timezone
 import hashlib
@@ -43,6 +48,7 @@ SECRET_PATTERNS = [
 PRIVATE_MARKERS = ('<|channel|>analysis', '<think>')
 
 
+# ---- Definitions ----
 def public_report(value, key=''):
     """Keep outcomes/measurements; omit conversation and arbitrary output fields."""
     normalized = key.lower().replace('-', '_')
@@ -71,6 +77,7 @@ def public_report(value, key=''):
 
 
 def inspect_text(data, path, known_secrets=()):
+    """Step: inspect text. Inputs: data, path, known_secrets."""
     text = data.decode('utf-8')
     if any(pattern.search(text) for pattern in SECRET_PATTERNS):
         raise ValueError(f'Credential-shaped content requires review: {path}')
@@ -80,6 +87,7 @@ def inspect_text(data, path, known_secrets=()):
 
 
 def result_index(reports):
+    """Step: result index. Inputs: reports."""
     lines = ['# Test results in this GitHub snapshot', '',
              'These are saved outcomes, not newly executed tests. Raw conversations, '
              'checkpoints, command output and screenshots remain on the originating machine. '
@@ -107,6 +115,7 @@ def result_index(reports):
 
 
 def export(root=ROOT, destination=None):
+    """Step: export. Inputs: root, destination."""
     root = Path(root).resolve()
     destination = Path(destination) if destination else root / 'run/github/tiny_dancer'
     if destination.is_symlink():
@@ -215,11 +224,13 @@ def export(root=ROOT, destination=None):
 
 
 def main():
+    """Step: main."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--destination', type=Path)
     args = parser.parse_args()
     print(json.dumps(export(destination=args.destination), indent=2))
 
 
+# ---- Script entry point ----
 if __name__ == '__main__':
     main()

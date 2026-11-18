@@ -1,3 +1,7 @@
+# Program: tiny_dancer - tests/test_source_previews.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for source previews (exercises app.prompting).
 # SPDX-License-Identifier: Apache-2.0
 """Source previews must preserve useful code and explain every omission."""
 import unittest
@@ -5,12 +9,16 @@ import unittest
 from app.prompting import compact_result
 
 
+# -------- source preview tests --------
 class SourcePreviewTests(unittest.TestCase):
+    """Test group for source preview."""
     def source(self, count=100, width=28):
+        """Test helper: source."""
         lines=[f"{line}: value_{line} = {'1'*width}\n" for line in range(1,count+1)]
         return {'path':'/project/summary.py','text':''.join(lines)}
 
     def test_modest_source_preserves_middle_needed_for_a_patch(self):
+        """Checks that modest source preserves middle needed for a patch."""
         data=self.source(90,20)
         data['text']=data['text'].replace('45: value_45', '45: amount_total')
         original=dict(data)
@@ -21,6 +29,7 @@ class SourcePreviewTests(unittest.TestCase):
         self.assertEqual(data,original)
 
     def test_large_source_explains_missing_lines_and_how_to_read_them(self):
+        """Checks that large source explains missing lines and how to read them."""
         data=self.source(250,50)
         preview=compact_result(data)
         self.assertTrue(preview['text_truncated'])
@@ -35,6 +44,7 @@ class SourcePreviewTests(unittest.TestCase):
         self.assertNotIn('saved artifact',preview['text'])
 
     def test_long_single_line_is_explicitly_partial_without_fake_artifact(self):
+        """Checks that long single line is explicitly partial without fake artifact."""
         data={'path':'/project/large.py','text':'1: value = "'+'x'*18000+'"\n'}
         preview=compact_result(data)
         self.assertTrue(preview['text_truncated'])
@@ -44,6 +54,7 @@ class SourcePreviewTests(unittest.TestCase):
         self.assertNotIn('next_read',preview)
 
     def test_non_source_output_retains_existing_failure_footer(self):
+        """Checks that non source output retains existing failure footer."""
         data={'path':'/project/check.log','output':'noise'*2000+'\nFAILED (errors=1)','artifact':'/artifacts/check.log'}
         preview=compact_result(data)
         self.assertIn('FAILED (errors=1)',preview['output'])

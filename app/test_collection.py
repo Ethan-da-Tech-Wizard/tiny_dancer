@@ -1,5 +1,10 @@
+# Program: tiny_dancer - test_collection.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Require actual compatible checks for newly added plain Python test functions.
 # SPDX-License-Identifier: Apache-2.0
 """Require actual compatible checks for newly added plain Python test functions."""
+# ---- Imports ----
 import ast
 import hashlib
 from pathlib import Path
@@ -9,7 +14,9 @@ from app.verification import source_hashes,test_command,test_summary
 from app.deliverables import verification_paths
 
 
+# ---- Definitions ----
 def plain_tests(contract,state):
+    """Step: plain tests. Inputs: contract, state."""
     found={}
     for name in added_paths(contract,state) or []:
         path=Path(name)
@@ -27,6 +34,7 @@ def plain_tests(contract,state):
 
 
 def pytest_covers(command,cwd,path):
+    """Step: pytest covers. Inputs: command, cwd, path."""
     if not test_command(command):return False
     args=shlex.split(command)
     for _ in range(3):
@@ -50,6 +58,7 @@ def pytest_covers(command,cwd,path):
 
 
 def record_checks(contract,state,outcomes,checked_sources):
+    """Step: record checks. Inputs: contract, state, outcomes, checked_sources."""
     receipts=state.setdefault('plain_test_collection_receipts',{})
     for outcome in outcomes:
         summary=test_summary(outcome.get('output',''))
@@ -60,6 +69,7 @@ def record_checks(contract,state,outcomes,checked_sources):
 
 
 def issue(contract,state):
+    """Step: issue. Inputs: contract, state."""
     receipts=state.get('plain_test_collection_receipts',{})
     plain=plain_tests(contract,state)
     if not plain:return None

@@ -1,5 +1,10 @@
+# Program: tiny_dancer - batching.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Bounded project inspection and sequential, auditable groups of checks.
 # SPDX-License-Identifier: Apache-2.0
 """Bounded project inspection and sequential, auditable groups of checks."""
+# ---- Imports ----
 import asyncio
 import ast
 import heapq
@@ -15,7 +20,9 @@ from app.prompting import inspection_files_preview
 from app.source_diagnostics import python_runtime_notes
 
 
+# ---- Definitions ----
 def save_result(artifacts, name, result):
+    """Step: save result. Inputs: artifacts, name, result."""
     path=Path(artifacts)/(name+'.json')
     path.parent.mkdir(parents=True,exist_ok=True)
     temporary=path.with_suffix('.tmp')
@@ -25,6 +32,7 @@ def save_result(artifacts, name, result):
 
 
 def project_snapshot(args,cwd):
+    """Step: project snapshot. Inputs: args, cwd."""
     directory=Path(args.get('path') or cwd).expanduser()
     if not directory.is_absolute(): directory=Path(cwd)/directory
     directory=directory.resolve()
@@ -37,6 +45,7 @@ def project_snapshot(args,cwd):
         preferred=['pyproject.toml','Cargo.toml','requirements.txt','package.json','CMakeLists.txt','README.md']
         source_types={'.py','.rs','.c','.h','.cc','.cpp','.hpp','.js','.mjs','.ts','.tsx','.jsx','.sh'}
         def source_names(folder):
+            """Step: source names. Inputs: folder."""
             return heapq.nsmallest(8,(p for p in folder.iterdir() if not p.name.startswith('.') and not p.is_symlink() and p.is_file() and p.suffix in source_types),key=lambda p:(not p.name.startswith('test_'),p.name))
         root_sources=source_names(directory)
         preferred += [p.name for p in root_sources if p.name.startswith('test_')]
@@ -76,6 +85,7 @@ def project_snapshot(args,cwd):
 
 
 async def inspect_project(args,cwd,artifacts):
+    """Async step: inspect project. Inputs: args, cwd, artifacts."""
     result=await asyncio.to_thread(project_snapshot,args,cwd)
     env=tool_environment()
     python=shutil.which('python',path=env.get('PATH')) or shutil.which('python3',path=env.get('PATH'))
@@ -114,6 +124,7 @@ async def inspect_project(args,cwd,artifacts):
 
 
 async def run_checks(args,cwd,artifacts,execute_shell):
+    """Async step: run checks. Inputs: args, cwd, artifacts, execute_shell."""
     commands=args.get('commands')
     if not isinstance(commands,list) or not 1<=len(commands)<=8 or any(not isinstance(c,str) or not c.strip() or len(c)>6000 for c in commands):
         raise ValueError('commands must contain 1–8 nonempty commands, each at most 6000 characters')

@@ -1,5 +1,10 @@
+# Program: tiny_dancer - test_requirements.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Check explicitly requested test-source additions, preserving the initial snapshot.
 # SPDX-License-Identifier: Apache-2.0
 """Check explicitly requested test-source additions, preserving the initial snapshot."""
+# ---- Imports ----
 import ast
 import hashlib
 import os
@@ -7,7 +12,9 @@ from pathlib import Path
 import re
 
 
+# ---- Definitions ----
 def required_language(contract,state):
+    """Step: required language. Inputs: contract, state."""
     if contract.get('kind')!='work' or not contract.get('lookup_languages'):return None
     goal=state.get('goal','').lower()
     for match in re.finditer(r'\b(?:add|write|create)\s+(?:[\w-]+\s+){0,5}tests\b',goal):
@@ -18,9 +25,11 @@ def required_language(contract,state):
 
 
 def snapshot(cwd):
+    """Step: snapshot. Inputs: cwd."""
     root=Path(cwd).resolve();sources={};complete=True;seen=0
     ignored={'.git','.venv','venv','__pycache__','node_modules','target','cache','build','models','vendor'}
     def onerror(error):
+        """Step: onerror. Inputs: error."""
         nonlocal complete
         complete=False
     for directory,dirs,files in os.walk(root,onerror=onerror,followlinks=False):
@@ -57,6 +66,7 @@ def snapshot(cwd):
 
 
 def added_paths(contract,state):
+    """Step: added paths. Inputs: contract, state."""
     language=required_language(contract,state);baseline=state.get('baseline_test_sources')
     if not language or not baseline or not baseline.get('complete'):return None
     current=snapshot(state['cwd'])
@@ -66,6 +76,7 @@ def added_paths(contract,state):
 
 
 def issue(contract,state):
+    """Step: issue. Inputs: contract, state."""
     paths=added_paths(contract,state)
     if paths==[]:
         language=required_language(contract,state)

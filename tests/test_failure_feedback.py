@@ -1,3 +1,7 @@
+# Program: tiny_dancer - tests/test_failure_feedback.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for failure feedback (exercises app.baseline_preview, app.prompting, app.working_memory).
 # SPDX-License-Identifier: Apache-2.0
 """Real failing runners and repair checkpoints, rather than model approval."""
 import io
@@ -12,19 +16,28 @@ from app.prompting import compact_result
 from app.working_memory import checkpoint_evidence
 
 
+# -------- failure feedback tests --------
 class FailureFeedbackTests(unittest.TestCase):
+    """Test group for failure feedback."""
     def failures(self):
+        # -------- broken --------
+        """Test helper: failures."""
         class Broken(unittest.TestCase):
+            # Checks that long first.
+            """Helper type broken."""
             def test_long_first(self): self.assertEqual('A' * 9000, 'B' * 9000)
             def test_middle(self):
+                """Checks that middle."""
                 for item in (3, 7):
                     with self.subTest(item=item): self.assertEqual(item + 1, item)
+            # Checks that last.
             def test_last(self): raise ValueError('FINAL_ERROR_SENTINEL')
         stream = io.StringIO()
         unittest.TextTestRunner(stream=stream).run(unittest.defaultTestLoader.loadTestsFromTestCase(Broken))
         return stream.getvalue()
 
     def test_all_failure_identities_survive_baseline_and_repeated_projection(self):
+        """Checks that all failure identities survive baseline and repeated projection."""
         output = self.failures()
         result = {'exit_code': 1, 'artifact': '/artifacts/full.json', 'checks': [
             {'command': 'python3 -m unittest', 'exit_code': 1, 'output': output}]}
@@ -40,6 +53,7 @@ class FailureFeedbackTests(unittest.TestCase):
         self.assertNotIn('verified', evidence)
 
     def test_checkpoint_keeps_middle_failure_even_with_small_raw_output_budget(self):
+        """Checks that checkpoint keeps middle failure even with small raw output budget."""
         result = baseline_preview('run_checks', {'exit_code': 1, 'checks': [
             {'exit_code': 1, 'output': self.failures()}], 'artifact': '/artifacts/full.json'})
         with tempfile.TemporaryDirectory() as folder:
@@ -50,6 +64,7 @@ class FailureFeedbackTests(unittest.TestCase):
         self.assertEqual(failure['result']['artifact'], '/artifacts/full.json')
 
     def test_real_pytest_failure_preserves_mismatch_and_location(self):
+        """Checks that real pytest failure preserves mismatch and location."""
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder)/'test_real.py'
             path.write_text('def test_real():\n    assert {"answer": 2} == {"answer": 3}\n')
@@ -63,18 +78,21 @@ class FailureFeedbackTests(unittest.TestCase):
         self.assertIn('AssertionError', evidence)
 
     def test_passing_or_non_test_output_cannot_create_failure_or_verification(self):
+        """Checks that passing or non test output cannot create failure or verification."""
         for result in ({'exit_code': 0, 'output': self.failures()},
                        {'exit_code': 1, 'output': 'network refused connection'},
                        {'exit_code': 0, 'output': 'Ran 4 tests in 0.1s\nOK'}):
             self.assertNotIn('failure_evidence', compact_result(result))
 
     def test_rust_assertion_has_actual_sides_and_test_identity(self):
+        """Checks that rust assertion has actual sides and test identity."""
         output = "---- tests::boundary stdout ----\nthread 'tests::boundary' panicked at src/lib.rs:21:9:\nassertion `left == right` failed\n  left: 3\n right: 5\n\nfailures:\n tests::boundary\ntest result: FAILED. 0 passed; 1 failed; 0 ignored\n"
         evidence = json.dumps(compact_result({'exit_code': 101, 'output': output})['failure_evidence'])
         for value in ('tests::boundary', 'src/lib.rs:21:9', 'left: 3', 'right: 5'):
             self.assertIn(value, evidence)
 
     def test_large_failure_list_marks_omissions_without_fabricating_details(self):
+        """Checks that large failure list marks omissions without fabricating details."""
         output = ''.join(f'FAIL: test_{i} (suite.Tests.test_{i})\n'+'-'*70+'\nAssertionError: actual != expected\n' for i in range(100))
         evidence = compact_result({'exit_code': 1, 'output': output})['failure_evidence']
         self.assertGreater(evidence['omitted'], 0)

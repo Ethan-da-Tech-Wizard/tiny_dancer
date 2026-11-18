@@ -1,11 +1,18 @@
+# Program: tiny_dancer - dependency_policy.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Verify an explicitly requested Rust standard-library constraint from Cargo.
 # SPDX-License-Identifier: Apache-2.0
 """Verify an explicitly requested Rust standard-library constraint from Cargo."""
+# ---- Imports ----
 from pathlib import Path
 import re
 import tomllib
 
 
+# ---- Definitions ----
 def constrained_manifest(contract,state):
+    """Step: constrained manifest. Inputs: contract, state."""
     if contract.get('kind')!='work' or 'rust' not in contract.get('lookup_languages',[]): return None
     goal=state.get('goal','').lower()
     if not re.search(r'\bstandard[- ]library[- ]only\b|\buse only (?:the )?standard library\b',goal): return None
@@ -15,6 +22,7 @@ def constrained_manifest(contract,state):
 
 
 def dependency_issue(contract,state):
+    """Step: dependency issue. Inputs: contract, state."""
     path=constrained_manifest(contract,state)
     if path is None or not path.exists() and not path.is_symlink(): return None
     try:

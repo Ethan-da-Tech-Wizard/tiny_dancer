@@ -1,5 +1,10 @@
+# Program: tiny_dancer - benchmark_prompt_batches.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Bracket one prompt-batch candidate; never change production configuration.
 # SPDX-License-Identifier: Apache-2.0
 """Bracket one prompt-batch candidate; never change production configuration."""
+# ---- Imports ----
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -25,7 +30,9 @@ from scripts.evaluate_hardening_suite import runtime_digest
 ORDER = (128, 512, 128)
 
 
+# ---- Definitions ----
 def batch_command(command, batch):
+    """Step: batch command. Inputs: command, batch."""
     if type(batch) is not int or batch not in ORDER:
         raise ValueError('Undeclared batch size')
     result = list(command)
@@ -35,6 +42,7 @@ def batch_command(command, batch):
 
 
 def verdict(variants, storage=False):
+    """Step: verdict. Inputs: variants, storage."""
     order = ('original', 'cache', 'original') if storage else ORDER
     key = 'storage' if storage else 'batch'
     complete = [v.get(key) for v in variants] == list(order) and all(
@@ -60,6 +68,7 @@ def verdict(variants, storage=False):
 
 
 def main(storage=False):
+    """Step: main. Inputs: storage."""
     config = json.loads((ROOT / 'config.json').read_text())
     order = ('original', 'cache', 'original') if storage else ORDER
     title = 'Model storage prefill experiment' if storage else 'Prompt batch prefill experiment'
@@ -74,6 +83,7 @@ def main(storage=False):
                          'cache_policy': 'No OS cache dropping; repeated baseline brackets candidate.'},
               'runtime_sha256_before': runtime_digest(), 'variants': []}
     def save():
+        """Step: save."""
         temp = path.with_suffix('.tmp'); temp.write_text(json.dumps(report, indent=2) + '\n'); temp.replace(path)
     # Fixed initial input; report the exact token work rather than trusting character counts.
     records = '\n'.join(f'record_{i:03d}: verify text, files, values and error handling.' for i in range(48))
@@ -113,12 +123,14 @@ def main(storage=False):
             started = time.monotonic(); done = threading.Event(); owned = []; session = None
             real_popen = subprocess.Popen
             def launch(command, **kwargs):
+                """Step: launch. Inputs: command."""
                 if '-ncmoe' not in command: return real_popen(command, **kwargs)
                 command = batch_command(command, batch)
                 variant['parameters'] = {flag: command[command.index(flag) + 1] for flag in ('-b', '-ub', '-c', '-t', '-ncmoe')}
                 proc = real_popen(command, **kwargs); owned.append(proc); psutil.Process(proc.pid).nice(5)
                 return proc
             def watch():
+                """Step: watch."""
                 while not done.wait(3):
                     try:
                         current = observation(); current['seconds'] = round(time.monotonic() - started, 1)
@@ -187,5 +199,6 @@ def main(storage=False):
     return report['passed']
 
 
+# ---- Script entry point ----
 if __name__ == '__main__':
     raise SystemExit(0 if main() else 1)

@@ -1,5 +1,10 @@
+# Program: tiny_dancer - coding_acceptance.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Independent CLI acceptance cases, never inserted into a running model task.
 # SPDX-License-Identifier: Apache-2.0
 """Independent CLI acceptance cases, never inserted into a running model task."""
+# ---- Imports ----
 import json
 import subprocess
 import tempfile
@@ -8,7 +13,9 @@ from pathlib import Path
 from scripts.evaluate_native_coding import independent_checks
 
 
+# ---- Definitions ----
 def coding_checks(folder,root):
+    """Step: coding checks. Inputs: folder, root."""
     folder=Path(folder);checks=independent_checks(folder);program=folder/'summarize.py'
     if not program.is_file():return checks,[]
     large=str(10**40)

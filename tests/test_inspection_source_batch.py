@@ -1,3 +1,7 @@
+# Program: tiny_dancer - tests/test_inspection_source_batch.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for inspection source batch (exercises app.batching, app.engine, app.prompting).
 # SPDX-License-Identifier: Apache-2.0
 """Batch readable sources without hiding the implementation or losing bounds."""
 import json
@@ -16,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def source(label, size):
+    """Test helper: source."""
     begin = '# ' + label + '_START\n'
     middle = '# ' + label + '_MIDDLE\n'
     end = '# ' + label + '_END\n'
@@ -23,8 +28,11 @@ def source(label, size):
     return begin + '# sample\n' * (half // 9) + middle + '# sample\n' * (half // 9) + end
 
 
+# -------- inspection source batch tests --------
 class InspectionSourceBatchTests(unittest.IsolatedAsyncioTestCase):
+    """Test group for inspection source batch."""
     async def asyncSetUp(self):
+        """Test helper: asyncSetUp."""
         self.temp = tempfile.TemporaryDirectory(dir=ROOT / 'workspace')
         self.folder = Path(self.temp.name)
         (self.folder / 'tests').mkdir()
@@ -38,12 +46,15 @@ class InspectionSourceBatchTests(unittest.IsolatedAsyncioTestCase):
             (self.folder / name).write_text(text)
 
     async def asyncTearDown(self):
+        """Test helper: asyncTearDown."""
         self.temp.cleanup()
 
     async def inspection(self):
+        """Test helper: inspection."""
         return await inspect_project({'files': []}, str(self.folder), self.folder / 'artifacts')
 
     async def test_actual_inspection_and_engine_keep_four_modest_sources_complete(self):
+        """Checks that actual inspection and engine keep four modest sources complete."""
         result = await self.inspection()
         preview = compact_result(result)
         actual = {str(Path(f['path']).relative_to(self.folder)): f['text'] for f in preview['files']}
@@ -51,6 +62,7 @@ class InspectionSourceBatchTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(result['runtime']['version'])
 
     async def test_large_files_have_shared_bound_and_full_saved_evidence(self):
+        """Checks that large files have shared bound and full saved evidence."""
         names = []
         for index in range(8):
             name = f'large{index}.py'; names.append(name)
@@ -65,6 +77,7 @@ class InspectionSourceBatchTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(saved['files'][0]['text'], (self.folder / names[0]).read_text())
 
     async def test_preview_is_idempotent_and_does_not_mutate_original_sources(self):
+        """Checks that preview is idempotent and does not mutate original sources."""
         data = {'files': [{'path': name, 'text': text} for name, text in self.files.items()], 'artifact': '/artifacts/full.json'}
         original = json.dumps(data)
         first = compact_result(data)
@@ -73,6 +86,7 @@ class InspectionSourceBatchTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(json.dumps(data), original)
 
     async def test_exhausted_budget_explains_omission_and_preserves_file_errors(self):
+        """Checks that exhausted budget explains omission and preserves file errors."""
         data = {'files': [{'path': f'{i}.py', 'text': 'x' * 4000} for i in range(3)] + [{'path': 'bad.py', 'error': 'Binary source'}]}
         preview = compact_result(data)
         self.assertEqual([len(f['text']) for f in preview['files'][:3]], [4000, 4000, 0])
@@ -81,6 +95,7 @@ class InspectionSourceBatchTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(preview['files'][3], data['files'][3])
 
     async def test_complete_small_project_fits_real_harmony_with_full_work_reply(self):
+        """Checks that complete small project fits real harmony with full work reply."""
         result = await self.inspection()
         fixture = reserve_fixtures.OutputReserveTests()
         engine, _, calls = fixture.setup_engine()
@@ -94,6 +109,7 @@ class InspectionSourceBatchTests(unittest.IsolatedAsyncioTestCase):
             self.assertIn(label + '_MIDDLE', calls[-1]['text'])
 
     async def test_character_bound_cannot_bypass_native_token_reserve(self):
+        """Checks that character bound cannot bypass native token reserve."""
         fixture = reserve_fixtures.OutputReserveTests()
         engine, _, calls = fixture.setup_engine()
         text = ''.join(chr(0x4e00 + i % 512) for i in range(3990))

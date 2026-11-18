@@ -1,5 +1,10 @@
+# Program: tiny_dancer - observe_existing_coding.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Continue observing an existing native coding job without changing its task.
 # SPDX-License-Identifier: Apache-2.0
 """Continue observing an existing native coding job without changing its task."""
+# ---- Imports ----
 import json
 import sys
 import time
@@ -15,10 +20,13 @@ from app.validation_results import archive_report,refresh_results
 from scripts.coding_acceptance import coding_checks
 
 
+# ---- Definitions ----
 def main():
+    """Step: main."""
     path=ROOT/'docs/hardening-coding-validation.json';report=json.loads(path.read_text())
     report.setdefault('observation_notes',[]).append('Read-only watcher reattached with a one-hour observation window, matching the original CSV baseline. Native goal, history, source, tools and generation remain unchanged; no pause/resume, code or hints were supplied.')
     def save():
+        """Step: save."""
         temporary=path.with_suffix('.tmp');temporary.write_text(json.dumps(report,indent=2)+'\n');temporary.replace(path);refresh_results(ROOT)
     with httpx.Client(base_url='http://127.0.0.1:3210',timeout=20) as client:
         client.get('/').raise_for_status();job=report['job'];full=client.get('/api/jobs/'+job).json()
@@ -53,4 +61,5 @@ def main():
         if not report['passed']:raise SystemExit(1)
 
 
+# ---- Script entry point ----
 if __name__=='__main__':main()

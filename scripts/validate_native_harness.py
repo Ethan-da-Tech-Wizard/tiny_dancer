@@ -1,5 +1,10 @@
+# Program: tiny_dancer - validate_native_harness.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Native patch/cache/medium-effort capability probe with a seeded bug and tests.
 # SPDX-License-Identifier: Apache-2.0
 """Native patch/cache/medium-effort capability probe with a seeded bug and tests."""
+# ---- Imports ----
 import json
 import subprocess
 import time
@@ -13,7 +18,9 @@ REPORT=ROOT/'docs/native-harness-validation.json'
 PROMPT='Repair calc.py so add(a, b) returns their sum. Use apply_patch for the edit, then verify with the existing tests. Finish after the tests pass.'
 
 
+# ---- Definitions ----
 def main():
+    """Step: main."""
     report={'started_at':datetime.now(timezone.utc).isoformat(),'prompt':PROMPT,'status':'starting',
             'scope':'Native capability probe with operator-seeded bug and tests, not an unassisted implementation evaluation. No replacement code or recovery notes supplied during execution.',
             'operator_interventions':[],'samples':[]}
@@ -59,4 +66,5 @@ def main():
         if not report['passed']:raise SystemExit(1)
 
 
+# ---- Script entry point ----
 if __name__=='__main__':main()

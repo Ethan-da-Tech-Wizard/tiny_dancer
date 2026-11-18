@@ -1,5 +1,10 @@
+# Program: tiny_dancer - inventory_extended_audit.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Predeclared extra regular-file requirement: pipes/sockets must not be read.
 # SPDX-License-Identifier: Apache-2.0
 """Predeclared extra regular-file requirement: pipes/sockets must not be read."""
+# ---- Imports ----
 import hashlib
 import json
 import os
@@ -12,7 +17,9 @@ import tempfile
 CRITERIA = ('Special files are excluded without blocking; regular files remain correct',)
 
 
+# ---- Definitions ----
 def check_special_files(folder, root):
+    """Step: check special files. Inputs: folder, root."""
     folder,root=Path(folder),Path(root)
     with tempfile.TemporaryDirectory(dir=root/'run') as temporary:
         base=Path(temporary);tree=base/'tree';tree.mkdir()

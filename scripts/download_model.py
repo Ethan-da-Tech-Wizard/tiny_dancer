@@ -1,4 +1,9 @@
+# Program: tiny_dancer - download_model.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Pinned, resumable official weights download. All assets live on GameDrive.
 """Pinned, resumable official weights download. All assets live on GameDrive."""
+# ---- Imports ----
 import json
 from pathlib import Path
 from huggingface_hub import HfApi, snapshot_download

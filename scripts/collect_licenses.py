@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
+# Program: tiny_dancer - collect_licenses.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Archive installed license texts and metadata without network access.
 # SPDX-License-Identifier: Apache-2.0
 """Archive installed license texts and metadata without network access."""
+# ---- Imports ----
 import argparse
 from datetime import datetime, timezone
 import hashlib
@@ -75,15 +80,19 @@ COMMON_FALLBACKS = {
 }
 
 
+# ---- Definitions ----
 def normalized(name):
+    """Step: normalized. Inputs: name."""
     return re.sub(r'[-_.]+', '-', name).lower()
 
 
 def digest(path):
+    """Step: digest. Inputs: path."""
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def archive(source, destination):
+    """Step: archive. Inputs: source, destination."""
     source = Path(source)
     destination = ROOT / destination
     if not source.is_file():
@@ -100,6 +109,7 @@ def archive(source, destination):
 
 
 def license_file(path):
+    """Step: license file. Inputs: path."""
     name = Path(str(path)).name.lower()
     return (name.startswith(('license', 'licence', 'copying', 'notice',
                              'thirdpartynotice', 'copyright', 'authors'))
@@ -107,10 +117,12 @@ def license_file(path):
 
 
 def installed():
+    """Step: installed."""
     return {normalized(d.metadata['Name']): d for d in metadata.distributions()}
 
 
 def check_lock(distributions):
+    """Step: check lock. Inputs: distributions."""
     locked = {}
     for line in (ROOT / 'requirements.lock.txt').read_text().splitlines():
         if not line.strip() or line.lstrip().startswith('#'):
@@ -124,15 +136,18 @@ def check_lock(distributions):
 
 
 def cell(value):
+    """Step: cell. Inputs: value."""
     return str(value).replace('|', '\\|').replace('\n', ' ')
 
 
 def links(records):
+    """Step: links. Inputs: records."""
     return ', '.join(f'[{Path(r["path"]).name}]({Path(r["path"]).relative_to("licenses").as_posix()})'
                      for r in records)
 
 
 def collect():
+    """Step: collect."""
     distributions = installed()
     locked = check_lock(distributions)
     result = {
@@ -145,6 +160,7 @@ def collect():
     }
 
     def save(source, destination):
+        """Step: save. Inputs: source, destination."""
         record = archive(source, destination)
         result['files'].append(record)
         return record
@@ -279,6 +295,7 @@ def collect():
 
 
 def verify():
+    """Step: verify."""
     result = json.loads((ARCHIVE / 'inventory.json').read_text())
     distributions = installed()
     check_lock(distributions)
@@ -297,6 +314,7 @@ def verify():
     return result
 
 
+# ---- Script entry point ----
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check', action='store_true', help='Verify recorded files and the current environment without writing')

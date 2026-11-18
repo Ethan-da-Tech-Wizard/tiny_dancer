@@ -1,5 +1,10 @@
+# Program: tiny_dancer - restart_when_idle.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Restart only after both the service and its durable job table report idle.
 # SPDX-License-Identifier: Apache-2.0
 """Restart only after both the service and its durable job table report idle."""
+# ---- Imports ----
 import argparse
 import json
 import sqlite3
@@ -11,7 +16,9 @@ import httpx
 
 ROOT = Path('/mnt/GameDrive/tiny_dancer')
 
+# ---- Definitions ----
 def wait_for_ready(max_seconds=20):
+    """Step: wait for ready. Inputs: max_seconds."""
     deadline=time.monotonic()+max_seconds
     last_error='No response'
     with httpx.Client(base_url='http://127.0.0.1:3210',timeout=1) as client:
@@ -27,6 +34,7 @@ def wait_for_ready(max_seconds=20):
 
 
 def guarded_restart(wait_seconds=0):
+    """Step: guarded restart. Inputs: wait_seconds."""
     deadline = time.monotonic() + max(0, wait_seconds)
     announced = False
     with httpx.Client(base_url='http://127.0.0.1:3210', timeout=15) as client:
@@ -57,11 +65,13 @@ def guarded_restart(wait_seconds=0):
 
 
 def main():
+    """Step: main."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--wait-seconds', type=int, default=0,
                         help='Wait for active tasks; default refuses immediately.')
     args = parser.parse_args()
     guarded_restart(args.wait_seconds)
 
+# ---- Script entry point ----
 if __name__ == '__main__':
     main()

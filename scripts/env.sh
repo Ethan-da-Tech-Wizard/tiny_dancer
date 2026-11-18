@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+# Program: tiny_dancer - env.sh
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Exports the project root and cache-location environment variables shared by the other shell scripts.
 export TINY_DANCER_ROOT=/mnt/GameDrive/tiny_dancer
 export HF_HOME="$TINY_DANCER_ROOT/cache/huggingface"
 export HF_HUB_CACHE="$HF_HOME/hub"

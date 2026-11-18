@@ -1,5 +1,10 @@
+# Program: tiny_dancer - node_licenses.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Offline inventory of the isolated Pi installation and its shipped notices.
 # SPDX-License-Identifier: Apache-2.0
 """Offline inventory of the isolated Pi installation and its shipped notices."""
+# ---- Imports ----
 import hashlib
 import json
 from pathlib import Path
@@ -7,21 +12,26 @@ import re
 import shutil
 
 
+# ---- Definitions ----
 def digest(path):
+    """Step: digest. Inputs: path."""
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def package_files(folder):
+    """Step: package files. Inputs: folder."""
     return sorted(p for p in folder.rglob('*') if p.is_file()
                   and 'node_modules' not in p.relative_to(folder).parts)
 
 
 def notice_file(path):
+    """Step: notice file. Inputs: path."""
     name = path.name.lower()
     return name.startswith(('license', 'licence', 'copying', 'notice', 'copyright', 'thirdpartynotice')) or name.endswith(('.license', '.licence'))
 
 
 def collect_node(root):
+    """Step: collect node. Inputs: root."""
     prefix = root / 'vendor/pi-runtime'
     lock = prefix / 'package-lock.json'
     if not lock.exists():
@@ -32,6 +42,7 @@ def collect_node(root):
               'lock_sha256': digest(lock), 'packages': [], 'files': []}
 
     def save(source, target):
+        """Step: save. Inputs: source, target."""
         target.parent.mkdir(parents=True, exist_ok=True)
         if source.resolve() != target.resolve():
             shutil.copyfile(source, target)
@@ -108,6 +119,7 @@ def collect_node(root):
 
 
 def verify_node(root):
+    """Step: verify node. Inputs: root."""
     prefix = root / 'vendor/pi-runtime'
     if not (prefix / 'package-lock.json').exists():
         return None

@@ -1,12 +1,19 @@
+# Program: tiny_dancer - patches.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Small, exact-context file edits using the familiar Begin Patch format.
 # SPDX-License-Identifier: Apache-2.0
 """Small, exact-context file edits using the familiar Begin Patch format."""
+# ---- Imports ----
 import os
 import shutil
 import uuid
 from pathlib import Path
 
 
+# ---- Definitions ----
 def apply_patch(patch, cwd, backups):
+    """Step: apply patch. Inputs: patch, cwd, backups."""
     if not isinstance(patch,str) or len(patch)>60000:
         raise ValueError('patch must be text of at most 60000 characters')
     lines=patch.splitlines()
@@ -83,6 +90,7 @@ def apply_patch(patch, cwd, backups):
             shutil.copy2(item['path'],backup);item['backup']=backup
     applied=[]
     def replace(path,data,mode=None):
+        """Step: replace. Inputs: path, data, mode."""
         path.parent.mkdir(parents=True,exist_ok=True)
         temp=path.with_name('.'+path.name+'.'+uuid.uuid4().hex+'.tmp')
         try:

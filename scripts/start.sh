@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+# Program: tiny_dancer - start.sh
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Starts the local web server (uvicorn) bound to the loopback address on port 3210.
 set -euo pipefail
 source /mnt/GameDrive/tiny_dancer/scripts/env.sh
 cd "$TINY_DANCER_ROOT"

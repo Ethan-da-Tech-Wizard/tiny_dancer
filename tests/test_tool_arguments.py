@@ -1,3 +1,7 @@
+# Program: tiny_dancer - tests/test_tool_arguments.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for tool arguments (exercises app.agent, app.tool_arguments, app.tools).
 # SPDX-License-Identifier: Apache-2.0
 """Native malformed-call recovery with unchanged command values and audit."""
 import json
@@ -14,8 +18,11 @@ from app.tools import ComputerTools, ROOT
 from tests.test_agent import ScriptedEngine, call
 
 
+# -------- tool argument decoding tests --------
 class ToolArgumentDecodingTests(unittest.TestCase):
+    """Test group for tool argument decoding."""
     def repaired(self, text):
+        """Test helper: repaired."""
         try:
             args, repair = parse_tool_arguments(text)
         except (ValueError, TypeError) as exc:
@@ -24,12 +31,14 @@ class ToolArgumentDecodingTests(unittest.TestCase):
         return args, repair
 
     def test_valid_nested_json_stays_unchanged(self):
+        """Checks that valid nested json stays unchanged."""
         original = {'commands': ['printf "]}"', 'echo \\\\'], 'nested': {'array': [1, None, {'x': True}]}}
         args, repair = parse_tool_arguments(json.dumps(original))
         self.assertEqual(args, original)
         self.assertIsNone(repair)
 
     def test_observed_native_shell_closer_preserves_exact_command(self):
+        """Checks that observed native shell closer preserves exact command."""
         command = "python - <<'PY'\nfrom decimal import Decimal\nprint(str(Decimal('1.2').quantize(Decimal('0.00'))))\nprint(str(Decimal('1').quantize(Decimal('0.00'))))\nPY"
         original = json.dumps({'command': command}, separators=(',', ':'))
         bad = original[:-1] + ']}'
@@ -39,6 +48,7 @@ class ToolArgumentDecodingTests(unittest.TestCase):
         self.assertEqual(repair['kind'], 'removed_unmatched_final_array_closer')
 
     def test_unicode_quotes_newlines_and_brackets_inside_values_survive(self):
+        """Checks that unicode quotes newlines and brackets inside values survive."""
         original = {'content': 'snowman ☃; literal ]}; quote "; newline\n; slash \\', 'path': 'bracket].txt'}
         bad = json.dumps(original, ensure_ascii=False)[:-1] + '] \n } \t'
         args, repair = self.repaired(bad)
@@ -46,27 +56,34 @@ class ToolArgumentDecodingTests(unittest.TestCase):
         self.assertEqual(bad[repair['removed_at']], ']')
 
     def test_legitimate_nested_array_then_extra_closer_is_unambiguous(self):
+        """Checks that legitimate nested array then extra closer is unambiguous."""
         original = {'commands': ['true', 'printf "]}"'], 'timeout': 120}
         args, _ = self.repaired(json.dumps(original)[:-1] + ']}')
         self.assertEqual(args, original)
 
     def test_other_corruption_never_gets_guessed(self):
+        """Checks that other corruption never gets guessed."""
         for text in ('{"command":"true"]]}', '{"command":"true"', '{"command":true,}', '{"command":"true"} trailing', '{"command":"unescaped\nnewline"]}', '{"command": "unterminated]}'):
             with self.subTest(text=text), self.assertRaises(json.JSONDecodeError):
                 parse_tool_arguments(text)
 
     def test_duplicate_fields_prevent_repair(self):
+        """Checks that duplicate fields prevent repair."""
         with self.assertRaises(json.JSONDecodeError):
             parse_tool_arguments('{"command":"safe","command":"different"]}')
 
     def test_non_object_inputs_remain_rejected(self):
+        """Checks that non object inputs remain rejected."""
         for text in ('[]', '["true"]', 'null', '42', '"string"'):
             with self.subTest(text=text), self.assertRaisesRegex(ValueError, 'must be an object'):
                 parse_tool_arguments(text)
 
 
+# -------- tool argument runner tests --------
 class ToolArgumentRunnerTests(unittest.IsolatedAsyncioTestCase):
+    """Test group for tool argument runner."""
     async def asyncSetUp(self):
+        """Test helper: asyncSetUp."""
         self.temp = tempfile.TemporaryDirectory(dir=ROOT / 'workspace')
         self.folder = Path(self.temp.name)
         self.tools = ComputerTools()
@@ -74,19 +91,23 @@ class ToolArgumentRunnerTests(unittest.IsolatedAsyncioTestCase):
         self.events = []
 
     async def asyncTearDown(self):
+        """Test helper: asyncTearDown."""
         await self.tools.close()
         self.temp.cleanup()
 
     def raw(self, name, body):
+        """Test helper: raw."""
         return Message.from_role_and_content(Role.ASSISTANT, body).with_channel('commentary').with_recipient('functions.' + name)
 
     def runner(self, actions):
+        """Test helper: runner."""
         request = SimpleNamespace(prompt='Create and verify result.txt', mode='agent', max_tokens=1024, run_until_done=True)
         return AgentRun(ScriptedEngine(actions), self.tools, str(self.folder), request,
             lambda: self.messages, lambda message, role=None: self.messages.append(message.to_dict()),
             lambda kind, data: self.events.append((kind, data)), lambda *args: None, threading.Event())
 
     async def test_actual_repaired_command_runs_once_and_original_call_is_audited(self):
+        """Checks that actual repaired command runs once and original call is audited."""
         command = "printf verified > result.txt"
         body = json.dumps({'command': command})[:-1] + ']}'
         finish = call('finish_task', {'summary': 'Created and checked file', 'checks': ["python -c \"from pathlib import Path; assert Path('result.txt').read_text() == 'verified'\""]})
@@ -104,6 +125,7 @@ class ToolArgumentRunnerTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(outcome['argument_repair'], {'kind': 'removed_unmatched_final_array_closer', 'values_unchanged': True})
 
     async def test_ambiguous_command_cannot_execute(self):
+        """Checks that ambiguous command cannot execute."""
         body = json.dumps({'command': 'touch must-not-exist.txt'})[:-1] + ']]}'
         finish = call('finish_task', {'summary': 'Rejected malformed command', 'checks': ['test ! -e must-not-exist.txt']})
         run = self.runner([self.raw('shell', body), finish])
@@ -112,6 +134,7 @@ class ToolArgumentRunnerTests(unittest.IsolatedAsyncioTestCase):
         self.assertFalse(any(kind == 'tool_arguments_repaired' for kind, data in self.events))
 
     async def test_repair_positions_do_not_defeat_repeated_failure_guard(self):
+        """Checks that repair positions do not defeat repeated failure guard."""
         actions = []
         for space in ('', ' ', '  ', '   ', '    ', '     ', '      ', '       '):
             body = json.dumps({'command': 'exit 1'})[:-1] + space + ']}'

@@ -1,3 +1,7 @@
+# Program: tiny_dancer - tests/test_request_models.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for request models (exercises app.request_models).
 # SPDX-License-Identifier: Apache-2.0
 """Validate API inputs without importing the server or touching job state."""
 import unittest
@@ -5,25 +9,32 @@ from pydantic import ValidationError
 from app.request_models import NewTask,ResumeTask,apply_resume_options
 
 
+# -------- request model tests --------
 class RequestModelTests(unittest.TestCase):
+    """Test group for request model."""
     def test_new_api_agent_defaults_to_continuous_work(self):
+        """Checks that new api agent defaults to continuous work."""
         self.assertTrue(NewTask.model_validate_json('{"prompt":"Build an app"}').run_until_done)
 
     def test_chat_and_explicit_bounded_choice_remain_available(self):
+        """Checks that chat and explicit bounded choice remain available."""
         self.assertFalse(NewTask(prompt='Hello',mode='chat').run_until_done)
         self.assertFalse(NewTask(prompt='Build an app',run_until_done=False).run_until_done)
         self.assertTrue(NewTask(prompt='Hello',mode='chat',run_until_done=True).run_until_done)
 
     def test_saved_explicit_bounded_mode_survives_resume_and_round_trip(self):
+        """Checks that saved explicit bounded mode survives resume and round trip."""
         saved=NewTask.model_validate_json('{"prompt":"Old task","run_until_done":false}')
         apply_resume_options(saved,ResumeTask())
         self.assertFalse(NewTask.model_validate_json(saved.model_dump_json()).run_until_done)
 
     def test_omitted_and_null_budget_select_auto(self):
+        """Checks that omitted and null budget select auto."""
         self.assertIsNone(NewTask(prompt='Create a file').max_tokens)
         self.assertIsNone(NewTask(prompt='Create a file',max_tokens=None).max_tokens)
 
     def test_numeric_budget_bounds_are_preserved(self):
+        """Checks that numeric budget bounds are preserved."""
         for number in (64,512,1024,2048,4096):
             with self.subTest(number=number):self.assertEqual(NewTask(prompt='Task',max_tokens=number).max_tokens,number)
         for number in (0,63,4097,100000):
@@ -32,17 +43,20 @@ class RequestModelTests(unittest.TestCase):
                     model(**({'prompt':'Task'} if model is NewTask else {}),max_tokens=number)
 
     def test_omitted_resume_options_preserve_saved_settings(self):
+        """Checks that omitted resume options preserve saved settings."""
         task=NewTask(prompt='Task',max_tokens=1024,run_until_done=True,reasoning_effort='medium')
         apply_resume_options(task,ResumeTask())
         self.assertEqual((task.max_tokens,task.run_until_done,task.reasoning_effort),(1024,True,'medium'))
 
     def test_explicit_resume_auto_clears_the_saved_numeric_budget(self):
+        """Checks that explicit resume auto clears the saved numeric budget."""
         task=NewTask(prompt='Task',max_tokens=1024)
         apply_resume_options(task,ResumeTask(max_tokens=None))
         self.assertIsNone(task.max_tokens)
         self.assertIsNone(NewTask.model_validate_json(task.model_dump_json()).max_tokens)
 
     def test_resume_updates_explicit_choices_without_changing_original_goal(self):
+        """Checks that resume updates explicit choices without changing original goal."""
         task=NewTask(prompt='Original task',max_tokens=None)
         apply_resume_options(task,ResumeTask(max_tokens=512,run_until_done=True,reasoning_effort='low'))
         self.assertEqual(task.prompt,'Original task')

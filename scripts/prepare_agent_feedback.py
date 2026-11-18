@@ -1,5 +1,10 @@
+# Program: tiny_dancer - prepare_agent_feedback.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Prepare an evidence-only local-model review workspace; never launch or deploy.
 # SPDX-License-Identifier: Apache-2.0
 """Prepare an evidence-only local-model review workspace; never launch or deploy."""
+# ---- Imports ----
 import argparse
 from collections import Counter
 from datetime import datetime, timezone
@@ -10,6 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
+# ---- Definitions ----
 def public_evidence(report):
     """Allowlist observations; do not copy transcripts, arguments or reasoning."""
     if not isinstance(report, dict):
@@ -38,6 +44,7 @@ def public_evidence(report):
 
 
 def project_source(root, name):
+    """Step: project source. Inputs: root, name."""
     relative = Path(name)
     if relative.is_absolute() or '..' in relative.parts or not relative.parts:
         raise ValueError('Source must be a relative project path')
@@ -55,6 +62,7 @@ def project_source(root, name):
 
 
 def prepare(root, report_path, sources, goal):
+    """Step: prepare. Inputs: root, report_path, sources, goal."""
     root = Path(root).resolve()
     report_path = Path(report_path).resolve()
     if not report_path.is_relative_to(root / 'docs') or report_path.suffix != '.json':
@@ -126,6 +134,7 @@ and regression checks before any deployment. You cannot approve your own proposa
 
 
 def main():
+    """Step: main."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('report', help='Saved evaluation JSON under docs/')
     parser.add_argument('--source', action='append', required=True, help='Relevant relative source path; repeat as needed')
@@ -136,5 +145,6 @@ def main():
                       'next': 'When the app is idle, select this workspace and send the request in Agent mode.'}, indent=2))
 
 
+# ---- Script entry point ----
 if __name__ == '__main__':
     main()

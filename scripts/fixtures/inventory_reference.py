@@ -1,5 +1,10 @@
+# Program: tiny_dancer - inventory_reference.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Operator-written positive TEST CONTROL only; never supplied as model output.
 # SPDX-License-Identifier: Apache-2.0
 """Operator-written positive TEST CONTROL only; never supplied as model output."""
+# ---- Imports ----
 import hashlib
 import json
 import os
@@ -9,11 +14,14 @@ import sys
 import tempfile
 
 
+# ---- Definitions ----
 def fail_scan(error):
+    """Step: fail scan. Inputs: error."""
     raise error
 
 
 def inventory(root,output):
+    """Step: inventory. Inputs: root, output."""
     root=Path(root).absolute();output=Path(output).absolute()
     if not root.is_dir():raise ValueError('ROOT must be a directory')
     rows=[]
@@ -39,6 +47,7 @@ def inventory(root,output):
 
 
 def main():
+    """Step: main."""
     try:
         if len(sys.argv)!=3:raise ValueError('Usage: inventory.py ROOT OUTPUT')
         inventory(sys.argv[1],sys.argv[2])
@@ -47,4 +56,5 @@ def main():
     return 0
 
 
+# ---- Script entry point ----
 if __name__=='__main__':raise SystemExit(main())

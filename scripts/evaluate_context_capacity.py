@@ -1,5 +1,10 @@
+# Program: tiny_dancer - evaluate_context_capacity.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Bounded real-model long-context receipt; no agent completion claim.
 # SPDX-License-Identifier: Apache-2.0
 """Bounded real-model long-context receipt; no agent completion claim."""
+# ---- Imports ----
 import json
 from pathlib import Path
 import sqlite3
@@ -19,13 +24,16 @@ EXPECTED = 'ALPHA=17; OMEGA=29'
 LIMIT_SECONDS = 180
 
 
+# ---- Definitions ----
 def make_prompt():
+    """Step: make prompt."""
     return ('Read the reference records and return only the ALPHA and OMEGA values, '
             'in the form ALPHA=<value>; OMEGA=<value>.\nALPHA=17\n' + ''.join(
                 f'r{i}={i * 17};\n' for i in range(1500)) + '\nOMEGA=29\n')
 
 
 def checks_for(status, finals, metrics, before, after, samples, interventions):
+    """Step: checks for. Inputs: status, finals, metrics, before, after, samples, interventions."""
     return {
         'native_final_complete': status == 'complete' and finals == [EXPECTED],
         'actual_prompt_over_8192': any(type(m.get('prompt_tokens')) is int and m['prompt_tokens'] > 8192 for m in metrics),
@@ -38,6 +46,7 @@ def checks_for(status, finals, metrics, before, after, samples, interventions):
 
 
 def main():
+    """Step: main."""
     report = {'started_at': datetime.now(timezone.utc).isoformat(), 'status': 'starting', 'passed': False,
               'scope': 'Actual local GPT-OSS final and native token/memory receipts for a prompt longer than8192. '
                        'This is a long-context retrieval smoke, not a coding qualification, speed claim or general quality proof.',
@@ -47,6 +56,7 @@ def main():
         archive_report(ROOT, path.name, 'native', 'Previous long-context receipt', report['scope'])
 
     def save():
+        """Step: save."""
         temporary = path.with_suffix('.tmp')
         temporary.write_text(json.dumps(report, indent=2) + '\n')
         temporary.replace(path)
@@ -104,5 +114,6 @@ def main():
         raise SystemExit(1)
 
 
+# ---- Script entry point ----
 if __name__ == '__main__':
     main()

@@ -1,5 +1,10 @@
+# Program: tiny_dancer - evaluate_precision_repair.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Native repair of observed CSV defects; immutable operator-seeded criteria.
 # SPDX-License-Identifier: Apache-2.0
 """Native repair of observed CSV defects; immutable operator-seeded criteria."""
+# ---- Imports ----
 import json
 import hashlib
 from datetime import datetime, timezone
@@ -53,7 +58,9 @@ if __name__=="__main__":unittest.main()
 '''
 
 
+# ---- Definitions ----
 def main():
+    """Step: main."""
     baseline=json.loads((ROOT/'docs/hardening-coding-validation.json').read_text())
     assert baseline['status']!='running' and baseline['passed'] is False
     with httpx.Client(base_url='http://127.0.0.1:3210',timeout=20) as client:
@@ -72,6 +79,7 @@ def main():
         report['acceptance_before_repair']={'exit_code':preflight.returncode,'output':(preflight.stdout+preflight.stderr)[-8000:]}
         path=ROOT/'docs/precision-repair-validation.json'
         def save():
+            """Step: save."""
             temporary=path.with_suffix('.tmp');temporary.write_text(json.dumps(report,indent=2)+'\n');temporary.replace(path);refresh_results(ROOT)
         session=client.post('/api/sessions',json={'title':'Validation · exact-money repair','cwd':str(folder)});session.raise_for_status();sid=session.json()['id']
         created=client.post('/api/sessions/'+sid+'/tasks',json={'prompt':prompt,'mode':'agent','max_tokens':None,'run_until_done':True,'reasoning_effort':'auto'});created.raise_for_status();job=created.json()['job']
@@ -111,4 +119,5 @@ def main():
     if not report['passed']:raise SystemExit(1)
 
 
+# ---- Script entry point ----
 if __name__=='__main__':main()

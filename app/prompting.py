@@ -1,5 +1,10 @@
+# Program: tiny_dancer - prompting.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Compact instructions and tool previews; durable evidence remains unchanged.
 # SPDX-License-Identifier: Apache-2.0
 """Compact instructions and tool previews; durable evidence remains unchanged."""
+# ---- Imports ----
 import json
 import re
 from pathlib import Path
@@ -11,7 +16,9 @@ WORK="Work until verified completion or a specific blocker. Save multi-step prog
 ANSWER="Answer the current question using real evidence. Cite successfully retrieved sources for current facts. Check missing pages; never invent dates, scores or tool results. Questions do not need shell tests."
 
 
+# ---- Definitions ----
 def instructions_for(contract,cwd):
+    """Step: instructions for. Inputs: contract, cwd."""
     text=CORE+'\n'+(WORK if contract['kind']=='work' else ANSWER)
     workflow=contract.get('workflow')
     if workflow=='nfl_scores':
@@ -27,6 +34,7 @@ def instructions_for(contract,cwd):
 
 
 def excerpt(text,limit):
+    """Step: excerpt. Inputs: text, limit."""
     if len(text)<=limit: return text
     head=limit//2;tail=limit-head
     return text[:head]+'\n[... omitted; read saved artifact for full output ...]\n'+text[-tail:]
@@ -58,6 +66,7 @@ def inspection_files_preview(files,base_path=None):
     remaining=8000;output=[None]*len(files)
     marker='\n[... source omitted; use read_file ...]\n'
     def test_source(file):
+        """Step: test source. Inputs: file."""
         if not isinstance(file,dict):return False
         name=file.get('path','')
         if not isinstance(name,str):return False
@@ -85,6 +94,7 @@ def inspection_files_preview(files,base_path=None):
 
 
 def compact_result(payload):
+    """Step: compact result. Inputs: payload."""
     if not isinstance(payload,dict): return payload
     result=with_failure_evidence(payload)
     for key in ('text','output','result','preview'):

@@ -1,3 +1,7 @@
+# Program: tiny_dancer - tests/test_incomplete_generation_diagnostics.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for incomplete generation diagnostics (exercises app.agent, app.tools).
 # SPDX-License-Identifier: Apache-2.0
 """Diagnose real reply-limit recovery without leaking or executing text."""
 import json
@@ -13,8 +17,11 @@ from app.tools import ComputerTools, ROOT
 from tests.test_agent import ScriptedEngine, call
 
 
+# -------- incomplete generation diagnostics tests --------
 class IncompleteGenerationDiagnosticsTests(unittest.IsolatedAsyncioTestCase):
+    """Test group for incomplete generation diagnostics."""
     async def asyncSetUp(self):
+        """Test helper: asyncSetUp."""
         self.temp = tempfile.TemporaryDirectory(dir=ROOT / 'workspace')
         self.folder = Path(self.temp.name)
         self.tools = ComputerTools()
@@ -22,10 +29,12 @@ class IncompleteGenerationDiagnosticsTests(unittest.IsolatedAsyncioTestCase):
         self.events = []
 
     async def asyncTearDown(self):
+        """Test helper: asyncTearDown."""
         await self.tools.close()
         self.temp.cleanup()
 
     async def recover(self, partial):
+        """Test helper: recover."""
         final = call('finish_task', {'summary': 'Partial action rejected and checked', 'checks': ['test ! -e must-not-exist.txt']})
         request = SimpleNamespace(prompt='Check that a partial action never executes', mode='agent', max_tokens=None, run_until_done=True)
         run = AgentRun(ScriptedEngine([([partial], 'MAX_TOKENS'), final]), self.tools, str(self.folder), request,
@@ -40,6 +49,7 @@ class IncompleteGenerationDiagnosticsTests(unittest.IsolatedAsyncioTestCase):
         return metadata[0]
 
     async def test_tool_phase_and_size_retained_without_partial_execution(self):
+        """Checks that tool phase and size retained without partial execution."""
         body = json.dumps({'path': 'must-not-exist.txt', 'content': 'private partial command'})
         partial = Message.from_role_and_content(Role.ASSISTANT, body).with_channel('commentary').with_recipient('functions.write_file')
         event = await self.recover(partial)
@@ -48,6 +58,7 @@ class IncompleteGenerationDiagnosticsTests(unittest.IsolatedAsyncioTestCase):
         self.assertFalse(any(kind == 'tool_start' and data['name'] == 'write_file' for kind, data in self.events))
 
     async def test_analysis_phase_retained_without_private_text(self):
+        """Checks that analysis phase retained without private text."""
         text = 'private reasoning must stay private'
         partial = Message.from_role_and_content(Role.ASSISTANT, text).with_channel('analysis')
         event = await self.recover(partial)
@@ -55,6 +66,7 @@ class IncompleteGenerationDiagnosticsTests(unittest.IsolatedAsyncioTestCase):
         self.assertNotIn(text, json.dumps(event))
 
     async def test_unrecognized_recipient_is_not_copied_to_diagnostics(self):
+        """Checks that unrecognized recipient is not copied to diagnostics."""
         recipient = 'functions.unrecognized_private_name'
         partial = Message.from_role_and_content(Role.ASSISTANT, 'private body').with_channel('commentary').with_recipient(recipient)
         event = await self.recover(partial)
@@ -63,6 +75,7 @@ class IncompleteGenerationDiagnosticsTests(unittest.IsolatedAsyncioTestCase):
         self.assertNotIn(recipient, json.dumps(event))
 
     async def test_unrecognized_channel_is_not_copied_to_diagnostics(self):
+        """Checks that unrecognized channel is not copied to diagnostics."""
         channel = 'unrecognized_private_channel'
         partial = Message.from_role_and_content(Role.ASSISTANT, 'private body').with_channel(channel)
         event = await self.recover(partial)

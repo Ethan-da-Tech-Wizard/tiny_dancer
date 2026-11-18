@@ -1,5 +1,10 @@
+# Program: tiny_dancer - run_agent_feedback.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Run a prepared diagnostic task through the ordinary local agent, one at a time.
 # SPDX-License-Identifier: Apache-2.0
 """Run a prepared diagnostic task through the ordinary local agent, one at a time."""
+# ---- Imports ----
 import argparse
 from datetime import datetime, timezone
 import hashlib
@@ -16,7 +21,9 @@ from app.validation_results import archive_report, refresh_results
 from scripts.evaluate_hardening_suite import runtime_digest
 
 
+# ---- Definitions ----
 def valid_feedback(data):
+    """Step: valid feedback. Inputs: data."""
     if not isinstance(data, dict) or data.get('verdict') not in ('proposal', 'no_change', 'insufficient_evidence'):
         return False
     if not all(isinstance(data.get(k), str) for k in ('summary', 'proposed_change', 'test_command')):
@@ -31,6 +38,7 @@ def valid_feedback(data):
 
 
 def main():
+    """Step: main."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('workspace')
     args = parser.parse_args()
@@ -49,6 +57,7 @@ def main():
               'scope': 'Actual local model diagnostic proposal on an isolated source copy. Workflow checks do not approve the diagnosis or patch. Independent reproduction/control checks are required.',
               'operator_interventions': [], 'observation_limit_seconds': None}
     def save():
+        """Step: save."""
         temp = path.with_suffix('.tmp'); temp.write_text(json.dumps(report, indent=2) + '\n'); temp.replace(path)
     with httpx.Client(base_url='http://127.0.0.1:3210', trust_env=False, timeout=30) as client:
         client.get('/').raise_for_status()
@@ -87,5 +96,6 @@ def main():
     if not report['passed']: raise SystemExit(1)
 
 
+# ---- Script entry point ----
 if __name__ == '__main__':
     main()

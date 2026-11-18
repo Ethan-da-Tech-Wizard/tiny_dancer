@@ -1,10 +1,17 @@
+# Program: tiny_dancer - source_diagnostics.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Small, read-only runtime notes derived from inspected Python imports.
 # SPDX-License-Identifier: Apache-2.0
 """Small, read-only runtime notes derived from inspected Python imports."""
+# ---- Imports ----
 import ast
 from pathlib import Path
 
 
+# ---- Definitions ----
 def walk_default_error_sites(tree):
+    """Step: walk default error sites. Inputs: tree."""
     modules=set();functions=set()
     for node in ast.walk(tree):
         if isinstance(node,ast.Import):
@@ -24,6 +31,7 @@ def walk_default_error_sites(tree):
 
 
 def python_runtime_notes(files):
+    """Step: python runtime notes. Inputs: files."""
     notes = []
     for record in files:
         if (not isinstance(record, dict) or record.get('error') or record.get('truncated')

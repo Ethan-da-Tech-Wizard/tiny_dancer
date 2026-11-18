@@ -1,5 +1,10 @@
+# Program: tiny_dancer - run_regressions.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Run real regressions and preserve named outcomes in a unique results report.
 # SPDX-License-Identifier: Apache-2.0
 """Run real regressions and preserve named outcomes in a unique results report."""
+# ---- Imports ----
 import hashlib
 import json
 import sys
@@ -14,7 +19,9 @@ sys.path.insert(0,str(ROOT))
 from app.validation_results import refresh_results
 
 
+# ---- Definitions ----
 def main():
+    """Step: main."""
     started=time.monotonic();now=datetime.now(timezone.utc)
     directory=ROOT/'docs/validation/runs';directory.mkdir(parents=True,exist_ok=True)
     path=directory/(now.strftime('%Y%m%dT%H%M%S%fZ')+'.json')
@@ -28,19 +35,24 @@ def main():
     for source in sorted(p for p in sources if p.is_file()): digest.update(str(source.relative_to(ROOT)).encode());digest.update(source.read_bytes())
     report['source_sha256']=digest.hexdigest()
     def save():
+        """Step: save."""
         temporary=path.with_suffix('.tmp');temporary.write_text(json.dumps(report,indent=2)+'\n');temporary.replace(path)
     class Results(unittest.TextTestResult):
+        """Defines the results type."""
         def startTest(self,test): self.test_started=time.monotonic();super().startTest(test)
         def record(self,test,status,detail=''):
+            """Step: record. Inputs: test, status, detail."""
             report['results'].append({'test':test.id(),'status':status,'seconds':round(time.monotonic()-self.test_started,4),'detail':detail})
         def addSuccess(self,test): super().addSuccess(test);self.record(test,'passed')
         def addFailure(self,test,err): super().addFailure(test,err);self.record(test,'failed',self._exc_info_to_string(err,test))
         def addError(self,test,err): super().addError(test,err);self.record(test,'error',self._exc_info_to_string(err,test))
         def addSkip(self,test,reason): super().addSkip(test,reason);self.record(test,'skipped',reason)
         def addSubTest(self,test,subtest,err):
+            """Step: addsubtest. Inputs: test, subtest, err."""
             super().addSubTest(test,subtest,err)
             if err: self.record(subtest,'failed',self._exc_info_to_string(err,test))
         def stopTest(self,test):
+            """Step: stoptest. Inputs: test."""
             super().stopTest(test)
             report.update(tests_run=self.testsRun,failures=len(self.failures),errors=len(self.errors),skipped=len(self.skipped),seconds=round(time.monotonic()-started,3))
             save()
@@ -59,4 +71,5 @@ def main():
     if not result.wasSuccessful(): raise SystemExit(1)
 
 
+# ---- Script entry point ----
 if __name__=='__main__':main()

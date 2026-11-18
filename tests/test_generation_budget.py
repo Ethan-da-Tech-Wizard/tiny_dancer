@@ -1,3 +1,7 @@
+# Program: tiny_dancer - tests/test_generation_budget.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for generation budget (exercises app.agent, app.tools).
 # SPDX-License-Identifier: Apache-2.0
 """Exercise automatic starting allowances through actual runner/tool paths."""
 import json
@@ -14,23 +18,29 @@ from tests.test_agent import call
 from tests.test_continuation import ContinuingEngine
 
 
+# -------- generation budget tests --------
 class GenerationBudgetTests(unittest.IsolatedAsyncioTestCase):
+    """Test group for generation budget."""
     async def asyncSetUp(self):
+        """Test helper: asyncSetUp."""
         self.temp = tempfile.TemporaryDirectory(dir=ROOT / 'workspace')
         self.tools = ComputerTools()
         self.messages = []
 
     async def asyncTearDown(self):
+        """Test helper: asyncTearDown."""
         await self.tools.close()
         self.temp.cleanup()
 
     def runner(self, actions=(), prompt='Create result.py and test its behavior', mode='agent', budget=None, checkpoint=None):
+        """Test helper: runner."""
         request = SimpleNamespace(prompt=prompt, mode=mode, max_tokens=budget, run_until_done=True)
         return AgentRun(ContinuingEngine(actions), self.tools, self.temp.name, request,
                         lambda: self.messages, lambda message, role=None: self.messages.append(message.to_dict()),
                         lambda *args: None, lambda *args: None, threading.Event(),checkpoint)
 
     async def test_automatic_work_allowance_is_available_for_the_first_write(self):
+        """Checks that automatic work allowance is available for the first write."""
         run = self.runner([call('write_file', {'path': 'result.py', 'content': 'answer = 42\n'}),
                            call('finish_task', {'summary': 'Created and checked result.py',
                                                 'checks': ['python3 -c "from result import answer; assert answer == 42"']})])
@@ -40,18 +50,21 @@ class GenerationBudgetTests(unittest.IsolatedAsyncioTestCase):
         self.assertNotIn('model_limit_retries', run.state)
 
     async def test_automatic_questions_keep_a_small_allowance(self):
+        """Checks that automatic questions keep a small allowance."""
         final = Message.from_role_and_content(Role.ASSISTANT, 'Hello!').with_channel('final')
         run = self.runner([final], prompt='hi')
         self.assertEqual(await run.run(), 'complete')
         self.assertEqual(run.engine.budgets, [512])
 
     async def test_automatic_chat_keeps_a_small_allowance(self):
+        """Checks that automatic chat keeps a small allowance."""
         final = Message.from_role_and_content(Role.ASSISTANT, 'I can explain that.').with_channel('final')
         run = self.runner([final], mode='chat')
         self.assertEqual(await run.run(), 'complete')
         self.assertEqual(run.engine.budgets, [512])
 
     async def test_explicit_starting_allowance_is_preserved(self):
+        """Checks that explicit starting allowance is preserved."""
         for budget in (64, 512, 1024, 2048):
             run = self.runner(budget=budget)
             with self.subTest(budget=budget):
@@ -59,6 +72,7 @@ class GenerationBudgetTests(unittest.IsolatedAsyncioTestCase):
                 self.assertEqual(run.state.get('generation_budget'), {'requested': budget, 'initial': budget, 'current': budget})
 
     async def test_retry_allowance_is_recorded_and_partial_action_never_runs(self):
+        """Checks that retry allowance is recorded and partial action never runs."""
         partial = call('write_file', {'path': 'partial.py', 'content': 'must never execute'})
         final = call('finish_task', {'summary': 'Checked that the partial action never executed', 'checks': ['test ! -f partial.py']})
         run = self.runner([([partial], 'MAX_TOKENS'), final], budget=1024)
@@ -68,17 +82,20 @@ class GenerationBudgetTests(unittest.IsolatedAsyncioTestCase):
         self.assertFalse((Path(self.temp.name) / 'partial.py').exists())
 
     async def test_automatic_allowance_applies_to_work_in_every_language(self):
+        """Checks that automatic allowance applies to work in every language."""
         for prompt in ('Repair main.cpp and run its tests', 'Implement a JavaScript module', 'Create a grocery list'):
             with self.subTest(prompt=prompt):
                 self.assertEqual(self.runner(prompt=prompt).current_max_tokens, 2048)
 
     async def test_resume_preserves_a_grown_allowance_when_requested_budget_is_unchanged(self):
+        """Checks that resume preserves a grown allowance when requested budget is unchanged."""
         checkpoint={'generation_budget':{'requested':1024,'initial':1024,'current':2048}}
         run=self.runner(budget=1024,checkpoint=checkpoint)
         self.assertEqual(run.current_max_tokens,2048)
         self.assertEqual(run.state['generation_budget'],checkpoint['generation_budget'])
 
     async def test_changed_resume_choice_resets_the_starting_allowance(self):
+        """Checks that changed resume choice resets the starting allowance."""
         checkpoint={'generation_budget':{'requested':1024,'initial':1024,'current':2048}}
         run=self.runner(budget=512,checkpoint=checkpoint)
         self.assertEqual(run.current_max_tokens,512)

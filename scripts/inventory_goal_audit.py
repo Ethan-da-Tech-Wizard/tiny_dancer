@@ -1,5 +1,10 @@
+# Program: tiny_dancer - inventory_goal_audit.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Withheld inventory checks added after the original narrow trial passed.
 # SPDX-License-Identifier: Apache-2.0
 """Withheld inventory checks added after the original narrow trial passed."""
+# ---- Imports ----
 import hashlib
 import json
 from pathlib import Path
@@ -11,19 +16,24 @@ CRITERIA = ('Repeated successful output outside ROOT is replaced with current da
             'Unreadable directory fails scanning and preserves prior output')
 
 
+# ---- Definitions ----
 def check_inventory_goal(folder, root):
+    """Step: check inventory goal. Inputs: folder, root."""
     folder, root = Path(folder), Path(root)
     program = folder / 'inventory.py'
     def invoke(tree, output):
+        """Step: invoke. Inputs: tree, output."""
         try:
             return subprocess.run([sys.executable, str(program), str(tree), str(output)],
                                   cwd=folder, capture_output=True, text=True, timeout=20)
         except (OSError, subprocess.TimeoutExpired) as exc:
             return subprocess.CompletedProcess([], 1, '', str(exc))
     def expected(files):
+        """Step: expected. Inputs: files."""
         return sorted([{'path':name, 'size':len(data), 'sha256':hashlib.sha256(data).hexdigest()}
                        for name, data in files.items()], key=lambda row:row['path'])
     def matches(output, files):
+        """Step: matches. Inputs: output, files."""
         try: return json.loads(output.read_text()) == expected(files)
         except (OSError, ValueError): return False
     with tempfile.TemporaryDirectory(dir=root / 'run') as temporary:

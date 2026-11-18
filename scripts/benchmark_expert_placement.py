@@ -1,5 +1,10 @@
+# Program: tiny_dancer - benchmark_expert_placement.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Bounded isolated native placement comparison; never alter the serving config.
 # SPDX-License-Identifier: Apache-2.0
 """Bounded isolated native placement comparison; never alter the serving config."""
+# ---- Imports ----
 import hashlib
 import json
 from pathlib import Path
@@ -20,7 +25,9 @@ from app.llama_session import LlamaReferenceSession
 from app.validation_results import archive_report
 
 
+# ---- Definitions ----
 def gpu_memory():
+    """Step: gpu memory."""
     result = subprocess.run(['nvidia-smi', '--query-gpu=memory.used,memory.total,temperature.gpu',
                              '--format=csv,noheader,nounits'], capture_output=True, text=True, timeout=3)
     result.check_returncode()
@@ -29,6 +36,7 @@ def gpu_memory():
 
 
 def assert_idle(client):
+    """Step: assert idle. Inputs: client."""
     status = client.get('/api/status', timeout=3).json()
     if status.get('active_job') or status.get('engine') != 'not loaded':
         raise RuntimeError('Placement benchmark requires idle app and unloaded production model')
@@ -36,6 +44,7 @@ def assert_idle(client):
 
 
 def main():
+    """Step: main."""
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
     folder = ROOT/'run/placement-benchmarks'/stamp
     folder.mkdir(parents=True)
@@ -47,6 +56,7 @@ def main():
               'variants': [], 'abort_reason': None}
     path = ROOT/'docs/expert-placement-validation.json'
     def save():
+        """Step: save."""
         path.write_text(json.dumps(report, indent=2)+'\n')
     save()
     encoding = load_harmony_encoding(HarmonyEncodingName.HARMONY_GPT_OSS)
@@ -75,6 +85,7 @@ def main():
             variant_started = time.monotonic()
             original_popen = subprocess.Popen
             def launch(command, **kwargs):
+                """Step: launch. Inputs: command."""
                 command = list(command)
                 if '-ncmoe' not in command:
                     return original_popen(command, **kwargs)
@@ -87,6 +98,7 @@ def main():
                 owned.append(proc)
                 return proc
             def monitor():
+                """Step: monitor."""
                 while not stop.wait(1):
                     try:
                         gpu = gpu_memory()
@@ -159,4 +171,5 @@ def main():
     print('Saved:', path, flush=True)
 
 
+# ---- Script entry point ----
 if __name__ == '__main__': main()

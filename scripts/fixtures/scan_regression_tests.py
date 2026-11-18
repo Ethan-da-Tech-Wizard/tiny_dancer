@@ -1,5 +1,10 @@
+# Program: tiny_dancer - scan_regression_tests.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Known filesystem error regressions supplied before a native repair task.
 # SPDX-License-Identifier: Apache-2.0
 """Known filesystem error regressions supplied before a native repair task."""
+# ---- Imports ----
 from pathlib import Path
 import subprocess
 import sys
@@ -9,8 +14,11 @@ import unittest
 ROOT = Path(__file__).resolve().parent
 
 
+# ---- Definitions ----
 class ScanErrorRegressionTests(unittest.TestCase):
+    """Defines the scanerrorregressiontests type."""
     def check_denied(self, directory):
+        """Step: check denied. Inputs: directory."""
         with tempfile.TemporaryDirectory(dir=ROOT) as temporary:
             base = Path(temporary); tree = base/'tree'; tree.mkdir()
             denied = tree/'restricted'
@@ -34,11 +42,14 @@ class ScanErrorRegressionTests(unittest.TestCase):
                 denied.chmod(mode)
 
     def test_unreadable_nested_directory(self):
+        """Step: test unreadable nested directory."""
         self.check_denied(True)
 
     def test_unreadable_file(self):
+        """Step: test unreadable file."""
         self.check_denied(False)
 
 
+# ---- Script entry point ----
 if __name__ == '__main__':
     unittest.main()

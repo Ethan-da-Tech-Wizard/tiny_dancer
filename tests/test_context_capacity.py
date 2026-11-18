@@ -1,3 +1,7 @@
+# Program: tiny_dancer - tests/test_context_capacity.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for context capacity (exercises app.engine, app.prompt_cache, app.reply_continuation).
 # SPDX-License-Identifier: Apache-2.0
 """Long native prompts must retain their goal and complete action allowance."""
 import threading
@@ -11,8 +15,11 @@ from app.reply_continuation import continue_reply
 from tests.raw_engine_fixture import legacy_raw_engine
 
 
+# -------- context capacity tests --------
 class ContextCapacityTests(unittest.TestCase):
+    """Test group for context capacity."""
     def exercise(self, capacity, agent=True, maximum=2048):
+        """Test helper: exercise."""
         encoding = load_harmony_encoding(HarmonyEncodingName.HARMONY_GPT_OSS)
         prompt = 'Create and test a Python module. Original goal marker ALPHA.\n' + ''.join(
             f'Reference record {i}: value {i * 17}, unchanged.\n' for i in range(1500)) + 'Latest requirement marker OMEGA.'
@@ -23,6 +30,7 @@ class ContextCapacityTests(unittest.TestCase):
         calls = []
 
         def turn(ids, allowance, keep, on_token, **kwargs):
+            """Test helper: turn."""
             calls.append({'ids': list(ids), 'allowance': allowance, 'keep': keep})
             for token in output:
                 on_token(token)
@@ -38,11 +46,13 @@ class ContextCapacityTests(unittest.TestCase):
         return engine, history, calls, events, maximum, agent
 
     def generate(self, fixture):
+        """Test helper: generate."""
         engine, history, calls, events, maximum, agent = fixture
         return engine.generate(history, '/mnt/GameDrive/tiny_dancer/workspace',
                                lambda kind, data: events.append((kind, data)), threading.Event(), agent, maximum)
 
     def test_long_agent_goal_and_latest_requirement_both_reach_native_session(self):
+        """Checks that long agent goal and latest requirement both reach native session."""
         fixture = self.exercise(32768)
         replies, reason = self.generate(fixture)
         engine, _, calls, events, _, _ = fixture
@@ -57,12 +67,14 @@ class ContextCapacityTests(unittest.TestCase):
         self.assertEqual([data['prompt_tokens'] for kind, data in events if kind == 'inference'], [len(calls[0]['ids'])])
 
     def test_small_context_cannot_silently_drop_a_single_large_agent_goal(self):
+        """Checks that small context cannot silently drop a single large agent goal."""
         fixture = self.exercise(8192)
         with self.assertRaises(ContextBudgetError):
             self.generate(fixture)
         self.assertEqual(fixture[2], [])
 
     def test_long_chat_preserves_the_same_user_message(self):
+        """Checks that long chat preserves the same user message."""
         fixture = self.exercise(32768, agent=False, maximum=512)
         self.generate(fixture)
         engine, _, calls, _, _, _ = fixture
@@ -72,12 +84,14 @@ class ContextCapacityTests(unittest.TestCase):
         self.assertEqual(calls[0]['allowance'], 512)
 
     def test_larger_context_still_reserves_the_entire_requested_action(self):
+        """Checks that larger context still reserves the entire requested action."""
         fixture = self.exercise(32768, maximum=24000)
         with self.assertRaises(ContextBudgetError):
             self.generate(fixture)
         self.assertEqual(fixture[2], [])
 
     def test_larger_context_can_retain_exact_native_prefix_without_consuming_output_reserve(self):
+        """Checks that larger context can retain exact native prefix without consuming output reserve."""
         cache = ExactHistoryCache()
         canonical = [11, 12]
         raw = canonical + [23] * 15000
@@ -89,8 +103,10 @@ class ContextCapacityTests(unittest.TestCase):
         self.assertLess(len(restored) + 4096, 32768)
 
     def test_long_native_reply_is_bounded_by_actual_remaining_context(self):
+        """Checks that long native reply is bounded by actual remaining context."""
         calls = []
         def turn(ids, allowance, keep, callback, **kwargs):
+            """Test helper: turn."""
             calls.append((allowance, keep))
             return [7] * allowance, 'MAX_TOKENS', 0
         session = SimpleNamespace(ctx=32768, last_timing={}, turn=turn)

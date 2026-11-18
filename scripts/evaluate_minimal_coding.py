@@ -1,5 +1,10 @@
+# Program: tiny_dancer - evaluate_minimal_coding.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Same-model minimal baseline; original goals, no live hints, held-out grading.
 # SPDX-License-Identifier: Apache-2.0
 """Same-model minimal baseline; original goals, no live hints, held-out grading."""
+# ---- Imports ----
 import argparse
 import asyncio
 from datetime import datetime, timezone
@@ -30,11 +35,14 @@ from scripts.inventory_goal_audit import CRITERIA as INVENTORY_CRITERIA, check_i
 from scripts.minimal_coding import INSTRUCTIONS, run_loop
 
 
+# ---- Definitions ----
 def file_hash(path):
+    """Step: file hash. Inputs: path."""
     return hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else None
 
 
 async def evaluate(case_name, effort, protocol='raw'):
+    """Async step: evaluate. Inputs: case_name, effort, protocol."""
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
     case = CASES[case_name]
     folder = ROOT/'workspace'/('minimal-'+case_name+'-'+stamp)
@@ -68,21 +76,26 @@ async def evaluate(case_name, effort, protocol='raw'):
         'additional_independent_criteria':list(LABEL_CRITERIA if case_name=='labels' else INVENTORY_CRITERIA),
         'operator_interventions':[], 'events':[], 'samples':[]}
     def save():
+        """Step: save."""
         temporary=path.with_suffix('.tmp');temporary.write_text(json.dumps(report,indent=2)+'\n');temporary.replace(path)
     def record(kind, data):
         # No token text, private reasoning or unaccepted final drafts.
+        """Step: record. Inputs: kind, data."""
         if kind not in ('turn','tool_start','tool_result','inference','metrics'): return
         report['events'].append({'kind':kind,'data':data,'seconds':round(time.monotonic()-started,2)});save()
     def emit(kind, data): loop.call_soon_threadsafe(record, kind, data)
     def save_history(history):
+        """Step: save history. Inputs: history."""
         fd=os.open(private,os.O_WRONLY|os.O_CREAT|os.O_TRUNC,0o600)
         with os.fdopen(fd,'w') as handle:json.dump(history,handle)
     contract=contract_for(case['prompt'],'work',cwd=str(folder));contract['_auto_reply_continuation']=True
     def generate(history):
+        """Step: generate. Inputs: history."""
         return engine.generate(history,str(folder),emit,flag,True,2048,contract,effort)
     async def execute(name,args):return await computer.execute(name,args,str(folder))
     monitor_done=asyncio.Event()
     async def monitor():
+        """Async step: monitor."""
         low_since=None;last_sample=0
         while not monitor_done.is_set():
             try:
@@ -129,6 +142,7 @@ async def evaluate(case_name, effort, protocol='raw'):
     return report['passed']
 
 
+# ---- Script entry point ----
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('case',choices=('labels','inventory'))
     parser.add_argument('--effort',choices=('medium','high'),default='medium')

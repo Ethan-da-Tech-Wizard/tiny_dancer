@@ -1,5 +1,10 @@
+# Program: tiny_dancer - working_memory.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Bounded factual working evidence for a new model context; never execute code.
 # SPDX-License-Identifier: Apache-2.0
 """Bounded factual working evidence for a new model context; never execute code."""
+# ---- Imports ----
 import hashlib
 import json
 from pathlib import Path
@@ -7,6 +12,7 @@ from app.failure_feedback import checkpoint_failures
 from app.source_diagnostics import python_runtime_notes
 
 
+# ---- Definitions ----
 def runtime_source_evidence(cwd,sources):
     """Refresh existing import-derived library notes from bounded observed files."""
     base=Path(cwd).resolve();files=[];seen=set()
@@ -27,6 +33,7 @@ def runtime_source_evidence(cwd,sources):
 
 
 def preview(text,limit,marker='\n[... omitted; retrieve the full saved tool result ...]\n'):
+    """Step: preview. Inputs: text, limit, marker."""
     if limit<=0:return ''
     if len(text)<=limit:return text
     if limit<=len(marker):return marker[:limit]
@@ -35,8 +42,10 @@ def preview(text,limit,marker='\n[... omitted; retrieve the full saved tool resu
 
 
 def checkpoint_evidence(observations,cwd,sources,source_budget=6000,failure_budget=1600):
+    """Step: checkpoint evidence. Inputs: observations, cwd, sources, source_budget, failure_budget."""
     paths=[];modified=[];last_failure=None
     def add(path,changed=False):
+        """Step: add. Inputs: path, changed."""
         if isinstance(path,str) and path not in paths:paths.append(path)
         if changed and isinstance(path,str) and path not in modified:modified.append(path)
     for name,result in reversed(observations):
@@ -116,6 +125,7 @@ def inspection_test_evidence(result):
     omitted = 0
 
     def fits(value):
+        """Step: fits. Inputs: value."""
         return len(json.dumps(value, ensure_ascii=False, separators=(',', ':'))) <= 1800
 
     artifact = result.get('artifact')

@@ -1,5 +1,10 @@
+# Program: tiny_dancer - native_suite_cases.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Frozen native task criteria; no solution code is supplied to the agent.
 # SPDX-License-Identifier: Apache-2.0
 """Frozen native task criteria; no solution code is supplied to the agent."""
+# ---- Imports ----
 from pathlib import Path
 import hashlib
 import json
@@ -112,6 +117,7 @@ if __name__=="__main__":unittest.main()
 }
 
 
+# ---- Definitions ----
 def grade(folder, case, root):
     """Black-box cases withheld until native termination, independent of seeded tests."""
     folder,root=Path(folder),Path(root); checks=[]
@@ -162,6 +168,7 @@ def grade(folder, case, root):
     elif case=='ranges':
         binary=folder/'target/debug/ranges'
         def invoke(text):
+            """Step: invoke. Inputs: text."""
             with tempfile.TemporaryDirectory(dir=root/'run') as d:
                 p=Path(d)/'unseen.txt';p.write_text(text)
                 return subprocess.run([str(binary),str(p)],cwd=folder,capture_output=True,text=True,timeout=10)

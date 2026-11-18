@@ -1,3 +1,7 @@
+// Program: tiny_dancer - results.js
+// Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+// Last Modified: 2026-11-18
+// Purpose: Browser-side logic that loads saved test results and fills the native and automated result tables.
 const cell=(row,text)=>{const td=document.createElement('td');td.textContent=text;row.append(td);return td;};
 async function refresh(){
   const error=document.querySelector('#error');

@@ -1,5 +1,10 @@
+# Program: tiny_dancer - language_tools.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: On-demand, read-only Python/Rust evidence. No package code is executed.
 # SPDX-License-Identifier: Apache-2.0
 """On-demand, read-only Python/Rust evidence. No package code is executed."""
+# ---- Imports ----
 import hashlib
 import json
 import re
@@ -22,7 +27,9 @@ SOURCE_DOCS = {
 }
 
 
+# ---- Definitions ----
 def read_bounded(path):
+    """Step: read bounded. Inputs: path."""
     with Path(path).open('rb') as handle:
         data = handle.read(LIMIT + 1)
     if len(data) > LIMIT:
@@ -31,6 +38,7 @@ def read_bounded(path):
 
 
 def atomic_json(path, data):
+    """Step: atomic json. Inputs: path, data."""
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     temp = path.with_name(path.name + '.' + uuid.uuid4().hex + '.tmp')
@@ -42,6 +50,7 @@ def atomic_json(path, data):
 
 
 def docs_host(language, url):
+    """Step: docs host. Inputs: language, url."""
     parsed = urlsplit(url)
     host = parsed.hostname or ''
     allowed = (host == 'docs.python.org' or host.endswith('.readthedocs.io')) if language == 'python' else host in ('doc.rust-lang.org','docs.rs')
@@ -91,6 +100,7 @@ async def fetch(url, cache, kind='json', transport=None, language=None):
 
 
 def compact(value):
+    """Step: compact. Inputs: value."""
     if isinstance(value, dict):
         result = {key:compact(item) for key,item in list(value.items())[:20]}
         if len(value) > 20: result['omitted_fields'] = len(value)-20
@@ -115,12 +125,14 @@ def artifact_result(result, artifacts):
 
 
 def identifier(value, label):
+    """Step: identifier. Inputs: value, label."""
     if not isinstance(value,str) or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_.+-]{0,127}', value):
         raise ValueError(label + ' must be a package/version identifier, not a URL or path')
     return value
 
 
 def requirement(text):
+    """Step: requirement. Inputs: text."""
     try:
         req = Requirement(text)
         return {'requirement':text,'name':req.name,'specifier':str(req.specifier),
@@ -130,6 +142,7 @@ def requirement(text):
 
 
 async def package_lookup(language, args, cache, transport):
+    """Async step: package lookup. Inputs: language, args, cache, transport."""
     name = identifier(args.get('package'), 'package')
     version = args.get('version')
     if version: identifier(version, 'version')
@@ -185,12 +198,14 @@ class DocText(HTMLParser):
     BLOCK = {'p','div','section','article','main','li','pre','h1','h2','h3','h4','tr','br'}
 
     def __init__(self, fragment=''):
+        """Step: init. Inputs: fragment."""
         super().__init__(convert_charrefs=True)
         self.fragment = unquote(fragment)
         self.stack, self.all, self.main, self.section, self.title = [], [], [], [], []
         self.found = False
 
     def handle_starttag(self, tag, attrs):
+        """Step: handle starttag. Inputs: tag, attrs."""
         attrs = dict(attrs)
         if attrs.get('id') == self.fragment and self.fragment: self.found = True
         # Sphinx puts an API signature's ID on dt, with its description in
@@ -212,10 +227,12 @@ class DocText(HTMLParser):
         if tag in self.BLOCK: self.add('\n',frame)
 
     def handle_startendtag(self, tag, attrs):
+        """Step: handle startendtag. Inputs: tag, attrs."""
         self.handle_starttag(tag,attrs)
         if tag not in self.VOID: self.handle_endtag(tag)
 
     def handle_endtag(self, tag):
+        """Step: handle endtag. Inputs: tag."""
         for index in range(len(self.stack)-1,-1,-1):
             if self.stack[index]['tag']==tag:
                 if tag in self.BLOCK: self.add('\n', self.stack[index])
@@ -223,6 +240,7 @@ class DocText(HTMLParser):
                 break
 
     def add(self, text, frame):
+        """Step: add. Inputs: text, frame."""
         if frame['title']: self.title.append(text)
         if frame['skip']: return
         self.all.append(text)
@@ -230,15 +248,18 @@ class DocText(HTMLParser):
         if frame['section']: self.section.append(text)
 
     def handle_data(self, data):
+        """Step: handle data. Inputs: data."""
         if self.stack: self.add(data,self.stack[-1])
 
     def text(self):
+        """Step: text."""
         if self.fragment and not self.found: raise ValueError('Documentation anchor was not found')
         parts = self.section if self.fragment else self.main or self.all
         return '\n'.join(line.strip() for line in ''.join(parts).splitlines() if line.strip())
 
 
 async def docs_lookup(language, args, cache, transport):
+    """Async step: docs lookup. Inputs: language, args, cache, transport."""
     url = args.get('url')
     if not url:
         topic = args.get('topic','')
@@ -271,6 +292,7 @@ async def docs_lookup(language, args, cache, transport):
 
 
 def local_dependencies(language, args, cwd):
+    """Step: local dependencies. Inputs: language, args, cwd."""
     path = Path(args.get('path') or cwd).expanduser()
     if not path.is_absolute(): path = Path(cwd) / path
     path = path.resolve()
@@ -316,6 +338,7 @@ def local_dependencies(language, args, cwd):
 
 
 async def lookup(language, args, cwd, artifacts, cache, transport=None):
+    """Async step: lookup. Inputs: language, args, cwd, artifacts, cache, transport."""
     if language not in ('python','rust'): raise ValueError('language must be python or rust')
     action = args.get('action')
     if action=='package': result = await package_lookup(language,args,cache,transport)

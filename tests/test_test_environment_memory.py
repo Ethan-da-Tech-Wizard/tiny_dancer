@@ -1,3 +1,7 @@
+# Program: tiny_dancer - tests/test_test_environment_memory.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for test environment memory (exercises app.agent, app.tools, app.working_memory).
 # SPDX-License-Identifier: Apache-2.0
 """Keep actual runner discovery through context changes without fake passes."""
 import copy
@@ -15,8 +19,11 @@ from app.working_memory import inspection_test_evidence
 from tests.test_agent import ScriptedEngine, call
 
 
+# -------- test environment memory tests --------
 class TestEnvironmentMemoryTests(unittest.TestCase):
+    """Test group for test environment memory."""
     def test_real_receipt_fields_retained_without_mutating_input(self):
+        """Checks that real receipt fields retained without mutating input."""
         raw = {'runtime': {'python': '/usr/bin/python', 'version': '3.14.7', 'pytest_module': False, 'pytest_command': '/project/run/tool-bin/pytest', 'cargo': None}, 'test_candidates': [{'command': "python -m unittest discover -s . -p 'test_*.py'", 'available': True, 'evidence': 'actual unittest imports'}], 'artifact': '/artifacts/inspection.json'}
         original = copy.deepcopy(raw)
         evidence = inspection_test_evidence(raw)
@@ -27,6 +34,7 @@ class TestEnvironmentMemoryTests(unittest.TestCase):
         self.assertEqual(raw, original)
 
     def test_malformed_optional_data_never_raises_or_invents_availability(self):
+        """Checks that malformed optional data never raises or invents availability."""
         for raw in (None, [], {'runtime': []}, {'test_candidates': [None, 1, []]}):
             with self.subTest(raw=raw):
                 self.assertIsNone(inspection_test_evidence(raw))
@@ -35,6 +43,7 @@ class TestEnvironmentMemoryTests(unittest.TestCase):
         self.assertNotIn('available', evidence['test_candidates'][0])
 
     def test_large_commands_are_omitted_whole_and_total_receipt_is_bounded(self):
+        """Checks that large commands are omitted whole and total receipt is bounded."""
         raw = {'runtime': {'python': 'P' * 5000, 'version': '3.14'}, 'artifact': '/artifacts/full.json', 'test_candidates': [{'command': 'echo ' + 'x' * 5000, 'available': True}] + [{'command': 'echo ' + str(n) + 'x' * 300, 'available': True, 'evidence': 'e' * 1000} for n in range(12)]}
         evidence = inspection_test_evidence(raw)
         self.assertIsNotNone(evidence)
@@ -47,8 +56,11 @@ class TestEnvironmentMemoryTests(unittest.TestCase):
             self.assertIn(candidate['command'], original_commands)
 
 
+# -------- test environment runner tests --------
 class TestEnvironmentRunnerTests(unittest.IsolatedAsyncioTestCase):
+    """Test group for test environment runner."""
     async def asyncSetUp(self):
+        """Test helper: asyncSetUp."""
         self.temp = tempfile.TemporaryDirectory(dir=ROOT / 'workspace')
         self.folder = Path(self.temp.name)
         (self.folder / 'program.py').write_text('message = "source"\n')
@@ -58,16 +70,19 @@ class TestEnvironmentRunnerTests(unittest.IsolatedAsyncioTestCase):
         self.events = []
 
     async def asyncTearDown(self):
+        """Test helper: asyncTearDown."""
         await self.tools.close()
         self.temp.cleanup()
 
     def runner(self, actions=(), checkpoint=None):
+        """Test helper: runner."""
         request = SimpleNamespace(prompt='Create and test a Python program', mode='agent', max_tokens=None, run_until_done=True)
         return AgentRun(ScriptedEngine(actions), self.tools, str(self.folder), request,
             lambda: self.messages, lambda message, role=None: self.messages.append(message.to_dict()),
             lambda kind, data: self.events.append((kind, data)), lambda *args: None, threading.Event(), checkpoint)
 
     def notes(self, run):
+        """Test helper: notes."""
         for value in reversed(run.prompt_history()):
             message = Message.from_dict(value)
             text = ''.join(content.text for content in message.content)
@@ -76,6 +91,7 @@ class TestEnvironmentRunnerTests(unittest.IsolatedAsyncioTestCase):
         self.fail('No actual checkpoint note')
 
     async def test_actual_inspection_survives_two_compactions_and_resume(self):
+        """Checks that actual inspection survives two compactions and resume."""
         run = self.runner()
         inspection = await run.execute('inspect_project', {})
         run.record_evidence('inspect_project', inspection)
@@ -90,6 +106,7 @@ class TestEnvironmentRunnerTests(unittest.IsolatedAsyncioTestCase):
         self.assertFalse(resumed.state['verified'])
 
     async def test_available_runner_receipt_cannot_complete_work_without_checks(self):
+        """Checks that available runner receipt cannot complete work without checks."""
         final = Message.from_role_and_content(Role.ASSISTANT, 'Tests passed.').with_channel('final')
         run = self.runner([call('inspect_project', {}), final, final])
         self.assertEqual(await run.run(), 'paused')
@@ -99,6 +116,7 @@ class TestEnvironmentRunnerTests(unittest.IsolatedAsyncioTestCase):
         self.assertFalse(any(kind == 'tool_start' and data['name'] in ('shell', 'run_checks') for kind, data in self.events))
 
     async def test_actual_empty_suite_recovery_updates_cached_environment(self):
+        """Checks that actual empty suite recovery updates cached environment."""
         run = self.runner()
         (self.folder / 'empty').mkdir()
         result = await run.execute('run_checks', {'commands': ["python -m unittest discover -s empty -p 'test_*.py'"]})
@@ -110,6 +128,7 @@ class TestEnvironmentRunnerTests(unittest.IsolatedAsyncioTestCase):
         self.assertFalse(run.state['verified'])
 
     async def test_legacy_history_receipt_is_carried_without_new_execution(self):
+        """Checks that legacy history receipt is carried without new execution."""
         run = self.runner()
         inspection = await run.execute('inspect_project', {})
         message = Message(author=Author.new(Role.TOOL, 'functions.inspect_project'), content=[TextContent(text=json.dumps(inspection))]).with_recipient('assistant')

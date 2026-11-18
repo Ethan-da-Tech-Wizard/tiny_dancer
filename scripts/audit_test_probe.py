@@ -1,5 +1,10 @@
+# Program: tiny_dancer - audit_test_probe.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Grade model-written verification against flawed and conforming controls.
 # SPDX-License-Identifier: Apache-2.0
 """Grade model-written verification against flawed and conforming controls."""
+# ---- Imports ----
 import ast
 import json
 import os
@@ -15,7 +20,9 @@ TOOL = {'name':'write_verification','description':'Submit the complete standard-
         'parameters':{'type':'object','properties':{'content':{'type':'string'}},'required':['content']}}
 
 
+# ---- Definitions ----
 def submitted_code(messages):
+    """Step: submitted code. Inputs: messages."""
     calls=[m for m in messages if m.recipient]
     if len(calls)!=1 or calls[0].recipient!='functions.write_verification':
         raise ValueError('Exactly one completed verification submission is required')
@@ -37,6 +44,7 @@ print(json.dumps({'tests':result.testsRun,'failures':len(result.failures),'error
 
 
 def run_verification(program,code,root):
+    """Step: run verification. Inputs: program, code, root."""
     with tempfile.TemporaryDirectory(dir=Path(root)/'run') as temporary:
         folder=Path(temporary);target=folder/'inventory.py';target.write_text(program)
         (folder/'audit_tests.py').write_text(code)
@@ -52,6 +60,7 @@ def run_verification(program,code,root):
 
 
 def grade_verification(program,conforming,code,root):
+    """Step: grade verification. Inputs: program, conforming, code, root."""
     bad=run_verification(program,code,root);good=run_verification(conforming,code,root)
     checks={'actual_nonempty_tests':bad.get('tests',0)>0 and bad.get('tests')==good.get('tests'),
             'finds_behavioral_failure':bad.get('failures',0)>0 and bad.get('errors')==0,

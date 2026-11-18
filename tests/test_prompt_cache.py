@@ -1,4 +1,9 @@
+# Program: tiny_dancer - tests/test_prompt_cache.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for prompt cache (exercises app.engine, app.prompt_cache, app.tools).
 # SPDX-License-Identifier: Apache-2.0
+"""Tests for prompt cache (exercises app.engine, app.prompt_cache, app.tools)."""
 import json
 import threading
 import unittest
@@ -12,19 +17,24 @@ from app.tools import ROOT
 from tests.raw_engine_fixture import legacy_raw_engine
 
 
+# -------- prompt cache tests --------
 class PromptCacheTests(unittest.TestCase):
+    """Test group for prompt cache."""
     def test_changed_goal_or_tool_result_cannot_reuse_old_history(self):
+        """Checks that changed goal or tool result cannot reuse old history."""
         cache=ExactHistoryCache();cache.remember([1,2,3],[1,9,3])
         self.assertEqual(cache.restore([1,2,4,5],100,5),([1,2,4,5],0))
         self.assertEqual(cache.restore([7,2,3,5],100,5),([7,2,3,5],0))
 
     def test_raw_history_cannot_exceed_context_reserve(self):
+        """Checks that raw history cannot exceed context reserve."""
         cache=ExactHistoryCache();cache.remember([1,2],[1,2,3,4,5])
         self.assertEqual(cache.restore([1,2,6],7,2),([1,2,6],0))
         self.assertEqual(cache.restore([1,2,6],10,2),([1,2,3,4,5,6],5))
         cache.clear();self.assertEqual(cache.restore([1,2,6],10,2),([1,2,6],0))
 
     def test_larger_action_rejects_raw_prefix_that_would_consume_its_output_space(self):
+        """Checks that larger action rejects raw prefix that would consume its output space."""
         cache=ExactHistoryCache();cache.remember([1,2],[1,2]+[3]*4095)
         self.assertEqual(cache.restore([1,2,6],8192,4096),([1,2,6],0))
         restored,keep=cache.restore([1,2,6],8192,2048)
@@ -32,8 +42,11 @@ class PromptCacheTests(unittest.TestCase):
         self.assertLess(len(restored)+2048,8192)
 
 
+# -------- native serialization cache tests --------
 class NativeSerializationCacheTests(unittest.TestCase):
+    """Test group for native serialization cache."""
     def rejected_draft(self, changed_goal=False):
+        """Test helper: rejected draft."""
         encoding=load_harmony_encoding(HarmonyEncodingName.HARMONY_GPT_OSS)
         start=encoding.render_conversation_for_completion(Conversation.from_messages([]),Role.ASSISTANT)
         first=Message.from_role_and_content(Role.ASSISTANT,'{"path":"probe.py"}').with_channel('commentary').with_recipient('functions.read_file')
@@ -50,9 +63,12 @@ class NativeSerializationCacheTests(unittest.TestCase):
         final_tokens=encoding.render_conversation(Conversation.from_messages([
             Message.from_role_and_content(Role.ASSISTANT,'Checked.').with_channel('final')]))[len(start):]
         outputs=iter([first_tokens,draft_tokens,final_tokens]);calls=[]
+        # -------- session --------
         class Session:
+            """Helper type session."""
             ctx=32768;proc=SimpleNamespace(poll=lambda:None);last_timing={}
             def turn(self,ids,maximum,keep,callback,temperature=0):
+                """Test helper: turn."""
                 calls.append({'ids':list(ids),'keep':keep,'full_prompt':engine.committed[:keep]+list(ids)})
                 tokens=next(outputs)
                 for token in tokens:callback(token)
@@ -75,6 +91,7 @@ class NativeSerializationCacheTests(unittest.TestCase):
         return calls,expected_prefix,cached_prefix,encoding.decode(calls[-1]['full_prompt']),engine
 
     def test_rejected_final_retains_exact_stored_history_without_replaying_draft(self):
+        """Checks that rejected final retains exact stored history without replaying draft."""
         calls,prefix,cached,text,engine=self.rejected_draft()
         self.assertEqual(cached,prefix)
         # The next developer/assistant header shares its message-start token.
@@ -85,12 +102,14 @@ class NativeSerializationCacheTests(unittest.TestCase):
         self.assertGreater(engine.last_timing['exact_history_cache_tokens'],0)
 
     def test_changed_goal_cannot_restore_rejected_draft_history(self):
+        """Checks that changed goal cannot restore rejected draft history."""
         calls,prefix,cached,text,engine=self.rejected_draft(changed_goal=True)
         self.assertLess(calls[-1]['keep'],prefix)
         self.assertEqual(engine.last_timing['exact_history_cache_tokens'],0)
         self.assertNotIn('UNACCEPTED_FINAL_SENTINEL',text)
 
     def exercise(self, enabled=True, reason='RETURN', changed_goal=False, effort='auto'):
+        """Test helper: exercise."""
         encoding=load_harmony_encoding(HarmonyEncodingName.HARMONY_GPT_OSS)
         body=json.dumps({'path':'probe.py','content':'# source line\n'*30})
         tool=Message.from_role_and_content(Role.ASSISTANT,body).with_channel('commentary').with_recipient('functions.write_file')
@@ -107,11 +126,14 @@ class NativeSerializationCacheTests(unittest.TestCase):
         decoded=encoding.parse_messages_from_completion_tokens(produced,Role.ASSISTANT)
         self.assertEqual(decoded[0].to_dict(),tool.to_dict())
         calls=[]
+        # -------- session --------
         class Session:
+            """Helper type session."""
             ctx=8192
             proc=SimpleNamespace(poll=lambda:None)
             last_timing={}
             def turn(self, ids, maximum, keep, callback, temperature=0):
+                """Test helper: turn."""
                 calls.append({'ids':ids,'keep':keep})
                 tokens=produced if len(calls)==1 else final
                 for token in tokens: callback(token)
@@ -130,6 +152,7 @@ class NativeSerializationCacheTests(unittest.TestCase):
         return calls,cached,inference,engine
 
     def test_exact_emitted_header_and_body_are_reused_after_tool(self):
+        """Checks that exact emitted header and body are reused after tool."""
         calls,cached,events,_=self.exercise()
         self.assertEqual(calls[1]['keep'],cached)
         self.assertEqual(events[1]['exact_history_cache_tokens'],cached)
@@ -137,18 +160,21 @@ class NativeSerializationCacheTests(unittest.TestCase):
         self.assertLess(len(calls[1]['ids']),30)
 
     def test_disabled_feature_demonstrates_canonical_header_cache_miss(self):
+        """Checks that disabled feature demonstrates canonical header cache miss."""
         calls,cached,events,_=self.exercise(enabled=False)
         self.assertLess(calls[1]['keep'],cached)
         self.assertGreater(len(calls[1]['ids']),100)
         self.assertEqual(events[1]['exact_history_cache_tokens'],0)
 
     def test_partial_generation_and_changed_history_never_splice(self):
+        """Checks that partial generation and changed history never splice."""
         for options in ({'reason':'MAX_TOKENS'},{'changed_goal':True}):
             _,_,events,engine=self.exercise(**options)
             self.assertEqual(events[1]['exact_history_cache_tokens'],0)
             self.assertFalse(engine.exact_history.canonical) # final drafts are excluded too
 
     def test_auto_coding_and_explicit_quick_use_fixed_reasoning_level(self):
+        """Checks that auto coding and explicit quick use fixed reasoning level."""
         for effort,expected in (('auto','medium'),('low','low'),('high','high')):
             _,_,events,_=self.exercise(effort=effort)
             self.assertEqual([e['reasoning_effort'] for e in events],[expected,expected])

@@ -1,3 +1,7 @@
+# Program: tiny_dancer - tests/test_completion_receipt.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for completion receipt (exercises app.agent, app.tools, app.working_memory).
 # SPDX-License-Identifier: Apache-2.0
 """Passing tests must report actual remaining work, without relaxing completion."""
 import json
@@ -11,22 +15,29 @@ from app.agent import AgentRun
 from app.tools import ComputerTools, ROOT
 
 
+# -------- completion receipt tests --------
 class CompletionReceiptTests(unittest.IsolatedAsyncioTestCase):
+    """Test group for completion receipt."""
     async def asyncSetUp(self):
+        """Test helper: asyncSetUp."""
         self.temp=tempfile.TemporaryDirectory(dir=ROOT/'workspace');self.cwd=Path(self.temp.name)
         (self.cwd/'product.py').write_text('def double(n):return n*2\n')
         (self.cwd/'test_product.py').write_text('import unittest\nfrom product import double\nclass Tests(unittest.TestCase):\n def test_existing(self):self.assertEqual(double(3),6)\n')
         self.tools=ComputerTools();self.messages=[]
+        # Test helper: save.
         def save(m,*a):self.messages.append(m.to_dict())
         request=SimpleNamespace(prompt='Implement a Python double function. Add relevant tests and run them.',mode='agent',max_tokens=None,run_until_done=True)
         self.run=AgentRun(SimpleNamespace(config={}),self.tools,str(self.cwd),request,lambda:self.messages,save,lambda *a:None,lambda *a:None,threading.Event())
         await self.run.execute('inspect_project',{})
 
+    # Test helper: asyncTearDown.
     async def asyncTearDown(self):await self.tools.close();self.temp.cleanup()
 
+    # Test helper: check.
     async def check(self):return await self.run.execute('run_checks',{'commands':['python3 -m unittest -q test_product']})
 
     async def test_actual_pass_names_missing_tests_without_claiming_completion(self):
+        """Checks that actual pass names missing tests without claiming completion."""
         result=await self.check()
         self.assertEqual(result['exit_code'],0)
         guide=result['test_verification']
@@ -37,6 +48,7 @@ class CompletionReceiptTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(self.run.state['latest_project_checks']['passed'])
 
     async def test_checkpoint_keeps_newer_passing_evidence_and_remaining_requirement(self):
+        """Checks that checkpoint keeps newer passing evidence and remaining requirement."""
         result=await self.check()
         from openai_harmony import Author,TextContent
         self.messages.append(Message(author=Author.new(Role.TOOL,'functions.run_checks'),content=[TextContent(text=json.dumps(result))]).with_recipient('assistant').to_dict())
@@ -48,6 +60,7 @@ class CompletionReceiptTests(unittest.IsolatedAsyncioTestCase):
         self.assertFalse(self.run.state['verified'])
 
     async def test_added_real_tests_clear_requirement_and_allow_verified_completion(self):
+        """Checks that added real tests clear requirement and allow verified completion."""
         await self.check()
         await self.run.execute('write_file',{'path':'test_product.py','content':(self.cwd/'test_product.py').read_text()+' def test_signed(self):self.assertEqual(double(-3),-6)\n'})
         result=await self.check()
@@ -56,6 +69,7 @@ class CompletionReceiptTests(unittest.IsolatedAsyncioTestCase):
         self.assertIsNone(self.run.state['latest_project_checks']['remaining_requirement'])
 
     async def test_edit_after_passing_checks_is_explicitly_unverified_in_checkpoint(self):
+        """Checks that edit after passing checks is explicitly unverified in checkpoint."""
         await self.check()
         await self.run.execute('write_file',{'path':'product.py','content':'def double(n):return n+2\n'})
         self.run.compact_context('Context refreshed.')
@@ -65,6 +79,7 @@ class CompletionReceiptTests(unittest.IsolatedAsyncioTestCase):
         self.assertFalse(self.run.state['verified'])
 
     async def test_updated_import_notes_survive_passing_checks_and_checkpoint(self):
+        """Checks that updated import notes survive passing checks and checkpoint."""
         await self.run.execute('write_file',{'path':'product.py','content':'from decimal import getcontext\ngetcontext().prec=123\ndef double(n):return n*2\n'})
         result=await self.check()
         self.assertEqual(result['runtime_notes'][0]['precision_assignments'][0]['constant'],123)
@@ -75,6 +90,7 @@ class CompletionReceiptTests(unittest.IsolatedAsyncioTestCase):
         self.assertIn('not a proven defect',prompt)
 
     async def test_import_notes_parse_without_executing_source_and_respect_scope(self):
+        """Checks that import notes parse without executing source and respect scope."""
         from app.working_memory import runtime_source_evidence
         marker=self.cwd/'MUST_NOT_EXIST'
         path=self.cwd/'unsafe.py'

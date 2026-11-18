@@ -1,5 +1,10 @@
+# Program: tiny_dancer - validation_results.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Read-only test summaries and a bounded allowlist of their saved evidence.
 # SPDX-License-Identifier: Apache-2.0
 """Read-only test summaries and a bounded allowlist of their saved evidence."""
+# ---- Imports ----
 import json
 import hashlib
 import re
@@ -24,6 +29,7 @@ INTEGRATION_REPORTS=[('results-ui-validation.json','Results page and authenticat
                      ('gpu-prefill-investigation.json','Existing CUDA numeric self-test','Existing INT8 output-head and INT4 expert checks; no new GPU prefill kernel or full-task speed claim.')]
 
 
+# ---- Definitions ----
 def archive_report(root,name,kind,title,scope):
     """Preserve a completed evaluation before its current-report path is reused."""
     root=Path(root);source=root/'docs'/name;data=load_json(source)
@@ -37,6 +43,7 @@ def archive_report(root,name,kind,title,scope):
 
 
 def evaluation_row(identifier,data,title,scope,kind):
+    """Step: evaluation row. Inputs: identifier, data, title, scope, kind."""
     report_kind=kind
     # Historical writers used several categories; the UI has two evidence
     # lanes. These aliases keep those saved rows visible without rewriting them.
@@ -64,12 +71,14 @@ def evaluation_row(identifier,data,title,scope,kind):
 
 
 def load_json(path):
+    """Step: load json. Inputs: path."""
     if not path.is_file() or path.stat().st_size>2_000_000: return None
     try: return json.loads(path.read_text())
     except (OSError,ValueError): return None
 
 
 def collect_results(root):
+    """Step: collect results. Inputs: root."""
     root=Path(root);items=[];files={}
     for path in sorted((root/'docs/validation/runs').glob('*.json')):
         data=load_json(path)
@@ -112,6 +121,7 @@ def collect_results(root):
 
 
 def evidence_path(root,identifier,index):
+    """Step: evidence path. Inputs: root, identifier, index."""
     name=index.get('evidence',{}).get(identifier)
     if not name: raise ValueError('Unknown test evidence')
     root=Path(root).resolve();path=(root/name).resolve()
@@ -120,6 +130,7 @@ def evidence_path(root,identifier,index):
 
 
 def refresh_results(root):
+    """Step: refresh results. Inputs: root."""
     root=Path(root);index=collect_results(root);folder=root/'docs/validation';folder.mkdir(parents=True,exist_ok=True)
     temp=folder/('index-'+uuid.uuid4().hex+'.tmp');temp.write_text(json.dumps(index,indent=2)+'\n');temp.replace(folder/'index.json')
     rows=['# Test results','', 'Open the readable local results page at http://127.0.0.1:3210/results. This file and saved evidence are on the GameDrive.',

@@ -1,3 +1,7 @@
+// Program: tiny_dancer - app.js
+// Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+// Last Modified: 2026-11-18
+// Purpose: Browser-side logic for the main workspace page: sessions, job streaming, progress display and the composer.
 const $ = (s) => document.querySelector(s);
 let sessionId = null, currentJob = null, source = null, live = null, activityCount = 0;
 let latestJob = null, currentFolder = '', viewTimer = null;

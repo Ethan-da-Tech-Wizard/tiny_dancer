@@ -1,3 +1,7 @@
+# Program: tiny_dancer - tests/test_test_collection.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for test collection (exercises app.agent, app.tools).
 # SPDX-License-Identifier: Apache-2.0
 """Real collector mismatch must not produce a verified final."""
 import json
@@ -12,28 +16,35 @@ from app.tools import ComputerTools,ROOT
 from tests.test_agent import ScriptedEngine,call
 
 
+# -------- test collection tests --------
 class TestCollectionTests(unittest.IsolatedAsyncioTestCase):
+    """Test group for test collection."""
     async def asyncSetUp(self):
+        """Test helper: asyncSetUp."""
         self.temp=tempfile.TemporaryDirectory(dir=ROOT/'workspace');self.addCleanup(self.temp.cleanup)
         self.folder=Path(self.temp.name);self.tools=ComputerTools()
         (self.folder/'program.py').write_text('def value():return 1\n')
         (self.folder/'test_seed.py').write_text('import unittest\nfrom program import value\nclass Seed(unittest.TestCase):\n def test_seed(self):self.assertEqual(value(),1)\n')
         self.messages=[];self.events=[]
 
+    # Test helper: asyncTearDown.
     async def asyncTearDown(self):await self.tools.close()
 
     def runner(self,command,newtest):
+        """Test helper: runner."""
         goal='Create a Python program.py and add relevant tests. Run the project tests before finishing.'
         final=Message.from_role_and_content(Role.ASSISTANT,'Finished and tested.').with_channel('final')
         actions=[call('write_file',{'path':'test_added.py','content':newtest}),
                  call('run_checks',{'commands':[command],'timeout':30})]+[final]*4
         self.messages=[Message.from_role_and_content(Role.USER,goal).to_dict()]
+        # Test helper: save.
         def save(message,role=None):self.messages.append(message.to_dict())
         return AgentRun(ScriptedEngine(actions),self.tools,str(self.folder),
                         SimpleNamespace(prompt=goal,mode='agent',max_tokens=None,run_until_done=True),
                         lambda:self.messages,save,lambda k,d:self.events.append((k,d)),lambda s:None,threading.Event())
 
     async def test_passing_unittest_seeds_cannot_verify_an_uncollected_failing_function(self):
+        """Checks that passing unittest seeds cannot verify an uncollected failing function."""
         run=self.runner('python -m unittest discover -s . -p "test_*.py"','def test_added():\n assert False, "new test never ran"\n')
         self.assertEqual(await run.run(),'paused')
         self.assertFalse(run.state['verified'])
@@ -43,18 +54,22 @@ class TestCollectionTests(unittest.IsolatedAsyncioTestCase):
         self.assertIn('test_added.py',results[-1]['test_verification']['next_action'])
 
     async def test_real_full_pytest_can_verify_new_plain_function_tests(self):
+        """Checks that real full pytest can verify new plain function tests."""
         run=self.runner(str(ROOT/'.venv/bin/python')+' -m pytest -q','from program import value\ndef test_added():\n assert value()==1\n')
         self.assertEqual(await run.run(),'complete');self.assertTrue(run.state['verified'])
 
     async def test_real_pytest_failure_keeps_the_task_open(self):
+        """Checks that real pytest failure keeps the task open."""
         run=self.runner(str(ROOT/'.venv/bin/python')+' -m pytest -q','def test_added():\n assert False\n')
         self.assertEqual(await run.run(),'paused');self.assertFalse(run.state['verified'])
 
     async def test_pytest_of_only_the_old_seed_cannot_witness_new_tests(self):
+        """Checks that pytest of only the old seed cannot witness new tests."""
         run=self.runner(str(ROOT/'.venv/bin/python')+' -m pytest -q test_seed.py','def test_added():\n assert False\n')
         self.assertEqual(await run.run(),'paused');self.assertFalse(run.state['verified'])
 
     async def test_old_plain_test_receipt_is_invalid_after_product_change(self):
+        """Checks that old plain test receipt is invalid after product change."""
         run=self.runner('', '')
         await run.execute('read_file',{'path':'program.py'})
         await run.execute('write_file',{'path':'test_added.py','content':'import program\ndef test_added():\n assert not hasattr(program,"untested")\n'})
@@ -65,6 +80,7 @@ class TestCollectionTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(result['exit_code'],0);self.assertFalse(result['test_verification']['verified'])
 
     async def test_finish_task_can_run_the_actual_compatible_checks(self):
+        """Checks that finish task can run the actual compatible checks."""
         run=self.runner('', '')
         await run.execute('write_file',{'path':'test_added.py','content':'from program import value\ndef test_added():\n assert value()==1\n'})
         result=await run.execute('finish_task',{'summary':'Implemented and tested','checks':[str(ROOT/'.venv/bin/python')+' -m pytest -q']})

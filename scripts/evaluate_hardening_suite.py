@@ -1,5 +1,10 @@
+# Program: tiny_dancer - evaluate_hardening_suite.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Run one predeclared native coding case; preserve every run independently.
 # SPDX-License-Identifier: Apache-2.0
 """Run one predeclared native coding case; preserve every run independently."""
+# ---- Imports ----
 import argparse
 from datetime import datetime, timezone
 import hashlib
@@ -24,7 +29,9 @@ from scripts.labels_goal_audit import CRITERIA as LABEL_GOAL_CRITERIA,check_labe
 from scripts.native_observation import ProgressTracker,limit_reached,observation_delay,observation_limit,public_action_counts
 
 
+# ---- Definitions ----
 def runtime_digest():
+    """Step: runtime digest."""
     digest=hashlib.sha256()
     paths=sorted((ROOT/'app').rglob('*.py'))+[ROOT/'config.json']
     paths+=sorted((ROOT/'app/static').glob('*'))
@@ -34,6 +41,7 @@ def runtime_digest():
 
 
 def parse_options(argv=None):
+    """Step: parse options. Inputs: argv."""
     parser=argparse.ArgumentParser();parser.add_argument('case',choices=CASES)
     policy=parser.add_mutually_exclusive_group()
     policy.add_argument('--observation-seconds',type=int,default=None,help='Explicit bounded benchmark; omitted observes until terminal.')
@@ -46,6 +54,7 @@ def parse_options(argv=None):
 
 
 def main():
+    """Step: main."""
     args=parse_options()
     limit=observation_limit(args.observation_seconds,args.until_terminal)
     case=CASES[args.case];stamp=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
@@ -68,6 +77,7 @@ def main():
         report['additional_independent_criteria']=list(INVENTORY_GOAL_CRITERIA) if args.case=='inventory' else list(LABEL_GOAL_CRITERIA) if args.case=='labels' else []
         if args.case=='inventory': report['additional_independent_criteria']+=list(SPECIAL_FILE_CRITERIA)
         def save():
+            """Step: save."""
             temp=report_path.with_suffix('.tmp');temp.write_text(json.dumps(report,indent=2)+'\n');temp.replace(report_path)
         save()
         session=client.post('/api/sessions',json={'title':'Validation · '+args.case+' generalization','cwd':str(folder)});session.raise_for_status();sid=session.json()['id']
@@ -135,4 +145,5 @@ def main():
     if not report['passed']:raise SystemExit(1)
 
 
+# ---- Script entry point ----
 if __name__=='__main__':main()

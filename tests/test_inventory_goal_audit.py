@@ -1,3 +1,7 @@
+# Program: tiny_dancer - tests/test_inventory_goal_audit.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for inventory goal audit (exercises app.tools, scripts.inventory_goal_audit).
 # SPDX-License-Identifier: Apache-2.0
 """Real child processes prove the broader grader detects both observed defects."""
 from pathlib import Path
@@ -27,28 +31,36 @@ except Exception as error:
 '''
 
 
+# -------- inventory goal audit tests --------
 class InventoryGoalAuditTests(unittest.TestCase):
+    """Test group for inventory goal audit."""
     def setUp(self):
+        """Prepare the fixtures for each test."""
         self.temp=tempfile.TemporaryDirectory(dir=ROOT/'run');self.addCleanup(self.temp.cleanup)
         self.root=Path(self.temp.name);(self.root/'run').mkdir()
         self.folder=self.root/'task';self.folder.mkdir()
 
     def audit(self, source):
+        """Test helper: audit."""
         (self.folder/'inventory.py').write_text(source)
         return check_inventory_goal(self.folder,self.root)
 
     def test_real_correct_cli_passes_both_goal_checks(self):
+        """Checks that real correct cli passes both goal checks."""
         self.assertTrue(all(c['passed'] for c in self.audit(GOOD)))
 
     def test_existing_output_restriction_fails_only_replacement(self):
+        """Checks that existing output restriction fails only replacement."""
         source=GOOD.replace(' rows=[]',' if out.exists() and not out.resolve().is_relative_to(tree.resolve()):raise ValueError("exists")\n rows=[]')
         checks=self.audit(source)
         self.assertFalse(checks[0]['passed']);self.assertTrue(checks[1]['passed'])
 
     def test_silent_directory_error_fails_only_scan_preservation(self):
+        """Checks that silent directory error fails only scan preservation."""
         checks=self.audit(GOOD.replace('os.walk(tree,onerror=scan_error)','os.walk(tree)'))
         self.assertTrue(checks[0]['passed']);self.assertFalse(checks[1]['passed'])
         self.assertFalse(checks[1]['prior_output_preserved'])
 
     def test_missing_program_cannot_pass_an_error_only_check(self):
+        """Checks that missing program cannot pass an error only check."""
         self.assertTrue(all(not c['passed'] for c in check_inventory_goal(self.folder,self.root)))

@@ -1,4 +1,9 @@
+# Program: tiny_dancer - tests/test_test_authority.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for test authority (exercises app.agent, app.test_authority, app.tools).
 # SPDX-License-Identifier: Apache-2.0
+"""Tests for test authority (exercises app.agent, app.test_authority, app.tools)."""
 import tempfile
 import unittest
 import threading
@@ -10,8 +15,11 @@ from app.tools import ComputerTools
 from tests.test_agent import ScriptedEngine
 
 
+# -------- test authority tests --------
 class TestAuthorityTests(unittest.TestCase):
+    """Test group for test authority."""
     def setUp(self):
+        """Prepare the fixtures for each test."""
         self.temp=tempfile.TemporaryDirectory(dir=Path(__file__).resolve().parents[1]/'run')
         self.addCleanup(self.temp.cleanup);self.root=Path(self.temp.name)
         self.seed=self.root/'test_acceptance.py'
@@ -19,24 +27,29 @@ class TestAuthorityTests(unittest.TestCase):
         self.baseline=snapshot(self.root)
 
     def result(self, path):
+        """Test helper: result."""
         return {'exit_code':1,'output':'FAIL: test_expected (test_extra.Extra.test_expected)\nTraceback (most recent call last):\n  File "'+str(path)+'", line 3, in test_expected\nAssertionError: actual != expected\n'}
 
     def test_new_test_is_an_observation_not_authority(self):
+        """Checks that new test is an observation not authority."""
         new=self.root/'test_extra.py';new.write_text('def test_expected():\n    assert 1 == 2\n')
         report=failure_test_origins(self.result(new),self.baseline,snapshot(self.root),self.root)
         self.assertEqual(report['failures'][0]['origin'],'added_since_task_start')
         self.assertEqual(report['failures'][0]['path'],'test_extra.py')
 
     def test_existing_unchanged_test_remains_distinct(self):
+        """Checks that existing unchanged test remains distinct."""
         report=failure_test_origins(self.result(self.seed),self.baseline,snapshot(self.root),self.root)
         self.assertEqual(report['failures'][0]['origin'],'unchanged_since_task_start')
 
     def test_changed_existing_assertion_is_identified(self):
+        """Checks that changed existing assertion is identified."""
         self.seed.write_text('def test_seed():\n    assert 2 == 1\n')
         report=failure_test_origins(self.result(self.seed),self.baseline,snapshot(self.root),self.root)
         self.assertEqual(report['failures'][0]['origin'],'changed_since_task_start')
 
     def test_changed_module_constant_is_identified(self):
+        """Checks that changed module constant is identified."""
         self.seed.write_text('EXPECTED=1\ndef test_seed():\n    assert 1 == EXPECTED\n')
         before=snapshot(self.root)
         self.seed.write_text('EXPECTED=2\ndef test_seed():\n    assert 1 == EXPECTED\n')
@@ -44,21 +57,27 @@ class TestAuthorityTests(unittest.TestCase):
         self.assertEqual(report['failures'][0]['origin'],'changed_since_task_start')
 
     def test_incomplete_baseline_never_claims_new_test(self):
+        """Checks that incomplete baseline never claims new test."""
         report=failure_test_origins(self.result(self.seed),{'complete':False,'sources':{}},snapshot(self.root),self.root)
         self.assertEqual(report['failures'][0]['origin'],'unknown')
 
     def test_success_and_unrelated_stack_do_not_create_a_warning(self):
+        """Checks that success and unrelated stack do not create a warning."""
         self.assertIsNone(failure_test_origins({'exit_code':0,'output':'all pass'},self.baseline,snapshot(self.root),self.root))
         self.assertIsNone(failure_test_origins(self.result('/usr/lib/external.py'),self.baseline,snapshot(self.root),self.root))
 
     def test_snapshot_never_executes_test_source(self):
+        """Checks that snapshot never executes test source."""
         target=self.root/'test_extra.py';target.write_text('raise RuntimeError("never import")\ndef test_value():\n    assert False\n')
         report=failure_test_origins(self.result(target),self.baseline,snapshot(self.root),self.root)
         self.assertEqual(report['failures'][0]['origin'],'added_since_task_start')
 
 
+# -------- test authority integration tests --------
 class TestAuthorityIntegrationTests(unittest.IsolatedAsyncioTestCase):
+    """Test group for test authority integration."""
     async def test_real_failure_marks_new_test_and_passing_recheck_clears_it(self):
+        """Checks that real failure marks new test and passing recheck clears it."""
         with tempfile.TemporaryDirectory(dir=Path(__file__).resolve().parents[1]/'run') as temporary:
             root=Path(temporary)
             (root/'program.py').write_text('def add(a,b):\n    return a+b\n')

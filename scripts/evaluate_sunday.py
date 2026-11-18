@@ -1,5 +1,10 @@
+# Program: tiny_dancer - evaluate_sunday.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Run the original user question, then independently refetch its score reference.
 # SPDX-License-Identifier: Apache-2.0
 """Run the original user question, then independently refetch its score reference."""
+# ---- Imports ----
 import json
 import time
 from datetime import datetime, timezone
@@ -13,7 +18,9 @@ REPORT = ROOT / 'docs/answer-completion-validation.json'
 PROMPT = 'tell me all the stats of the most recent nfl sunday football list by stats i mean scores and what teams played eachother'
 
 
+# ---- Definitions ----
 def main():
+    """Step: main."""
     report = {'started_at':datetime.now(timezone.utc).isoformat(), 'prompt':PROMPT,
               'method':'Native GPT-OSS selects a typed tool; harness publishes validated data. No scores or reference answers supplied to model.',
               'status':'starting', 'resource_samples':[]}
@@ -75,4 +82,5 @@ def main():
         if report['status']!='complete' or not report['comparison']['passed']: raise SystemExit(1)
 
 
+# ---- Script entry point ----
 if __name__=='__main__':main()

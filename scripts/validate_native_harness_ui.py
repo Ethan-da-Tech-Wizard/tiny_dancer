@@ -1,5 +1,10 @@
+# Program: tiny_dancer - validate_native_harness_ui.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Inspect the actual completed native repair UI without starting model work.
 # SPDX-License-Identifier: Apache-2.0
 """Inspect the actual completed native repair UI without starting model work."""
+# ---- Imports ----
 import asyncio
 import json
 import shutil
@@ -11,7 +16,9 @@ ROOT=Path(__file__).resolve().parents[1]
 BASE='http://127.0.0.1:3210'
 
 
+# ---- Definitions ----
 async def main():
+    """Async step: main."""
     native=json.loads((ROOT/'docs/native-harness-validation.json').read_text())
     assert native['status']=='complete' and native['passed'],native['status']
     report={'session':native['session'],'job':native['job'],'errors':[],'checks':[]}
@@ -48,4 +55,5 @@ async def main():
     print(json.dumps(report,indent=2))
 
 
+# ---- Script entry point ----
 if __name__=='__main__':asyncio.run(main())

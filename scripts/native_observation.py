@@ -1,23 +1,33 @@
+# Program: tiny_dancer - native_observation.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Observer policy and public progress evidence, separate from model reasoning.
 # SPDX-License-Identifier: Apache-2.0
 """Observer policy and public progress evidence, separate from model reasoning."""
+# ---- Imports ----
 import hashlib
 from pathlib import Path
 import sqlite3
 
 
+# ---- Definitions ----
 def observation_limit(seconds, until_terminal):
+    """Step: observation limit. Inputs: seconds, until_terminal."""
     return None if until_terminal else seconds
 
 
 def limit_reached(elapsed, limit):
+    """Step: limit reached. Inputs: elapsed, limit."""
     return limit is not None and elapsed >= limit
 
 
 def observation_delay(elapsed, limit, stopped=False):
+    """Step: observation delay. Inputs: elapsed, limit, stopped."""
     return 20 if stopped or limit is None else min(20, max(0, limit-elapsed))
 
 
 def public_action_counts(root, job):
+    """Step: public action counts. Inputs: root, job."""
     with sqlite3.connect(f'file:{Path(root)/"run/workspace.sqlite3"}?mode=ro',uri=True) as db:
         return dict(db.execute("SELECT kind,COUNT(*) FROM events WHERE job=? AND kind IN ('tool_start','tool_result','generation_incomplete','context_compacted') GROUP BY kind",(job,)))
 
@@ -25,11 +35,13 @@ def public_action_counts(root, job):
 class ProgressTracker:
     """Token/command activity is not a claim of better files or passing tests."""
     def __init__(self, folder):
+        """Step: init. Inputs: folder."""
         self.folder=Path(folder).resolve()
         self.previous=None
         self.last_useful=0.0
 
     def observe(self, checkpoint, elapsed, action_counts=None):
+        """Step: observe. Inputs: checkpoint, elapsed, action_counts."""
         files={}
         for name in checkpoint.get('edited_sources',[])[:256]:
             path=Path(name)

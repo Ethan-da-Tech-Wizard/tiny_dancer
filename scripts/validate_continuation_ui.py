@@ -1,5 +1,10 @@
+# Program: tiny_dancer - validate_continuation_ui.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Check actual paused UI plus mocked network recovery/Resume without inference.
 # SPDX-License-Identifier: Apache-2.0
 """Check actual paused UI plus mocked network recovery/Resume without inference."""
+# ---- Imports ----
 import asyncio
 import json
 import shutil
@@ -13,7 +18,9 @@ ROOT = Path(__file__).resolve().parents[1]
 BASE = 'http://127.0.0.1:3210'
 
 
+# ---- Definitions ----
 async def main():
+    """Async step: main."""
     with httpx.Client(base_url=BASE,timeout=10) as client:
         client.get('/')
         status=client.get('/api/status').json()
@@ -57,6 +64,7 @@ async def main():
                                'summary':'','next_action':'','max_seconds':None,'run_until_done':True},
                  'progress':{'kind':'progress','data':{'tokens':64,'seconds':12},'created':time.time()},'elapsed_seconds':12}
         async def route(request):
+            """Async step: route. Inputs: request."""
             nonlocal phase
             path=request.request.url.removeprefix(BASE)
             if path.startswith('/api/jobs/ui-fixture/events'):
@@ -101,4 +109,5 @@ async def main():
     print(json.dumps(report,indent=2))
 
 
+# ---- Script entry point ----
 if __name__=='__main__':asyncio.run(main())

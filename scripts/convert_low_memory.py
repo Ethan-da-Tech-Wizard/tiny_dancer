@@ -1,9 +1,14 @@
+# Program: tiny_dancer - convert_low_memory.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Resume GPT-OSS conversion with bounded memory and atomic per-tensor output shards.
 """Resume GPT-OSS conversion with bounded memory and atomic per-tensor output shards.
 
 Uses the upstream Picchio quantizers and the same INT4-gs64/INT8 scheme.
 Reads BF16 rows through memmaps rather than making multiple full F32 copies.
 The first two upstream-converted shards may be reused with --start-shard 2.
 """
+# ---- Imports ----
 import argparse
 import gc
 import hashlib
@@ -24,20 +29,25 @@ RAW = ROOT / 'models/gpt-oss-20b-original'
 OUT = ROOT / 'models/gpt-oss-20b-picchio-int4'
 DTYPES = {'BF16':np.uint16,'F16':np.float16,'F32':np.float32,'U8':np.uint8,'I8':np.int8}
 
+# ---- Definitions ----
 def header(p):
+    """Step: header. Inputs: p."""
     with p.open('rb') as f:
         n = struct.unpack('<Q', f.read(8))[0]
         return json.loads(f.read(n)), 8 + n
 
 def mapped(p, h, offset, key):
+    """Step: mapped. Inputs: p, h, offset, key."""
     m = h[key]
     return np.memmap(p, mode='r', dtype=DTYPES[m['dtype']], offset=offset+m['data_offsets'][0], shape=tuple(m['shape']))
 
 def floating(array, dtype):
+    """Step: floating. Inputs: array, dtype."""
     if dtype == 'BF16': return (np.asarray(array).astype(np.uint32) << 16).view(np.float32)
     return np.asarray(array).astype(np.float32)
 
 def quant8_chunks(array, dtype):
+    """Step: quant8 chunks. Inputs: array, dtype."""
     rows, cols = array.shape
     q = np.empty((rows,cols),dtype=np.int8)
     scales = np.empty(rows,dtype=np.float32)
@@ -48,6 +58,7 @@ def quant8_chunks(array, dtype):
     return q,scales
 
 def save(tensors, p):
+    """Step: save. Inputs: tensors, p."""
     temporary=p.with_suffix('.partial')
     save_file(tensors,str(temporary))
     temporary.replace(p)
@@ -90,6 +101,7 @@ def merge_parts(shard_i):
     print(f'Merged {len(parts)} parts to {dest.name}; payload checksum verified.',flush=True)
 
 def main():
+    """Step: main."""
     ap=argparse.ArgumentParser();ap.add_argument('--start-shard',type=int,default=0);args=ap.parse_args()
     OUT.mkdir(exist_ok=True)
     (OUT/'INSTALL_COMPLETE').unlink(missing_ok=True)
@@ -165,4 +177,5 @@ def main():
     (OUT/'INSTALL_COMPLETE').write_text('All expected tensors verified; vocabulary exported.\n')
     print('CONVERSION COMPLETE',manifest,flush=True)
 
+# ---- Script entry point ----
 if __name__=='__main__':main()

@@ -1,11 +1,17 @@
+# Program: tiny_dancer - verification.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Bounded evidence for actual test runs, without inventing task assertions.
 # SPDX-License-Identifier: Apache-2.0
 """Bounded evidence for actual test runs, without inventing task assertions."""
+# ---- Imports ----
 import hashlib
 import re
 import shlex
 from pathlib import Path
 
 
+# ---- Definitions ----
 def test_command(command):
     """Recognize simple test invocations, avoiding log readers and shell pipelines."""
     try: args=shlex.split(command)
@@ -24,6 +30,7 @@ def test_command(command):
 
 
 def test_summary(output):
+    """Step: test summary. Inputs: output."""
     text=re.sub(r'\x1b\[[0-9;]*m','',str(output))[-8000:]
     candidates=[]
     for m in re.finditer(r'(?m)^\s*Ran (\d+) tests?\b[^\n]*\n(?:[ \t]*\n)*([^\n]+)',text):

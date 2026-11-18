@@ -1,11 +1,19 @@
+# Program: tiny_dancer - tests/test_baseline_preview.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for baseline preview (exercises app).
 # SPDX-License-Identifier: Apache-2.0
+"""Tests for baseline preview (exercises app)."""
 import json
 import unittest
 from app import baseline_preview as module
 
 
+# -------- projection tests --------
 class ProjectionTests(unittest.TestCase):
+    """Test group for projection."""
     def test_source_outcome_paths_and_full_evidence_survive(self):
+        """Checks that source outcome paths and full evidence survive."""
         result={'artifact':'/artifacts/full.json','exit_code':1,'runtime_notes':[{'library':'decimal'}],
                 'files':[{'path':'/project/main.py','text':'PRODUCT_SOURCE'},
                          {'path':'/project/test_acceptance.py','text':'TEST_BODY'},
@@ -24,6 +32,7 @@ class ProjectionTests(unittest.TestCase):
             self.assertIn('read_file',item['read_hint'])
 
     def test_failure_status_summary_and_both_output_ends_survive(self):
+        """Checks that failure status summary and both output ends survive."""
         output='ERROR_SENTINEL\n'+'x'*10000+'\nRan 6 tests\nFAILED (failures=6)'
         result={'exit_code':1,'test_count':6,'failed_test_suite':True,'artifact':'/artifacts/checks.json',
                 'checks':[{'command':'python -m unittest','exit_code':1,'output':output}]}
@@ -39,12 +48,14 @@ class ProjectionTests(unittest.TestCase):
         self.assertEqual(json.loads(json.dumps(preview)),preview)
 
     def test_small_output_and_missing_source_are_not_reclassified(self):
+        """Checks that small output and missing source are not reclassified."""
         result={'exit_code':0,'checks':[{'output':'Ran 0 tests\nOK','exit_code':0}]}
         self.assertEqual(module.baseline_preview('run_checks',result),result)
         result={'files':[{'path':'/project/test_missing.py','error':'not found'}]}
         self.assertEqual(module.baseline_preview('inspect_project',result),result)
 
     def test_product_inside_a_parent_named_tests_keeps_source(self):
+        """Checks that product inside a parent named tests keeps source."""
         result={'path':'/projects/tests','files':[{'path':'/projects/tests/main.py','text':'PRODUCT'},
                 {'path':'/projects/tests/test_main.py','text':'TEST_BODY'}]}
         preview=module.baseline_preview('inspect_project',result)

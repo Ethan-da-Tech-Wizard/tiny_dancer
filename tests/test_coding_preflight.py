@@ -1,4 +1,9 @@
+# Program: tiny_dancer - tests/test_coding_preflight.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for coding preflight (exercises app.agent, app.coding_preflight, app.engine).
 # SPDX-License-Identifier: Apache-2.0
+"""Tests for coding preflight (exercises app.agent, app.coding_preflight, app.engine)."""
 import json
 from pathlib import Path
 import tempfile
@@ -19,8 +24,11 @@ from tests.test_agent import ScriptedEngine, call
 FINAL=Message.from_role_and_content(Role.ASSISTANT,'Repaired and tested.').with_channel('final')
 
 
+# -------- preflight selection tests --------
 class PreflightSelectionTests(unittest.TestCase):
+    """Test group for preflight selection."""
     def test_only_actual_available_safe_test_candidates_are_selected(self):
+        """Checks that only actual available safe test candidates are selected."""
         inspection={'test_candidates':[None,{'command':'python -m pytest','available':False},
             {'command':'python -m unittest; touch outside','available':True},
             {'command':'cat old-test.log','available':True},
@@ -31,10 +39,12 @@ class PreflightSelectionTests(unittest.TestCase):
         self.assertEqual(baseline_commands({}),[])
 
     def test_three_command_bound(self):
+        """Checks that three command bound."""
         candidates=[{'command':f'python -m unittest test_{i}','available':True} for i in range(8)]
         self.assertEqual(len(baseline_commands({'test_candidates':candidates})),3)
 
     def test_decimal_notes_are_static_and_import_specific(self):
+        """Checks that decimal notes are static and import specific."""
         files=[{'path':'program.py','text':'from decimal import Decimal, getcontext as gc\nraise RuntimeError("Do not execute")\ngc().prec=123\n'},
                {'path':'unrelated.py','text':'message="from decimal import Decimal"\n'},
                {'path':'relative.py','text':'from .decimal import Decimal\n'},
@@ -48,24 +58,32 @@ class PreflightSelectionTests(unittest.TestCase):
         self.assertIn('not a proven defect',notes[0]['scope'])
 
     def test_dynamic_context_expression_is_not_mislabeled_as_fixed(self):
+        """Checks that dynamic context expression is not mislabeled as fixed."""
         notes=python_runtime_notes([{'path':'main.py','text':'import decimal as d\nd.getcontext().prec = needed_digits\n'}])
         self.assertIsNone(notes[0]['precision_assignments'][0]['constant'])
         self.assertEqual(len(python_runtime_notes([{'path':f'{i}.py','text':'import decimal\n'} for i in range(20)])),8)
 
 
+# -------- capturing engine --------
 class CapturingEngine(ScriptedEngine):
+    """Helper type capturing engine."""
     def __init__(self,actions):
+        """Test helper: init."""
         super().__init__(actions)
         self.config={**self.config,'coding_preflight':True}
         self.seen=[]
 
     def generate(self,history,*args,**kwargs):
+        """Test helper: generate."""
         self.seen.append(list(history))
         return super().generate(history,*args,**kwargs)
 
 
+# -------- coding preflight tests --------
 class CodingPreflightTests(unittest.IsolatedAsyncioTestCase):
+    """Test group for coding preflight."""
     async def asyncSetUp(self):
+        """Test helper: asyncSetUp."""
         self.temp=tempfile.TemporaryDirectory(dir=ROOT/'workspace')
         self.folder=Path(self.temp.name)
         (self.folder/'program.py').write_text('def add(a,b):return a-b\n')
@@ -73,17 +91,21 @@ class CodingPreflightTests(unittest.IsolatedAsyncioTestCase):
         self.tools=ComputerTools();self.messages=[];self.events=[]
 
     async def asyncTearDown(self):
+        """Test helper: asyncTearDown."""
         await self.tools.close();self.temp.cleanup()
 
     def runner(self,actions=(),checkpoint=None,prompt='Repair program.py and run its Python tests.',mode='agent'):
+        """Test helper: runner."""
         engine=CapturingEngine(actions)
         request=SimpleNamespace(prompt=prompt,mode=mode,max_tokens=1024,run_until_done=True)
+        # Test helper: save.
         def save(message,role=None):self.messages.append(message.to_dict())
         run=AgentRun(engine,self.tools,str(self.folder),request,lambda:self.messages,save,
                      lambda kind,data:self.events.append((kind,data)),lambda state:None,threading.Event(),checkpoint)
         return run,engine
 
     async def test_first_model_turn_sees_real_sources_and_failing_tests(self):
+        """Checks that first model turn sees real sources and failing tests."""
         run,engine=self.runner([call('write_file',{'path':'program.py','content':'def add(a,b):return a+b\n'}),FINAL])
         self.assertEqual(await run.run(),'complete')
         first=json.dumps(engine.seen[0])
@@ -101,6 +123,7 @@ class CodingPreflightTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(any(Message.from_dict(m).author.role==Role.TOOL for m in engine.seen[0]))
 
     async def test_passing_baseline_never_verifies_unfinished_goal(self):
+        """Checks that passing baseline never verifies unfinished goal."""
         (self.folder/'program.py').write_text('def add(a,b):return a+b\n')
         run,_=self.runner()
         await run.initial_project_checks()
@@ -112,6 +135,7 @@ class CodingPreflightTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(all('test_verification' not in result for result in results))
 
     async def test_native_chat_accepts_actual_initial_and_post_edit_receipts(self):
+        """Checks that native chat accepts actual initial and post edit receipts."""
         from app.native_chat import chat_history
         run,engine=self.runner([call('write_file',{'path':'program.py','content':'def add(a,b):return a+b\n'}),FINAL])
         self.assertEqual(await run.run(),'complete')
@@ -122,6 +146,7 @@ class CodingPreflightTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(any(r['role']=='tool' for r in last))
 
     async def test_resume_does_not_repeat_completed_or_partial_baseline(self):
+        """Checks that resume does not repeat completed or partial baseline."""
         run,_=self.runner();await run.initial_project_checks()
         count=len(self.events)
         for status in ('complete','started','cancelled'):
@@ -133,6 +158,7 @@ class CodingPreflightTests(unittest.IsolatedAsyncioTestCase):
         await old.initial_project_checks();self.assertEqual(len(self.events),count)
 
     async def test_questions_chat_and_unrelated_work_skip_automatic_execution(self):
+        """Checks that questions chat and unrelated work skip automatic execution."""
         for prompt,mode in [('What is Python?','agent'),('Repair program.py','chat'),('Create notes.txt','agent')]:
             run,_=self.runner(prompt=prompt,mode=mode)
             await run.initial_project_checks()
@@ -140,11 +166,13 @@ class CodingPreflightTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(self.events,[])
 
     async def test_stop_before_start_executes_nothing(self):
+        """Checks that stop before start executes nothing."""
         run,engine=self.runner();run.flag.set()
         with self.assertRaises(Cancelled):await run.run()
         self.assertEqual(self.events,[]);self.assertEqual(engine.seen,[])
 
     async def test_baseline_error_is_saved_and_does_not_abort_agent(self):
+        """Checks that baseline error is saved and does not abort agent."""
         run,_=self.runner()
         run.tools=SimpleNamespace(execute=AsyncMock(side_effect=OSError('test fixture inspection error')))
         await run.initial_project_checks()
@@ -153,12 +181,14 @@ class CodingPreflightTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(any(kind=='project_baseline_failed' for kind,_ in self.events))
 
     async def test_empty_suite_never_becomes_selected_post_edit_check(self):
+        """Checks that empty suite never becomes selected post edit check."""
         (self.folder/'test_program.py').write_text('import unittest\n')
         run,_=self.runner();await run.initial_project_checks()
         self.assertFalse(run.state['verified'])
         self.assertNotIn('selected_project_tests',run.state)
 
     async def test_inspection_artifact_retains_runtime_notes(self):
+        """Checks that inspection artifact retains runtime notes."""
         (self.folder/'program.py').write_text('from decimal import Decimal\n')
         result=await self.tools.execute('inspect_project',{},str(self.folder))
         self.assertEqual(result['runtime_notes'][0]['path'],str(self.folder/'program.py'))

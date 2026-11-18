@@ -1,5 +1,10 @@
+# Program: tiny_dancer - cache_native_model.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Install an identical, atomic model cache while local inference is idle.
 # SPDX-License-Identifier: Apache-2.0
 """Install an identical, atomic model cache while local inference is idle."""
+# ---- Imports ----
 import argparse
 from datetime import datetime, timezone
 import json
@@ -17,7 +22,9 @@ from app.validation_results import archive_report, refresh_results
 from scripts.benchmark_cpu_threads import require_idle
 
 
+# ---- Definitions ----
 def main():
+    """Step: main."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--directory', help='Optional cache location; otherwise uses model_cache.directory or XDG cache')
     parser.add_argument('--reserve-gib', type=int, default=10)
@@ -39,10 +46,12 @@ def main():
         report = {'started_at': now.isoformat(), 'status': 'running', 'passed': False,
                   'scope': 'Actual identical model copy, destination SHA-256 readback, preserved source and upstream notices. No inference speed claim.'}
         def save():
+            """Step: save."""
             temporary = report_path.with_suffix('.tmp')
             temporary.write_text(json.dumps(report, indent=2) + '\n'); temporary.replace(report_path)
         last = [0.0]
         def progress(copied, total):
+            """Step: progress. Inputs: copied, total."""
             now = time.monotonic()
             if now - last[0] < 5 and copied < total: return
             last[0] = now
@@ -62,5 +71,6 @@ def main():
         print(json.dumps({'report': str(report_path), 'passed': report['passed']}), flush=True)
 
 
+# ---- Script entry point ----
 if __name__ == '__main__':
     main()

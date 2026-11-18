@@ -1,5 +1,10 @@
+# Program: tiny_dancer - evaluate_inventory_resume.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Observe a saved native inventory task's Resume; no fresh-coding claim.
 # SPDX-License-Identifier: Apache-2.0
 """Observe a saved native inventory task's Resume; no fresh-coding claim."""
+# ---- Imports ----
 from datetime import datetime,timezone
 import hashlib
 import json
@@ -21,7 +26,9 @@ from scripts.inventory_goal_audit import CRITERIA as INVENTORY_GOAL_CRITERIA,che
 from scripts.native_observation import ProgressTracker,public_action_counts
 
 
+# ---- Definitions ----
 def main():
+    """Step: main."""
     if len(sys.argv)!=2:raise SystemExit('Provide the saved inventory evaluation report path')
     original=json.loads(Path(sys.argv[1]).read_text());assert original['case']=='inventory' and original['status']!='running'
     job=original['job'];folder=Path(original['cwd']);acceptance=folder/'test_acceptance.py'
@@ -33,6 +40,7 @@ def main():
             'prior_operator_interventions':original.get('operator_interventions',[]),'operator_interventions':[],'samples':[]}
     report['additional_independent_criteria']=list(INVENTORY_GOAL_CRITERIA)
     def save():
+        """Step: save."""
         temp=path.with_suffix('.tmp');temp.write_text(json.dumps(report,indent=2)+'\n');temp.replace(path)
     with sqlite3.connect(f'file:{ROOT/"run/workspace.sqlite3"}?mode=ro',uri=True) as db:
         boundary=db.execute('SELECT COALESCE(MAX(id),0) FROM events WHERE job=?',(job,)).fetchone()[0]
@@ -79,4 +87,5 @@ def main():
     if not report['passed']:raise SystemExit(1)
 
 
+# ---- Script entry point ----
 if __name__=='__main__':main()

@@ -1,5 +1,10 @@
+# Program: tiny_dancer - benchmark_cpu_threads.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Compare CPU threads in owned native sessions without changing production.
 # SPDX-License-Identifier: Apache-2.0
 """Compare CPU threads in owned native sessions without changing production."""
+# ---- Imports ----
 import hashlib
 import json
 import math
@@ -39,7 +44,9 @@ DESIGN = {
 }
 
 
+# ---- Definitions ----
 def candidate_config(config, threads):
+    """Step: candidate config. Inputs: config, threads."""
     if config.get('backend') != 'llama.cpp' or config.get('context') != 8192 or config.get('threads') != 8:
         raise ValueError('Comparison requires the recorded native baseline: context8192/threads8')
     if type(threads) is not int or threads not in ORDER:
@@ -48,6 +55,7 @@ def candidate_config(config, threads):
 
 
 def cpu_temperature():
+    """Step: cpu temperature."""
     values = []
     for name, entries in psutil.sensors_temperatures().items():
         if name in ('coretemp', 'k10temp', 'cpu_thermal'):
@@ -56,6 +64,7 @@ def cpu_temperature():
 
 
 def gpu_state():
+    """Step: gpu state."""
     query = 'temperature.gpu,clocks.current.sm,memory.used,memory.total,clocks_event_reasons.sw_thermal_slowdown'
     result = subprocess.run(['nvidia-smi', '--query-gpu='+query, '--format=csv,noheader,nounits'],
                             capture_output=True, text=True, timeout=3)
@@ -71,6 +80,7 @@ def gpu_state():
 
 
 def resource_issue(sample, *, user_job=False, elapsed=0, experiment_elapsed=0):
+    """Step: resource issue. Inputs: sample, user_job, elapsed, experiment_elapsed."""
     if user_job:
         return 'User task started; release benchmark resources'
     if experiment_elapsed >= DESIGN['experiment_seconds']:
@@ -89,11 +99,13 @@ def resource_issue(sample, *, user_job=False, elapsed=0, experiment_elapsed=0):
 
 
 def observation():
+    """Step: observation."""
     return dict(gpu_state(), available_ram_gib=psutil.virtual_memory().available/2**30,
                 cpu_c=cpu_temperature())
 
 
 def cooldown_ready(sample, elapsed):
+    """Step: cooldown ready. Inputs: sample, elapsed."""
     if sample['gpu_c'] <= DESIGN['start_gpu_max_c']:
         return True
     if elapsed >= DESIGN['cooldown_seconds']:
@@ -102,6 +114,7 @@ def cooldown_ready(sample, elapsed):
 
 
 def require_idle(client):
+    """Step: require idle. Inputs: client."""
     result = client.get('/api/status', timeout=3)
     result.raise_for_status()
     status = result.json()
@@ -111,6 +124,7 @@ def require_idle(client):
 
 
 def stop_owned(processes):
+    """Step: stop owned. Inputs: processes."""
     for process in processes:
         if process.poll() is None:
             try:
@@ -120,6 +134,7 @@ def stop_owned(processes):
 
 
 def comparison(variants):
+    """Step: comparison. Inputs: variants."""
     result = {'comparison_complete': False, 'greedy_token_parity': False,
               'starting_temperatures_comparable': False, 'candidates': [], 'passed': False}
     if [v.get('threads') for v in variants] != list(ORDER):
@@ -163,6 +178,7 @@ def comparison(variants):
 
 
 def main():
+    """Step: main."""
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
     folder = ROOT/'run/thread-benchmarks'/stamp
     folder.mkdir(parents=True)
@@ -176,6 +192,7 @@ def main():
         if isinstance(previous.get('passed'), bool):
             archive_report(ROOT, path.name, 'evaluation', previous['title'], previous['scope'])
     def save():
+        """Step: save."""
         temporary = path.with_suffix('.tmp')
         temporary.write_text(json.dumps(report, indent=2, allow_nan=False)+'\n')
         temporary.replace(path)
@@ -220,6 +237,7 @@ def main():
                 owned = []
                 original_popen = subprocess.Popen
                 def launch(command, **kwargs):
+                    """Step: launch. Inputs: command."""
                     if '-ncmoe' not in command:
                         return original_popen(command, **kwargs)
                     if interrupted:
@@ -235,6 +253,7 @@ def main():
                     psutil.Process(process.pid).nice(config.get('model_nice', 5))
                     return process
                 def monitor():
+                    """Step: monitor."""
                     try:
                         with httpx.Client(base_url='http://127.0.0.1:3210', trust_env=False, timeout=3) as watch_client:
                             watch_client.get('/').raise_for_status()
@@ -319,5 +338,6 @@ def main():
         raise SystemExit(1)
 
 
+# ---- Script entry point ----
 if __name__ == '__main__':
     main()

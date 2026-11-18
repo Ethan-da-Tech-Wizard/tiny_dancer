@@ -1,3 +1,7 @@
+# Program: tiny_dancer - tests/test_repair_context.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for repair context.
 # SPDX-License-Identifier: Apache-2.0
 """Failed repairs retain their prefix and real failure; capacity recovery remains."""
 import json
@@ -7,13 +11,16 @@ from tests.test_post_edit_checks import PostEditCheckTests, COMMAND
 from tests.test_agent import call
 
 
+# -------- repair context tests --------
 class RepairContextTests(unittest.IsolatedAsyncioTestCase):
+    """Test group for repair context."""
     asyncSetUp=PostEditCheckTests.asyncSetUp
     asyncTearDown=PostEditCheckTests.asyncTearDown
     runner=PostEditCheckTests.runner
     prepare=PostEditCheckTests.prepare
     automatic_results=PostEditCheckTests.automatic_results
     async def test_failed_edit_keeps_prefix_goal_source_and_actual_failure(self):
+        """Checks that failed edit keeps prefix goal source and actual failure."""
         run = self.runner()
         await self.prepare(run)
         self.messages.append(Message.from_role_and_content(Role.USER,run.request.prompt).to_dict())
@@ -38,6 +45,7 @@ class RepairContextTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(run.state['repair_contexts'], 1)  # No repeat without an edit.
 
     async def test_failed_repair_cannot_keep_an_old_real_passing_receipt(self):
+        """Checks that failed repair cannot keep an old real passing receipt."""
         run=self.runner();await self.prepare(run)
         await run.execute('write_file',{'path':'program.py','content':'def add(a,b):return a+b\n'})
         await run.check_after_edit()
@@ -51,6 +59,7 @@ class RepairContextTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(run.state.get('context_compactions',0),0)
 
     async def test_second_distinct_failed_edit_refreshes_again_then_actual_pass_can_finish(self):
+        """Checks that second distinct failed edit refreshes again then actual pass can finish."""
         final = Message.from_role_and_content(Role.ASSISTANT, 'Implemented and tested.').with_channel('final')
         run = self.runner([call('write_file', {'path':'program.py','content':'def add(a,b):\n    return a*b\n'}),
                            call('write_file', {'path':'program.py','content':'def add(a,b):\n    return a+b\n'}), final])
@@ -62,6 +71,7 @@ class RepairContextTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(len(self.automatic_results()), 3)
 
     async def test_passing_edit_does_not_refresh_context(self):
+        """Checks that passing edit does not refresh context."""
         run=self.runner(); await self.prepare(run)
         await run.execute('write_file', {'path':'program.py','content':'def add(a,b):\n    return a+b\n'})
         await run.check_after_edit()
@@ -69,6 +79,7 @@ class RepairContextTests(unittest.IsolatedAsyncioTestCase):
         self.assertNotIn('repair_contexts', run.state)
 
     async def test_explicit_failed_test_in_same_edit_batch_also_refreshes(self):
+        """Checks that explicit failed test in same edit batch also refreshes."""
         final=Message.from_role_and_content(Role.ASSISTANT,'Implemented and tested.').with_channel('final')
         run=self.runner([([call('write_file',{'path':'program.py','content':'def add(a,b):return 0\n'}),
                            call('run_checks',{'commands':[COMMAND]})],'RETURN'),
@@ -81,6 +92,7 @@ class RepairContextTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(len(self.automatic_results()),1)  # No duplicate failed suite.
 
     async def test_repair_checkpoint_reserves_full_native_action(self):
+        """Checks that repair checkpoint reserves full native action."""
         import threading
         from tests.test_output_reserve import OutputReserveTests
         run=self.runner(); await self.prepare(run)

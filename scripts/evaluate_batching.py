@@ -1,5 +1,10 @@
+# Program: tiny_dancer - evaluate_batching.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Frozen real-model repair comparison or exact user JSON/editor regression.
 # SPDX-License-Identifier: Apache-2.0
 """Frozen real-model repair comparison or exact user JSON/editor regression."""
+# ---- Imports ----
 import argparse
 import asyncio
 import json
@@ -18,7 +23,9 @@ from app.validation_results import archive_report,refresh_results
 from app.facts import validate_scores
 
 
+# ---- Definitions ----
 def main():
+    """Step: main."""
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('kind',choices=['repair','export','coding']);args=parser.parse_args()
     before_names={'repair':'native-harness-validation.json','export':'score-export-before.json','coding':'native-coding-validation.json'}
     output_names={'repair':'batching-native-validation.json','export':'score-export-validation.json','coding':'hardening-coding-validation.json'}
@@ -27,6 +34,7 @@ def main():
     report={'started_at':datetime.now(timezone.utc).isoformat(),'prompt':prompt,'status':'starting','operator_interventions':[],'samples':[],
             'scope':'Frozen initial prompt, no operator code/recovery notes during native execution. '+({'repair':'Seeded bug/tests identical to previous repair probe; historical timing comparison.','export':'Exact original user request in the original workspace/session. Typed host export is explicitly identified; the model selects tool arguments.','coding':'Original CSV goal and input only in a fresh folder; no implementation or tests supplied. Independent/friendly-error checks run after termination.'}[args.kind])}
     def save():
+        """Step: save."""
         temporary=report_path.with_suffix('.tmp');temporary.write_text(json.dumps(report,indent=2)+'\n');temporary.replace(report_path);refresh_results(ROOT)
     with httpx.Client(base_url='http://127.0.0.1:3210',timeout=20) as client:
         client.get('/').raise_for_status();status=client.get('/api/status').json()
@@ -82,6 +90,7 @@ def main():
             report.update(saved_file=str(path),games=len(expected),independent_source=url)
             from app.tools import ComputerTools
             async def inspect_editor():
+                """Async step: inspect editor."""
                 tools=ComputerTools()
                 try:return await tools.desktop({'action':'windows'})
                 finally:await tools.close()
@@ -104,4 +113,5 @@ def main():
         if not report['passed']:raise SystemExit(1)
 
 
+# ---- Script entry point ----
 if __name__=='__main__':main()

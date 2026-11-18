@@ -1,4 +1,9 @@
+# Program: tiny_dancer - tests/test_model_cache.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for model cache (exercises app, app.llama_session).
 # SPDX-License-Identifier: Apache-2.0
+"""Tests for model cache (exercises app, app.llama_session)."""
 import hashlib
 import json
 from pathlib import Path
@@ -12,8 +17,11 @@ from app import model_cache as cache
 ROOT = Path(__file__).resolve().parents[1]
 
 
+# -------- model cache tests --------
 class ModelCacheTests(unittest.TestCase):
+    """Test group for model cache."""
     def setUp(self):
+        """Prepare the fixtures for each test."""
         self.temporary = tempfile.TemporaryDirectory(dir=ROOT / 'run')
         self.root = Path(self.temporary.name)
         self.addCleanup(self.temporary.cleanup)
@@ -34,9 +42,11 @@ class ModelCacheTests(unittest.TestCase):
         self.config = {'model_cache': {'enabled': True, 'directory': str(self.root / 'ssd')}}
 
     def install(self):
+        """Test helper: install."""
         return cache.install_cache(self.root, self.config, reserve_bytes=0)
 
     def test_verified_copy_keeps_original_notices_and_provenance(self):
+        """Checks that verified copy keeps original notices and provenance."""
         before = cache.fingerprint(self.original)
         report = self.install()
         target = Path(report['path'])
@@ -54,6 +64,7 @@ class ModelCacheTests(unittest.TestCase):
         self.assertEqual(selection['kind'], 'cache')
 
     def test_disabled_or_missing_cache_falls_back_without_creating_files(self):
+        """Checks that disabled or missing cache falls back without creating files."""
         for cfg in ({}, self.config):
             path, selected = cache.select_model(self.root, cfg)
             self.assertEqual(path, self.original)
@@ -61,6 +72,7 @@ class ModelCacheTests(unittest.TestCase):
         self.assertFalse((self.root / 'ssd').exists())
 
     def test_corruption_same_size_invalidates_verified_receipt_and_falls_back(self):
+        """Checks that corruption same size invalidates verified receipt and falls back."""
         target = Path(self.install()['path'])
         cache.select_model(self.root, self.config)
         target.chmod(0o644)
@@ -75,6 +87,7 @@ class ModelCacheTests(unittest.TestCase):
         self.assertEqual(target.read_bytes(), b'X' * len(self.data))
 
     def test_replaced_inode_and_missing_cache_file_fall_back(self):
+        """Checks that replaced inode and missing cache file fall back."""
         target = Path(self.install()['path'])
         cache.select_model(self.root, self.config)
         replacement = target.with_suffix('.other')
@@ -85,6 +98,7 @@ class ModelCacheTests(unittest.TestCase):
         self.assertEqual(cache.select_model(self.root, self.config)[0], self.original)
 
     def test_unchanged_file_is_hashed_once_per_process(self):
+        """Checks that unchanged file is hashed once per process."""
         target = Path(self.install()['path'])
         expected = cache.identity(self.root)[1]
         cache.verify_file(target, expected)
@@ -96,6 +110,7 @@ class ModelCacheTests(unittest.TestCase):
                 cache.verify_file(target, expected)
 
     def test_insufficient_space_never_starts_or_deletes_other_files(self):
+        """Checks that insufficient space never starts or deletes other files."""
         base = self.root / 'ssd'; base.mkdir()
         unrelated = base / 'user-file'; unrelated.write_text('keep')
         with patch.object(cache.shutil, 'disk_usage', return_value=SimpleNamespace(free=10)):
@@ -106,7 +121,9 @@ class ModelCacheTests(unittest.TestCase):
         self.assertEqual(self.original.read_bytes(), self.data)
 
     def test_interruption_never_publishes_partial_cache(self):
+        """Checks that interruption never publishes partial cache."""
         def interrupt(copied, total):
+            """Test helper: interrupt."""
             raise RuntimeError('Simulated interruption')
         with patch.object(cache, 'CHUNK_BYTES', 64):
             with self.assertRaisesRegex(RuntimeError, 'interruption'):
@@ -116,13 +133,16 @@ class ModelCacheTests(unittest.TestCase):
         self.assertEqual(cache.select_model(self.root, self.config)[0], self.original)
 
     def test_invalid_source_hash_never_publishes_model(self):
+        """Checks that invalid source hash never publishes model."""
         self.original.write_bytes(b'Y' * len(self.data))
         with self.assertRaisesRegex(ValueError, 'identity mismatch'):
             self.install()
         self.assertEqual(list((self.root / 'ssd').iterdir()), [])
 
     def test_source_mutation_during_copy_is_rejected(self):
+        """Checks that source mutation during copy is rejected."""
         def mutate(copied, total):
+            """Test helper: mutate."""
             if copied == 64:
                 self.original.write_bytes(b'Y' * len(self.data))
         with patch.object(cache, 'CHUNK_BYTES', 64):
@@ -131,6 +151,7 @@ class ModelCacheTests(unittest.TestCase):
         self.assertEqual(list((self.root / 'ssd').iterdir()), [])
 
     def test_notice_or_manifest_damage_falls_back(self):
+        """Checks that notice or manifest damage falls back."""
         target = Path(self.install()['path'])
         notice = target.parent / 'LICENSE'; notice.chmod(0o644); notice.write_text('wrong license')
         self.assertEqual(cache.select_model(self.root, self.config)[0], self.original)
@@ -139,11 +160,13 @@ class ModelCacheTests(unittest.TestCase):
         self.assertEqual(cache.select_model(self.root, self.config)[0], self.original)
 
     def test_symbolic_link_to_unverified_bytes_is_rejected(self):
+        """Checks that symbolic link to unverified bytes is rejected."""
         target = Path(self.install()['path'])
         target.unlink(); target.symlink_to(self.original)
         self.assertEqual(cache.select_model(self.root, self.config)[0], self.original)
 
     def test_malformed_metadata_and_cache_settings_use_original(self):
+        """Checks that malformed metadata and cache settings use original."""
         target = Path(self.install()['path'])
         manifest = target.parent / 'manifest.json'; manifest.chmod(0o644)
         for data in ('null', '[]', '{}'):
@@ -153,6 +176,7 @@ class ModelCacheTests(unittest.TestCase):
             self.assertEqual(cache.select_model(self.root, {'model_cache': invalid})[0], self.original)
 
     def test_install_is_idempotent_and_directory_is_portable(self):
+        """Checks that install is idempotent and directory is portable."""
         self.config['model_cache']['directory'] = 'relative-cache'
         first = self.install()
         second = self.install()
@@ -163,6 +187,7 @@ class ModelCacheTests(unittest.TestCase):
             self.assertEqual(cache.cache_directory(self.root, {}), self.root / 'xdg/tiny-dancer/models')
 
     def test_native_adapter_uses_cache_without_changing_model_parameters(self):
+        """Checks that native adapter uses cache without changing model parameters."""
         from app.llama_session import LlamaReferenceSession
         cached = Path(self.install()['path'])
         binary = self.root / 'build/llama-reference/bin/llama-server'

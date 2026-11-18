@@ -1,9 +1,16 @@
+# Program: tiny_dancer - tool_arguments.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Decode native arguments with one unambiguous structural correction.
 # SPDX-License-Identifier: Apache-2.0
 """Decode native arguments with one unambiguous structural correction."""
+# ---- Imports ----
 import json
 
 
+# ---- Definitions ----
 def unique_object(pairs):
+    """Step: unique object. Inputs: pairs."""
     result = {}
     for key, value in pairs:
         if key in result:
@@ -13,6 +20,7 @@ def unique_object(pairs):
 
 
 def parse_tool_arguments(text):
+    """Step: parse tool arguments. Inputs: text."""
     repair = None
     try:
         args = json.loads(text)

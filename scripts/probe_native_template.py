@@ -1,5 +1,10 @@
+# Program: tiny_dancer - probe_native_template.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Exact staged backend/template check, plus two real native instruction receipts.
 # SPDX-License-Identifier: Apache-2.0
 """Exact staged backend/template check, plus two real native instruction receipts."""
+# ---- Imports ----
 from datetime import datetime,timezone
 import hashlib
 import importlib.util
@@ -18,7 +23,9 @@ from app.engine import text_of_message
 from app.validation_results import archive_report,refresh_results
 
 
+# ---- Definitions ----
 def main():
+    """Step: main."""
     stage=ROOT/'run/staging/native-read-timeout'
     stamp=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
     path=ROOT/'docs'/('native-template-candidate-'+stamp+'.json')
@@ -26,6 +33,7 @@ def main():
         'scope':'Exact staged llama.cpp template formatting with synthetic messages, then two actual same-model instruction-following tool receipts. No coding task or general capability claim; no native private text emitted.',
         'checks':{},'receipts':[]}
     def save():
+        """Step: save."""
         temporary=path.with_suffix('.tmp');temporary.write_text(json.dumps(report,indent=2)+'\n');temporary.replace(path)
     with httpx.Client(base_url='http://127.0.0.1:3210',trust_env=False,timeout=5) as control:
         control.get('/');s=control.get('/api/status').json()
@@ -39,8 +47,10 @@ def main():
         save();print(json.dumps({'report':str(path),'phase':'loading staged backend'}),flush=True)
         done=threading.Event();owned={};session=None;started=time.monotonic()
         def on_start(proc):
+            """Step: on start. Inputs: proc."""
             owned['proc']=proc;psutil.Process(proc.pid).nice(5)
         def watch():
+            """Step: watch."""
             low_since=None;last_activity=time.monotonic();previous=None;last_sample=0
             while not done.wait(2):
                 try:
@@ -117,4 +127,5 @@ def main():
         return report['passed']
 
 
+# ---- Script entry point ----
 if __name__=='__main__':raise SystemExit(0 if main() else 1)

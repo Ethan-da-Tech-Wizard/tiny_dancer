@@ -1,4 +1,8 @@
 #!/bin/sh
+# Program: tiny_dancer - pytest
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Wrapper that runs pytest from the project virtual environment with a project-owned temporary directory.
 # SPDX-License-Identifier: Apache-2.0
 TD_PYTEST_TMP=/mnt/GameDrive/tiny_dancer/run/pytest-tmp
 mkdir -p "$TD_PYTEST_TMP" || exit 1

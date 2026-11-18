@@ -1,5 +1,10 @@
+# Program: tiny_dancer - deliverables.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Verify requested saved JSON and editor actions using actual files/results.
 # SPDX-License-Identifier: Apache-2.0
 """Verify requested saved JSON and editor actions using actual files/results."""
+# ---- Imports ----
 import json
 from pathlib import Path
 
@@ -8,7 +13,9 @@ from app.dependency_policy import constrained_manifest,dependency_issue
 from app.test_requirements import added_paths,issue as test_issue
 
 
+# ---- Definitions ----
 def requested_output_path(contract, state):
+    """Step: requested output path. Inputs: contract, state."""
     name=contract.get('deliverables',{}).get('path')
     if not name: return None
     path=Path(name).expanduser()
@@ -19,6 +26,7 @@ def requested_output_path(contract, state):
 
 
 def verification_paths(contract, state):
+    """Step: verification paths. Inputs: contract, state."""
     paths=state.get('edited_sources',[])+state.get('inspected_sources',[])+state.get('files_written',[])
     manifest=constrained_manifest(contract,state)
     if manifest is not None and (manifest.exists() or manifest.is_symlink()): paths=paths+[str(manifest)]
@@ -30,6 +38,7 @@ def verification_paths(contract, state):
 
 
 def inspect_deliverables(contract,state):
+    """Step: inspect deliverables. Inputs: contract, state."""
     issue=dependency_issue(contract,state)
     if issue: return issue,None
     issue=test_issue(contract,state)
@@ -59,6 +68,7 @@ def inspect_deliverables(contract,state):
                     raise ValueError('Saved JSON must retain the retrieved date and source')
                 fields=('away','away_score','home','home_score')
                 def rows(games):
+                    """Step: rows. Inputs: games."""
                     if not isinstance(games,list): raise ValueError('Saved JSON needs the retrieved games array')
                     if any(not isinstance(game,dict) or any(not isinstance(game.get(k),str) for k in ('away','home'))
                            or any(type(game.get(k)) is not int for k in ('away_score','home_score')) for game in games):

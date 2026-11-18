@@ -1,4 +1,9 @@
+# Program: tiny_dancer - checkpoint.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Records a setup phase and message into the project state file and appends them to the session log.
 """Use after meaningful setup transitions: checkpoint.py PHASE MESSAGE."""
+# ---- Imports ----
 import json, sys
 from pathlib import Path
 from datetime import datetime, timezone

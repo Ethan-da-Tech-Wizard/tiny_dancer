@@ -1,5 +1,10 @@
+# Program: tiny_dancer - facts.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Bounded, decoded HTTP data and a checked NFL scoreboard workflow.
 # SPDX-License-Identifier: Apache-2.0
 """Bounded, decoded HTTP data and a checked NFL scoreboard workflow."""
+# ---- Imports ----
 import json
 import time
 import uuid
@@ -10,7 +15,9 @@ from zoneinfo import ZoneInfo
 import httpx
 
 
+# ---- Definitions ----
 async def retrieve_json(url, artifacts, transport=None):
+    """Async step: retrieve json. Inputs: url, artifacts, transport."""
     if not url.startswith(('https://', 'http://')):
         raise ValueError('Use an HTTP or HTTPS URL')
     async with httpx.AsyncClient(timeout=20, follow_redirects=True, transport=transport) as client:
@@ -34,6 +41,7 @@ async def retrieve_json(url, artifacts, transport=None):
 
 
 def pointer(data, path):
+    """Step: pointer. Inputs: data, path."""
     if path == '': return data
     if not path.startswith('/'): raise ValueError('JSON pointer must begin with /')
     for key in path[1:].split('/'):
@@ -43,6 +51,7 @@ def pointer(data, path):
 
 
 async def fetch_json(args, artifacts, transport=None):
+    """Async step: fetch json. Inputs: args, artifacts, transport."""
     data, meta = await retrieve_json(args['url'], artifacts, transport)
     data = pointer(data, args.get('pointer', ''))
     encoded = json.dumps(data, ensure_ascii=False)
@@ -53,6 +62,7 @@ async def fetch_json(args, artifacts, transport=None):
 
 
 def validate_scores(data, requested_date):
+    """Step: validate scores. Inputs: data, requested_date."""
     events = data.get('events')
     if not isinstance(events, list) or not events:
         raise ValueError('The source returned no games for the requested date')
@@ -80,6 +90,7 @@ def validate_scores(data, requested_date):
 
 
 async def nfl_scores(args, artifacts, transport=None, today=None):
+    """Async step: nfl scores. Inputs: args, artifacts, transport, today."""
     today = today or datetime.now(ZoneInfo('America/Phoenix')).date()
     requested = date.fromisoformat(args['date']) if args.get('date') else today - timedelta(days=(today.weekday()-6) % 7 or 7)
     if requested >= today: raise ValueError('Choose a completed date before today')
@@ -91,5 +102,6 @@ async def nfl_scores(args, artifacts, transport=None, today=None):
 
 
 def format_scores(result):
+    """Step: format scores. Inputs: result."""
     rows = [f"- {game['away']} {game['away_score']} — {game['home']} {game['home_score']}" for game in result['games']]
     return f"NFL scores for Sunday, {result['date']} ({result['game_count']} final games):\n\n" + '\n'.join(rows) + f"\n\nSource: [ESPN scoreboard]({result['source']})"

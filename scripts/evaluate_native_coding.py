@@ -1,5 +1,10 @@
+# Program: tiny_dancer - evaluate_native_coding.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Frozen native coding task; operator observes, then checks unseen inputs.
 # SPDX-License-Identifier: Apache-2.0
 """Frozen native coding task; operator observes, then checks unseen inputs."""
+# ---- Imports ----
 import hashlib
 import json
 import subprocess
@@ -23,7 +28,9 @@ PROMPT = (
 )
 
 
+# ---- Definitions ----
 def independent_checks(folder):
+    """Step: independent checks. Inputs: folder."""
     cases = [
         ('exact decimals and negatives', 'category,amount\nfood,0.10\nfood,0.20\nfood,-0.05\n', {'food':'0.25'}),
         ('quoted category and sorted keys', 'category,amount\nz,1\n"a,b",2.30\nz,-0.25\n', {'a,b':'2.30','z':'0.75'}),
@@ -51,6 +58,7 @@ def independent_checks(folder):
 
 
 def main():
+    """Step: main."""
     report={'started_at':datetime.now(timezone.utc).isoformat(),'prompt':PROMPT,
             'prompt_sha256':hashlib.sha256(PROMPT.encode()).hexdigest(),'status':'starting',
             'method':'Fresh native GPT-OSS work task. Only input CSV provided; no implementation, answers, tests or recovery notes supplied by operator during execution. Independent checks run only after termination.',
@@ -104,4 +112,5 @@ def main():
         if not report['passed']: raise SystemExit(1)
 
 
+# ---- Script entry point ----
 if __name__=='__main__': main()

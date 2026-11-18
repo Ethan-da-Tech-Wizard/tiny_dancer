@@ -1,5 +1,10 @@
+# Program: tiny_dancer - rust_toolchain_licenses.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Offline inventory of the already installed rustup-managed Rust toolchain.
 # SPDX-License-Identifier: Apache-2.0
 """Offline inventory of the already installed rustup-managed Rust toolchain."""
+# ---- Imports ----
 import hashlib
 import json
 from pathlib import Path
@@ -7,11 +12,14 @@ import shutil
 import subprocess
 
 
+# ---- Definitions ----
 def tool_version(name):
+    """Step: tool version. Inputs: name."""
     return subprocess.check_output([name,'--version'],text=True,stderr=subprocess.DEVNULL,timeout=10).split()[1]
 
 
 def collect_rust_entries(root,save):
+    """Step: collect rust entries. Inputs: root, save."""
     root=Path(root)
     if not any(shutil.which(name) for name in ('rustc','cargo','rustup')):return []
     if not all(shutil.which(name) for name in ('rustc','cargo','rustup')):raise RuntimeError('Incomplete Rust toolchain; cannot inventory accurately')
@@ -33,6 +41,7 @@ def collect_rust_entries(root,save):
 
 
 def verify_rust_versions(entries):
+    """Step: verify rust versions. Inputs: entries."""
     for entry in entries:
         command={'rustc/toolchain':'rustc','cargo':'cargo','rustup':'rustup'}.get(entry['name'])
         if command and tool_version(command)!=entry['version']:raise RuntimeError('Rust tool version changed; refresh the license inventory: '+command)

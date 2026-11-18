@@ -1,3 +1,8 @@
+# Program: tiny_dancer - tests/test_tools.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for tools (exercises app.tools).
+"""Tests for tools (exercises app.tools)."""
 import asyncio
 import json
 import tempfile
@@ -6,17 +11,22 @@ from pathlib import Path
 import httpx
 from app.tools import ComputerTools, ROOT
 
+# -------- computer integration tests --------
 class ComputerIntegrationTests(unittest.IsolatedAsyncioTestCase):
+    """Test group for computer integration."""
     async def asyncSetUp(self):
+        """Test helper: asyncSetUp."""
         self.temp = tempfile.TemporaryDirectory(dir=ROOT / 'workspace', prefix='tool-validation-')
         self.cwd = self.temp.name
         self.tools = ComputerTools(browser_profile=Path(self.cwd) / 'browser-profile')
 
     async def asyncTearDown(self):
+        """Test helper: asyncTearDown."""
         await self.tools.close()
         self.temp.cleanup()
 
     async def test_shell_and_file_backup(self):
+        """Checks that shell and file backup."""
         path = Path(self.cwd) / 'note.txt'
         await self.tools.execute('write_file', {'path':str(path),'content':'first version'}, self.cwd)
         result = await self.tools.execute('write_file', {'path':str(path),'content':'second version'}, self.cwd)
@@ -27,11 +37,13 @@ class ComputerIntegrationTests(unittest.IsolatedAsyncioTestCase):
         self.assertIn('42', result['output'])
 
     async def test_timeout_kills_shell(self):
+        """Checks that timeout kills shell."""
         result = await self.tools.execute('shell', {'command':'sleep 30', 'timeout':1}, self.cwd)
         self.assertTrue(result['timed_out'])
         self.assertNotEqual(result['exit_code'], 0)
 
     async def test_cancel_kills_background_group(self):
+        """Checks that cancel kills background group."""
         pidfile = Path(self.cwd) / 'pid'
         task = asyncio.create_task(self.tools.execute('shell', {'command':f'sleep 60 & echo $! > {pidfile}; wait'}, self.cwd))
         for _ in range(30):
@@ -44,17 +56,20 @@ class ComputerIntegrationTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(not psutil.pid_exists(child) or psutil.Process(child).status() == psutil.STATUS_ZOMBIE)
 
     async def test_browser_inspects_local_page(self):
+        """Checks that browser inspects local page."""
         result = await self.tools.execute('browser', {'action':'open','url':'http://127.0.0.1:3210'}, self.cwd)
         self.assertEqual(result['http_status'], 200)
         self.assertIn('Tiny Dancer', result['title'])
         self.assertIn('GPT-OSS-20B', result['text'])
 
     async def test_browser_reports_missing_page_status(self):
+        """Checks that browser reports missing page status."""
         result = await self.tools.execute('browser', {'action':'open','url':'http://127.0.0.1:3210/missing-validation-page'}, self.cwd)
         self.assertEqual(result['http_status'], 404)
         self.assertIn('Not Found', result['text'])
 
     async def test_browser_prefers_main_content_and_its_unique_links(self):
+        """Checks that browser prefers main content and its unique links."""
         from urllib.parse import quote
         html = '<nav>Navigation menu <a href="https://example.com/nav">Menu</a></nav><main>Actual dated result<a href="https://example.com/result">Source</a><a href="https://example.com/result">Again</a></main>'
         result = await self.tools.execute('browser', {'action':'open','url':'data:text/html,'+quote(html)}, self.cwd)
@@ -64,11 +79,13 @@ class ComputerIntegrationTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(sum(link['url']=='https://example.com/result' for link in result['links']), 1)
 
     async def test_desktop_lists_real_windows(self):
+        """Checks that desktop lists real windows."""
         result = await self.tools.execute('desktop', {'action':'windows'}, self.cwd)
         self.assertIsInstance(result, list)
         self.assertTrue(any(w.get('class') for w in result))
 
     async def test_api_auth_and_origin(self):
+        """Checks that api auth and origin."""
         async with httpx.AsyncClient(base_url='http://127.0.0.1:3210') as client:
             self.assertEqual((await client.get('/api/status')).status_code, 401)
             self.assertEqual((await client.get('/')).status_code, 200)
@@ -79,6 +96,7 @@ class ComputerIntegrationTests(unittest.IsolatedAsyncioTestCase):
             self.assertEqual(response.status_code, 403)
 
     async def test_sse_reconnect_resumes_after_last_event(self):
+        """Checks that sse reconnect resumes after last event."""
         import sqlite3, time, uuid
         job='sse-check-'+uuid.uuid4().hex
         with sqlite3.connect(ROOT/'run/workspace.sqlite3') as con:

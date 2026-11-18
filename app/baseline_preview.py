@@ -1,11 +1,18 @@
+# Program: tiny_dancer - baseline_preview.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Bounded initial-context projection; does not mutate saved tool evidence.
 # SPDX-License-Identifier: Apache-2.0
 """Bounded initial-context projection; does not mutate saved tool evidence."""
+# ---- Imports ----
 import copy
 from pathlib import Path
 from app.prompting import compact_result, excerpt
 
 
+# ---- Definitions ----
 def baseline_preview(name, result):
+    """Step: baseline preview. Inputs: name, result."""
     value=copy.deepcopy(result)
     if name=='inspect_project':
         for record in value.get('files',[]):

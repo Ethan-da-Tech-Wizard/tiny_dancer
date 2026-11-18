@@ -1,4 +1,9 @@
+# Program: tiny_dancer - tests/test_tool_runtime.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Tests for tool runtime (exercises app.batching, app.tool_runtime, app.tools).
 # SPDX-License-Identifier: Apache-2.0
+"""Tests for tool runtime (exercises app.batching, app.tool_runtime, app.tools)."""
 import os
 from pathlib import Path
 import shutil
@@ -14,15 +19,20 @@ from app.tools import ROOT,shell
 from app.batching import inspect_project
 
 
+# -------- tool runtime tests --------
 class ToolRuntimeTests(unittest.IsolatedAsyncioTestCase):
+    """Test group for tool runtime."""
     async def asyncSetUp(self):
+        """Test helper: asyncSetUp."""
         self.temp=tempfile.TemporaryDirectory(dir=ROOT/'workspace')
         self.folder=Path(self.temp.name)
 
     async def asyncTearDown(self):
+        """Test helper: asyncTearDown."""
         self.temp.cleanup()
 
     async def test_absent_project_wrapper_preserves_host_path_and_project_storage(self):
+        """Checks that absent project wrapper preserves host path and project storage."""
         with patch('app.tool_runtime.ROOT',self.folder):
             original=dict(os.environ);env=tool_environment()
             for key,value in original.items():
@@ -31,6 +41,7 @@ class ToolRuntimeTests(unittest.IsolatedAsyncioTestCase):
             self.assertEqual(env['CARGO_HOME'],str(self.folder/'cache/cargo'))
 
     async def test_project_runner_is_visible_to_inspection_and_shell_without_changing_python(self):
+        """Checks that project runner is visible to inspection and shell without changing python."""
         folder=self.folder/'run/tool-bin';folder.mkdir(parents=True)
         wrapper=folder/'pytest';wrapper.write_text('#!/bin/sh\nprintf runner-visible\n');wrapper.chmod(0o755)
         (self.folder/'test_demo.py').write_text('def test_demo(): assert True\n')
@@ -47,6 +58,7 @@ class ToolRuntimeTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(executed['output'],'runner-visible')
 
     async def test_actual_child_tempfile_stays_on_project_drive(self):
+        """Checks that actual child tempfile stays on project drive."""
         with patch('app.tool_runtime.ROOT',self.folder):env=tool_environment()
         result=subprocess.run([sys.executable,'-c','import tempfile,json; f=tempfile.NamedTemporaryFile(); print(json.dumps({"temporary":tempfile.gettempdir(),"file":f.name}))'],env=env,capture_output=True,text=True,timeout=10)
         self.assertEqual(result.returncode,0,result.stderr);data=json.loads(result.stdout)
@@ -54,6 +66,7 @@ class ToolRuntimeTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(Path(env['TMPDIR']).stat().st_mode & 0o777,0o700)
 
     async def test_existing_rust_toolchain_resolves_with_project_cargo_cache(self):
+        """Checks that existing rust toolchain resolves with project cargo cache."""
         if not shutil.which('cargo'):self.skipTest('No host Cargo installed')
         with patch('app.tool_runtime.ROOT',self.folder):env=tool_environment()
         original=subprocess.run(['cargo','--version'],capture_output=True,text=True,timeout=10)

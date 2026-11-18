@@ -1,5 +1,10 @@
+# Program: tiny_dancer - model_cache.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Optional identical local model cache; the project copy remains authoritative.
 # SPDX-License-Identifier: Apache-2.0
 """Optional identical local model cache; the project copy remains authoritative."""
+# ---- Imports ----
 import hashlib
 import json
 import os
@@ -16,7 +21,9 @@ CHUNK_BYTES = 8 * 1024 * 1024
 _verified = {}
 
 
+# ---- Definitions ----
 def identity(root):
+    """Step: identity. Inputs: root."""
     data = json.loads((root / 'docs/llama-reference-model-source.json').read_text())
     candidate = data['candidate'][0]
     digest = data['download_sha256']
@@ -32,6 +39,7 @@ def identity(root):
 
 
 def cache_directory(root, config):
+    """Step: cache directory. Inputs: root, config."""
     options = config.get('model_cache', {})
     if not isinstance(options, dict):
         raise ValueError('Model cache settings must be an object')
@@ -49,6 +57,7 @@ def cache_directory(root, config):
 
 
 def fingerprint(path):
+    """Step: fingerprint. Inputs: path."""
     info = path.lstat()
     if not stat.S_ISREG(info.st_mode):
         raise ValueError('Model must be a regular file, without a symlink')
@@ -77,6 +86,7 @@ def verify_file(path, expected, *, memoize=True):
 
 
 def verified_bundle(root, config, expected):
+    """Step: verified bundle. Inputs: root, config, expected."""
     directory = cache_directory(root, config) / expected['sha256']
     if directory.is_symlink():
         raise ValueError('Cache bundle cannot be a symlink')
@@ -92,6 +102,7 @@ def verified_bundle(root, config, expected):
 
 
 def select_model(root, config):
+    """Step: select model. Inputs: root, config."""
     original, expected = identity(root)
     selection = {'kind': 'original', 'path': str(original), 'sha256': expected['sha256'],
                  'reason': 'cache disabled', 'verification_seconds': 0.0}

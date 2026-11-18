@@ -1,5 +1,10 @@
+# Program: tiny_dancer - agent.py
+# Programmer: Ethan-da-Tech-Wizard (written with Claude, an AI assistant)
+# Last Modified: 2026-11-18
+# Purpose: Bounded answer/work runner with durable progress and task-specific completion.
 # SPDX-License-Identifier: Apache-2.0
 """Bounded answer/work runner with durable progress and task-specific completion."""
+# ---- Imports ----
 import asyncio
 import hashlib
 import json
@@ -26,11 +31,14 @@ from app.test_authority import failure_test_origins,snapshot as test_authority_s
 from app.reasoning import effective_effort
 
 
+# ---- Definitions ----
 def text_of(message):
+    """Step: text of. Inputs: message."""
     return ''.join(c.text for c in message.content if isinstance(c, TextContent))
 
 
 def verification_guidance(state,count):
+    """Step: verification guidance. Inputs: state, count."""
     pending=[step['title'] for step in state.get('steps',[]) if not step['done']]
     return {'verified':True,'test_count':count,'pending_steps':pending,
             'note':'The executed checks passed on unchanged tracked files, and requested named outputs were checked. This verifies those checks, not every clause of the goal.',
@@ -39,8 +47,10 @@ def verification_guidance(state,count):
 
 
 class AgentRun:
+    """Defines the agentrun type."""
     def __init__(self, engine, tools, cwd, request, history, save_message, emit,
                  save_checkpoint, flag, checkpoint=None):
+        """Step: init. Inputs: engine, tools, cwd, request, history, save_message, emit, save_checkpoint, flag, checkpoint."""
         self.engine, self.tools, self.cwd, self.request = engine, tools, cwd, request
         self.history, self.save_message, self.emit = history, save_message, emit
         self.save_checkpoint, self.flag = save_checkpoint, flag
@@ -94,10 +104,12 @@ class AgentRun:
         self.format_errors = 0
 
     def remaining(self):
+        """Step: remaining."""
         if self.until_done: return float('inf')
         return max(0, self.max_seconds - (time.monotonic() - self.started))
 
     def prompt_history(self):
+        """Step: prompt history."""
         history = self.history()
         if self.compacted_history is not None:
             return self.compacted_history + history[self.compact_offset:]
@@ -164,6 +176,7 @@ class AgentRun:
         self.emit('context',{'message':reason + ' Continuing from saved progress; full history remains on disk.'})
 
     async def await_generation(self, generation, agent):
+        """Async step: await generation. Inputs: generation, agent."""
         stall_seconds = self.engine.config.get('inference_stall_seconds',900)
         last_active = time.monotonic()
         counters = None
@@ -192,17 +205,20 @@ class AgentRun:
                     raise
 
     def pause(self, reason):
+        """Step: pause. Inputs: reason."""
         self.state['next_action'] = reason
         self.checkpoint()
         return 'paused'
 
     def publish(self, summary):
+        """Step: publish. Inputs: summary."""
         self.state.update(summary=summary, next_action='')
         self.save_message(Message.from_role_and_content(Role.ASSISTANT, summary).with_channel('final'))
         self.emit('delta', {'text':summary})
         self.checkpoint()
 
     def record_evidence(self, name, result):
+        """Step: record evidence. Inputs: name, result."""
         if result.get('error') or result.get('ok') is False: return
         source = result.get('source') if result.get('ok') else None
         if name == 'browser' and result.get('http_status') == 200: source = result.get('url')
@@ -219,11 +235,13 @@ class AgentRun:
                 if isinstance(source, str) and source not in self.state['sources']: self.state['sources'].append(source)
 
     def checkpoint(self):
+        """Step: checkpoint."""
         self.state['updated_at'] = time.time()
         self.save_checkpoint(self.state)
         self.emit('checkpoint', self.state)
 
     def steer(self, text):
+        """Step: steer. Inputs: text."""
         self.save_message(Message.from_role_and_content(Role.DEVELOPER, text))
         self.emit('continuation', {'message': text})
 
@@ -240,6 +258,7 @@ class AgentRun:
         self.checkpoint()  # Resume never silently repeats a partially executed baseline.
 
         async def action(name,args):
+            """Async step: action. Inputs: name, args."""
             if self.flag.is_set(): raise Cancelled()
             self.emit('tool_start',{'name':name,'arguments':json.dumps(args),'step':0,
                                    'origin':'automatic_initial_project'})
@@ -322,6 +341,7 @@ class AgentRun:
             self.refresh_failed_repair_context()
 
     def refresh_failed_repair_context(self):
+        """Step: refresh failed repair context."""
         if self.state.pop('pending_repair_context',None):
             # Preserve the native prefix and latest real failure. Ordinary
             # failed checks do not require a cold prompt rebuild. Physical
@@ -369,6 +389,7 @@ class AgentRun:
         self.steer(review)
 
     async def execute(self, name, args):
+        """Async step: execute. Inputs: name, args."""
         if name not in self.allowed_tools:
             raise ValueError(f'{name} is unavailable for this task. Use the tools in this task contract.')
         issue=preserved_file_issue(self.state['goal'],self.cwd,name,args)
@@ -560,6 +581,7 @@ class AgentRun:
         return with_failure_evidence(result)
 
     async def run(self):
+        """Async step: run."""
         agent = self.request.mode == 'agent'
         if self.flag.is_set(): raise Cancelled()
         try:
@@ -583,6 +605,7 @@ class AgentRun:
             self.generation_progress_at = time.monotonic()
             # Agent drafts stay private until the runner accepts completion.
             def generation_event(kind, data):
+                """Step: generation event. Inputs: kind, data."""
                 if kind in ('inference','progress','metrics'): self.generation_progress_at = time.monotonic()
                 if not agent or kind != 'delta': self.emit(kind, data)
             generation = asyncio.create_task(asyncio.to_thread(
@@ -767,6 +790,7 @@ class AgentRun:
                 if name == 'finish_task' and result.get('blocked'):
                     return 'blocked'
                 def stable(value):
+                    """Step: stable. Inputs: value."""
                     if isinstance(value, dict):
                         return {k:stable(v) for k,v in value.items() if k not in ('artifact','backup','updated_at','retrieved_at','at')}
                     if isinstance(value, list): return [stable(v) for v in value]
