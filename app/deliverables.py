@@ -1,17 +1,23 @@
 # ==============================================================================
-# Program: deliverables.py
-# Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 19, 2026
-# Purpose: Validates and packages target code deliverables, verifying that generated
-#          patches satisfy all benchmark requirements before submission. Core
-#          component of the autonomous agent reasoning architecture governing
-#          multi-turn execution cycles, state graph transitions, and prompt synthesis.
-#          Strictly enforces mathematical bounds on LLM token context windows, rolling
-#          memory buffers, and timeout thresholds. Guarantees transactional execution
-#          invariants, deterministic failure isolation, and thread-safe API contracts.
+# app/deliverables.py - check that requested output files really exist and are right
+#
+# Role in the app: app/agent.py calls inspect_deliverables() before accepting
+# completion and verification_paths() to decide which files to hash for the
+# "tests passed on unchanged files" receipt. Task contracts (app/task_policy)
+# may request a JSON file and optionally that it be opened in the editor; this
+# module verifies those promises from the actual files and tool results, not
+# from what the model says.
+#
+# Design decisions: the same function also runs the dependency-policy and
+# test-addition checks, so one call answers "is there any outstanding
+# requirement?" and returns a message the model can act on. For the NFL export
+# workflow the saved JSON must contain exactly the retrieved games and scores.
+#
+# Tests: tests/test_agent.py, tests/test_completion.py, tests/test_walk_api_evidence.py.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
+
 """Verify requested saved JSON and editor actions using actual files/results."""
 import json
 from pathlib import Path
@@ -21,13 +27,12 @@ from app.dependency_policy import constrained_manifest,dependency_issue
 from app.test_requirements import added_paths,issue as test_issue
 
 
-# ------------------------------------------------------------------------------
-# requested_output_path: Function Pipeline & Contract Specification
-# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
-# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-# Failure Modes: Catches or propagates domain exceptions according to API contracts
-# ------------------------------------------------------------------------------
 def requested_output_path(contract, state):
+    """Absolute path of the JSON file the task asked for, or None.
+
+    Relative names resolve against the task's working folder. absolute() is used
+    instead of resolve() on purpose, so a symlink keeps its own name in the proof.
+    """
     name=contract.get('deliverables',{}).get('path')
     if not name: return None
     path=Path(name).expanduser()
@@ -37,13 +42,13 @@ def requested_output_path(contract, state):
     return path.absolute()
 
 
-# ------------------------------------------------------------------------------
-# verification_paths: Function Pipeline & Contract Specification
-# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
-# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-# Failure Modes: Catches or propagates domain exceptions according to API contracts
-# ------------------------------------------------------------------------------
 def verification_paths(contract, state):
+    """Every file whose content should be part of a test receipt.
+
+    Combines files the run edited, inspected or wrote, plus the dependency manifest
+    under policy, files the task required to be added, and the requested output.
+    De-duplicated in order so the receipt is stable between calls.
+    """
     paths=state.get('edited_sources',[])+state.get('inspected_sources',[])+state.get('files_written',[])
     manifest=constrained_manifest(contract,state)
     if manifest is not None and (manifest.exists() or manifest.is_symlink()): paths=paths+[str(manifest)]
@@ -54,25 +59,36 @@ def verification_paths(contract, state):
     return list(dict.fromkeys(paths))
 
 
-# ------------------------------------------------------------------------------
-# inspect_deliverables: Function Pipeline & Contract Specification
-# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
-# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-# Failure Modes: Catches or propagates domain exceptions according to API contracts
-# ------------------------------------------------------------------------------
 def inspect_deliverables(contract,state):
+    """Check outstanding requirements for completion.
+
+    Args:
+        contract: task contract (deliverables, workflow).
+        state: run checkpoint (files_written, editor_opened, score_reference...).
+    Returns:
+        (issue, proof): issue is a message for the model or None when satisfied;
+        proof is {'path', 'files_sha256', 'game_count'} for a verified output file,
+        else None. Checks run in order: dependency policy, required test additions,
+        then the JSON deliverable (exists, valid JSON without NaN/Infinity, within
+        2 MB, matches retrieved scores for the export workflow, opened in the
+        editor when requested).
+    """
     issue=dependency_issue(contract,state)
     if issue: return issue,None
     issue=test_issue(contract,state)
     if issue: return issue,None
     required=contract.get('deliverables',{})
     if not required: return None,None
+    # Any file the run wrote, read or opened may be the JSON the user meant,
+    # unless the task named an exact path (below).
     candidates=list(dict.fromkeys(state.get('files_written',[])+state.get('inspected_sources',[])+state.get('editor_opened',[])))
     expected=requested_output_path(contract,state)
     if expected:
         if not expected.is_file(): return 'Save the requested JSON at '+str(expected)+'.',None
         # An actual named output can be created by a shell command. Do not
         # fabricate a write_file event merely to acknowledge that file.
+        # With an exact requested path only that file counts, because the shell may
+        # have created it without any write_file event.
         candidates=[str(expected)]
     if not candidates: return 'The requested JSON file has not been saved.',None
     errors=[]
@@ -81,26 +97,19 @@ def inspect_deliverables(contract,state):
         if path.suffix.lower()!='.json': continue
         try:
             if path.stat().st_size>2_000_000: raise ValueError('JSON verification limit is 2 MB')
-            # ------------------------------------------------------------------------------
-            # invalid_constant: Function Pipeline & Contract Specification
-            # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
-            # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-            # Failure Modes: Catches or propagates domain exceptions according to API contracts
-            # ------------------------------------------------------------------------------
+            # Python's json accepts NaN/Infinity; strict JSON (and most consumers) do not.
             def invalid_constant(value): raise ValueError('Nonfinite values are not valid JSON: '+value)
             data=json.loads(path.read_text(),parse_constant=invalid_constant)
             reference=state.get('score_reference')
+            # The export must match the data actually retrieved this run, not scores the
+            # model typed from memory.
             if contract.get('workflow')=='nfl_scores_export':
                 if not reference: raise ValueError('Retrieve the actual requested scores before exporting')
                 if not isinstance(data,dict) or data.get('date')!=reference['date'] or data.get('source')!=reference['source']:
                     raise ValueError('Saved JSON must retain the retrieved date and source')
                 fields=('away','away_score','home','home_score')
-                # ------------------------------------------------------------------------------
-                # rows: Function Pipeline & Contract Specification
-                # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
-                # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-                # Failure Modes: Catches or propagates domain exceptions according to API contracts
-                # ------------------------------------------------------------------------------
+                # Normalise games to sorted tuples so order differences do not matter but any
+                # changed team name or score does.
                 def rows(games):
                     if not isinstance(games,list): raise ValueError('Saved JSON needs the retrieved games array')
                     if any(not isinstance(game,dict) or any(not isinstance(game.get(k),str) for k in ('away','home'))
