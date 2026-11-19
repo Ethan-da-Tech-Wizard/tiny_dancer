@@ -1,17 +1,28 @@
 # ==============================================================================
-# Program: native_chat.py
-# Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 19, 2026
-# Purpose: Implements terminal-based native chat interaction client for direct
-#          developer-to-agent conversation and debugging sessions. Core component of
-#          the autonomous agent reasoning architecture governing multi-turn execution
-#          cycles, state graph transitions, and prompt synthesis. Strictly enforces
-#          mathematical bounds on LLM token context windows, rolling memory buffers,
-#          and timeout thresholds. Guarantees transactional execution invariants,
-#          deterministic failure isolation, and thread-safe API contracts.
+# app/native_chat.py - the "native chat" tool protocol for llama.cpp
+#
+# Role in the app: when config.json sets backend 'llama.cpp' and
+# native_tool_protocol 'chat', app/engine.py LocalEngine.generate() delegates
+# agent turns to generate() here instead of rendering Harmony tokens itself.
+# llama-server then applies the model's own chat template, enforces tool-call
+# grammar and parses reasoning, and this module translates between that
+# OpenAI-style streaming API and the Harmony Message objects the rest of the app
+# (agent.py, history in sqlite) expects.
+#
+# Pieces: chat_history() converts saved Harmony messages to chat messages;
+# ChatStream accumulates streamed deltas; generate() sends the request, streams
+# progress events and returns (replies, reason) exactly like LocalEngine does.
+#
+# Invariants: private reasoning is passed back as reasoning_content, never as
+# normal content; tool results must pair with the preceding call; any mismatch
+# raises ModelFormatError / ContextBudgetError so the runner recovers from its
+# checkpoint instead of sending a corrupt prompt.
+#
+# Tests: tests/test_native_chat.py, tests/test_native_chat_timeout.py.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
+
 """Native GPT-OSS tool grammar through the existing local llama.cpp server."""
 import json
 import time
@@ -26,18 +37,29 @@ from app.reasoning import effective_effort
 from app.sampling import native_temperature
 
 
-# ------------------------------------------------------------------------------
-# chat_history: Function Pipeline & Contract Specification
-# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
-# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-# Failure Modes: Catches or propagates domain exceptions according to API contracts
-# ------------------------------------------------------------------------------
 def chat_history(history):
-    """Translate complete Harmony transactions; private reasoning stays private."""
+    """Translate complete Harmony transactions; private reasoning stays private.
+
+    Walks the saved messages and groups an assistant turn's analysis text, visible
+    content and (at most one) tool call into one chat message, then pairs each
+    tool result with its call via a synthetic call_N id.
+
+    Args:
+        history: Harmony message dicts from sqlite, in order.
+    Returns:
+        List of OpenAI-style chat messages.
+    Raises:
+        ModelFormatError: unsupported recipient, tool result without a call, an
+            incomplete transaction, or an unexpected role.
+        ContextBudgetError: a saved tool call has unparseable arguments; the runner
+            must rebuild from its checkpoint instead of replaying it.
+    """
     result=[];reasoning=[];content=[];pending=[];serial=0
     for raw in history:
         message=Message.from_dict(raw);text=text_of_message(message)
         if message.author.role in (Role.USER,Role.DEVELOPER,Role.SYSTEM):
+            # A user/developer/system message ends the assistant turn: flush what the
+            # assistant had said so far before adding it, keeping chronological order.
             if content or reasoning:
                 result.append({'role':'assistant','content':'\n'.join(content) or None,'reasoning_content':'\n'.join(reasoning)})
                 content=[];reasoning=[]
@@ -47,10 +69,14 @@ def chat_history(history):
                 if not message.recipient.startswith('functions.'):
                     raise ModelFormatError('Unsupported history recipient')
                 try:
+                    # Re-serialize through the lenient parser so arguments sent back are valid
+                    # compact JSON even if the model originally wrote them slightly off.
                     arguments,_=parse_tool_arguments(text)
                     text=json.dumps(arguments,ensure_ascii=False,separators=(',',':'))
                 except (ValueError,TypeError):
                     raise ContextBudgetError('A saved malformed tool call needs recovery from the durable checkpoint.') from None
+                # The Harmony history has no call ids; ids are generated sequentially and
+                # matched first-in-first-out to the following tool results.
                 serial+=1;identifier='call_'+str(serial);pending.append(identifier)
                 result.append({'role':'assistant','content':'\n'.join(content) or None,
                     'reasoning_content':'\n'.join(reasoning),
@@ -60,6 +86,8 @@ def chat_history(history):
             elif message.channel=='analysis':reasoning.append(text)
             else:content.append(text)
         elif message.author.role == Role.TOOL:
+            # A tool message with no open call is only legal for harness-made
+            # observations (baseline/post-edit checks); everything else is corruption.
             if not pending:
                 try:observation=json.loads(text)
                 except ValueError:observation={}
@@ -70,6 +98,8 @@ def chat_history(history):
                     result.append({'role':'assistant','content':'\n'.join(content) or None,
                                    'reasoning_content':'\n'.join(reasoning)})
                     content=[];reasoning=[]
+                # They are shown to the model as data-only user text so retrieved content can
+                # never be mistaken for instructions.
                 # These are real harness observations, not model-requested calls.
                 # Keep retrieved content at data authority; do not invent actions.
                 result.append({'role':'user','content':
@@ -87,29 +117,24 @@ def chat_history(history):
     return result
 
 
-# ------------------------------------------------------------------------------
-# ChatStream: Class State Encapsulation & Contract Specification
-# Algorithmic Complexity: Time: O(1) instantiation overhead | Space: O(M) memory model allocation for instance state and attribute dict
-# Invariant: Enforces structural invariants and thread-safe state mutations across member calls
-# Failure Modes: Raises TypeError or AttributeError upon illegal state transition or contract violation
-# ------------------------------------------------------------------------------
 class ChatStream:
-    # ------------------------------------------------------------------------------
-    # __init__: Function Pipeline & Contract Specification
-    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
-    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-    # Failure Modes: Catches or propagates domain exceptions according to API contracts
-    # ------------------------------------------------------------------------------
+    """Accumulator for one streamed /v1/chat/completions response.
+
+    accept() merges each SSE event (reasoning/content deltas, tool-call fragments,
+    usage, timings, finish reason); replies() converts the result to Harmony
+    messages once the stream is complete.
+    """
     def __init__(self):
         self.reasoning=[];self.content=[];self.calls={};self.finish=None;self.usage={};self.timings={}
 
-    # ------------------------------------------------------------------------------
-    # accept: Function Pipeline & Contract Specification
-    # Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
-    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-    # Failure Modes: Catches or propagates domain exceptions according to API contracts
-    # ------------------------------------------------------------------------------
     def accept(self,event):
+        """Merge one decoded SSE event into the accumulated state.
+
+        Raises:
+            ModelFormatError: error event or a choice index other than 0.
+        Tool-call names/arguments arrive in fragments keyed by call index and are
+        concatenated.
+        """
         if event.get('error'):raise ModelFormatError('Local chat endpoint returned an error')
         if event.get('usage'):self.usage=event['usage']
         if event.get('timings'):self.timings=event['timings']
@@ -124,13 +149,19 @@ class ChatStream:
                 saved['name']+=function.get('name','');saved['arguments']+=function.get('arguments','')
             if choice.get('finish_reason') is not None:self.finish=choice['finish_reason']
 
-    # ------------------------------------------------------------------------------
-    # replies: Function Pipeline & Contract Specification
-    # Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
-    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-    # Failure Modes: Catches or propagates domain exceptions according to API contracts
-    # ------------------------------------------------------------------------------
     def replies(self,allowed):
+        """Convert the finished stream to (Harmony messages, reason).
+
+        Args:
+            allowed: set of tool names this task may call.
+        Returns:
+            ([], 'MAX_TOKENS') when the server stopped at the length limit (the runner
+            never executes a partial step); otherwise the analysis message plus either
+            function-call messages or one final message, with reason 'EOS'.
+        Raises:
+            ModelFormatError: no valid boundary, arguments not JSON objects, unknown
+            tool, or neither a call nor a final answer.
+        """
         if self.finish=='length':return [],'MAX_TOKENS'
         if self.finish not in ('stop','tool_calls'):
             raise ModelFormatError('Stream ended without an accepted completion boundary')
@@ -151,19 +182,30 @@ class ChatStream:
         return result,'EOS'
 
 
-# ------------------------------------------------------------------------------
-# generate: Function Pipeline & Contract Specification
-# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
-# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-# Failure Modes: Catches or propagates domain exceptions according to API contracts
-# ------------------------------------------------------------------------------
 def generate(engine,history,cwd,emit,cancel,max_tokens,contract,effort):
-    """Use upstream grammar/formatting, retaining the application's task runner."""
+    """Run one agent turn through the native chat endpoint.
+
+    Same contract as LocalEngine.generate: blocking, call from a thread.
+
+    Args:
+        engine: LocalEngine (lock, session with HTTP client, config, status).
+        history: Harmony message dicts. cwd: shown in instructions.
+        emit: event callback. cancel: threading.Event.
+        max_tokens: per-turn generation cap. contract: task contract dict.
+        effort: requested reasoning effort ('auto'/'low'/'medium'/'high').
+    Returns:
+        (replies, reason) with reason 'EOS', 'MAX_TOKENS' or 'CONTEXT_FULL'.
+    Raises:
+        Cancelled, ContextBudgetError, ModelFormatError, httpx errors.
+    """
     with engine.lock:
         engine.last_activity=time.monotonic()
         if cancel.is_set():raise Cancelled()
         effort=effective_effort(effort,contract,engine.config)
         definitions=tools_for(contract,TOOLS)
+        # OpenAI-compatible request. Sampling is fully deterministic (top_k 0, top_p 1,
+        # min_p 0, no repeat penalty) so results depend only on the temperature setting.
+        # parallel_tool_calls False keeps the runner's one-action-per-turn model.
         payload={'messages':[{'role':'system','content':instructions_for(contract,cwd)}]+chat_history(history),
             'tools':[{'type':'function','function':tool} for tool in definitions],
             'tool_choice':'auto','parallel_tool_calls':False,'reasoning_effort':effort,
@@ -172,20 +214,27 @@ def generate(engine,history,cwd,emit,cancel,max_tokens,contract,effort):
             'repeat_penalty':1.0,'cache_prompt':True,'timings_per_token':True,'return_progress':True}
         engine.load(cancel)
         if cancel.is_set():raise Cancelled()
+        # Ask the server to render and tokenize the prompt first: only the server knows
+        # the exact template output, and we must know the true size before generating.
         # Count the exact upstream-formatted prompt before allowing inference.
         # Context exhaustion goes through the existing durable checkpoint path.
         response=engine.session.client.post('/apply-template',json=payload);response.raise_for_status()
         prompt=response.json()['prompt']
         response=engine.session.client.post('/tokenize',json={'content':prompt,'add_special':False,'parse_special':True})
         response.raise_for_status();prompt_tokens=len(response.json()['tokens'])
+        # Tokens still available for output; one is kept spare.
         capacity=engine.session.ctx-prompt_tokens-1
         if capacity<max_tokens:raise ContextBudgetError('The native chat history needs checkpoint compaction before the next complete action.')
+        # Automatic continuation mode: let the model use all remaining context in one
+        # go (a limit hit then means the context really filled, reported as CONTEXT_FULL).
         automatic=bool(contract.get('_auto_reply_continuation') and engine.config.get('auto_work_reply_continuation'))
         payload['max_tokens']=capacity if automatic else max_tokens
         emit('inference',{'prompt_tokens':prompt_tokens,'reused_tokens':0,'reasoning_effort':effort})
         stream=ChatStream();started=time.monotonic();last_progress=0;cached=0
         engine.status='processing prompt'
         try:
+            # read=None disables the HTTP read timeout while keeping connect/write/pool
+            # limits; liveness is judged by AgentRun, not by HTTP idleness.
             # Active prefill may produce no HTTP bytes for longer than the
             # client's ordinary read timeout. AgentRun watches real token/CPU/IO
             # progress and kills this owned worker on Stop or a genuine stall.
@@ -201,6 +250,8 @@ def generate(engine,history,cwd,emit,cancel,max_tokens,contract,effort):
                     raw=line[5:].strip()
                     if raw=='[DONE]':break
                     event=json.loads(raw);stream.accept(event)
+                    # During prefill the server reports how much of the prompt was served from its
+                    # cache; forward it so the UI shows reuse.
                     progress=event.get('prompt_progress')
                     if progress:
                         cached=int(progress.get('cache',0))
@@ -208,11 +259,14 @@ def generate(engine,history,cwd,emit,cancel,max_tokens,contract,effort):
                             'reused_tokens':cached,'reasoning_effort':effort})
                     count=stream.timings.get('predicted_n',0)
                     if count>0:engine.status='generating'
+                    # Throttle progress events to one per 16 generated tokens.
                     if count-last_progress>=16:
                         emit('progress',{'tokens':count,'seconds':round(time.monotonic()-started,1)});last_progress=count
             replies,reason=stream.replies({t['name'] for t in definitions})
             if reason=='MAX_TOKENS' and automatic:reason='CONTEXT_FULL'
         except Exception:
+            # Kill the owned server on any failure so no half-finished generation keeps
+            # running and the next turn starts from a known state.
             engine.cancel()
             if cancel.is_set():raise Cancelled() from None
             raise
@@ -220,6 +274,7 @@ def generate(engine,history,cwd,emit,cancel,max_tokens,contract,effort):
             engine.last_activity=time.monotonic()
             if not cancel.is_set() and engine.session and engine.session.proc.poll() is None:engine.status='ready'
         timings=stream.timings
+        # Same keys as the Harmony path so the UI's metrics panel works for both.
         metrics={'backend':'llama.cpp-native-chat-grammar','total_seconds':round(time.monotonic()-started,2),
             'prompt_tokens':stream.usage.get('prompt_tokens',prompt_tokens),'completion_tokens':stream.usage.get('completion_tokens',timings.get('predicted_n',0)),
             'prefill_tokens':timings.get('prompt_n',0),'prefill_seconds':timings.get('prompt_ms',0)/1000,
