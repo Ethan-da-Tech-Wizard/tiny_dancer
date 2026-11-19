@@ -14,6 +14,8 @@ from pathlib import Path
 
 
 def apply_patch(patch, cwd, backups):
+    # Phase 1: Pre-validation & parsing
+    # Parse header boundaries and ensure patch payload adheres to standard syntax markers
     if not isinstance(patch,str) or len(patch)>60000:
         raise ValueError('patch must be text of at most 60000 characters')
     lines=patch.splitlines()
