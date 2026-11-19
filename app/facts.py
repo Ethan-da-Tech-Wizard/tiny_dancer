@@ -13,9 +13,11 @@
 # America/New_York time zone, final status, two teams, integer scores) and fails
 # the whole request on any inconsistency instead of returning partial data.
 #
-# Known limits: retrieve_json follows redirects and accepts any http(s) URL, so
-# the fetch_json tool can reach loopback/LAN addresses; the model is trusted
-# only as far as the task policy lets it call that tool. The scoreboard source
+# Security: retrieve_json refuses URLs that resolve to loopback, private, link-local
+# or other non-public addresses (app/url_guard.py), and follows redirects manually
+# (max 5) re-checking every hop, so a model-chosen URL cannot reach this machine's
+# own API, cloud metadata or LAN devices (SSRF). Known limit: DNS rebinding between
+# the check and the connection is not closed. The scoreboard source
 # is ESPN's unauthenticated public endpoint, which can change shape.
 # ==============================================================================
 
@@ -27,9 +29,16 @@ import time
 import uuid
 from datetime import date, datetime, timedelta
 from pathlib import Path
+from urllib.parse import urljoin
 from zoneinfo import ZoneInfo
 
 import httpx
+
+from app.url_guard import BlockedURL, ensure_public_url
+
+# Redirect hops allowed per retrieval, and the status codes that carry a Location to follow.
+MAX_REDIRECTS = 5
+REDIRECT_STATUSES = (301, 302, 303, 307, 308)
 
 
 async def retrieve_json(url, artifacts, transport=None):
@@ -43,23 +52,43 @@ async def retrieve_json(url, artifacts, transport=None):
         (parsed_data, {'source': final url, 'http_status', 'artifact',
         'local_path', 'retrieved_at'}).
     Raises:
-        ValueError: bad scheme, body over 2 MB, or a JSON body whose 'code' field
+        ValueError: bad scheme, a loopback/private/link-local target (also reached via a
+        redirect), more than 5 redirects, body over 2 MB, or a JSON body whose 'code' field
         reports an error (some APIs return HTTP 200 with an error payload).
         httpx.HTTPStatusError: non-2xx status.
     """
     if not url.startswith(('https://', 'http://')):
         raise ValueError('Use an HTTP or HTTPS URL')
-    async with httpx.AsyncClient(timeout=20, follow_redirects=True, transport=transport) as client:
-        async with client.stream('GET', url, headers={'Accept': 'application/json'}) as response:
-            response.raise_for_status()
-            chunks, size = [], 0
-            # Count bytes while streaming so an oversized body is abandoned early.
-            async for chunk in response.aiter_bytes():
-                size += len(chunk)
-                if size > 2_000_000:
-                    raise ValueError('Decoded JSON exceeds the 2 MB retrieval limit')
-                chunks.append(chunk)
-            data = json.loads(b''.join(chunks))
+    # With a test transport no real connection (and so no real DNS) happens: skip name lookup but still
+    # judge literal IPs, so tests can exercise the loopback/redirect rules without a network.
+    resolver = (lambda host, port: ['93.184.216.34']) if transport is not None else None
+    # follow_redirects stays OFF on purpose. httpx would follow a 302 from a public host to
+    # http://127.0.0.1:3210/... or http://169.254.169.254/... without asking us (SSRF), so each hop is
+    # followed manually below and re-validated by ensure_public_url() before any request is sent.
+    async with httpx.AsyncClient(timeout=20, follow_redirects=False, transport=transport) as client:
+        for hop in range(MAX_REDIRECTS + 1):
+            try:
+                ensure_public_url(url, resolver)
+            except BlockedURL as exc:
+                raise ValueError(str(exc))
+            async with client.stream('GET', url, headers={'Accept': 'application/json'}) as response:
+                location = response.headers.get('location')
+                if response.status_code in REDIRECT_STATUSES and location:
+                    # Relative Location headers are resolved against the URL that produced them.
+                    url = urljoin(str(response.url), location)
+                    continue
+                response.raise_for_status()
+                chunks, size = [], 0
+                # Count bytes while streaming so an oversized body is abandoned early.
+                async for chunk in response.aiter_bytes():
+                    size += len(chunk)
+                    if size > 2_000_000:
+                        raise ValueError('Decoded JSON exceeds the 2 MB retrieval limit')
+                    chunks.append(chunk)
+                data = json.loads(b''.join(chunks))
+                break
+        else:
+            raise ValueError('Too many redirects')
     if isinstance(data, dict) and isinstance(data.get('code'), int) and data['code'] >= 400:
         raise ValueError('Source application error: ' + str(data.get('message', data['code'])))
     artifacts = Path(artifacts)
