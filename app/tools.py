@@ -20,7 +20,7 @@
 # into {'error': ...} by the caller. 'artifact' values are URLs under /artifacts.
 #
 # Known limits: Linux/Hyprland/Wayland specific (hyprctl, grim, wl-copy,
-# tesseract); ROOT is the fixed install path /mnt/GameDrive/tiny_dancer.
+# tesseract); ROOT defaults to /mnt/GameDrive/tiny_dancer (override: TINY_DANCER_ROOT).
 # ==============================================================================
 
 """Computer tools run as the logged-in user. Every invocation is audited by the agent."""
@@ -37,8 +37,9 @@ from app.tool_runtime import tool_environment
 from app.verification import test_command
 from app.facts import fetch_json, nfl_scores
 
-# Fixed install location on the target machine; all runtime data hangs off it.
-ROOT = Path('/mnt/GameDrive/tiny_dancer')
+# Install location; all runtime data hangs off it. Defaults to the target machine's GameDrive
+# path; TINY_DANCER_ROOT overrides it (same rule as app/engine.py, app/tool_runtime.py).
+ROOT = Path(os.environ.get('TINY_DANCER_ROOT', '/mnt/GameDrive/tiny_dancer'))
 # Saved tool outputs (command logs, screenshots, fetched JSON). Served to the
 # UI at /artifacts and re-readable by the model via read_file.
 ARTIFACTS = ROOT / 'run/artifacts'

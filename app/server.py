@@ -451,7 +451,7 @@ async def resume(job: str, options: ResumeTask):
                            | {'output':str(check.get('output',''))[:500]} for check in checkpoint.get('checks', [])[-8:]]
     resume_id = save_message(s['id'], Message.from_role_and_content(Role.DEVELOPER,
         'Resume the saved task without repeating completed actions. Check current files and screen before changing them. '
-        f'Full previous history remains in run/workspace.sqlite3; durable task state is /mnt/GameDrive/tiny_dancer/run/tasks/{job}.json. '
+        f'Full previous history remains in run/workspace.sqlite3; durable task state is {ROOT}/run/tasks/{job}.json. '
         'This concise checkpoint is a starting point; re-read needed files and results before acting. '
         + json.dumps(notes)[:6000]))
     # Compact: prompt restarts at the resume note. Otherwise replay from the goal.

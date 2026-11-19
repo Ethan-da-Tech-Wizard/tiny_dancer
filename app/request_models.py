@@ -13,6 +13,7 @@
 
 # SPDX-License-Identifier: Apache-2.0
 """Pure API validation; importing it never starts services or modifies jobs."""
+import os
 from pathlib import Path
 from typing import Literal
 
@@ -27,7 +28,8 @@ from pydantic import BaseModel,Field,model_validator
 # ------------------------------------------------------------------------------
 class NewSession(BaseModel):
     title: str = 'New session'
-    cwd: str = str(Path('/mnt/GameDrive/tiny_dancer/workspace'))
+    # Default working folder of a new session: <install root>/workspace (root from TINY_DANCER_ROOT, see app/engine.py).
+    cwd: str = str(Path(os.environ.get('TINY_DANCER_ROOT', '/mnt/GameDrive/tiny_dancer')) / 'workspace')
 
 
 # ------------------------------------------------------------------------------

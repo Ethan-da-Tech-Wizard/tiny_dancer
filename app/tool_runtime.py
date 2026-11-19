@@ -17,7 +17,8 @@
 import os
 from pathlib import Path
 
-ROOT=Path('/mnt/GameDrive/tiny_dancer')
+# Same override rule as app/engine.py / app/tools.py: TINY_DANCER_ROOT, default = original install path.
+ROOT=Path(os.environ.get('TINY_DANCER_ROOT','/mnt/GameDrive/tiny_dancer'))
 
 
 # ------------------------------------------------------------------------------

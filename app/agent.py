@@ -38,7 +38,7 @@ from collections import deque
 from openai_harmony import Author, Message, Role, TextContent
 from app.engine import Cancelled, ContextBudgetError, ResourcePressure, ModelFormatError
 from app.task_policy import contract_for, answer_issue, tools_for
-from app.tools import TOOLS,path_for
+from app.tools import TOOLS,path_for,ROOT
 from app.facts import format_scores
 from app.verification import test_summary,source_hashes,test_command
 from app.deliverables import inspect_deliverables,verification_paths,requested_output_path
@@ -269,7 +269,7 @@ class AgentRun:
             notes['failure_test_origins']=self.state['failure_test_origins']
         if self.state.get('last_failure'): notes['last_failure']=self.state['last_failure']
         if self.state.get('job_id'):
-            notes['checkpoint_path'] = '/mnt/GameDrive/tiny_dancer/run/tasks/' + self.state['job_id'] + '.json'
+            notes['checkpoint_path'] = str(ROOT / 'run/tasks' / (self.state['job_id'] + '.json'))
         # Only the last two results: older ones are in sqlite and the checkpoint file.
         notes['recent_results'] = recent[-2:]
         # Later recoveries get smaller source/failure budgets (2000/400 vs 6000/1600

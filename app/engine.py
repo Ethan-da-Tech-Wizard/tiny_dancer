@@ -23,9 +23,9 @@
 #   * Prompt overflow is an error (ContextBudgetError) in agent mode so the
 #     runner can compact from its checkpoint; chat mode silently trims old turns.
 #
-# Known limits: ROOT is hard-coded to /mnt/GameDrive/tiny_dancer (the install
-# location on the target machine), so the module only imports where that path
-# and vendor/picchio exist; tests inject fakes or skip it.
+# Known limits: ROOT defaults to /mnt/GameDrive/tiny_dancer (the install location on the
+# target machine) and can be moved with the TINY_DANCER_ROOT environment variable; the
+# module only imports where ROOT/vendor/picchio exists; tests inject fakes or skip it.
 # ==============================================================================
 
 """Native Harmony function calls on the Colibri-inspired Picchio streaming engine."""
@@ -38,7 +38,10 @@ import time
 from datetime import date
 from pathlib import Path
 
-ROOT = Path('/mnt/GameDrive/tiny_dancer')
+# Install root. TINY_DANCER_ROOT overrides it so the code can run from another checkout or a
+# non-Linux dev machine (tests, CI); the default is the original GameDrive install, so a
+# deployment that sets nothing behaves exactly as before.
+ROOT = Path(os.environ.get('TINY_DANCER_ROOT', '/mnt/GameDrive/tiny_dancer'))
 # The Picchio runner ships as an unpackaged folder, so it is imported by path.
 sys.path.insert(0, str(ROOT / 'vendor/picchio'))
 from chat import PicchioSession, resolve_aux
@@ -60,7 +63,7 @@ You can execute shell commands, read and write files, automate a Chromium browse
 Keep answers concise. Do not reveal analysis. Do not narrate imaginary actions: call a tool. Use a tool whenever the user asks you to do work.
 For current internet facts, find a dated source and follow actual links. Check missing-page responses; do not guess record IDs or invent a result.
 Follow the current task contract. For work, save multi-step progress, make changes, test and repair. Use editor.open for visible Code OSS and desktop.inspect for OCR. A final answer can finish tested work when the harness confirms the edited files remain unchanged and all plan steps are done. Otherwise use finish_task(summary,checks) with relevant executable checks. For questions, retrieve needed evidence and answer once with cited sources; shell tests are unnecessary. Never invent current facts. Use blocked_reason for a specific missing input. Keep working until checked completion or a specific blocker; the harness preserves progress.
-The default working directory is {cwd}. Project files and durable memory belong in /mnt/GameDrive/tiny_dancer. For long work, maintain notes in workspace/MEMORY.md so another session can resume.''' 
+The default working directory is {cwd}. Project files and durable memory belong in the install root (TINY_DANCER_ROOT, default /mnt/GameDrive/tiny_dancer). For long work, maintain notes in workspace/MEMORY.md so another session can resume.''' 
 
 # Raised when the user stopped the task; callers treat it as a normal exit.
 class Cancelled(Exception): pass
