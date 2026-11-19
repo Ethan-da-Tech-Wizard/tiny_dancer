@@ -1,8 +1,13 @@
 # ==============================================================================
 # Program: evaluate_precision_repair.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# Last Modified: November 19, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny
+#          Dancer testing framework. Operational automation, benchmark evaluation, and
+#          system diagnostic harness. Executes high-throughput workload profiling
+#          across CPU/GPU execution tiers with strict resource bounds. Enforces
+#          reproducible benchmark metrics, mathematical latency bounds, and
+#          deterministic subprocess exit contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -60,6 +65,12 @@ if __name__=="__main__":unittest.main()
 '''
 
 
+# ------------------------------------------------------------------------------
+# main: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(P) bounded by external process execution timeout and IPC throughput | Space: O(B) stream buffer memory allocated for child stdout/stderr capture
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def main():
     baseline=json.loads((ROOT/'docs/hardening-coding-validation.json').read_text())
     assert baseline['status']!='running' and baseline['passed'] is False
@@ -78,6 +89,12 @@ def main():
                 'baseline':'docs/hardening-coding-validation.json','acceptance_sha256':expected_hash,'samples':[]}
         report['acceptance_before_repair']={'exit_code':preflight.returncode,'output':(preflight.stdout+preflight.stderr)[-8000:]}
         path=ROOT/'docs/precision-repair-validation.json'
+        # ------------------------------------------------------------------------------
+        # save: Function Pipeline & Contract Specification
+        # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+        # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+        # Failure Modes: Catches or propagates domain exceptions according to API contracts
+        # ------------------------------------------------------------------------------
         def save():
             temporary=path.with_suffix('.tmp');temporary.write_text(json.dumps(report,indent=2)+'\n');temporary.replace(path);refresh_results(ROOT)
         session=client.post('/api/sessions',json={'title':'Validation · exact-money repair','cwd':str(folder)});session.raise_for_status();sid=session.json()['id']

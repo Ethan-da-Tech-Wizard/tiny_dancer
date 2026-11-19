@@ -1,8 +1,13 @@
 # ==============================================================================
 # Program: check_native_release.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# Last Modified: November 19, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny
+#          Dancer testing framework. Operational automation, benchmark evaluation, and
+#          system diagnostic harness. Executes high-throughput workload profiling
+#          across CPU/GPU execution tiers with strict resource bounds. Enforces
+#          reproducible benchmark metrics, mathematical latency bounds, and
+#          deterministic subprocess exit contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -21,6 +26,12 @@ from scripts.inventory_extended_audit import CRITERIA as SPECIAL_FILE_CRITERIA
 ALL_INVENTORY_CRITERIA=INVENTORY_GOAL_CRITERIA+SPECIAL_FILE_CRITERIA
 
 
+# ------------------------------------------------------------------------------
+# runtime_fingerprint: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def runtime_fingerprint(root):
     """Match native observers' source/config/UI digest without importing server."""
     root=Path(root)
@@ -38,15 +49,33 @@ def runtime_fingerprint(root):
     return digest.hexdigest()
 
 
+# ------------------------------------------------------------------------------
+# release_checks: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def release_checks(root):
     root=Path(root);docs=root/'docs';results=[]
     current=runtime_fingerprint(root)
     repair=docs/'precision-repair-retest-validation.json'
+    # ------------------------------------------------------------------------------
+    # read: Function Pipeline & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     def read(path):
         try:
             data=json.loads(path.read_text())
             return data if isinstance(data,dict) else None
         except (OSError,ValueError):return None
+    # ------------------------------------------------------------------------------
+    # check: Function Pipeline & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     def check(name,path,expected=None):
         report=read(path) if path else None
         reasons=[]

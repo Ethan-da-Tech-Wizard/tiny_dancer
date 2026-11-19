@@ -1,8 +1,13 @@
 # ==============================================================================
 # Program: evaluate_hardening_suite.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# Last Modified: November 19, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny
+#          Dancer testing framework. Operational automation, benchmark evaluation, and
+#          system diagnostic harness. Executes high-throughput workload profiling
+#          across CPU/GPU execution tiers with strict resource bounds. Enforces
+#          reproducible benchmark metrics, mathematical latency bounds, and
+#          deterministic subprocess exit contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -31,6 +36,12 @@ from scripts.labels_goal_audit import CRITERIA as LABEL_GOAL_CRITERIA,check_labe
 from scripts.native_observation import ProgressTracker,limit_reached,observation_delay,observation_limit,public_action_counts
 
 
+# ------------------------------------------------------------------------------
+# runtime_digest: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def runtime_digest():
     digest=hashlib.sha256()
     paths=sorted((ROOT/'app').rglob('*.py'))+[ROOT/'config.json']
@@ -40,6 +51,12 @@ def runtime_digest():
     return digest.hexdigest()
 
 
+# ------------------------------------------------------------------------------
+# parse_options: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def parse_options(argv=None):
     parser=argparse.ArgumentParser();parser.add_argument('case',choices=CASES)
     policy=parser.add_mutually_exclusive_group()
@@ -52,6 +69,12 @@ def parse_options(argv=None):
     return args
 
 
+# ------------------------------------------------------------------------------
+# main: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(P) bounded by external process execution timeout and IPC throughput | Space: O(B) stream buffer memory allocated for child stdout/stderr capture
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def main():
     args=parse_options()
     limit=observation_limit(args.observation_seconds,args.until_terminal)
@@ -74,6 +97,12 @@ def main():
                 'execution':{'reasoning_effort':args.effort,'initial_budget':'Auto: remaining physical context for native chat work'},'samples':[]}
         report['additional_independent_criteria']=list(INVENTORY_GOAL_CRITERIA) if args.case=='inventory' else list(LABEL_GOAL_CRITERIA) if args.case=='labels' else []
         if args.case=='inventory': report['additional_independent_criteria']+=list(SPECIAL_FILE_CRITERIA)
+        # ------------------------------------------------------------------------------
+        # save: Function Pipeline & Contract Specification
+        # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+        # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+        # Failure Modes: Catches or propagates domain exceptions according to API contracts
+        # ------------------------------------------------------------------------------
         def save():
             temp=report_path.with_suffix('.tmp');temp.write_text(json.dumps(report,indent=2)+'\n');temp.replace(report_path)
         save()

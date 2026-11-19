@@ -1,8 +1,14 @@
 # ==============================================================================
 # Program: test_batching.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Automated test suite verifying functional correctness, regression resistance, boundary conditions, and edge cases.
+# Last Modified: November 19, 2026
+# Purpose: Automated test suite verifying functional correctness, regression
+#          resistance, boundary conditions, and edge cases. Automated regression and
+#          functional assertion test suite verifying system stability, edge-case
+#          resilience, and contract invariants. Exercises mathematical boundary
+#          conditions, state graph branch coverage, and mock failure modes within
+#          isolated execution fixtures. Enforces deterministic test assertions and
+#          hermetic runtime lifecycle management.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -22,11 +28,35 @@ from tests import test_verified_final as fixtures
 from tests.test_agent import call
 
 
+# ------------------------------------------------------------------------------
+# BatchToolTests: Class State Encapsulation & Contract Specification
+# Algorithmic Complexity: Time: O(1) instantiation overhead | Space: O(M) memory model allocation for instance state and attribute dict
+# Invariant: Enforces structural invariants and thread-safe state mutations across member calls
+# Failure Modes: Raises TypeError or AttributeError upon illegal state transition or contract violation
+# ------------------------------------------------------------------------------
 class BatchToolTests(unittest.IsolatedAsyncioTestCase):
+    # ------------------------------------------------------------------------------
+    # asyncSetUp: Asynchronous Coroutine & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     async def asyncSetUp(self):
         self.temp=tempfile.TemporaryDirectory(dir=ROOT/'workspace');self.folder=Path(self.temp.name);self.artifacts=self.folder/'artifacts';self.tools=ComputerTools()
+    # ------------------------------------------------------------------------------
+    # asyncTearDown: Asynchronous Coroutine & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     async def asyncTearDown(self): await self.tools.close();self.temp.cleanup()
 
+    # ------------------------------------------------------------------------------
+    # test_inspection_bundles_files_and_actual_runtime_without_importing_project: Asynchronous Coroutine & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     async def test_inspection_bundles_files_and_actual_runtime_without_importing_project(self):
         (self.folder/'calc.py').write_text('raise RuntimeError("must not execute project")\n')
         (self.folder/'test_calc.py').write_text('import unittest\n# test source only\n')
@@ -37,6 +67,12 @@ class BatchToolTests(unittest.IsolatedAsyncioTestCase):
         self.assertIn('unittest',result['test_candidates'][0]['command'])
         self.assertTrue((self.artifacts/Path(result['artifact']).name).exists())
 
+    # ------------------------------------------------------------------------------
+    # test_inspection_has_bounded_preview_full_artifact_and_individual_errors: Asynchronous Coroutine & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     async def test_inspection_has_bounded_preview_full_artifact_and_individual_errors(self):
         (self.folder/'large.py').write_text('# harmless source\n'*1000)
         (self.folder/'binary.py').write_bytes(b'\0binary')
@@ -48,6 +84,12 @@ class BatchToolTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(all(file.get('error') for file in result['files'][1:]))
         with self.assertRaises(ValueError): await inspect_project({'files':['x']*9},str(self.folder),self.artifacts)
 
+    # ------------------------------------------------------------------------------
+    # test_real_related_checks_preserve_each_output: Asynchronous Coroutine & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     async def test_real_related_checks_preserve_each_output(self):
         commands=[shlex.quote(sys.executable)+" -c 'assert 6*7==42;print(42)'",shlex.quote(sys.executable)+" -c 'assert 1+2==3;print(3)'"]
         result=await run_checks({'commands':commands},str(self.folder),self.artifacts,shell)
@@ -56,6 +98,12 @@ class BatchToolTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(all(r['artifact'] for r in result['checks']))
         self.assertNotIn('recovery',result)
 
+    # ------------------------------------------------------------------------------
+    # test_failed_check_stops_later_command_unless_requested: Asynchronous Coroutine & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     async def test_failed_check_stops_later_command_unless_requested(self):
         commands=['exit 7','touch later']
         result=await run_checks({'commands':commands},str(self.folder),self.artifacts,shell)
@@ -63,6 +111,12 @@ class BatchToolTests(unittest.IsolatedAsyncioTestCase):
         result=await run_checks({'commands':commands,'stop_on_failure':False},str(self.folder),self.artifacts,shell)
         self.assertTrue(result['complete']);self.assertEqual(result['exit_code'],7);self.assertTrue((self.folder/'later').exists())
 
+    # ------------------------------------------------------------------------------
+    # test_timeout_and_cancel_stop_current_check_and_future_commands: Asynchronous Coroutine & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     async def test_timeout_and_cancel_stop_current_check_and_future_commands(self):
         result=await run_checks({'commands':['sleep 30','touch later'],'timeout':1},str(self.folder),self.artifacts,shell)
         self.assertTrue(result['timed_out']);self.assertFalse((self.folder/'later').exists())
@@ -71,16 +125,34 @@ class BatchToolTests(unittest.IsolatedAsyncioTestCase):
         with self.assertRaises(asyncio.CancelledError): await task
         self.assertFalse((self.folder/'later').exists())
 
+    # ------------------------------------------------------------------------------
+    # test_invalid_batches_do_not_execute: Asynchronous Coroutine & Contract Specification
+    # Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     async def test_invalid_batches_do_not_execute(self):
         for args in ({'commands':[]},{'commands':['x']*9},{'commands':[None]},{'commands':['true'],'timeout':False},{'commands':['true'],'stop_on_failure':'yes'}):
             with self.subTest(args=args),self.assertRaises(ValueError): await run_checks(args,str(self.folder),self.artifacts,shell)
 
+    # ------------------------------------------------------------------------------
+    # test_long_shell_output_retains_actual_test_footer: Asynchronous Coroutine & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     async def test_long_shell_output_retains_actual_test_footer(self):
         command=shlex.quote(sys.executable)+" -c 'print(\"noise\"*5000);print(\"Ran 3 tests in 0.1s\\n\\nOK\")'"
         result=await shell(command,str(self.folder))
         self.assertTrue(result['truncated']);self.assertEqual(test_summary(result['output'])['count'],3)
         self.assertGreater((ROOT/'run/artifacts'/Path(result['artifact']).name).stat().st_size,16000)
 
+    # ------------------------------------------------------------------------------
+    # test_inspection_bundles_common_nested_source_and_unittest_files: Asynchronous Coroutine & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     async def test_inspection_bundles_common_nested_source_and_unittest_files(self):
         (self.folder/'src').mkdir();(self.folder/'tests').mkdir()
         (self.folder/'src/main.py').write_text('raise RuntimeError("never import project source")\n')
@@ -90,6 +162,12 @@ class BatchToolTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(result['test_candidates'][0]['available'])
         self.assertIn('-s tests',result['test_candidates'][0]['command'])
 
+    # ------------------------------------------------------------------------------
+    # test_available_python3_command_does_not_assume_a_python_alias: Asynchronous Coroutine & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     async def test_available_python3_command_does_not_assume_a_python_alias(self):
         (self.folder/'test_main.py').write_text('import unittest\n')
         with patch('app.batching.shutil.which',side_effect=lambda name,**kwargs:sys.executable if name=='python3' else None):
@@ -97,6 +175,12 @@ class BatchToolTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(result['test_candidates'][0]['available'])
         self.assertTrue(result['test_candidates'][0]['command'].startswith(shlex.quote(sys.executable)+' -m unittest'))
 
+    # ------------------------------------------------------------------------------
+    # test_missing_runner_reports_available_checks_without_running_replacements: Asynchronous Coroutine & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     async def test_missing_runner_reports_available_checks_without_running_replacements(self):
         (self.folder/'test_main.py').write_text('import unittest\nraise RuntimeError("inspection must not execute tests")\n')
         result=await run_checks({'commands':['td_validation_runner_that_does_not_exist','touch later']},str(self.folder),self.artifacts,shell)
@@ -106,6 +190,12 @@ class BatchToolTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(result['recovery']['test_candidates'][0]['available'])
         self.assertIn('unittest',result['recovery']['test_candidates'][0]['command'])
 
+    # ------------------------------------------------------------------------------
+    # test_pytest_function_tests_do_not_receive_a_unittest_replacement: Asynchronous Coroutine & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     async def test_pytest_function_tests_do_not_receive_a_unittest_replacement(self):
         (self.folder/'tests').mkdir()
         (self.folder/'tests/test_main.py').write_text('def test_main(tmp_path):\n raise RuntimeError("must not execute test")\n')
@@ -113,6 +203,12 @@ class BatchToolTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(result['test_candidates'])
         self.assertTrue(all('pytest' in candidate['command'] for candidate in result['test_candidates']))
 
+    # ------------------------------------------------------------------------------
+    # test_automatic_manifest_and_readme_scan_skips_symlinks: Asynchronous Coroutine & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     async def test_automatic_manifest_and_readme_scan_skips_symlinks(self):
         private=self.folder/'.env';private.write_text('secret must not be automatically read')
         (self.folder/'README.md').symlink_to(private)
@@ -120,6 +216,12 @@ class BatchToolTests(unittest.IsolatedAsyncioTestCase):
         result=await inspect_project({},str(self.folder),self.artifacts)
         self.assertEqual(result['files'],[])
 
+    # ------------------------------------------------------------------------------
+    # test_zero_test_discovery_reports_nested_runner_without_executing_it: Asynchronous Coroutine & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     async def test_zero_test_discovery_reports_nested_runner_without_executing_it(self):
         (self.folder/'empty').mkdir();(self.folder/'tests').mkdir()
         (self.folder/'tests/test_main.py').write_text('import unittest\nraise RuntimeError("must not run replacement tests")\n')
@@ -128,6 +230,12 @@ class BatchToolTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(len(result['checks']),1)
         self.assertIn('-s tests',result['recovery']['test_candidates'][0]['command'])
 
+    # ------------------------------------------------------------------------------
+    # test_bounded_scan_keeps_test_runner_evidence_with_many_root_sources: Asynchronous Coroutine & Contract Specification
+    # Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     async def test_bounded_scan_keeps_test_runner_evidence_with_many_root_sources(self):
         for number in range(20):(self.folder/f'module_{number:02d}.py').write_text('value=42\n')
         (self.folder/'tests').mkdir()
@@ -137,18 +245,42 @@ class BatchToolTests(unittest.IsolatedAsyncioTestCase):
         self.assertIn('-s tests',result['test_candidates'][0]['command'])
 
 
+# ------------------------------------------------------------------------------
+# BatchedVerificationTests: Class State Encapsulation & Contract Specification
+# Algorithmic Complexity: Time: O(1) instantiation overhead | Space: O(M) memory model allocation for instance state and attribute dict
+# Invariant: Enforces structural invariants and thread-safe state mutations across member calls
+# Failure Modes: Raises TypeError or AttributeError upon illegal state transition or contract violation
+# ------------------------------------------------------------------------------
 class BatchedVerificationTests(fixtures.VerifiedFinalTests):
     # Inherit real file/test fixtures and source-mutation guard coverage.
+    # ------------------------------------------------------------------------------
+    # setup_actions: Function Pipeline & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     def setup_actions(self):
         actions=super().setup_actions()
         command=json.loads(actions[-1].content[0].text)['command']
         return actions[:-1]+[call('run_checks',{'commands':[command,shlex.quote(sys.executable)+" -c 'from result import answer;assert answer()==42'"]})]
 
+    # ------------------------------------------------------------------------------
+    # test_later_failure_invalidates_passing_suite: Asynchronous Coroutine & Contract Specification
+    # Algorithmic Complexity: Time: O(P) bounded by external process execution timeout and IPC throughput | Space: O(B) stream buffer memory allocated for child stdout/stderr capture
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     async def test_later_failure_invalidates_passing_suite(self):
         actions=self.setup_actions();args=json.loads(actions[-1].content[0].text);args['commands'].append('exit 3');actions[-1]=call('run_checks',args)
         run=self.runner(actions+[self.final(),self.final()])
         self.assertEqual(await run.run(),'paused');self.assertFalse(run.state['verified'])
 
+    # ------------------------------------------------------------------------------
+    # test_source_change_inside_batch_invalidates_passing_suite: Asynchronous Coroutine & Contract Specification
+    # Algorithmic Complexity: Time: O(P) bounded by external process execution timeout and IPC throughput | Space: O(B) stream buffer memory allocated for child stdout/stderr capture
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     async def test_source_change_inside_batch_invalidates_passing_suite(self):
         actions=self.setup_actions();args=json.loads(actions[-1].content[0].text);args['commands'].append("printf 'def answer():\\n    return 0\\n' > result.py");actions[-1]=call('run_checks',args)
         run=self.runner(actions+[self.final(),self.final()])

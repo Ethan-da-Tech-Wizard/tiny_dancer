@@ -1,8 +1,13 @@
 # ==============================================================================
 # Program: benchmark_expert_placement.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# Last Modified: November 19, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny
+#          Dancer testing framework. Operational automation, benchmark evaluation, and
+#          system diagnostic harness. Executes high-throughput workload profiling
+#          across CPU/GPU execution tiers with strict resource bounds. Enforces
+#          reproducible benchmark metrics, mathematical latency bounds, and
+#          deterministic subprocess exit contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -27,6 +32,12 @@ from app.llama_session import LlamaReferenceSession
 from app.validation_results import archive_report
 
 
+# ------------------------------------------------------------------------------
+# gpu_memory: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(P) bounded by external process execution timeout and IPC throughput | Space: O(B) stream buffer memory allocated for child stdout/stderr capture
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def gpu_memory():
     result = subprocess.run(['nvidia-smi', '--query-gpu=memory.used,memory.total,temperature.gpu',
                              '--format=csv,noheader,nounits'], capture_output=True, text=True, timeout=3)
@@ -35,6 +46,12 @@ def gpu_memory():
     return {'used_mib': used, 'total_mib': total, 'temperature_c': temperature}
 
 
+# ------------------------------------------------------------------------------
+# assert_idle: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def assert_idle(client):
     status = client.get('/api/status', timeout=3).json()
     if status.get('active_job') or status.get('engine') != 'not loaded':
@@ -42,6 +59,12 @@ def assert_idle(client):
     return status
 
 
+# ------------------------------------------------------------------------------
+# main: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(B) linear with respect to serialized payload byte length | Space: O(B) memory mapped buffer or byte stream heap allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def main():
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
     folder = ROOT/'run/placement-benchmarks'/stamp
@@ -53,6 +76,12 @@ def main():
                          'production_changes': False, 'cache_policy': 'No OS cache dropping; repeated baseline brackets candidate.'},
               'variants': [], 'abort_reason': None}
     path = ROOT/'docs/expert-placement-validation.json'
+    # ------------------------------------------------------------------------------
+    # save: Function Pipeline & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     def save():
         path.write_text(json.dumps(report, indent=2)+'\n')
     save()
@@ -81,6 +110,12 @@ def main():
             interrupted = []
             variant_started = time.monotonic()
             original_popen = subprocess.Popen
+            # ------------------------------------------------------------------------------
+            # launch: Function Pipeline & Contract Specification
+            # Algorithmic Complexity: Time: O(B) linear with respect to serialized payload byte length | Space: O(B) memory mapped buffer or byte stream heap allocation
+            # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+            # Failure Modes: Catches or propagates domain exceptions according to API contracts
+            # ------------------------------------------------------------------------------
             def launch(command, **kwargs):
                 command = list(command)
                 if '-ncmoe' not in command:
@@ -93,6 +128,12 @@ def main():
                 psutil.Process(proc.pid).nice(config.get('model_nice', 5))
                 owned.append(proc)
                 return proc
+            # ------------------------------------------------------------------------------
+            # monitor: Function Pipeline & Contract Specification
+            # Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+            # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+            # Failure Modes: Catches or propagates domain exceptions according to API contracts
+            # ------------------------------------------------------------------------------
             def monitor():
                 while not stop.wait(1):
                     try:

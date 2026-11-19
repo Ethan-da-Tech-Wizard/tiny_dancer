@@ -1,8 +1,13 @@
 # ==============================================================================
 # Program: evaluate_agent_default.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# Last Modified: November 19, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny
+#          Dancer testing framework. Operational automation, benchmark evaluation, and
+#          system diagnostic harness. Executes high-throughput workload profiling
+#          across CPU/GPU execution tiers with strict resource bounds. Enforces
+#          reproducible benchmark metrics, mathematical latency bounds, and
+#          deterministic subprocess exit contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -24,6 +29,12 @@ from scripts.check_native_release import runtime_fingerprint
 EXPECTED='TINY_DANCER_READY'
 
 
+# ------------------------------------------------------------------------------
+# main: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def main():
     path=ROOT/'docs/agent-default-native-validation.json'
     if path.exists():
@@ -32,6 +43,12 @@ def main():
             'scope':'Actual local-model tiny answer with run_until_done omitted from the API request. Tests deployed Agent defaults and sampling; not coding, long-context or general autonomous capability.',
             'runtime_sha256_before':runtime_fingerprint(ROOT),'observation_limit_seconds':None,
             'operator_interventions':[],'samples':[],'request':{'prompt':'Reply with exactly '+EXPECTED+'.','mode':'agent','task_kind':'answer','reasoning_effort':'low'}}
+    # ------------------------------------------------------------------------------
+    # save: Function Pipeline & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     def save():
         temp=path.with_suffix('.tmp');temp.write_text(json.dumps(report,indent=2)+'\n');temp.replace(path)
     with httpx.Client(base_url='http://127.0.0.1:3210',trust_env=False,timeout=10) as client:

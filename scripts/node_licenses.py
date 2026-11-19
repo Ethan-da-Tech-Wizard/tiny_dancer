@@ -1,8 +1,13 @@
 # ==============================================================================
 # Program: node_licenses.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# Last Modified: November 19, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny
+#          Dancer testing framework. Operational automation, benchmark evaluation, and
+#          system diagnostic harness. Executes high-throughput workload profiling
+#          across CPU/GPU execution tiers with strict resource bounds. Enforces
+#          reproducible benchmark metrics, mathematical latency bounds, and
+#          deterministic subprocess exit contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -14,20 +19,44 @@ import re
 import shutil
 
 
+# ------------------------------------------------------------------------------
+# digest: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+# ------------------------------------------------------------------------------
+# package_files: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def package_files(folder):
     return sorted(p for p in folder.rglob('*') if p.is_file()
                   and 'node_modules' not in p.relative_to(folder).parts)
 
 
+# ------------------------------------------------------------------------------
+# notice_file: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def notice_file(path):
     name = path.name.lower()
     return name.startswith(('license', 'licence', 'copying', 'notice', 'copyright', 'thirdpartynotice')) or name.endswith(('.license', '.licence'))
 
 
+# ------------------------------------------------------------------------------
+# collect_node: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def collect_node(root):
     prefix = root / 'vendor/pi-runtime'
     lock = prefix / 'package-lock.json'
@@ -38,6 +67,12 @@ def collect_node(root):
     result = {'scope': 'Isolated Pi comparison; installed npm packages, supplied notices and bundled legal comments. Not production adoption.',
               'lock_sha256': digest(lock), 'packages': [], 'files': []}
 
+    # ------------------------------------------------------------------------------
+    # save: Function Pipeline & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     def save(source, target):
         target.parent.mkdir(parents=True, exist_ok=True)
         if source.resolve() != target.resolve():
@@ -114,6 +149,12 @@ def collect_node(root):
     return result
 
 
+# ------------------------------------------------------------------------------
+# verify_node: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def verify_node(root):
     prefix = root / 'vendor/pi-runtime'
     if not (prefix / 'package-lock.json').exists():

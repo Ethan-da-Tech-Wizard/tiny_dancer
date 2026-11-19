@@ -1,8 +1,13 @@
 # ==============================================================================
 # Program: probe_native_template.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# Last Modified: November 19, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny
+#          Dancer testing framework. Operational automation, benchmark evaluation, and
+#          system diagnostic harness. Executes high-throughput workload profiling
+#          across CPU/GPU execution tiers with strict resource bounds. Enforces
+#          reproducible benchmark metrics, mathematical latency bounds, and
+#          deterministic subprocess exit contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -25,6 +30,12 @@ from app.engine import text_of_message
 from app.validation_results import archive_report,refresh_results
 
 
+# ------------------------------------------------------------------------------
+# main: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def main():
     stage=ROOT/'run/staging/native-read-timeout'
     stamp=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
@@ -32,6 +43,12 @@ def main():
     report={'started_at':datetime.now(timezone.utc).isoformat(),'status':'running','passed':False,
         'scope':'Exact staged llama.cpp template formatting with synthetic messages, then two actual same-model instruction-following tool receipts. No coding task or general capability claim; no native private text emitted.',
         'checks':{},'receipts':[]}
+    # ------------------------------------------------------------------------------
+    # save: Function Pipeline & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     def save():
         temporary=path.with_suffix('.tmp');temporary.write_text(json.dumps(report,indent=2)+'\n');temporary.replace(path)
     with httpx.Client(base_url='http://127.0.0.1:3210',trust_env=False,timeout=5) as control:
@@ -45,8 +62,20 @@ def main():
         report['template_sha256']=cfg['llama_chat_template_sha256']
         save();print(json.dumps({'report':str(path),'phase':'loading staged backend'}),flush=True)
         done=threading.Event();owned={};session=None;started=time.monotonic()
+        # ------------------------------------------------------------------------------
+        # on_start: Function Pipeline & Contract Specification
+        # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+        # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+        # Failure Modes: Catches or propagates domain exceptions according to API contracts
+        # ------------------------------------------------------------------------------
         def on_start(proc):
             owned['proc']=proc;psutil.Process(proc.pid).nice(5)
+        # ------------------------------------------------------------------------------
+        # watch: Function Pipeline & Contract Specification
+        # Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+        # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+        # Failure Modes: Catches or propagates domain exceptions according to API contracts
+        # ------------------------------------------------------------------------------
         def watch():
             low_since=None;last_activity=time.monotonic();previous=None;last_sample=0
             while not done.wait(2):

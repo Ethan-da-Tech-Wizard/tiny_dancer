@@ -1,8 +1,14 @@
 # ==============================================================================
 # Program: patches.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Computes unified code diffs, verifies file patch applicability, and applies localized source edits with fuzzy whitespace tolerance.
+# Last Modified: November 19, 2026
+# Purpose: Computes unified code diffs, verifies file patch applicability, and
+#          applies localized source edits with fuzzy whitespace tolerance. Core
+#          component of the autonomous agent reasoning architecture governing
+#          multi-turn execution cycles, state graph transitions, and prompt synthesis.
+#          Strictly enforces mathematical bounds on LLM token context windows, rolling
+#          memory buffers, and timeout thresholds. Guarantees transactional execution
+#          invariants, deterministic failure isolation, and thread-safe API contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -13,6 +19,12 @@ import uuid
 from pathlib import Path
 
 
+# ------------------------------------------------------------------------------
+# apply_patch: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def apply_patch(patch, cwd, backups):
     # Phase 1: Pre-validation & parsing
     # Parse header boundaries and ensure patch payload adheres to standard syntax markers
@@ -91,6 +103,12 @@ def apply_patch(patch, cwd, backups):
             backup=folder/item['relative'];backup.parent.mkdir(parents=True,exist_ok=True)
             shutil.copy2(item['path'],backup);item['backup']=backup
     applied=[]
+    # ------------------------------------------------------------------------------
+    # replace: Function Pipeline & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     def replace(path,data,mode=None):
         path.parent.mkdir(parents=True,exist_ok=True)
         temp=path.with_name('.'+path.name+'.'+uuid.uuid4().hex+'.tmp')

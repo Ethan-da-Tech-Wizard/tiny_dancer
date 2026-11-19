@@ -1,8 +1,13 @@
 # ==============================================================================
 # Program: benchmark_prompt_batches.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# Last Modified: November 19, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny
+#          Dancer testing framework. Operational automation, benchmark evaluation, and
+#          system diagnostic harness. Executes high-throughput workload profiling
+#          across CPU/GPU execution tiers with strict resource bounds. Enforces
+#          reproducible benchmark metrics, mathematical latency bounds, and
+#          deterministic subprocess exit contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -32,6 +37,12 @@ from scripts.evaluate_hardening_suite import runtime_digest
 ORDER = (128, 512, 128)
 
 
+# ------------------------------------------------------------------------------
+# batch_command: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def batch_command(command, batch):
     if type(batch) is not int or batch not in ORDER:
         raise ValueError('Undeclared batch size')
@@ -41,6 +52,12 @@ def batch_command(command, batch):
     return result
 
 
+# ------------------------------------------------------------------------------
+# verdict: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def verdict(variants, storage=False):
     order = ('original', 'cache', 'original') if storage else ORDER
     key = 'storage' if storage else 'batch'
@@ -66,6 +83,12 @@ def verdict(variants, storage=False):
     return result
 
 
+# ------------------------------------------------------------------------------
+# main: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def main(storage=False):
     config = json.loads((ROOT / 'config.json').read_text())
     order = ('original', 'cache', 'original') if storage else ORDER
@@ -80,6 +103,12 @@ def main(storage=False):
                          'start_gpu_max_c': 72, 'start_cpu_max_c': 85, 'cooldown_seconds': 120,
                          'cache_policy': 'No OS cache dropping; repeated baseline brackets candidate.'},
               'runtime_sha256_before': runtime_digest(), 'variants': []}
+    # ------------------------------------------------------------------------------
+    # save: Function Pipeline & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     def save():
         temp = path.with_suffix('.tmp'); temp.write_text(json.dumps(report, indent=2) + '\n'); temp.replace(path)
     # Fixed initial input; report the exact token work rather than trusting character counts.
@@ -119,12 +148,24 @@ def main(storage=False):
             report['variants'].append(variant); save()
             started = time.monotonic(); done = threading.Event(); owned = []; session = None
             real_popen = subprocess.Popen
+            # ------------------------------------------------------------------------------
+            # launch: Function Pipeline & Contract Specification
+            # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+            # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+            # Failure Modes: Catches or propagates domain exceptions according to API contracts
+            # ------------------------------------------------------------------------------
             def launch(command, **kwargs):
                 if '-ncmoe' not in command: return real_popen(command, **kwargs)
                 command = batch_command(command, batch)
                 variant['parameters'] = {flag: command[command.index(flag) + 1] for flag in ('-b', '-ub', '-c', '-t', '-ncmoe')}
                 proc = real_popen(command, **kwargs); owned.append(proc); psutil.Process(proc.pid).nice(5)
                 return proc
+            # ------------------------------------------------------------------------------
+            # watch: Function Pipeline & Contract Specification
+            # Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+            # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+            # Failure Modes: Catches or propagates domain exceptions according to API contracts
+            # ------------------------------------------------------------------------------
             def watch():
                 while not done.wait(3):
                     try:

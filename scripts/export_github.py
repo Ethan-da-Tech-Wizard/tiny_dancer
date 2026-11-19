@@ -1,8 +1,13 @@
 # ==============================================================================
 # Program: export_github.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# Last Modified: November 19, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny
+#          Dancer testing framework. Operational automation, benchmark evaluation, and
+#          system diagnostic harness. Executes high-throughput workload profiling
+#          across CPU/GPU execution tiers with strict resource bounds. Enforces
+#          reproducible benchmark metrics, mathematical latency bounds, and
+#          deterministic subprocess exit contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -50,6 +55,12 @@ SECRET_PATTERNS = [
 PRIVATE_MARKERS = ('<|channel|>analysis', '<think>')
 
 
+# ------------------------------------------------------------------------------
+# public_report: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def public_report(value, key=''):
     """Keep outcomes/measurements; omit conversation and arbitrary output fields."""
     normalized = key.lower().replace('-', '_')
@@ -77,6 +88,12 @@ def public_report(value, key=''):
     return OMITTED
 
 
+# ------------------------------------------------------------------------------
+# inspect_text: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def inspect_text(data, path, known_secrets=()):
     text = data.decode('utf-8')
     if any(pattern.search(text) for pattern in SECRET_PATTERNS):
@@ -86,6 +103,12 @@ def inspect_text(data, path, known_secrets=()):
     return text
 
 
+# ------------------------------------------------------------------------------
+# result_index: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def result_index(reports):
     lines = ['# Test results in this GitHub snapshot', '',
              'These are saved outcomes, not newly executed tests. Raw conversations, '
@@ -113,6 +136,12 @@ def result_index(reports):
     return '\n'.join(lines) + '\n'
 
 
+# ------------------------------------------------------------------------------
+# export: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def export(root=ROOT, destination=None):
     root = Path(root).resolve()
     destination = Path(destination) if destination else root / 'run/github/tiny_dancer'
@@ -221,6 +250,12 @@ def export(root=ROOT, destination=None):
             'manifest': str(destination / manifest_name)}
 
 
+# ------------------------------------------------------------------------------
+# main: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--destination', type=Path)

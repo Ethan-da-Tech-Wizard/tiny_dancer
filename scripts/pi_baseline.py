@@ -1,8 +1,13 @@
 # ==============================================================================
 # Program: pi_baseline.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# Last Modified: November 19, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny
+#          Dancer testing framework. Operational automation, benchmark evaluation, and
+#          system diagnostic harness. Executes high-throughput workload profiling
+#          across CPU/GPU execution tiers with strict resource bounds. Enforces
+#          reproducible benchmark metrics, mathematical latency bounds, and
+#          deterministic subprocess exit contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -14,6 +19,12 @@ FLAGS = ['--offline', '--no-context-files', '--no-extensions', '--no-mcp',
          '--no-skills', '--no-prompt-templates', '--no-themes', '--no-approve']
 
 
+# ------------------------------------------------------------------------------
+# child_environment: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def child_environment(root, private, key):
     # Deliberately do not inherit cloud credentials, proxy settings or shell startup hooks.
     env = {k: os.environ[k] for k in ('HOME', 'USER', 'LANG', 'LC_ALL', 'TZ') if k in os.environ}
@@ -24,6 +35,12 @@ def child_environment(root, private, key):
     return env
 
 
+# ------------------------------------------------------------------------------
+# models_config: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def models_config(base_url):
     from urllib.parse import urlsplit
     url = urlsplit(base_url)
@@ -44,6 +61,12 @@ def models_config(base_url):
                 'reasoning_format': 'deepseek'}}]}}}
 
 
+# ------------------------------------------------------------------------------
+# settings_config: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def settings_config(effort):
     return {'defaultProvider': 'tiny-local', 'defaultModel': 'gpt-oss-20b',
         'defaultThinkingLevel': effort, 'enabledModels': ['tiny-local/gpt-oss-20b'],
@@ -57,6 +80,12 @@ def settings_config(effort):
             'provider': {'timeoutMs': 2147483647, 'maxRetries': 0}}, 'shellPath': '/bin/bash'}
 
 
+# ------------------------------------------------------------------------------
+# public_event: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def public_event(event):
     """Whitelist actual tools and numeric metadata; never return assistant prose."""
     kind = event.get('type')

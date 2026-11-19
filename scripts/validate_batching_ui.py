@@ -1,8 +1,13 @@
 # ==============================================================================
 # Program: validate_batching_ui.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# Last Modified: November 19, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny
+#          Dancer testing framework. Operational automation, benchmark evaluation, and
+#          system diagnostic harness. Executes high-throughput workload profiling
+#          across CPU/GPU execution tiers with strict resource bounds. Enforces
+#          reproducible benchmark metrics, mathematical latency bounds, and
+#          deterministic subprocess exit contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -24,6 +29,12 @@ from app.validation_results import archive_report,refresh_results
 BASE = 'http://127.0.0.1:3210'
 
 
+# ------------------------------------------------------------------------------
+# main: Asynchronous Coroutine & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 async def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--export', action='store_true', help='Also inspect completed exact-user export session')

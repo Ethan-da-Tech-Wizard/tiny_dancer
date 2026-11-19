@@ -1,8 +1,13 @@
 # ==============================================================================
 # Program: evaluate_batching.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# Last Modified: November 19, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny
+#          Dancer testing framework. Operational automation, benchmark evaluation, and
+#          system diagnostic harness. Executes high-throughput workload profiling
+#          across CPU/GPU execution tiers with strict resource bounds. Enforces
+#          reproducible benchmark metrics, mathematical latency bounds, and
+#          deterministic subprocess exit contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -25,6 +30,12 @@ from app.validation_results import archive_report,refresh_results
 from app.facts import validate_scores
 
 
+# ------------------------------------------------------------------------------
+# main: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(P) bounded by external process execution timeout and IPC throughput | Space: O(B) stream buffer memory allocated for child stdout/stderr capture
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('kind',choices=['repair','export','coding']);args=parser.parse_args()
     before_names={'repair':'native-harness-validation.json','export':'score-export-before.json','coding':'native-coding-validation.json'}
@@ -33,6 +44,12 @@ def main():
     prompt=before['prompt'];report_path=ROOT/'docs'/output_names[args.kind]
     report={'started_at':datetime.now(timezone.utc).isoformat(),'prompt':prompt,'status':'starting','operator_interventions':[],'samples':[],
             'scope':'Frozen initial prompt, no operator code/recovery notes during native execution. '+({'repair':'Seeded bug/tests identical to previous repair probe; historical timing comparison.','export':'Exact original user request in the original workspace/session. Typed host export is explicitly identified; the model selects tool arguments.','coding':'Original CSV goal and input only in a fresh folder; no implementation or tests supplied. Independent/friendly-error checks run after termination.'}[args.kind])}
+    # ------------------------------------------------------------------------------
+    # save: Function Pipeline & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     def save():
         temporary=report_path.with_suffix('.tmp');temporary.write_text(json.dumps(report,indent=2)+'\n');temporary.replace(report_path);refresh_results(ROOT)
     with httpx.Client(base_url='http://127.0.0.1:3210',timeout=20) as client:
@@ -88,6 +105,12 @@ def main():
                     'actual_editor_action':str(path) in checkpoint.get('editor_opened',[]),'completion_checks_passed':checkpoint.get('verified',False)}
             report.update(saved_file=str(path),games=len(expected),independent_source=url)
             from app.tools import ComputerTools
+            # ------------------------------------------------------------------------------
+            # inspect_editor: Asynchronous Coroutine & Contract Specification
+            # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+            # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+            # Failure Modes: Catches or propagates domain exceptions according to API contracts
+            # ------------------------------------------------------------------------------
             async def inspect_editor():
                 tools=ComputerTools()
                 try:return await tools.desktop({'action':'windows'})

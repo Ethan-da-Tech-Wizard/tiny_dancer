@@ -1,8 +1,13 @@
 # ==============================================================================
 # Program: evaluate_review_repair.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# Last Modified: November 19, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny
+#          Dancer testing framework. Operational automation, benchmark evaluation, and
+#          system diagnostic harness. Executes high-throughput workload profiling
+#          across CPU/GPU execution tiers with strict resource bounds. Enforces
+#          reproducible benchmark metrics, mathematical latency bounds, and
+#          deterministic subprocess exit contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -29,6 +34,12 @@ from scripts.native_observation import ProgressTracker,public_action_counts
 from app.validation_results import archive_report,refresh_results
 
 
+# ------------------------------------------------------------------------------
+# main: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(P) bounded by external process execution timeout and IPC throughput | Space: O(B) stream buffer memory allocated for child stdout/stderr capture
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def main(with_regression=False):
     stamp=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ');case=CASES['inventory']
     prefix='regression-repair-inventory-' if with_regression else 'review-inventory-'
@@ -59,6 +70,12 @@ def main(with_regression=False):
             report['baseline']={'exit_code':baseline.returncode,'output':(baseline.stdout+baseline.stderr)[-6000:]}
             if baseline.returncode!=1 or 'test_unreadable_nested_directory' not in baseline.stdout:
                 raise RuntimeError('Required baseline regression did not reproduce')
+        # ------------------------------------------------------------------------------
+        # save: Function Pipeline & Contract Specification
+        # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+        # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+        # Failure Modes: Catches or propagates domain exceptions according to API contracts
+        # ------------------------------------------------------------------------------
         def save():
             temporary=path.with_suffix('.tmp');temporary.write_text(json.dumps(report,indent=2)+'\n');temporary.replace(path)
         save()

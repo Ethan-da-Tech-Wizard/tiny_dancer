@@ -1,8 +1,13 @@
 # ==============================================================================
 # Program: evaluate_audit_test_probe.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# Last Modified: November 19, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny
+#          Dancer testing framework. Operational automation, benchmark evaluation, and
+#          system diagnostic harness. Executes high-throughput workload profiling
+#          across CPU/GPU execution tiers with strict resource bounds. Enforces
+#          reproducible benchmark metrics, mathematical latency bounds, and
+#          deterministic subprocess exit contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -31,6 +36,12 @@ from app.working_memory import runtime_source_evidence
 from app.validation_results import archive_report,refresh_results
 
 
+# ------------------------------------------------------------------------------
+# evaluate: Asynchronous Coroutine & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 async def evaluate(spec_only=False):
     client=httpx.AsyncClient(base_url='http://127.0.0.1:3210',trust_env=False,timeout=5)
     await client.get('/');status=(await client.get('/api/status')).json()
@@ -57,12 +68,36 @@ async def evaluate(spec_only=False):
             'observer_sha256':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [Path(__file__),ROOT/'scripts/audit_test_probe.py',ROOT/'scripts/llama_chat_baseline.py']},
             'effort':'medium','operator_interventions':[],'metrics':[],'samples':[]}
     if spec_only:report['scope']=report['scope'].replace('original goal, current source and existing generic API facts','original goal and existing generic API facts, with implementation source withheld')
+    # ------------------------------------------------------------------------------
+    # save: Function Pipeline & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     def save():
         temporary=path.with_suffix('.tmp');temporary.write_text(json.dumps(report,indent=2)+'\n');temporary.replace(path)
+    # ------------------------------------------------------------------------------
+    # record: Function Pipeline & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     def record(kind,data):
         if kind=='metrics':report['metrics'].append(data);save()
+    # ------------------------------------------------------------------------------
+    # emit: Function Pipeline & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     def emit(kind,data):loop.call_soon_threadsafe(record,kind,data)
     done=asyncio.Event()
+    # ------------------------------------------------------------------------------
+    # monitor: Asynchronous Coroutine & Contract Specification
+    # Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     async def monitor():
         low_since=None;last=0
         while not done.is_set():

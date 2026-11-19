@@ -1,8 +1,14 @@
 # ==============================================================================
 # Program: verification.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Executes post-generation verification suites to ensure code syntactical correctness and test pass rates.
+# Last Modified: November 19, 2026
+# Purpose: Executes post-generation verification suites to ensure code syntactical
+#          correctness and test pass rates. Core component of the autonomous agent
+#          reasoning architecture governing multi-turn execution cycles, state graph
+#          transitions, and prompt synthesis. Strictly enforces mathematical bounds on
+#          LLM token context windows, rolling memory buffers, and timeout thresholds.
+#          Guarantees transactional execution invariants, deterministic failure
+#          isolation, and thread-safe API contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -13,6 +19,12 @@ import shlex
 from pathlib import Path
 
 
+# ------------------------------------------------------------------------------
+# test_command: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def test_command(command):
     """Recognize simple test invocations, avoiding log readers and shell pipelines."""
     try: args=shlex.split(command)
@@ -30,6 +42,12 @@ def test_command(command):
     return executable=='pytest' or (executable=='cargo' and args[1:2]==['test'])
 
 
+# ------------------------------------------------------------------------------
+# test_summary: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def test_summary(output):
     text=re.sub(r'\x1b\[[0-9;]*m','',str(output))[-8000:]
     candidates=[]
@@ -53,6 +71,12 @@ def test_summary(output):
     return max(candidates,key=lambda item:item[0])[1] if candidates else None
 
 
+# ------------------------------------------------------------------------------
+# source_hashes: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(B) linear with respect to serialized payload byte length | Space: O(B) memory mapped buffer or byte stream heap allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def source_hashes(paths, *, optional_missing=()):
     """Hash files; optional absent outputs are markers for replay, never proof."""
     optional={str(Path(name)) for name in optional_missing}

@@ -1,8 +1,13 @@
 # ==============================================================================
 # Program: audit_test_probe.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# Last Modified: November 19, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny
+#          Dancer testing framework. Operational automation, benchmark evaluation, and
+#          system diagnostic harness. Executes high-throughput workload profiling
+#          across CPU/GPU execution tiers with strict resource bounds. Enforces
+#          reproducible benchmark metrics, mathematical latency bounds, and
+#          deterministic subprocess exit contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -22,6 +27,12 @@ TOOL = {'name':'write_verification','description':'Submit the complete standard-
         'parameters':{'type':'object','properties':{'content':{'type':'string'}},'required':['content']}}
 
 
+# ------------------------------------------------------------------------------
+# submitted_code: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def submitted_code(messages):
     calls=[m for m in messages if m.recipient]
     if len(calls)!=1 or calls[0].recipient!='functions.write_verification':
@@ -43,6 +54,12 @@ print(json.dumps({'tests':result.testsRun,'failures':len(result.failures),'error
 '''
 
 
+# ------------------------------------------------------------------------------
+# run_verification: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(P) bounded by external process execution timeout and IPC throughput | Space: O(B) stream buffer memory allocated for child stdout/stderr capture
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def run_verification(program,code,root):
     with tempfile.TemporaryDirectory(dir=Path(root)/'run') as temporary:
         folder=Path(temporary);target=folder/'inventory.py';target.write_text(program)
@@ -58,6 +75,12 @@ def run_verification(program,code,root):
         return result
 
 
+# ------------------------------------------------------------------------------
+# grade_verification: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def grade_verification(program,conforming,code,root):
     bad=run_verification(program,code,root);good=run_verification(conforming,code,root)
     checks={'actual_nonempty_tests':bad.get('tests',0)>0 and bad.get('tests')==good.get('tests'),

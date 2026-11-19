@@ -1,8 +1,13 @@
 # ==============================================================================
 # Program: validate_continuation_ui.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# Last Modified: November 19, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny
+#          Dancer testing framework. Operational automation, benchmark evaluation, and
+#          system diagnostic harness. Executes high-throughput workload profiling
+#          across CPU/GPU execution tiers with strict resource bounds. Enforces
+#          reproducible benchmark metrics, mathematical latency bounds, and
+#          deterministic subprocess exit contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -20,6 +25,12 @@ ROOT = Path(__file__).resolve().parents[1]
 BASE = 'http://127.0.0.1:3210'
 
 
+# ------------------------------------------------------------------------------
+# main: Asynchronous Coroutine & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 async def main():
     with httpx.Client(base_url=BASE,timeout=10) as client:
         client.get('/')
@@ -63,6 +74,12 @@ async def main():
                  'checkpoint':{'goal':'Continue the existing task','mode':'agent','steps':[{'title':'Already done','done':True}],
                                'summary':'','next_action':'','max_seconds':None,'run_until_done':True},
                  'progress':{'kind':'progress','data':{'tokens':64,'seconds':12},'created':time.time()},'elapsed_seconds':12}
+        # ------------------------------------------------------------------------------
+        # route: Asynchronous Coroutine & Contract Specification
+        # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+        # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+        # Failure Modes: Catches or propagates domain exceptions according to API contracts
+        # ------------------------------------------------------------------------------
         async def route(request):
             nonlocal phase
             path=request.request.url.removeprefix(BASE)

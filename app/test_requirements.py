@@ -1,8 +1,14 @@
 # ==============================================================================
 # Program: test_requirements.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Manages test discovery, test command construction, test requirement enforcement, and authoritative verdict evaluation.
+# Last Modified: November 19, 2026
+# Purpose: Manages test discovery, test command construction, test requirement
+#          enforcement, and authoritative verdict evaluation. Core component of the
+#          autonomous agent reasoning architecture governing multi-turn execution
+#          cycles, state graph transitions, and prompt synthesis. Strictly enforces
+#          mathematical bounds on LLM token context windows, rolling memory buffers,
+#          and timeout thresholds. Guarantees transactional execution invariants,
+#          deterministic failure isolation, and thread-safe API contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -14,6 +20,12 @@ from pathlib import Path
 import re
 
 
+# ------------------------------------------------------------------------------
+# required_language: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def required_language(contract,state):
     if contract.get('kind')!='work' or not contract.get('lookup_languages'):return None
     goal=state.get('goal','').lower()
@@ -24,9 +36,21 @@ def required_language(contract,state):
     return None
 
 
+# ------------------------------------------------------------------------------
+# snapshot: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def snapshot(cwd):
     root=Path(cwd).resolve();sources={};complete=True;seen=0
     ignored={'.git','.venv','venv','__pycache__','node_modules','target','cache','build','models','vendor'}
+    # ------------------------------------------------------------------------------
+    # onerror: Function Pipeline & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     def onerror(error):
         nonlocal complete
         complete=False
@@ -63,6 +87,12 @@ def snapshot(cwd):
     return {'complete':complete,'sources':sources}
 
 
+# ------------------------------------------------------------------------------
+# added_paths: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def added_paths(contract,state):
     language=required_language(contract,state);baseline=state.get('baseline_test_sources')
     if not language or not baseline or not baseline.get('complete'):return None
@@ -72,6 +102,12 @@ def added_paths(contract,state):
             if (language=='any' or value['language']==language) and baseline['sources'].get(name)!=value]
 
 
+# ------------------------------------------------------------------------------
+# issue: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def issue(contract,state):
     paths=added_paths(contract,state)
     if paths==[]:

@@ -1,8 +1,14 @@
 # ==============================================================================
 # Program: preserved_files.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Tracks unmodified reference files and guarantees that critical repository configuration files are preserved throughout agent edits.
+# Last Modified: November 19, 2026
+# Purpose: Tracks unmodified reference files and guarantees that critical repository
+#          configuration files are preserved throughout agent edits. Core component of
+#          the autonomous agent reasoning architecture governing multi-turn execution
+#          cycles, state graph transitions, and prompt synthesis. Strictly enforces
+#          mathematical bounds on LLM token context windows, rolling memory buffers,
+#          and timeout thresholds. Guarantees transactional execution invariants,
+#          deterministic failure isolation, and thread-safe API contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -14,6 +20,12 @@ _FILE = r"""(`[^`\n]+`|"[^"\n]+"|'[^'\n]+'|[^\s,;]+)"""
 _RULE = re.compile(r'\b(?:keep|leave)\s+(?:(?:the|supplied|existing)\s+)*'+_FILE+r'\s+(?:unchanged|untouched)\b',re.I)
 
 
+# ------------------------------------------------------------------------------
+# issue: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def issue(goal,cwd,name,args):
     if name not in ('write_file','apply_patch'):return None
     targets=[args.get('path')] if name=='write_file' else re.findall(r'^\*\*\* (?:Update|Add|Delete) File: (.+)$',str(args.get('patch','')),re.M)

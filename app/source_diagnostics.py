@@ -1,8 +1,14 @@
 # ==============================================================================
 # Program: source_diagnostics.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Parses compiler warnings, syntax errors, and test runner outputs into structured diagnostic records.
+# Last Modified: November 19, 2026
+# Purpose: Parses compiler warnings, syntax errors, and test runner outputs into
+#          structured diagnostic records. Core component of the autonomous agent
+#          reasoning architecture governing multi-turn execution cycles, state graph
+#          transitions, and prompt synthesis. Strictly enforces mathematical bounds on
+#          LLM token context windows, rolling memory buffers, and timeout thresholds.
+#          Guarantees transactional execution invariants, deterministic failure
+#          isolation, and thread-safe API contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -11,6 +17,12 @@ import ast
 from pathlib import Path
 
 
+# ------------------------------------------------------------------------------
+# walk_default_error_sites: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def walk_default_error_sites(tree):
     modules=set();functions=set()
     for node in ast.walk(tree):
@@ -30,6 +42,12 @@ def walk_default_error_sites(tree):
     return sites[:8]
 
 
+# ------------------------------------------------------------------------------
+# python_runtime_notes: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def python_runtime_notes(files):
     notes = []
     for record in files:

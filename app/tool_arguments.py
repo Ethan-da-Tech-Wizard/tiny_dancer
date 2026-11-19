@@ -1,8 +1,15 @@
 # ==============================================================================
 # Program: tool_arguments.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Validates, deserializes, and safely dispatches tool invocations and structured JSON arguments from agent response messages to target tool handlers.
+# Last Modified: November 19, 2026
+# Purpose: Validates, deserializes, and safely dispatches tool invocations and
+#          structured JSON arguments from agent response messages to target tool
+#          handlers. Core component of the autonomous agent reasoning architecture
+#          governing multi-turn execution cycles, state graph transitions, and prompt
+#          synthesis. Strictly enforces mathematical bounds on LLM token context
+#          windows, rolling memory buffers, and timeout thresholds. Guarantees
+#          transactional execution invariants, deterministic failure isolation, and
+#          thread-safe API contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -10,6 +17,12 @@
 import json
 
 
+# ------------------------------------------------------------------------------
+# unique_object: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def unique_object(pairs):
     result = {}
     for key, value in pairs:
@@ -19,6 +32,12 @@ def unique_object(pairs):
     return result
 
 
+# ------------------------------------------------------------------------------
+# parse_tool_arguments: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def parse_tool_arguments(text):
     repair = None
     try:

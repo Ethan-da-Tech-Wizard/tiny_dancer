@@ -1,8 +1,13 @@
 # ==============================================================================
 # Program: evaluate_inventory_resume.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# Last Modified: November 19, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny
+#          Dancer testing framework. Operational automation, benchmark evaluation, and
+#          system diagnostic harness. Executes high-throughput workload profiling
+#          across CPU/GPU execution tiers with strict resource bounds. Enforces
+#          reproducible benchmark metrics, mathematical latency bounds, and
+#          deterministic subprocess exit contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -28,6 +33,12 @@ from scripts.inventory_goal_audit import CRITERIA as INVENTORY_GOAL_CRITERIA,che
 from scripts.native_observation import ProgressTracker,public_action_counts
 
 
+# ------------------------------------------------------------------------------
+# main: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(P) bounded by external process execution timeout and IPC throughput | Space: O(B) stream buffer memory allocated for child stdout/stderr capture
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def main():
     if len(sys.argv)!=2:raise SystemExit('Provide the saved inventory evaluation report path')
     original=json.loads(Path(sys.argv[1]).read_text());assert original['case']=='inventory' and original['status']!='running'
@@ -39,6 +50,12 @@ def main():
             'acceptance_sha256':hashlib.sha256(acceptance.read_bytes()).hexdigest(),'observation_limit_seconds':None,
             'prior_operator_interventions':original.get('operator_interventions',[]),'operator_interventions':[],'samples':[]}
     report['additional_independent_criteria']=list(INVENTORY_GOAL_CRITERIA)
+    # ------------------------------------------------------------------------------
+    # save: Function Pipeline & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     def save():
         temp=path.with_suffix('.tmp');temp.write_text(json.dumps(report,indent=2)+'\n');temp.replace(path)
     with sqlite3.connect(f'file:{ROOT/"run/workspace.sqlite3"}?mode=ro',uri=True) as db:

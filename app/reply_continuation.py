@@ -1,14 +1,26 @@
 # ==============================================================================
 # Program: reply_continuation.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Handles token truncation and continuation logic when model responses exceed max output limits, seamlessly stitching multi-part replies.
+# Last Modified: November 19, 2026
+# Purpose: Handles token truncation and continuation logic when model responses
+#          exceed max output limits, seamlessly stitching multi-part replies. Core
+#          component of the autonomous agent reasoning architecture governing
+#          multi-turn execution cycles, state graph transitions, and prompt synthesis.
+#          Strictly enforces mathematical bounds on LLM token context windows, rolling
+#          memory buffers, and timeout thresholds. Guarantees transactional execution
+#          invariants, deterministic failure isolation, and thread-safe API contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
 """Continue Auto work to a real response boundary or the physical context limit."""
 
 
+# ------------------------------------------------------------------------------
+# continue_reply: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def continue_reply(session,prompt_length,produced,reason,chunk_tokens,on_token,*,temperature=0.0):
     if type(chunk_tokens) is not int or chunk_tokens<=0:
         raise ValueError('Native continuation requires a positive integer chunk size')

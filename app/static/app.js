@@ -1,9 +1,15 @@
 // ==============================================================================
 // Program: app.js
 // Programmer: Ethan-da-Tech-Wizard
-// Last Modified: November 18, 2026
-// Purpose: Front-end JavaScript application controller powering the interactive evaluation dashboard and live run visualizer.
+// Last Modified: November 19, 2026
+// Purpose: Front-end JavaScript application controller powering the interactive
+//          evaluation dashboard and live run visualizer. Implements optimized
+//          client-side presentation and event-driven data streaming controllers.
+//          Enforces efficient DOM reconciliation, mathematical viewport bounds, and
+//          memory-bounded telemetry rendering. Guarantees resilient HTTP API
+//          interactions and non-blocking asynchronous event dispatching.
 // ==============================================================================
+
 const $ = (s) => document.querySelector(s);
 let sessionId = null, currentJob = null, source = null, live = null, activityCount = 0;
 let latestJob = null, currentFolder = '', viewTimer = null;

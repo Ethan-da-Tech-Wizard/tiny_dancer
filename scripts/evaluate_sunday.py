@@ -1,8 +1,13 @@
 # ==============================================================================
 # Program: evaluate_sunday.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# Last Modified: November 19, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny
+#          Dancer testing framework. Operational automation, benchmark evaluation, and
+#          system diagnostic harness. Executes high-throughput workload profiling
+#          across CPU/GPU execution tiers with strict resource bounds. Enforces
+#          reproducible benchmark metrics, mathematical latency bounds, and
+#          deterministic subprocess exit contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -20,10 +25,22 @@ REPORT = ROOT / 'docs/answer-completion-validation.json'
 PROMPT = 'tell me all the stats of the most recent nfl sunday football list by stats i mean scores and what teams played eachother'
 
 
+# ------------------------------------------------------------------------------
+# main: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def main():
     report = {'started_at':datetime.now(timezone.utc).isoformat(), 'prompt':PROMPT,
               'method':'Native GPT-OSS selects a typed tool; harness publishes validated data. No scores or reference answers supplied to model.',
               'status':'starting', 'resource_samples':[]}
+    # ------------------------------------------------------------------------------
+    # save: Function Pipeline & Contract Specification
+    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+    # Failure Modes: Catches or propagates domain exceptions according to API contracts
+    # ------------------------------------------------------------------------------
     def save(): REPORT.write_text(json.dumps(report,indent=2)+'\n')
     with httpx.Client(base_url='http://127.0.0.1:3210',timeout=30) as client:
         client.get('/').raise_for_status()

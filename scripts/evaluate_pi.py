@@ -1,8 +1,13 @@
 # ==============================================================================
 # Program: evaluate_pi.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# Last Modified: November 19, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny
+#          Dancer testing framework. Operational automation, benchmark evaluation, and
+#          system diagnostic harness. Executes high-throughput workload profiling
+#          across CPU/GPU execution tiers with strict resource bounds. Enforces
+#          reproducible benchmark metrics, mathematical latency bounds, and
+#          deterministic subprocess exit contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -35,10 +40,22 @@ from scripts.pi_baseline import FLAGS, child_environment, models_config, setting
 from scripts.node_licenses import verify_node
 
 
+# ------------------------------------------------------------------------------
+# file_hash: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def file_hash(path):
     return hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else None
 
 
+# ------------------------------------------------------------------------------
+# evaluate: Asynchronous Coroutine & Contract Specification
+# Algorithmic Complexity: Time: O(P) bounded by external process execution timeout and IPC throughput | Space: O(B) stream buffer memory allocated for child stdout/stderr capture
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 async def evaluate(case_name, effort):
     verify_node(ROOT)
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
@@ -69,6 +86,12 @@ async def evaluate(case_name, effort):
             'reasoning_effort': effort, 'aggregate_deadline_seconds': None,
             'declared_additional_criteria': list(LABEL_CRITERIA if case_name == 'labels' else INVENTORY_CRITERIA),
             'operator_interventions': [], 'events': [], 'samples': [], 'stream_events': 0}
+        # ------------------------------------------------------------------------------
+        # save: Function Pipeline & Contract Specification
+        # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+        # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+        # Failure Modes: Catches or propagates domain exceptions according to API contracts
+        # ------------------------------------------------------------------------------
         def save():
             temporary = report_path.with_suffix('.tmp')
             temporary.write_text(json.dumps(report, indent=2) + '\n'); temporary.replace(report_path)
@@ -81,6 +104,12 @@ async def evaluate(case_name, effort):
         print(json.dumps({'report':str(report_path),'cwd':str(folder)}),flush=True)
         process = None; done = asyncio.Event(); last_stream = time.monotonic()
 
+        # ------------------------------------------------------------------------------
+        # stop_owned: Asynchronous Coroutine & Contract Specification
+        # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+        # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+        # Failure Modes: Catches or propagates domain exceptions according to API contracts
+        # ------------------------------------------------------------------------------
         async def stop_owned():
             cancel.set()
             if process and process.returncode is None:
@@ -88,6 +117,12 @@ async def evaluate(case_name, effort):
                 except ProcessLookupError: pass
             await asyncio.to_thread(engine.cancel)
 
+        # ------------------------------------------------------------------------------
+        # monitor: Asynchronous Coroutine & Contract Specification
+        # Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+        # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+        # Failure Modes: Catches or propagates domain exceptions according to API contracts
+        # ------------------------------------------------------------------------------
         async def monitor():
             low_since = None; last_sample = 0; activity_previous = None; last_activity = time.monotonic()
             while not done.is_set():

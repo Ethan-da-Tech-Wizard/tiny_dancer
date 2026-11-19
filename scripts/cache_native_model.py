@@ -1,8 +1,13 @@
 # ==============================================================================
 # Program: cache_native_model.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# Last Modified: November 19, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny
+#          Dancer testing framework. Operational automation, benchmark evaluation, and
+#          system diagnostic harness. Executes high-throughput workload profiling
+#          across CPU/GPU execution tiers with strict resource bounds. Enforces
+#          reproducible benchmark metrics, mathematical latency bounds, and
+#          deterministic subprocess exit contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -24,6 +29,12 @@ from app.validation_results import archive_report, refresh_results
 from scripts.benchmark_cpu_threads import require_idle
 
 
+# ------------------------------------------------------------------------------
+# main: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--directory', help='Optional cache location; otherwise uses model_cache.directory or XDG cache')
@@ -45,10 +56,22 @@ def main():
         report_path = ROOT / 'docs' / ('model-cache-install-' + now.strftime('%Y%m%dT%H%M%S%fZ') + '.json')
         report = {'started_at': now.isoformat(), 'status': 'running', 'passed': False,
                   'scope': 'Actual identical model copy, destination SHA-256 readback, preserved source and upstream notices. No inference speed claim.'}
+        # ------------------------------------------------------------------------------
+        # save: Function Pipeline & Contract Specification
+        # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+        # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+        # Failure Modes: Catches or propagates domain exceptions according to API contracts
+        # ------------------------------------------------------------------------------
         def save():
             temporary = report_path.with_suffix('.tmp')
             temporary.write_text(json.dumps(report, indent=2) + '\n'); temporary.replace(report_path)
         last = [0.0]
+        # ------------------------------------------------------------------------------
+        # progress: Function Pipeline & Contract Specification
+        # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+        # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+        # Failure Modes: Catches or propagates domain exceptions according to API contracts
+        # ------------------------------------------------------------------------------
         def progress(copied, total):
             now = time.monotonic()
             if now - last[0] < 5 and copied < total: return

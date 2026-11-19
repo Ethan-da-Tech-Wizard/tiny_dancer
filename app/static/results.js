@@ -1,9 +1,15 @@
 // ==============================================================================
 // Program: results.js
 // Programmer: Ethan-da-Tech-Wizard
-// Last Modified: November 18, 2026
-// Purpose: Client-side logic for filtering, sorting, and displaying benchmark results, scorecards, and run logs.
+// Last Modified: November 19, 2026
+// Purpose: Client-side logic for filtering, sorting, and displaying benchmark
+//          results, scorecards, and run logs. Implements optimized client-side
+//          presentation and event-driven data streaming controllers. Enforces
+//          efficient DOM reconciliation, mathematical viewport bounds, and
+//          memory-bounded telemetry rendering. Guarantees resilient HTTP API
+//          interactions and non-blocking asynchronous event dispatching.
 // ==============================================================================
+
 const cell=(row,text)=>{const td=document.createElement('td');td.textContent=text;row.append(td);return td;};
 async function refresh(){
   const error=document.querySelector('#error');

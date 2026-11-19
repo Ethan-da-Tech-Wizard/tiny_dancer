@@ -1,8 +1,13 @@
 # ==============================================================================
 # Program: validate_generation_budget_ui.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# Last Modified: November 19, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny
+#          Dancer testing framework. Operational automation, benchmark evaluation, and
+#          system diagnostic harness. Executes high-throughput workload profiling
+#          across CPU/GPU execution tiers with strict resource bounds. Enforces
+#          reproducible benchmark metrics, mathematical latency bounds, and
+#          deterministic subprocess exit contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -25,6 +30,12 @@ BASE = 'http://127.0.0.1:3210'
 SID = 'e49878f2e88542cdaefe0fe660e32307'
 
 
+# ------------------------------------------------------------------------------
+# main: Asynchronous Coroutine & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 async def main():
     report = {'at': datetime.now(timezone.utc).isoformat(), 'checks': {}, 'errors': [],
               'scope': 'Actual nullable/bounded API validation against a nonexistent session, plus intercepted browser POSTs. No native task started, resumed or stopped.'}
@@ -49,11 +60,23 @@ async def main():
                 posted = []
                 received = asyncio.Event()
 
+                # ------------------------------------------------------------------------------
+                # task_route: Asynchronous Coroutine & Contract Specification
+                # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+                # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+                # Failure Modes: Catches or propagates domain exceptions according to API contracts
+                # ------------------------------------------------------------------------------
                 async def task_route(route):
                     posted.append(route.request.post_data_json)
                     await route.fulfill(json={'job': 'budget-fixture'})
                     received.set()
 
+                # ------------------------------------------------------------------------------
+                # fixture_route: Asynchronous Coroutine & Contract Specification
+                # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+                # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+                # Failure Modes: Catches or propagates domain exceptions according to API contracts
+                # ------------------------------------------------------------------------------
                 async def fixture_route(route):
                     if route.request.url.endswith('/events'):
                         await route.fulfill(content_type='text/event-stream', body='event: closed\ndata: {}\n\n')

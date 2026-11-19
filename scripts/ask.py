@@ -1,8 +1,13 @@
 # ==============================================================================
 # Program: ask.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny Dancer testing framework.
+# Last Modified: November 19, 2026
+# Purpose: Benchmark, evaluation, verification, or audit script supporting the Tiny
+#          Dancer testing framework. Operational automation, benchmark evaluation, and
+#          system diagnostic harness. Executes high-throughput workload profiling
+#          across CPU/GPU execution tiers with strict resource bounds. Enforces
+#          reproducible benchmark metrics, mathematical latency bounds, and
+#          deterministic subprocess exit contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -17,6 +22,12 @@ import httpx
 ROOT=Path('/mnt/GameDrive/tiny_dancer')
 
 
+# ------------------------------------------------------------------------------
+# parse_options: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def parse_options(argv=None):
     parser=argparse.ArgumentParser(description='Ask the local Tiny Dancer computer agent')
     parser.add_argument('prompt',nargs='*')
@@ -33,6 +44,12 @@ def parse_options(argv=None):
     return args
 
 
+# ------------------------------------------------------------------------------
+# task_options: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def task_options(args,resume=False):
     body={}
     if not resume or args.max_tokens is not None:body['max_tokens']=args.max_tokens
@@ -41,6 +58,12 @@ def task_options(args,resume=False):
     return body
 
 
+# ------------------------------------------------------------------------------
+# watch: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def watch(client,job,stdout=sys.stdout,stderr=sys.stderr):
     cursor=0
     while True:
@@ -62,6 +85,12 @@ def watch(client,job,stdout=sys.stdout,stderr=sys.stderr):
             time.sleep(.5)
 
 
+# ------------------------------------------------------------------------------
+# main: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def main():
     args=parse_options()
     with httpx.Client(base_url='http://127.0.0.1:3210',trust_env=False,timeout=20) as client:

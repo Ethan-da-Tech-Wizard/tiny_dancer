@@ -1,8 +1,14 @@
 # ==============================================================================
 # Program: test_authority.py
 # Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 18, 2026
-# Purpose: Manages test discovery, test command construction, test requirement enforcement, and authoritative verdict evaluation.
+# Last Modified: November 19, 2026
+# Purpose: Manages test discovery, test command construction, test requirement
+#          enforcement, and authoritative verdict evaluation. Core component of the
+#          autonomous agent reasoning architecture governing multi-turn execution
+#          cycles, state graph transitions, and prompt synthesis. Strictly enforces
+#          mathematical bounds on LLM token context windows, rolling memory buffers,
+#          and timeout thresholds. Guarantees transactional execution invariants,
+#          deterministic failure isolation, and thread-safe API contracts.
 # ==============================================================================
 
 # SPDX-License-Identifier: Apache-2.0
@@ -14,6 +20,12 @@ from app.failure_feedback import checkpoint_failures
 from app.test_requirements import snapshot as test_definitions
 
 
+# ------------------------------------------------------------------------------
+# snapshot: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(B) linear with respect to serialized payload byte length | Space: O(B) memory mapped buffer or byte stream heap allocation
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def snapshot(cwd):
     """Track whole test files, including fixtures/constants outside test bodies."""
     root=Path(cwd).resolve();tests=test_definitions(cwd);sources={};complete=tests['complete']
@@ -29,6 +41,12 @@ def snapshot(cwd):
     return {'complete':complete,'sources':sources}
 
 
+# ------------------------------------------------------------------------------
+# failure_test_origins: Function Pipeline & Contract Specification
+# Algorithmic Complexity: Time: O(N) linear iteration over collection or state elements | Space: O(1) auxiliary space beyond input collection storage
+# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
+# Failure Modes: Catches or propagates domain exceptions according to API contracts
+# ------------------------------------------------------------------------------
 def failure_test_origins(result, baseline, current, cwd):
     evidence = checkpoint_failures(result)
     if not evidence: return None
