@@ -292,7 +292,7 @@ def status():
         'disk':{'free':disk.free,'total':disk.total}, 'cpu_percent':psutil.cpu_percent(),
         'config':engine.config, 'metrics':engine.last_timing,
         'tools':[t['name'] for t in TOOLS],
-        'task':task_snapshot(active_job) if active_job else None}
+        'task':task_snapshot(active_job) if active_job in tasks else None}
 
 def task_snapshot(job):
     """Small public progress record for polling if browser streaming disconnects.
@@ -472,10 +472,15 @@ async def resume(job: str, options: ResumeTask):
 @app.post('/api/jobs/{job}/stop')
 async def stop(job):
     """Cancel the running job: flag the agent, kill model generation, cancel the task."""
-    if job not in cancel_flags: raise HTTPException(404, 'Task is not running')
-    cancel_flags[job].set()
+    # Read both maps with .get(): run_agent's finally block removes entries from them as the task ends,
+    # so a stop request racing the end of a task used to hit KeyError on tasks[job] and return a 500.
+    flag = cancel_flags.get(job)
+    if flag is None: raise HTTPException(404, 'Task is not running')
+    flag.set()
     engine.cancel()
-    tasks[job].cancel()
+    task = tasks.get(job)
+    # No task object means it already finished; the flag and engine.cancel() above are harmless then.
+    if task is not None: task.cancel()
     return {'stopped':True}
 
 @app.get('/api/jobs/{job}')
@@ -530,8 +535,27 @@ def models(): return {'object':'list','data':[{'id':'gpt-oss-20b','object':'mode
 
 @app.post('/v1/chat/completions')
 async def completions(request: Request):
-    """OpenAI-style model list so compatible clients can discover the local model."""
+    """OpenAI-compatible non-streaming chat completion served by the local model.
+
+    Takes the single-task lock (active_job) for the whole generation: the model process and RAM budget
+    are shared with the agent, so a task must not start (start_task/resume/change_directory all check
+    active_job and answer 409) while this request is generating.
+    """
+    global active_job
     if active_job: raise HTTPException(409, 'Computer agent is using the model')
+    # Claim the lock BEFORE the first await (request.json() yields to the event loop); otherwise two
+    # requests, or a task start, could both pass the check above. The id is not a real job row; status()
+    # only builds a task snapshot for ids present in `tasks`.
+    lock_id = 'chat-' + uuid.uuid4().hex
+    active_job = lock_id
+    try:
+        return await _completions_locked(request)
+    finally:
+        # Release only our own claim, and on every exit path (400s, generation errors, cancellation).
+        if active_job == lock_id: active_job = None
+
+async def _completions_locked(request: Request):
+    """Body of completions(); runs while the caller holds the active_job lock."""
     data = await request.json()
     if data.get('stream'): raise HTTPException(400, 'Use workspace events for streaming; this compatibility endpoint is non-streaming')
     instructions = '\n'.join(m.get('content','') for m in data.get('messages',[]) if m['role'] in ('system','developer'))
@@ -541,8 +565,7 @@ async def completions(request: Request):
             history.append(Message.from_role_and_content(Role(m['role']),m.get('content','')).to_dict())
     if not history: raise HTTPException(400, 'messages are required')
     try:
-        # generate() blocks, so it runs in a worker thread. NOTE (possible bug): this
-        # path does not set active_job, so a task could start while it is generating.
+        # generate() blocks, so it runs in a worker thread; the caller's active_job claim covers it.
         replies, reason = await asyncio.to_thread(engine.generate, history, str(ROOT/'workspace'), lambda *_:None,
             threading.Event(), False, min(2048, int(data.get('max_tokens',512))))
     except Exception as exc: raise HTTPException(500, str(exc))
