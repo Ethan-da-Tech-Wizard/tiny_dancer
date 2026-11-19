@@ -54,12 +54,12 @@ from app.agent import AgentRun
 from app.history import task_history
 from app.validation_results import collect_results,evidence_path
 
-# # Everything mutable (database, token, artifacts, task checkpoints) lives under
-# # run/ so the repo tree stays clean and the folder can be wiped to reset state.
+# Everything mutable (database, token, artifacts, task checkpoints) lives under
+# run/ so the repo tree stays clean and the folder can be wiped to reset state.
 RUN = ROOT / 'run'
 RUN.mkdir(exist_ok=True)
-# # Created with O_EXCL and 0600 so two starting processes cannot both mint a
-# # token and other local users cannot read it.
+# Created with O_EXCL and 0600 so two starting processes cannot both mint a
+# token and other local users cannot read it.
 TOKEN = RUN / 'access-token'
 if not TOKEN.exists():
     fd = os.open(TOKEN, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
@@ -67,8 +67,8 @@ if not TOKEN.exists():
 token = TOKEN.read_text().strip()
 os.chmod(TOKEN, 0o600)
 DB = RUN / 'workspace.sqlite3'
-# # sqlite3 connections are opened per call; this lock serialises writers across
-# # the event loop and the agent's worker threads to avoid "database is locked".
+# sqlite3 connections are opened per call; this lock serialises writers across
+# the event loop and the agent's worker threads to avoid "database is locked".
 db_lock = threading.Lock()
 
 def query(sql, params=(), one=False):
@@ -88,11 +88,11 @@ def query(sql, params=(), one=False):
         rows = [dict(r) for r in cursor.fetchall()] if cursor.description else []
         return (rows[0] if rows else None) if one else rows
 
-# # Schema is created idempotently on every start. WAL lets the SSE reader poll
-# # events while the agent thread writes them. Tables: sessions (a workspace),
-# # messages (Harmony JSON + display text), jobs (one per task run), events
-# # (the stream replayed by /events), job_context (original request + latest
-# # checkpoint so a task can be resumed after restart).
+# Schema is created idempotently on every start. WAL lets the SSE reader poll
+# events while the agent thread writes them. Tables: sessions (a workspace),
+# messages (Harmony JSON + display text), jobs (one per task run), events
+# (the stream replayed by /events), job_context (original request + latest
+# checkpoint so a task can be resumed after restart).
 with sqlite3.connect(DB) as con:
     con.executescript('''PRAGMA journal_mode=WAL;
     CREATE TABLE IF NOT EXISTS sessions(id TEXT PRIMARY KEY,title TEXT,cwd TEXT,created REAL);
@@ -103,11 +103,11 @@ with sqlite3.connect(DB) as con:
     CREATE INDEX IF NOT EXISTS events_job ON events(job,id);
     CREATE INDEX IF NOT EXISTS messages_session ON messages(session,id);
     ''')
-# # A job still 'running' at startup belongs to a dead process; mark it
-# # interrupted so the UI offers Resume instead of showing a phantom run.
+# A job still 'running' at startup belongs to a dead process; mark it
+# interrupted so the UI offers Resume instead of showing a phantom run.
 query("UPDATE jobs SET status='interrupted',finished=? WHERE status='running'", (time.time(),))
-# # Process-wide singletons: one engine (one model process) and one tool host.
-# # active_job is the single-task lock; cancel_flags/tasks are keyed by job id.
+# Process-wide singletons: one engine (one model process) and one tool host.
+# active_job is the single-task lock; cancel_flags/tasks are keyed by job id.
 engine = LocalEngine()
 tools = ComputerTools()
 tasks = {}
@@ -178,8 +178,8 @@ async def lifespan(app):
     await asyncio.gather(*list(tasks.values()), return_exceptions=True)
     await tools.close()
 
-# # Interactive docs are disabled: this API is not meant to be browsed by
-# # anything but the bundled page.
+# Interactive docs are disabled: this API is not meant to be browsed by
+# anything but the bundled page.
 app = FastAPI(title='Tiny Dancer', lifespan=lifespan, docs_url=None, redoc_url=None)
 
 @app.middleware('http')
@@ -190,7 +190,7 @@ async def local_auth(request, call_next):
     methods (CSRF), then the token for /api, /v1 and /artifacts. hmac.compare_digest
     avoids timing leaks. Security headers are added to every response.
     """
-    # # 'testserver' is Starlette's TestClient host, needed by the unit tests.
+    # 'testserver' is Starlette's TestClient host, needed by the unit tests.
     host = request.headers.get('host', '').split(':')[0]
     if host not in ('127.0.0.1', 'localhost', 'testserver'):
         return JSONResponse({'detail':'Invalid local host'}, status_code=403)
@@ -204,11 +204,11 @@ async def local_auth(request, call_next):
         if not (hmac.compare_digest(cookie, token) or hmac.compare_digest(bearer, token)):
             return JSONResponse({'detail':'Open the local workspace first, or supply its local access token'}, status_code=401)
     response = await call_next(request)
-    # # nosniff/DENY stop content sniffing and framing; no-store keeps task data out
-    # # of browser caches.
+    # nosniff/DENY stop content sniffing and framing; no-store keeps task data out
+    # of browser caches.
     response.headers.update({'X-Content-Type-Options':'nosniff', 'X-Frame-Options':'DENY',
         'Referrer-Policy':'same-origin', 'Cache-Control':'no-store'})
-    # # The cookie is only issued when the user opens the UI pages themselves.
+    # The cookie is only issued when the user opens the UI pages themselves.
     if request.url.path in ('/','/results'): response.set_cookie('tiny_dancer', token, httponly=True, samesite='strict')
     return response
 
@@ -227,7 +227,7 @@ def test_evidence(identifier: str):
     try: return FileResponse(evidence_path(ROOT,identifier,collect_results(ROOT)))
     except ValueError: raise HTTPException(404,'Unknown test evidence')
 
-# # Static assets for the page; artifacts are files tools produced during runs.
+# Static assets for the page; artifacts are files tools produced during runs.
 app.mount('/static', StaticFiles(directory=str(ROOT / 'app/static')), name='static')
 app.mount('/artifacts', StaticFiles(directory=str(RUN / 'artifacts')), name='artifacts')
 
@@ -280,7 +280,7 @@ def status():
     """
     vm = psutil.virtual_memory()
     disk = psutil.disk_usage(ROOT)
-    # # poll() not None means the llama server exited behind our back.
+    # poll() not None means the llama server exited behind our back.
     if engine.session and engine.session.proc.poll() is not None and engine.status in ('ready', 'generating', 'processing prompt'):
         engine.status = 'not loaded'
     child = engine.starting_proc or (engine.session.proc if engine.session else None)
@@ -355,14 +355,14 @@ async def start_task(sid: str, data: NewTask):
     if data.mode not in ('agent', 'chat'): raise HTTPException(400, 'Choose agent or chat mode')
     if not (ROOT / engine.config['model_path'] / 'INSTALL_COMPLETE').exists():
         raise HTTPException(503, 'Model installation is still in progress. See logs/model-convert.log.')
-    # # First prompt names the session so the sidebar is readable.
+    # First prompt names the session so the sidebar is readable.
     if s['title'] == 'New session': query('UPDATE sessions SET title=? WHERE id=?', (data.prompt[:60], sid))
     goal_id = save_message(sid, Message.from_role_and_content(Role.USER, data.prompt))
     job = uuid.uuid4().hex
     query('INSERT INTO jobs VALUES(?,?,?,?,NULL)', (job, sid, 'running', time.time()))
     query('INSERT INTO job_context VALUES(?,?,NULL)', (job, data.model_dump_json()))
-    # # context_start marks where the prompt window begins; agent runs start at the
-    # # goal message so earlier chat in the session does not leak into the task.
+    # context_start marks where the prompt window begins; agent runs start at the
+    # goal message so earlier chat in the session does not leak into the task.
     checkpoint = {'job_id':job, 'goal_message_id': goal_id, 'context_start': goal_id if data.mode == 'agent' else 0,
                   'context_insert_goal': False}
     flag = threading.Event()
@@ -398,8 +398,8 @@ async def run_agent(job, s, data, flag, checkpoint=None):
                                                   'evidence_checked':run.state['evidence_checked'],
                                                   'answer_origin':'checked_export' if run.state.get('data_check',{}).get('export') else 'checked_lookup' if run.state.get('data_check') else 'model'})
         else: event(job, 'paused', {'status':result, 'message':run.state.get('blocked_reason') or run.state.get('next_action') or 'Reply budget reached; history saved.'})
-    # # Cancelled is the user's Stop; CancelledError is server shutdown. Both are
-    # # normal endings, not failures.
+    # Cancelled is the user's Stop; CancelledError is server shutdown. Both are
+    # normal endings, not failures.
     except (Cancelled, asyncio.CancelledError):
         event(job, 'cancelled', {'message':'Task stopped. Completed tool actions remain in the history.'})
         query("UPDATE jobs SET status='cancelled',finished=? WHERE id=?", (time.time(), job))
@@ -444,8 +444,8 @@ async def resume(job: str, options: ResumeTask):
         if checkpoint.get('cwd'):
             if not Path(checkpoint['cwd']).is_dir(): raise HTTPException(400, 'The saved task folder no longer exists')
             s['cwd'] = checkpoint['cwd']
-    # # Compact summary for the model: plan, last failure and the last 8 checks,
-    # # with outputs clipped to 500 chars.
+    # Compact summary for the model: plan, last failure and the last 8 checks,
+    # with outputs clipped to 500 chars.
     notes = {key:checkpoint[key] for key in ('goal','steps','summary','next_action','cwd','turns','last_failure') if key in checkpoint}
     notes['last_checks'] = [{key:check[key] for key in ('command','exit_code','timed_out') if key in check}
                            | {'output':str(check.get('output',''))[:500]} for check in checkpoint.get('checks', [])[-8:]]
@@ -454,7 +454,7 @@ async def resume(job: str, options: ResumeTask):
         f'Full previous history remains in run/workspace.sqlite3; durable task state is /mnt/GameDrive/tiny_dancer/run/tasks/{job}.json. '
         'This concise checkpoint is a starting point; re-read needed files and results before acting. '
         + json.dumps(notes)[:6000]))
-    # # Compact: prompt restarts at the resume note. Otherwise replay from the goal.
+    # Compact: prompt restarts at the resume note. Otherwise replay from the goal.
     if options.compact_context and data.mode == 'agent':
         checkpoint['context_start'] = resume_id
         checkpoint['context_insert_goal'] = True
@@ -541,8 +541,8 @@ async def completions(request: Request):
             history.append(Message.from_role_and_content(Role(m['role']),m.get('content','')).to_dict())
     if not history: raise HTTPException(400, 'messages are required')
     try:
-        # # generate() blocks, so it runs in a worker thread. NOTE (possible bug): this
-        # # path does not set active_job, so a task could start while it is generating.
+        # generate() blocks, so it runs in a worker thread. NOTE (possible bug): this
+        # path does not set active_job, so a task could start while it is generating.
         replies, reason = await asyncio.to_thread(engine.generate, history, str(ROOT/'workspace'), lambda *_:None,
             threading.Event(), False, min(2048, int(data.get('max_tokens',512))))
     except Exception as exc: raise HTTPException(500, str(exc))
