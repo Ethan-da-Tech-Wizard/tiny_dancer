@@ -1,15 +1,26 @@
 # ==============================================================================
-# Program: tools.py
-# Programmer: Ethan-da-Tech-Wizard
-# Last Modified: November 19, 2026
-# Purpose: Defines the agent tool execution registry, providing sandboxed filesystem
-#          manipulation, code search, bash command invocation, and structured result
-#          formatting. Core component of the autonomous agent reasoning architecture
-#          governing multi-turn execution cycles, state graph transitions, and prompt
-#          synthesis. Strictly enforces mathematical bounds on LLM token context
-#          windows, rolling memory buffers, and timeout thresholds. Guarantees
-#          transactional execution invariants, deterministic failure isolation, and
-#          thread-safe API contracts.
+# app/tools.py - the tools the model can call, their schemas, and their handlers
+#
+# Role in the app: app/engine.py advertises TOOLS (JSON-schema function
+# definitions filtered per task by app/task_policy.tools_for) to the model, and
+# app/agent.py executes the calls the model emits through ComputerTools.execute().
+# app/server.py also uses ComputerTools directly for the editor and
+# live-observation endpoints. Heavy handlers live in sibling modules
+# (batching, patches, language_tools, facts) and are imported lazily so that a
+# plain chat or an answer task does not pay their import cost.
+#
+# Safety notes: tools run as the logged-in user with no sandbox; the guard rails
+# are policy-level (task contract, preserved-file checks, audit log in
+# server.event) rather than OS-level. File reads accept either a path or an
+# '/artifacts/...' reference to a saved tool output; the latter is confined to
+# run/artifacts (no '..' escape). Every command's full output is saved to disk
+# and only a bounded slice goes back to the model.
+#
+# Result convention: handlers return plain dicts. Errors are raised and turned
+# into {'error': ...} by the caller. 'artifact' values are URLs under /artifacts.
+#
+# Known limits: Linux/Hyprland/Wayland specific (hyprctl, grim, wl-copy,
+# tesseract); ROOT is the fixed install path /mnt/GameDrive/tiny_dancer.
 # ==============================================================================
 
 """Computer tools run as the logged-in user. Every invocation is audited by the agent."""
@@ -26,18 +37,25 @@ from app.tool_runtime import tool_environment
 from app.verification import test_command
 from app.facts import fetch_json, nfl_scores
 
+# Fixed install location on the target machine; all runtime data hangs off it.
 ROOT = Path('/mnt/GameDrive/tiny_dancer')
+# Saved tool outputs (command logs, screenshots, fetched JSON). Served to the
+# UI at /artifacts and re-readable by the model via read_file.
 ARTIFACTS = ROOT / 'run/artifacts'
 ARTIFACTS.mkdir(parents=True, exist_ok=True)
 
-# ------------------------------------------------------------------------------
-# graphical_env: Function Pipeline & Contract Specification
-# Algorithmic Complexity: Time: O(P) bounded by external process execution timeout and IPC throughput | Space: O(B) stream buffer memory allocated for child stdout/stderr capture
-# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-# Failure Modes: Catches or propagates domain exceptions according to API contracts
-# ------------------------------------------------------------------------------
 def graphical_env():
-    """Resolve the active compositor socket instead of a stale login value."""
+    """Build an environment that can reach the running Hyprland session.
+
+    The agent usually starts from a systemd service whose WAYLAND_DISPLAY can be
+    stale after a re-login, so the live socket is asked from hyprctl each call.
+    Failure is silent: the caller then just gets the inherited environment and
+    the GUI command fails visibly on its own.
+
+    Returns:
+        A copy of os.environ with XDG_RUNTIME_DIR, WAYLAND_DISPLAY and
+        HYPRLAND_INSTANCE_SIGNATURE set when a live instance was found.
+    """
     env = os.environ.copy()
     env.setdefault('XDG_RUNTIME_DIR', f'/run/user/{os.getuid()}')
     try:
@@ -50,25 +68,26 @@ def graphical_env():
         pass
     return env
 
-# ------------------------------------------------------------------------------
-# brief_window: Function Pipeline & Contract Specification
-# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
-# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-# Failure Modes: Catches or propagates domain exceptions according to API contracts
-# ------------------------------------------------------------------------------
 def brief_window(window):
+    """Keep only the window fields useful to a text-only model (drops icons, flags)."""
     return {key:window[key] for key in ('address','class','title','pid','at','size','workspace','focusHistoryID') if key in window}
 
-# ------------------------------------------------------------------------------
-# schema: Function Pipeline & Contract Specification
-# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
-# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-# Failure Modes: Catches or propagates domain exceptions according to API contracts
-# ------------------------------------------------------------------------------
 def schema(name, description, properties, required=()):
+    """Build one OpenAI/Harmony function definition.
+
+    Args:
+        name: tool name the model calls.
+        description: what the tool does (spends prompt tokens on every cold task).
+        properties: JSON-schema property map.
+        required: names of mandatory arguments.
+    additionalProperties is False so the model cannot invent parameters.
+    """
     return {'name': name, 'description': description, 'parameters': {
         'type': 'object', 'properties': properties, 'required': list(required), 'additionalProperties': False}}
 
+# The full tool catalogue. Which subset a given task sees is decided by
+# task_policy.tools_for(); the descriptions here are the verbose originals and
+# are replaced by COMPACT_DESCRIPTIONS below.
 TOOLS = [
     schema('discover_tools', 'Enable missing language or toolset: web, desktop, editor. Discovery performs no actions.',
         {'language': {'type':'string','enum':['python','rust']},'toolset':{'type':'string','enum':['web','desktop','editor']}}),
@@ -107,6 +126,8 @@ TOOLS = [
         {'summary': {'type':'string'}, 'checks': {'type':'array','items':{'type':'string'}}, 'blocked_reason': {'type':'string'}}, ['summary']),
 ]
 
+# Short descriptions cut prompt size (and first-token latency) for every cold
+# task; the longer text above remains the reference documentation.
 # Descriptions affect prefill cost on every cold task. Keep behavior in handlers,
 # with enough interface detail for the model to select and call each tool.
 COMPACT_DESCRIPTIONS={
@@ -122,52 +143,66 @@ COMPACT_DESCRIPTIONS={
     'editor':'Code OSS: open(path,line), status. Save files with file tools; inspect screen with desktop.',
     'task_progress':'Save checklist and progress. Mark steps done after checking them.',
     'finish_task':'Finish with summary and relevant executable checks for work, or cited evidence for questions. Give blocked_reason when unable to continue.'}
+# Swap in the compact text where one exists (lookup tools keep their original).
 for definition in TOOLS:
     definition['description']=COMPACT_DESCRIPTIONS.get(definition['name'],definition['description'])
 
-# ------------------------------------------------------------------------------
-# path_for: Function Pipeline & Contract Specification
-# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
-# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-# Failure Modes: Catches or propagates domain exceptions according to API contracts
-# ------------------------------------------------------------------------------
 def path_for(value, cwd):
+    """Resolve a user/model path against the session cwd.
+
+    Relative paths are joined to cwd, ~ is expanded and symlinks resolved so
+    that later containment comparisons (same-folder checks) are reliable.
+    """
     p = Path(value).expanduser()
     return (p if p.is_absolute() else Path(cwd) / p).resolve()
 
-# ------------------------------------------------------------------------------
-# observation_path: Function Pipeline & Contract Specification
-# Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
-# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-# Failure Modes: Catches or propagates domain exceptions according to API contracts
-# ------------------------------------------------------------------------------
 def observation_path(value,cwd):
-    """Resolve saved web artifact references only for read operations."""
+    """Resolve saved web artifact references only for read operations.
+
+    Returns:
+        (path, is_artifact_reference). Raises ValueError when the reference
+        tries to leave run/artifacts via '..' or a symlink.
+    """
     if isinstance(value,str) and (value=='/artifacts' or value.startswith('/artifacts/')):
         relative=value.removeprefix('/artifacts').lstrip('/')
+        # Two layers of escape checks: the textual one gives a clear message, the
+        # resolved-path one catches symlinks.
         if '..' in Path(relative).parts:raise ValueError('Artifact reference cannot leave the artifact directory')
         base=ARTIFACTS.resolve();path=(base/relative).resolve()
         if not path.is_relative_to(base):raise ValueError('Artifact reference cannot leave the artifact directory')
         return path,True
     return path_for(value,cwd),False
 
-# ------------------------------------------------------------------------------
-# shell: Asynchronous Coroutine & Contract Specification
-# Algorithmic Complexity: Time: O(B) linear with respect to serialized payload byte length | Space: O(B) memory mapped buffer or byte stream heap allocation
-# Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-# Failure Modes: Catches or propagates domain exceptions according to API contracts
-# ------------------------------------------------------------------------------
 async def shell(command, cwd, timeout=120):
+    """Run a bash command, capture combined output to an artifact, and kill it on timeout.
+
+    Args:
+        command: shell text executed by /bin/bash -c.
+        cwd: working directory.
+        timeout: seconds, clamped to 1..300.
+    Returns:
+        dict with exit_code, timed_out, output (bounded to ~16 KB: first and
+        last 8 KB), truncated, artifact (full log URL) and, for test commands,
+        python_bytecode='fresh_source'.
+    Raises:
+        asyncio.CancelledError: after killing the process group.
+    """
     timeout = max(1, min(int(timeout), 300))
     out = ARTIFACTS / f'command-{uuid.uuid4().hex}.txt'
     env=tool_environment()
+    # Test runs must see the current source, so stale bytecode is made impossible.
     fresh_source=test_command(command)
     if fresh_source:
+        # mtime-based .pyc invalidation misses rapid
+        # same-size rewrites, which agents do constantly.
         # Same-size edits within one filesystem timestamp tick can otherwise
         # run a stale .pyc. An empty, unique cache prefix ignores old bytecode;
         # disabling writes avoids accumulating caches or changing source files.
         env['PYTHONPYCACHEPREFIX']=str(ROOT/'cache/test-bytecode'/uuid.uuid4().hex)
         env['PYTHONDONTWRITEBYTECODE']='1'
+    # Output goes straight to a file, not a pipe, so a chatty command cannot block
+    # on a full pipe buffer or balloon memory. start_new_session makes the shell the
+    # leader of its own process group so the whole tree can be killed.
     with out.open('wb') as f:
         proc = await asyncio.create_subprocess_exec('/bin/bash', '-c', command, cwd=cwd,
             stdout=f, stderr=asyncio.subprocess.STDOUT, start_new_session=True,env=env)
@@ -176,6 +211,7 @@ async def shell(command, cwd, timeout=120):
             await asyncio.wait_for(proc.wait(), timeout)
         except (asyncio.TimeoutError, asyncio.CancelledError) as exc:
             try:
+                # Polite SIGTERM to the group first, SIGKILL after 2 s if it ignores it.
                 os.killpg(proc.pid, signal.SIGTERM)
                 await asyncio.wait_for(proc.wait(), 2)
             except (ProcessLookupError, asyncio.TimeoutError):
@@ -184,6 +220,8 @@ async def shell(command, cwd, timeout=120):
                 await proc.wait()
             if isinstance(exc, asyncio.CancelledError): raise
             timed_out = True
+    # The model gets head+tail (8000 chars each): errors usually sit at the end,
+    # the command banner at the start.
     # Keep full output on disk, bound the text sent back to the model.
     with out.open('rb') as f:
         size=out.stat().st_size
@@ -195,20 +233,20 @@ async def shell(command, cwd, timeout=120):
             'truncated': out.stat().st_size > 16000, 'artifact': '/artifacts/' + out.name,
             **({'python_bytecode':'fresh_source'} if fresh_source else {})}
 
-# ------------------------------------------------------------------------------
-# ComputerTools: Class State Encapsulation & Contract Specification
-# Algorithmic Complexity: Time: O(1) instantiation overhead | Space: O(M) memory model allocation for instance state and attribute dict
-# Invariant: Enforces structural invariants and thread-safe state mutations across member calls
-# Failure Modes: Raises TypeError or AttributeError upon illegal state transition or contract violation
-# ------------------------------------------------------------------------------
 class ComputerTools:
-    # ------------------------------------------------------------------------------
-    # __init__: Function Pipeline & Contract Specification
-    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
-    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-    # Failure Modes: Catches or propagates domain exceptions according to API contracts
-    # ------------------------------------------------------------------------------
+    """Executor for every model-callable tool plus the persistent browser.
+
+    One instance is shared by the server. The Playwright browser is created lazily
+    and protected by browser_lock so concurrent callers (agent and the live
+    observation endpoint) do not interleave page operations.
+    """
     def __init__(self, browser_profile=None):
+        """Set up lazy browser state; nothing is launched until the first browser call.
+
+        Args:
+            browser_profile: persistent profile folder (cookies survive restarts);
+                defaults to run/browser-profile.
+        """
         self.playwright = None
         self.context = None
         self.page = None
@@ -216,39 +254,37 @@ class ComputerTools:
         self.browser_profile = Path(browser_profile) if browser_profile else ROOT / 'run/browser-profile'
         self.last_browser_activity = time.monotonic()
 
-    # ------------------------------------------------------------------------------
-    # release_idle_browser: Asynchronous Coroutine & Contract Specification
-    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
-    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-    # Failure Modes: Catches or propagates domain exceptions according to API contracts
-    # ------------------------------------------------------------------------------
     async def release_idle_browser(self, seconds):
+        """Close the browser if it has been unused for `seconds` and nobody holds the lock."""
         if not self.context or self.browser_lock.locked() or time.monotonic() - self.last_browser_activity < seconds:
             return False
         async with self.browser_lock:
             await self.close()
         return True
 
-    # ------------------------------------------------------------------------------
-    # close: Asynchronous Coroutine & Contract Specification
-    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
-    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-    # Failure Modes: Catches or propagates domain exceptions according to API contracts
-    # ------------------------------------------------------------------------------
     async def close(self):
+        """Shut down the browser context and Playwright driver (safe to call twice)."""
         if self.context: await self.context.close()
         if self.playwright: await self.playwright.stop()
         self.context = self.page = self.playwright = None
 
-    # ------------------------------------------------------------------------------
-    # browser: Asynchronous Coroutine & Contract Specification
-    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
-    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-    # Failure Modes: Catches or propagates domain exceptions according to API contracts
-    # ------------------------------------------------------------------------------
     async def browser(self, args):
+        """Perform one browser action on the persistent Chromium page.
+
+        Args:
+            args: {'action': open|inspect|click|fill|press|screenshot|evaluate, ...}
+                with url/selector/text/key/script as the action needs.
+        Returns:
+            For open/inspect/click/fill/press: url, http_status (open only), title,
+            up to 14000 chars of main text, up to 60 content links, and up to 50
+            form fields. For screenshot: artifact URL. For evaluate: its result.
+        Raises:
+            ValueError for an unknown action; Playwright errors propagate.
+        """
         async with self.browser_lock:
             self.last_browser_activity = time.monotonic()
+            # Lazy launch. Headless, with downloads saved into the artifact folder.
+            # The 15 s default timeout bounds every click/fill; goto overrides to 45 s.
             if self.page is None:
                 from playwright.async_api import async_playwright
                 self.playwright = await async_playwright().start()
@@ -271,10 +307,14 @@ class ComputerTools:
                 file = ARTIFACTS / f'browser-{uuid.uuid4().hex}.png'
                 await p.screenshot(path=str(file), full_page=True)
                 return {'artifact': '/artifacts/' + file.name, 'url': p.url}
+            # 'inspect' falls through to the content extraction below, like the other
+            # page-changing actions.
             elif action != 'inspect': raise ValueError(f'Unknown browser action: {action}')
+            # Prefer the semantic main region so navigation/footers do not eat the text budget.
             content = p.locator('main, [role="main"]').first
             if not await content.count() or not (await content.inner_text()).strip():
                 content = p.locator('body')
+            # The JS below de-duplicates links and drops same-page anchors.
             # Prefer useful content links over repeated site-navigation URLs.
             links = await p.evaluate('''() => {
                 const main = document.querySelector('main, [role="main"]');
@@ -290,13 +330,20 @@ class ComputerTools:
                 'links': links,
                 'fields': await p.locator('input,textarea,button,select').evaluate_all('(els)=>els.slice(0,50).map(e=>({tag:e.tagName,id:e.id,name:e.name,type:e.type,text:e.innerText,placeholder:e.placeholder}))')}
 
-    # ------------------------------------------------------------------------------
-    # execute: Asynchronous Coroutine & Contract Specification
-    # Algorithmic Complexity: Time: O(B) linear with respect to serialized payload byte length | Space: O(B) memory mapped buffer or byte stream heap allocation
-    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-    # Failure Modes: Catches or propagates domain exceptions according to API contracts
-    # ------------------------------------------------------------------------------
     async def execute(self, name, args, cwd):
+        """Dispatch one tool call by name.
+
+        Args:
+            name: tool name from TOOLS.
+            args: validated argument dict.
+            cwd: session working folder for relative paths.
+        Returns:
+            The tool's result dict.
+        Raises:
+            ValueError: unknown tool or invalid arguments.
+            Exceptions from the underlying handler propagate unchanged.
+        """
+        # Lazy imports keep start-up fast and avoid loading registry/doc caches unless used.
         if name=='inspect_project':
             from app.batching import inspect_project
             return await inspect_project(args,cwd,ARTIFACTS)
@@ -308,12 +355,15 @@ class ComputerTools:
             from app.language_tools import lookup
             return await lookup(name.removesuffix('_lookup'), args, cwd, ARTIFACTS, ROOT / 'cache/language-lookups')
         if name == 'fetch_json': return await fetch_json(args, ARTIFACTS)
+        # Score fetch plus optional JSON export: validate the export arguments first
+        # so a bad path fails before any network call.
         if name == 'nfl_scores':
             if args.get('open_editor') and not args.get('save_path'): raise ValueError('open_editor needs save_path for the requested JSON file')
             if args.get('save_path') and Path(args['save_path']).suffix.lower()!='.json': raise ValueError('save_path must end in .json')
             result=await nfl_scores(args, ARTIFACTS)
             if args.get('save_path'):
                 payload={key:result[key] for key in ('date','source','games')}
+                # Reuse write_file so the export gets backup + atomic replace for free.
                 saved=await self.execute('write_file',{'path':args['save_path'],'content':json.dumps(payload,ensure_ascii=False,indent=2)+'\n'},cwd)
                 result['saved_file']=saved['path'];result['backup']=saved['backup']
                 if args.get('open_editor'):
@@ -324,6 +374,8 @@ class ComputerTools:
         if name == 'apply_patch':
             from app.patches import apply_patch
             return await asyncio.to_thread(apply_patch,args['patch'],cwd,ROOT/'run/backups')
+        # Read a line window (default 150, max 500 lines) with 1-based numbering so
+        # patches can refer to line numbers; text is also clipped to 18000 chars.
         if name == 'read_file':
             p,artifact_reference = observation_path(args['path'], cwd)
             start = max(1, int(args.get('start_line', 1)))
@@ -335,6 +387,8 @@ class ComputerTools:
             result={'path': str(p), 'text': text[:18000]}
             if artifact_reference:result['artifact_reference']=True
             return result
+        # Safe overwrite: back up the old file, write a temp sibling, copy the mode,
+        # then atomically rename, so a crash never leaves a half-written file.
         if name == 'write_file':
             p = path_for(args['path'], cwd)
             backup = None
@@ -348,6 +402,8 @@ class ComputerTools:
             if p.exists(): shutil.copymode(p, temp)
             temp.replace(p)
             return {'path': str(p), 'bytes': p.stat().st_size, 'backup': str(backup) if backup else None}
+        # Directories first, then names case-insensitively; capped at 200 entries to
+        # bound prompt size.
         if name == 'list_directory':
             p,_ = observation_path(args.get('path', cwd), cwd)
             entries = []
@@ -361,13 +417,20 @@ class ComputerTools:
         if name == 'editor': return await self.editor(args, cwd)
         raise ValueError('Unknown tool: ' + name)
 
-    # ------------------------------------------------------------------------------
-    # editor: Asynchronous Coroutine & Contract Specification
-    # Algorithmic Complexity: Time: O(1) constant time primitive operation and state evaluation | Space: O(1) constant stack space allocation
-    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-    # Failure Modes: Catches or propagates domain exceptions according to API contracts
-    # ------------------------------------------------------------------------------
     async def editor(self, args, cwd):
+        """Open or inspect the visible Code OSS window.
+
+        Uses a dedicated profile with telemetry off so the editor never phones home
+        and never restores random old windows. Opening is deliberately not a way to
+        edit: the model must save files with write_file/shell first.
+
+        Args:
+            args: {'action': 'open'|'status', 'path': ..., 'line': ...}
+            cwd: base for a relative path.
+        Raises:
+            RuntimeError: editor missing, launcher failed or timed out.
+            FileNotFoundError: the path does not exist yet.
+        """
         executable = shutil.which('code-oss') or shutil.which('code')
         if not executable: raise RuntimeError('Code OSS / VS Code is not installed')
         if args['action'] == 'status':
@@ -379,16 +442,20 @@ class ComputerTools:
         profile = ROOT / 'run/editor-profile'
         settings = profile / 'User/settings.json'
         settings.parent.mkdir(parents=True, exist_ok=True)
+        # Written once; the user's own settings changes are never overwritten.
         if not settings.exists():
             settings.write_text(json.dumps({'telemetry.telemetryLevel':'off','workbench.startupEditor':'none','window.restoreWindows':'none'}, indent=2)+'\n')
         env = await asyncio.to_thread(graphical_env)
         command = [executable, '--user-data-dir=' + str(profile),
                    '--extensions-dir=' + str(ROOT / 'run/editor-extensions'),
                    '--reuse-window', '--disable-gpu']
+        # Native Wayland rendering when available (sharper, no XWayland).
         if env.get('WAYLAND_DISPLAY'): command.append('--ozone-platform=wayland')
         if path.is_file(): command += ['--goto', f'{path}:{max(1, int(args.get("line", 1)))}']
         else: command.append(str(path))
         proc = await asyncio.create_subprocess_exec(*command, env=env, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE)
+        # The launcher normally returns quickly because --reuse-window hands off to
+        # the running instance; 20 s covers a cold start.
         try: stdout, stderr = await asyncio.wait_for(proc.communicate(), 20)
         except asyncio.CancelledError:
             if proc.returncode is None: proc.terminate()
@@ -401,13 +468,17 @@ class ComputerTools:
         if proc.returncode: raise RuntimeError(stderr.decode(errors='replace')[:1500])
         return {'opened':str(path), 'line':args.get('line', 1), 'executable':executable, 'profile':str(profile)}
 
-    # ------------------------------------------------------------------------------
-    # observe: Asynchronous Coroutine & Contract Specification
-    # Algorithmic Complexity: Time: O(P) bounded by external process execution timeout and IPC throughput | Space: O(B) stream buffer memory allocated for child stdout/stderr capture
-    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-    # Failure Modes: Catches or propagates domain exceptions according to API contracts
-    # ------------------------------------------------------------------------------
     async def observe(self, source):
+        """Capture a live screenshot for the UI's observation panel.
+
+        Args:
+            source: 'browser' (the agent's page, JPEG q65 to keep it small) or
+                'desktop' (grim PNG).
+        Returns:
+            {'available': bool, 'artifact': url, ...}.
+        Writes through a temporary file then renames, so the page never fetches a
+        half-written image.
+        """
         if source == 'browser':
             async with self.browser_lock:
                 self.last_browser_activity = time.monotonic()
@@ -420,12 +491,6 @@ class ComputerTools:
         if source == 'desktop':
             file = ARTIFACTS / 'live-desktop.png'
             temporary = file.with_name(file.name + '.' + uuid.uuid4().hex + '.tmp')
-            # ------------------------------------------------------------------------------
-            # capture: Function Pipeline & Contract Specification
-            # Algorithmic Complexity: Time: O(P) bounded by external process execution timeout and IPC throughput | Space: O(B) stream buffer memory allocated for child stdout/stderr capture
-            # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-            # Failure Modes: Catches or propagates domain exceptions according to API contracts
-            # ------------------------------------------------------------------------------
             def capture():
                 subprocess.run(['grim', '-t', 'png', str(temporary)], env=graphical_env(), capture_output=True, timeout=10, check=True)
                 temporary.replace(file)
@@ -433,19 +498,15 @@ class ComputerTools:
             return {'available':True, 'artifact':'/artifacts/'+file.name, 'at':time.time()}
         raise ValueError('Choose browser or desktop')
 
-    # ------------------------------------------------------------------------------
-    # desktop: Asynchronous Coroutine & Contract Specification
-    # Algorithmic Complexity: Time: O(P) bounded by external process execution timeout and IPC throughput | Space: O(B) stream buffer memory allocated for child stdout/stderr capture
-    # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-    # Failure Modes: Catches or propagates domain exceptions according to API contracts
-    # ------------------------------------------------------------------------------
     async def desktop(self, args):
-        # ------------------------------------------------------------------------------
-        # run: Function Pipeline & Contract Specification
-        # Algorithmic Complexity: Time: O(P) bounded by external process execution timeout and IPC throughput | Space: O(B) stream buffer memory allocated for child stdout/stderr capture
-        # Invariant: Preconditions validated before mutation; postconditions guarantee return contract
-        # Failure Modes: Catches or propagates domain exceptions according to API contracts
-        # ------------------------------------------------------------------------------
+        """Inspect or drive the Hyprland desktop (text-only model: OCR instead of vision).
+
+        Actions: windows, focus(address), key(modifiers,key), type(text), screenshot,
+        inspect (screenshot + OCR + active window + window list).
+        'type' uses the clipboard (wl-copy then Ctrl+V) because synthesizing
+        keystrokes for arbitrary Unicode is unreliable on Wayland.
+        """
+        # Run a short desktop command synchronously (called through to_thread).
         def run(*cmd):
             return subprocess.run(cmd, env=graphical_env(), capture_output=True, text=True, timeout=15, check=True).stdout
         action = args['action']
